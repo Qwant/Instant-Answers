@@ -1,0 +1,18 @@
+
+#: src/model/encryption/public/encryption.dot:9
+msgctxt "encryption"
+msgid "Hash"
+msgstr "Hasch"
+
+#: src/model/encryption/encryption.js:43
+msgctxt "encryption"
+msgid "hash"
+msgstr "hasch"
+
+#~ msgctxt "encryption"
+#~ msgid "hex hash"
+#~ msgstr "hex hasch"
+
+#~ msgctxt "encryption"
+#~ msgid "encryption"
+#~ msgstr "verschlüsselung"

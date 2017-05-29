@@ -1,0 +1,49 @@
+
+#: src/model/weather/public/weather.dot:92
+msgctxt "ia-weather"
+msgid "by"
+msgstr "par"
+
+#: src/model/weather/public/weather.dot:113
+msgctxt "ia-weather"
+msgid "Tomorrow"
+msgstr "Bihar"
+
+#: src/model/weather/public/weather.dot:179
+msgctxt "ia-weather"
+msgid "Forecast by"
+msgstr "Aurreikuspenak:"
+
+#: src/model/weather/forecast.js:135 src/model/weather/drivers/wetter.js:49
+msgctxt "ia-weather"
+msgid "Wind"
+msgstr "Haizea"
+
+#: src/model/weather/forecast.js:141 src/model/weather/drivers/wetter.js:53
+msgctxt "ia-weather"
+msgid "Humidity"
+msgstr "Hezetasuna"
+
+#: src/model/weather/forecast.js:147
+msgctxt "ia-weather"
+msgid "Rain"
+msgstr "Euria"
+
+#: src/model/weather/forecast.js:153
+msgctxt "ia-weather"
+msgid "Pressure"
+msgstr "Presioa"
+
+#: src/model/weather/weather.js:130
+msgctxt "weather"
+msgid "Weather"
+msgstr "Eguraldia"
+
+#: src/model/weather/weather.js:133
+msgctxt "weather"
+msgid "weather"
+msgstr "météo|meteo|méteo|metéo|eguraldia|eguraldi|weather"
+
+#~ msgctxt "ia-weather"
+#~ msgid "Today"
+#~ msgstr "Aujourd'hui"

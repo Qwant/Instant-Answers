@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="css/hello_world.css" type="text/css">
+
+<h1 class="hello--world--title" id="hello--world">
+
+	Hello &nbsp;
+
+	<span class="hello--world--name">
+		{{= it.data }}
+	</span>
+</h1>

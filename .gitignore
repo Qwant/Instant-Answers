@@ -1,0 +1,21 @@
+#Logger
+error.log
+log/
+
+#temp directory
+tmp/
+
+#php storm local config
+.idea/
+
+#node modules & task generated files
+node_modules/
+dist/
+lang/
+
+#config
+config/*.json
+
+DISTS/*
+npm-debug.log*
+Gruntfile.js*

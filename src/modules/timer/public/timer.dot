@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="css/timer.css" type="text/css">
+
+<div class="ia__timer">
+    <label for="ia__timer__startTime"></label>
+    <input id="ia__timer__startTime" type="text" value="{{= it.data }}" hidden>
+    <label for="ia__timer__display">
+        <span class="ia__timer__icon icon icon-timer"></span>
+    </label>
+    <input class="ia__timer__display" id="ia__timer__display" type="text" readonly>
+    <br/>
+    <button class="button button--blue" id="ia__timer__button--toggle">{{= _("PLAY","timer") }}</button>
+    <button class="button button--red" id="ia__timer__button--reset">{{= _("RESET","timer") }}</button>
+</div>

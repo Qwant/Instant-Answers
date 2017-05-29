@@ -1,0 +1,57 @@
+options:
+  path: lang_src/
+  default: en_gb
+languages:
+  fr_fr:
+    name: Français
+    code: fr_fr
+    match: fr
+    files:
+    - fr.po
+  de_de:
+    name: Deutsch
+    code: de_de
+    match: de
+    files:
+    - de.po
+  en_gb:
+    name: English
+    code: en_gb
+    match: en
+  co_fr:
+    name: Corsu
+    code: co_fr
+    match: co
+    files:
+    - co.po
+    - fr.po
+  br_fr:
+    name: Brezhoneg
+    code: br_fr
+    match: br
+    files:
+    - br.po
+  eu_fr:
+    name: Euskara
+    code: eu_fr
+    match: eu
+    files:
+    - eu.po
+  eu_es:
+    name: Euskara
+    code: eu_es
+    match: eu
+    files:
+    - eu.po
+  ca_es:
+    name: Català
+    code: ca_es
+    match: ca
+    files:
+    - ca.po
+  es_es:
+    name: Español
+    code: es_es
+    match: es
+    files:
+    - es.po

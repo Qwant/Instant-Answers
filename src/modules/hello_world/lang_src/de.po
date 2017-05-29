@@ -1,0 +1,10 @@
+
+#: src/model/hello_world/hello_world.js:44
+msgctxt "demo"
+msgid "Hello world"
+msgstr "Hallo Welt"
+
+#: src/model/hello_world/hello_world.js:60
+msgctxt "demo"
+msgid "Hello"
+msgstr "Hallo"

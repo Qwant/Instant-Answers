@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="css/calculator.css" type="text/css">
+
+<div class="ia__calculator">
+    <span class="ia__calculator__icon icon icon-calc"></span>
+    <div class="ia__calculator__container">
+        <span class="ia__calculator__query">
+            {{= it.query }} <!-- prints the original query (ex: 2+2) -->
+        </span>
+        <span class="ia__calculator__operator">
+			&nbsp;=&nbsp;
+		</span>
+        <span class="ia__calculator__result">
+			{{= it.data }} <!-- prints the returned result from the IA solver (ex: 4) -->
+		</span>
+    </div>
+</div>
+

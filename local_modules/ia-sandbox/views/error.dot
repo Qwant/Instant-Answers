@@ -1,0 +1,8 @@
+<link href="stylesheets/style.css" rel="stylesheet">
+
+<h1>Error page</h1>
+<h2>[[= locals.status ]]</h2>
+
+<p class="error--message">
+[[= locals.message ]]
+</p>

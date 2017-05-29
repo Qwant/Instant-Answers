@@ -1,0 +1,131 @@
+/* Basic CSS reset for all elements */
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	vertical-align: baseline;
+	line-height: inherit;
+	font-weight: normal;
+}
+
+/* root */
+html {
+	background: #fff;
+}
+
+/* Collapse table borders */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Hide links underline */
+
+a {
+	text-decoration: none
+}
+
+a:visited {
+	//color: #4B4DF5;
+}
+
+b, b * {
+	font-weight: bold;
+}
+
+p {
+	display: block;
+}
+
+/* Display sub and sup correctly */
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/* Horizontal rules */
+
+hr {
+	border-top: 1px solid #ddd;
+}
+
+/* Prevent image overflow, hide alt text on images not found */
+img {
+	max-width: 100%;
+	font-size: 0 !important;
+	text-indent: -9999px;
+	color: #fff;
+}
+
+/* Hidden attribute polyfill */
+
+[hidden] {
+	display: none;
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+input:invalid
+{
+  box-shadow: none;
+  outline: 0;
+}
+
+.centered-left-outer {
+  text-align: center;
+}
+
+.centered-left-inner {
+  display: inline-block;
+  text-align: left;
+}
+
+::-ms-clear{
+	display: none;
+}
+
+::-ms-reveal {
+	display: none;
+}
+
+::-webkit-search-decoration,
+::-webkit-search-cancel-button,
+::-webkit-search-results-button,
+::-webkit-search-results-decoration {
+	display: none;
+}
+
+
+a:focus {
+	outline: 1px dotted #333;
+}
+
+@media (max-width:640px){
+	a:focus {
+		outline: 0;
+	}
+}

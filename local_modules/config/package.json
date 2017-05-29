@@ -1,0 +1,6 @@
+{
+  "name": "@qwant/config",
+  "description": "Qwant front/search config",
+  "main": "index.js",
+  "version": "0.1.0"
+}

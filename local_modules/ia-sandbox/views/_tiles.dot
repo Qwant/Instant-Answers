@@ -1,0 +1,29 @@
+<table class="full-it">
+	<tr>
+		<td id="web-column">
+		    <h2 class="results-page"><div id="icon_web"></div>Web</h2>
+			[[ for (var i=0; i<10; i++) { ]]
+                <div class="title_results">[[= locals.loremIpsum(locals.config.sandbox.title) ]]</div>
+                <div class="url_results">www.<strong>[[= locals.loremIpsum(locals.config.sandbox.url) ]]</strong>.com</div>
+                <div class="text_query">[[= locals.loremIpsum(locals.config.sandbox.description)]]</div>
+			[[ } ]]
+		</td>
+		<td id="news-column" class="news-column">
+		<h2 class="results-page">
+		    <div id="icon_actu"></div>
+		    News
+		</h2>
+            [[ for (var i=0; i<10; i++) { ]]
+                <div class="title_results">[[= locals.loremIpsum(locals.config.sandbox.title) ]]</div>
+                <span class="url_results">www.<strong>[[= locals.loremIpsum(locals.config.sandbox.url) ]]</strong>.com</span>
+                <span class="hours_news">
+                    [[=Math.floor(Math.random() * (24 - 1 + 1)) + 1]] h - ago
+                </span>
+                <div class="text_query">[[= locals.loremIpsum(locals.config.sandbox.description)]]</div>
+            [[ } ]]
+		</td>
+		<td id="social-or-vertical">
+			<div id="ia_container--vertical" class="ia_container--vertical">No result..</div>
+		</td>
+	</tr>
+</table>

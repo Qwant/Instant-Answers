@@ -1,0 +1,13 @@
+{
+  "took" : 0,
+  "hits": {
+    "hits" : [{
+      "_source" : {
+        "city" : "Luna",
+        "latitude" : 100.6,
+        "longitude" : 94.4,
+        "country_code" : 0
+      }
+    }]
+  }
+}

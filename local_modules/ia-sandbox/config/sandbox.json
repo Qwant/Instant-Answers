@@ -1,0 +1,21 @@
+{
+  "title" : {
+    "count":1,
+    "units":"sentences",
+    "sentenceUpperBound": 7
+  },
+  "url" : {
+    "count":1,
+    "units":"words"
+  },
+  "description" : {
+    "count":1,
+    "units":"paragraphs",
+    "sentenceUpperBound":9,
+    "paragraphUpperBound":2
+
+  }
+}
+
+
+

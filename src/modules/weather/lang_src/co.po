@@ -1,0 +1,49 @@
+
+#: src/model/weather/public/weather.dot:92
+msgctxt "ia-weather"
+msgid "by"
+msgstr "par"
+
+#: src/model/weather/public/weather.dot:113
+msgctxt "ia-weather"
+msgid "Tomorrow"
+msgstr "Demain"
+
+#: src/model/weather/public/weather.dot:179
+msgctxt "ia-weather"
+msgid "Forecast by"
+msgstr "Prévisions par"
+
+#: src/model/weather/forecast.js:135 src/model/weather/drivers/wetter.js:49
+msgctxt "ia-weather"
+msgid "Wind"
+msgstr "Vent"
+
+#: src/model/weather/forecast.js:141 src/model/weather/drivers/wetter.js:53
+msgctxt "ia-weather"
+msgid "Humidity"
+msgstr "Humidité"
+
+#: src/model/weather/forecast.js:147
+msgctxt "ia-weather"
+msgid "Rain"
+msgstr "Pluie"
+
+#: src/model/weather/forecast.js:153
+msgctxt "ia-weather"
+msgid "Pressure"
+msgstr "Pression"
+
+#: src/model/weather/weather.js:130
+msgctxt "weather"
+msgid "Weather"
+msgstr "Météo"
+
+#: src/model/weather/weather.js:133
+msgctxt "weather"
+msgid "weather"
+msgstr "météo|meteo|méteo|metéo"
+
+#~ msgctxt "ia-weather"
+#~ msgid "Today"
+#~ msgstr "Aujourd'hui"

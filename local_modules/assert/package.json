@@ -1,0 +1,6 @@
+{
+  "name": "@qwant/assert",
+  "description": "Qwant assert overload",
+  "main": "index.coffee",
+  "version": "0.0.1"
+}

@@ -1,0 +1,137 @@
+
+#: src/model/unit_converter/unit_converter.js:111
+msgctxt "unit converter"
+msgid "unit converter"
+msgstr "convertisseur d'unités"
+
+#: src/model/unit_converter/unit_converter.js:124
+msgctxt "unit converter"
+msgid "in"
+msgstr "en"
+
+#: src/model/unit_converter/unit_converter.js:124
+msgctxt "unit converter"
+msgid "to"
+msgstr "en"
+
+#: src/model/unit_converter/reverse/reverse_full.js:6
+#: src/model/unit_converter/unities/prefixed_constants.js:30
+msgctxt "unit converter"
+msgid "meters"
+msgstr "mètres"
+
+#: src/model/unit_converter/reverse/reverse_full.js:7
+#: src/model/unit_converter/unities/normal_constants.js:7
+msgctxt "unit converter"
+msgid "inches"
+msgstr "pouces"
+
+#: src/model/unit_converter/reverse/reverse_full.js:8
+#: src/model/unit_converter/unities/normal_constants.js:10
+msgctxt "unit converter"
+msgid "feet"
+msgstr "pieds"
+
+#: src/model/unit_converter/reverse/reverse_full.js:27
+#: src/model/unit_converter/unities/normal_constants.js:85
+msgctxt "unit converter"
+msgid "degrees"
+msgstr "degrés"
+
+#: src/model/unit_converter/reverse/reverse_full.js:31
+#: src/model/unit_converter/unities/normal_constants.js:91
+msgctxt "unit converter"
+msgid "seconds"
+msgstr "secondes"
+
+#: src/model/unit_converter/reverse/reverse_full.js:33
+#: src/model/unit_converter/unities/prefixed_constants.js:36
+msgctxt "unit converter"
+msgid "grams"
+msgstr "grammes"
+
+#: src/model/unit_converter/reverse/reverse_full.js:39
+#: src/model/unit_converter/unities/normal_constants.js:112
+msgctxt "unit converter"
+msgid "hundredweights"
+msgstr "quintaux"
+
+#: src/model/unit_converter/unities/prefixed_constants.js:29
+msgctxt "unit converter"
+msgid "meter"
+msgstr "mètre"
+
+#: src/model/unit_converter/unities/prefixed_constants.js:35
+msgctxt "unit converter"
+msgid "gram"
+msgstr "gramme"
+
+#: src/model/unit_converter/unities/normal_constants.js:6
+msgctxt "unit converter"
+msgid "inch"
+msgstr "pouce"
+
+#: src/model/unit_converter/unities/normal_constants.js:9
+msgctxt "unit converter"
+msgid "foot"
+msgstr "pied"
+
+#: src/model/unit_converter/unities/normal_constants.js:49
+msgctxt "unit converter"
+msgid "teaspoon"
+msgstr "cuillère à café"
+
+#: src/model/unit_converter/unities/normal_constants.js:50
+msgctxt "unit converter"
+msgid "teaspoons"
+msgstr "cuillères à café"
+
+#: src/model/unit_converter/unities/normal_constants.js:51
+msgctxt "unit converter"
+msgid "tablespoon"
+msgstr "cuillerée à soupe"
+
+#: src/model/unit_converter/unities/normal_constants.js:52
+msgctxt "unit converter"
+msgid "tablespoons"
+msgstr "cuillerées à soupe"
+
+#: src/model/unit_converter/unities/normal_constants.js:90
+msgctxt "unit converter"
+msgid "second"
+msgstr "seconde"
+
+#: src/model/unit_converter/unities/normal_constants.js:93
+msgctxt "unit converter"
+msgid "minute"
+msgstr "minute"
+
+#: src/model/unit_converter/unities/normal_constants.js:94
+msgctxt "unit converter"
+msgid "minutes"
+msgstr "minutes"
+
+#: src/model/unit_converter/unities/normal_constants.js:95
+msgctxt "unit converter"
+msgid "hour"
+msgstr "heure"
+
+#: src/model/unit_converter/unities/normal_constants.js:96
+msgctxt "unit converter"
+msgid "hours"
+msgstr "heures"
+
+#: src/model/unit_converter/unities/normal_constants.js:98
+msgctxt "unit converter"
+msgid "day"
+msgstr "jour"
+
+#: src/model/unit_converter/unities/normal_constants.js:99
+msgctxt "unit converter"
+msgid "days"
+msgstr "journées"
+
+#: src/model/unit_converter/unities/normal_constants.js:111
+msgctxt "unit converter"
+msgid "hundredweight"
+msgstr "quintal"

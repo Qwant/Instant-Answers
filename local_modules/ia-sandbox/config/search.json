@@ -1,0 +1,20 @@
+{
+  "categories":
+  [
+    "All",
+    "Web",
+    "News",
+    "Social",
+    "Pictures",
+    "Video",
+    "Shop",
+    "Music",
+    "Notebooks"
+  ]
+  ,"ribbons":
+   [
+     "Pictures",
+     "Videos",
+     "Shopping"
+   ]
+}

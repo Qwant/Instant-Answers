@@ -1,0 +1,10 @@
+
+#: src/model/npm/public/npm.dot:17
+msgctxt "npm"
+msgid "Module created by"
+msgstr "Module créé par"
+
+#: src/model/npm/public/npm.dot:24
+msgctxt "npm"
+msgid "See more on npmjs"
+msgstr "Voir plus sur npmjs"

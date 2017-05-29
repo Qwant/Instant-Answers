@@ -1,0 +1,15 @@
+
+#: src/model/timer/public/timer.dot:11
+msgctxt "timer"
+msgid "PLAY"
+msgstr "Commencer"
+
+#: src/model/timer/public/timer.dot:12
+msgctxt "timer"
+msgid "RESET"
+msgstr "Reinitialiser"
+
+#: src/model/timer/timer.js:24 src/model/timer/timer.js:27
+msgctxt "timer"
+msgid "timer"
+msgstr "minuteur"

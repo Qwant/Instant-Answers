@@ -1,0 +1,137 @@
+
+#: src/model/unit_converter/unit_converter.js:111
+msgctxt "unit converter"
+msgid "unit converter"
+msgstr ""
+
+#: src/model/unit_converter/unit_converter.js:124
+msgctxt "unit converter"
+msgid "in"
+msgstr ""
+
+#: src/model/unit_converter/unit_converter.js:124
+msgctxt "unit converter"
+msgid "to"
+msgstr ""
+
+#: src/model/unit_converter/reverse/reverse_full.js:6
+#: src/model/unit_converter/unities/prefixed_constants.js:30
+msgctxt "unit converter"
+msgid "meters"
+msgstr ""
+
+#: src/model/unit_converter/reverse/reverse_full.js:7
+#: src/model/unit_converter/unities/normal_constants.js:7
+msgctxt "unit converter"
+msgid "inches"
+msgstr ""
+
+#: src/model/unit_converter/reverse/reverse_full.js:8
+#: src/model/unit_converter/unities/normal_constants.js:10
+msgctxt "unit converter"
+msgid "feet"
+msgstr ""
+
+#: src/model/unit_converter/reverse/reverse_full.js:27
+#: src/model/unit_converter/unities/normal_constants.js:85
+msgctxt "unit converter"
+msgid "degrees"
+msgstr ""
+
+#: src/model/unit_converter/reverse/reverse_full.js:31
+#: src/model/unit_converter/unities/normal_constants.js:91
+msgctxt "unit converter"
+msgid "seconds"
+msgstr ""
+
+#: src/model/unit_converter/reverse/reverse_full.js:33
+#: src/model/unit_converter/unities/prefixed_constants.js:36
+msgctxt "unit converter"
+msgid "grams"
+msgstr ""
+
+#: src/model/unit_converter/reverse/reverse_full.js:39
+#: src/model/unit_converter/unities/normal_constants.js:112
+msgctxt "unit converter"
+msgid "hundredweights"
+msgstr ""
+
+#: src/model/unit_converter/unities/prefixed_constants.js:29
+msgctxt "unit converter"
+msgid "meter"
+msgstr ""
+
+#: src/model/unit_converter/unities/prefixed_constants.js:35
+msgctxt "unit converter"
+msgid "gram"
+msgstr ""
+
+#: src/model/unit_converter/unities/normal_constants.js:6
+msgctxt "unit converter"
+msgid "inch"
+msgstr ""
+
+#: src/model/unit_converter/unities/normal_constants.js:9
+msgctxt "unit converter"
+msgid "foot"
+msgstr ""
+
+#: src/model/unit_converter/unities/normal_constants.js:49
+msgctxt "unit converter"
+msgid "teaspoon"
+msgstr ""
+
+#: src/model/unit_converter/unities/normal_constants.js:50
+msgctxt "unit converter"
+msgid "teaspoons"
+msgstr ""
+
+#: src/model/unit_converter/unities/normal_constants.js:51
+msgctxt "unit converter"
+msgid "tablespoon"
+msgstr ""
+
+#: src/model/unit_converter/unities/normal_constants.js:52
+msgctxt "unit converter"
+msgid "tablespoons"
+msgstr ""
+
+#: src/model/unit_converter/unities/normal_constants.js:90
+msgctxt "unit converter"
+msgid "second"
+msgstr ""
+
+#: src/model/unit_converter/unities/normal_constants.js:93
+msgctxt "unit converter"
+msgid "minute"
+msgstr ""
+
+#: src/model/unit_converter/unities/normal_constants.js:94
+msgctxt "unit converter"
+msgid "minutes"
+msgstr ""
+
+#: src/model/unit_converter/unities/normal_constants.js:95
+msgctxt "unit converter"
+msgid "hour"
+msgstr ""
+
+#: src/model/unit_converter/unities/normal_constants.js:96
+msgctxt "unit converter"
+msgid "hours"
+msgstr ""
+
+#: src/model/unit_converter/unities/normal_constants.js:98
+msgctxt "unit converter"
+msgid "day"
+msgstr ""
+
+#: src/model/unit_converter/unities/normal_constants.js:99
+msgctxt "unit converter"
+msgid "days"
+msgstr ""
+
+#: src/model/unit_converter/unities/normal_constants.js:111
+msgctxt "unit converter"
+msgid "hundredweight"
+msgstr ""

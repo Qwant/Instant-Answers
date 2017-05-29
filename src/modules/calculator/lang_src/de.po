@@ -1,0 +1,5 @@
+
+#: src/model/calculator/calculator.js:28
+msgctxt "calculator"
+msgid "calculator"
+msgstr "rechner"
