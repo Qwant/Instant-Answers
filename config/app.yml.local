@@ -1,22 +1,18 @@
 qwant-ia:
-  local:
-    server-port: 3002
-    sandbox-port: 8084
-    modules-paths: "src/modules/"
-    modules-base: "ia/template/"
-    script-base: "ia/javascript/"
-    images-base: "ia/img/"
-    excludedIA: ['weather']
-    logConfig:
-      cliLogSeverity:
-        ["critical",
-        "alert",
-        "error",
-        "warning",
-        "debug",
-        "info"]
-      elasticLogSeverity:
-        ["critical",
-        "alert",
-        "error",
-        "info"]
+  server-port: 3002
+  sandbox-port: 8084
+  modules-paths: "src/modules/"
+  modules-base: "ia/template/"
+  script-base: "ia/javascript/"
+  images-base: "ia/img/"
+  excludedIA: ['weather']
+  logConfig:
+    cliLogSeverity:
+      ["critical",
+      "alert",
+      "error",
+      "warning"]
+    elasticLogSeverity:
+      ["critical",
+      "alert",
+      "error"]
