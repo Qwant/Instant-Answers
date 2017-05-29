@@ -11,8 +11,11 @@ qwant-ia:
       ["critical",
       "alert",
       "error",
-      "warning"]
+      "warning",
+      "debug",
+      "info"]
     elasticLogSeverity:
       ["critical",
       "alert",
-      "error"]
+      "error",
+      "info"]
