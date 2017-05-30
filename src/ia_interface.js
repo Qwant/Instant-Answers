@@ -9,7 +9,7 @@ function instant_answer(module) {
 
     // To use a proxy server, edit config/app.yml with the correct settings
     this.proxyURL = '';
-    if (config_get('app.qwant-ia.proxy-enabled') === true) {
+    if (config_get('app.qwant-ia.proxy.enabled') === true) {
         var proxyServer = config_get('app.qwant-ia.proxy');
         this.proxyURL = proxyServer.address + ':' + proxyServer.port;
     }

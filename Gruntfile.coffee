@@ -59,7 +59,7 @@ module.exports = (grunt, options) ->
           {
             expand: true,
             cwd: 'src/modules/',
-            src: ['**/*.yml'],
+            src: ["**/*.yml.#{ENVIRONMENT}"],
             dest: 'config/',
             flatten: true,
             ext: '.json'

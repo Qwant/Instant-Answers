@@ -1,6 +1,6 @@
 {
   "name": "IA-Core",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "scripts": {
     "start": "node ./bin/www",
     "server": "node ./bin/www",

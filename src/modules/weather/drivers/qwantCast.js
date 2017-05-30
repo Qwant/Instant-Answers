@@ -26,7 +26,6 @@ function callQwantCastApi (apiQwantCastRequestUrl, proxyURL) {
             var qwantCastResponse = null;
 
             try {
-                console.log(response.body);
 		        qwantCastResponse = JSON.parse(response.body);
 		    } catch(e) {
 		        e.msg = response.body;
