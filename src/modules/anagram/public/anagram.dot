@@ -11,7 +11,7 @@
 	{{~it.data.cat1:cat1:i}}
     <div class="ia__anagram__word">{{= cat1[0] }}</div>
     {{? cat1[1] != '' }}
-    <a href="http://localhost:8084/?q=anagram+{{= cat1[1] }}">{{= _('rest', 'ia-anagram') }} : {{= cat1[1] }}</a>
+    <a href="?q=anagram+{{= cat1[1] }}">{{= _('rest', 'ia-anagram') }} : {{= cat1[1] }}</a>
     {{?}}
     {{~}}
 {{?}}
@@ -20,7 +20,7 @@
    	{{~it.data.cat2:cat2:i}}
     <div class="ia__anagram__word">{{= cat2[0] }}</div>
     {{? cat2[1] != '' }}
-    <a href="http://localhost:8084/?q=anagram+{{= cat2[1] }}">{{= _('rest', 'ia-anagram') }} : {{= cat2[1] }}</a>
+    <a href="?q=anagram+{{= cat2[1] }}">{{= _('rest', 'ia-anagram') }} : {{= cat2[1] }}</a>
     {{?}}
     {{~}}
 {{?}}
@@ -29,7 +29,7 @@
 	{{~it.data.cat3:cat3:i}}
     <div class="ia__anagram__word">{{= cat3[0] }}</div>
     {{? cat3[1] != '' }}
-    <a href="http://localhost:8084/?q=anagram+{{= cat3[1] }}">{{= _('rest', 'ia-anagram') }} : {{= cat3[1] }}</a>
+    <a href="?q=anagram+{{= cat3[1] }}">{{= _('rest', 'ia-anagram') }} : {{= cat3[1] }}</a>
     {{?}}
     {{~}}
 {{?}}
@@ -38,7 +38,7 @@
 	{{~it.data.cat4:cat4:i}}
     <div class="ia__anagram__word">{{= cat4[0] }}</div>
     {{? cat4[1] != '' }}
-    <a href="http://localhost:8084/?q=anagram+{{= cat4[1] }}">{{= _('rest', 'ia-anagram') }} : {{= cat4[1] }}</a>
+    <a href="?q=anagram+{{= cat4[1] }}">{{= _('rest', 'ia-anagram') }} : {{= cat4[1] }}</a>
     {{?}}
     {{~}}
 {{?}}

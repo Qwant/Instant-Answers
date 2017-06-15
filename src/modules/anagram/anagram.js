@@ -1,11 +1,3 @@
-/**
- * This is your main app file. Please refer to the documentation for more information.
- */
-
-/**
- * If you need to import extra node_modules, use "npm install xxx --save" and place them there.
- */
-
 var Promise = require("bluebird");
 var _ = require('@qwant/front-i18n')._;
 
@@ -263,24 +255,11 @@ module.exports = {
             if (j < 4) {
                 cat[j] = result.slice(save, i);
             }
-            for (j = 0; j < cat[0].length; ++j) {
-                for (i = 0; i < cat[0][j][0].length; ++i) {
-                    cat[0][j][0][i] = " ".concat(cat[0][j][0][i]);
-                }
-            }
-            for (j = 0; j < cat[1].length; ++j) {
-                for (i = 0; i < cat[1][j][0].length; ++i) {
-                    cat[1][j][0][i] = " ".concat(cat[1][j][0][i]);
-                }
-            }
-            for (j = 0; j < cat[2].length; ++j) {
-                for (i = 0; i < cat[2][j][0].length; ++i) {
-                    cat[2][j][0][i] = " ".concat(cat[2][j][0][i]);
-                }
-            }
-            for (j = 0; j < cat[3].length; ++j) {
-                for (i = 0; i < cat[3][j][0].length; ++i) {
-                    cat[3][j][0][i] = " ".concat(cat[3][j][0][i]);
+            for (i = 0; i < 4; ++i) {
+                for (j = 0; j < cat[i].length; ++j) {
+                    for (var k = 0; k < cat[i][j][0].length; ++k) {
+                        cat[i][j][0][k] = " ".concat(cat[i][j][0][k]);
+                    }
                 }
             }
             //Send data
