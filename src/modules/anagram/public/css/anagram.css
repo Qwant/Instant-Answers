@@ -5,10 +5,19 @@
     height: 200px;
     padding: 0 25px;
     border: 1px solid #ccc;
-    font: 16px/26px Georgia, Garamond, Serif;
     overflow: auto;
 }
 
-.ia__anagram__content {
+.ia__anagram__cat {
     padding-top: 10px;
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 1.2em;
+    clear: both;
+}
+
+.ia__anagram__word {
+    padding-top: 5px;
+    color: #585A60;
+    font-family: Helvetica;
 }

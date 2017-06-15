@@ -1,3 +1,11 @@
-#
-# This is your fr_fr language file. Please refer to the documentation for more information.
-#
+msgctxt "ia-anagram"
+msgid "Words with"
+msgstr "Mots contenant"
+
+msgctxt "ia-anagram"
+msgid "letter(s)"
+msgstr "lettre(s)"
+
+msgctxt "ia-anagram"
+msgid "rest"
+msgstr "reste"

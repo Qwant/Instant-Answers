@@ -21,139 +21,6 @@ function str_to_noaccent($str)
 }
 
 function parseData($files) {
-    $exception = array(
-        'i',
-        'ii',
-        'iii',
-        'iv',
-        'v',
-        'vi',
-        'vii',
-        'viii',
-        'ix',
-        'x',
-        'xi',
-        'xii',
-        'xiii',
-        'xiv',
-        'xv',
-        'xvi',
-        'xvii',
-        'xviii',
-        'xix',
-        'xx',
-        'xxi',
-        'xxii',
-        'xxiii',
-        'xxiv',
-        'xxv',
-        'xxvi',
-        'xxvii',
-        'xxviii',
-        'xxix',
-        'xxx',
-        'xxxi',
-        'xxxii',
-        'xxxiii',
-        'xxxiv',
-        'xxxv',
-        'xxxvi',
-        'xxxvii',
-        'xxxviii',
-        'xxxix',
-        'xl',
-        'xli',
-        'xlii',
-        'xliii',
-        'xliv',
-        'xlv',
-        'xlvi',
-        'xlvii',
-        'xlviii',
-        'xlix',
-        'l',
-        'l',
-        'li',
-        'lii',
-        'liii',
-        'liv',
-        'lv',
-        'lvi',
-        'lvii',
-        'lviii',
-        'lix',
-        'lx',
-        'lxi',
-        'lxii',
-        'lxiii',
-        'lxiv',
-        'lxv',
-        'lxvi',
-        'lxvii',
-        'lxviii',
-        'lxix',
-        'lxx',
-        'lxxi',
-        'lxxii',
-        'lxxiii',
-        'lxxiv',
-        'lxxv',
-        'lxxvi',
-        'lxxvii',
-        'lxxviii',
-        'lxxix',
-        'lxxx',
-        'lxxxi',
-        'lxxxii',
-        'lxxxiii',
-        'lxxxiv',
-        'lxxxv',
-        'lxxxvi',
-        'lxxxvii',
-        'lxxxviii',
-        'lxxxix',
-        'xc',
-        'xci',
-        'xcii',
-        'xciii',
-        'xciv',
-        'xcv',
-        'xcvi',
-        'xcvii',
-        'xcviii',
-        'xcix',
-        'c',
-        'ci',
-        'cii',
-        'ciii',
-        'civ',
-        'cv',
-        'cvi',
-        'cvii',
-        'cviii',
-        'cix',
-        'cx',
-        'cxi',
-        'cxii',
-        'cxiii',
-        'cxiv',
-        'cxv',
-        'cxvi',
-        'cxvii',
-        'cxviii',
-        'cxix',
-        'cxx',
-        'cxxi',
-        'cxxii',
-        'cxxiii',
-        'cxxiv',
-        'cxxv',
-        'cxxvi',
-        'cxxvii',
-        'cxxviii',
-        'cxxix',
-        'cxxx',
-    );
     $test = false;
     $array = array();
     foreach ($files as $file) {
@@ -162,20 +29,18 @@ function parseData($files) {
             continue;
         }
         $buffer = file_get_contents($file);
+        $trueArray = array();
+        $trueArray = array_merge($trueArray, explode("\n", $buffer));
         $buffer = str_to_noaccent($buffer);
         $buffer = strtolower($buffer);
-        $buffer = preg_replace("/[^a-z ]/", ' ', $buffer);
-        $array  = array_merge($array, explode(" ", $buffer));
+        $array  = array_merge($array, explode("\n", $buffer));
     }
-    $words = array_unique($array);
     $result = "";
-    foreach ($words as $word) {
-        if (in_array($word, $exception)) {
-            continue;
-        }
+    $i = 0;
+    foreach ($array as $word) {
         $alpha = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
         for ($j = 0; $j < strlen($word); ++$j) {
-            if (ord(substr($word, $j, 1)) - 97 < 26) {
+            if (ord(substr($word, $j, 1)) - 97 < 26 && ord(substr($word, $j, 1)) - 97 >= 0) {
                 ++$alpha[ord(substr($word, $j, 1)) - 97];
             }
         }
@@ -183,10 +48,11 @@ function parseData($files) {
         for ($j = 0; $j < 26; ++$j) {
             $code = $code . $alpha[$j] . ",";
         }
-        $result[$code][] = $word;
+        $result[$code][] = $trueArray[$i];
+        ++$i;
     }
     file_put_contents("../database/database.json", json_encode($result));
 }
 
-//Give a book in text format, and it will extract all words (example in truedata directory)
+//Give a file containing lot of words in argument
 parseData($argv);

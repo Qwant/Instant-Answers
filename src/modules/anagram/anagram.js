@@ -177,6 +177,16 @@ module.exports = {
                 resolve("Need an argument");
             }
 
+            function restCode(origin, code) {
+                var str = "";
+                for (var i = 0; i < 26; ++i) {
+                    for (var j = 0; j < origin[i] - code[i]; ++j) {
+                        str = str.concat(String.fromCharCode(i + 97));
+                    }
+                }
+                return (str);
+            }
+
             //No accent, No upper, Only letters
             var seek = removeDiacritics(values[3]);
             seek = seek.toLowerCase();
@@ -192,16 +202,15 @@ module.exports = {
 
             //Convert into StringKey
             var code = codeToKey(alpha);
-
+            var origin = alpha.slice(0);
             //Load Database
             var database = require("./database/database.json");
             var result = [];
 
             //Push the best result first (exact match)
             if (database[code]) {
-                result = result.concat(database[code]);
+                result.push([database[code], ""]);
             }
-
             //Start chrono
             var tmp = alpha.slice(0);
             var start = new Date();
@@ -210,18 +219,17 @@ module.exports = {
             i = 0;
 
             //Find submatch
-            while ((tmp = getNextCode(alpha, tmp)) && diff.getSeconds() < 5) {
+            while ((tmp = getNextCode(alpha, tmp)) && diff.getSeconds() < 10) {
                 code = codeToKey(tmp);
-                if (database[code] && database[code].length >= 3) {
-                    result = result.concat(database[code]);
+                if (database[code]) {
+                    result.push([database[code], restCode(origin, tmp)]);
                 }
                 end = new Date();
                 diff = new Date(end - start);
             }
-
             //Sort Array
             result.sort(function(a, b){
-                return b.length - a.length;
+                return b[0][0].length - a[0][0].length;
             });
             var cat = [
                 [],
@@ -234,15 +242,15 @@ module.exports = {
             var save = 0;
             var j = 0;
             if (result.length > 0) {
-                nbLetter[0] = result[0].length;
-                size = result[0].length;
+                nbLetter[0] = result[0][0][0].length;
+                size = result[0][0][0].length;
             }
             i = 0;
             for (i; i < result.length; ++i) {
-                if (size > result[i].length) {
+                if (size > result[i][0][0].length) {
                     cat[j] = result.slice(save, i);
                     save = i;
-                    size = result[i].length;
+                    size = result[i][0][0].length;
                     ++j;
                     if (j < 4) {
                         nbLetter[j] = size;
@@ -256,16 +264,24 @@ module.exports = {
                 cat[j] = result.slice(save, i);
             }
             for (j = 0; j < cat[0].length; ++j) {
-                cat[0][j] = " ".concat(cat[0][j]);
+                for (i = 0; i < cat[0][j][0].length; ++i) {
+                    cat[0][j][0][i] = " ".concat(cat[0][j][0][i]);
+                }
             }
             for (j = 0; j < cat[1].length; ++j) {
-                cat[1][j] = " ".concat(cat[1][j]);
+                for (i = 0; i < cat[1][j][0].length; ++i) {
+                    cat[1][j][0][i] = " ".concat(cat[1][j][0][i]);
+                }
             }
             for (j = 0; j < cat[2].length; ++j) {
-                cat[2][j] = " ".concat(cat[2][j]);
+                for (i = 0; i < cat[2][j][0].length; ++i) {
+                    cat[2][j][0][i] = " ".concat(cat[2][j][0][i]);
+                }
             }
             for (j = 0; j < cat[3].length; ++j) {
-                cat[3][j] = " ".concat(cat[3][j]);
+                for (i = 0; i < cat[3][j][0].length; ++i) {
+                    cat[3][j][0][i] = " ".concat(cat[3][j][0][i]);
+                }
             }
             //Send data
             resolve({
