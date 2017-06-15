@@ -173,7 +173,7 @@ module.exports = {
                 return (code);
             }
 
-            if (values[3] === null) {
+            if (values[3] === null || typeof values[3] === "undefined") {
                 resolve("Need an argument");
             }
 
@@ -223,9 +223,61 @@ module.exports = {
             result.sort(function(a, b){
                 return b.length - a.length;
             });
-
+            var cat = [
+                [],
+                [],
+                [],
+                []
+            ];
+            var nbLetter = [-1, -1, -1, -1];
+            var size;
+            var save = 0;
+            var j = 0;
+            if (result.length > 0) {
+                nbLetter[0] = result[0].length;
+                size = result[0].length;
+            }
+            i = 0;
+            for (i; i < result.length; ++i) {
+                if (size > result[i].length) {
+                    cat[j] = result.slice(save, i);
+                    save = i;
+                    size = result[i].length;
+                    ++j;
+                    if (j < 4) {
+                        nbLetter[j] = size;
+                    }
+                }
+                if (j > 3) {
+                    break;
+                }
+            }
+            if (j < 4) {
+                cat[j] = result.slice(save, i);
+            }
+            for (j = 0; j < cat[0].length; ++j) {
+                cat[0][j] = " ".concat(cat[0][j]);
+            }
+            for (j = 0; j < cat[1].length; ++j) {
+                cat[1][j] = " ".concat(cat[1][j]);
+            }
+            for (j = 0; j < cat[2].length; ++j) {
+                cat[2][j] = " ".concat(cat[2][j]);
+            }
+            for (j = 0; j < cat[3].length; ++j) {
+                cat[3][j] = " ".concat(cat[3][j]);
+            }
             //Send data
-            resolve(result);
+            resolve({
+                cat1: cat[0],
+                cat2: cat[1],
+                cat3: cat[2],
+                cat4: cat[3],
+                nblet1: nbLetter[0],
+                nblet2: nbLetter[1],
+                nblet3: nbLetter[2],
+                nblet4: nbLetter[3]
+            });
         });
     },
 

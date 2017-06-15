@@ -3,3 +3,21 @@
 -->
 <link rel="stylesheet" href="css/anagram.css" type="text/css">
 <script src="javascript/anagram.js"></script>
+<div class="ia__anagram__body">
+	<div class="ia__anagram__content">
+	{{? it.data.nblet1 == -1 }}
+		<span>No anagram found.</span>
+	{{??}}
+		<span>Words with {{= it.data.nblet1 }} letter(s):<br>	{{= it.data.cat1 }}<br> </span>
+	{{?}}
+	{{? it.data.nblet2 != -1 }}
+		<span>Words with {{= it.data.nblet2 }} letter(s):<br>	{{= it.data.cat2 }}<br> </span>
+	{{?}}
+	{{? it.data.nblet3 != -1 }}
+		<span>Words with {{= it.data.nblet3 }} letter(s):<br>	{{= it.data.cat3 }}<br> </span>
+	{{?}}
+	{{? it.data.nblet4 != -1 }}
+		<span>Words with {{= it.data.nblet4 }} letter(s):<br>	{{= it.data.cat4 }}<br> </span>
+	{{?}}
+	</div>
+</div>
