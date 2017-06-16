@@ -14,9 +14,9 @@
 			<div class="ia__anagram__text">
 			{{~sameAnagram[0]:anagram:k}}
 				{{? sameAnagram[0].length - k > 1}}
-					{{= anagram }},
+					<span>{{= anagram }}, </span>
 				{{??}}
-					{{= anagram }}
+					<span>{{= anagram }}</span>
 				{{?}}
 			{{~}}
 			<br>
