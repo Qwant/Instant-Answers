@@ -112,10 +112,10 @@ module.exports = {
             ];
 
             var diacriticsMap = {};
-            for (var i=0; i < defaultDiacriticsRemovalMap .length; i++){
-                var letters = defaultDiacriticsRemovalMap [i].letters;
-                for (var j=0; j < letters.length ; j++){
-                    diacriticsMap[letters[j]] = defaultDiacriticsRemovalMap [i].base;
+            for (var i = 0; i < defaultDiacriticsRemovalMap.length; i++){
+                var letters = defaultDiacriticsRemovalMap[i].letters;
+                for (var j = 0; j < letters.length ; j++){
+                    diacriticsMap[letters[j]] = defaultDiacriticsRemovalMap[i].base;
                 }
             }
 
@@ -155,7 +155,7 @@ module.exports = {
                 return (current);
             }
 
-            //Convert array to StrinKey
+            //Convert array to StringKey
             function codeToKey (alpha) {
                 var code = "";
                 for (var i = 0; i < 26; ++i) {
@@ -165,10 +165,7 @@ module.exports = {
                 return (code);
             }
 
-            if (values[3] === null || typeof values[3] === "undefined") {
-                resolve("Need an argument");
-            }
-
+            //Send rest of letter in a code
             function restCode(origin, code) {
                 var str = "";
                 for (var i = 0; i < 26; ++i) {
@@ -179,14 +176,18 @@ module.exports = {
                 return (str);
             }
 
+            if (values[3] === null || typeof values[3] === "undefined") {
+                resolve("Need an argument");
+            }
+
             //No accent, No upper, Only letters
             var seek = removeDiacritics(values[3]);
             seek = seek.toLowerCase();
-            seek = seek.replace(/[^a-zA-Z0-9]/g, '');
+            seek = seek.replace(/[^a-z]/g, '');
 
             //Convert word into a code which represent what compose it
             var alpha = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-            for (var i = 0; i < seek.length; ++i) {
+            for (i = 0; i < seek.length; ++i) {
                 if (seek.charCodeAt(i) - 97 < 26) {
                     ++alpha[seek.charCodeAt(i) - 97];
                 }
@@ -195,6 +196,7 @@ module.exports = {
             //Convert into StringKey
             var code = codeToKey(alpha);
             var origin = alpha.slice(0);
+
             //Load Database
             var database = require("./database/database.json");
             var result = [];
@@ -203,6 +205,7 @@ module.exports = {
             if (database[code]) {
                 result.push([database[code], ""]);
             }
+
             //Start chrono
             var tmp = alpha.slice(0);
             var start = new Date();
@@ -219,10 +222,13 @@ module.exports = {
                 end = new Date();
                 diff = new Date(end - start);
             }
+
             //Sort Array
             result.sort(function(a, b){
                 return b[0][0].length - a[0][0].length;
             });
+
+            //create fourth best categories
             var cat = [
                 [],
                 [],
@@ -255,6 +261,8 @@ module.exports = {
             if (j < 4) {
                 cat[j] = result.slice(save, i);
             }
+
+            //Add space for a better display
             for (i = 0; i < 4; ++i) {
                 for (j = 0; j < cat[i].length; ++j) {
                     for (var k = 0; k < cat[i][j][0].length; ++k) {
@@ -262,6 +270,7 @@ module.exports = {
                     }
                 }
             }
+
             //Send data
             resolve({
                 cat1: cat[0],
