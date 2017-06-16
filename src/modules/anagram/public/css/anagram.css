@@ -10,14 +10,28 @@
 
 .ia__anagram__cat {
     padding-top: 10px;
+    color: #69717d;
     font-family: Helvetica;
     font-weight: bold;
     font-size: 1.2em;
     clear: both;
 }
 
-.ia__anagram__word {
-    padding-top: 5px;
+.ia__anagram__content__text {
     color: #585A60;
     font-family: Helvetica;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ia__anagram__text {
+    margin-left: 4px;
+    margin-top: 4px;
+    border-radius: 10px;
+    border: 2px solid #CCC;
+    width: 14vw;
+}
+
+.space {
+    margin-left: 1em;
 }
