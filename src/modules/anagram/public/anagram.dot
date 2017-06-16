@@ -8,24 +8,24 @@
 	<span>No anagram found.</span>
 {{??}}
 	{{~it.data.categories:categorie:i }}
-	<div class="ia__anagram__cat">{{= _('Words with', 'ia-anagram') }} {{= it.data.nblet[i] }} {{= _('letter(s)', 'ia-anagram') }}:<br></div>
-	<div class="ia__anagram__content__text">
-	{{~categorie:sameAnagram:j}}
-	<div class="ia__anagram__text">
-	{{~sameAnagram[0]:anagram:k}}
-	{{? sameAnagram[0].length - k > 1}}
-	{{= anagram }},
-	{{??}}
-	{{= anagram }}
-	{{?}}
-	{{~}}
-	<br>
-	{{? sameAnagram[1] != ''}}
-	<a class="space" href="?q=anagram+{{= sameAnagram[1] }}">{{= _('rest', 'ia-anagram') }}&nbsp:&nbsp{{= sameAnagram[1] }}</a>
-	{{?}}
-	</div>
-	{{~}}
-	</div>
+		<div class="ia__anagram__cat">{{= _('Words with', 'ia-anagram') }} {{= it.data.nblet[i] }} {{= _('letter(s)', 'ia-anagram') }}:<br></div>
+		<div class="ia__anagram__content__text">
+		{{~categorie:sameAnagram:j}}
+			<div class="ia__anagram__text">
+			{{~sameAnagram[0]:anagram:k}}
+				{{? sameAnagram[0].length - k > 1}}
+					{{= anagram }},
+				{{??}}
+					{{= anagram }}
+				{{?}}
+			{{~}}
+			<br>
+			{{? sameAnagram[1] != ''}}
+				<a class="space" href="?q=anagram+{{= sameAnagram[1] }}">{{= _('rest', 'ia-anagram') }}&nbsp:&nbsp{{= sameAnagram[1] }}</a>
+			{{?}}
+			</div>
+		{{~}}
+		</div>
 	{{~}}
 {{?}}
 </div>
