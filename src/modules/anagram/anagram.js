@@ -229,50 +229,31 @@ module.exports = {
             });
 
             //create fourth best categories
-            var cat = [
-                [],
-                [],
-                [],
-                []
-            ];
-            var nbLetter = [-1, -1, -1, -1];
+            var cat = [];
+            var nbLetter = [];
             var size;
             var save = 0;
             var j = 0;
             if (result.length > 0) {
-                nbLetter[0] = result[0][0][0].length;
+                nbLetter.push(result[0][0][0].length);
                 size = result[0][0][0].length;
             }
             i = 0;
             for (i; i < result.length; ++i) {
-                result[i][0][0] = result[i][0][0].replace(" ", "");
                 if (size > result[i][0][0].length) {
-                    cat[j] = result.slice(save, i);
+                    cat.push(result.slice(save, i));
                     save = i;
                     size = result[i][0][0].length;
+                    nbLetter.push(size);
                     ++j;
-                    if (j < 4) {
-                        nbLetter[j] = size;
-                    }
-                }
-                if (j > 3) {
-                    break;
                 }
             }
-            if (j < 4) {
-                cat[j] = result.slice(save, i);
-            }
+            cat.push(result.slice(save, i));
 
             //Send data
             resolve({
-                cat1: cat[0],
-                cat2: cat[1],
-                cat3: cat[2],
-                cat4: cat[3],
-                nblet1: nbLetter[0],
-                nblet2: nbLetter[1],
-                nblet3: nbLetter[2],
-                nblet4: nbLetter[3]
+                categories: cat,
+                nblet: nbLetter
             });
         });
     },

@@ -24,6 +24,9 @@
 }
 
 .ia__anagram__text {
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-bottom: 4px;
     margin-left: 4px;
     margin-top: 4px;
     border-radius: 10px;
