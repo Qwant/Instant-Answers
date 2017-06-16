@@ -10,7 +10,15 @@
 	<div class="ia__anagram__cat">{{= _('Words with', 'ia-anagram') }} {{= it.data.nblet1 }} {{= _('letter(s)', 'ia-anagram') }}:<br></div>
 	<div class="ia__anagram__content__text">
 	{{~it.data.cat1:cat1:i}}
-    <div class="ia__anagram__text">{{= cat1[0] }}<br></span>
+	<div class="ia__anagram__text">
+	{{~cat1[0]:cat:j}}
+	{{? cat1[0].length > j + 1 }}
+    {{= cat }},
+    {{??}}
+    {{= cat }}
+    {{?}}
+    {{~}}
+    <br></span>
     {{? cat1[1] != '' }}
     <a class="space" href="?q=anagram+{{= cat1[1] }}">{{= _('rest', 'ia-anagram') }}&nbsp:&nbsp{{= cat1[1] }}</a>
     {{?}}
@@ -22,7 +30,15 @@
 	<div class="ia__anagram__cat">{{= _('Words with', 'ia-anagram') }} {{= it.data.nblet2 }} {{= _('letter(s)', 'ia-anagram') }}:<br></div>
 	<div class="ia__anagram__content__text">
 	{{~it.data.cat2:cat2:i}}
-    <div class="ia__anagram__text">{{= cat2[0] }}<br></span>
+	<div class="ia__anagram__text">
+	{{~cat2[0]:cat:j}}
+	{{? cat2[0].length > j + 1 }}
+    {{= cat }},
+    {{??}}
+    {{= cat }}
+    {{?}}
+    {{~}}
+    <br></span>
     {{? cat2[1] != '' }}
     <a class="space" href="?q=anagram+{{= cat2[1] }}">{{= _('rest', 'ia-anagram') }}&nbsp:&nbsp{{= cat2[1] }}</a>
     {{?}}
@@ -34,7 +50,15 @@
 	<div class="ia__anagram__cat">{{= _('Words with', 'ia-anagram') }} {{= it.data.nblet3 }} {{= _('letter(s)', 'ia-anagram') }}:<br></div>
 	<div class="ia__anagram__content__text">
 	{{~it.data.cat3:cat3:i}}
-    <div class="ia__anagram__text">{{= cat3[0] }}<br></span>
+	<div class="ia__anagram__text">
+	{{~cat3[0]:cat:j}}
+	{{? cat3[0].length > j + 1 }}
+    {{= cat }},
+    {{??}}
+    {{= cat }}
+    {{?}}
+    {{~}}
+    <br></span>
     {{? cat3[1] != '' }}
     <a class="space" href="?q=anagram+{{= cat3[1] }}">{{= _('rest', 'ia-anagram') }}&nbsp:&nbsp{{= cat3[1] }}</a>
     {{?}}
@@ -46,7 +70,15 @@
 	<div class="ia__anagram__cat">{{= _('Words with', 'ia-anagram') }} {{= it.data.nblet4 }} {{= _('letter(s)', 'ia-anagram') }}:<br></div>
 	<div class="ia__anagram__content__text">
 	{{~it.data.cat4:cat4:i}}
-    <div class="ia__anagram__text">{{= cat4[0] }}<br></span>
+	<div class="ia__anagram__text">
+	{{~cat4[0]:cat:j}}
+	{{? cat4[0].length > j + 1 }}
+    {{= cat }},
+    {{??}}
+    {{= cat }}
+    {{?}}
+    {{~}}
+    <br></span>
     {{? cat4[1] != '' }}
     <a class="space" href="?q=anagram+{{= cat4[1] }}">{{= _('rest', 'ia-anagram') }}&nbsp:&nbsp{{= cat4[1] }}</a>
     {{?}}

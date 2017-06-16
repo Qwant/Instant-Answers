@@ -245,6 +245,7 @@ module.exports = {
             }
             i = 0;
             for (i; i < result.length; ++i) {
+                result[i][0][0] = result[i][0][0].replace(" ", "");
                 if (size > result[i][0][0].length) {
                     cat[j] = result.slice(save, i);
                     save = i;
@@ -260,15 +261,6 @@ module.exports = {
             }
             if (j < 4) {
                 cat[j] = result.slice(save, i);
-            }
-
-            //Add space for a better display
-            for (i = 0; i < 4; ++i) {
-                for (j = 0; j < cat[i].length; ++j) {
-                    for (var k = 0; k < cat[i][j][0].length; ++k) {
-                        cat[i][j][0][k] = " ".concat(cat[i][j][0][k]);
-                    }
-                }
             }
 
             //Send data

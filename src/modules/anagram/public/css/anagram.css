@@ -1,10 +1,9 @@
 
 .ia__anagram__body {
-    background : #F2F2F2;
+    background : #f8f9fa;
     width: 100%;
-    height: 200px;
+    height: 220px;
     padding: 0 25px;
-    border: 1px solid #ccc;
     overflow: auto;
 }
 
