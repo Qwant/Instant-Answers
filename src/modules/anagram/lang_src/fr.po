@@ -9,3 +9,7 @@ msgstr "lettre(s)"
 msgctxt "ia-anagram"
 msgid "rest"
 msgstr "reste"
+
+msgctxt "anagram"
+msgid "anagram"
+msgstr "anagramme"
