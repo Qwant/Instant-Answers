@@ -20,6 +20,18 @@ function str_to_noaccent($str)
     return ($str);
 }
 
+function getFileName($path) {
+    $i = strlen($path) - 1;
+    while ($path[$i] != '/' && $i != -1) {
+        --$i;
+    }
+    if ($i == -1) {
+        return ($path);
+    }
+    $path = substr($path, $i + 1);
+    return ($path);
+}
+
 function parseData($files) {
     $test = false;
     $array = array();
@@ -28,30 +40,30 @@ function parseData($files) {
             $test = true;
             continue;
         }
-        $buffer = file_get_contents($file);
-        $trueArray = array();
-        $trueArray = array_merge($trueArray, explode("\n", $buffer));
-        $buffer = str_to_noaccent($buffer);
-        $buffer = strtolower($buffer);
-        $array  = array_merge($array, explode("\n", $buffer));
-    }
-    $result = "";
-    $i = 0;
-    foreach ($array as $word) {
-        $alpha = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-        for ($j = 0; $j < strlen($word); ++$j) {
-            if (ord(substr($word, $j, 1)) - 97 < 26 && ord(substr($word, $j, 1)) - 97 >= 0) {
-                ++$alpha[ord(substr($word, $j, 1)) - 97];
+        $buffer    = file_get_contents($file);
+        $trueArray = [];
+        $trueArray = explode("\n", $buffer);
+        $buffer    = str_to_noaccent($buffer);
+        $buffer    = strtolower($buffer);
+        $array     = explode("\n", $buffer);
+        $result    = "";
+        $i         = 0;
+        foreach ($array as $word) {
+            $alpha = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            for ($j = 0; $j < strlen($word); ++$j) {
+                if (ord(substr($word, $j, 1)) - 97 < 26 && ord(substr($word, $j, 1)) - 97 >= 0) {
+                    ++$alpha[ord(substr($word, $j, 1)) - 97];
+                }
             }
+            $code = "";
+            for ($j = 0; $j < 26; ++$j) {
+                $code = $code . $alpha[$j] . ",";
+            }
+            $result[$code][] = $trueArray[$i];
+            ++$i;
         }
-        $code = "";
-        for ($j = 0; $j < 26; ++$j) {
-            $code = $code . $alpha[$j] . ",";
-        }
-        $result[$code][] = $trueArray[$i];
-        ++$i;
+        file_put_contents("../database/" . getFileName($file) . ".json", json_encode($result));
     }
-    file_put_contents("../database/database.json", json_encode($result));
 }
 
 //Give a file containing lot of words in argument
