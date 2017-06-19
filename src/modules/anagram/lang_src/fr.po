@@ -3,8 +3,12 @@ msgid "Words with"
 msgstr "Mots contenant"
 
 msgctxt "ia-anagram"
-msgid "letter(s)"
-msgstr "lettre(s)"
+msgid "letters"
+msgstr "lettres"
+
+msgctxt "ia-anagram"
+msgid "letter"
+msgstr "lettre"
 
 msgctxt "ia-anagram"
 msgid "rest"
