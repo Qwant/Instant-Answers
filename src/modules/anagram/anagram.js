@@ -227,12 +227,11 @@ module.exports = {
                 return b[0][0].length - a[0][0].length;
             });
 
-            //create best categories
+            //create categories
             var cat = [];
             var nbLetter = [];
             var size;
             var save = 0;
-            var j = 0;
             if (result.length > 0) {
                 nbLetter.push(result[0][0][0].length);
                 size = result[0][0][0].length;
