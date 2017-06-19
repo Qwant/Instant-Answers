@@ -1,0 +1,171 @@
+/**
+* This is your main CSS file. Please refer to the documentation for more information.
+*/
+*
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    vertical-align: baseline;
+    line-height: inherit;
+    font-weight: normal;
+}
+.ia_Capital
+{
+    background-color: #22292C;
+    width: 100%;
+    float: left;
+    height: 200px;
+    margin-bottom: 20px;
+
+}
+.Cap_Title
+{
+    font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #393b3d;
+    -webkit-box-flex: none;
+    -webkit-flex: none;
+    -moz-box-flex: none;
+    -moz-flex: none;
+    -ms-flex: none;
+    flex: none;
+    position: relative;
+    width: 550px;
+    padding: 20px 20px 20px 25px;
+    float:left;
+    background-color: #F8F9FA;
+    height:100%;
+
+}
+.Cap_Title a
+{
+    text-decoration: none;
+    font-size: 14px;
+    color:#393b3d;
+}
+.Cap_descritpion
+{
+    margin: 12px 0;
+    max-height: 84px;
+    overflow: hidden;
+    line-height: 21px;
+    font-size: 14px;
+    color: rgba(52,54,56,0.86);
+}
+.Country_Title
+{
+    font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+    font-size: 1.1vw;
+    color: #969696;
+}
+.Cap_Data_pop
+{
+    font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+    font-size: 0.8vw;
+    color: #3b3b3b;
+    font-weight: bold;
+    float: left;
+    width:13%;
+    height: 100%;
+    text-align: center;
+    padding-top: 60px;
+}
+.Cap_Data_sup
+{
+    font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+    font-size: 0.8vw;
+    color: #3b3b3b;
+    float: left;
+    height: 100%;
+    width:13%;
+    font-weight: bold;
+
+    text-align: center;
+    padding-top: 60px;
+}
+.Cap_Container
+{
+    font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+    font-size: 0.8vw;
+    color: #3b3b3b;
+    float: right;
+    height: 100%;
+    width:13%;
+    font-weight: bold;
+
+    text-align: center;
+}
+.Cap_Hours
+{
+    font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+    font-size: 14px;
+    color: #3b3b3b;
+    font-weight: bold;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    box-shadow: none;
+    left: 75%;
+    border: 6px solid #969696;
+    border-top: 6px solid #969696;
+    border-left-width: 6px;
+    border-right-width: 6px;
+    transition:
+    border-top-color 0.45s linear,
+    border-right-color 0.45s linear 0.40s,
+    border-bottom-color 0.45s linear 0.50s;
+    padding-top: 27px;
+    top: 165px;
+    text-align: center;
+    margin-top:25px;
+
+}
+
+.Count_Number_pop
+{
+    font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+    font-size: 25px;
+    color: #3b3b3b;
+    margin-top: 15px;
+
+}
+.Count_Number_sup
+{
+    font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+    font-size: 25px;
+    color: #3b3b3b;
+    margin-top: 15px;
+}
+.style_Horloge
+{
+    font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+    font-size: 25px;
+    color: #3b3b3b;
+    margin-top: 15px;
+}
+.style_date
+{
+    font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+    font-size: 14px;
+    color: #969696;
+}
+.Cap_img
+{
+    float:left;
+}
+.Cap_img img
+{
+    height:200px;
+    width:300px;
+    float: left;
+}
+#Count_Number
+{
+    text-align: center;
+    font-size: 35px;
+}
