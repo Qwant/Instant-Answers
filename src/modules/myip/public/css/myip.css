@@ -1,3 +1,23 @@
 /**
 * This is your main CSS file. Please refer to the documentation for more information.
 */
+
+.ia__myip__body {
+    height      : 100px;
+    width       : 100%;
+    background  : white;
+}
+
+.ia__myip__text {
+    margin-left : 30px;
+    margin-top  : 30px;
+    color       : #585A60;
+    font-size   : 250%;
+    font-family : Helvetica;
+}
+
+.ia__myip__ip {
+    color       : black;
+    font-weight : bold;
+    font-family : Helvetica;
+}

@@ -5,3 +5,7 @@
 msgctxt "myip"
 msgid "myip"
 msgstr "monip"
+
+msgctxt "ia-myip"
+msgid "Your ip is"
+msgstr "Votre ip est"

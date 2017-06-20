@@ -2,4 +2,8 @@
  This is your main template file. Please refer to the documentation for more information.
 -->
 <link rel="stylesheet" href="css/myip.css" type="text/css">
-<span>{{= it.data }}</span>
+<div class="ia__myip__body">
+	<div class="ia__myip__text">{{= _("Your ip is", "ia-myip") }}:
+		<div class="ia__myip__ip">{{= it.data }}</div>
+	</div>
+</div>
