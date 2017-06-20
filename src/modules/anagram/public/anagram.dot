@@ -2,7 +2,6 @@
  This is your main template file. Please refer to the documentation for more information.
 -->
 <link rel="stylesheet" href="css/anagram.css" type="text/css">
-<script src="javascript/anagram.js"></script>
 <div class="ia__anagram__body">
 {{? it.data.nblet.length == 0 }}
 	<span>No anagram found.</span>

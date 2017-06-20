@@ -295,7 +295,7 @@ module.exports = {
      * script : If your IA includes a script, place it under public/javascript/xxx.js and replace "hello" by "xxx".
      */
 
-    script: "anagram.js",
+    script: "anagram",
 
     /**
      * (NEEDED)
