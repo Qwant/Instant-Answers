@@ -1,0 +1,42 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/anagram.css" type="text/css">
+<div class="ia__anagram__body">
+{{? it.data.nblet.length == 0 }}
+	<span>No anagram found.</span>
+{{??}}
+	{{~it.data.categories:categorie:i }}
+		{{? i == 0 }}
+			{{? it.data.nblet[i] > 1}}
+			<div class="ia__anagram__cat">{{= _('Words with', 'ia-anagram') }} {{= it.data.nblet[i] }} {{= _('letters', 'ia-anagram') }}:<br></div>
+			{{??}}
+			<div class="ia__anagram__cat">{{= _('Words with', 'ia-anagram') }} {{= it.data.nblet[i] }} {{= _('letter', 'ia-anagram') }}:<br></div>
+			{{?}}
+		{{??}}
+			{{? it.data.nblet[i] > 1}}
+        	<div class="ia__anagram__cat__next">{{= _('Words with', 'ia-anagram') }} {{= it.data.nblet[i] }} {{= _('letters', 'ia-anagram') }}:<br></div>
+        	{{??}}
+        	<div class="ia__anagram__cat__next">{{= _('Words with', 'ia-anagram') }} {{= it.data.nblet[i] }} {{= _('letter', 'ia-anagram') }}:<br></div>
+        	{{?}}
+        {{?}}
+		<div class="ia__anagram__content__text">
+		{{~categorie:sameAnagram:j}}
+			<div class="ia__anagram__text">
+			{{~sameAnagram[0]:anagram:k}}
+				{{? sameAnagram[0].length - k > 1}}
+					<span>{{= anagram }}, </span>
+				{{??}}
+					<span>{{= anagram }}</span>
+				{{?}}
+			{{~}}
+			<br>
+			{{? sameAnagram[1] != ''}}
+				<a class="space" href="?q=anagram+{{= sameAnagram[1] }}">{{= _('rest', 'ia-anagram') }} : {{= sameAnagram[1] }}</a>
+			{{?}}
+			</div>
+		{{~}}
+		</div>
+	{{~}}
+{{?}}
+</div>

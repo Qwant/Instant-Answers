@@ -1,0 +1,26 @@
+wetter:
+  url:
+  name:
+  password:
+  provider_info:
+    url:
+    label:
+openWeather:
+  url:
+  key:
+  forecastTime:
+  provider_info:
+    url:
+    label:
+geoCoder:
+  baseUrl:
+  port:
+  countryIndex:
+  cityIndex:
+qwantCast:
+  url:
+  advice_url:
+  provider_info:
+    url:
+    label:
+    img:
