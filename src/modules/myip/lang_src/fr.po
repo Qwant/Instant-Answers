@@ -1,0 +1,7 @@
+#
+# This is your fr_fr language file. Please refer to the documentation for more information.
+#
+
+msgctxt "myip"
+msgid "myip"
+msgstr "monip"
