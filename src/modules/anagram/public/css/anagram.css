@@ -1,48 +1,122 @@
-
-.ia__anagram__body {
-    width: 100%;
+input {
+    display: none;
+    visibility: hidden;
+}
+label {
+    display: block;
+    padding: 0.5em;
+    text-align: center;
+    color: #666;
+}
+label:hover {
+    color: #000;
+}
+label::before {
+    content: ">"
+}
+#expand {
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    transition: height 0.5s;
+}
+#toggle:checked ~ #expand {
     height: 220px;
-    padding: 0 25px;
-    overflow: auto;
+}
+#toggle:checked ~ label::before {
+    content: "<";
 }
 
-.ia__anagram__cat {
-    padding-top: 10px;
-    color: #69717d;
-    font-family: Helvetica;
-    font-weight: bold;
-    font-size: 1.2em;
-    clear: both;
+.ia__content__image__info {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+    width: 300px;
 }
 
-.ia__anagram__cat__next {
-    padding-top: 40px;
-    color: #69717d;
+.ia__title__image {
     font-family: Helvetica;
-    font-weight: bold;
+    position:absolute;
+    text-align:center;
+    bottom: 50px;
+    width: 100%;
+    color: white;
     font-size: 1.2em;
-    clear: both;
+    z-index: 2;
+}
+
+.ia__subtitle__image {
+    font-family: Helvetica;
+    position:absolute;
+    text-align:center;
+    bottom: 25px;
+    width: 100%;
+    color: #afafaf;
+    font-size: 1.2em;
+    z-index: 2;
+}
+
+.ia__gradient__image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(0deg, black, rgba(255,0,0,0));
+}
+
+.ia__content__result__info {
+    width: 100%;
+    overflow: hidden;
+}
+
+.ia__brief__result {
+    margin-left: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #1c2428;
+    font-family: Helvetica;
+}
+
+.ia__anagram__result {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 50px;
+}
+
+.ia__nbletter__result {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 25px;
+    font-family: Helvetica;
+    color :  #afafaf;
+    font-size: 1.2em;
+    min-width: 170px;
 }
 
 .ia__anagram__content__text {
-    color: #585A60;
     font-family: Helvetica;
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+}
+
+.ia__image {
+    width: 300px;
 }
 
 .ia__anagram__text {
-    padding-top: 4px;
-    padding-left: 4px;
-    padding-bottom: 4px;
-    margin-left: 4px;
-    margin-top: 4px;
-    border-radius: 10px;
-    border: 2px solid #CCC;
-    width: 14vw;
+    padding-top: 18px;
+    padding-bottom: 15px;
+    margin-left: 30px;
+    width: 180px;
+    color: #1c2428;
 }
 
 .space {
-    margin-left: 1em;
-    color: #0064be;
+    color: #afafaf;
+    text-decoration:none;
 }

@@ -125,6 +125,11 @@ module.exports = {
                 });
             }
 
+            //Upper first letter
+            function capitalizeFirstLetter(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+
             //Send the next unique possibility and decrease one letter
             function getNextCode (base, current) {
                 var i = 25;
@@ -183,12 +188,13 @@ module.exports = {
             var seek = removeDiacritics(values[3]);
             seek = seek.toLowerCase();
             seek = seek.replace(/[^a-z]/g, '');
-
+            var maxsize = 0;
             //Convert word into a code which represent what compose it
             var alpha = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
             for (i = 0; i < seek.length; ++i) {
                 if (seek.charCodeAt(i) - 97 < 26) {
                     ++alpha[seek.charCodeAt(i) - 97];
+                    ++maxsize;
                 }
             }
 
@@ -251,7 +257,10 @@ module.exports = {
             //Send data
             resolve({
                 categories: cat,
-                nblet: nbLetter
+                nblet: nbLetter,
+                sentence: capitalizeFirstLetter(values[3]),
+                seek: seek.toUpperCase(),
+                maxletter: maxsize
             });
         });
     },

@@ -14,6 +14,18 @@ msgctxt "ia-anagram"
 msgid "rest"
 msgstr "reste"
 
+msgctxt "ia-anagram"
+msgid "No anagram found"
+msgstr "Aucun anagramme trouvé"
+
+msgctxt "ia-anagram"
+msgid "ANAGRAM"
+msgstr "ANAGRAMME"
+
+msgctxt "ia-anagram"
+msgid "Your word"
+msgstr "Votre mot"
+
 msgctxt "anagram"
 msgid "anagram"
 msgstr "anagramme"

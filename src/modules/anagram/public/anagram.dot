@@ -2,41 +2,55 @@
  This is your main template file. Please refer to the documentation for more information.
 -->
 <link rel="stylesheet" href="css/anagram.css" type="text/css">
-<div class="ia__anagram__body">
+<input id="toggle" type="checkbox" checked>
+<div id="expand">
 {{? it.data.nblet.length == 0 }}
-	<span>No anagram found.</span>
+	<span>{{= _('No anagram found', 'ia-anagram') }}</span>
 {{??}}
-	{{~it.data.categories:categorie:i }}
-		{{? i == 0 }}
-			{{? it.data.nblet[i] > 1}}
-			<div class="ia__anagram__cat">{{= _('Words with', 'ia-anagram') }} {{= it.data.nblet[i] }} {{= _('letters', 'ia-anagram') }}:<br></div>
+	<div class="ia__content__image__info">
+	  <img class="ia__image" src="//s1.qwant.com/thumbr/220x220/a/5/c795411edaae7c5070c7081d9403af/b_0_q_0_p_0.jpg?u=http%3A%2F%2Fis1.mzstatic.com%2Fimage%2Fthumb%2FMusic%2Ff3%2Faf%2F09%2Fmzi.hemdhonm.jpg%2F220x220bb-85.jpg&q=0&b=0&p=0&a=0"></img>
+	  <div class="ia__gradient__image"></div>
+	  <div class="ia__title__image">{{= _('Your word', 'ia-anagram') }}: <b>{{= it.data.seek }}</b></div>
+	  <div class="ia__subtitle__image">{{= it.data.maxletter }} letters</div>
+	</div>
+	<div class="ia__content__result__info">
+		<div class="ia__brief__result" style="font-weight:bold">ANAGRAM: <style="font-weight:normal">{{= it.data.sentence }}</style></div>
+		{{~it.data.categories:categorie:i }}
+			{{? i % 2 == 0 }}
+				<div class="ia__anagram__result" style="background: white">
 			{{??}}
-			<div class="ia__anagram__cat">{{= _('Words with', 'ia-anagram') }} {{= it.data.nblet[i] }} {{= _('letter', 'ia-anagram') }}:<br></div>
+				<div class="ia__anagram__result" style="background: #f8f9fa">
 			{{?}}
-		{{??}}
-			{{? it.data.nblet[i] > 1}}
-        	<div class="ia__anagram__cat__next">{{= _('Words with', 'ia-anagram') }} {{= it.data.nblet[i] }} {{= _('letters', 'ia-anagram') }}:<br></div>
-        	{{??}}
-        	<div class="ia__anagram__cat__next">{{= _('Words with', 'ia-anagram') }} {{= it.data.nblet[i] }} {{= _('letter', 'ia-anagram') }}:<br></div>
-        	{{?}}
-        {{?}}
-		<div class="ia__anagram__content__text">
-		{{~categorie:sameAnagram:j}}
-			<div class="ia__anagram__text">
-			{{~sameAnagram[0]:anagram:k}}
-				{{? sameAnagram[0].length - k > 1}}
-					<span>{{= anagram }}, </span>
+			{{? it.data.nblet[i] == it.data.maxletter }}
+				<div class="ia__nbletter__result">{{= _('Words with', 'ia-anagram') }} <b style="color:black">all letters</b>:</div>
+			{{??}}
+				{{? it.data.nblet[i] > 1 }}
+				<div class="ia__nbletter__result">{{= _('Words with', 'ia-anagram') }} <b style="color:black">{{= it.data.nblet[i] }} {{= _('letters', 'ia-anagram') }}</b>:</div>
 				{{??}}
-					<span>{{= anagram }}</span>
+			<	div class="ia__nbletter__result">{{= _('Words with', 'ia-anagram') }} <b style="color:black">{{= it.data.nblet[i] }} {{= _('letter', 'ia-anagram') }}</b>:</div>
 				{{?}}
-			{{~}}
-			<br>
-			{{? sameAnagram[1] != ''}}
-				<a class="space" href="?q=anagram+{{= sameAnagram[1] }}">{{= _('rest', 'ia-anagram') }} : {{= sameAnagram[1] }}</a>
 			{{?}}
+				<div class="ia__anagram__content__text">
+				{{~categorie:sameAnagram:j}}
+						<div class="ia__anagram__text">
+						{{~sameAnagram[0]:anagram:k}}
+							{{? sameAnagram[0].length - k > 1}}
+								<span>{{= anagram }}, </span>
+							{{??}}
+								<span>{{= anagram }}</span>
+							{{?}}
+						{{~}}
+						<br>
+						{{? sameAnagram[1] != ''}}
+							<a class="space" href="?q=anagram+{{= sameAnagram[1] }}">{{= _('rest', 'ia-anagram') }} : {{= sameAnagram[1] }}</a>
+						{{?}}
+						</div>
+				{{~}}
+				</div>
 			</div>
 		{{~}}
-		</div>
-	{{~}}
+	</div>
 {{?}}
 </div>
+<label for="toggle"></label>
+
