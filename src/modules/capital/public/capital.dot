@@ -11,7 +11,6 @@
     </div>
     <div class="Cap_Data_pop">{{= _('number of inhabitants', 'ia-capital').toUpperCase()}}:</br></br><span class="Count_Number_pop" id="Pop_Number">0</span></div>
     <div class="Cap_Data_sup">{{= _('Area', 'ia-capital').toUpperCase()}}&nbsp;(Km²):</br></br><span id="Area_Number" class="Count_Number_sup">0</span></div>
-    <div class="Cap_Container"><div class="Cap_Hours">{{= _('Local Hours', 'ia-capital').toUpperCase()}}</br><div class="style_Horloge" id="Horloge"></div><div class="style_date" id="Date"></div></div></div>
 </div>
 
 

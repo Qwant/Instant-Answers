@@ -35,11 +35,12 @@
     -ms-flex: none;
     flex: none;
     position: relative;
-    width: 550px;
+    width: 35%;
     padding: 20px 20px 20px 25px;
     float:left;
     background-color: #F8F9FA;
     height:100%;
+    text-end-overflow: ellipsis;
 
 }
 .Cap_Title a
@@ -67,10 +68,10 @@
 {
     font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
     font-size: 0.8vw;
-    color: #3b3b3b;
+    color: #969696;
     font-weight: bold;
     float: left;
-    width:13%;
+    width:18%;
     height: 100%;
     text-align: center;
     padding-top: 60px;
@@ -79,10 +80,10 @@
 {
     font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
     font-size: 0.8vw;
-    color: #3b3b3b;
+    color: #969696;
     float: left;
     height: 100%;
-    width:13%;
+    width:18%;
     font-weight: bold;
 
     text-align: center;
@@ -100,37 +101,11 @@
 
     text-align: center;
 }
-.Cap_Hours
-{
-    font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
-    font-size: 14px;
-    color: #3b3b3b;
-    font-weight: bold;
-    width: 150px;
-    height: 150px;
-    border-radius: 100%;
-    box-shadow: none;
-    left: 75%;
-    border: 6px solid #969696;
-    border-top: 6px solid #969696;
-    border-left-width: 6px;
-    border-right-width: 6px;
-    transition:
-    border-top-color 0.45s linear,
-    border-right-color 0.45s linear 0.40s,
-    border-bottom-color 0.45s linear 0.50s;
-    padding-top: 27px;
-    top: 165px;
-    text-align: center;
-    margin-top:25px;
-
-}
-
 .Count_Number_pop
 {
     font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
     font-size: 25px;
-    color: #3b3b3b;
+    color: #969696;
     margin-top: 15px;
 
 }
@@ -138,21 +113,8 @@
 {
     font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
     font-size: 25px;
-    color: #3b3b3b;
-    margin-top: 15px;
-}
-.style_Horloge
-{
-    font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
-    font-size: 25px;
-    color: #3b3b3b;
-    margin-top: 15px;
-}
-.style_date
-{
-    font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
-    font-size: 14px;
     color: #969696;
+    margin-top: 15px;
 }
 .Cap_img
 {
