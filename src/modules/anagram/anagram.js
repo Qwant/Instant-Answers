@@ -246,13 +246,20 @@ module.exports = {
             for (i; i < result.length; ++i) {
                 if (size > result[i][0][0].length) {
                     cat.push(result.slice(save, i));
-                    save = i;
-                    size = result[i][0][0].length;
-                    nbLetter.push(size);
-                    ++j;
+                    if (cat.length > 3) {
+                        break;
+                    }
+                    else {
+                        save = i;
+                        size = result[i][0][0].length;
+                        nbLetter.push(size);
+                        ++j;
+                    }
                 }
             }
-            cat.push(result.slice(save, i));
+            if (cat.length < 4) {
+                cat.push(result.slice(save, i));
+            }
 
             //Send data
             resolve({

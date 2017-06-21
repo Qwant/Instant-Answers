@@ -1,122 +1,133 @@
-input {
-    display: none;
-    visibility: hidden;
+.ia__anagram__input {
+    display    : none;
+    visibility : hidden;
 }
-label {
-    display: block;
-    padding: 0.5em;
-    text-align: center;
-    color: #666;
+
+.ia__anagram__label {
+    display    : block;
+    padding    : 0.5em;
+    text-align : center;
+    color      : #666;
 }
-label:hover {
-    color: #000;
+
+.ia__anagram__label::before {
+    content : url("http://icons.veryicon.com/ico/System/iOS%207/Arrows%20Up%204.ico");
 }
-label::before {
-    content: ">"
-}
+
 #expand {
-    height: 500px;
-    display: flex;
-    flex-direction: row;
-    transition: height 0.5s;
+    min-height     : 220px;
+    max-height     : 10000px;
+    display        : flex;
+    flex-direction : row;
+    transition     : max-height 1s ease-in-out;
 }
+
 #toggle:checked ~ #expand {
-    height: 220px;
+    min-height : 220px;
+    max-height : 220px;
 }
-#toggle:checked ~ label::before {
-    content: "<";
+
+#toggle:checked ~ .ia__anagram__label::before {
+    content : url("https://d30y9cdsu7xlg0.cloudfront.net/png/242277-200.png");
 }
 
 .ia__content__image__info {
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    height: 220px;
-    width: 300px;
+    display   : flex;
+    position  : relative;
+    overflow  : hidden;
+    height    : 220px;
+    min-width : 300px;
+    max-width : 300px;
 }
 
 .ia__title__image {
-    font-family: Helvetica;
-    position:absolute;
-    text-align:center;
-    bottom: 50px;
-    width: 100%;
-    color: white;
-    font-size: 1.2em;
-    z-index: 2;
+    font-family : Helvetica;
+    position    :absolute;
+    text-align  :center;
+    bottom      : 50px;
+    width       : 100%;
+    color       : white;
+    font-size   : 1.2em;
+    z-index     : 2;
 }
 
 .ia__subtitle__image {
-    font-family: Helvetica;
-    position:absolute;
-    text-align:center;
-    bottom: 25px;
-    width: 100%;
-    color: #afafaf;
-    font-size: 1.2em;
-    z-index: 2;
+    font-family : Helvetica;
+    position    :absolute;
+    text-align  :center;
+    bottom      : 25px;
+    width       : 100%;
+    color       : #afafaf;
+    font-size   : 1.2em;
+    z-index     : 2;
 }
 
 .ia__gradient__image {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(0deg, black, rgba(255,0,0,0));
+    position   : absolute;
+    bottom     : 0;
+    left       : 0;
+    z-index    : 1;
+    height     : 50%;
+    width      : 100%;
+    background : linear-gradient(0deg, black, rgba(255,0,0,0));
 }
 
 .ia__content__result__info {
-    width: 100%;
-    overflow: hidden;
+    width    : 100%;
+    overflow : hidden;
+}
+
+.ia__brief__content {
+    background : #F8F9FA;
+    width      : 100%;
 }
 
 .ia__brief__result {
-    margin-left: 25px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    color: #1c2428;
-    font-family: Helvetica;
+    font-size      : 130%;
+    margin-left    : 25px;
+    padding-top    : 15px;
+    padding-bottom : 15px;
+    color          : #1c2428;
+    font-family    : Helvetica;
 }
 
 .ia__anagram__result {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    min-height: 50px;
+    display        : flex;
+    flex-direction : row;
+    width          : 100%;
+    min-height     : 50px;
 }
 
 .ia__nbletter__result {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-left: 25px;
-    font-family: Helvetica;
-    color :  #afafaf;
-    font-size: 1.2em;
-    min-width: 170px;
+    padding-top    : 15px;
+    padding-bottom : 15px;
+    margin-left    : 25px;
+    font-family    : Helvetica;
+    color          :  #afafaf;
+    font-size      : 1.2em;
+    min-width      : 170px;
 }
 
 .ia__anagram__content__text {
-    font-family: Helvetica;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
+    font-family : Helvetica;
+    display     : flex;
+    flex-wrap   : wrap;
+    width       : 100%;
 }
 
 .ia__image {
-    width: 300px;
+    width : 300px;
 }
 
 .ia__anagram__text {
-    padding-top: 18px;
-    padding-bottom: 15px;
-    margin-left: 30px;
-    width: 180px;
-    color: #1c2428;
+    padding-top    : 18px;
+    padding-bottom : 15px;
+    margin-left    : 30px;
+    width          : 180px;
+    color          : #1c2428;
 }
 
 .space {
-    color: #afafaf;
-    text-decoration:none;
+    color           : #afafaf;
+    text-decoration : none;
 }
