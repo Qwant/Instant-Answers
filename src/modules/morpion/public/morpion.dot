@@ -1,0 +1,18 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/morpion.css" type="text/css">
+<script src="javascript/morpion.js"></script>
+<div class="ia__morpion__body">
+	<div class="ia__morpion__game">
+		<div class="ia__morpion__case" id="morpion--case1"></div>
+		<div class="ia__morpion__case" id="morpion--case2"></div>
+		<div class="ia__morpion__case" id="morpion--case3"></div>
+		<div class="ia__morpion__case" id="morpion--case4"></div>
+		<div class="ia__morpion__case" id="morpion--case5"></div>
+		<div class="ia__morpion__case" id="morpion--case6"></div>
+		<div class="ia__morpion__case" id="morpion--case7"></div>
+		<div class="ia__morpion__case" id="morpion--case8"></div>
+		<div class="ia__morpion__case" id="morpion--case9"></div>
+	</div>
+</div>
