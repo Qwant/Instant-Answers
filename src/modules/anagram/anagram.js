@@ -1,5 +1,7 @@
 var Promise = require("bluebird");
 var _ = require('@qwant/front-i18n')._;
+var util = require("util");
+var request = require("request");
 
 module.exports = {
 
@@ -261,13 +263,68 @@ module.exports = {
                 cat.push(result.slice(save, i));
             }
 
-            //Send data
-            resolve({
-                categories: cat,
-                nblet: nbLetter,
-                sentence: capitalizeFirstLetter(values[3]),
-                seek: seek.toUpperCase(),
-                maxletter: maxsize
+            var _URL = "https://api.qwant.com/api/search/ia?safesearch=1&locale=%s&q=%s&t=all&lang=%s";
+            var _QUERY = values[3];
+            var knowledgeApiUrl = util.format(_URL, "en_gb", encodeURIComponent(_QUERY), "en_gb");
+            var requestParams = {
+                url: knowledgeApiUrl,
+                timeout: 3000,
+                headers: {
+                    'User-Agent': 'Qwantify'
+                }
+            };
+            if (proxyURL != '') {
+                requestParams.proxy = proxyURL;
+            }
+
+
+            request(requestParams, function (error, response) {
+                var link = "";
+                if (error) {
+                    logger.error("bad knowledge response", {module: "_MODULE"});
+                    reject(error);
+                    return;
+                }
+
+                var knowledgeResponse = {};
+
+                try {
+                    var parsedBody = JSON.parse(response.body);
+                } catch (e) {
+                    e.msg = response.body;
+                    throw e;
+                }
+
+                if (parsedBody['data']['result']['items'] !== undefined &&
+                    parsedBody['data']['result']['items'].length !== 0) {
+                    if (parsedBody['data']['result']['items'][0]['data'][0]['images'] !== undefined &&
+                        parsedBody['data']['result']['items'][0]['data'][0]['images'].length !== 0) {
+                        if (typeof(parsedBody['data']['result']['items'][0]['data'][0]['images'][0]['thumbnail']) === "string") {
+                            link = parsedBody['data']['result']['items'][0]['data'][0]['images'][0]['thumbnail'];
+                        }
+                        else {
+                            link = parsedBody['data']['result']['items'][0]['data'][0]['images'][0]['thumbnail']['portrait'];
+                        }
+                    }
+                    else {
+                        if (typeof(parsedBody['data']['result']['items'][0]['data'][0]['thumbnail']) === "string") {
+                            link = parsedBody['data']['result']['items'][0]['data'][0]['thumbnail'];
+                        }
+                        else {
+                            link = parsedBody['data']['result']['items'][0]['data'][0]['thumbnail']['portrait'];
+                        }
+                    }
+                }
+
+                //Send data
+                resolve({
+                    categories: cat,
+                    nblet: nbLetter,
+                    sentence: capitalizeFirstLetter(values[3]),
+                    seek: seek.toUpperCase(),
+                    maxletter: maxsize,
+                    thumbnail: link
+                });
             });
         });
     },
