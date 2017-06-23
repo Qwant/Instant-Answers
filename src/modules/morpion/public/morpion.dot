@@ -16,4 +16,6 @@
 		<div class="ia__morpion__case" id="morpion--case8"></div>
 	</div>
 	<button class="ia__morpion__button" id="morpion--reset">reset</button>
+	<button class="ia__morpion__button" id="morpion--mode">VS IA</button>
+	<div class="ia__morpion__result" id="morpion--result">test</div>
 </div>

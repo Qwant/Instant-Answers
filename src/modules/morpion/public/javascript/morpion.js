@@ -22,6 +22,7 @@ var IARuntime = function() {
     Morpion.prototype.run = function() {
         this.reset();
         this.game();
+        this.changeMode();
     };
 
     /**
@@ -38,7 +39,21 @@ var IARuntime = function() {
                 document.getElementById('morpion--case'.concat(i.toString())).innerHTML = '';
                 ++i;
             }
+            document.getElementById('morpion--result').innerHTML = '';
         }
+    };
+
+    Morpion.prototype.changeMode = function() {
+        function change() {
+            if (document.getElementById('morpion--mode').innerHTML === 'VS IA') {
+                document.getElementById('morpion--mode').innerHTML = '1 VS 1';
+            }
+            else {
+                document.getElementById('morpion--mode').innerHTML = 'VS IA';
+            }
+        }
+
+        document.getElementById('morpion--mode').onclick = function() { change(); };
     };
 
     Morpion.prototype.game = function() {
@@ -150,11 +165,11 @@ var IARuntime = function() {
             return (-1);
         }
 
-        function findCaseToCounter() {
+        function findCaseToCounter(turn) {
             var i = 1;
             while (i < 9) {
                 if (document.getElementById('morpion--case'.concat(i.toString())).innerHTML === '' &&
-                    document.getElementById('morpion--case'.concat((i - 1).toString())).innerHTML === 'o') {
+                    document.getElementById('morpion--case'.concat((i - 1).toString())).innerHTML === turn) {
                     return (i);
                 }
                 ++i;
@@ -162,11 +177,11 @@ var IARuntime = function() {
             return (-1);
         }
 
-        function centerStrat() {
+        function centerStrat(turn) {
             if (document.getElementById("morpion--case4").innerHTML === '') {
                 return (4);
             }
-            else if (document.getElementById("morpion--case4").innerHTML === 'o') {
+            else if (document.getElementById("morpion--case4").innerHTML === turn) {
                 if (document.getElementById("morpion--case0").innerHTML === '') {
                     return (0);
                 }
@@ -183,33 +198,91 @@ var IARuntime = function() {
             return (-1);
         }
 
+        function draw() {
+            var i = 0;
+            while (i < 9) {
+                if (document.getElementById('morpion--case'.concat(i.toString())).innerHTML === '') {
+                    return (false);
+                }
+                ++i;
+            }
+            return (true);
+        }
+
+        function boardIsEmpty() {
+            var i = 0;
+            while (i < 9) {
+                if (document.getElementById('morpion--case'.concat(i.toString())).innerHTML !== '') {
+                    return (false);
+                }
+                ++i;
+            }
+            return (true);
+        }
+
         function ia(str) {
             var save = 0;
+            if (typeof ia.turn === 'undefined' || boardIsEmpty() === true) {
+                ia.turn = 'o';
+                ia.antiturn = 'x';
+            }
             if (document.getElementById(str).innerHTML === '') {
-                document.getElementById(str).innerHTML = 'o';
-                if ((save = checkLoseWin('x', 2)) !== -1) {
-                    document.getElementById("morpion--case".concat(save.toString())).innerHTML = 'x';
+                document.getElementById(str).innerHTML = ia.turn;
+                if (checkLoseWin('x', 3) === 1) {
+                    document.getElementById('morpion--result').innerHTML = "Winner : X";
+                    return;
                 }
-                else if ((save = checkLoseWin('o', 2)) !== -1) {
-                    document.getElementById("morpion--case".concat(save.toString())).innerHTML = 'x';
+                else if (checkLoseWin('o', 3) === 1) {
+                    document.getElementById('morpion--result').innerHTML = "Winner : O";
+                    return;
                 }
-                else if ((save = centerStrat()) !== -1) {
-                    document.getElementById("morpion--case".concat(save.toString())).innerHTML = 'x';
+                else if (draw() === true) {
+                    document.getElementById('morpion--result').innerHTML = "DRAW";
+                    return;
                 }
-                else if ((save = findCaseToCounter()) !== -1) {
-                    document.getElementById("morpion--case".concat(save.toString())).innerHTML = 'x';
-                }
-                else {
-                    var i = 0;
-                    while (i < 9) {
-                        if (document.getElementById('morpion--case'.concat(i.toString())).innerHTML === '') {
-                            document.getElementById('morpion--case'.concat(i.toString())).innerHTML = 'x';
-                            break;
+                if (document.getElementById('morpion--mode').innerHTML === 'VS IA') {
+                    if ((save = checkLoseWin(ia.antiturn, 2)) !== -1) {
+                        document.getElementById("morpion--case".concat(save.toString())).innerHTML = ia.antiturn;
+                    }
+                    else if ((save = checkLoseWin(ia.turn, 2)) !== -1) {
+                        document.getElementById("morpion--case".concat(save.toString())).innerHTML = ia.antiturn;
+                    }
+                    else if ((save = centerStrat(ia.turn)) !== -1) {
+                        document.getElementById("morpion--case".concat(save.toString())).innerHTML = ia.antiturn;
+                    }
+                    else if ((save = findCaseToCounter(ia.turn)) !== -1) {
+                        document.getElementById("morpion--case".concat(save.toString())).innerHTML = ia.antiturn;
+                    }
+                    else {
+                        var i = 0;
+                        while (i < 9) {
+                            if (document.getElementById('morpion--case'.concat(i.toString())).innerHTML === '') {
+                                document.getElementById('morpion--case'.concat(i.toString())).innerHTML = ia.antiturn;
+                                break;
+                            }
+                            ++i;
                         }
-                        ++i;
                     }
                 }
-
+                else {
+                    if (ia.turn === 'o') {
+                        ia.turn = 'x';
+                        ia.antiturn = 'o';
+                    }
+                    else {
+                        ia.turn = 'o';
+                        ia.antiturn = 'x';
+                    }
+                }
+                if (checkLoseWin('x', 3) === 1) {
+                    document.getElementById('morpion--result').innerHTML = "Winner : X";
+                }
+                else if (checkLoseWin('o', 3) === 1) {
+                    document.getElementById('morpion--result').innerHTML = "Winner : O";
+                }
+                else if (draw() === true) {
+                    document.getElementById('morpion--result').innerHTML = "DRAW";
+                }
             }
         }
 
