@@ -1,6 +1,8 @@
 .ia__morpion__body {
-    width  : 100%;
-    height : 220px;
+    width          : 100%;
+    height         : 220px;
+    display        : flex;
+    flex-direction : row;
 }
 
 .ia__morpion__game {
@@ -20,4 +22,16 @@
     font-size      : 40px;
     flex           : 1 0;
     border         : black 2px solid;
+}
+
+.ia__morpion__button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
 }
