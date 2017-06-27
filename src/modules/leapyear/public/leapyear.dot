@@ -4,7 +4,14 @@
 <link rel="stylesheet" href="css/leapyear.css" type="text/css">
 <div class="ia__leapyear__body">
 	<div class="ia__leapyear__content">
-		{{~
-		{{= it.data }}
+		<div class="ia__leapyear__text">
+			{{~ it.data:year:i }}
+				{{? i == 0 }}
+					{{= year }}
+				{{??}}
+					, {{= year }}
+				{{?}}
+			{{~}}
+		</div>
 	</div>
 </div>
