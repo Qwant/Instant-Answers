@@ -4,13 +4,65 @@
 }
 
 .ia__baseconversion__content {
-    margin-left : 30px;
+    margin-left    : 30px;
+    display        : flex;
+    flex-direction : row;
+}
+
+.ia__baseconversion__column {
+    flex-direction : column;
+    flex           : 1 0;
+    max-width      : 900px;
+}
+
+.ia__baseconversion__column__left {
+    flex-direction : column;
+    max-width      : 400px;
+}
+
+.ia__baseconversion__column__right {
+    flex-direction : column;
+    max-width      : 100px;
+    margin-left    : 20px;
+}
+
+.ia__baseconversion__line {
+    margin-top     : 30px;
+    margin-bottom  : 15px;
+    display        : flex;
+    flex-direction : row;
+}
+
+.ia__baseconversion__base {
+    font-family : Helvetica;
+    font-weight : bold;
+    font-size   : 30px;
     margin-top  : 20px;
 }
 
-.ia__baseconversion__button {
-    background  : green;
-    width       : 50px;
-    height      : 50px;
-    font-family : Helvetica;
+.ia__baseconversion__textfield {
+    padding-left  : 15px;
+    margin-left   : 20px;
+    width         : 300px;
+    font-family   : Helvetica;
+    font-size     : 20px;
 }
+
+.ia__baseconversion__result {
+    padding-left  : 15px;
+    margin-left   : 20px;
+    background    : grey;
+    min-width     : 300px;
+    min-height    : 30px;
+}
+
+.ia__baseconversion__button {
+    text-align    : center;
+    margin-top    : 15px;
+    background    : green;
+    width         : 50px;
+    height        : 50px;
+    font-family   : Helvetica;
+    cursor        : pointer;
+}
+
