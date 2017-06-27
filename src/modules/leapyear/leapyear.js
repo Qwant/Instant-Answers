@@ -29,18 +29,67 @@ module.exports = {
 
     getData: function (values, proxyURL, language) {
         return new Promise(function (resolve, reject) {
-            var year = parseInt(values[2]);
-            var test = false;
-            if (year % 4 === 0) {
-                test = true;
+
+            function onlyUnique(value, index, self) {
+                return self.indexOf(value) === index;
             }
-            if (year % 100 === 0) {
-                test = false;
+
+            function onlyLeapyear(value, index, self) {
+                var test = false;
+                if (value % 4 === 0) {
+                    test = true;
+                }
+                if (value % 100 === 0) {
+                    test = false;
+                }
+                if (value % 400 === 0) {
+                    test = true;
+                }
+                return (test);
             }
-            if (year % 400 === 0) {
-                test = true;
+
+            var start = [];
+            var end = [];
+            var tab = values[0].split(" ");
+            var years = [];
+            var year;
+            for (var i = 0; i < tab.length; ++i) {
+                if (tab[i].indexOf("-") !== -1) {
+                    var tmpTab = tab[i].split("-");
+                    if (tmpTab.length > 1) {
+                        if (parseInt(tmpTab[0]) <= parseInt(tmpTab[1])) {
+                            start.push(parseInt(tmpTab[0]));
+                            end.push(parseInt(tmpTab[1]));
+                        }
+                        else {
+                            start.push(parseInt(tmpTab[1]));
+                            end.push(parseInt(tmpTab[0]));
+                        }
+                    }
+                }
+                year = parseInt(tab[i]);
+                if (year) {
+                    years.push(year);
+                }
             }
-            resolve(test);
+            if (years.length === 0) {
+                for (i = 1750; i < 2250; ++i) {
+                    years.push(i);
+                }
+            }
+            else {
+                if (start.length > 0) {
+                    for (var j = 0; j < start.length; ++j) {
+                        for (i = start[j]; i <= end[j]; ++i) {
+                            years.push(i);
+                        }
+                    }
+                }
+                years = years.filter(onlyUnique);
+            }
+            years = years.filter(onlyLeapyear);
+
+            resolve(years);
         });
     },
 
@@ -95,7 +144,7 @@ module.exports = {
      *          strict : perfect match with keyword
      */
 
-    trigger: "start",
+    trigger: "any",
 
     /**
      * (NEEDED)

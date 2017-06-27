@@ -1,3 +1,8 @@
-/**
-* This is your main CSS file. Please refer to the documentation for more information.
-*/
+.ia__leapyear__body {
+    width  : 100%;
+    height : 220px;
+}
+
+.ia__leapyear__content {
+    margin-left: 30px;
+}
