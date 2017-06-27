@@ -4,21 +4,26 @@
 
 var IARuntime = function() {
     function Base_conversion (iaData) {
-        // constructor
+
     }
 
     /**
      * runs at runtime
      */
     Base_conversion.prototype.run = function() {
-        // function that's gonna run at runtime
+        this.convert();
     };
 
     /**
      * runs upon exit
      */
     Base_conversion.prototype.stop = function() {
-        // function that's gonna run upon exit
+
+    };
+
+    Base_conversion.prototype.convert = function() {
+        alert(document.getElementById("test").innerHTML);
+        alert(document.getElementById("test").value);
     };
 
     return Base_conversion;

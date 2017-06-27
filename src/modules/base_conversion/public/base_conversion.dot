@@ -1,2 +1,8 @@
 <link rel="stylesheet" href="css/base_conversion.css" type="text/css">
 <script src="javascript/base_conversion.js"></script>
+<div class="ia__baseconversion__body">
+	<div class="ia__baseconversion__content">
+		<input value="" placeholder="From" type="text" id="test">
+		<div class="ia__baseconversion__button" id="button">click moi</div>
+	</div>
+</div>
