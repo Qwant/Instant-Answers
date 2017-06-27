@@ -13,7 +13,7 @@
 			</div>
 			<div class="ia__baseconversion__line">
         		<input class="ia__baseconversion__textfield" value="" placeholder="number" type="text" id="number">
-        		<div class="ia__baseconversion__result" id="result"></div>
+        		<input class="ia__baseconversion__result" value="" placeholder="result" id="result">
         	</div>
         </div>
         <div class="ia__baseconversion__column__right">
