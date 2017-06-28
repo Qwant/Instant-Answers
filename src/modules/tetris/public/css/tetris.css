@@ -1,0 +1,12 @@
+.ia__tetris__body {
+    height      : 220px;
+    width       : 100%;
+    margin-left : 30px;
+}
+
+.ia__tetris__main__canvas {
+    background : #eee;
+    display    : block;
+    height     : 220px;
+    width      : 480px;
+}
