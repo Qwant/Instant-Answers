@@ -190,18 +190,11 @@ var IARuntime = function() {
                     if (isAnyCollide()) {
                         x = saveX - 20;
                     }
-                    if (isAnyCollide()) {
-                        x = saveX;
-                        y = saveY - dy;
-                    }
-                    if (isAnyCollide()) {
-                        y = saveY - 2 * dy;
-                    }
-                    if (isAnyCollide()) {
-                        y = saveY - 3 * dy;
-                    }
-                    if (isAnyCollide()) {
-                        y = saveY - 4 * dy;
+                    x = saveX;
+                    for (i = 1; i < 5; ++i) {
+                        if (isAnyCollide()) {
+                            y = saveY - i * dy;
+                        }
                     }
                     if (isAnyCollide()) {
                         y = saveY;
