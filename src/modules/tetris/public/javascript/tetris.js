@@ -33,6 +33,7 @@ var IARuntime = function() {
         var hold = "";
         var next = createBlock();
         var score = 0;
+        var start = false;
 
         document.addEventListener("keydown", keyDownHandler, false);
 
@@ -135,20 +136,8 @@ var IARuntime = function() {
 
 
         function keyDownHandler(e) {
-            if (e.keyCode === 82) {
-                blocks = [];
-                x = 40;
-                y = 0;
-                dy = 10;
-                canHold = true;
-                block = createBlock();
-                hold = "";
-                next = createBlock();
-                score = 0;
-                clearInterval(id1);
-                clearInterval(id2);
-                id1 = setInterval(draw, 10);
-                id2 = setInterval(move, 300);
+            if (!start) {
+                return;
             }
             if(e.keyCode === 39) {
                 e.preventDefault();
@@ -372,13 +361,12 @@ var IARuntime = function() {
             ctx.fillText("Score:", 90, canvas.height / 2);
             ctx.fillText(score.toString(), (canvas.width / 2 - 25) - (score.toString().length / 2) * 10, canvas.height / 2 + 50);
             ctx.closePath();
-            ctx.beginPath();
-            ctx.font = "15px Arial";
-            ctx.fillText("press R for Retry", 10, canvas.height / 2 + 60);
-            ctx.closePath();
         }
 
         function move() {
+            if (!start) {
+                return;
+            }
             var maxY = 0;
             for (var i = 0; i < 4; ++i) {
                 if (maxY < block.y[i]) {
@@ -389,6 +377,8 @@ var IARuntime = function() {
                 clearInterval(id1);
                 clearInterval(id2);
                 drawGameOver();
+                start = false;
+                document.getElementById("start").innerHTML = "Restart";
             }
             else if (y + dy + maxY * 10 >= canvas.height || isCollide()) {
                 for (i = 0; i < 4; ++i) {
@@ -455,7 +445,24 @@ var IARuntime = function() {
             drawScore();
         }
 
-        document.getElementById("start").onclick =
+        function startGame() {
+            blocks = [];
+            x = 40;
+            y = 0;
+            dy = 10;
+            canHold = true;
+            block = createBlock();
+            hold = "";
+            next = createBlock();
+            score = 0;
+            clearInterval(id1);
+            clearInterval(id2);
+            id1 = setInterval(draw, 10);
+            id2 = setInterval(move, 300);
+            start = true;
+        }
+
+        document.getElementById("start").onclick = function () { startGame(); };
         var id1 = setInterval(draw, 10);
         var id2 = setInterval(move, 300);
     };
