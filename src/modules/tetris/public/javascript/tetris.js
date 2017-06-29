@@ -25,16 +25,16 @@ var IARuntime = function() {
         var canvas = document.getElementById("myCanvas");
         var blocks = [];
         var ctx = canvas.getContext("2d");
-        var x = 230;
+        var x = 40;
         var y = 0;
-        var dy = +10;
-        var rightPressed = false;
-        var leftPressed = false;
-        var upPressed = false;
+        var dy = 10;
+        var canHold = true;
         var block = createBlock();
+        var hold = "";
+        var next = createBlock();
+        var score = 0;
 
         document.addEventListener("keydown", keyDownHandler, false);
-        document.addEventListener("keyup", keyUpHandler, false);
 
         function createBlock() {
             var number = Math.trunc(Math.random() * 1000) % 7;
@@ -44,7 +44,8 @@ var IARuntime = function() {
                 case 0:
                 {
                     block = {
-                        id: 0,
+                        id : 0,
+                        color : "#007ba7",
                         x : [0, 0, 0, -1],
                         y : [0, -1, 1, 1]
                     };
@@ -53,7 +54,8 @@ var IARuntime = function() {
                 case 1:
                 {
                     block = {
-                        id: 1,
+                        id : 1,
+                        color : "#ff8847",
                         x : [0, 0, 0, 1],
                         y : [0, -1, 1, 1]
                     };
@@ -62,7 +64,8 @@ var IARuntime = function() {
                 case 2:
                 {
                     block = {
-                        id: 2,
+                        id : 2,
+                        color : "#ecc831",
                         x : [0, 0, -1, -1],
                         y : [0, -1, -1, 0]
                     };
@@ -71,7 +74,8 @@ var IARuntime = function() {
                 case 3:
                 {
                     block = {
-                        id: 3,
+                        id : 3,
+                        color : "#bbc6ce",
                         x : [0, -1, 1, 0],
                         y : [0, 0, 0, -1]
                     };
@@ -80,7 +84,8 @@ var IARuntime = function() {
                 case 4:
                 {
                     block = {
-                        id: 4,
+                        id : 4,
+                        color : "#e33232",
                         x : [0, 0, 0, 0],
                         y : [0, -1, 1, 2]
                     };
@@ -89,7 +94,8 @@ var IARuntime = function() {
                 case 5:
                 {
                     block = {
-                        id: 5,
+                        id : 5,
+                        color : "#1c945a",
                         x : [0, -1, -1, 0],
                         y : [0, 0, 1, -1]
                     };
@@ -98,7 +104,8 @@ var IARuntime = function() {
                 default:
                 {
                     block = {
-                        id: 6,
+                        id : 6,
+                        color : "#660066",
                         x : [0, 0, 1, 1],
                         y : [0, -1, 0, 1]
                     };
@@ -108,7 +115,12 @@ var IARuntime = function() {
         }
 
         function isCollideRow(tmpX) {
-            for (var i = 0; i < blocks.length; ++i) {
+            for (var i = 0; i < 4; ++i) {
+                if (block.x[i] * 10 + tmpX < 0 || block.x[i] * 10 + tmpX >= 100) {
+                    return (true);
+                }
+            }
+            for (i = 0; i < blocks.length; ++i) {
                 for (var j = 0; j < 4; ++j) {
                     for (var k = 0; k < 4; ++k) {
                         if (blocks[i].x[j] === block.x[k] * 10 + tmpX &&
@@ -121,23 +133,47 @@ var IARuntime = function() {
             return (false);
         }
 
+
         function keyDownHandler(e) {
-            if(e.keyCode == 39) {
-                rightPressed = true;
+            if (e.keyCode === 82) {
+                blocks = [];
+                x = 40;
+                y = 0;
+                dy = 10;
+                canHold = true;
+                block = createBlock();
+                hold = "";
+                next = createBlock();
+                score = 0;
+                clearInterval(id1);
+                clearInterval(id2);
+                id1 = setInterval(draw, 10);
+                id2 = setInterval(move, 300);
+            }
+            if(e.keyCode === 39) {
+                e.preventDefault();
                 if (!isCollideRow(x + 10)) {
                     x += 10;
                 }
             }
-            if(e.keyCode == 37) {
-                leftPressed = true;
+            if(e.keyCode === 37) {
+                e.preventDefault();
                 if (!isCollideRow(x - 10)) {
                     x -= 10;
                 }
             }
-            if(e.keyCode == 38 && block.id !== 2) {
+            if(e.keyCode === 38 && block.id !== 2) {
+                e.preventDefault();
+                var saveBlock = {
+                    id : block.id,
+                    color : block.color,
+                    x : block.x.slice(),
+                    y : block.y.slice()
+                };
                 if (block.id === 4 && block.x[1] === 1) {
                     block = {
-                        id: 4,
+                        id : 4,
+                        color : "#e33232",
                         x : [0, 0, 0, 0],
                         y : [0, -1, 1, 2]
                     };
@@ -151,25 +187,81 @@ var IARuntime = function() {
                         block.x[i] = saveY * -1;
                         block.y[i] = saveX * 1;
                     }
-                    upPressed = true;
+                }
+                if (isAnyCollide()) {
+                    saveX = x;
+                    saveY = y;
+                    x = saveX + 10;
+                    if (isAnyCollide()) {
+                        x = saveX + 20;
+                    }
+                    if (isAnyCollide()) {
+                        x = saveX - 10;
+                    }
+                    if (isAnyCollide()) {
+                        x = saveX - 20;
+                    }
+                    if (isAnyCollide()) {
+                        x = saveX;
+                        y = saveY - dy;
+                    }
+                    if (isAnyCollide()) {
+                        y = saveY - 2 * dy;
+                    }
+                    if (isAnyCollide()) {
+                        y = saveY - 3 * dy;
+                    }
+                    if (isAnyCollide()) {
+                        y = saveY - 4 * dy;
+                    }
+                    if (isAnyCollide()) {
+                        y = saveY;
+                        block = saveBlock;
+                    }
                 }
             }
-        }
+            if (e.keyCode === 67 && canHold) {
+                e.preventDefault();
+                if (hold.length === 0) {
+                    hold = block;
+                    block = createBlock();
+                }
+                else {
+                    var save = block;
+                    block = hold;
+                    hold = save;
+                }
+                x = 40;
+                y = 0;
+                canHold = false;
+            }
+            if (e.keyCode === 32) {
+                e.preventDefault();
+                var maxY = 0;
+                for (i = 0; i < 4; ++i) {
+                    if (maxY < block.y[i]) {
+                        maxY = block.y[i];
+                    }
+                }
+                while (!(y + dy + maxY * 10 >= canvas.height || isCollide())) {
+                    y += dy;
+                }
 
-        function keyUpHandler(e) {
-            if(e.keyCode == 39) {
-                rightPressed = false;
-            }
-            if(e.keyCode == 37) {
-                leftPressed = false;
-            }
-            if(e.keyCode == 38) {
-                upPressed = false;
+                for (i = 0; i < 4; ++i) {
+                    block.x[i] = block.x[i] * 10 + x;
+                    block.y[i] = block.y[i] * 10 + y;
+                }
+                canHold = true;
+                blocks.push(block);
+                block = next;
+                next = createBlock();
+                deleteLine();
+                y = 0;
+                x = 40;
             }
         }
 
         function isCollide() {
-
             for (var i = 0; i < blocks.length; ++i) {
                 for (var j = 0; j < 4; ++j) {
                     for (var k = 0; k < 4; ++k) {
@@ -183,20 +275,106 @@ var IARuntime = function() {
             return (false);
         }
 
-        function drawBall() {
+        function isAnyCollide() {
+            for (var k = 0; k < 4; ++k) {
+                if (block.x[k] * 10 + x < 0 || block.x[k] * 10 + x >= 100 || block.y[k] * 10 + y + dy >= canvas.height) {
+                    return (true);
+                }
+            }
+            for (var i = 0; i < blocks.length; ++i) {
+                for (var j = 0; j < 4; ++j) {
+                    for (k = 0; k < 4; ++k) {
+                        if (block.x[k] * 10 + x === blocks[i].x[j] &&
+                            block.y[k] * 10 + y + 10 === blocks[i].y[j]) {
+                            return (true);
+                        }
+                    }
+                }
+            }
+            return (false);
+        }
+
+        function drawBlocks() {
             ctx.beginPath();
             for (var i = 0; i < 4; ++i) {
                 ctx.rect(block.x[i] * 10 + x, block.y[i] * 10 + y, 10, 10);
-                ctx.fillStyle = "#0095DD";
+                ctx.fillStyle = block.color;
                 ctx.fill();
             }
+            ctx.closePath();
             for (i = 0; i < blocks.length; ++i) {
+                ctx.beginPath();
                 for (var j = 0; j < 4; ++j) {
-                    ctx.rect(blocks[i].x[j], blocks[i].y[j], 10, 10);
-                    ctx.fillStyle = "#0095DD";
+                    if (blocks[i].y[j] !== -1) {
+                        ctx.rect(blocks[i].x[j], blocks[i].y[j], 10, 10);
+                        ctx.fillStyle = blocks[i].color;
+                        ctx.fill();
+                    }
+                }
+                ctx.closePath();
+            }
+
+        }
+
+        function drawHold() {
+            ctx.beginPath();
+            ctx.fillStyle = "#000000";
+            ctx.font = "15px Arial";
+            ctx.fillText("Hold:(C)", 120, 20);
+            ctx.closePath();
+            if (hold.length !== 0) {
+                ctx.beginPath();
+                for (var i = 0; i < 4; ++i) {
+                    ctx.rect(hold.x[i] * 10 + 135, hold.y[i] * 10 + 40, 10, 10);
+                    ctx.fillStyle = hold.color;
                     ctx.fill();
                 }
+                ctx.closePath();
             }
+            ctx.beginPath();
+            for (i = 0; i < canvas.height; i += 5) {
+                ctx.rect(100, i, 5, 5);
+                ctx.fillStyle = "#000000";
+                ctx.fill();
+            }
+            ctx.closePath();
+        }
+
+        function drawNext() {
+            ctx.beginPath();
+            ctx.fillStyle = "#000000";
+            ctx.font = "15px Arial";
+            ctx.fillText("Next:", 120, 90);
+            ctx.closePath();
+            ctx.beginPath();
+            for (var i = 0; i < 4; ++i) {
+                ctx.rect(next.x[i] * 10 + 135, next.y[i] * 10 + 110, 10, 10);
+                ctx.fillStyle = next.color;
+                ctx.fill();
+            }
+            ctx.closePath();
+        }
+
+        function drawScore() {
+            ctx.beginPath();
+            ctx.fillStyle = "#000000";
+            ctx.font = "15px Arial";
+            ctx.fillText("Score:".concat(score.toString()), 190, 65);
+            ctx.closePath();
+        }
+
+        function drawGameOver() {
+            ctx.beginPath();
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#000000";
+            ctx.font = "35px Arial";
+            ctx.fillText("Game Over", 50, canvas.height / 2 - 30);
+            ctx.fillText("Score:", 90, canvas.height / 2);
+            ctx.fillText(score.toString(), (canvas.width / 2 - 25) - (score.toString().length / 2) * 10, canvas.height / 2 + 50);
+            ctx.closePath();
+            ctx.beginPath();
+            ctx.font = "15px Arial";
+            ctx.fillText("press R for Retry", 10, canvas.height / 2 + 60);
             ctx.closePath();
         }
 
@@ -208,29 +386,77 @@ var IARuntime = function() {
                 }
             }
             if (y === 0 && isCollide()) {
-                alert("game over");
+                clearInterval(id1);
+                clearInterval(id2);
+                drawGameOver();
             }
             else if (y + dy + maxY * 10 >= canvas.height || isCollide()) {
                 for (i = 0; i < 4; ++i) {
                     block.x[i] = block.x[i] * 10 + x;
                     block.y[i] = block.y[i] * 10 + y;
                 }
+                canHold = true;
                 blocks.push(block);
-                block = createBlock();
+                block = next;
+                next = createBlock();
+                deleteLine();
                 y = 0;
-                x = 230;
+                x = 40;
             }
             else {
                 y += dy;
             }
         }
 
+        function deleteLine() {
+            var addScore = 0;
+            for (var t = 10; t <= canvas.height; t += 10) {
+                var test = 0;
+                for (var i = 0; i < 10; ++i) {
+                    for (var j = 0; j < blocks.length; ++j) {
+                        for (var k = 0; k < 4; ++k) {
+                            if (blocks[j].y[k] + dy === t &&
+                                blocks[j].x[k] === i * 10) {
+                                ++test;
+                            }
+                        }
+                    }
+                }
+                if (test === 10) {
+                    addScore *= 1.3;
+                    addScore += 10;
+                    for (i = 0; i < 10; ++i) {
+                        for (j = 0; j < blocks.length; ++j) {
+                            for (k = 0; k < 4; ++k) {
+                                if (blocks[j].y[k] + dy === t &&
+                                    blocks[j].x[k] === i * 10) {
+                                    blocks[j].y[k] = -1;
+                                }
+                            }
+                        }
+                    }
+                    for (j = 0; j < blocks.length; ++j) {
+                        for (k = 0; k < 4; ++k) {
+                            if (blocks[j].y[k] !== -1 && blocks[j].y[k] + dy < t) {
+                                blocks[j].y[k] += 10;
+                            }
+                        }
+                    }
+                }
+            }
+            score += Math.trunc(addScore);
+        }
+
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawBall();
+            drawBlocks();
+            drawHold();
+            drawNext();
+            drawScore();
         }
-        setInterval(draw, 10);
-        setInterval(move, 300);
+
+        var id1 = setInterval(draw, 10);
+        var id2 = setInterval(move, 300);
     };
     return Tetris;
 }();
