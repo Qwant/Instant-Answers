@@ -1,7 +1,9 @@
 .ia__tetris__body {
-    height      : 220px;
-    width       : 100%;
-    margin-left : 30px;
+    height         : 220px;
+    width          : 100%;
+    margin-left    : 30px;
+    display        : flex;
+    flex-direction : row;
 }
 
 .ia__tetris__main__canvas {
@@ -9,4 +11,13 @@
     display    : block;
     height     : 220px;
     width      : 480px;
+}
+
+.ia__tetris__button {
+    max-height  : 80px;
+    font-family : Helvetica;
+    font-weight : bold;
+    font-size   : 20px;
+    margin-left: 10px;
+    padding: 10px 10px 10px 10px;
 }

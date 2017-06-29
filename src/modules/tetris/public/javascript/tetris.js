@@ -455,6 +455,7 @@ var IARuntime = function() {
             drawScore();
         }
 
+        document.getElementById("start").onclick =
         var id1 = setInterval(draw, 10);
         var id2 = setInterval(move, 300);
     };
