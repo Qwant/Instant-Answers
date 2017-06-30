@@ -1,12 +1,19 @@
 .ia__colorgame__body {
-    height : 220px;
-    width  : 100%;
+    height         : 220px;
+    width          : 100%;
+    display        : flex;
+    flex-direction : row;
 }
 
 .ia__colorgame__canvas {
     background  : #eee;
-    display     : block;
     height      : 220px;
     width       : 480px;
     margin-left : 30px;
+}
+
+.ia__colorgame__chrono {
+    background  : #eee;
+    max-width   : 100px;
+    padding     : 45% 10px 0 10px;
 }
