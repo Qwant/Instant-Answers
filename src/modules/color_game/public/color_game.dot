@@ -1,0 +1,5 @@
+<link rel="stylesheet" href="css/color_game.css" type="text/css">
+<script src="javascript/color_game.js"></script>
+<div class="ia__colorgame__body">
+<canvas id="colorgame">
+</div>
