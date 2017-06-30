@@ -91,8 +91,6 @@ var IARuntime = function() {
             ctx.fillText("Score: ".concat((level - 1).toString()), canvas.width / 2 - 40, canvas.height / 2);
             ctx.fillText("Click To Continue!", canvas.width / 2 - 70, canvas.height / 2 + 30);
             ctx.closePath();
-            alert(rgb(color.r, color.g, color.b));
-            alert(luminosity(color));
         }
 
         function luminosity(col) {
