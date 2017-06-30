@@ -1,0 +1,27 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/ascii.css" type="text/css">
+<script src="javascript/ascii.js"></script>
+<div class="ia__ascii__body">
+	<div class="ia__ascii__content">
+	<div class="ia__ascii__line">
+		<div class="ia__ascii__cat">Octal</div>
+		<div class="ia__ascii__cat">Décimal</div>
+		<div class="ia__ascii__cat">Héxadécimal</div>
+		<div class="ia__ascii__cat">Char</div>
+	</div>
+	{{~ it.data:line:i }}
+		{{? i % 2 == 0 }}
+		<div class="ia__ascii__line" style="background: #e2e2e2">
+		{{??}}
+		<div class="ia__ascii__line">
+		{{?}}
+			<div class="ia__ascii__cat">{{= line.octal }}</div>
+        	<div class="ia__ascii__cat">{{= line.dec }}</div>
+        	<div class="ia__ascii__cat">{{= line.hex }}</div>
+        	<div class="ia__ascii__cat">{{= line.char }}</div>
+		</div>
+	{{~}}
+	</div>
+</div>
