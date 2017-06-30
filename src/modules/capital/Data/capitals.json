@@ -5,12 +5,8 @@
 			"capital": "Hargeisa"
 		},
 		{
-			"name": "South Georgia and South Sandwich Islands",
-			"capital": "King Edward Point"
-		},
-		{
 			"name": "French Southern and Antarctic Lands",
-			"capital": "Port-aux-FranÃ§ais"
+			"capital": "Port-aux-Français"
 		},
 		{
 			"name": "Palestine",
@@ -21,20 +17,8 @@
 			"capital": "Mariehamn"
 		},
 		{
-			"name": "Nauru",
-			"capital": "Yaren"
-		},
-		{
-			"name": "Saint Martin",
-			"capital": "Marigot"
-		},
-		{
-			"name": "Tokelau",
-			"capital": "Atafu"
-		},
-		{
 			"name": "Western Sahara",
-			"capital": "El-AaiÃºn"
+			"capital": "Laayoune"
 		},
 		{
 			"name": "Afghanistan",
@@ -61,24 +45,12 @@
 			"capital": "Luanda"
 		},
 		{
-			"name": "Anguilla",
-			"capital": "The Valley"
-		},
-		{
-			"name": "Antigua and Barbuda",
-			"capital": "Saint John's"
-		},
-		{
 			"name": "Argentina",
 			"capital": "Buenos Aires"
 		},
 		{
 			"name": "Armenia",
 			"capital": "Yerevan"
-		},
-		{
-			"name": "Aruba",
-			"capital": "Oranjestad"
 		},
 		{
 			"name": "Australia",
@@ -91,10 +63,6 @@
 		{
 			"name": "Azerbaijan",
 			"capital": "Baku"
-		},
-		{
-			"name": "Bahamas",
-			"capital": "Nassau"
 		},
 		{
 			"name": "Bahrain",
@@ -123,10 +91,6 @@
 		{
 			"name": "Benin",
 			"capital": "Porto-Novo"
-		},
-		{
-			"name": "Bermuda",
-			"capital": "Hamilton"
 		},
 		{
 			"name": "Bhutan",
@@ -181,16 +145,8 @@
 			"capital": "Yaounde"
 		},
 		{
-			"name": "Canada",
-			"capital": "Ottawa"
-		},
-		{
 			"name": "Cape Verde",
 			"capital": "Praia"
-		},
-		{
-			"name": "Cayman Islands",
-			"capital": "George Town"
 		},
 		{
 			"name": "Central African Republic",
@@ -209,20 +165,12 @@
 			"capital": "Beijing"
 		},
 		{
-			"name": "Christmas Island",
-			"capital": "The Settlement"
-		},
-		{
 			"name": "Cocos Islands",
 			"capital": "West Island"
 		},
 		{
 			"name": "Colombia",
 			"capital": "Bogota"
-		},
-		{
-			"name": "Comoros",
-			"capital": "Moroni"
 		},
 		{
 			"name": "Democratic Republic of the Congo",
@@ -235,10 +183,6 @@
 		{
 			"name": "Cook Islands",
 			"capital": "Avarua"
-		},
-		{
-			"name": "Costa Rica",
-			"capital": "San Jose"
 		},
 		{
 			"name": "Cote d'Ivoire",
@@ -263,10 +207,6 @@
 		{
 			"name": "Czech Republic",
 			"capital": "Prague"
-		},
-		{
-			"name": "Denmark",
-			"capital": "Copenhagen"
 		},
 		{
 			"name": "Djibouti",
@@ -307,10 +247,6 @@
 		{
 			"name": "Ethiopia",
 			"capital": "Addis Ababa"
-		},
-		{
-			"name": "Falkland Islands",
-			"capital": "Stanley"
 		},
 		{
 			"name": "Faroe Islands",
@@ -365,10 +301,6 @@
 			"capital": "Nuuk"
 		},
 		{
-			"name": "Grenada",
-			"capital": "Saint George's"
-		},
-		{
 			"name": "Guam",
 			"capital": "Hagatna"
 		},
@@ -387,10 +319,6 @@
 		{
 			"name": "Guinea-Bissau",
 			"capital": "Bissau"
-		},
-		{
-			"name": "Guyana",
-			"capital": "Georgetown"
 		},
 		{
 			"name": "Haiti",
@@ -433,20 +361,12 @@
 			"capital": "Dublin"
 		},
 		{
-			"name": "Isle of Man",
-			"capital": "Douglas"
-		},
-		{
 			"name": "Israel",
 			"capital": "Jerusalem"
 		},
 		{
 			"name": "Italy",
 			"capital": "Rome"
-		},
-		{
-			"name": "Jamaica",
-			"capital": "Kingston"
 		},
 		{
 			"name": "Japan",
@@ -541,14 +461,6 @@
 			"capital": "Lilongwe"
 		},
 		{
-			"name": "Malaysia",
-			"capital": "Kuala Lumpur"
-		},
-		{
-			"name": "Maldives",
-			"capital": "Male"
-		},
-		{
 			"name": "Mali",
 			"capital": "Bamako"
 		},
@@ -641,20 +553,12 @@
 			"capital": "Alofi"
 		},
 		{
-			"name": "Norfolk Island",
-			"capital": "Kingston"
-		},
-		{
 			"name": "Northern Mariana Islands",
 			"capital": "Saipan"
 		},
 		{
 			"name": "Norway",
 			"capital": "Oslo"
-		},
-		{
-			"name": "Oman",
-			"capital": "Muscat"
 		},
 		{
 			"name": "Pakistan",
@@ -685,22 +589,6 @@
 			"capital": "Manila"
 		},
 		{
-			"name": "Pitcairn Islands",
-			"capital": "Adamstown"
-		},
-		{
-			"name": "Poland",
-			"capital": "Warsaw"
-		},
-		{
-			"name": "Portugal",
-			"capital": "Lisbon"
-		},
-		{
-			"name": "Puerto Rico",
-			"capital": "San Juan"
-		},
-		{
 			"name": "Qatar",
 			"capital": "Doha"
 		},
@@ -717,24 +605,12 @@
 			"capital": "Kigali"
 		},
 		{
-			"name": "Saint Barthelemy",
-			"capital": "Gustavia"
-		},
-		{
-			"name": "Saint Helena",
-			"capital": "Jamestown"
-		},
-		{
 			"name": "Saint Kitts and Nevis",
 			"capital": "Basseterre"
 		},
 		{
 			"name": "Saint Lucia",
 			"capital": "Castries"
-		},
-		{
-			"name": "Saint Pierre and Miquelon",
-			"capital": "Saint-Pierre"
 		},
 		{
 			"name": "Saint Vincent and the Grenadines",
@@ -765,24 +641,12 @@
 			"capital": "Belgrade"
 		},
 		{
-			"name": "Seychelles",
-			"capital": "Victoria"
-		},
-		{
 			"name": "Sierra Leone",
 			"capital": "Freetown"
 		},
 		{
 			"name": "Singapore",
 			"capital": "Singapore"
-		},
-		{
-			"name": "Sint Maarten",
-			"capital": "Philipsburg"
-		},
-		{
-			"name": "Slovakia",
-			"capital": "Bratislava"
 		},
 		{
 			"name": "Slovenia",
@@ -861,10 +725,6 @@
 			"capital": "Dili"
 		},
 		{
-			"name": "Togo",
-			"capital": "Lome"
-		},
-		{
 			"name": "Tonga",
 			"capital": "Nuku'alofa"
 		},
@@ -883,10 +743,6 @@
 		{
 			"name": "Turkmenistan",
 			"capital": "Ashgabat"
-		},
-		{
-			"name": "Turks and Caicos Islands",
-			"capital": "Grand Turk"
 		},
 		{
 			"name": "Tuvalu",
@@ -909,10 +765,6 @@
 			"capital": "London"
 		},
 		{
-			"name": "United States",
-			"capital": "Washington"
-		},
-		{
 			"name": "Uruguay",
 			"capital": "Montevideo"
 		},
@@ -933,16 +785,8 @@
 			"capital": "Hanoi"
 		},
 		{
-			"name": "US Virgin Islands",
-			"capital": "Charlotte Amalie"
-		},
-		{
 			"name": "Wallis and Futuna",
 			"capital": "Mata-Utu"
-		},
-		{
-			"name": "Yemen",
-			"capital": "Sanaa"
 		},
 		{
 			"name": "Zambia",
@@ -953,32 +797,16 @@
 			"capital": "Harare"
 		},
 		{
-			"name": "US Minor Outlying Islands",
-			"capital": "Washington"
-		},
-		{
-			"name": "Antarctica",
-			"capital": "N/A"
-		},
-		{
 			"name": "Northern Cyprus",
 			"capital": "North Nicosia"
 		},
 		{
 			"name": "Hong Kong",
-			"capital": "N/A"
-		},
-		{
-			"name": "Heard Island and McDonald Islands",
-			"capital": "N/A"
+			"capital": "Hong Kong"
 		},
 		{
 			"name": "British Indian Ocean Territory",
 			"capital": "Diego Garcia"
-		},
-		{
-			"name": "Macau",
-			"capital": "N/A"
 		}
 	]
 }

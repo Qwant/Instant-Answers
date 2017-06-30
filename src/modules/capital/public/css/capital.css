@@ -131,3 +131,153 @@
     text-align: center;
     font-size: 35px;
 }
+@media (max-width : 1200px){
+    .Cap_Title
+    {
+        font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+        font-weight: bold;
+        font-size: 24px;
+        color: #393b3d;
+        -webkit-box-flex: none;
+        -webkit-flex: none;
+        -moz-box-flex: none;
+        -moz-flex: none;
+        -ms-flex: none;
+        flex: none;
+        position: relative;
+        width: 100%;
+        padding: 20px 60px 20px 25px;
+        float:left;
+        background-color: #F8F9FA;
+        height:200px;
+        text-end-overflow: ellipsis;
+
+    }
+    .ia_Capital
+    {
+        background-color: #22292C;
+        width: 100%;
+        float: left;
+        height: 400px;
+
+    }
+    .Cap_Data_pop
+    {
+        font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+        font-size: 1vw;
+        color: #969696;
+        font-weight: bold;
+        position: absolute;
+        width:18%;
+        height: 400px;
+        top: 150px;
+        left: 70%;
+        text-align: center;
+        padding-top: 60px;
+    }
+    .Cap_Data_sup
+    {
+        font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+        font-size: 1vw;
+        color: #969696;
+        position: absolute;
+        height: 400px;
+        width:18%;
+        font-weight: bold;
+        top: 150px;
+        left: 45%;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+}
+@media (max-width : 1000px){
+    .Cap_Title
+    {
+        font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+        font-weight: bold;
+        font-size: 24px;
+        color: #393b3d;
+        -webkit-box-flex: none;
+        -webkit-flex: none;
+        -moz-box-flex: none;
+        -moz-flex: none;
+        -ms-flex: none;
+        flex: none;
+        position: relative;
+        width: 100%;
+        padding: 20px 60px 20px 25px;
+        float:left;
+        background-color: #F8F9FA;
+        height:200px;
+        text-end-overflow: ellipsis;
+
+    }
+    .ia_Capital
+    {
+        background-color: #22292C;
+        width: 100%;
+        float: left;
+        height: 400px;
+
+    }
+    .Cap_Data_pop
+    {
+        font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+        font-size: 1vw;
+        color: #969696;
+        font-weight: bold;
+        position: absolute;
+        width:18%;
+        height: 400px;
+        top: 250px;
+        left: 75%;
+        text-align: center;
+        padding-top: 60px;
+    }
+    .Cap_Data_sup
+    {
+        font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+        font-size: 1vw;
+        color: #969696;
+        position: absolute;
+        height: 400px;
+        width:18%;
+        font-weight: bold;
+        top: 250px;
+        left: 50%;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+}@media (max-width : 800px){
+    .Cap_Data_pop
+    {
+        font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+        font-size: 1vw;
+        color: #969696;
+        font-weight: bold;
+        position: absolute;
+        width:18%;
+        height: 400px;
+        top: -999999px;
+        left: 75%;
+        text-align: center;
+        padding-top: 60px;
+    }
+    .Cap_Data_sup
+    {
+        font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+        font-size: 1vw;
+        color: #969696;
+        position: absolute;
+        height: 400px;
+        width:18%;
+        font-weight: bold;
+        top: -99999px;
+        left: 50%;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+}

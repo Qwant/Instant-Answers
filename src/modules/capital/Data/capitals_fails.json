@@ -1,0 +1,159 @@
+{"countries" :[
+  {
+    "name": "Nauru",
+    "capital": "Yaren"
+  },
+  {
+  "name": "Tokelau",
+  "capital": "Atafu"
+  },
+  {
+    "name": "Saint Martin",
+    "capital": "Marigot"
+  },
+  {
+    "name": "Anguilla",
+    "capital": "The Valley"
+  },
+  {
+    "name": "Antigua and Barbuda",
+    "capital": "Saint John's"
+  },
+  {
+    "name": "Aruba",
+    "capital": "Oranjestad"
+  },
+  {
+    "name": "Bahamas",
+    "capital": "Nassau"
+  },
+  {
+    "name": "Bermuda",
+    "capital": "Hamilton"
+  },
+  {
+    "name": "Canada",
+    "capital": "Ottawa"
+  },
+  {
+    "name": "Cayman Islands",
+    "capital": "George Town"
+  },
+  {
+    "name": "Christmas Island",
+    "capital": "The Settlement"
+  },
+  {
+    "name": "Comoros",
+    "capital": "Moroni"
+  },
+  {
+    "name": "Costa Rica",
+    "capital": "San Jose"
+  },
+  {
+    "name": "Denmark",
+    "capital": "Copenhagen"
+  },
+  {
+    "name": "Falkland Islands",
+    "capital": "Stanley"
+  },
+  {
+    "name": "Grenada",
+    "capital": "Saint George's"
+  },
+  {
+    "name": "Guyana",
+    "capital": "Georgetown"
+  },
+  {
+    "name": "Isle of Man",
+    "capital": "Douglas"
+  },
+  {
+    "name": "Jamaica",
+    "capital": "Kingston"
+  },
+  {
+    "name": "Malaysia",
+    "capital": "Kuala Lumpur"
+  },
+  {
+    "name": "Maldives",
+    "capital": "Male"
+  },
+  {
+    "name": "Norfolk Island",
+    "capital": "Kingston"
+  },
+  {
+    "name": "Oman",
+    "capital": "Muscat"
+  },
+  {
+    "name": "Pitcairn Islands",
+    "capital": "Adamstown"
+  },
+  {
+    "name": "Portugal",
+    "capital": "Lisbon"
+  },
+  {
+    "name": "Poland",
+    "capital": "Warsaw"
+  },
+  {
+    "name": "Puerto Rico",
+    "capital": "San Juan"
+  },
+  {
+    "name": "Saint Barthelemy",
+    "capital": "Gustavia"
+  },
+  {
+    "name": "Saint Helena",
+    "capital": "Jamestown"
+  },
+  {
+    "name": "Saint Pierre and Miquelon",
+    "capital": "Saint-Pierre"
+  },
+  {
+    "name": "Seychelles",
+    "capital": "Victoria"
+  },
+  {
+    "name": "Sint Maarten",
+    "capital": "Philipsburg"
+  },
+  {
+    "name": "Slovakia",
+    "capital": "Bratislava"
+  },
+  {
+    "name": "Togo",
+    "capital": "Lome"
+  },
+  {
+    "name": "Turks and Caicos Islands",
+    "capital": "Grand Turk"
+  },
+  {
+    "name": "United States",
+    "capital": "Washington"
+  },
+  {
+    "name": "US Virgin Islands",
+    "capital": "Charlotte Amalie"
+  },
+  {
+    "name": "Yemen",
+    "capital": "Sanaa"
+  },
+  {
+    "name": "US Minor Outlying Islands",
+    "capital": "Washington"
+  }
+]}
+(Capital|capitale)(\\s)((of?)(\\s))?("+Country+")
