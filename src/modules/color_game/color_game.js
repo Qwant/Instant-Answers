@@ -29,7 +29,7 @@ module.exports = {
 
     getData: function (values, proxyURL, language) {
         return new Promise(function (resolve, reject) {
-            // do something with the data (values)
+            resolve("hello");
         });
     },
 

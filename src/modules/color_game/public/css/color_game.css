@@ -2,3 +2,11 @@
     height : 220px;
     width  : 100%;
 }
+
+.ia__colorgame__canvas {
+    background  : #eee;
+    display     : block;
+    height      : 220px;
+    width       : 480px;
+    margin-left : 30px;
+}
