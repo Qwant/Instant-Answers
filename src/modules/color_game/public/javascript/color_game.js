@@ -25,9 +25,20 @@ var IARuntime = function() {
         var canvas = document.getElementById("colorgame");
         var ctx = canvas.getContext("2d");
         var screen = 0;
+        var x = 0;
+        var y = 0;
+        document.body.insertBefore(canvas, document.body.childNodes[0]);
+        window.addEventListener('mousemove', function (e) {
+            x = e.pageX;
+            y = e.pageY;
+        });
 
         function drawStart() {
-            ctx.openPath();
+            ctx.beginPath();
+            ctx.fillStyle = "#000000";
+            ctx.font = "20px Arial";
+            ctx.fillText("Start!", /*canvas.width / 2 - 25 +*/ x, /*canvas.height / 2 +*/ y);
+            ctx.closePath();
         }
 
         function draw() {
@@ -36,6 +47,7 @@ var IARuntime = function() {
             }
         }
 
+        setInterval(draw, 100);
     };
 
     return Color_game;
