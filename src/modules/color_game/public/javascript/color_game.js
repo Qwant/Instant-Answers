@@ -27,7 +27,6 @@ var IARuntime = function() {
         var screen = 0;
         var x = 0;
         var y = 0;
-        document.body.insertBefore(canvas, document.body.childNodes[0]);
         window.addEventListener('mousemove', function (e) {
             x = e.pageX;
             y = e.pageY;
@@ -37,7 +36,7 @@ var IARuntime = function() {
             ctx.beginPath();
             ctx.fillStyle = "#000000";
             ctx.font = "20px Arial";
-            ctx.fillText("Start!", /*canvas.width / 2 - 25 +*/ x, /*canvas.height / 2 +*/ y);
+            ctx.fillText("Start!".concat(x.toString()), canvas.width / 2 - 25, canvas.height / 2);
             ctx.closePath();
         }
 
