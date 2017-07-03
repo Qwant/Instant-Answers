@@ -4,5 +4,5 @@
 <link rel="stylesheet" href="css/tetris.css" type="text/css">
 <script src="javascript/tetris.js"></script>
 <div class="ia__tetris__body">
-    <canvas class="ia__tetris__main__canvas" id="myCanvas"></canvas>
+    <canvas class="ia__tetris__main__canvas" id="tetrisCanvas"></canvas>
 </div>

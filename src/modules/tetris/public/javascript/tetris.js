@@ -22,33 +22,37 @@ var IARuntime = function() {
     };
 
     Tetris.prototype.game = function () {
-        var canvas = document.getElementById("myCanvas");
-        var blocks = [];
+        var canvas = document.getElementById("tetrisCanvas");
         var ctx = canvas.getContext("2d");
-        /*var x = 40;
-        var y = 0;
-        var dy = 10;
-        var canHold = true;
-        var block = createBlock();
-        var hold = "";
-        var next = createBlock();
-        var score = 0;*/
+        canvas.width = 480;
+        canvas.height = 220;
+
         var screen = 0;
         var xCurs = 0;
         var yCurs = 0;
         var click = false;
+
+        var x = 40;
+        var y = 0;
+        var dy = 10;
+        var canHold = true;
+        var block = createBlock();
+        var blocks = [];
+        var hold = "";
+        var next = createBlock();
+        var score = 0;
         var id = -1;
 
-        //document.addEventListener("keydown", keyDownHandler, false);
+
         window.addEventListener('mousemove', function (e) {
             xCurs = e.pageX - 123;
             yCurs = e.pageY - 144;
         });
-        // document.addEventListener('click', function () {
-        //     click = true;
-        // });
-
-        /*function createBlock() {
+        window.addEventListener('click', function () {
+            click = true;
+        });
+        window.addEventListener("keydown", keyDownHandler, false);
+        function createBlock() {
             var number = Math.trunc(Math.random() * 1000) % 7;
             var block = {};
 
@@ -145,8 +149,68 @@ var IARuntime = function() {
             return (false);
         }
 
+        function isAnyCollide() {
+            for (var k = 0; k < 4; ++k) {
+                if (block.x[k] * 10 + x < 0 || block.x[k] * 10 + x >= 100 || block.y[k] * 10 + y + dy >= canvas.height) {
+                    return (true);
+                }
+            }
+            for (var i = 0; i < blocks.length; ++i) {
+                for (var j = 0; j < 4; ++j) {
+                    for (k = 0; k < 4; ++k) {
+                        if (block.x[k] * 10 + x === blocks[i].x[j] &&
+                            block.y[k] * 10 + y + 10 === blocks[i].y[j]) {
+                            return (true);
+                        }
+                    }
+                }
+            }
+            return (false);
+        }
+
+        function deleteLine() {
+            var addScore = 0;
+            for (var t = 10; t <= canvas.height; t += 10) {
+                var test = 0;
+                for (var i = 0; i < 10; ++i) {
+                    for (var j = 0; j < blocks.length; ++j) {
+                        for (var k = 0; k < 4; ++k) {
+                            if (blocks[j].y[k] + dy === t &&
+                                blocks[j].x[k] === i * 10) {
+                                ++test;
+                            }
+                        }
+                    }
+                }
+                if (test === 10) {
+                    addScore *= 1.3;
+                    addScore += 10;
+                    for (i = 0; i < 10; ++i) {
+                        for (j = 0; j < blocks.length; ++j) {
+                            for (k = 0; k < 4; ++k) {
+                                if (blocks[j].y[k] + dy === t &&
+                                    blocks[j].x[k] === i * 10) {
+                                    blocks[j].y[k] = -1;
+                                }
+                            }
+                        }
+                    }
+                    for (j = 0; j < blocks.length; ++j) {
+                        for (k = 0; k < 4; ++k) {
+                            if (blocks[j].y[k] !== -1 && blocks[j].y[k] + dy < t) {
+                                blocks[j].y[k] += 10;
+                            }
+                        }
+                    }
+                }
+            }
+            score += Math.trunc(addScore);
+        }
 
         function keyDownHandler(e) {
+            if (screen !==1) {
+                return;
+            }
             if(e.keyCode === 39) {
                 e.preventDefault();
                 if (!isCollideRow(x + 10)) {
@@ -251,39 +315,6 @@ var IARuntime = function() {
             }
         }
 
-        function isCollide() {
-            for (var i = 0; i < blocks.length; ++i) {
-                for (var j = 0; j < 4; ++j) {
-                    for (var k = 0; k < 4; ++k) {
-                        if (block.x[k] * 10 + x === blocks[i].x[j] &&
-                            block.y[k] * 10 + y + 10 === blocks[i].y[j]) {
-                            return (true);
-                        }
-                    }
-                }
-            }
-            return (false);
-        }
-
-        function isAnyCollide() {
-            for (var k = 0; k < 4; ++k) {
-                if (block.x[k] * 10 + x < 0 || block.x[k] * 10 + x >= 100 || block.y[k] * 10 + y + dy >= canvas.height) {
-                    return (true);
-                }
-            }
-            for (var i = 0; i < blocks.length; ++i) {
-                for (var j = 0; j < 4; ++j) {
-                    for (k = 0; k < 4; ++k) {
-                        if (block.x[k] * 10 + x === blocks[i].x[j] &&
-                            block.y[k] * 10 + y + 10 === blocks[i].y[j]) {
-                            return (true);
-                        }
-                    }
-                }
-            }
-            return (false);
-        }
-
         function drawBlocks() {
             ctx.beginPath();
             for (var i = 0; i < 4; ++i) {
@@ -303,7 +334,6 @@ var IARuntime = function() {
                 }
                 ctx.closePath();
             }
-
         }
 
         function drawHold() {
@@ -353,21 +383,28 @@ var IARuntime = function() {
             ctx.closePath();
         }
 
-        function drawGameOver() {
-            ctx.beginPath();
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#000000";
-            ctx.font = "35px Arial";
-            ctx.fillText("Game Over", 50, canvas.height / 2 - 30);
-            ctx.fillText("Score:", 90, canvas.height / 2);
-            ctx.fillText(score.toString(), (canvas.width / 2 - 25) - (score.toString().length / 2) * 10, canvas.height / 2 + 50);
-            ctx.closePath();
+        function drawSection() {
+            drawBlocks();
+            drawHold();
+            drawNext();
+            drawScore();
+        }
+
+        function isCollide() {
+            for (var i = 0; i < blocks.length; ++i) {
+                for (var j = 0; j < 4; ++j) {
+                    for (var k = 0; k < 4; ++k) {
+                        if (block.x[k] * 10 + x === blocks[i].x[j] &&
+                            block.y[k] * 10 + y + 10 === blocks[i].y[j]) {
+                            return (true);
+                        }
+                    }
+                }
+            }
+            return (false);
         }
 
         function move() {
-            if (!start) {
-                return;
-            }
             var maxY = 0;
             for (var i = 0; i < 4; ++i) {
                 if (maxY < block.y[i]) {
@@ -395,88 +432,52 @@ var IARuntime = function() {
             }
         }
 
-        function deleteLine() {
-            var addScore = 0;
-            for (var t = 10; t <= canvas.height; t += 10) {
-                var test = 0;
-                for (var i = 0; i < 10; ++i) {
-                    for (var j = 0; j < blocks.length; ++j) {
-                        for (var k = 0; k < 4; ++k) {
-                            if (blocks[j].y[k] + dy === t &&
-                                blocks[j].x[k] === i * 10) {
-                                ++test;
-                            }
-                        }
-                    }
-                }
-                if (test === 10) {
-                    addScore *= 1.3;
-                    addScore += 10;
-                    for (i = 0; i < 10; ++i) {
-                        for (j = 0; j < blocks.length; ++j) {
-                            for (k = 0; k < 4; ++k) {
-                                if (blocks[j].y[k] + dy === t &&
-                                    blocks[j].x[k] === i * 10) {
-                                    blocks[j].y[k] = -1;
-                                }
-                            }
-                        }
-                    }
-                    for (j = 0; j < blocks.length; ++j) {
-                        for (k = 0; k < 4; ++k) {
-                            if (blocks[j].y[k] !== -1 && blocks[j].y[k] + dy < t) {
-                                blocks[j].y[k] += 10;
-                            }
-                        }
-                    }
-                }
-            }
-            score += Math.trunc(addScore);
+        function drawGameOver() {
+            ctx.beginPath();
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#000000";
+            ctx.font = "35px Arial";
+            ctx.fillText("Game Over", canvas.width / 2 - 100, canvas.height / 2 - 50);
+            ctx.fillText("Score:", canvas.width / 2 - 55, canvas.height / 2 - 20);
+            ctx.fillText(score.toString(), (canvas.width / 2 - 20) - (score.toString().length / 2) * 10, canvas.height / 2 + 10);
+            ctx.fillText("Retry?", (canvas.width / 2 - 60), (canvas.height - 30));
+            ctx.closePath();
         }
 
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawBlocks();
-            drawHold();
-            drawNext();
-            drawScore();
-        }*/
-
-        function loopGame() {
             if (screen === 0) {
                 ctx.beginPath();
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = "#000000";
-                ctx.font = "35px Arial";
-                ctx.fillText(xCurs.toString(), canvas.width / 2 - 10, canvas.height / 2 - 30);
+                ctx.font = "20px Arial";
+                ctx.fillText("Start!", canvas.width / 2 - 25, canvas.height / 2);
                 ctx.closePath();
-                // if (click && xCurs > 160 && xCurs < 320 && yCurs > 80 && yCurs < 140) {
-                //     screen = (screen + 1) % 3;
-                //     blocks  = [];
-                //     x       = 40;
-                //     y       = 0;
-                //     dy      = 10;
-                //     canHold = true;
-                //     block   = createBlock();
-                //     hold    = "";
-                //     next    = createBlock();
-                //     score   = 0;
-                //     id   = setInterval(move, 300);
-                // }
-            }
-            /*else if (screen === 1) {
-                draw();
-            }
-            else {
-                if (id !== -1) {
-                    clearInterval(id);
-                    id = -1
+                if (click && xCurs > 160 && xCurs < 320 && yCurs > 80 && yCurs < 140) {
+                    screen = (screen + 1) % 3;
+                    blocks  = [];
+                    x       = 40;
+                    y       = 0;
+                    dy      = 10;
+                    canHold = true;
+                    block   = createBlock();
+                    hold    = "";
+                    next    = createBlock();
+                    score   = 0;
+                    id   = setInterval(move, 500);
                 }
+            }
+            else if (screen === 1) {
+                drawSection();
+            }
+            else if (screen === 2) {
+                clearInterval(id);
                 drawGameOver();
-            }*/
+                if (click && xCurs > 0 && xCurs < canvas.width && yCurs > 0 && canvas.height) {
+                    screen = (screen + 1) % 3;
+                }
+            }
             click = false;
         }
-        setInterval(loopGame(), 10);
+        setInterval(draw, 10);
     };
     return Tetris;
 }();
