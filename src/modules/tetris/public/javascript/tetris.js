@@ -33,7 +33,7 @@ var IARuntime = function() {
         var hold = "";
         var next = createBlock();
         var score = 0;
-        var start = false;
+        var screen = 0;
 
         document.addEventListener("keydown", keyDownHandler, false);
 
@@ -368,7 +368,7 @@ var IARuntime = function() {
             }
             if (y === 0 && isCollide()) {
                 clearInterval(id1);
-                clearInterval(id2);
+                  clearInterval(id2);
                 drawGameOver();
                 start = false;
                 document.getElementById("start").innerHTML = "Restart";
@@ -438,21 +438,29 @@ var IARuntime = function() {
             drawScore();
         }
 
-        function startGame() {
-            blocks = [];
-            x = 40;
-            y = 0;
-            dy = 10;
-            canHold = true;
-            block = createBlock();
-            hold = "";
-            next = createBlock();
-            score = 0;
-            clearInterval(id1);
-            clearInterval(id2);
-            id1 = setInterval(draw, 10);
-            id2 = setInterval(move, 300);
-            start = true;
+        function loopGame() {
+            if (screen === 0) {
+                ctx.beginPath();
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = "#000000";
+                ctx.font = "35px Arial";
+                ctx.fillText("Start", 50, canvas.height / 2 - 30);
+                ctx.closePath();
+
+                blocks  = [];
+                x       = 40;
+                y       = 0;
+                dy      = 10;
+                canHold = true;
+                block   = createBlock();
+                hold    = "";
+                next    = createBlock();
+                score   = 0;
+                clearInterval(id1);
+                clearInterval(id2);
+                id1   = setInterval(draw, 10);
+                id2   = setInterval(move, 300);
+            }
         }
 
         document.getElementById("start").onclick = function () { startGame(); };
