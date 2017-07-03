@@ -3,7 +3,6 @@
     max-height     : 220px;
     display        : flex;
     flex-direction : row;
-    transition     : max-height 1s ease-in-out;
 }
 
 .ia__content__image__info {
