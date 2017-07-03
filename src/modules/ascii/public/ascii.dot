@@ -3,10 +3,10 @@
 <div class="ia__ascii__body">
 	<div class="ia__ascii__content">
 	<div class="ia__ascii__line">
-		<div class="ia__ascii__cat">Octal</div>
-		<div class="ia__ascii__cat">Décimal</div>
-		<div class="ia__ascii__cat">Héxadécimal</div>
-		<div class="ia__ascii__cat">Char</div>
+		<div class="ia__ascii__cat" style="font-weight:bold">OCT</div>
+		<div class="ia__ascii__cat" style="font-weight:bold">DEC</div>
+		<div class="ia__ascii__cat" style="font-weight:bold">HEX</div>
+		<div class="ia__ascii__cat" style="font-weight:bold">CHAR</div>
 	</div>
 	{{~ it.data:line:i }}
 		{{? i % 2 == 0 }}
