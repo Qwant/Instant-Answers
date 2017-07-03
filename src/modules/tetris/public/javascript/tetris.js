@@ -25,25 +25,30 @@ var IARuntime = function() {
         var canvas = document.getElementById("myCanvas");
         var blocks = [];
         var ctx = canvas.getContext("2d");
-        var x = 40;
+        /*var x = 40;
         var y = 0;
         var dy = 10;
         var canHold = true;
         var block = createBlock();
         var hold = "";
         var next = createBlock();
-        var score = 0;
+        var score = 0;*/
         var screen = 0;
-        var xCurs;
-        var yCurs;
+        var xCurs = 0;
+        var yCurs = 0;
+        var click = false;
+        var id = -1;
 
-        document.addEventListener("keydown", keyDownHandler, false);
+        //document.addEventListener("keydown", keyDownHandler, false);
         window.addEventListener('mousemove', function (e) {
             xCurs = e.pageX - 123;
             yCurs = e.pageY - 144;
         });
+        // document.addEventListener('click', function () {
+        //     click = true;
+        // });
 
-        function createBlock() {
+        /*function createBlock() {
             var number = Math.trunc(Math.random() * 1000) % 7;
             var block = {};
 
@@ -142,9 +147,6 @@ var IARuntime = function() {
 
 
         function keyDownHandler(e) {
-            if (!start) {
-                return;
-            }
             if(e.keyCode === 39) {
                 e.preventDefault();
                 if (!isCollideRow(x + 10)) {
@@ -373,11 +375,7 @@ var IARuntime = function() {
                 }
             }
             if (y === 0 && isCollide()) {
-                clearInterval(id1);
-                  clearInterval(id2);
-                drawGameOver();
-                start = false;
-                document.getElementById("start").innerHTML = "Restart";
+                screen = (screen + 1) % 3;
             }
             else if (y + dy + maxY * 10 >= canvas.height || isCollide()) {
                 for (i = 0; i < 4; ++i) {
@@ -442,7 +440,7 @@ var IARuntime = function() {
             drawHold();
             drawNext();
             drawScore();
-        }
+        }*/
 
         function loopGame() {
             if (screen === 0) {
@@ -450,28 +448,35 @@ var IARuntime = function() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.fillStyle = "#000000";
                 ctx.font = "35px Arial";
-                ctx.fillText("Start", 50, canvas.height / 2 - 30);
+                ctx.fillText(xCurs.toString(), canvas.width / 2 - 10, canvas.height / 2 - 30);
                 ctx.closePath();
-
-                blocks  = [];
-                x       = 40;
-                y       = 0;
-                dy      = 10;
-                canHold = true;
-                block   = createBlock();
-                hold    = "";
-                next    = createBlock();
-                score   = 0;
-                clearInterval(id1);
-                clearInterval(id2);
-                id1   = setInterval(draw, 10);
-                id2   = setInterval(move, 300);
+                // if (click && xCurs > 160 && xCurs < 320 && yCurs > 80 && yCurs < 140) {
+                //     screen = (screen + 1) % 3;
+                //     blocks  = [];
+                //     x       = 40;
+                //     y       = 0;
+                //     dy      = 10;
+                //     canHold = true;
+                //     block   = createBlock();
+                //     hold    = "";
+                //     next    = createBlock();
+                //     score   = 0;
+                //     id   = setInterval(move, 300);
+                // }
             }
+            /*else if (screen === 1) {
+                draw();
+            }
+            else {
+                if (id !== -1) {
+                    clearInterval(id);
+                    id = -1
+                }
+                drawGameOver();
+            }*/
+            click = false;
         }
-
-        document.getElementById("start").onclick = function () { startGame(); };
-        var id1 = setInterval(draw, 10);
-        var id2 = setInterval(move, 300);
+        setInterval(loopGame(), 10);
     };
     return Tetris;
 }();

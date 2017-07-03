@@ -5,5 +5,4 @@
 <script src="javascript/tetris.js"></script>
 <div class="ia__tetris__body">
     <canvas class="ia__tetris__main__canvas" id="myCanvas"></canvas>
-    <button class="ia__tetris__button" id="start">Start</button>
 </div>
