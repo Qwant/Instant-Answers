@@ -2,6 +2,7 @@
  This is your main template file. Please refer to the documentation for more information.
 -->
 <link rel="stylesheet" href="css/imc.css" type="text/css">
+
 <div class="IA-IMC">
     <input id="taille" name="taille">Cm
     <input id="poids" name="poids">Kg

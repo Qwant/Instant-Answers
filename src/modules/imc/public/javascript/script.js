@@ -9,16 +9,11 @@ var IARuntime = function() {
     Imc.prototype.test = function() {
         var go = document.getElementById("action");
         go.onclick = function () {
-
-            console.log("erlg");
             var taille = parseFloat(document.getElementById("taille").value);
             taille = taille/100;
-            console.log(taille);
             var poids = parseFloat(document.getElementById("poids").value);
-            console.log(poids);
             var imc = poids / (Math.pow(taille, 2));
             imc = Math.round(imc);
-            console.log(imc);
             if (isNaN(imc)){
                 imc = "Veuillez remplir correctement les champs ci-dessus"
             }
