@@ -34,8 +34,14 @@ var IARuntime = function() {
         var next = createBlock();
         var score = 0;
         var screen = 0;
+        var xCurs;
+        var yCurs;
 
         document.addEventListener("keydown", keyDownHandler, false);
+        window.addEventListener('mousemove', function (e) {
+            xCurs = e.pageX - 123;
+            yCurs = e.pageY - 144;
+        });
 
         function createBlock() {
             var number = Math.trunc(Math.random() * 1000) % 7;
