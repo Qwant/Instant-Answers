@@ -24,17 +24,17 @@ var IARuntime = function() {
     Tetris.prototype.game = function () {
         var canvas = document.getElementById("tetrisCanvas");
         var ctx = canvas.getContext("2d");
-        canvas.width = 480;
-        canvas.height = 220;
+        canvas.width = 800;
+        canvas.height = 600;
 
         var screen = 0;
         var xCurs = 0;
         var yCurs = 0;
         var click = false;
 
-        var x = 40;
+        var x;
         var y = 0;
-        var dy = 10;
+        var dy = canvas.height / 20;
         var canHold = true;
         var block = createBlock();
         var blocks = [];
@@ -42,6 +42,8 @@ var IARuntime = function() {
         var next = createBlock();
         var score = 0;
         var id = -1;
+        var withoutBar = 0;
+        var level = 0;
 
 
         window.addEventListener('mousemove', function (e) {
@@ -56,6 +58,9 @@ var IARuntime = function() {
             var number = Math.trunc(Math.random() * 1000) % 7;
             var block = {};
 
+            if (withoutBar > 7) {
+                number = 4;
+            }
             switch (number) {
                 case 0:
                 {
@@ -65,6 +70,7 @@ var IARuntime = function() {
                         x : [0, 0, 0, -1],
                         y : [0, -1, 1, 1]
                     };
+                    ++withoutBar;
                     return (block);
                 }
                 case 1:
@@ -75,6 +81,7 @@ var IARuntime = function() {
                         x : [0, 0, 0, 1],
                         y : [0, -1, 1, 1]
                     };
+                    ++withoutBar;
                     return (block);
                 }
                 case 2:
@@ -85,6 +92,7 @@ var IARuntime = function() {
                         x : [0, 0, -1, -1],
                         y : [0, -1, -1, 0]
                     };
+                    ++withoutBar;
                     return (block);
                 }
                 case 3:
@@ -95,6 +103,7 @@ var IARuntime = function() {
                         x : [0, -1, 1, 0],
                         y : [0, 0, 0, -1]
                     };
+                    ++withoutBar;
                     return (block);
                 }
                 case 4:
@@ -105,6 +114,7 @@ var IARuntime = function() {
                         x : [0, 0, 0, 0],
                         y : [0, -1, 1, 2]
                     };
+                    withoutBar = 0;
                     return (block);
                 }
                 case 5:
@@ -115,6 +125,7 @@ var IARuntime = function() {
                         x : [0, -1, -1, 0],
                         y : [0, 0, 1, -1]
                     };
+                    ++withoutBar;
                     return (block);
                 }
                 default:
@@ -125,6 +136,7 @@ var IARuntime = function() {
                         x : [0, 0, 1, 1],
                         y : [0, -1, 0, 1]
                     };
+                    ++withoutBar;
                     return (block);
                 }
             }
@@ -132,15 +144,15 @@ var IARuntime = function() {
 
         function isCollideRow(tmpX) {
             for (var i = 0; i < 4; ++i) {
-                if (block.x[i] * 10 + tmpX < 0 || block.x[i] * 10 + tmpX >= 100) {
+                if (block.x[i] * dy + tmpX < 0 || block.x[i] * dy + tmpX >= 10 * dy) {
                     return (true);
                 }
             }
             for (i = 0; i < blocks.length; ++i) {
                 for (var j = 0; j < 4; ++j) {
                     for (var k = 0; k < 4; ++k) {
-                        if (blocks[i].x[j] === block.x[k] * 10 + tmpX &&
-                            blocks[i].y[j] === block.y[k] * 10 + y) {
+                        if (blocks[i].x[j] === block.x[k] * dy + tmpX &&
+                            blocks[i].y[j] === block.y[k] * dy + y) {
                             return (true);
                         }
                     }
@@ -151,15 +163,15 @@ var IARuntime = function() {
 
         function isAnyCollide() {
             for (var k = 0; k < 4; ++k) {
-                if (block.x[k] * 10 + x < 0 || block.x[k] * 10 + x >= 100 || block.y[k] * 10 + y + dy >= canvas.height) {
+                if (block.x[k] * dy + x < 0 || block.x[k] * dy + x >= dy * 10 || block.y[k] * dy + y + dy >= canvas.height) {
                     return (true);
                 }
             }
             for (var i = 0; i < blocks.length; ++i) {
                 for (var j = 0; j < 4; ++j) {
                     for (k = 0; k < 4; ++k) {
-                        if (block.x[k] * 10 + x === blocks[i].x[j] &&
-                            block.y[k] * 10 + y + 10 === blocks[i].y[j]) {
+                        if (block.x[k] * dy + x === blocks[i].x[j] &&
+                            block.y[k] * dy + y + dy === blocks[i].y[j]) {
                             return (true);
                         }
                     }
@@ -170,13 +182,13 @@ var IARuntime = function() {
 
         function deleteLine() {
             var addScore = 0;
-            for (var t = 10; t <= canvas.height; t += 10) {
+            for (var t = dy; t <= canvas.height; t += dy) {
                 var test = 0;
                 for (var i = 0; i < 10; ++i) {
                     for (var j = 0; j < blocks.length; ++j) {
                         for (var k = 0; k < 4; ++k) {
                             if (blocks[j].y[k] + dy === t &&
-                                blocks[j].x[k] === i * 10) {
+                                blocks[j].x[k] === i * dy) {
                                 ++test;
                             }
                         }
@@ -184,12 +196,12 @@ var IARuntime = function() {
                 }
                 if (test === 10) {
                     addScore *= 1.3;
-                    addScore += 10;
+                    addScore += 100;
                     for (i = 0; i < 10; ++i) {
                         for (j = 0; j < blocks.length; ++j) {
                             for (k = 0; k < 4; ++k) {
                                 if (blocks[j].y[k] + dy === t &&
-                                    blocks[j].x[k] === i * 10) {
+                                    blocks[j].x[k] === i * dy) {
                                     blocks[j].y[k] = -1;
                                 }
                             }
@@ -198,13 +210,18 @@ var IARuntime = function() {
                     for (j = 0; j < blocks.length; ++j) {
                         for (k = 0; k < 4; ++k) {
                             if (blocks[j].y[k] !== -1 && blocks[j].y[k] + dy < t) {
-                                blocks[j].y[k] += 10;
+                                blocks[j].y[k] += dy;
                             }
                         }
                     }
                 }
             }
             score += Math.trunc(addScore);
+            if (Math.trunc(score / 700) !== level) {
+                level = Math.trunc(score / 700);
+                clearInterval(id);
+                id   = setInterval(move, 500 - (level * 30));
+            }
         }
 
         function keyDownHandler(e) {
@@ -213,15 +230,28 @@ var IARuntime = function() {
             }
             if(e.keyCode === 39) {
                 e.preventDefault();
-                if (!isCollideRow(x + 10)) {
-                    x += 10;
+                if (!isCollideRow(x + dy)) {
+                    x += dy;
                 }
             }
             if(e.keyCode === 37) {
                 e.preventDefault();
-                if (!isCollideRow(x - 10)) {
-                    x -= 10;
+                if (!isCollideRow(x - dy)) {
+                    x -= dy;
                 }
+            }
+            if(e.keyCode === 40) {
+                e.preventDefault();
+                var maxY = 0;
+                for (i = 0; i < 4; ++i) {
+                    if (maxY < block.y[i]) {
+                        maxY = block.y[i];
+                    }
+                }
+                if (!(y + dy + maxY * dy >= canvas.height || isCollide())) {
+                    y += dy;
+                }
+
             }
             if(e.keyCode === 38 && block.id !== 2) {
                 e.preventDefault();
@@ -252,20 +282,23 @@ var IARuntime = function() {
                 if (isAnyCollide()) {
                     saveX = x;
                     saveY = y;
-                    x = saveX + 10;
-                    if (isAnyCollide()) {
-                        x = saveX + 20;
-                    }
-                    if (isAnyCollide()) {
-                        x = saveX - 10;
-                    }
-                    if (isAnyCollide()) {
-                        x = saveX - 20;
-                    }
-                    x = saveX;
-                    for (i = 1; i < 5; ++i) {
+                    x = saveX + dy;
+                    for (i = 1; i < 3; ++i) {
                         if (isAnyCollide()) {
-                            y = saveY - i * dy;
+                            x = saveX + (i * dy);
+                        }
+                    }
+                    for (i = 1; i < 3; ++i) {
+                        if (isAnyCollide()) {
+                            x = saveX - (i * dy);
+                        }
+                    }
+                    if (isAnyCollide()) {
+                        x = saveX;
+                        for (i = 1; i < 3; ++i) {
+                            if (isAnyCollide()) {
+                                y = saveY - (i * dy);
+                            }
                         }
                     }
                     if (isAnyCollide()) {
@@ -285,25 +318,25 @@ var IARuntime = function() {
                     block = hold;
                     hold = save;
                 }
-                x = 40;
+                x = 4 * dy;
                 y = 0;
                 canHold = false;
             }
             if (e.keyCode === 32) {
                 e.preventDefault();
-                var maxY = 0;
+                maxY = 0;
                 for (i = 0; i < 4; ++i) {
                     if (maxY < block.y[i]) {
                         maxY = block.y[i];
                     }
                 }
-                while (!(y + dy + maxY * 10 >= canvas.height || isCollide())) {
+                while (!(y + dy + maxY * dy >= canvas.height || isCollide())) {
                     y += dy;
                 }
 
                 for (i = 0; i < 4; ++i) {
-                    block.x[i] = block.x[i] * 10 + x;
-                    block.y[i] = block.y[i] * 10 + y;
+                    block.x[i] = block.x[i] * dy + x;
+                    block.y[i] = block.y[i] * dy + y;
                 }
                 canHold = true;
                 blocks.push(block);
@@ -311,14 +344,14 @@ var IARuntime = function() {
                 next = createBlock();
                 deleteLine();
                 y = 0;
-                x = 40;
+                x = 4 * dy;
             }
         }
 
         function drawBlocks() {
             ctx.beginPath();
             for (var i = 0; i < 4; ++i) {
-                ctx.rect(block.x[i] * 10 + x, block.y[i] * 10 + y, 10, 10);
+                ctx.rect(block.x[i] * dy + x, block.y[i] * dy + y, dy, dy);
                 ctx.fillStyle = block.color;
                 ctx.fill();
             }
@@ -327,7 +360,7 @@ var IARuntime = function() {
                 ctx.beginPath();
                 for (var j = 0; j < 4; ++j) {
                     if (blocks[i].y[j] !== -1) {
-                        ctx.rect(blocks[i].x[j], blocks[i].y[j], 10, 10);
+                        ctx.rect(blocks[i].x[j], blocks[i].y[j], dy, dy);
                         ctx.fillStyle = blocks[i].color;
                         ctx.fill();
                     }
@@ -339,36 +372,34 @@ var IARuntime = function() {
         function drawHold() {
             ctx.beginPath();
             ctx.fillStyle = "#000000";
-            ctx.font = "15px Arial";
-            ctx.fillText("Hold:(C)", 120, 20);
+            ctx.font = "30px Arial";
+            ctx.fillText("Hold:(C)", 10 * dy + 20, 40);
             ctx.closePath();
             if (hold.length !== 0) {
                 ctx.beginPath();
                 for (var i = 0; i < 4; ++i) {
-                    ctx.rect(hold.x[i] * 10 + 135, hold.y[i] * 10 + 40, 10, 10);
+                    ctx.rect(hold.x[i] * dy + 10 * dy + 60, hold.y[i] * dy + 120, dy, dy);
                     ctx.fillStyle = hold.color;
                     ctx.fill();
                 }
                 ctx.closePath();
             }
             ctx.beginPath();
-            for (i = 0; i < canvas.height; i += 5) {
-                ctx.rect(100, i, 5, 5);
-                ctx.fillStyle = "#000000";
-                ctx.fill();
-            }
+            ctx.rect(10 * dy, 0, 5, canvas.height);
+            ctx.fillStyle = "#000000";
+            ctx.fill();
             ctx.closePath();
         }
 
         function drawNext() {
             ctx.beginPath();
             ctx.fillStyle = "#000000";
-            ctx.font = "15px Arial";
-            ctx.fillText("Next:", 120, 90);
+            ctx.font = "30px Arial";
+            ctx.fillText("Next:", 10 * dy + 20, canvas.height / 2);
             ctx.closePath();
             ctx.beginPath();
             for (var i = 0; i < 4; ++i) {
-                ctx.rect(next.x[i] * 10 + 135, next.y[i] * 10 + 110, 10, 10);
+                ctx.rect(next.x[i] * dy + 10 * dy + 60, next.y[i] * dy + canvas.height / 2 + 80, dy, dy);
                 ctx.fillStyle = next.color;
                 ctx.fill();
             }
@@ -378,24 +409,83 @@ var IARuntime = function() {
         function drawScore() {
             ctx.beginPath();
             ctx.fillStyle = "#000000";
-            ctx.font = "15px Arial";
-            ctx.fillText("Score:".concat(score.toString()), 190, 65);
+            ctx.font = "30px Arial";
+            ctx.fillText("Score:".concat(score.toString()), 2 * canvas.width / 3, canvas.height / 2);
+            ctx.closePath();
+        }
+
+        function drawCadri() {
+            ctx.beginPath();
+            ctx.fillStyle = "#000000";
+            for (var i = 0; i < 20; ++i) {
+                ctx.rect(0, i * dy, 10 * dy, 1);
+                ctx.fill();
+            }
+            for (var i = 0; i < 10; ++i) {
+                ctx.rect(i * dy, 0, 1, 20 * dy);
+                ctx.fill();
+            }
+            ctx.closePath();
+        }
+
+        function drawPreview() {
+            var maxY = 0;
+            for (var i = 0; i < 4; ++i) {
+                if (maxY < block.y[i]) {
+                    maxY = block.y[i];
+                }
+            }
+            var saveY = y;
+            while (!(saveY + dy + maxY * dy >= canvas.height || isCollidePrev(saveY))) {
+                saveY += dy;
+            }
+            ctx.beginPath();
+            for (i = 0; i < 4; ++i) {
+                ctx.rect(block.x[i] * dy + x, block.y[i] * dy + saveY, dy, dy);
+                ctx.fillStyle = "#888888";
+                ctx.fill();
+            }
+            ctx.closePath();
+        }
+
+        function drawLevel() {
+            ctx.beginPath();
+            ctx.fillStyle = "#000000";
+            ctx.font = "30px Arial";
+            ctx.fillText("Level: ".concat((level + 1).toString()), 2 * canvas.width / 3, 80);
             ctx.closePath();
         }
 
         function drawSection() {
+            drawPreview();
             drawBlocks();
             drawHold();
             drawNext();
             drawScore();
+            drawCadri();
+            drawLevel();
         }
 
         function isCollide() {
             for (var i = 0; i < blocks.length; ++i) {
                 for (var j = 0; j < 4; ++j) {
                     for (var k = 0; k < 4; ++k) {
-                        if (block.x[k] * 10 + x === blocks[i].x[j] &&
-                            block.y[k] * 10 + y + 10 === blocks[i].y[j]) {
+                        if (block.x[k] * dy + x === blocks[i].x[j] &&
+                            block.y[k] * dy + y + dy === blocks[i].y[j]) {
+                            return (true);
+                        }
+                    }
+                }
+            }
+            return (false);
+        }
+
+        function isCollidePrev(yBlock) {
+            for (var i = 0; i < blocks.length; ++i) {
+                for (var j = 0; j < 4; ++j) {
+                    for (var k = 0; k < 4; ++k) {
+                        if (block.x[k] * dy + x === blocks[i].x[j] &&
+                            block.y[k] * dy + yBlock + dy === blocks[i].y[j]) {
                             return (true);
                         }
                     }
@@ -414,10 +504,10 @@ var IARuntime = function() {
             if (y === 0 && isCollide()) {
                 screen = (screen + 1) % 3;
             }
-            else if (y + dy + maxY * 10 >= canvas.height || isCollide()) {
+            else if (y + dy + maxY * dy >= canvas.height || isCollide()) {
                 for (i = 0; i < 4; ++i) {
-                    block.x[i] = block.x[i] * 10 + x;
-                    block.y[i] = block.y[i] * 10 + y;
+                    block.x[i] = block.x[i] * dy + x;
+                    block.y[i] = block.y[i] * dy + y;
                 }
                 canHold = true;
                 blocks.push(block);
@@ -425,7 +515,7 @@ var IARuntime = function() {
                 next = createBlock();
                 deleteLine();
                 y = 0;
-                x = 40;
+                x = 4 * dy;
             }
             else {
                 y += dy;
@@ -451,12 +541,11 @@ var IARuntime = function() {
                 ctx.font = "20px Arial";
                 ctx.fillText("Start!", canvas.width / 2 - 25, canvas.height / 2);
                 ctx.closePath();
-                if (click && xCurs > 160 && xCurs < 320 && yCurs > 80 && yCurs < 140) {
+                if (click && xCurs > canvas.width / 3 && xCurs < 2 * canvas.width / 3 && yCurs > canvas.height / 3 && yCurs < 2 * canvas.height / 3) {
                     screen = (screen + 1) % 3;
                     blocks  = [];
-                    x       = 40;
+                    x       = 4 * dy;
                     y       = 0;
-                    dy      = 10;
                     canHold = true;
                     block   = createBlock();
                     hold    = "";
