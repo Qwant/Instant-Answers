@@ -301,7 +301,7 @@ var IARuntime = function() {
                 drawMode();
                 drawResult();
                 drawReset();
-                if (click) {
+                if (click && xCurs >= 0 && yCurs >= 0) {
                     var played = false;
                     var x = Math.trunc(xCurs / 200);
                     var y = Math.trunc(yCurs / 200);
