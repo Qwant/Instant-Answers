@@ -416,8 +416,13 @@ var IARuntime = function() {
         function drawCadri() {
             ctx.beginPath();
             ctx.fillStyle = "#000000";
-            for (var i = 0; i < 20; ++i) {
-                ctx.rect(0, i * dy, 10 * dy, 1);
+            for (var i = 0; i <= 20; ++i) {
+                if (i === 20) {
+                    ctx.rect(0, i * dy - 1, 10 * dy, 1);
+                }
+                else {
+                    ctx.rect(0, i * dy, 10 * dy, 1);
+                }
                 ctx.fill();
             }
             for (i = 0; i < 10; ++i) {
