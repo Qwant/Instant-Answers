@@ -2,18 +2,5 @@
 <script src="javascript/tic_tac_toe.js"></script>
 
 <div class="ia__tictactoe__body">
-	<div class="ia__tictactoe__game">
-		<div class="ia__tictactoe__case" id="tictactoe--case0"></div>
-		<div class="ia__tictactoe__case" id="tictactoe--case1"></div>
-		<div class="ia__tictactoe__case" id="tictactoe--case2"></div>
-		<div class="ia__tictactoe__case" id="tictactoe--case3"></div>
-		<div class="ia__tictactoe__case" id="tictactoe--case4"></div>
-		<div class="ia__tictactoe__case" id="tictactoe--case5"></div>
-		<div class="ia__tictactoe__case" id="tictactoe--case6"></div>
-		<div class="ia__tictactoe__case" id="tictactoe--case7"></div>
-		<div class="ia__tictactoe__case" id="tictactoe--case8"></div>
-	</div>
-	<button class="ia__tictactoe__button" id="tictactoe--reset">reset</button>
-	<button class="ia__tictactoe__button" id="tictactoe--mode">VS IA</button>
-	<div class="ia__tictactoe__result" id="tictactoe--result">test</div>
+    <canvas class="ia__tictactoe__main__canvas" id="tictactoeCanvas"></canvas>
 </div>
