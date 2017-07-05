@@ -45,10 +45,9 @@ var IARuntime = function() {
         var withoutBar = 0;
         var level = 0;
 
-
         window.addEventListener('mousemove', function (e) {
-            xCurs = e.pageX - 123;
-            yCurs = e.pageY - 144;
+            xCurs = e.pageX - canvas.offsetLeft;
+            yCurs = e.pageY - canvas.offsetTop;
         });
         window.addEventListener('click', function () {
             click = true;
@@ -421,7 +420,7 @@ var IARuntime = function() {
                 ctx.rect(0, i * dy, 10 * dy, 1);
                 ctx.fill();
             }
-            for (var i = 0; i < 10; ++i) {
+            for (i = 0; i < 10; ++i) {
                 ctx.rect(i * dy, 0, 1, 20 * dy);
                 ctx.fill();
             }
