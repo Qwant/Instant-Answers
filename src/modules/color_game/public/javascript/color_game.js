@@ -24,8 +24,8 @@ var IARuntime = function() {
     Color_game.prototype.game = function() {
         var canvas = document.getElementById("colorgame");
         var ctx = canvas.getContext("2d");
-        canvas.width = 480;
-        canvas.height = 220;
+        canvas.width = 800;
+        canvas.height = 600;
 
         var screen = 0;
         var x = 0;
@@ -42,8 +42,8 @@ var IARuntime = function() {
         var diff;
 
         window.addEventListener('mousemove', function (e) {
-            x = e.pageX - 123;
-            y = e.pageY - 144;
+            x = e.pageX - canvas.offsetLeft;
+            y = e.pageY - canvas.offsetTop;
         });
         window.addEventListener('click', function () {
             click = true;
@@ -139,7 +139,7 @@ var IARuntime = function() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             if (screen === 0) {
                 drawStart();
-                if (x >= 180 && x <= 300 && y >= 60 && y <= 160 && click) {
+                if (x >= canvas.width / 3 && x < 2 * canvas.width / 3 && y >= canvas.height / 3 && y < 2 * canvas.height / 3 && click) {
                     row = 2;
                     column = 2;
                     pos = Math.trunc(Math.random() * 10000) % (row * column);

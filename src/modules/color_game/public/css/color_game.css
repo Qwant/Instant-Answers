@@ -1,5 +1,5 @@
 .ia__colorgame__body {
-    height         : 220px;
+    height         : 600px;
     width          : 100%;
     display        : flex;
     flex-direction : row;
@@ -7,8 +7,8 @@
 
 .ia__colorgame__canvas {
     background  : #eee;
-    height      : 220px;
-    width       : 480px;
+    height      : 600px;
+    width       : 800px;
     margin-left : 30px;
 }
 
