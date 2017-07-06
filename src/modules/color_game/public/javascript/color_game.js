@@ -113,7 +113,7 @@ var IARuntime = function() {
                     }
                     ctx.beginPath();
                     ctx.fillStyle = tmpCol;
-                    ctx.rect(j * Math.trunc(canvas.width / column), i * Math.trunc(canvas.height / row), Math.trunc(canvas.width / column), Math.trunc(canvas.height / row));
+                    ctx.rect(j * Math.trunc(canvas.height / column), i * Math.trunc(canvas.height / row), Math.trunc(canvas.height / column), Math.trunc(canvas.height / row));
                     ctx.fill();
                     ctx.closePath();
                 }
@@ -123,16 +123,29 @@ var IARuntime = function() {
         function drawCadri() {
             ctx.beginPath();
             ctx.fillStyle = "#000000";
-            for (var i = 0; i < canvas.height; i += Math.trunc(canvas.height / row)) {
-                ctx.rect(0, i, canvas.width, 1);
-                ctx.fill();
+            var tmpLevel = level;
+            if (level >= 14) {
+                tmpLevel = 13;
             }
-            for (i = 0; i < canvas.width; i += Math.trunc(canvas.width / column)) {
-                ctx.rect(i, 0, 1, canvas.height);
+            tmpLevel = (tmpLevel + 1) * Math.trunc(canvas.height / row);
+            for (var i = 0; i <= canvas.height; i += Math.trunc(canvas.height / row)) {
+                ctx.rect(0, i, tmpLevel, 1);
+                ctx.rect(i, 0, 1, tmpLevel);
                 ctx.fill();
             }
             ctx.closePath();
 
+        }
+
+        function drawChrono(str) {
+            ctx.beginPath();
+            ctx.fillStyle = "#000000";
+            ctx.font = "50px Arial";
+            var textWidth = ctx.measureText("Timer");
+            ctx.fillText("Timer", 700 - textWidth / 2, 320);
+            textWidth = ctx.measureText(str);
+            ctx.fillText(str, 700 - textWidth / 2, 350);
+            ctx.closePath();
         }
 
         function draw() {
@@ -142,6 +155,7 @@ var IARuntime = function() {
                 if (x >= canvas.width / 3 && x < 2 * canvas.width / 3 && y >= canvas.height / 3 && y < 2 * canvas.height / 3 && click) {
                     row = 2;
                     column = 2;
+                    level = 1;
                     pos = Math.trunc(Math.random() * 10000) % (row * column);
                     color = randomColor();
                     screen = (screen + 1) % 3;
@@ -153,19 +167,13 @@ var IARuntime = function() {
             else if (screen === 1) {
                 drawGame();
                 drawCadri();
-                if ((x >= (pos % column) * Math.trunc(canvas.width / column) && x < (1 + (pos % column)) * Math.trunc(canvas.width / column)) &&
+                if ((x >= (pos % column) * Math.trunc(canvas.height / column) && x < (1 + (pos % column)) * Math.trunc(canvas.height / column)) &&
                     (y >= Math.trunc(pos / column) * Math.trunc(canvas.height / row) && y < (1 + Math.trunc(pos / column)) * Math.trunc(canvas.height / row)) && click) {
                     ++level;
-                    if (level % 2 === 0) {
-                        if (column < 12) {
+                        if (row < 14 && column < 14) {
+                            ++row;
                             ++column;
                         }
-                    }
-                    else {
-                        if (row < 12) {
-                            ++row;
-                        }
-                    }
                     pos = Math.trunc(Math.random() * 10000) % (row * column);
                     color = randomColor();
                     lumi = Math.trunc(Math.random() * 10000) % 2;
@@ -176,14 +184,14 @@ var IARuntime = function() {
                 end = new Date();
                 diff = end - start;
                 diff = new Date(diff);
-                document.getElementById("chrono").innerHTML = (90 - (diff.getSeconds() + diff.getMinutes() * 60)).toString().concat(" seconds");
+                drawChrono((90 - (diff.getSeconds() + diff.getMinutes() * 60)).toString().concat(" seconds"));
                 if (90 - (diff.getSeconds() + diff.getMinutes() * 60) <= 0) {
                     screen = (screen + 1) % 3;
                 }
             }
             else if (screen === 2) {
                 drawEnd();
-                if (x >= 180 && x <= 300 && y >= 60 && y <= 160 && click) {
+                if (x >= canvas.width / 3 && x < 2 * canvas.width / 3 && y >= canvas.height / 3 && y < 2 * canvas.height / 3 && click) {
                     row = 2;
                     column = 2;
                     pos = Math.trunc(Math.random() * 10000) % (row * column);
@@ -194,7 +202,6 @@ var IARuntime = function() {
             }
             click = false;
         }
-
         setInterval(draw, 10);
     };
 

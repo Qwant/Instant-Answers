@@ -2,5 +2,4 @@
 <script src="javascript/color_game.js"></script>
 <div class="ia__colorgame__body">
 <canvas class="ia__colorgame__canvas" id="colorgame"></canvas>
-<div class="ia__colorgame__chrono" id="chrono">90 seconds</div>
 </div>
