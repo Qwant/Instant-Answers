@@ -11,7 +11,41 @@ var IARuntime = function() {
      * runs at runtime
      */
     Tic_tac_toe.prototype.run = function() {
-        this.game();
+        var play = document.getElementById('start');
+        var can = document.getElementById("game");
+        var cross = document.getElementById("cross");
+        var elem = document.getElementById("background_games");
+        var state = 0; // 0 = little interface 1= big interface
+        var scope = this;
+        var idInterval = 0;
+        can.style.display = "none";
+        cross.style.display = "none";
+        play.addEventListener("click", function(){
+            if (state === 0){
+                elem.style.height = "800px";
+                setTimeout(function(){
+                    can.style.display = "block";
+                    cross.style.display = "block";
+                }, 800);
+                play.style.cursor = "default";
+                play.style.display = "none";
+                idInterval = scope.game();
+                state = 1;
+            }
+        });
+        cross.addEventListener("click", function(){
+            if(state === 1){
+                elem.style.height = "200px";
+                can.style.display = "none";
+                cross.style.display = "none";
+                setTimeout(function(){
+                    play.style.cursor = "pointer";
+                }, 800);
+                state = 0;
+                clearInterval(idInterval);
+                play.style.display = "block";
+            }
+        })
     };
 
     /**
@@ -22,7 +56,7 @@ var IARuntime = function() {
     };
 
     Tic_tac_toe.prototype.game = function() {
-        var canvas = document.getElementById("tictactoeCanvas");
+        var canvas = document.getElementById("mycanvas");
         var ctx = canvas.getContext("2d");
         canvas.width = 800;
         canvas.height = 600;
@@ -336,7 +370,8 @@ var IARuntime = function() {
             }
             click = false;
         }
-        setInterval(draw, 10);
+        var idInterval = setInterval(draw, 10);
+        return (idInterval);
     };
 
     return Tic_tac_toe;
