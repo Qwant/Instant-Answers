@@ -35,7 +35,7 @@ app.use((req,res,next) => {
 });
 app.use('/', index);
 try{
-  const fullPath = `${__dirname}/../../${MODULE_PATH}`;
+  const fullPath = `${__dirname}/../../../${MODULE_PATH}`;
   const modules = fs.readdirSync(fullPath);
   modules.forEach((module)=> {
     app.use('/css', express.static(path.join(MODULE_PATH, module, 'public', 'css')));

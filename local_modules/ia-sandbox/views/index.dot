@@ -6,8 +6,8 @@
 
 <script>
 	var data = [[= JSON.stringify(model.ia.data) ]];
-    var query = '[[= model.query ]]';
-    var modelName = '[[= model.ia.template_name ]]';
+    var query = "[[= model.query ]]";
+    var modelName = "[[= model.ia.template_name ]]";
     var externalFiles = [[= JSON.stringify(model.ia.files.filter((file) => {return file.type === 'script'})) ]];
 
 </script>

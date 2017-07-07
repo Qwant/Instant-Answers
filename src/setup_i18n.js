@@ -10,7 +10,8 @@ module.exports = function (lang) {
     var isDevelopmentMode = process.env.ENV === 'dev';
 
     var langOrder = [lang, config_get('languages.options.default')];
-    var logger = require('@qwant/front-logger')(config_get('app.qwant-ia.logConfig'));
+    var winston = require('winston');
+    var logger = winston.loggers.get('logger');
     var dictionnaries = {};
 
     langOrder.forEach(function (langkey) {
