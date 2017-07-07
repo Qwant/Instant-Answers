@@ -16,16 +16,18 @@ var IARuntime = function() {
         var can = document.getElementById("game");
         var cross = document.getElementById("cross");
         var elem = document.getElementById("background_games");
+        var catgames = document.getElementById("cat_games");
         var state = 0; // 0 = little interface 1= big interface
         var scope = this;
         can.style.display = "none";
         cross.style.display = "none";
+        catgames.style.display = "none";
         play.addEventListener("click", function(){
             if (state === 0){
-                elem.style.height = "800px";
+                elem.style.height = "400px";
                 setTimeout(function(){
-
-                    cross.style.display = "block";
+                    catgames.style.display = "flex";
+                    cross.style.display = "none";
                 }, 800)
                 play.style.cursor = "default";
                 play.style.display = "none";

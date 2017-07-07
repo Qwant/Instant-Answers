@@ -8,9 +8,11 @@
         <canvas id="mycanvas" class="style_canvas" width="800px" height="600px">Votre Navigateur ne support pas encore la technologie Canvas</canvas>
     </div>
     <div id="cat_games" class="style_cat_games">
-        <div id="insert_tetris" class="style_insert_games">
-            <div
-        </div>
+        <div id="insert_tetris" class="style_insert_games"></div>
+        <div id="insert_tetris" class="style_insert_games"></div>
+        <div id="insert_tetris" class="style_insert_games"></div>
+        <div id="insert_tetris" class="style_insert_games"></div>
+
 
 
     </div>
