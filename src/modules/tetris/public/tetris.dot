@@ -3,6 +3,10 @@
 -->
 <link rel="stylesheet" href="css/tetris.css" type="text/css">
 <script src="javascript/tetris.js"></script>
-<div class="ia__tetris__body">
-    <canvas class="ia__tetris__main__canvas" id="tetrisCanvas"></canvas>
+<div id="background_games" class="back_games">
+	<button class="play_game" id="start">Play</button>
+	<div id="game" class="games">
+		<canvas id="mycanvas" class="style_canvas" width="800px" height="600px">Votre Navigateur ne support pas encore la technologie Canvas</canvas>
+	</div>
+	<span id="cross" class="style_cross"><img src="{{=it.images_path}}/tetris/greycross.png" width="50" height="50"></span>
 </div>

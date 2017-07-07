@@ -1,14 +1,35 @@
-.ia__tetris__body {
-    height         : 600px;
-    width          : 100%;
-    margin-left    : 30px;
-    display        : flex;
-    flex-direction : row;
+.back_games{
+    height: 200px;
+    width: 100%;
+    background-color: #F0F0F0;
+    display: flex;
+    justify-content: center;
+    -webkit-transition: height 1s, -webkit-transform 1s;
+    transition: height 1s,transform 1s;
 }
+.play_game{
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 50px;
+    width: 100%;
+    -webkit-transition: height 1s, -webkit-transform 1s;
+    transition: height 1s,transform 1s;
+    cursor: pointer;
+}
+.games{
+    cursor: pointer;
+    margin-top: 100px;
+}
+.style_canvas{
+    background-color: #e2e2e2;
+}
+.style_cross{
 
-.ia__tetris__main__canvas {
-    background : #eee;
-    display    : block;
-    height     : 600px;
-    width      : 800px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 1%;
+    top: 17%;
+
+    cursor: pointer;
 }
