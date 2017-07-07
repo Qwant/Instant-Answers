@@ -24,7 +24,7 @@ var IARuntime = function() {
             if (state === 0){
                 elem.style.height = "800px";
                 setTimeout(function(){
-                    can.style.display = "block";
+
                     cross.style.display = "block";
                 }, 800)
                 play.style.cursor = "default";

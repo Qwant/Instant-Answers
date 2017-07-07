@@ -7,5 +7,12 @@
     <div id="game" class="games">
         <canvas id="mycanvas" class="style_canvas" width="800px" height="600px">Votre Navigateur ne support pas encore la technologie Canvas</canvas>
     </div>
+    <div id="cat_games" class="style_cat_games">
+        <div id="insert_tetris" class="style_insert_games">
+            <div
+        </div>
+
+
+    </div>
     <span id="cross" class="style_cross"><img src="{{=it.images_path}}/play/greycross.png" width="50" height="50"></span>
 </div>

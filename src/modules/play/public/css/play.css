@@ -30,6 +30,11 @@
     position: absolute;
     right: 1%;
     top: 17%;
-
     cursor: pointer;
+}
+.style_cat_games{
+    display: flex;
+    justify-content: center;
+
+
 }
