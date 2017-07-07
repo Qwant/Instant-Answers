@@ -24,10 +24,11 @@ var IARuntime = function() {
         catgames.style.display = "none";
         play.addEventListener("click", function(){
             if (state === 0){
-                elem.style.height = "400px";
+                elem.style.height = "800px";
                 setTimeout(function(){
                     catgames.style.display = "flex";
-                    cross.style.display = "none";
+                    cross.style.display = "block";
+                    can.style.display = "block";
                 }, 800)
                 play.style.cursor = "default";
                 play.style.display = "none";

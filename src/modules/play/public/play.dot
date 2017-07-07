@@ -8,10 +8,11 @@
         <canvas id="mycanvas" class="style_canvas" width="800px" height="600px">Votre Navigateur ne support pas encore la technologie Canvas</canvas>
     </div>
     <div id="cat_games" class="style_cat_games">
-        <div id="insert_tetris" class="style_insert_games"></div>
-        <div id="insert_tetris" class="style_insert_games"></div>
-        <div id="insert_tetris" class="style_insert_games"></div>
-        <div id="insert_tetris" class="style_insert_games"></div>
+        <div id="insert_tetris" class="style_insert_games"><img src="{{=it.images_path}}/play/unnamed.png"></div>
+        <div id="insert_tetris" class="style_insert_games"><img src="{{=it.images_path}}/play/unnamed.png"></div>
+        <div id="insert_tetris" class="style_insert_games"><img src="{{=it.images_path}}/play/index.jpg"></div>
+        <div id="insert_tetris" class="style_insert_games"><img src="{{=it.images_path}}/play/3526260-Dessin-es-la-main-de-tic-tac-toe-jeu-isol-sur-blanc--Banque-d'images.jpg"></div>
+
 
 
 
