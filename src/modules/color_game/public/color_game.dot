@@ -1,5 +1,9 @@
 <link rel="stylesheet" href="css/color_game.css" type="text/css">
 <script src="javascript/color_game.js"></script>
-<div class="ia__colorgame__body">
-<canvas class="ia__colorgame__canvas" id="colorgame"></canvas>
+<div id="background_games" class="back_games">
+	<button class="play_game" id="start">Play</button>
+	<div id="game" class="games">
+		<canvas id="mycanvas" class="style_canvas" width="800px" height="600px">Votre Navigateur ne support pas encore la technologie Canvas</canvas>
+	</div>
+	<span id="cross" class="style_cross"><img src="{{=it.images_path}}/color_game/greycross.png" width="50" height="50"></span>
 </div>

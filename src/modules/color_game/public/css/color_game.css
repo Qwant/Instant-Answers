@@ -1,10 +1,11 @@
-height: 200px;
-width: 100%;
-background-color: #F0F0F0;
-display: flex;
-justify-content: center;
--webkit-transition: height 1s, -webkit-transform 1s;
-transition: height 1s,transform 1s;
+.back_games {
+    height: 200px;
+    width: 100%;
+    background-color: #F0F0F0;
+    display: flex;
+    justify-content: center;
+    -webkit-transition: height 1s, -webkit-transform 1s;
+    transition: height 1s,transform 1s;
 }
 .play_game{
     text-align: center;
