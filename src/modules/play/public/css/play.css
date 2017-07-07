@@ -50,6 +50,13 @@
     flex-shrink: 1;
     flex-grow: 1;
     flex-basis: auto ;
+    cursor: pointer;
+    transition: transform 0.2s;
 
+
+}
+.style_insert_games img:hover{
+    -moz-transform: scale(1.1);
+    transform: scale(1.1);
 
 }

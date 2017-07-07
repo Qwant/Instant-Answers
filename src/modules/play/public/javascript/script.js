@@ -42,6 +42,7 @@ var IARuntime = function() {
                 elem.style.height = "200px";
                 can.style.display = "none";
                 cross.style.display = "none";
+                catgames.style.display = "none";
                 setTimeout(function(){
                     play.style.cursor = "pointer";
                 }, 800)
