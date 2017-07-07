@@ -5,13 +5,9 @@
 /**
  * If you need to import extra node_modules, use "npm install xxx --save" and place them there.
  */
+
 var Promise = require("bluebird");
 var _ = require('@qwant/front-i18n')._;
-var CountryData = require('./Data/Capital_country')();
-var keyCountry = Object.keys(CountryData);
-var Country = "(?:" +keyCountry.join("|") + ")";
-var util = require("util");
-var request = require("request");
 
 module.exports = {
 
@@ -33,66 +29,7 @@ module.exports = {
 
     getData: function (values, proxyURL, language) {
         return new Promise(function (resolve, reject) {
-            console.log(keyCountry);
-            var matchCapital = values[3].toLowerCase();
-            var matchCountry = values[8];
-            var resultData = Object.values(CountryData);
-            var CountryCap = CountryData[matchCountry];
-            var CountryCapPop = resultData[1];
-            var CountryCapPopInit = 0;
-            var CountryCapDens = resultData[2];
-            var CountryCapHour = resultData[3];
-            var CountryCapSup = resultData[4];
-            var CountryCapPic = resultData[5];
-            console.log(CountryCapPop);
-            console.log(resultData);
-            var _URL = "https://api.qwant.com/api/search/ia?safesearch=1&locale=%s&q=%s&t=all&lang=%s";
-            var _QUERY = CountryCap;
-            var _MODULE = matchCapital;
-
-            var knowledgeApiUrl = util.format(_URL, "en_gb", encodeURIComponent(_QUERY), "en_gb");
-            var requestParams = {
-                url: knowledgeApiUrl,
-                timeout: 3000,
-                headers: {
-                    'User-Agent': 'Qwantify'
-                }
-            };
-
-            if (proxyURL != '') {
-                requestParams.proxy = proxyURL;
-            }
-
-            request(requestParams, function (error, response) {
-                if (error) {
-                    logger.error("bad knowledge response", {module: "_MODULE"});
-                    reject(error);
-                    return;
-                }
-
-                var knowledgeResponse = {};
-
-                try {
-                    var parsedBody = JSON.parse(response.body);
-                    knowledgeResponse.data = parsedBody.data.result.items[0].data[0]
-                } catch (e) {
-                    e.msg = response.body;
-                    throw e;
-                }
-                knowledgeResponse.Country = {
-                    matchCountry: matchCountry,
-                    CountryCap: CountryCap,
-                    CountryCapPop: CountryCapPop,
-                    CountryCapPopInit: CountryCapPopInit,
-                    CountryCapDens: CountryCapDens,
-                    CountryCapHour: CountryCapHour,
-                    CountryCapSup: CountryCapSup,
-                    CountryCapPic: CountryCapPic
-                };
-                resolve(knowledgeResponse);
-            });
-
-
+            resolve("hello");
         });
     },
 
@@ -103,7 +40,7 @@ module.exports = {
      */
 
     getName: function () {
-        return _("Capital", "capital");
+        return _("Play", "play");
     },
 
     /**
@@ -111,7 +48,7 @@ module.exports = {
      * Otherwise, if your name doesn't need to be translated, use this attribute.
      */
 
-    name: "Capital",
+    name: "Play",
 
     /**
      * (OPTIONAL/NEEDED)
@@ -119,13 +56,25 @@ module.exports = {
      * @returns keyword translated
      */
     getKeyword: function () {
-
-        return "(Capital|capitale)(\\s)((of?)(\\s))?("+Country+")";
-
-
+        return _("play", "play");
     },
 
-      /**
+    /**
+     * (OPTIONAL/NEEDED)
+     * Otherwise, if your keyword doesn't need to be translated, use this attribute.
+     * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
+     */
+
+    keyword: "play",
+
+    /**
+     * (OPTIONAL)
+     * script : If your IA includes a script, place it under public/javascript/xxx.js and replace "hello" by "xxx".
+     */
+
+    script: "script",
+
+    /**
      * (NEEDED)
      * triggers : Depending on the trigger, the keyword needs to be placed at a specific point in the query.
      * It has 4 different values :
@@ -135,7 +84,7 @@ module.exports = {
      *          strict : perfect match with keyword
      */
 
-    trigger: "any",
+    trigger: "strict",
 
     /**
      * (NEEDED)
@@ -145,14 +94,14 @@ module.exports = {
      * 			- i : insensitive
      */
 
-    flag: "i",
+    flag: "gmi",
 
     /**
      * (NEEDED)
      * timeout : Time before your response is considered as canceled (in milliseconds)
      */
 
-    timeout: 10000,
+    timeout: 3600,
 
     /**
      * (NEEDED)
@@ -168,6 +117,5 @@ module.exports = {
      * If not, like this https://www.qwant.com/?q=2*5&t=web, toggle it as false.
      */
 
-    canBeDisplayedVertically: false,
-    script: "script"
+    canBeDisplayedVertically: false
 };
