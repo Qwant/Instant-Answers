@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="css/ascii.css" type="text/css">
+<script src="javascript/ascii.js"></script>
+<div class="ia__ascii__body">
+	<div class="ia__ascii__content">
+	<div class="ia__ascii__line">
+		<div class="ia__ascii__cat" style="font-weight:bold">OCT</div>
+		<div class="ia__ascii__cat" style="font-weight:bold">DEC</div>
+		<div class="ia__ascii__cat" style="font-weight:bold">HEX</div>
+		<div class="ia__ascii__cat" style="font-weight:bold">CHAR</div>
+	</div>
+	{{~ it.data:line:i }}
+		{{? i % 2 == 0 }}
+		<div class="ia__ascii__line" style="background: #e2e2e2">
+		{{??}}
+		<div class="ia__ascii__line">
+		{{?}}
+			<div class="ia__ascii__cat">{{= line.octal }}</div>
+        	<div class="ia__ascii__cat">{{= line.dec }}</div>
+        	<div class="ia__ascii__cat">{{= line.hex }}</div>
+        	<div class="ia__ascii__cat">{{= line.char }}</div>
+		</div>
+	{{~}}
+	</div>
+<span class="icon icon-nav-scroll-icon-large" style="font-size: 40px;position: relative; bottom: 27px; left: 50%"></span>
+</div>
