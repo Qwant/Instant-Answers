@@ -1,0 +1,119 @@
+.ia__anagram__body {
+    min-height     : 220px;
+    max-height     : 220px;
+    display        : flex;
+    flex-direction : row;
+}
+
+.ia__content__image__info {
+    display   : flex;
+    position  : relative;
+    overflow  : hidden;
+    height    : 220px;
+    min-width : 300px;
+    max-width : 300px;
+}
+
+.ia__title__image {
+    font-family : Helvetica;
+    position    :absolute;
+    text-align  :center;
+    bottom      : 50px;
+    width       : 100%;
+    color       : white;
+    font-size   : 1.2em;
+    z-index     : 2;
+}
+
+.ia__subtitle__image {
+    font-family : Helvetica;
+    position    :absolute;
+    text-align  :center;
+    bottom      : 25px;
+    width       : 100%;
+    color       : #afafaf;
+    font-size   : 1.2em;
+    z-index     : 2;
+}
+
+.ia__gradient__image {
+    position   : absolute;
+    bottom     : 0;
+    left       : 0;
+    z-index    : 1;
+    height     : 50%;
+    width      : 100%;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.75) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.75) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#bf000000',GradientType=0 );
+}
+
+.ia__content__result__info {
+    width        : 100%;
+    overflow     : hidden;
+    position     : relative;
+    left         : -15px;
+}
+
+.ia__content__result__infoscroll {
+    position: relative;
+    right: -15px;
+    overflow-y: scroll;
+    height: 220px;
+}
+
+.ia__brief__content {
+    background : #F8F9FA;
+    width      : 100%;
+}
+
+.ia__brief__result {
+    font-size      : 130%;
+    margin-left    : 25px;
+    padding-top    : 15px;
+    padding-bottom : 15px;
+    color          : #1c2428;
+    font-family    : Helvetica;
+}
+
+.ia__anagram__result {
+    display        : flex;
+    flex-direction : row;
+    width          : 100%;
+    min-height     : 50px;
+}
+
+.ia__nbletter__result {
+    padding-top    : 15px;
+    padding-bottom : 15px;
+    margin-left    : 25px;
+    font-family    : Helvetica;
+    color          :  #afafaf;
+    font-size      : 1.2em;
+    min-width      : 170px;
+}
+
+.ia__anagram__content__text {
+    font-family : Helvetica;
+    display     : flex;
+    flex-wrap   : wrap;
+    width       : 100%;
+}
+
+.ia__image {
+    width : 300px;
+}
+
+.ia__anagram__text {
+    padding-top    : 17px;
+    padding-bottom : 15px;
+    margin-left    : 30px;
+    width          : 180px;
+    color          : #1c2428;
+}
+
+.space {
+    color           : #afafaf;
+    text-decoration : none;
+}
