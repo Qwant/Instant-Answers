@@ -17,6 +17,8 @@ var IARuntime = function() {
         var cross = document.getElementById("cross");
         var elem = document.getElementById("background_games");
         var catgames = document.getElementById("cat_games");
+        var can_style = document.getElementById("mycanvas");
+        var ctx = can_style.getContext("2d");
         var state = 0; // 0 = little interface 1= big interface
         var scope = this;
         can.style.display = "none";
@@ -29,13 +31,10 @@ var IARuntime = function() {
                     catgames.style.display = "flex";
                     cross.style.display = "block";
                     can.style.display = "block";
-                    can.sty
                     scope.qwantsole();
                 }, 800)
                 play.style.cursor = "default";
                 play.style.display = "none";
-
-
                 state = 1;
             }
         })
@@ -45,11 +44,16 @@ var IARuntime = function() {
                 can.style.display = "none";
                 cross.style.display = "none";
                 catgames.style.display = "none";
+                can_style.style.backgroundColor = "black";
                 setTimeout(function(){
                     play.style.cursor = "pointer";
                 }, 800)
                 state = 0;
                 play.style.display = "block";
+                if (IARuntime.idInterval){
+                    clearInterval(IARuntime.idInterval);
+                }
+                ctx.clearRect(0,0,800,600);
 
             }
         })
@@ -58,13 +62,12 @@ var IARuntime = function() {
         var canvas = document.getElementById("mycanvas");
         var ctx = canvas.getContext("2d");
         var link = document.createElement('link');
+        var scope = this;
         link.rel = 'stylesheet';
         link.type = 'text/css';
         link.href = 'https://fonts.googleapis.com/css?family=Press+Start+2P';
         document.getElementsByTagName('head')[0].appendChild(link);
-        var image = new Image;
-        image.src = link.href;
-        image.onerror = function() {
+        link.onload = function() {
             ctx.fillStyle="#FFFFFF";
             ctx.font = '15px "Press Start 2P"';
             var textString = "INSERT COIN 0",
@@ -78,6 +81,9 @@ var IARuntime = function() {
 
 
         color.addEventListener("click",function(){
+            if (IARuntime.idInterval){
+                clearInterval(IARuntime.idInterval);
+            }
            var colorGame = function() {
 
                 var canvas = document.getElementById("mycanvas");
@@ -279,18 +285,21 @@ var IARuntime = function() {
                     }
                     click = false;
                 }
-                var idInteverval = setInterval(draw, 10);
-                return (idInteverval);
+                var idInterval = setInterval(draw, 10);
+                return (idInterval);
             };
-            colorGame();
+            IARuntime.idInterval = colorGame();
         })
         snake.addEventListener("click",function(){
+            if (IARuntime.idInterval){
+                clearInterval(IARuntime.idInterval);
+            }
             var snakeGame = function () {
                 var mycanvas = document.getElementById('mycanvas');
+                var id;
                 var ctx = mycanvas.getContext('2d');
                 canvas.style.backgroundColor = "white";
-                ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
-                var snakeSize = 10;
+                var snakeSize = 20;
                 mycanvas.width = 800;
                 mycanvas.height = 600;
                 var w = 800;
@@ -300,7 +309,6 @@ var IARuntime = function() {
                 var food;
                 var bonbon;
                 var screen = 0;
-                var gameloop;
 
                 var bodySnake = function (x, y) {
                     ctx.fillStyle = 'green';
@@ -318,13 +326,15 @@ var IARuntime = function() {
                 var bonus = function (x, y) {
                     ctx.fillStyle = 'pink';
                     ctx.fillRect(x * snakeSize, y * snakeSize, snakeSize, snakeSize);
+                    ctx.strokeStyle = 'blue';
+                    ctx.strokeRect(x * snakeSize, y * snakeSize, snakeSize, snakeSize);
                 }
 
                 var scoreText = function () {
                     var score_text = "Score: " + score;
-                    ctx.font = '8pt Calibri,Geneva,Arial';
+                    ctx.font = '12pt Calibri,Geneva,Arial';
                     ctx.fillStyle = 'blue';
-                    ctx.fillText(score_text, 145, h - 5);
+                    ctx.fillText(score_text, mycanvas.width - 80, mycanvas.height - 15);
                 }
 
                 var drawSnake = function () {
@@ -365,12 +375,17 @@ var IARuntime = function() {
                     if (snakeX == food.x && snakeY == food.y) {
                         var tail = {x: snakeX, y: snakeY}; //Create a new head instead of moving the tail
                         score++;
-
                         createFood(); //Create new food
+                        if (bonbon.x == -1 && Math.trunc((Math.random() * 1000) % 8) == 0) {
+                            createBonus(); //Create new food
+                        }
                     } else if (snakeX == bonbon.x && snakeY == bonbon.y) {
                         var tail = {x: snakeX, y: snakeY}; //Create a new head instead of moving the tail
                         score += 10;
-                        createBonus(); //Create new food
+                        bonbon = {
+                            x : -1,
+                            y : -1
+                        };
                     } else {
                         var tail = snake.pop(); //pops out the last cell
                         tail.x = snakeX;
@@ -390,17 +405,6 @@ var IARuntime = function() {
                     console.log(mycanvas.offsetLeft);
 
                 }
-                var gameOver = function() {
-                    ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
-                    gameloop = clearInterval(gameloop);
-                    ctx.fillStyle = "#000000";
-                    ctx.font = '20pt Calibri,Geneva,Arial';
-
-                    var textString = "GAMEOVER!!!\n Click To Restart",
-                        textWidth = ctx.measureText(textString).width;
-                    ctx.fillText(textString, (mycanvas.width / 2) - (textWidth / 2), 300);
-                    screen = 2;
-                }
                 var start = function () {
                     ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
                     ctx.fillStyle = "#000000";
@@ -410,39 +414,91 @@ var IARuntime = function() {
                     ctx.fillText(textString, (mycanvas.width / 2) - (textWidth / 2), 300);
 
                 }
+                var gameOver = function() {
+                    ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
+                    id = clearInterval(id);
+                    ctx.fillStyle = "#000000";
+                    ctx.font = '20pt Calibri,Geneva,Arial';
+
+                    var textString = "GAMEOVER!!!\n Click To Restart",
+                        textWidth = ctx.measureText(textString).width;
+                    ctx.fillText(textString, (mycanvas.width / 2) - (textWidth / 2), 300);
+                    screen = 2;
+                }
+
 
                 var createFood = function () {
-                    food = {
-                        x: Math.floor((Math.random() * 50) + 1),
-                        y: Math.floor((Math.random() * 50) + 1)
-                    }
+                    var seekX = 0;
+                    var seekY = 0;
+                    var testPos = true;
 
-                    for (var i = 0; i > snake.length; i++) {
-                        var snakeX = snake[i].x;
-                        var snakeY = snake[i].y;
-
-                        if (food.x === snakeX && food.y === snakeY || food.y === snakeY && food.x === snakeX) {
-                            food.x = Math.floor((Math.random() * 50) + 1);
-                            food.y = Math.floor((Math.random() * 50) + 1);
+                    for (var i = 0; i < 50 && testPos; ++i) {
+                        seekX = Math.floor((Math.random() * 10000) % (mycanvas.width / 20));
+                        seekY = Math.floor((Math.random() * 10000) % (mycanvas.height / 20));
+                        testPos = false;
+                        for (var j = 0; j < snake.length; ++j) {
+                            if (snake[j].x == seekX && snake[j].y == seekY) {
+                                testPos = true;
+                            }
                         }
+                    }
+                    if (testPos) {
+                        for (i = 0; i < Math.trunc(mycanvas.height / 20) && testPos; ++i) {
+                            for (j = 0; j < Math.trunc(mycanvas.width / 20) && testPos; ++j) {
+                                testPos = false;
+                                for (var k = 0; k < snake.length; ++k) {
+                                    if (snake[k].x == j && snake[k].y == i) {
+                                        testPos = true;
+                                    }
+                                }
+                                if (!testPos) {
+                                    seekX = j;
+                                    seekY = i;
+                                }
+                            }
+                        }
+                    }
+                    food = {
+                        x: seekX,
+                        y: seekY
                     }
                 }
                 var createBonus = function () {
-                    bonbon = {
-                        x: Math.floor((Math.random() * 50) + 1),
-                        y: Math.floor((Math.random() * 50) + 1)
-                    }
+                    var seekX = 0;
+                    var seekY = 0;
+                    var testPos = true;
 
-                    for (var i = 0; i > snake.length; i++) {
-                        var snakeX = snake[i].x;
-                        var snakeY = snake[i].y;
-
-                        if (bonbon.x === snakeX && bonbon.y === snakeY || bonbon.y === snakeY && bonbon.x === snakeX) {
-                            setTimeout(function () {
-                                bonbon.x = Math.floor((Math.random() * 50) + 1);
-                                bonbon.y = Math.floor((Math.random() * 50) + 1);
-                            }, 500)
+                    for (var i = 0; i < 50 && testPos; ++i) {
+                        seekX = Math.floor((Math.random() * 10000) % (mycanvas.width / 20));
+                        seekY = Math.floor((Math.random() * 10000) % (mycanvas.height / 20));
+                        testPos = false;
+                        for (var j = 0; j < snake.length; ++j) {
+                            if ((snake[j].x == seekX && snake[j].y == seekY) ||
+                                (food.x == seekX && food.y == seekX)) {
+                                testPos = true;
+                            }
                         }
+                    }
+                    if (testPos) {
+                        for (i = 0; i < Math.trunc(mycanvas.height / 20) && testPos; ++i) {
+                            for (j = 0; j < Math.trunc(mycanvas.width / 20) && testPos; ++j) {
+                                testPos = false;
+                                for (var k = 0; k < snake.length; ++k) {
+                                    if ((snake[k].x == j && snake[k].y == i) ||
+                                        (food.x == seekX && food.y == seekX)) {
+                                        testPos = true;
+                                    }
+                                }
+                                if (!testPos) {
+                                    seekX = j;
+                                    seekY = i;
+                                }
+                            }
+                        }
+                    }
+                    bonbon = {
+                        x: seekX,
+                        y: seekY
                     }
                 }
 
@@ -455,75 +511,88 @@ var IARuntime = function() {
                     }
                     return false;
                 }
-                ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
-                start();
-                mycanvas.addEventListener("click",function(e){
-                    var x = e.pageX - mycanvas.offsetLeft;
-                    var y = e.pageY - mycanvas.offsetTop;
-                    if (screen === 0) {
-                        screen = 1;
-                        direction = 'down';
-                        score = 0;
-                        drawSnake();
-                        createFood();
-                        createBonus();
-
-                        gameloop = setInterval(paint, 80);
-                        window.addEventListener("keydown", keyDownHandler, false);
-
-                    } else if(screen === 2){
-                        screen = 0;
-                        start();
-                    }
-
-
-                })
-
-
-
-
                 function keyDownHandler(e) {
 
                     switch (e.keyCode) {
 
                         case 37:
-                            if (direction != 'right') {
+                            if (screen == 1) {
                                 e.preventDefault();
+                            }
+                            if (snake[0].x - 1 != snake[1].x || snake[0].y != snake[1].y) {
                                 direction = 'left';
                             }
                             console.log('left');
                             break;
 
                         case 39:
-                            if (direction != 'left') {
+                            if (screen == 1) {
                                 e.preventDefault();
+                            }
+                            if (snake[0].x + 1 != snake[1].x || snake[0].y != snake[1].y) {
                                 direction = 'right';
                                 console.log('right');
                             }
                             break;
 
                         case 38:
-                            if (direction != 'down') {
+                            if (screen == 1) {
                                 e.preventDefault();
+                            }
+                            if (snake[0].x != snake[1].x || snake[0].y - 1 != snake[1].y) {
                                 direction = 'up';
                                 console.log('up');
                             }
                             break;
 
                         case 40:
-                            if (direction != 'up') {
+                            if (screen == 1) {
                                 e.preventDefault();
+                            }
+                            if (snake[0].x != snake[1].x || snake[0].y + 1 != snake[1].y) {
                                 direction = 'down';
                                 console.log('down');
                             }
                             break;
                     }
                 }
+                ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
+                start();
+                var draw = function(){
+                    mycanvas.addEventListener("click",function(e){
+                        var x = e.pageX - mycanvas.offsetLeft;
+                        var y = e.pageY - mycanvas.offsetTop;
+                        if (screen === 0) {
+                            screen = 1;
+                            direction = 'down';
+                            score = 0;
+                            drawSnake();
+                            createFood();
+                            bonbon = {
+                                x : -1,
+                                y : -1
+                            };
+                            id = setInterval(paint, 80);
+
+                            window.addEventListener("keydown", keyDownHandler, false);
+
+                        } else if(screen === 2){
+                            clearInterval(id);
+                            screen = 0;
+                        }
+                    })
+                }
+                var idInterval = setInterval(draw, 10);
+                console.log(idInterval);
+                return (idInterval);
             };
-            snakeGame();
+            IARuntime.idInterval = snakeGame();
 
         })
         tetris.addEventListener("click",function(){
+            if (IARuntime.idInterval){
+                clearInterval(IARuntime.idInterval);
+            }
             var tetrisGame = function () {
                 var canvas = document.getElementById("mycanvas");
                 var ctx = canvas.getContext("2d");
@@ -1078,9 +1147,12 @@ var IARuntime = function() {
                 var idInterval = setInterval(draw, 10);
                 return (idInterval);
             };
-            tetrisGame();
+            IARuntime.idInterval = tetrisGame();
         })
         morpion.addEventListener("click",function(){
+            if (IARuntime.idInterval){
+                clearInterval(IARuntime.idInterval);
+            }
             var morpionGame = function() {
                 var canvas = document.getElementById("mycanvas");
                 var ctx = canvas.getContext("2d");
@@ -1400,8 +1472,10 @@ var IARuntime = function() {
                 }
                 var idInterval = setInterval(draw, 10);
                 return (idInterval);
+
             };
-            morpionGame();
+            IARuntime.idInterval = morpionGame();
+
 
         })
 
