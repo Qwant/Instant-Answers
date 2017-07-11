@@ -29,6 +29,7 @@ var IARuntime = function() {
                     catgames.style.display = "flex";
                     cross.style.display = "block";
                     can.style.display = "block";
+                    can.sty
                     scope.qwantsole();
                 }, 800)
                 play.style.cursor = "default";
@@ -78,8 +79,10 @@ var IARuntime = function() {
 
         color.addEventListener("click",function(){
            var colorGame = function() {
+
                 var canvas = document.getElementById("mycanvas");
                 var ctx = canvas.getContext("2d");
+                canvas.style.backgroundColor = "white";
                 canvas.height = 600;
                 canvas.width = 800;
                 var screen = 0;
@@ -285,6 +288,8 @@ var IARuntime = function() {
             var snakeGame = function () {
                 var mycanvas = document.getElementById('mycanvas');
                 var ctx = mycanvas.getContext('2d');
+                canvas.style.backgroundColor = "white";
+                ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
                 var snakeSize = 10;
                 mycanvas.width = 800;
                 mycanvas.height = 600;
@@ -522,6 +527,8 @@ var IARuntime = function() {
             var tetrisGame = function () {
                 var canvas = document.getElementById("mycanvas");
                 var ctx = canvas.getContext("2d");
+                canvas.style.backgroundColor = "white";
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
                 canvas.width = 800;
                 canvas.height = 600;
 
@@ -1077,6 +1084,8 @@ var IARuntime = function() {
             var morpionGame = function() {
                 var canvas = document.getElementById("mycanvas");
                 var ctx = canvas.getContext("2d");
+                canvas.style.backgroundColor = "white";
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
                 canvas.width = 800;
                 canvas.height = 600;
                 var game = [0, 0, 0, 0, 0, 0, 0, 0, 0];
