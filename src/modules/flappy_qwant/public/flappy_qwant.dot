@@ -1,0 +1,11 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/flappy_qwant.css" type="text/css">
+<div id="background_games" class="back_games">
+    <button class="play_game" id="start">Play</button>
+    <span id="cross" class="style_cross"><img src="{{=it.images_path}}/flappy_qwant/greycross.png" width="50" height="50"></span>
+    <div id="game" class="games">
+        <canvas id="mycanvas" class="style_canvas" width="800px" height="600px">Votre Navigateur ne support pas encore la technologie Canvas</canvas>
+    </div>
+</div>
