@@ -353,7 +353,7 @@ var IARuntime = function() {
                     posSpike = -32;
                     blocks = [];
                     lastBlock = -1;
-                    playerPosX = 100;
+                    playerPosX = 300;
                     playerPosY = 100;
                     vGravite = 0;
                     dieIndex = 0;
@@ -373,9 +373,9 @@ var IARuntime = function() {
                 if (!(playerPosX - camX < 22 || playerPosY > 1650)) {
                     camX += dv;
                 }
-                dv = go + Math.trunc(camX / 2500);
-                if (dv > 12) {
-                    dv = 12;
+                dv = go + Math.trunc(score / 500);
+                if (dv > 13) {
+                    dv = 13;
                 }
                 if (go !== 0) {
                     music.play();
