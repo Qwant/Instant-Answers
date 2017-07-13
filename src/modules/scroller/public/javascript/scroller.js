@@ -82,7 +82,16 @@ var IARuntime = function() {
         var background = document.getElementById("background");
         var backgroundStop = document.getElementById("background_stop");
         var block = document.getElementById("block");
+        var spike = document.getElementById("spike");
         var pattern = ctx.createPattern(block, "repeat");
+        var player = document.getElementById("player");
+        var die = document.getElementById("die");
+        var index = 0;
+        var last = 0;
+        var go = 0;
+        var posSpike = -32;
+        var dieIndex = 0;
+        var explosion = document.getElementById("explosion");
 
         window.addEventListener('mousemove', function (e) {
             xCurs = e.pageX - canvas.offsetLeft;
@@ -95,15 +104,18 @@ var IARuntime = function() {
         window.addEventListener("keyup", keyUpHandler, false);
 
         function keyDownHandler(e) {
-            if (screen !==1) {
+            if (screen !== 1 && (screen !== 2 && e.keyCode !== 32)) {
                 return;
             }
             e.preventDefault();
+            go = 4;
             if(e.keyCode === 39) {
                 right = true;
+                last = 0;
             }
             if(e.keyCode === 37) {
                 left = true;
+                last = 1;
             }
             if (e.keyCode === 32) {
                 if (vGravite === 0 || calcCollision(playerPosX + 5, playerPosY) || calcCollision(playerPosX - 5, playerPosY)) {
@@ -119,9 +131,11 @@ var IARuntime = function() {
             e.preventDefault();
             if(e.keyCode === 39) {
                 right = false;
+                index = 0;
             }
             if(e.keyCode === 37) {
                 left = false;
+                index = 0;
             }
         }
 
@@ -146,10 +160,25 @@ var IARuntime = function() {
             ctx.closePath();
         }
 
+        function drawSpike() {
+            ctx.beginPath();
+            ctx.drawImage(spike, posSpike, 0);
+            ctx.closePath();
+            if (go) {
+                ++posSpike;
+                if (posSpike > -10) {
+                    posSpike = -10;
+                }
+            }
+        }
 
         function drawSection() {
             drawBlocks();
             drawScore();
+            if (!(playerPosX - camX < 22 || playerPosY > 1650)) {
+                drawGuy();
+            }
+            drawSpike();
         }
 
         function drawGameOver() {
@@ -227,8 +256,19 @@ var IARuntime = function() {
             var dyPos = ((playerPosY % 100) / 100) * size;
 
             ctx.beginPath();
-            ctx.rect((xPos - Math.trunc(camX / 100)) * size + dxPos - ((camX % 100) / 100 * size), (yPos + 1) * size + dyPos - (2 * size), size, size);
-            ctx.fillStyle = "blue";
+            if (!left && !right && vGravite === 0) {
+                ctx.drawImage(player, 0, last * size, 40, 40, (xPos - Math.trunc(camX / 100)) * size + dxPos - ((camX % 100) / 100 * size), (yPos + 1) * size + dyPos - (2 * size), size, size);
+            }
+            else if (vGravite === 0) {
+                ctx.drawImage(player, (1 + index) * size, last * size, 40, 40, (xPos - Math.trunc(camX / 100)) * size + dxPos - ((camX % 100) / 100 * size), (yPos + 1) * size + dyPos - (2 * size), size, size);
+                index = (index + 1) % 7;
+            }
+            else if (vGravite < 0) {
+                ctx.drawImage(player, 8 * size, last * size, 40, 40, (xPos - Math.trunc(camX / 100)) * size + dxPos - ((camX % 100) / 100 * size), (yPos + 1) * size + dyPos - (2 * size), size, size);
+            }
+            else if (vGravite > 0) {
+                ctx.drawImage(player, 9 * size, last * size, 40, 40, (xPos - Math.trunc(camX / 100)) * size + dxPos - ((camX % 100) / 100 * size), (yPos + 1) * size + dyPos - (2 * size), size, size);
+            }
             ctx.fill();
             ctx.closePath();
         }
@@ -250,12 +290,17 @@ var IARuntime = function() {
         function calcGravite() {
             if (!calcCollision(playerPosX, playerPosY + 1) || !calcCollision(playerPosX, playerPosY + vGravite + gravite)) {
                 vGravite += gravite;
+                var vSave = vGravite;
                 playerPosY += vGravite;
+                if (vGravite < 0 && calcCollision(playerPosX, playerPosY)) {
+                    vGravite = 0;
+                }
                 if (calcCollision(playerPosX, playerPosY) && !calcCollision(playerPosX, Math.trunc(playerPosY / 100) * 100)) {
+                    playerPosY = Math.trunc(playerPosY / 100) * 100;
                     playerPosY = Math.trunc(playerPosY / 100) * 100;
                 }
                 else if (calcCollision(playerPosX, playerPosY)) {
-                    playerPosY -= vGravite;
+                    playerPosY -= vSave;
                     vGravite = 0;
                 }
             }
@@ -265,36 +310,40 @@ var IARuntime = function() {
         }
 
         function move() {
-            calcGravite();
-            if (right && !calcCollision(playerPosX + 10, playerPosY)) {
-                playerPosX += 10;
-            }
-            if (left && !calcCollision(playerPosX - 10, playerPosY)) {
-                playerPosX -= 10;
-            }
-            if (playerPosX % 10 !== 0) {
-                playerPosX = Math.trunc(playerPosX / 10) * 10;
+            if (!(playerPosX - camX < 22 || playerPosY > 1650)) {
+                calcGravite();
+                if (right && !calcCollision(playerPosX + 10, playerPosY)) {
+                    playerPosX += 10;
+                }
+                if (left && !calcCollision(playerPosX - 10, playerPosY)) {
+                    playerPosX -= 10;
+                }
+                if (playerPosX % 10 !== 0) {
+                    playerPosX = Math.trunc(playerPosX / 10) * 10;
+                }
             }
         }
 
         function draw() {
             if (screen === 0) {
                 ctx.drawImage(backgroundStart, 0, 0);
-                if (click && xCurs > canvas.width / 3 && xCurs < 2 * canvas.width / 3 && yCurs > canvas.height / 3 && yCurs < 2 * canvas.height / 3) {
+                if (click && xCurs > 0 && xCurs < canvas.width && yCurs > 0 && canvas.height) {
                     x = 0;
                     camX = 0;
-                    dv = 5;
+                    dv = 0;
+                    go = 0;
                     score = 0;
+                    posSpike = -32;
                     blocks = [];
                     lastBlock = -1;
                     playerPosX = 100;
                     playerPosY = 100;
                     vGravite = 0;
+                    dieIndex = 0;
                     left = false;
                     right = false;
                     musicStart.pause();
                     music.load();
-                    music.play();
                     generateMap();
                     id   = setInterval(move, 8);
                     screen = (screen + 1) % 3;
@@ -304,19 +353,37 @@ var IARuntime = function() {
                 ctx.drawImage(background, 0, 0);
                 generateMap();
                 drawSection();
-                drawGuy();
-                camX += dv;
-                dv = 6 + Math.trunc(camX / 2500);
+                if (!(playerPosX - camX < 22 || playerPosY > 1650)) {
+                    camX += dv;
+                }
+                dv = go + Math.trunc(camX / 2500);
                 if (dv > 12) {
                     dv = 12;
                 }
-                if (playerPosX - camX < -150 || playerPosY > 1650) {
-                    music.pause();
-                    musicStop.load();
-                    musicStop.play();
-                    screen = (screen + 1) % 3;
+                if (go !== 0) {
+                    music.play();
+                    ++score;
                 }
-                ++score;
+                if (playerPosX - camX < 22 || playerPosY > 1650) {
+                    if (dieIndex < 24) {
+                        if (dieIndex === 0) {
+                            explosion.load();
+                            explosion.play();
+                        }
+                        var xPos = Math.trunc(playerPosX / 100);
+                        var dxPos = ((playerPosX % 100) / 100) * size;
+                        var yPos = Math.trunc(playerPosY / 100) + 1;
+                        var dyPos = ((playerPosY % 100) / 100) * size;
+                        ctx.drawImage(die, dieIndex * 64, 0, 64, 64, (xPos - Math.trunc(camX / 100)) * size + dxPos - ((camX % 100) / 100 * size) - 24, (yPos + 1) * size + dyPos - (2 * size) - 64, 128, 128);
+                        ++dieIndex;
+                    }
+                    else {
+                        music.pause();
+                        musicStop.load();
+                        musicStop.play();
+                        screen = (screen + 1) % 3;
+                    }
+                }
             }
             else if (screen === 2) {
                 ctx.drawImage(backgroundStop, 0, 0);
