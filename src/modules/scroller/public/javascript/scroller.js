@@ -207,11 +207,11 @@ var IARuntime = function() {
                     lastBlock = rand;
                     switch (rand) {
                         case 0: {
-                            blocks.push({x : x, y : 0, xsize : 2, ysize : 1.9});
+                            blocks.push({x : x, y : 0, xsize : 2, ysize : 1.8});
                             blocks.push({x : x, y : 3, xsize : 2, ysize : 13});
                             blocks.push({x : x + 3, y : 0, xsize : 1, ysize : 10.5});
                             blocks.push({x : x + 3, y : 12, xsize : 3, ysize : 1});
-                            x += 5;
+                            x += 6;
                             break;
                         }
                         case 1: {
@@ -222,7 +222,7 @@ var IARuntime = function() {
                             break;
                         }
                         case 2: {
-                            blocks.push({x : x, y : 11, xsize : 7, ysize : 1});
+                            blocks.push({x : x, y : 11 ,xsize : 7, ysize : 1});
                             x += 7;
                             break;
                         }
@@ -248,14 +248,14 @@ var IARuntime = function() {
                         case 5: {
                             blocks.push({x : x, y : 13, xsize : 2, ysize : 2});
                             blocks.push({x : x + 4, y : 8, xsize : 2, ysize : 2});
-                            blocks.push({x : x + 8, y : 3, xsize : 2, ysize : 2});
+                            blocks.push({x : x + 8, y : 3, xsize : 2, ysize : 3});
                             x += 10;
                             break;
                         }
                         case 6: {
                             blocks.push({x : x, y : 0, xsize : 2, ysize : 12.5});
                             blocks.push({x : x, y : 14, xsize : 2, ysize : 1});
-                            blocks.push({x : x + 3, y : 0, xsize : 1, ysize : 2.9});
+                            blocks.push({x : x + 3, y : 0, xsize : 1, ysize : 2.8});
                             blocks.push({x : x + 3, y : 4, xsize : 1, ysize : 11});
                             x += 5;
                             break;
@@ -294,7 +294,7 @@ var IARuntime = function() {
             var rect1 = {x: x, y: y + 100, width: 100, height: 100};
             for (var i = 0; i < blocks.length; ++i) {
                 var rect2 = {x: blocks[i].x * 100, y: (blocks[i].y + 1) * 100, width: blocks[i].xsize * 100, height: blocks[i].ysize * 100};
-                if (rect1.y < 85 || (rect1.x < rect2.x + rect2.width &&
+                if (rect1.y < 75 || (rect1.x < rect2.x + rect2.width &&
                     rect1.x + rect1.width > rect2.x &&
                     rect1.y < rect2.y + rect2.height &&
                     rect1.height + rect1.y > rect2.y)) {
