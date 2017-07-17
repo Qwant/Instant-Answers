@@ -39,10 +39,13 @@ module.exports = {
             for (var i = 0; i < size; ++i) {
                 var code = Math.trunc(Math.random() * 1000) % charlist.length;
                 password += charlist.charAt(code);
-                if (password.length >= 128) {
+                if (password.length >= 110) {
                     arrayPass.push(password);
                     password = "";
                 }
+            }
+            if (password.length !== 0) {
+                arrayPass.push(password);
             }
             resolve({size : size, password : arrayPass});
         });
