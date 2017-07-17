@@ -9,3 +9,7 @@
         <canvas id="mycanvas" class="style_canvas" width="800px" height="600px">Votre Navigateur ne support pas encore la technologie Canvas</canvas>
     </div>
 </div>
+<img id="scream" src="{{=it.images_path}}/flappy_qwant/GAME-OVER.png" width="300px" height="47px">
+<img id="style_back_game" src="{{=it.images_path}}/flappy_qwant/background-game.png">
+<img id="style_bird_one" src="{{=it.images_path}}/flappy_qwant/bird-1.png">
+<img id="style_bird_two" src="{{=it.images_path}}/flappy_qwant/bird-2.png">
