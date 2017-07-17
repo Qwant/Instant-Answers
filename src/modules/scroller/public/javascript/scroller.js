@@ -63,6 +63,7 @@ var IARuntime = function() {
         var size = 40;
         var blocks = [];
         var dynamicBlocks = [];
+        var obstacles = [];
         var score = 0;
         var id = -1;
         var camX = 0;
@@ -84,9 +85,12 @@ var IARuntime = function() {
         var background = document.getElementById("background");
         var backgroundStop = document.getElementById("background_stop");
         var block = document.getElementById("block");
+        var dynamicBlock = document.getElementById("dynamic_block");
         var spike = document.getElementById("spike");
         var pattern = ctx.createPattern(block, "repeat");
+        var dynPattern = ctx.createPattern(dynamicBlock, "repeat");
         var player = document.getElementById("player");
+        var obstacle = document.getElementById("obstacle");
         var die = document.getElementById("die");
         var index = 0;
         var last = 0;
@@ -111,7 +115,13 @@ var IARuntime = function() {
                 return;
             }
             e.preventDefault();
-            go = 4;
+            go = 5;
+            if (e.keyCode === 32) {
+                space = true;
+                if (vGravite === 0 || calcCollision(playerPosX + 15, playerPosY) || calcCollision(playerPosX - 15, playerPosY)) {
+                    vGravite = -15;
+                }
+            }
             if(e.keyCode === 39) {
                 right = true;
                 last = 0;
@@ -120,12 +130,6 @@ var IARuntime = function() {
                 left = true;
                 last = 1;
             }
-            if (e.keyCode === 32) {
-                space = true;
-                if (vGravite === 0 || calcCollision(playerPosX + 5, playerPosY) || calcCollision(playerPosX - 5, playerPosY)) {
-                    vGravite = -15;
-                }
-            }
         }
 
         function keyUpHandler(e) {
@@ -133,6 +137,9 @@ var IARuntime = function() {
                 return;
             }
             e.preventDefault();
+            if (e.keyCode === 32) {
+                space = false;
+            }
             if(e.keyCode === 39) {
                 right = false;
                 index = 0;
@@ -141,14 +148,15 @@ var IARuntime = function() {
                 left = false;
                 index = 0;
             }
-            if (e.keyCode === 32) {
-                space = false;
-            }
         }
 
         function drawBlocks() {
             ctx.beginPath();
-            for (var i = 0; i < blocks.length; ++i) {
+            for (var i = 0; i < obstacles.length; ++i) {
+                ctx.drawImage(obstacle, 0, 0, size, size, (obstacles[i].x - camX / 100) * size, obstacles[i].y * size, obstacles[i].xsize * size, obstacles[i].ysize * size);
+                ctx.fill();
+            }
+            for (i = 0; i < blocks.length; ++i) {
                 ctx.save();
                 ctx.translate(-(camX / 100 * size), 0);
                 ctx.fillStyle = pattern;
@@ -158,8 +166,8 @@ var IARuntime = function() {
             }
             for (i = 0; i < dynamicBlocks.length; ++i) {
                 ctx.save();
-                ctx.translate(-(camX / 100 * size), 0);
-                ctx.fillStyle = pattern;
+                ctx.translate(-((camX / 100) * size), 0);
+                ctx.fillStyle = dynPattern;
                 ctx.fillRect(dynamicBlocks[i].x * size, dynamicBlocks[i].y * size, dynamicBlocks[i].xsize * size, dynamicBlocks[i].ysize * size);
                 ctx.fill();
                 ctx.restore();
@@ -191,6 +199,7 @@ var IARuntime = function() {
             drawBlocks();
             drawScore();
             if (!(mustDie || playerPosX - camX < 22 || playerPosY > 1650)) {
+                moveDynamic();
                 drawGuy();
             }
             drawSpike();
@@ -209,10 +218,16 @@ var IARuntime = function() {
             while (blocks.length > 0 && (blocks[0].x - Math.trunc(camX / 100)) * size - ((camX % 100) / 100 * size) < -700) {
                 blocks.shift();
             }
+            while (dynamicBlocks.length > 0 && (dynamicBlocks[0].x - Math.trunc(camX / 100)) * size - ((camX % 100) / 100 * size) < -700) {
+                dynamicBlocks.shift();
+            }
+            while (obstacles.length > 0 && (obstacles[0].x - Math.trunc(camX / 100)) * size - ((camX % 100) / 100 * size) < -700) {
+                obstacles.shift();
+            }
             while (x < 40 + Math.trunc(camX / 100)) {
                 if (x === 0) {
                     blocks.push({x : 0, y : 11, xsize : 7, ysize : 1});
-                    x += 4;
+                    x += 7;
                 }
                 else {
                     var rand = Math.trunc(Math.random() * 1000) % 8;
@@ -224,6 +239,8 @@ var IARuntime = function() {
                         case 0: {
                             blocks.push({x : x, y : 0, xsize : 2, ysize : 1.8});
                             blocks.push({x : x, y : 3, xsize : 2, ysize : 13});
+                            obstacles.push({x : x + 2, y : 0.8, xsize : 1, ysize : 1});
+                            obstacles.push({x : x - 1, y : 11, xsize : 1, ysize : 1});
                             blocks.push({x : x + 3, y : 0, xsize : 1, ysize : 10.5});
                             blocks.push({x : x + 3, y : 12, xsize : 3, ysize : 1});
                             x += 6;
@@ -249,12 +266,16 @@ var IARuntime = function() {
                             blocks.push({x : x + 1, y : 14, xsize : 1, ysize : 1});
                             blocks.push({x : x + 6, y : 13, xsize : 4, ysize : 1});
                             blocks.push({x : x + 8, y : 12.1, xsize : 1, ysize : 0.9});
+                            obstacles.push({x : x + 5, y : 8, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 4, y : 9, xsize : 1, ysize : 1});
                             x += 11;
                             break;
                         }
                         case 4: {
                             blocks.push({x : x - 2, y : 4, xsize : 3, ysize : 2});
                             blocks.push({x : x + 3, y : 8, xsize : 3, ysize : 2});
+                            obstacles.push({x : x + 6, y : 8, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 7, y : 8, xsize : 1, ysize : 1});
                             blocks.push({x : x + 8, y : 1, xsize : 1, ysize : 15});
                             blocks.push({x : x + 4, y : 1, xsize : 5, ysize : 1});
                             x += 9;
@@ -264,18 +285,26 @@ var IARuntime = function() {
                             blocks.push({x : x, y : 13, xsize : 2, ysize : 2});
                             blocks.push({x : x + 4, y : 8, xsize : 2, ysize : 2});
                             blocks.push({x : x + 8, y : 3, xsize : 2, ysize : 3});
+                            obstacles.push({x : x + 8, y : 6, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 9, y : 7, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 8, y : 8, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 9, y : 9, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 8, y : 10, xsize : 1, ysize : 1});
                             x += 10;
                             break;
                         }
                         case 6: {
                             blocks.push({x : x, y : 0, xsize : 2, ysize : 12.5});
                             blocks.push({x : x, y : 14, xsize : 2, ysize : 1});
+                            obstacles.push({x : x + 2, y : 1.8, xsize : 1, ysize : 1});
+                            obstacles.push({x : x - 1, y : 14, xsize : 1, ysize : 1});
                             blocks.push({x : x + 3, y : 0, xsize : 1, ysize : 2.8});
                             blocks.push({x : x + 3, y : 4, xsize : 1, ysize : 11});
                             x += 5;
                             break;
                         }
                         case 7 : {
+                            blocks.push({x : x + 6, y : 4, xsize : 1, ysize : 4});
                             blocks.push({x : x + 10, y : 2, xsize : 1, ysize : 11});
                             blocks.push({x : x + 11, y : 12, xsize : 4, ysize : 1});
                             blocks.push({x : x + 12, y : 0, xsize : 1, ysize : 10.9});
@@ -285,13 +314,27 @@ var IARuntime = function() {
                             blocks.push({x : x + 20, y : 5, xsize : 1, ysize : 6.8});
                             blocks.push({x : x + 25, y : 2, xsize : 1, ysize : 12});
                             blocks.push({x : x + 20, y : 2, xsize : 5, ysize : 1});
-
-
                             blocks.push({x : x + 32, y : 0, xsize : 1, ysize : 10.9});
-                            blocks.push({x : x + 32, y : 9.9, xsize : 5, ysize : 1});
+                            blocks.push({x : x + 32, y : 10, xsize : 5, ysize : 1});
                             blocks.push({x : x + 34, y : 4, xsize : 6, ysize : 1});
                             blocks.push({x : x + 40, y : 4, xsize : 1, ysize : 9});
+                            obstacles.push({x : x + 37, y : 3.5, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 33, y : 9.5, xsize : 1, ysize : 1});
                             dynamicBlocks.push({x : x, y : 13, xsize : 5, ysize: 1, xspeed: -1, yspeed: 0, xmax : x + 50, ymax : 0, move : false});
+                            obstacles.push({x : x, y : 12, xsize : 1, ysize : 1});
+                            obstacles.push({x : x, y : 11, xsize : 1, ysize : 1});
+                            obstacles.push({x : x, y : 10, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 9.5, y : 6, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 13, y : 4, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 19.5, y : 10, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 20.5, y : 10, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 24.5, y : 6, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 28, y : 7, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 28, y : 8, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 28, y : 9, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 45, y : 9, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 49, y : 12, xsize : 1, ysize : 1});
+                            obstacles.push({x : x + 49, y : 11, xsize : 1, ysize : 1});
                             x += 56;
                         }
                     }
@@ -345,6 +388,16 @@ var IARuntime = function() {
                     return (true);
                 }
             }
+            for (i = 0; i < obstacles.length; ++i) {
+                rect2 = {x: obstacles[i].x * 100, y: (obstacles[i].y + 1) * 100, width: obstacles[i].xsize * 100, height: obstacles[i].ysize * 100};
+                if (rect1.y < 75 || (rect1.x < rect2.x + rect2.width &&
+                                     rect1.x + rect1.width > rect2.x &&
+                                     rect1.y < rect2.y + rect2.height &&
+                                     rect1.height + rect1.y > rect2.y)) {
+                    mustDie = true;
+                    return (true);
+                }
+            }
             return (false);
         }
 
@@ -371,7 +424,7 @@ var IARuntime = function() {
         }
 
         function move() {
-            if (!(playerPosX - camX < 22 || playerPosY > 1650)) {
+            if (!(mustDie || playerPosX - camX < 22 || playerPosY > 1650)) {
                 calcGravite();
                 if (right && !calcCollision(playerPosX + 10, playerPosY)) {
                     playerPosX += 10;
@@ -422,6 +475,7 @@ var IARuntime = function() {
                     posSpike = -32;
                     blocks = [];
                     dynamicBlocks = [];
+                    obstacles = [];
                     lastBlock = -1;
                     playerPosX = 300;
                     playerPosY = 100;
@@ -441,7 +495,6 @@ var IARuntime = function() {
             else if (screen === 1) {
                 ctx.drawImage(background, 0, 0);
                 generateMap();
-                moveDynamic();
                 drawSection();
                 if (!(playerPosX - camX < 22 || playerPosY > 1650)) {
                     camX += dv;
