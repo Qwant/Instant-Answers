@@ -78,6 +78,8 @@ var IARuntime = function() {
         var tile;
         var startX;
         var startY;
+        var sprite = document.getElementById("sprite");
+        var game = [];
 
 
         window.addEventListener('mousemove', function (e) {
@@ -163,7 +165,13 @@ var IARuntime = function() {
         }
 
         function drawGame() {
-
+            for (var i = 0; i < intRows; ++i) {
+                for (var j = 0; j < intColumns; ++j) {
+                    if (game[i][j].status === 0) {
+                        ctx.drawImage(sprite, 0, 0, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
+                    }
+                }
+            }
         }
 
         function drawCadri() {
@@ -182,10 +190,6 @@ var IARuntime = function() {
         function drawSection() {
             drawGame();
             drawCadri();
-        }
-
-        function move() {
-
         }
 
         function drawGameOver() {
@@ -278,6 +282,51 @@ var IARuntime = function() {
             }
         }
 
+        function putNumber(x, y) {
+            if (x < 0 || y < 0 || x >= intColumns || y >= intRows) {
+                return;
+            }
+            if (game[y][x].value !== -1) {
+                ++game[y][x].value;
+            }
+        }
+
+        function generateGame() {
+            for (var i = 0; i < intRows; ++i) {
+                var newRow = [];
+                for (var j = 0; j < intColumns; ++j) {
+                    newRow.push({value : 0, status: 0});
+                }
+                game.push(newRow);
+            }
+            i = 0;
+            while (i < nbMines) {
+                var x = Math.trunc(Math.random() * 1000) % intColumns;
+                var y = Math.trunc(Math.random() * 1000) % intRows;
+                if (game[y][x].value !== -1) {
+                    game[y][x].value = -1;
+                    ++i;
+                }
+            }
+            for (i = 0; i < intRows; ++i) {
+                for (j = 0; j < intColumns; ++j) {
+                    if (game[i][j].value === -1) {
+                        putNumber(j - 1, i - 1);
+                        putNumber(j, i - 1);
+                        putNumber(j + 1, i - 1);
+                        putNumber(j - 1, i);
+                        putNumber(j + 1, i);
+                        putNumber(j - 1, i + 1);
+                        putNumber(j, i + 1);
+                        putNumber(j + 1, i + 1);
+                    }
+                }
+            }
+            for (i = 0; i < intRows; ++i) {
+                console.log(game[i]);
+            }
+        }
+
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             if (screen === 0) {
@@ -291,14 +340,15 @@ var IARuntime = function() {
                     intColumns = parseInt(columns);
                     intRows = parseInt(rows);
                     intNbMines = parseInt(nbMines);
+                    game = [];
                     if (!intColumns || intColumns < 5) {
                         intColumns = 5;
                     }
                     if (!intRows || intRows < 5) {
                         intRows = 5;
                     }
-                    if (!intNbMines || intNbMines < 5) {
-                        intNbMines = 5;
+                    if (!intNbMines || intNbMines < 5 || intNbMines >= intRows * intColumns) {
+                        intNbMines = intRows * intColumns / 4;
                     }
                     tile = Math.trunc((canvas.width - 2) / intColumns);
                     if (tile > Math.trunc((canvas.height - 2) / intRows)) {
@@ -306,7 +356,7 @@ var IARuntime = function() {
                     }
                     startX = (canvas.width - (tile * intColumns)) / 2;
                     startY = (canvas.height - (tile * intRows)) / 2;
-                    id   = setInterval(move, 500);
+                    generateGame();
                 }
             }
             else if (screen === 1) {
