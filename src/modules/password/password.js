@@ -33,7 +33,7 @@ module.exports = {
             var arrayPass = [];
             var password = "";
             var charlist = "!#$%&()*+,-./0123456789:;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~";
-            if (!size) {
+            if (!size || size < 1) {
                 size = 5;
             }
             for (var i = 0; i < size; ++i) {
