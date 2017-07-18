@@ -133,7 +133,7 @@ var IARuntime = function() {
                         break;
                     }
                     case 3: {
-                        if (nbMines.length < 2 ) {
+                        if (nbMines.length < 3 ) {
                             nbMines += String.fromCharCode(e.keyCode - 48);
                         }
                         break;
@@ -155,7 +155,7 @@ var IARuntime = function() {
                         break;
                     }
                     case 3: {
-                        if (nbMines.length < 2 ) {
+                        if (nbMines.length < 3 ) {
                             nbMines += String.fromCharCode(e.keyCode);
                         }
                         break;
@@ -169,6 +169,23 @@ var IARuntime = function() {
                 for (var j = 0; j < intColumns; ++j) {
                     if (game[i][j].status === 0) {
                         ctx.drawImage(sprite, 0, 0, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
+                    }
+                    else if (game[i][j].status === 1) {
+                        ctx.drawImage(sprite, 16, 0, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
+                    }
+                    else if (game[i][j].status === 2) {
+                        ctx.drawImage(sprite, 32, 0, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
+                    }
+                    else if (game[i][j].status === 3) {
+                        if (game[i][j].value === -1) {
+                            ctx.drawImage(sprite, 48, 0, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
+                        }
+                        else if (game[i][j].value === 0) {
+                            ctx.drawImage(sprite, 112, 0, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
+                        }
+                        else {
+                            ctx.drawImage(sprite, (game[i][j].value - 1) * 16, 16, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
+                        }
                     }
                 }
             }
@@ -327,6 +344,24 @@ var IARuntime = function() {
             }
         }
 
+        function expandZero(x, y) {
+            if (x < 0 || y < 0 || x >= intColumns || y >= intRows) {
+                return;
+            }
+            var tmp = game[y][x].status;
+            game[y][x].status = 3;
+            if (game[y][x].value === 0 && tmp !== 3) {
+                expandZero(x - 1, y - 1);
+                expandZero(x, y - 1);
+                expandZero(x + 1, y - 1);
+                expandZero(x - 1, y);
+                expandZero(x + 1, y);
+                expandZero(x - 1, y + 1);
+                expandZero(x, y + 1);
+                expandZero(x + 1, y + 1);
+            }
+        }
+
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             if (screen === 0) {
@@ -361,6 +396,21 @@ var IARuntime = function() {
             }
             else if (screen === 1) {
                 drawSection();
+                if (click && xCurs >= startX && xCurs < startX + intColumns * tile && yCurs >= startY && yCurs < startY + intRows * tile) {
+                    var y = Math.trunc((yCurs - startY) / tile);
+                    var x = Math.trunc((xCurs - startX) / tile)
+                    game[y][x].status = 3;
+                    if (game[y][x].value === 0) {
+                        expandZero(x - 1, y - 1);
+                        expandZero(x, y - 1);
+                        expandZero(x + 1, y - 1);
+                        expandZero(x - 1, y);
+                        expandZero(x + 1, y);
+                        expandZero(x - 1, y + 1);
+                        expandZero(x, y + 1);
+                        expandZero(x + 1, y + 1);
+                    }
+                }
             }
             else if (screen === 2) {
                 clearInterval(id);
