@@ -79,16 +79,38 @@ var IARuntime = function() {
         var startX;
         var startY;
         var sprite = document.getElementById("sprite");
+        var win = document.getElementById("win");
+        var lose = document.getElementById("lose");
         var game = [];
-
+        var rightClick = false;
+        var gameOver = 0;
 
         window.addEventListener('mousemove', function (e) {
             xCurs = e.pageX - canvas.offsetLeft;
             yCurs = e.pageY - canvas.offsetTop;
         });
-        window.addEventListener('click', function () {
-            click = true;
-        });
+        window.addEventListener('mousedown', function (e) {
+            if(e.button === 1 || e.button === 0){
+                e.preventDefault();
+                click = true;
+            }
+        }, false);
+        window.addEventListener('mouseup', function (e) {
+            if(e.button === 1 || e.button === 0){
+                click = false;
+            }
+            else {
+                rightClick = false;
+            }
+        }, false);
+        window.addEventListener('contextmenu', function(e) {
+            if (screen !== 1) {
+                return;
+            }
+            e.preventDefault();
+            rightClick = true;
+            return (false);
+        }, false);
         window.addEventListener("keydown", keyDownHandler, false);
 
         function keyDownHandler(e) {
@@ -180,6 +202,9 @@ var IARuntime = function() {
                         if (game[i][j].value === -1) {
                             ctx.drawImage(sprite, 48, 0, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
                         }
+                        else if (game[i][j].value === -2) {
+                            ctx.drawImage(sprite, 64, 0, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
+                        }
                         else if (game[i][j].value === 0) {
                             ctx.drawImage(sprite, 112, 0, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
                         }
@@ -203,22 +228,28 @@ var IARuntime = function() {
             ctx.closePath();
         }
 
+        function drawTimer() {
+
+        }
 
         function drawSection() {
             drawGame();
             drawCadri();
+            drawTimer();
+            drawGameOver();
         }
 
         function drawGameOver() {
-            ctx.beginPath();
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#000000";
-            ctx.font = "35px Arial";
-            ctx.fillText("Game Over", canvas.width / 2 - 100, canvas.height / 2 - 50);
-            ctx.fillText("Score:", canvas.width / 2 - 55, canvas.height / 2 - 20);
-            ctx.fillText(score.toString(), (canvas.width / 2 - 20) - (score.toString().length / 2) * 10, canvas.height / 2 + 10);
-            ctx.fillText("Retry?", (canvas.width / 2 - 60), (canvas.height - 30));
-            ctx.closePath();
+            if (gameOver !== 0) {
+                ctx.beginPath();
+                if (gameOver === 1) {
+                    ctx.drawImage(lose, canvas.width / 2 - 207, canvas.height / 2 - 45);
+                }
+                else {
+                    ctx.drawImage(win, canvas.width / 2 - 194.5, canvas.height / 2 - 44.5);
+                }
+                ctx.closePath();
+            }
         }
 
         function drawStart() {
@@ -317,7 +348,7 @@ var IARuntime = function() {
                 game.push(newRow);
             }
             i = 0;
-            while (i < nbMines) {
+            while (i < intNbMines) {
                 var x = Math.trunc(Math.random() * 1000) % intColumns;
                 var y = Math.trunc(Math.random() * 1000) % intRows;
                 if (game[y][x].value !== -1) {
@@ -362,6 +393,54 @@ var IARuntime = function() {
             }
         }
 
+        function checkWin() {
+            for (var i = 0; i < intRows; ++i) {
+                for (var j = 0; j < intColumns; ++j) {
+                    if (game[i][j].value !== -1 && game[i][j].status !== 3) {
+                        return (false);
+                    }
+                }
+            }
+            return (true);
+        }
+
+        function discoverArround(x, y) {
+            if (x < 0 || y < 0 || x >= intColumns || y >= intRows) {
+                return;
+            }
+            if (game[y][x].status === 0) {
+                game[y][x].status = 3;
+                if (game[y][x].value === 0) {
+                    expandZero(x - 1, y - 1);
+                    expandZero(x, y - 1);
+                    expandZero(x + 1, y - 1);
+                    expandZero(x - 1, y);
+                    expandZero(x + 1, y);
+                    expandZero(x - 1, y + 1);
+                    expandZero(x, y + 1);
+                    expandZero(x + 1, y + 1);
+                }
+            }
+        }
+
+        function checkGameOver() {
+            for (var i = 0; i < intRows; ++i) {
+                for (var j = 0; j < intColumns; ++j) {
+                    if (game[i][j].value === -1 && game[i][j].status === 3) {
+                        for (var y = 0; y < intRows; ++y) {
+                            for (var x = 0; x < intColumns; ++x) {
+                                game[y][x].status = 3;
+                                if (game[y][x].value === -1) {
+                                    game[y][x].value = -2;
+                                }
+                            }
+                        }
+                        gameOver = 1;
+                        return;
+                    }
+                }
+            }
+        }
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             if (screen === 0) {
@@ -383,43 +462,66 @@ var IARuntime = function() {
                         intRows = 5;
                     }
                     if (!intNbMines || intNbMines < 5 || intNbMines >= intRows * intColumns) {
-                        intNbMines = intRows * intColumns / 4;
+                        intNbMines = Math.trunc(intRows * intColumns / 4);
                     }
                     tile = Math.trunc((canvas.width - 2) / intColumns);
-                    if (tile > Math.trunc((canvas.height - 2) / intRows)) {
-                        tile = Math.trunc((canvas.height - 2) / intRows);
+                    if (tile > Math.trunc((canvas.height - 102) / intRows)) {
+                        tile = Math.trunc((canvas.height - 102) / intRows);
                     }
                     startX = (canvas.width - (tile * intColumns)) / 2;
                     startY = (canvas.height - (tile * intRows)) / 2;
+                    gameOver = 0;
                     generateGame();
                 }
             }
             else if (screen === 1) {
                 drawSection();
-                if (click && xCurs >= startX && xCurs < startX + intColumns * tile && yCurs >= startY && yCurs < startY + intRows * tile) {
-                    var y = Math.trunc((yCurs - startY) / tile);
-                    var x = Math.trunc((xCurs - startX) / tile)
-                    game[y][x].status = 3;
-                    if (game[y][x].value === 0) {
-                        expandZero(x - 1, y - 1);
-                        expandZero(x, y - 1);
-                        expandZero(x + 1, y - 1);
-                        expandZero(x - 1, y);
-                        expandZero(x + 1, y);
-                        expandZero(x - 1, y + 1);
-                        expandZero(x, y + 1);
-                        expandZero(x + 1, y + 1);
+                if (gameOver === 0) {
+                    if (click && xCurs >= startX && xCurs < startX + intColumns * tile && yCurs >= startY && yCurs < startY + intRows * tile) {
+                        var y = Math.trunc((yCurs - startY) / tile);
+                        var x = Math.trunc((xCurs - startX) / tile);
+                        if (game[y][x].status === 0) {
+                            game[y][x].status = 3;
+                            if (game[y][x].value === 0) {
+                                expandZero(x - 1, y - 1);
+                                expandZero(x, y - 1);
+                                expandZero(x + 1, y - 1);
+                                expandZero(x - 1, y);
+                                expandZero(x + 1, y);
+                                expandZero(x - 1, y + 1);
+                                expandZero(x, y + 1);
+                                expandZero(x + 1, y + 1);
+                            }
+                        }
+                        else if (game[y][x].status === 3 && game[y][x].value > 0) {
+                            discoverArround(x - 1, y - 1);
+                            discoverArround(x, y - 1);
+                            discoverArround(x + 1, y - 1);
+                            discoverArround(x - 1, y);
+                            discoverArround(x + 1, y);
+                            discoverArround(x - 1, y + 1);
+                            discoverArround(x, y + 1);
+                            discoverArround(x + 1, y + 1);
+                        }
+                        if (gameOver === 0 && checkWin()) {
+                            gameOver = 2;
+                        }
+                    }
+                    else if (rightClick && xCurs >= startX && xCurs < startX + intColumns * tile && yCurs >= startY && yCurs < startY + intRows * tile) {
+                        y = Math.trunc((yCurs - startY) / tile);
+                        x = Math.trunc((xCurs - startX) / tile);
+                        if (game[y][x].status !== 3) {
+                            game[y][x].status = (game[y][x].status + 1) % 3;
+                        }
                     }
                 }
-            }
-            else if (screen === 2) {
-                clearInterval(id);
-                drawGameOver();
-                if (click && xCurs > 0 && xCurs < canvas.width && yCurs > 0 && canvas.height) {
-                    screen = (screen + 1) % 3;
+                else if (click) {
+                    screen = 0;
                 }
+                checkGameOver();
             }
             click = false;
+            rightClick = false;
         }
         var idInterval = setInterval(draw, 10);
         return (idInterval);

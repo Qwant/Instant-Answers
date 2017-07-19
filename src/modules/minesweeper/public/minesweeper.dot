@@ -9,3 +9,5 @@
 	<span id="cross" class="style_cross"><img src="{{=it.images_path}}/minesweeper/greycross.png" width="50" height="50"></span>
 </div>
 <img style="display:none" src="{{=it.images_path}}/minesweeper/sprite.png" id="sprite">
+<img style="display:none" src="{{=it.images_path}}/minesweeper/win.png" id="win">
+<img style="display:none" src="{{=it.images_path}}/minesweeper/lose.png" id="lose">
