@@ -84,6 +84,8 @@ var IARuntime = function() {
         var game = [];
         var rightClick = false;
         var gameOver = 0;
+        var start;
+        var diff;
 
         window.addEventListener('mousemove', function (e) {
             xCurs = e.pageX - canvas.offsetLeft;
@@ -229,7 +231,18 @@ var IARuntime = function() {
         }
 
         function drawTimer() {
-
+            if (gameOver === 0) {
+                var end = new Date();
+                diff    = end - start;
+                diff    = new Date(diff);
+            }
+            var str = "Timer : " + diff.getMinutes() + ":" + diff.getSeconds();
+            ctx.beginPath();
+            ctx.fillStyle = "#000000";
+            ctx.font = "30px Arial";
+            var textWidth = ctx.measureText(str).width;
+            ctx.fillText(str, canvas.width / 2 - textWidth / 2, 50);
+            ctx.closePath();
         }
 
         function drawSection() {
@@ -469,9 +482,10 @@ var IARuntime = function() {
                         tile = Math.trunc((canvas.height - 102) / intRows);
                     }
                     startX = (canvas.width - (tile * intColumns)) / 2;
-                    startY = (canvas.height - (tile * intRows)) / 2;
+                    startY = (canvas.height - (tile * intRows)) / 2 + 35;
                     gameOver = 0;
                     generateGame();
+                    start = new Date();
                 }
             }
             else if (screen === 1) {
