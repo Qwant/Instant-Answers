@@ -424,14 +424,14 @@ var IARuntime = function() {
             if (game[y][x].status === 0) {
                 game[y][x].status = 3;
                 if (game[y][x].value === 0) {
-                    expandZero(x - 1, y - 1);
-                    expandZero(x, y - 1);
-                    expandZero(x + 1, y - 1);
-                    expandZero(x - 1, y);
-                    expandZero(x + 1, y);
-                    expandZero(x - 1, y + 1);
-                    expandZero(x, y + 1);
-                    expandZero(x + 1, y + 1);
+                    discoverArround(x - 1, y - 1);
+                    discoverArround(x, y - 1);
+                    discoverArround(x + 1, y - 1);
+                    discoverArround(x - 1, y);
+                    discoverArround(x + 1, y);
+                    discoverArround(x - 1, y + 1);
+                    discoverArround(x, y + 1);
+                    discoverArround(x + 1, y + 1);
                 }
             }
         }
@@ -474,7 +474,7 @@ var IARuntime = function() {
                     if (!intRows || intRows < 5) {
                         intRows = 5;
                     }
-                    if (!intNbMines || intNbMines < 5 || intNbMines >= intRows * intColumns) {
+                    if (!intNbMines || intNbMines < 1 || intNbMines >= intRows * intColumns) {
                         intNbMines = Math.trunc(intRows * intColumns / 4);
                     }
                     tile = Math.trunc((canvas.width - 2) / intColumns);
