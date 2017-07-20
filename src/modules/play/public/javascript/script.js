@@ -1,10 +1,9 @@
-/**
- * This is your main script file. Please refer to the documentation for more information.
- */
-
 var IARuntime = function() {
     function Play (iaData) {
-        // constructor
+        IARuntime.ids = {
+            id:[],
+            idmusic : []
+        };
     }
 
     /**
@@ -50,15 +49,19 @@ var IARuntime = function() {
                 }, 800)
                 state = 0;
                 play.style.display = "block";
-                if (IARuntime.idInterval){
-                    clearInterval(IARuntime.idInterval);
+                for (var i = 0; i < IARuntime.ids.id.length; ++i) {
+                    clearInterval(IARuntime.ids.id[i]);
                 }
+                for (i = 0; i < IARuntime.ids.idmusic.length; ++i) {
+                    IARuntime.ids.idmusic[i].pause();
+                }
+                IARuntime.ids.id = [];
+                IARuntime.ids.idmusic = [];
                 ctx.clearRect(0,0,800,600);
-
             }
         })
     };
-    Play.prototype.qwantsole = function (){
+    Play.prototype.qwantsole = function () {
         var canvas = document.getElementById("mycanvas");
         var ctx = canvas.getContext("2d");
         var link = document.createElement('link');
@@ -67,24 +70,31 @@ var IARuntime = function() {
         link.type = 'text/css';
         link.href = 'https://fonts.googleapis.com/css?family=Press+Start+2P';
         document.getElementsByTagName('head')[0].appendChild(link);
-        link.onload = function() {
-            ctx.fillStyle="#FFFFFF";
+        link.onload = function () {
+            ctx.fillStyle = "#FFFFFF";
             ctx.font = '15px "Press Start 2P"';
             var textString = "INSERT COIN 0",
-                textWidth = ctx.measureText(textString ).width;
-            ctx.fillText(textString , (canvas.width/2) - (textWidth / 2), 300);
+                textWidth = ctx.measureText(textString).width;
+            ctx.fillText(textString, (canvas.width / 2) - (textWidth / 2), 300);
         };
         var color = document.getElementById("insert_color");
         var snake = document.getElementById("insert_snake");
         var tetris = document.getElementById("insert_tetris");
         var morpion = document.getElementById("insert_morpion");
+        var minesweeper = document.getElementById("insert_minesweeper");
+        var scroller = document.getElementById("insert_scroller");
 
 
-        color.addEventListener("click",function(){
-            if (IARuntime.idInterval){
-                clearInterval(IARuntime.idInterval);
+        color.addEventListener("click", function () {
+            for (var i = 0; i < IARuntime.ids.id.length; ++i) {
+                clearInterval(IARuntime.ids.id[i]);
             }
-           var colorGame = function() {
+            for (i = 0; i < IARuntime.ids.idmusic.length; ++i) {
+                IARuntime.ids.idmusic[i].pause();
+            }
+            IARuntime.ids.id = [];
+            IARuntime.ids.idmusic = [];
+            var colorGame = function () {
 
                 var canvas = document.getElementById("mycanvas");
                 var ctx = canvas.getContext("2d");
@@ -118,26 +128,26 @@ var IARuntime = function() {
 
                     switch (number) {
                         case 0:
-                            return ({ r : 85, g : 170, b : 85});
+                            return ({r: 85, g: 170, b: 85});
                         case 1:
-                            return ({ r : 170, g : 85, b : 85});
+                            return ({r: 170, g: 85, b: 85});
                         case 2:
-                            return ({ r : 85, g : 85, b : 170});
+                            return ({r: 85, g: 85, b: 170});
                         case 3:
-                            return ({ r : 170, g : 170, b : 85});
+                            return ({r: 170, g: 170, b: 85});
                         case 4:
-                            return ({ r : 85, g : 170, b : 170});
+                            return ({r: 85, g: 170, b: 170});
                         case 5:
-                            return ({ r : 170, g : 85, b : 170});
+                            return ({r: 170, g: 85, b: 170});
                         case 6:
-                            return ({ r : 85, g : 85, b : 85});
+                            return ({r: 85, g: 85, b: 85});
                         default:
-                            return ({ r : 170, g : 170, b : 170});
+                            return ({r: 170, g: 170, b: 170});
                     }
                 }
 
-                function rgb(r, g, b){
-                    return "rgb("+r+","+g+","+b+")";
+                function rgb(r, g, b) {
+                    return "rgb(" + r + "," + g + "," + b + ")";
                 }
 
                 function drawStart() {
@@ -233,14 +243,14 @@ var IARuntime = function() {
                     if (screen === 0) {
                         drawStart();
                         if (x >= canvas.width / 3 && x < 2 * canvas.width / 3 && y >= canvas.height / 3 && y < 2 * canvas.height / 3 && click) {
-                            row    = 2;
+                            row = 2;
                             column = 2;
-                            level  = 1;
-                            pos    = Math.trunc(Math.random() * 10000) % (row * column);
-                            color  = randomColor();
+                            level = 1;
+                            pos = Math.trunc(Math.random() * 10000) % (row * column);
+                            color = randomColor();
                             screen = (screen + 1) % 3;
-                            lumi   = Math.trunc(Math.random() * 10000) % 2;
-                            start  = new Date();
+                            lumi = Math.trunc(Math.random() * 10000) % 2;
+                            start = new Date();
                         }
                     }
                     else if (screen === 1) {
@@ -255,48 +265,53 @@ var IARuntime = function() {
                                 ++row;
                                 ++column;
                             }
-                            pos   = Math.trunc(Math.random() * 10000) % (row * column);
+                            pos = Math.trunc(Math.random() * 10000) % (row * column);
                             color = randomColor();
-                            lumi  = Math.trunc(Math.random() * 10000) % 2;
+                            lumi = Math.trunc(Math.random() * 10000) % 2;
                             if (level === 50) {
                                 screen = (screen + 1) % 3;
                             }
                         }
                         if (x >= 600 && x < 800 && y >= 300 && y < 600 && click) {
-                            row    = 2;
+                            row = 2;
                             column = 2;
-                            level  = 1;
-                            pos    = Math.trunc(Math.random() * 10000) % (row * column);
-                            color  = randomColor();
-                            lumi   = Math.trunc(Math.random() * 10000) % 2;
-                            start  = new Date();
+                            level = 1;
+                            pos = Math.trunc(Math.random() * 10000) % (row * column);
+                            color = randomColor();
+                            lumi = Math.trunc(Math.random() * 10000) % 2;
+                            start = new Date();
                         }
                     }
                     else if (screen === 2) {
                         drawEnd();
                         if (x >= canvas.width / 3 && x < 2 * canvas.width / 3 && y >= canvas.height / 3 && y < 2 * canvas.height / 3 && click) {
-                            row    = 2;
+                            row = 2;
                             column = 2;
-                            pos    = Math.trunc(Math.random() * 10000) % (row * column);
-                            color  = randomColor();
+                            pos = Math.trunc(Math.random() * 10000) % (row * column);
+                            color = randomColor();
                             screen = (screen + 1) % 3;
-                            lumi   = Math.trunc(Math.random() * 10000) % 2;
+                            lumi = Math.trunc(Math.random() * 10000) % 2;
                         }
                     }
                     click = false;
                 }
-                var idInterval = setInterval(draw, 10);
-                return (idInterval);
+
+                IARuntime.ids.id.push(setInterval(draw, 10));
             };
-            IARuntime.idInterval = colorGame();
+            colorGame();
         })
-        snake.addEventListener("click",function(){
-            if (IARuntime.idInterval){
-                clearInterval(IARuntime.idInterval);
+        snake.addEventListener("click", function () {
+            for (var i = 0; i < IARuntime.ids.id.length; ++i) {
+                clearInterval(IARuntime.ids.id[i]);
             }
+            for (i = 0; i < IARuntime.ids.idmusic.length; ++i) {
+                IARuntime.ids.idmusic[i].pause();
+            }
+            IARuntime.ids.id = [];
+            IARuntime.ids.idmusic = [];
             var snakeGame = function () {
                 var mycanvas = document.getElementById('mycanvas');
-                var id;
+                var id = 0;
                 var ctx = mycanvas.getContext('2d');
                 canvas.style.backgroundColor = "white";
                 var snakeSize = 20;
@@ -309,6 +324,17 @@ var IARuntime = function() {
                 var food;
                 var bonbon;
                 var screen = 0;
+                var x = 0;
+                var y = 0;
+                var click = false;
+
+                window.addEventListener('mousemove', function (e) {
+                    x = e.pageX - canvas.offsetLeft;
+                    y = e.pageY - canvas.offsetTop;
+                });
+                window.addEventListener('click', function () {
+                    click = true;
+                });
 
                 var bodySnake = function (x, y) {
                     ctx.fillStyle = 'green';
@@ -368,7 +394,6 @@ var IARuntime = function() {
                     }
 
                     if (snakeX == -1 || snakeX == w / snakeSize || snakeY == -1 || snakeY == h / snakeSize || checkCollision(snakeX, snakeY, snake)) {
-                        //restart game
                         gameOver();
                     }
 
@@ -383,8 +408,8 @@ var IARuntime = function() {
                         var tail = {x: snakeX, y: snakeY}; //Create a new head instead of moving the tail
                         score += 10;
                         bonbon = {
-                            x : -1,
-                            y : -1
+                            x: -1,
+                            y: -1
                         };
                     } else {
                         var tail = snake.pop(); //pops out the last cell
@@ -414,16 +439,16 @@ var IARuntime = function() {
                     ctx.fillText(textString, (mycanvas.width / 2) - (textWidth / 2), 300);
 
                 }
-                var gameOver = function() {
+                var gameOver = function () {
                     ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
-                    id = clearInterval(id);
+                    clearInterval(id);
                     ctx.fillStyle = "#000000";
                     ctx.font = '20pt Calibri,Geneva,Arial';
 
                     var textString = "GAMEOVER!!!\n Click To Restart",
                         textWidth = ctx.measureText(textString).width;
                     ctx.fillText(textString, (mycanvas.width / 2) - (textWidth / 2), 300);
-                    screen = 2;
+                    screen = 0;
                 }
 
 
@@ -504,13 +529,14 @@ var IARuntime = function() {
 
                 var checkCollision = function (x, y, array) {
                     for (var i = 0; i < array.length; i++) {
-                        if (array[i].x === x && array[i].y === y){
+                        if (array[i].x === x && array[i].y === y) {
                             return true;
                         }
 
                     }
                     return false;
                 }
+
                 function keyDownHandler(e) {
 
                     switch (e.keyCode) {
@@ -556,43 +582,40 @@ var IARuntime = function() {
                             break;
                     }
                 }
+
                 ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
                 start();
-                var draw = function(){
-                    mycanvas.addEventListener("click",function(e){
-                        var x = e.pageX - mycanvas.offsetLeft;
-                        var y = e.pageY - mycanvas.offsetTop;
-                        if (screen === 0) {
-                            screen = 1;
-                            direction = 'down';
-                            score = 0;
-                            drawSnake();
-                            createFood();
-                            bonbon = {
-                                x : -1,
-                                y : -1
-                            };
-                            id = setInterval(paint, 80);
+                function draw() {
+                    if (screen === 0 && click && x > 0 && x < 800 && y > 0 && y < 600) {
+                        screen = 1;
+                        direction = 'down';
+                        score = 0;
+                        drawSnake();
+                        createFood();
+                        bonbon = {
+                            x: -1,
+                            y: -1
+                        };
 
-                            window.addEventListener("keydown", keyDownHandler, false);
-
-                        } else if(screen === 2){
-                            clearInterval(id);
-                            screen = 0;
-                        }
-                    })
+                        id = setInterval(paint, 80);
+                        IARuntime.ids.id.push(id);
+                        window.addEventListener("keydown", keyDownHandler, false);
+                    }
+                    click = false;
                 }
-                var idInterval = setInterval(draw, 10);
-                console.log(idInterval);
-                return (idInterval);
+                IARuntime.ids.id.push(setInterval(draw, 10));
             };
-            IARuntime.idInterval = snakeGame();
-
+            snakeGame();
         })
-        tetris.addEventListener("click",function(){
-            if (IARuntime.idInterval){
-                clearInterval(IARuntime.idInterval);
+        tetris.addEventListener("click", function () {
+            for (var i = 0; i < IARuntime.ids.id.length; ++i) {
+                clearInterval(IARuntime.ids.id[i]);
             }
+            for (i = 0; i < IARuntime.ids.idmusic.length; ++i) {
+                IARuntime.ids.idmusic[i].pause();
+            }
+            IARuntime.ids.id = [];
+            IARuntime.ids.idmusic = [];
             var tetrisGame = function () {
                 var canvas = document.getElementById("mycanvas");
                 var ctx = canvas.getContext("2d");
@@ -635,79 +658,72 @@ var IARuntime = function() {
                         number = 4;
                     }
                     switch (number) {
-                        case 0:
-                        {
+                        case 0: {
                             block = {
-                                id : 0,
-                                color : "#007ba7",
-                                x : [0, 0, 0, -1],
-                                y : [0, -1, 1, 1]
+                                id: 0,
+                                color: "#007ba7",
+                                x: [0, 0, 0, -1],
+                                y: [0, -1, 1, 1]
                             };
                             ++withoutBar;
                             return (block);
                         }
-                        case 1:
-                        {
+                        case 1: {
                             block = {
-                                id : 1,
-                                color : "#ff8847",
-                                x : [0, 0, 0, 1],
-                                y : [0, -1, 1, 1]
+                                id: 1,
+                                color: "#ff8847",
+                                x: [0, 0, 0, 1],
+                                y: [0, -1, 1, 1]
                             };
                             ++withoutBar;
                             return (block);
                         }
-                        case 2:
-                        {
+                        case 2: {
                             block = {
-                                id : 2,
-                                color : "#ecc831",
-                                x : [0, 0, -1, -1],
-                                y : [0, -1, -1, 0]
+                                id: 2,
+                                color: "#ecc831",
+                                x: [0, 0, -1, -1],
+                                y: [0, -1, -1, 0]
                             };
                             ++withoutBar;
                             return (block);
                         }
-                        case 3:
-                        {
+                        case 3: {
                             block = {
-                                id : 3,
-                                color : "#bbc6ce",
-                                x : [0, -1, 1, 0],
-                                y : [0, 0, 0, -1]
+                                id: 3,
+                                color: "#bbc6ce",
+                                x: [0, -1, 1, 0],
+                                y: [0, 0, 0, -1]
                             };
                             ++withoutBar;
                             return (block);
                         }
-                        case 4:
-                        {
+                        case 4: {
                             block = {
-                                id : 4,
-                                color : "#e33232",
-                                x : [0, 0, 0, 0],
-                                y : [0, -1, 1, 2]
+                                id: 4,
+                                color: "#e33232",
+                                x: [0, 0, 0, 0],
+                                y: [0, -1, 1, 2]
                             };
                             withoutBar = 0;
                             return (block);
                         }
-                        case 5:
-                        {
+                        case 5: {
                             block = {
-                                id : 5,
-                                color : "#1c945a",
-                                x : [0, -1, -1, 0],
-                                y : [0, 0, 1, -1]
+                                id: 5,
+                                color: "#1c945a",
+                                x: [0, -1, -1, 0],
+                                y: [0, 0, 1, -1]
                             };
                             ++withoutBar;
                             return (block);
                         }
-                        default:
-                        {
+                        default: {
                             block = {
-                                id : 6,
-                                color : "#660066",
-                                x : [0, 0, 1, 1],
-                                y : [0, -1, 0, 1]
+                                id: 6,
+                                color: "#660066",
+                                x: [0, 0, 1, 1],
+                                y: [0, -1, 0, 1]
                             };
                             ++withoutBar;
                             return (block);
@@ -793,27 +809,28 @@ var IARuntime = function() {
                     if (Math.trunc(score / 700) !== level) {
                         level = Math.trunc(score / 700);
                         clearInterval(id);
-                        id   = setInterval(move, 500 - (level * 30));
+                        id = setInterval(move, 500 - (level * 30));
+                        IARuntime.ids.id.push(id);
                     }
                 }
 
                 function keyDownHandler(e) {
-                    if (screen !==1) {
+                    if (screen !== 1) {
                         return;
                     }
-                    if(e.keyCode === 39) {
+                    if (e.keyCode === 39) {
                         e.preventDefault();
                         if (!isCollideRow(x + dy)) {
                             x += dy;
                         }
                     }
-                    if(e.keyCode === 37) {
+                    if (e.keyCode === 37) {
                         e.preventDefault();
                         if (!isCollideRow(x - dy)) {
                             x -= dy;
                         }
                     }
-                    if(e.keyCode === 40) {
+                    if (e.keyCode === 40) {
                         e.preventDefault();
                         var maxY = 0;
                         for (i = 0; i < 4; ++i) {
@@ -826,28 +843,28 @@ var IARuntime = function() {
                         }
 
                     }
-                    if(e.keyCode === 38 && block.id !== 2) {
+                    if (e.keyCode === 38 && block.id !== 2) {
                         e.preventDefault();
                         var saveBlock = {
-                            id : block.id,
-                            color : block.color,
-                            x : block.x.slice(),
-                            y : block.y.slice()
+                            id: block.id,
+                            color: block.color,
+                            x: block.x.slice(),
+                            y: block.y.slice()
                         };
                         if (block.id === 4 && block.x[1] === 1) {
                             block = {
-                                id : 4,
-                                color : "#e33232",
-                                x : [0, 0, 0, 0],
-                                y : [0, -1, 1, 2]
+                                id: 4,
+                                color: "#e33232",
+                                x: [0, 0, 0, 0],
+                                y: [0, -1, 1, 2]
                             };
                         }
                         else {
                             var saveX;
                             var saveY;
                             for (var i = 0; i < 4; ++i) {
-                                saveX      = block.x[i];
-                                saveY      = block.y[i];
+                                saveX = block.x[i];
+                                saveY = block.y[i];
                                 block.x[i] = saveY * -1;
                                 block.y[i] = saveX * 1;
                             }
@@ -1121,15 +1138,16 @@ var IARuntime = function() {
                         ctx.closePath();
                         if (click && xCurs > canvas.width / 3 && xCurs < 2 * canvas.width / 3 && yCurs > canvas.height / 3 && yCurs < 2 * canvas.height / 3) {
                             screen = (screen + 1) % 3;
-                            blocks  = [];
-                            x       = 4 * dy;
-                            y       = 0;
+                            blocks = [];
+                            x = 4 * dy;
+                            y = 0;
                             canHold = true;
-                            block   = createBlock();
-                            hold    = "";
-                            next    = createBlock();
-                            score   = 0;
-                            id   = setInterval(move, 500);
+                            block = createBlock();
+                            hold = "";
+                            next = createBlock();
+                            score = 0;
+                            id = setInterval(move, 500);
+                            IARuntime.ids.id.push(id);
                         }
                     }
                     else if (screen === 1) {
@@ -1144,16 +1162,16 @@ var IARuntime = function() {
                     }
                     click = false;
                 }
-                var idInterval = setInterval(draw, 10);
-                return (idInterval);
+                IARuntime.ids.id.push(setInterval(draw, 10));
             };
-            IARuntime.idInterval = tetrisGame();
+            tetrisGame();
         })
-        morpion.addEventListener("click",function(){
-            if (IARuntime.idInterval){
-                clearInterval(IARuntime.idInterval);
+        morpion.addEventListener("click", function () {
+            for (var i = 0; i < IARuntime.ids.id.length; ++i) {
+                clearInterval(IARuntime.ids.id[i]);
             }
-            var morpionGame = function() {
+            IARuntime.ids.id = [];
+            var morpionGame = function () {
                 var canvas = document.getElementById("mycanvas");
                 var ctx = canvas.getContext("2d");
                 canvas.style.backgroundColor = "white";
@@ -1470,19 +1488,1045 @@ var IARuntime = function() {
                     }
                     click = false;
                 }
-                var idInterval = setInterval(draw, 10);
-                return (idInterval);
-
+                IARuntime.ids.id.push(setInterval(draw, 10));
             };
-            IARuntime.idInterval = morpionGame();
-
-
+            morpionGame();
         })
+        minesweeper.addEventListener("click", function () {
+            for (var i = 0; i < IARuntime.ids.id.length; ++i) {
+                clearInterval(IARuntime.ids.id[i]);
+            }
+            for (i = 0; i < IARuntime.ids.idmusic.length; ++i) {
+                IARuntime.ids.idmusic[i].pause();
+            }
+            IARuntime.ids.id = [];
+            IARuntime.ids.idmusic = [];
+            var minesweeperGame = function () {
+                var canvas = document.getElementById("mycanvas");
+                var ctx = canvas.getContext("2d");
+                canvas.style.backgroundColor = "white";
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                canvas.width = 800;
+                canvas.height = 600;
+                var screen = 0;
+                var xCurs = 0;
+                var yCurs = 0;
+                var click = false;
+                var id = -1;
+                var columns = "20";
+                var rows = "15";
+                var nbMines = "30";
+                var intColumns;
+                var intRows;
+                var intNbMines;
+                var cursor = -1;
+                var loop = 0;
+                var disp = true;
+                var tile;
+                var startX;
+                var startY;
+                var sprite = document.getElementById("sprite");
+                var win = document.getElementById("win");
+                var lose = document.getElementById("lose");
+                var game = [];
+                var rightClick = false;
+                var gameOver = 0;
+                var start;
+                var diff;
 
+                window.addEventListener('mousemove', function (e) {
+                    xCurs = e.pageX - canvas.offsetLeft;
+                    yCurs = e.pageY - canvas.offsetTop;
+                });
+                window.addEventListener('mousedown', function (e) {
+                    if (e.button === 1 || e.button === 0) {
+                        click = true;
+                    }
+                }, false);
+                window.addEventListener('mouseup', function (e) {
+                    if (e.button === 1 || e.button === 0) {
+                        click = false;
+                    }
+                    else {
+                        rightClick = false;
+                    }
+                }, false);
+                window.addEventListener('contextmenu', function (e) {
+                    if (xCurs >= 0 && xCurs <= canvas.width && yCurs >= 0 && yCurs <= canvas.height) {
+                        e.preventDefault();
+                    }
+                    rightClick = true;
+                    return (false);
+                }, false);
+                window.addEventListener("keydown", keyDownHandler, false);
 
+                function keyDownHandler(e) {
+                    if (screen !== 0) {
+                        return;
+                    }
+                    e.preventDefault();
+                    if (e.keyCode === 8) {
+                        switch (cursor) {
+                            case 1: {
+                                if (columns.length > 0) {
+                                    columns = columns.slice(0, -1);
+                                }
+                                break;
+                            }
+                            case 2: {
+                                if (rows.length > 0) {
+                                    rows = rows.slice(0, -1);
+                                }
+                                break;
+                            }
+                            case 3: {
+                                if (nbMines.length > 0) {
+                                    nbMines = nbMines.slice(0, -1);
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    if (e.keyCode >= 96 && e.keyCode <= 105) {
+                        switch (cursor) {
+                            case 1: {
+                                if (columns.length < 2) {
+                                    columns += String.fromCharCode(e.keyCode - 48);
+                                }
+                                break;
+                            }
+                            case 2: {
+                                if (rows.length < 2) {
+                                    rows += String.fromCharCode(e.keyCode - 48);
+                                }
+                                break;
+                            }
+                            case 3: {
+                                if (nbMines.length < 3) {
+                                    nbMines += String.fromCharCode(e.keyCode - 48);
+                                }
+                                break;
+                            }
+                        }
+                    }
+                    else if (e.keyCode >= 48 && e.keyCode <= 57) {
+                        switch (cursor) {
+                            case 1: {
+                                if (columns.length < 2) {
+                                    columns += String.fromCharCode(e.keyCode);
+                                }
+                                break;
+                            }
+                            case 2: {
+                                if (rows.length < 2) {
+                                    rows += String.fromCharCode(e.keyCode);
+                                }
+                                break;
+                            }
+                            case 3: {
+                                if (nbMines.length < 3) {
+                                    nbMines += String.fromCharCode(e.keyCode);
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
 
+                function drawGame() {
+                    for (var i = 0; i < intRows; ++i) {
+                        for (var j = 0; j < intColumns; ++j) {
+                            if (game[i][j].status === 0) {
+                                ctx.drawImage(sprite, 0, 0, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
+                            }
+                            else if (game[i][j].status === 1) {
+                                ctx.drawImage(sprite, 16, 0, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
+                            }
+                            else if (game[i][j].status === 2) {
+                                ctx.drawImage(sprite, 32, 0, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
+                            }
+                            else if (game[i][j].status === 3) {
+                                if (game[i][j].value === -1) {
+                                    ctx.drawImage(sprite, 48, 0, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
+                                }
+                                else if (game[i][j].value === -2) {
+                                    ctx.drawImage(sprite, 64, 0, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
+                                }
+                                else if (game[i][j].value === 0) {
+                                    ctx.drawImage(sprite, 112, 0, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
+                                }
+                                else {
+                                    ctx.drawImage(sprite, (game[i][j].value - 1) * 16, 16, 16, 16, startX + j * tile, startY + i * tile, tile, tile);
+                                }
+                            }
+                        }
+                    }
+                }
 
+                function drawCadri() {
+                    ctx.beginPath();
+                    ctx.fillStyle = "#000000";
+                    for (var i = 0; i <= intColumns; ++i) {
+                        ctx.fillRect(startX + i * tile, startY, 1, intRows * tile);
+                    }
+                    for (i = 0; i <= intRows; ++i) {
+                        ctx.fillRect(startX, startY + i * tile, intColumns * tile, 1);
+                    }
+                    ctx.closePath();
+                }
 
+                function drawTimer() {
+                    if (gameOver === 0) {
+                        var end = new Date();
+                        diff = end - start;
+                        diff = new Date(diff);
+                    }
+                    var str = "Timer : " + diff.getMinutes() + ":" + diff.getSeconds();
+                    ctx.beginPath();
+                    ctx.fillStyle = "#000000";
+                    ctx.font = "30px Arial";
+                    var textWidth = ctx.measureText(str).width;
+                    ctx.fillText(str, canvas.width / 2 - textWidth / 2, 50);
+                    ctx.closePath();
+                }
+
+                function drawSection() {
+                    drawGame();
+                    drawCadri();
+                    drawTimer();
+                    drawGameOver();
+                }
+
+                function drawGameOver() {
+                    if (gameOver !== 0) {
+                        ctx.beginPath();
+                        if (gameOver === 1) {
+                            ctx.drawImage(lose, canvas.width / 2 - 207, canvas.height / 2 - 45);
+                        }
+                        else {
+                            ctx.drawImage(win, canvas.width / 2 - 194.5, canvas.height / 2 - 44.5);
+                        }
+                        ctx.closePath();
+                    }
+                }
+
+                function drawStart() {
+                    ctx.beginPath();
+                    ctx.font = "20px Arial";
+                    ctx.fillStyle = "black";
+                    ctx.fillText("Start!", canvas.width / 2 - 25, canvas.height / 2 + 50);
+                    ctx.closePath();
+                }
+
+                function drawNbColumn() {
+                    ctx.beginPath();
+                    ctx.font = "20px Arial";
+                    ctx.fillStyle = "black";
+                    ctx.fillText("Columns:", canvas.width / 6 - 25, canvas.height / 6);
+                    ctx.fillStyle = "white";
+                    ctx.fillRect(canvas.width / 6 - 45, canvas.height / 6 + 25, 100, 50);
+                    ctx.fillStyle = "black";
+                    if (disp && cursor === 1) {
+                        ctx.fillText(columns + "|", canvas.width / 6 - 10, canvas.height / 6 + 55);
+                    }
+                    else {
+                        ctx.fillText(columns, canvas.width / 6 - 10, canvas.height / 6 + 55);
+                    }
+                    ctx.closePath();
+                }
+
+                function drawNbRow() {
+                    ctx.beginPath();
+                    ctx.font = "20px Arial";
+                    ctx.fillStyle = "black";
+                    ctx.fillText("Rows:", canvas.width / 2 - 25, canvas.height / 6);
+                    ctx.fillStyle = "white";
+                    ctx.fillRect(canvas.width / 2 - 45, canvas.height / 6 + 25, 100, 50);
+                    ctx.fillStyle = "black";
+                    if (disp && cursor === 2) {
+                        ctx.fillText(rows + "|", canvas.width / 2 - 10, canvas.height / 6 + 55);
+                    }
+                    else {
+                        ctx.fillText(rows, canvas.width / 2 - 10, canvas.height / 6 + 55);
+                    }
+                    ctx.closePath();
+                }
+
+                function drawNbMine() {
+                    ctx.beginPath();
+                    ctx.font = "20px Arial";
+                    ctx.fillStyle = "black";
+                    ctx.fillText("Mines:", 5 * canvas.width / 6 - 25, canvas.height / 6);
+                    ctx.fillStyle = "white";
+                    ctx.fillRect(5 * canvas.width / 6 - 45, canvas.height / 6 + 25, 100, 50);
+                    ctx.fillStyle = "black";
+                    if (disp && cursor === 3) {
+                        ctx.fillText(nbMines + "|", 5 * canvas.width / 6 - 10, canvas.height / 6 + 55);
+                    }
+                    else {
+                        ctx.fillText(nbMines, 5 * canvas.width / 6 - 10, canvas.height / 6 + 55);
+                    }
+                    ctx.closePath();
+                }
+
+                function drawCursor() {
+                    if (click && xCurs >= canvas.width / 6 - 25 && xCurs <= canvas.width / 6 + 75 && yCurs >= canvas.height / 6 + 25 && yCurs <= canvas.height / 6 + 75) {
+                        cursor = 1;
+                    }
+                    else if (click && xCurs >= canvas.width / 2 - 25 && xCurs <= canvas.width / 2 + 75 && yCurs >= canvas.height / 6 + 25 && yCurs <= canvas.height / 6 + 75) {
+                        cursor = 2;
+                    }
+                    else if (click && xCurs >= 5 * canvas.width / 6 - 25 && xCurs <= 5 * canvas.width / 6 + 75 && yCurs >= canvas.height / 6 + 25 && yCurs <= canvas.height / 6 + 75) {
+                        cursor = 3;
+                    }
+                    else if (click) {
+                        cursor = -1;
+                    }
+                    loop = (loop + 1) % 50;
+                    if (loop === 0) {
+                        disp = !disp;
+                    }
+                }
+
+                function putNumber(x, y) {
+                    if (x < 0 || y < 0 || x >= intColumns || y >= intRows) {
+                        return;
+                    }
+                    if (game[y][x].value !== -1) {
+                        ++game[y][x].value;
+                    }
+                }
+
+                function generateGame() {
+                    for (var i = 0; i < intRows; ++i) {
+                        var newRow = [];
+                        for (var j = 0; j < intColumns; ++j) {
+                            newRow.push({value: 0, status: 0});
+                        }
+                        game.push(newRow);
+                    }
+                    i = 0;
+                    while (i < intNbMines) {
+                        var x = Math.trunc(Math.random() * 1000) % intColumns;
+                        var y = Math.trunc(Math.random() * 1000) % intRows;
+                        if (game[y][x].value !== -1) {
+                            game[y][x].value = -1;
+                            ++i;
+                        }
+                    }
+                    for (i = 0; i < intRows; ++i) {
+                        for (j = 0; j < intColumns; ++j) {
+                            if (game[i][j].value === -1) {
+                                putNumber(j - 1, i - 1);
+                                putNumber(j, i - 1);
+                                putNumber(j + 1, i - 1);
+                                putNumber(j - 1, i);
+                                putNumber(j + 1, i);
+                                putNumber(j - 1, i + 1);
+                                putNumber(j, i + 1);
+                                putNumber(j + 1, i + 1);
+                            }
+                        }
+                    }
+                    for (i = 0; i < intRows; ++i) {
+                        console.log(game[i]);
+                    }
+                }
+
+                function expandZero(x, y) {
+                    if (x < 0 || y < 0 || x >= intColumns || y >= intRows) {
+                        return;
+                    }
+                    var tmp = game[y][x].status;
+                    game[y][x].status = 3;
+                    if (game[y][x].value === 0 && tmp !== 3) {
+                        expandZero(x - 1, y - 1);
+                        expandZero(x, y - 1);
+                        expandZero(x + 1, y - 1);
+                        expandZero(x - 1, y);
+                        expandZero(x + 1, y);
+                        expandZero(x - 1, y + 1);
+                        expandZero(x, y + 1);
+                        expandZero(x + 1, y + 1);
+                    }
+                }
+
+                function checkWin() {
+                    for (var i = 0; i < intRows; ++i) {
+                        for (var j = 0; j < intColumns; ++j) {
+                            if (game[i][j].value !== -1 && game[i][j].status !== 3) {
+                                return (false);
+                            }
+                        }
+                    }
+                    return (true);
+                }
+
+                function discoverArround(x, y) {
+                    if (x < 0 || y < 0 || x >= intColumns || y >= intRows) {
+                        return;
+                    }
+                    if (game[y][x].status === 0) {
+                        game[y][x].status = 3;
+                        if (game[y][x].value === 0) {
+                            discoverArround(x - 1, y - 1);
+                            discoverArround(x, y - 1);
+                            discoverArround(x + 1, y - 1);
+                            discoverArround(x - 1, y);
+                            discoverArround(x + 1, y);
+                            discoverArround(x - 1, y + 1);
+                            discoverArround(x, y + 1);
+                            discoverArround(x + 1, y + 1);
+                        }
+                    }
+                }
+
+                function checkGameOver() {
+                    for (var i = 0; i < intRows; ++i) {
+                        for (var j = 0; j < intColumns; ++j) {
+                            if (game[i][j].value === -1 && game[i][j].status === 3) {
+                                for (var y = 0; y < intRows; ++y) {
+                                    for (var x = 0; x < intColumns; ++x) {
+                                        game[y][x].status = 3;
+                                        if (game[y][x].value === -1) {
+                                            game[y][x].value = -2;
+                                        }
+                                    }
+                                }
+                                gameOver = 1;
+                                return;
+                            }
+                        }
+                    }
+                }
+
+                function draw() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    if (screen === 0) {
+                        drawStart();
+                        drawNbColumn();
+                        drawNbRow();
+                        drawNbMine();
+                        drawCursor();
+                        if (click && xCurs > canvas.width / 3 && xCurs < 2 * canvas.width / 3 && yCurs > canvas.height / 3 && yCurs < 2 * canvas.height / 2) {
+                            screen = (screen + 1) % 3;
+                            intColumns = parseInt(columns);
+                            intRows = parseInt(rows);
+                            intNbMines = parseInt(nbMines);
+                            game = [];
+                            if (!intColumns || intColumns < 5) {
+                                intColumns = 5;
+                            }
+                            if (!intRows || intRows < 5) {
+                                intRows = 5;
+                            }
+                            if (!intNbMines || intNbMines < 1 || intNbMines >= intRows * intColumns) {
+                                intNbMines = Math.trunc(intRows * intColumns / 4);
+                            }
+                            tile = Math.trunc((canvas.width - 2) / intColumns);
+                            if (tile > Math.trunc((canvas.height - 102) / intRows)) {
+                                tile = Math.trunc((canvas.height - 102) / intRows);
+                            }
+                            startX = (canvas.width - (tile * intColumns)) / 2;
+                            startY = (canvas.height - (tile * intRows)) / 2 + 35;
+                            gameOver = 0;
+                            generateGame();
+                            start = new Date();
+                        }
+                    }
+                    else if (screen === 1) {
+                        drawSection();
+                        if (gameOver === 0) {
+                            if (click && xCurs >= startX && xCurs < startX + intColumns * tile && yCurs >= startY && yCurs < startY + intRows * tile) {
+                                var y = Math.trunc((yCurs - startY) / tile);
+                                var x = Math.trunc((xCurs - startX) / tile);
+                                if (game[y][x].status === 0) {
+                                    game[y][x].status = 3;
+                                    if (game[y][x].value === 0) {
+                                        expandZero(x - 1, y - 1);
+                                        expandZero(x, y - 1);
+                                        expandZero(x + 1, y - 1);
+                                        expandZero(x - 1, y);
+                                        expandZero(x + 1, y);
+                                        expandZero(x - 1, y + 1);
+                                        expandZero(x, y + 1);
+                                        expandZero(x + 1, y + 1);
+                                    }
+                                }
+                                else if (game[y][x].status === 3 && game[y][x].value > 0) {
+                                    discoverArround(x - 1, y - 1);
+                                    discoverArround(x, y - 1);
+                                    discoverArround(x + 1, y - 1);
+                                    discoverArround(x - 1, y);
+                                    discoverArround(x + 1, y);
+                                    discoverArround(x - 1, y + 1);
+                                    discoverArround(x, y + 1);
+                                    discoverArround(x + 1, y + 1);
+                                }
+                                if (gameOver === 0 && checkWin()) {
+                                    gameOver = 2;
+                                }
+                            }
+                            else if (rightClick && xCurs >= startX && xCurs < startX + intColumns * tile && yCurs >= startY && yCurs < startY + intRows * tile) {
+                                y = Math.trunc((yCurs - startY) / tile);
+                                x = Math.trunc((xCurs - startX) / tile);
+                                if (game[y][x].status !== 3) {
+                                    game[y][x].status = (game[y][x].status + 1) % 3;
+                                }
+                            }
+                        }
+                        else if (click) {
+                            screen = 0;
+                        }
+                        checkGameOver();
+                    }
+                    click = false;
+                    rightClick = false;
+                }
+                IARuntime.ids.id.push(setInterval(draw, 10));
+            };
+            minesweeperGame();
+        })
+        scroller.addEventListener("click", function () {
+            for (var i = 0; i < IARuntime.ids.id.length; ++i) {
+                clearInterval(IARuntime.ids.id[i]);
+            }
+            for (i = 0; i < IARuntime.ids.idmusic.length; ++i) {
+                IARuntime.ids.idmusic[i].pause();
+            }
+            IARuntime.ids.id = [];
+            IARuntime.ids.idmusic = [];
+            var scrollerGame = function () {
+                var canvas = document.getElementById("mycanvas");
+                var ctx = canvas.getContext("2d");
+                canvas.width = 800;
+                canvas.height = 600;
+
+                var screen = 0;
+                var xCurs = 0;
+                var yCurs = 0;
+                var click = false;
+
+                var dv = 5;
+                var x = 0;
+                var size = 40;
+                var blocks = [];
+                var dynamicBlocks = [];
+                var obstacles = [];
+                var score = 0;
+                var id = -1;
+                var camX = 0;
+                var playerPosX = 100;
+                var playerPosY = 100;
+                var gravite = 0.3;
+                var vGravite = 0;
+                var left = false;
+                var right = false;
+                var space = false;
+                var lastBlock = -1;
+                var musicStart = document.getElementById("music_start");
+                var music = document.getElementById("music");
+                var musicStop = document.getElementById("music_stop");
+                musicStart.loop = true;
+                music.loop = true;
+                musicStop.loop = true;
+                var backgroundStart = document.getElementById("background_start");
+                var background = document.getElementById("background");
+                var backgroundStop = document.getElementById("background_stop");
+                var block = document.getElementById("block");
+                var dynamicBlock = document.getElementById("dynamic_block");
+                var spike = document.getElementById("spike");
+                var pattern = ctx.createPattern(block, "repeat");
+                var dynPattern = ctx.createPattern(dynamicBlock, "repeat");
+                var player = document.getElementById("player");
+                var obstacle = document.getElementById("obstacle");
+                var die = document.getElementById("die");
+                var index = 0;
+                var last = 0;
+                var go = 0;
+                var posSpike = -32;
+                var dieIndex = 0;
+                var explosion = document.getElementById("explosion");
+                var mustDie = false;
+
+                IARuntime.ids.idmusic.push(musicStart);
+                IARuntime.ids.idmusic.push(music);
+                IARuntime.ids.idmusic.push(musicStop);
+                window.addEventListener('mousemove', function (e) {
+                    xCurs = e.pageX - canvas.offsetLeft;
+                    yCurs = e.pageY - canvas.offsetTop;
+                });
+                window.addEventListener('click', function () {
+                    click = true;
+                });
+                window.addEventListener("keydown", keyDownHandler, false);
+                window.addEventListener("keyup", keyUpHandler, false);
+
+                function keyDownHandler(e) {
+                    if (screen !== 1 && (screen !== 2 && e.keyCode !== 32)) {
+                        return;
+                    }
+                    e.preventDefault();
+                    go = 5;
+                    if (e.keyCode === 32) {
+                        space = true;
+                        if (vGravite === 0 || calcCollision(playerPosX + 15, playerPosY) || calcCollision(playerPosX - 15, playerPosY)) {
+                            vGravite = -15;
+                        }
+                    }
+                    if (e.keyCode === 39) {
+                        right = true;
+                        last = 0;
+                    }
+                    if (e.keyCode === 37) {
+                        left = true;
+                        last = 1;
+                    }
+                }
+
+                function keyUpHandler(e) {
+                    if (screen !== 1) {
+                        return;
+                    }
+                    e.preventDefault();
+                    if (e.keyCode === 32) {
+                        space = false;
+                    }
+                    if (e.keyCode === 39) {
+                        right = false;
+                        index = 0;
+                    }
+                    if (e.keyCode === 37) {
+                        left = false;
+                        index = 0;
+                    }
+                }
+
+                function drawBlocks() {
+                    ctx.beginPath();
+                    for (var i = 0; i < obstacles.length; ++i) {
+                        ctx.drawImage(obstacle, 0, 0, size, size, (obstacles[i].x - camX / 100) * size, obstacles[i].y * size, obstacles[i].xsize * size, obstacles[i].ysize * size);
+                        ctx.fill();
+                    }
+                    for (i = 0; i < blocks.length; ++i) {
+                        ctx.save();
+                        ctx.translate(-(camX / 100 * size), 0);
+                        ctx.fillStyle = pattern;
+                        ctx.fillRect(blocks[i].x * size, blocks[i].y * size, blocks[i].xsize * size, blocks[i].ysize * size);
+                        ctx.fill();
+                        ctx.restore();
+                    }
+                    for (i = 0; i < dynamicBlocks.length; ++i) {
+                        ctx.save();
+                        ctx.translate(-((camX / 100) * size), 0);
+                        ctx.fillStyle = dynPattern;
+                        ctx.fillRect(dynamicBlocks[i].x * size, dynamicBlocks[i].y * size, dynamicBlocks[i].xsize * size, dynamicBlocks[i].ysize * size);
+                        ctx.fill();
+                        ctx.restore();
+                    }
+                    ctx.closePath();
+                }
+
+                function drawScore() {
+                    ctx.beginPath();
+                    ctx.fillStyle = "#000000";
+                    ctx.font = "20px Arial";
+                    ctx.fillText("Score:".concat(score.toString()), 50, 50);
+                    ctx.closePath();
+                }
+
+                function drawSpike() {
+                    ctx.beginPath();
+                    ctx.drawImage(spike, posSpike, 0);
+                    ctx.closePath();
+                    if (go) {
+                        ++posSpike;
+                        if (posSpike > -10) {
+                            posSpike = -10;
+                        }
+                    }
+                }
+
+                function drawSection() {
+                    drawBlocks();
+                    drawScore();
+                    if (!(mustDie || playerPosX - camX < 22 || playerPosY > 1650)) {
+                        moveDynamic();
+                        drawGuy();
+                    }
+                    drawSpike();
+                }
+
+                function drawGameOver() {
+                    ctx.beginPath();
+                    ctx.fillStyle = "white";
+                    ctx.font = "40px Palatino";
+                    ctx.fillText(score.toString(), (canvas.width / 2 - 20) - (score.toString().length / 2) * 10, canvas.height / 2 - 35);
+                    ctx.fillText("Retry?", (canvas.width / 2 - 60), canvas.height / 2 + 30);
+                    ctx.closePath();
+                }
+
+                function generateMap() {
+                    while (blocks.length > 0 && (blocks[0].x - Math.trunc(camX / 100)) * size - ((camX % 100) / 100 * size) < -700) {
+                        blocks.shift();
+                    }
+                    while (dynamicBlocks.length > 0 && (dynamicBlocks[0].x - Math.trunc(camX / 100)) * size - ((camX % 100) / 100 * size) < -700) {
+                        dynamicBlocks.shift();
+                    }
+                    while (obstacles.length > 0 && (obstacles[0].x - Math.trunc(camX / 100)) * size - ((camX % 100) / 100 * size) < -700) {
+                        obstacles.shift();
+                    }
+                    while (x < 40 + Math.trunc(camX / 100)) {
+                        if (x === 0) {
+                            blocks.push({x: 0, y: 11, xsize: 7, ysize: 1});
+                            x += 7;
+                        }
+                        else {
+                            var rand = Math.trunc(Math.random() * 1000) % 8;
+                            if (rand === lastBlock) {
+                                rand = (rand + 1) % 8;
+                            }
+                            lastBlock = rand;
+                            switch (rand) {
+                                case 0: {
+                                    blocks.push({x: x, y: 0, xsize: 2, ysize: 1.8});
+                                    blocks.push({x: x, y: 3, xsize: 2, ysize: 13});
+                                    obstacles.push({x: x + 2, y: 0.8, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x - 1, y: 11, xsize: 1, ysize: 1});
+                                    blocks.push({x: x + 3, y: 0, xsize: 1, ysize: 10.5});
+                                    blocks.push({x: x + 3, y: 12, xsize: 3, ysize: 1});
+                                    x += 6;
+                                    break;
+                                }
+                                case 1: {
+                                    blocks.push({x: x, y: 0, xsize: 2, ysize: 6});
+                                    blocks.push({x: x + 1, y: 6, xsize: 1, ysize: 1.9});
+                                    blocks.push({x: x, y: 9, xsize: 3, ysize: 6});
+                                    x += 3;
+                                    break;
+                                }
+                                case 2: {
+                                    blocks.push({x: x, y: 11, xsize: 7, ysize: 1});
+                                    x += 7;
+                                    break;
+                                }
+                                case 3: {
+                                    blocks.push({x: x, y: 1, xsize: 1, ysize: 14});
+                                    blocks.push({x: x + 1, y: 1, xsize: 4, ysize: 1});
+                                    blocks.push({x: x + 6, y: 0, xsize: 1, ysize: 10});
+                                    blocks.push({x: x + 2, y: 10, xsize: 7, ysize: 1});
+                                    blocks.push({x: x + 1, y: 14, xsize: 1, ysize: 1});
+                                    blocks.push({x: x + 6, y: 13, xsize: 4, ysize: 1});
+                                    blocks.push({x: x + 8, y: 12.1, xsize: 1, ysize: 0.9});
+                                    obstacles.push({x: x + 5, y: 8, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 4, y: 9, xsize: 1, ysize: 1});
+                                    x += 11;
+                                    break;
+                                }
+                                case 4: {
+                                    blocks.push({x: x - 2, y: 4, xsize: 3, ysize: 2});
+                                    blocks.push({x: x + 3, y: 8, xsize: 3, ysize: 2});
+                                    obstacles.push({x: x + 6, y: 8, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 7, y: 8, xsize: 1, ysize: 1});
+                                    blocks.push({x: x + 8, y: 1, xsize: 1, ysize: 15});
+                                    blocks.push({x: x + 4, y: 1, xsize: 5, ysize: 1});
+                                    x += 9;
+                                    break;
+                                }
+                                case 5: {
+                                    blocks.push({x: x, y: 13, xsize: 2, ysize: 2});
+                                    blocks.push({x: x + 4, y: 8, xsize: 2, ysize: 2});
+                                    blocks.push({x: x + 8, y: 3, xsize: 2, ysize: 3});
+                                    obstacles.push({x: x + 8, y: 6, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 9, y: 7, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 8, y: 8, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 9, y: 9, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 8, y: 10, xsize: 1, ysize: 1});
+                                    x += 10;
+                                    break;
+                                }
+                                case 6: {
+                                    blocks.push({x: x, y: 0, xsize: 2, ysize: 12.5});
+                                    blocks.push({x: x, y: 14, xsize: 2, ysize: 1});
+                                    obstacles.push({x: x + 2, y: 1.8, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x - 1, y: 14, xsize: 1, ysize: 1});
+                                    blocks.push({x: x + 3, y: 0, xsize: 1, ysize: 2.8});
+                                    blocks.push({x: x + 3, y: 4, xsize: 1, ysize: 11});
+                                    x += 5;
+                                    break;
+                                }
+                                case 7 : {
+                                    blocks.push({x: x + 6, y: 4, xsize: 1, ysize: 4});
+                                    blocks.push({x: x + 10, y: 2, xsize: 1, ysize: 11});
+                                    blocks.push({x: x + 11, y: 12, xsize: 4, ysize: 1});
+                                    blocks.push({x: x + 12, y: 0, xsize: 1, ysize: 10.9});
+                                    blocks.push({x: x + 14, y: 0, xsize: 1, ysize: 5.8});
+                                    blocks.push({x: x + 15, y: 5, xsize: 5, ysize: 0.8});
+                                    blocks.push({x: x + 14, y: 7, xsize: 1, ysize: 5});
+                                    blocks.push({x: x + 20, y: 5, xsize: 1, ysize: 6.8});
+                                    blocks.push({x: x + 25, y: 2, xsize: 1, ysize: 12});
+                                    blocks.push({x: x + 20, y: 2, xsize: 5, ysize: 1});
+                                    blocks.push({x: x + 32, y: 0, xsize: 1, ysize: 10.9});
+                                    blocks.push({x: x + 32, y: 10, xsize: 5, ysize: 1});
+                                    blocks.push({x: x + 34, y: 4, xsize: 6, ysize: 1});
+                                    blocks.push({x: x + 40, y: 4, xsize: 1, ysize: 9});
+                                    obstacles.push({x: x + 37, y: 3.5, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 33, y: 9.5, xsize: 1, ysize: 1});
+                                    dynamicBlocks.push({
+                                        x: x,
+                                        y: 13,
+                                        xsize: 5,
+                                        ysize: 1,
+                                        xspeed: -1,
+                                        yspeed: 0,
+                                        xmax: x + 50,
+                                        ymax: 0,
+                                        move: false
+                                    });
+                                    obstacles.push({x: x, y: 12, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x, y: 11, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x, y: 10, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 9.5, y: 6, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 13, y: 4, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 19.5, y: 10, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 20.5, y: 10, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 24.5, y: 6, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 28, y: 7, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 28, y: 8, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 28, y: 9, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 45, y: 9, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 49, y: 12, xsize: 1, ysize: 1});
+                                    obstacles.push({x: x + 49, y: 11, xsize: 1, ysize: 1});
+                                    x += 56;
+                                }
+                            }
+                        }
+                        x += (1 + Math.trunc(Math.random() * 1000) % 4);
+                    }
+                }
+
+                function drawGuy() {
+                    var xPos = Math.trunc(playerPosX / 100);
+                    var dxPos = ((playerPosX % 100) / 100) * size;
+                    var yPos = Math.trunc(playerPosY / 100) + 1;
+                    var dyPos = ((playerPosY % 100) / 100) * size;
+
+                    ctx.beginPath();
+                    if (!left && !right && vGravite === 0) {
+                        ctx.drawImage(player, 0, last * size, 40, 40, (xPos - Math.trunc(camX / 100)) * size + dxPos - ((camX % 100) / 100 * size), (yPos + 1) * size + dyPos - (2 * size), size, size);
+                    }
+                    else if (vGravite === 0) {
+                        ctx.drawImage(player, (1 + index) * size, last * size, 40, 40, (xPos - Math.trunc(camX / 100)) * size + dxPos - ((camX % 100) / 100 * size), (yPos + 1) * size + dyPos - (2 * size), size, size);
+                        index = (index + 1) % 7;
+                    }
+                    else if (vGravite < 0) {
+                        ctx.drawImage(player, 8 * size, last * size, 40, 40, (xPos - Math.trunc(camX / 100)) * size + dxPos - ((camX % 100) / 100 * size), (yPos + 1) * size + dyPos - (2 * size), size, size);
+                    }
+                    else if (vGravite > 0) {
+                        ctx.drawImage(player, 9 * size, last * size, 40, 40, (xPos - Math.trunc(camX / 100)) * size + dxPos - ((camX % 100) / 100 * size), (yPos + 1) * size + dyPos - (2 * size), size, size);
+                    }
+                    ctx.fill();
+                    ctx.closePath();
+                }
+
+                function calcCollision(x, y) {
+                    var rect1 = {x: x, y: y + 100, width: 100, height: 100};
+                    for (var i = 0; i < blocks.length; ++i) {
+                        var rect2 = {
+                            x: blocks[i].x * 100,
+                            y: (blocks[i].y + 1) * 100,
+                            width: blocks[i].xsize * 100,
+                            height: blocks[i].ysize * 100
+                        };
+                        if (rect1.y < 75 || (rect1.x < rect2.x + rect2.width &&
+                            rect1.x + rect1.width > rect2.x &&
+                            rect1.y < rect2.y + rect2.height &&
+                            rect1.height + rect1.y > rect2.y)) {
+                            return (true);
+                        }
+                    }
+                    for (i = 0; i < dynamicBlocks.length; ++i) {
+                        rect2 = {
+                            x: dynamicBlocks[i].x * 100,
+                            y: (dynamicBlocks[i].y + 1) * 100,
+                            width: dynamicBlocks[i].xsize * 100,
+                            height: dynamicBlocks[i].ysize * 100
+                        };
+                        if (rect1.y < 75 || (rect1.x < rect2.x + rect2.width &&
+                            rect1.x + rect1.width > rect2.x &&
+                            rect1.y < rect2.y + rect2.height &&
+                            rect1.height + rect1.y > rect2.y)) {
+                            dynamicBlocks[i].move = true;
+                            return (true);
+                        }
+                    }
+                    for (i = 0; i < obstacles.length; ++i) {
+                        rect2 = {
+                            x: obstacles[i].x * 100,
+                            y: (obstacles[i].y + 1) * 100,
+                            width: obstacles[i].xsize * 100,
+                            height: obstacles[i].ysize * 100
+                        };
+                        if (rect1.y < 75 || (rect1.x < rect2.x + rect2.width &&
+                            rect1.x + rect1.width > rect2.x &&
+                            rect1.y < rect2.y + rect2.height &&
+                            rect1.height + rect1.y > rect2.y)) {
+                            mustDie = true;
+                            return (true);
+                        }
+                    }
+                    return (false);
+                }
+
+                function calcGravite() {
+                    if (!calcCollision(playerPosX, playerPosY + 1) || !calcCollision(playerPosX, playerPosY + vGravite + gravite)) {
+                        vGravite += gravite;
+                        var vSave = vGravite;
+                        playerPosY += vGravite;
+                        if (vGravite < 0 && calcCollision(playerPosX, playerPosY)) {
+                            vGravite = 0;
+                        }
+                        if (calcCollision(playerPosX, playerPosY) && !calcCollision(playerPosX, Math.trunc(playerPosY / 100) * 100)) {
+                            playerPosY = Math.trunc(playerPosY / 100) * 100;
+                            playerPosY = Math.trunc(playerPosY / 100) * 100;
+                        }
+                        else if (calcCollision(playerPosX, playerPosY)) {
+                            playerPosY -= vSave;
+                            vGravite = 0;
+                        }
+                    }
+                    else {
+                        vGravite = 0;
+                    }
+                }
+
+                function move() {
+                    if (!(mustDie || playerPosX - camX < 22 || playerPosY > 1650)) {
+                        calcGravite();
+                        if (right && !calcCollision(playerPosX + 10, playerPosY)) {
+                            playerPosX += 10;
+                        }
+                        if (left && !calcCollision(playerPosX - 10, playerPosY)) {
+                            playerPosX -= 10;
+                        }
+                        if (playerPosX % 10 !== 0) {
+                            playerPosX = Math.trunc(playerPosX / 10) * 10;
+                        }
+                    }
+                }
+
+                function moveDynamic() {
+                    for (var i = 0; i < dynamicBlocks.length; ++i) {
+                        if (dynamicBlocks[i].move) {
+                            if (dynamicBlocks[i].x < dynamicBlocks[i].xmax) {
+                                var before = calcCollision(playerPosX, playerPosY);
+                                if (before) {
+                                    mustDie = true;
+                                }
+                                if (dynamicBlocks[i].xspeed === -1) {
+                                    dynamicBlocks[i].x += (dv / 100);
+                                }
+                                else {
+                                    dynamicBlocks[i].x += dynamicBlocks[i].xspeed;
+                                }
+                                if (!before && calcCollision(playerPosX, playerPosY)) {
+                                    playerPosX += 10;
+                                }
+                            }
+                            if (dynamicBlocks[i].y < dynamicBlocks[i].ymax) {
+                                dynamicBlocks[i].y += dynamicBlocks[i].yspeed;
+                            }
+                        }
+                    }
+                }
+
+                function draw() {
+                    if (screen === 0) {
+                        ctx.drawImage(backgroundStart, 0, 0);
+                        if (space || (click && xCurs > 0 && xCurs < canvas.width && yCurs > 0 && canvas.height)) {
+                            x = 0;
+                            camX = 0;
+                            dv = 0;
+                            go = 0;
+                            score = 0;
+                            posSpike = -32;
+                            blocks = [];
+                            dynamicBlocks = [];
+                            obstacles = [];
+                            lastBlock = -1;
+                            playerPosX = 300;
+                            playerPosY = 100;
+                            vGravite = 0;
+                            dieIndex = 0;
+                            left = false;
+                            right = false;
+                            space = false;
+                            mustDie = false;
+                            musicStart.pause();
+                            music.load();
+                            generateMap();
+                            id = setInterval(move, 8);
+                            IARuntime.ids.id.push(id);
+                            screen = (screen + 1) % 3;
+                        }
+                    }
+                    else if (screen === 1) {
+                        ctx.drawImage(background, 0, 0);
+                        generateMap();
+                        drawSection();
+                        if (!(playerPosX - camX < 22 || playerPosY > 1650)) {
+                            camX += dv;
+                        }
+                        dv = go + Math.trunc(score / 500);
+                        if (dv > 10) {
+                            dv = 10;
+                        }
+                        if (go !== 0) {
+                            music.play();
+                            ++score;
+                        }
+                        if (mustDie || playerPosX - camX < 22 || playerPosY > 1650) {
+                            if (dieIndex < 24) {
+                                if (dieIndex === 0) {
+                                    explosion.load();
+                                    explosion.play();
+                                }
+                                var xPos = Math.trunc(playerPosX / 100);
+                                var dxPos = ((playerPosX % 100) / 100) * size;
+                                var yPos = Math.trunc(playerPosY / 100) + 1;
+                                var dyPos = ((playerPosY % 100) / 100) * size;
+                                ctx.drawImage(die, dieIndex * 64, 0, 64, 64, (xPos - Math.trunc(camX / 100)) * size + dxPos - ((camX % 100) / 100 * size) - 24, (yPos + 1) * size + dyPos - (2 * size) - 64, 128, 128);
+                                ++dieIndex;
+                            }
+                            else {
+                                music.pause();
+                                musicStop.load();
+                                musicStop.play();
+                                screen = (screen + 1) % 3;
+                            }
+                        }
+                    }
+                    else if (screen === 2) {
+                        ctx.drawImage(backgroundStop, 0, 0);
+                        clearInterval(id);
+                        drawGameOver();
+                        if (space || (click && xCurs > 0 && xCurs < canvas.width && yCurs > 0 && canvas.height)) {
+                            space = false;
+                            musicStop.pause();
+                            musicStart.load();
+                            musicStart.play();
+                            screen = (screen + 1) % 3;
+                        }
+                    }
+                    click = false;
+                }
+
+                musicStart.load();
+                musicStart.play();
+                IARuntime.ids.id.push(setInterval(draw, 25));
+            };
+            scrollerGame();
+        })
 
     }
 

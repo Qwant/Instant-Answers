@@ -13,10 +13,36 @@
         <div id="insert_snake" class="style_insert_games"><img src="{{=it.images_path}}/play/unnamed.png"></div>
         <div id="insert_tetris" class="style_insert_games"><img src="{{=it.images_path}}/play/index.jpg"></div>
         <div id="insert_morpion" class="style_insert_games"><img src="{{=it.images_path}}/play/3526260-Dessin-es-la-main-de-tic-tac-toe-jeu-isol-sur-blanc--Banque-d'images.jpg"></div>
-
+        <div id="insert_minesweeper" class="style_insert_games"><img src="{{=it.images_path}}/play/minesweeper.png"></div>
+        <div id="insert_scroller" class="style_insert_games"><img src="{{=it.images_path}}/play/minesweeper.png"></div>
 
 
 
     </div>
     <span id="cross" class="style_cross"><img src="{{=it.images_path}}/play/greycross.png" width="50" height="50"></span>
 </div>
+
+<img style="display:none" src="{{=it.images_path}}/play/minesweeper/sprite.png" id="sprite">
+<img style="display:none" src="{{=it.images_path}}/play/minesweeper/win.png" id="win">
+<img style="display:none" src="{{=it.images_path}}/play/minesweeper/lose.png" id="lose">
+<audio id="music_start">
+  <source src="{{=it.images_path}}/play/scroller/music_start.mp3" type="audio/mpeg">
+</audio>
+<audio id="music">
+  <source src="{{=it.images_path}}/play/scroller/music.mp3" type="audio/mpeg">
+</audio>
+<audio id="music_stop">
+  <source src="{{=it.images_path}}/play/scroller/music_stop.mp3" type="audio/mpeg">
+</audio>
+<audio id="explosion">
+  <source src="{{=it.images_path}}/play/scroller/explosion.mp3" type="audio/mpeg">
+</audio>
+<img style="display:none" src="{{=it.images_path}}/play/scroller/background_start.jpg" id="background_start">
+<img style="display:none" src="{{=it.images_path}}/play/scroller/background.jpg" id="background">
+<img style="display:none" src="{{=it.images_path}}/play/scroller/background_stop.jpg" id="background_stop">
+<img style="display:none" src="{{=it.images_path}}/play/scroller/block.png" id="block">
+<img style="display:none" src="{{=it.images_path}}/play/scroller/dynamic_block.png" id="dynamic_block">
+<img style="display:none" src="{{=it.images_path}}/play/scroller/player.png" id="player">
+<img style="display:none" src="{{=it.images_path}}/play/scroller/spike.png" id="spike">
+<img style="display:none" src="{{=it.images_path}}/play/scroller/obstacle.png" id="obstacle">
+<img style="display:none" src="{{=it.images_path}}/play/scroller/die.png" id="die">
