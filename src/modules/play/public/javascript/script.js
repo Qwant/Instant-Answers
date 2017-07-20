@@ -83,6 +83,7 @@ var IARuntime = function() {
         var morpion = document.getElementById("insert_morpion");
         var minesweeper = document.getElementById("insert_minesweeper");
         var scroller = document.getElementById("insert_scroller");
+        var flappy = document.getElementById("insert_flappy");
 
 
         color.addEventListener("click", function () {
@@ -2527,7 +2528,7 @@ var IARuntime = function() {
             };
             scrollerGame();
         })
-        scroller.addEventListener("click", function () {
+        flappy.addEventListener("click", function () {
             for (var i = 0; i < IARuntime.ids.id.length; ++i) {
                 clearInterval(IARuntime.ids.id[i]);
             }
@@ -2539,6 +2540,8 @@ var IARuntime = function() {
         var flappyGame = function() {
             var canvas = document.getElementById("mycanvas");
             var ctx = canvas.getContext("2d");
+            canvas.style.backgroundColor = "white";
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             var W = canvas.width = 800;
             var H = canvas.height = 600;
             var flapY = 300;
@@ -2650,7 +2653,6 @@ var IARuntime = function() {
             }
             var draw = function (){
                 ctx.clearRect(0,0,W,H);
-                console.log(screen);
                 var img=document.getElementById("style_back_game");
                 ctx.drawImage(img,0,0);
                 if (screen === 0){

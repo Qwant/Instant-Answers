@@ -14,7 +14,8 @@
         <div id="insert_tetris" class="style_insert_games"><img src="{{=it.images_path}}/play/index.jpg"></div>
         <div id="insert_morpion" class="style_insert_games"><img src="{{=it.images_path}}/play/3526260-Dessin-es-la-main-de-tic-tac-toe-jeu-isol-sur-blanc--Banque-d'images.jpg"></div>
         <div id="insert_minesweeper" class="style_insert_games"><img src="{{=it.images_path}}/play/minesweeper.png"></div>
-        <div id="insert_scroller" class="style_insert_games"><img src="{{=it.images_path}}/play/minesweeper.png"></div>
+        <div id="insert_scroller" class="style_insert_games"><img src="{{=it.images_path}}/play/Meatysticker2.png"></div>
+        <div id="insert_flappy" class="style_insert_games"><img src="{{=it.images_path}}/play/Flappy/bird-1.png"></div>
 
 
 
@@ -46,3 +47,8 @@
 <img style="display:none" src="{{=it.images_path}}/play/scroller/spike.png" id="spike">
 <img style="display:none" src="{{=it.images_path}}/play/scroller/obstacle.png" id="obstacle">
 <img style="display:none" src="{{=it.images_path}}/play/scroller/die.png" id="die">
+<img style="display:none" id="scream" src="{{=it.images_path}}/play/Flappy/GAME-OVER.png" width="300px" height="47px">
+<img style="display:none" id="style_back_game" src="{{=it.images_path}}/play/Flappy/background-game.png">
+<img style="display:none" id="style_bird_one" src="{{=it.images_path}}/play/Flappy/bird-1.png">
+<img style="display:none" id="style_bird_two" src="{{=it.images_path}}/play/Flappy/bird-2.png">
+<img style="display:none" id="restart" src="{{=it.images_path}}/play/Flappy/Enter-Space-to-restart.png">
