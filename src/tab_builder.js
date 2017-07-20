@@ -17,21 +17,25 @@ module.exports = function (iaLoadedModules) {
                 /** For each module, checks if regex match, and answers if it matches **/
                 var moduleMatched = false;
                 var modulePromise = null;
+                var moduleLanguages = null;
                 iaLoadedModules.forEach(function (ia) {
                     if (ia.testQuery(query) && !moduleMatched) {
+                        moduleLanguages = ia.module.language;
                         moduleMatched = ia;
                         var moduleProcess = ia.execQuery(query);
-                        modulePromise = ia.solveData(moduleProcess, lang);
+                        if (!moduleLanguages || moduleLanguages.indexOf(lang) > -1) {
+                            modulePromise = ia.solveData(moduleProcess, lang);
+                        }
                     }
                 });
                 if (moduleMatched && modulePromise) {
                     modulePromise
-                            .then(function (moduleData) {
-                                resolve(moduleData);
-                            })
-                            .catch(function (error) {
-                                reject(error);
-                            });
+                        .then(function (moduleData) {
+                            resolve(moduleData);
+                        })
+                        .catch(function (error) {
+                            reject(error);
+                    });
                 } else {
                     reject({error: 500, status: "error", message: 'No module match the query: ' + query});
                 }
@@ -41,11 +45,15 @@ module.exports = function (iaLoadedModules) {
             return new Promise(function (resolve, reject) {
                 var isModuleExist = false;
                 var modulePromise = null;
+                var moduleLanguages = null;
                 iaLoadedModules.forEach(function (ia) {
                     if (ia.testQuery(query) && ia.initialName === iaModuleName) {
+                        moduleLanguages = ia.module.language;
                         isModuleExist = true;
                         var moduleProcess = ia.execQuery(query);
-                        modulePromise = ia.solveData(moduleProcess, lang);
+                        if (!moduleLanguages || moduleLanguages.indexOf(lang) > -1) {
+                            modulePromise = ia.solveData(moduleProcess, lang);
+                        }
                     }
                 });
                 if (isModuleExist && modulePromise) {
@@ -74,10 +82,12 @@ module.exports = function (iaLoadedModules) {
 					require('./setup_i18n')(region);
 					var language = locale.match;
 					if (!patterns[language]) patterns[language] = {};
+                    var moduleLanguages = null;
 					iaLoadedModules
 							.forEach(function (ia) {
+                                moduleLanguages = ia.module.language;
 								var initialName = ia.initialName;
-                                if (excludedIAList.indexOf(initialName) == -1) patterns[language][initialName] = ia.getPattern().toString();
+                                if (excludedIAList.indexOf(initialName) === -1 && (!moduleLanguages || moduleLanguages.indexOf(region) > -1)) patterns[language][initialName] = ia.getPattern().toString();
 							})
 				});
 				resolve(patterns);

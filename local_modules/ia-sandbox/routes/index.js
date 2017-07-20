@@ -10,13 +10,14 @@ const request = require('request');
 /* GET home page. */
 router.get('/', (req, res, next) => {
   let q = req.query.q;
+  let lang = (req.query.lang) ? req.query.lang : "en_gb";
 
   if(typeof req.query.q === 'undefined') {
     res.redirect('/?q=hello world#horizontal')
     return
   }
 
-  request.get({url : `${iaApiUrl}/?q=${q}`, json : true}, (error, body, ia) => {
+  request.get({url : `${iaApiUrl}/?q=${encodeURIComponent(q)}&lang=${lang}`, json : true}, (error, body, ia) => {
     if(ia && !ia.runtime && !ia.error) {
       next({status : 500, message : 'Unexpected ia response'});
       return

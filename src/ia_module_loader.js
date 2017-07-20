@@ -1,10 +1,11 @@
 var fs = require('fs');
 var path = require('path');
 var Promise = require('bluebird');
+var winston = require('winston');
+var logger = winston.loggers.get('logger');
 
 module.exports = function (ia_interface, modelPath) {
 
-    this.logger = require('@qwant/front-logger')(config_get('app.qwant-ia.logConfig'));  // setup Logger configuration (see app.yml)
     this.ia_interface = ia_interface;
     this.modelPath = modelPath;
 
@@ -20,7 +21,6 @@ module.exports = function (ia_interface, modelPath) {
  */
 function readModels() {
     var modelPath = path.resolve(__dirname,'../', this.modelPath);
-    var logger = this.logger;
     return new Promise(function (resolve, reject) {
         fs.readdir(modelPath, function (err, files) {
             if (err) {

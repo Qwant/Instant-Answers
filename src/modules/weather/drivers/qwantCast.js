@@ -1,5 +1,6 @@
 var Promise = require("bluebird");
-var logger = require('@qwant/front-logger')(config_get('app.qwant-ia.logConfig'));
+var winston = require('winston');
+var logger = winston.loggers.get('logger');
 
 function callQwantCastApi (apiQwantCastRequestUrl, proxyURL) {
 	return new Promise(function(resolve, reject){
