@@ -12,7 +12,7 @@
         <div id="insert_color" class="style_insert_games"><img src="{{=it.images_path}}/play/images.png"></div>
         <div id="insert_snake" class="style_insert_games"><img src="{{=it.images_path}}/play/unnamed.png"></div>
         <div id="insert_tetris" class="style_insert_games"><img src="{{=it.images_path}}/play/index.jpg"></div>
-        <div id="insert_morpion" class="style_insert_games"><img src="{{=it.images_path}}/play/3526260-Dessin-es-la-main-de-tic-tac-toe-jeu-isol-sur-blanc--Banque-d'images.jpg"></div>
+        <div id="insert_morpion" class="style_insert_games"><img src="{{=it.images_path}}/play/FV21ZRGIO7GUX1U.LARGE.png"></div>
         <div id="insert_minesweeper" class="style_insert_games"><img src="{{=it.images_path}}/play/minesweeper.png"></div>
         <div id="insert_scroller" class="style_insert_games"><img src="{{=it.images_path}}/play/Meatysticker2.png"></div>
         <div id="insert_flappy" class="style_insert_games"><img src="{{=it.images_path}}/play/Flappy/bird-1.png"></div>

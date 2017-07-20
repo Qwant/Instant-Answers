@@ -1,7 +1,7 @@
 .back_games{
     height: 200px;
     width: 100%;
-    background-color: #F0F0F0;
+    background-color: #3d3837;
     display: flex;
     justify-content: center;
     -webkit-transition: height 1s, -webkit-transform 1s;
@@ -40,7 +40,7 @@
     align-content: stretch;
     margin-top: 100px;
     flex-shrink: 1;
-    overflow: scroll;
+    overflow-y: scroll;
 
 
 }
