@@ -13,3 +13,4 @@
 <img id="style_back_game" src="{{=it.images_path}}/flappy_qwant/background-game.png">
 <img id="style_bird_one" src="{{=it.images_path}}/flappy_qwant/bird-1.png">
 <img id="style_bird_two" src="{{=it.images_path}}/flappy_qwant/bird-2.png">
+<img id="restart" src="{{=it.images_path}}/flappy_qwant/Enter-Space-to-restart.png">

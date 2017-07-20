@@ -4,7 +4,7 @@
 
 var IARuntime = function() {
     function Flappy_qwant (iaData) {
-        // constructor
+
     }
 
     /**
@@ -18,11 +18,13 @@ var IARuntime = function() {
         var state = 0; // 0 = little interface 1= big interface
         var scope = this;
         var img_gameOver=document.getElementById("scream");
+        var img_restart = document.getElementById("restart");
         var img_backGround=document.getElementById("style_back_game");
-        var img_bird1=document.getElementById("style_bird_one");
-        var img_bird2=document.getElementById("style_bird_two");
-        img_bird1.style.display = "none";
-        img_bird2.style.display = "none";
+        var img_birdO=document.getElementById("style_bird_one");
+        var img_birdT=document.getElementById("style_bird_two");
+        img_birdO.style.display = "none";
+        img_restart.style.display = "none";
+        img_birdT.style.display = "none";
         img_gameOver.style.display = "none";
         img_backGround.style.display = "none";
         var idInterval = 0;
@@ -80,6 +82,8 @@ var IARuntime = function() {
         var TotalSize = 0;
         var tabPipe = [];
         var score = 0;
+        var space = false;
+        var id= 0;
 
 
         for (var i =0; i < 1000; ++i){
@@ -126,16 +130,18 @@ var IARuntime = function() {
             movePipe();
             moveFlap();
             if (checkCollision()) {
-                gameOver();
-                flapY
+                screen = 2;
+                console.log(screen)
             }else{
                 score += 1;
             }
         }
         var gameOver = function (){
-            clearInterval(idInterval);
             var img=document.getElementById("scream");
+            var imgRestart = document.getElementById("restart");
+            ctx.fillText("Your Score :"+ score,200,100)
             ctx.drawImage(img,250,275);
+            ctx.drawImage(imgRestart,200,330,395,21);
 
 
         }
@@ -171,27 +177,39 @@ var IARuntime = function() {
 
         }
         var draw = function (){
-            if (flapY  >= canvas.height) {
-                gameOver();
-            }
             ctx.clearRect(0,0,W,H);
+            console.log(screen);
             var img=document.getElementById("style_back_game");
             ctx.drawImage(img,0,0);
             if (screen === 0){
                 drawFlap();
                 ctx.beginPath();
+                ctx.fillStyle = "black"
                 ctx.font = "50px Arial";
-                ctx.fillText("Click Space to Start!", 200,270);
+                ctx.fillText("Enter Space to Start!", 200,270);
                 ctx.closePath();
                 vy = 0;
                 flapY = 300;
                 score = 0;
                 PipeX = 900;
+                if(space === true){
+                    id = setInterval(animate, 10);
+                    vy = -8;
+                    screen = 1;
+                }
+
 
             }else if (screen === 1){
 
                 drawGame();
+            }else if (screen === 2){
+                clearInterval(id);
+                gameOver();
+                if(space){
+                    screen = 0;
+                }
             }
+            space = false;
 
 
 
@@ -217,6 +235,10 @@ var IARuntime = function() {
                     rect1.y < rect3.y + rect3.height &&
                     rect1.height + rect1.y > rect3.y) {
                     return (true)
+                } else if (flapY  >= canvas.height + 60) {
+                    return (true)
+                } else if(flapY <= -60){
+                    return(true)
                 }
             }
             return false;
@@ -224,19 +246,15 @@ var IARuntime = function() {
         function keyboardBackSpace(e) {
             if (e.keyCode === 32){
                 e.preventDefault();
+                space = true;
                 vy = -8;
-                screen = 1;
             }
 
         }
         window.addEventListener('keydown', keyboardBackSpace, false);
-        // window.addEventListener('click', function(){
-        //     vy = -8;
-        //     screen = 1;
-        // }, false)
-        setInterval(animate, 10);
+        // var intervalAnime = setInterval(animate, 10);
         var idInterval = setInterval(draw, 1000/60);
-        return
+        return (idInterval);
 
     }
 
