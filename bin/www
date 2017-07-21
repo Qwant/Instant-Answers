@@ -1,28 +1,9 @@
 #!/usr/bin/env node
 
-require('../src/binder')();
-
-var config = require('@qwant/config');
-config.import('app');
-config.import('languages');
-
-Object.keys(config).forEach(function(elem) {
-    config_set(elem, config[elem]);
-});
-
-var path = require('path');
-var appRoot = path.resolve(__dirname + '/../');
-var Logger = require('@qwant/front-logger');
-Logger.init(config_get('app.qwant-ia.logConfig'), appRoot);
-var winston = require('winston');
-var logger = winston.loggers.get('logger');
-var datahub = winston.loggers.get('datahub');
-
 var iaCoreName = require('../package.json').name;
 var iaCoreVersion = require('../package.json').version;
 
-logger.info('Starting %s v%s\n', iaCoreName, iaCoreVersion);
-datahub.info('core_launched');
+console.info('\nStarting %s v%s\n', iaCoreName, iaCoreVersion);
 
 require('../src/bootstrap')()
         .then(function (app) {
@@ -48,7 +29,7 @@ require('../src/bootstrap')()
             server.listen(port);
             server.on('error', onError);
             server.on('listening', function () {
-                logger.info('Server listening on port %s', port);
+                onListening(server);
             });
 
 
@@ -88,16 +69,28 @@ require('../src/bootstrap')()
                 // handle specific listen errors with friendly messages
                 switch (error.code) {
                     case 'EACCES':
-                        logger.error(bind + ' requires elevated privileges');
+                        console.error(bind + ' requires elevated privileges');
                         process.exit(1);
                         break;
                     case 'EADDRINUSE':
-                        logger.error(bind + ' is already in use');
+                        console.error(bind + ' is already in use');
                         process.exit(1);
                         break;
                     default:
                         throw error;
                 }
+            }
+
+            /**
+             * Event listener for HTTP server "listening" event.
+             */
+
+            function onListening(server) {
+                var addr = server.address();
+                var bind = typeof addr === 'string'
+                        ? 'pipe ' + addr
+                        : 'port ' + addr.port;
+                console.log('\nServer listening on : ' + addr.port + ' (http://localhost:' + addr.port + ')');
             }
 
         });

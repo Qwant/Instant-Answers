@@ -1,6 +1,6 @@
 module.exports = function(app, iaSolver){
-    var winston = require('winston');
-    var logger = winston.loggers.get('logger');
+
+    var logger = require('@qwant/front-logger')(config_get('app.qwant-ia.logConfig')); // setup Logger configuration (see app.yml)
     var defaultLanguage = config_get('languages.options.default'); // languages.yml
 	var availableLanguages = config_get('languages.languages'); // languages.yml
     var Promise = require("bluebird");
@@ -14,7 +14,7 @@ module.exports = function(app, iaSolver){
             if(availableLanguages) {
                 Object.keys(availableLanguages).forEach(function (key) {
                     var language = availableLanguages[key];
-                    if (lang === language.code) {
+                    if (lang == language.code) {
                         existingLanguage = true;
                         return 1;
                     }
@@ -35,7 +35,7 @@ module.exports = function(app, iaSolver){
             if (query) {
                 iaSolver.solveByQuery(res, query, lang);
             } else {
-                logger.warn('No query given');
+                logger.warning('No query given');
                 res.status(200).send({error: 200, message: 'No query given'});
             }
         });
@@ -48,7 +48,7 @@ module.exports = function(app, iaSolver){
             if (ia && query) {
                 iaSolver.solveByIaAndQuery(res, query, ia, lang)
             } else {
-                logger.warn('No module name or query given');
+                logger.warning('No module name or query given');
                 res.status(200).send({error: 200, message: 'No module name or query given'});
             }
         });

@@ -7,5 +7,15 @@ qwant-ia:
   images-base: "ia/img/"
   excludedIA: ['weather']
   logConfig:
-    cli:
-      level: "debug"
+    cliLogSeverity:
+      ["critical",
+      "alert",
+      "error",
+      "warning",
+      "debug",
+      "info"]
+    elasticLogSeverity:
+      ["critical",
+      "alert",
+      "error",
+      "info"]
