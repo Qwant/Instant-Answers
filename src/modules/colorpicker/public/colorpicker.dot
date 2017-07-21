@@ -1,0 +1,8 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/colorpicker.css" type="text/css">
+<script src="javascript/script.js"></script>
+<input type="text" name="hexadecimal" placeholder = "#00000">
+<input type="text" name="rgb" placeholder = "230 123 98">
+<div id="color_result" class="style_color_result"></div>
