@@ -1,4 +1,25 @@
-.style_color_result{
-    width: 60px;
-    height: 60px;
+#color-input {
+    display: none;
+}
+#color-label {
+    height: 100px;
+    width: 150px;
+    position: absolute;
+    left:580px;
+    top: 286px;
+
+}
+#color-input:checked ~ #color-picker {
+    opacity: 1;
+}
+#color-picker {
+
+    margin-left: 25px;
+    opacity: 0;
+    padding: 5px;
+    margin-top: 5px;
+    max-width: 600px;
+}
+canvas:hover {
+    cursor: crosshair;
 }

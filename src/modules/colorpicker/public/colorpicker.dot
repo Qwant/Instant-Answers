@@ -3,6 +3,15 @@
 -->
 <link rel="stylesheet" href="css/colorpicker.css" type="text/css">
 <script src="javascript/script.js"></script>
-<input type="text" name="hexadecimal" placeholder = "#00000">
-<input type="text" name="rgb" placeholder = "230 123 98">
-<div id="color_result" class="style_color_result"></div>
+
+<input type="checkbox" id="color-input" checked></input>
+
+<div id="color-picker">
+  <canvas id="color-block" height="200" width="450"></canvas>
+  <canvas id="color-strip" height="30" width="450"></canvas>
+</div>
+<div id="hexrgba">
+    <input type="text" id="hexaValue">
+    <input type="text" id="rgbaValue">
+</div>
+<label for="color-input" id="color-label" style="background-color: red"></label>
