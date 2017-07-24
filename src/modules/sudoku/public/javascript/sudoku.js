@@ -106,7 +106,6 @@ var IARuntime = function() {
                         game[y * 9 + x].nb = e.keyCode % 48;
                     }
                 }
-                calcError();
             }
         }
 
@@ -202,14 +201,19 @@ var IARuntime = function() {
         }
 
         function calcError() {
+            var test = false;
             for (var i = 0; i < 81; ++i) {
                 if (game[i].nb !== 0) {
                     game[i].isError = isInRow(game[i].nb, i) > 1 || isInColumn(game[i].nb, i) > 1 || isInSquare(game[i].nb, i) > 1;
+                    if (game[i].isError) {
+                        test = true;
+                    }
                 }
                 else {
                     game[i].isError = false;
                 }
             }
+            return (test);
         }
 
         function drawSolve() {
@@ -245,6 +249,7 @@ var IARuntime = function() {
         }
 
         function drawSection() {
+            calcError();
             drawNumber();
             drawCadri();
                 drawSolve();
@@ -283,6 +288,11 @@ var IARuntime = function() {
             var nb = 0;
             var vec = [];
 
+            if (calcError()) {
+                alert("Fix errors first!");
+                return;
+            }
+            clearSolve();
             index = 0;
             while (game[index].isLock) {
                 ++index;
@@ -409,7 +419,7 @@ var IARuntime = function() {
             }
             click = false;
         }
-        var idInterval = setInterval(draw, 10);
+        var idInterval = setInterval(draw, 100);
         return (idInterval);
     };
     return Sudoku;
