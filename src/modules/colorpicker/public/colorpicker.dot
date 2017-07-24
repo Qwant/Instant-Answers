@@ -10,8 +10,11 @@
   <canvas id="color-block" height="200" width="450"></canvas>
   <canvas id="color-strip" height="30" width="450"></canvas>
 </div>
-<div id="hexrgba">
+
+<label for="color-input" id="color-label" style="background-color: red">
+<div id="hexrgba" class="style-hexrgba">
     <input type="text" id="hexaValue">
     <input type="text" id="rgbaValue">
-</div>
-<label for="color-input" id="color-label" style="background-color: red"></label>
+    <button id="actionHex" class="buttonStyle">Go To Hexa</button>
+    <button id="actionRgb" class="buttonStyle">Go To Rgb</button>
+</div></label>

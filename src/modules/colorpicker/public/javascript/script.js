@@ -91,17 +91,37 @@ var IARuntime = function() {
             rgbaColor = 'rgba(' + imageData[0] + ',' + imageData[1] + ',' + imageData[2] + ',1)';
             colorLabel.style.backgroundColor = rgbaColor;
             document.getElementById("rgbaValue").value = rgbaColor;
-            var hex = convertHex(rgbaColor);
+            var hex = convertRgbToHex(rgbaColor);
             document.getElementById("hexaValue").value = hex;
+            var form = ((0.3*imageData[0])+(0.59*imageData[1])+(0.11*imageData[2]));
+            console.log(form);
+            if( form >= 128){
+                document.getElementById("rgbaValue").style.color = "black";
+                document.getElementById("hexaValue").style.color = "black";
+            }else {
+                document.getElementById("rgbaValue").style.color = "white";
+                document.getElementById("hexaValue").style.color = "white";
+            }
 
 
         }
-        function findColor() {
+        var goHex = document.getElementById("actionHex");
+        goHex.onclick = function(){
             var NewHex = document.getElementById("hexaValue").value;
+            NewHex = convertHexToRgbA(NewHex);
             colorLabel.style.backgroundColor = NewHex;
-            var NewRgba = document.getElementById("rgbaValue")
+            document.getElementById("rgbaValue").value = NewHex;
+            // colorLabel.style.backgroundColor = NewRgba;
         }
-        function convertHex(rgb){
+        var goRgb = document.getElementById("actionRgb");
+        goRgb.onclick = function(){
+            var NewRgb = document.getElementById("rgbaValue").value;
+            var NewHex = convertRgbToHex(NewRgb);
+            colorLabel.style.backgroundColor = NewRgb;
+            document.getElementById("hexaValue").value = NewHex;
+            // colorLabel.style.backgroundColor = NewRgba;
+        }
+        function convertRgbToHex(rgb){
             rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
             return (rgb && rgb.length === 4) ? "#" +
                 ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
@@ -109,6 +129,18 @@ var IARuntime = function() {
                 ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : '';
 
 
+        }
+        function convertHexToRgbA(hex){
+            var c;
+            if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
+                c= hex.substring(1).split('');
+                if(c.length== 3){
+                    c= [c[0], c[0], c[1], c[1], c[2], c[2]];
+                }
+                c= '0x'+c.join('');
+                return 'rgba('+[(c>>16)&255, (c>>8)&255, c&255].join(',')+',1)';
+            }
+            throw new Error('Bad Hex');
         }
 
         colorStrip.addEventListener("click", click, false);
