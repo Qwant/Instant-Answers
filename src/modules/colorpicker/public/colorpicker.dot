@@ -13,8 +13,8 @@
 
 <label for="color-input" id="color-label" style="background-color: red">
 <div id="hexrgba" class="style-hexrgba">
-    <input type="text" id="hexaValue">
-    <input type="text" id="rgbaValue">
+    <input type="text" id="hexaValue" placeholder="Hexadecimal">
+    <input type="text" id="rgbaValue" placeholder="RGB">
     <button id="actionHex" class="buttonStyle">Go To Hexa</button>
     <button id="actionRgb" class="buttonStyle">Go To Rgb</button>
 </div></label>
