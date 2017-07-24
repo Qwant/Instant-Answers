@@ -98,9 +98,13 @@ var IARuntime = function() {
             if( form >= 128){
                 document.getElementById("rgbaValue").style.color = "black";
                 document.getElementById("hexaValue").style.color = "black";
+                document.getElementById("rgbaValue").style.borderColor = "black";
+                document.getElementById("hexaValue").style.borderColor = "black";
             }else {
                 document.getElementById("rgbaValue").style.color = "white";
                 document.getElementById("hexaValue").style.color = "white";
+                document.getElementById("rgbaValue").style.borderColor = "white";
+                document.getElementById("hexaValue").style.borderColor = "white";
             }
 
 
