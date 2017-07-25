@@ -145,7 +145,7 @@ var IARuntime = function() {
                 return 'rgba('+[(c>>16)&255, (c>>8)&255, c&255].join(',')+',1)';
             }
             throw new Error('Bad Hex');
-        }
+    }
 
         colorStrip.addEventListener("click", click, false);
 
