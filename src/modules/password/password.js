@@ -29,7 +29,7 @@ module.exports = {
 
     getData: function (values, proxyURL, language) {
         return new Promise(function (resolve, reject) {
-            resolve("Hello World!");
+            resolve("hello");
         });
     },
 
@@ -84,7 +84,7 @@ module.exports = {
      *          strict : perfect match with keyword
      */
 
-    trigger: "start",
+    trigger: "strict",
 
     /**
      * (NEEDED)
