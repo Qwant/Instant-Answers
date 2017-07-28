@@ -44,7 +44,7 @@ var IARuntime = function() {
                     var password = "";
                     var charlist = "!#$%&()*+,-./0123456789:;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~";
                     for (var i = 0; i < value; ++i) {
-                        var code = Math.trunc((Math.random() + xCurs * yCurs) * 1000) % charlist.length;
+                        var code = Math.trunc((Math.random() * 1000 + xCurs * yCurs) % charlist.length;
                         password += charlist.charAt(code);
                     }
                     result.value = password;
