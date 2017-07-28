@@ -1,0 +1,43 @@
+/**
+* This is your main CSS file. Please refer to the documentation for more information.
+*/
+textarea {
+    resize: none;
+}
+button{
+    cursor: pointer;
+}
+.style_text_o{
+    float:left;
+    border: 1px grey solid;
+}
+.style_text_i{
+    float:left;
+    border: 1px grey solid;
+}
+.go_button{
+    float:left;
+}
+.decrypt_button{
+    float:left;
+}
+.cript_button{
+    float:left;
+}
+.style_key{
+    float:left;
+    text-align: center;
+    font-family: Helvetica;
+}
+.cont_input{
+    width : 35%;
+    float:left;
+    height: 150px;
+    display: grid;
+}
+.cont_output{
+    width : 35%;
+    float:left;
+    height: 150px;
+    display: grid;
+}

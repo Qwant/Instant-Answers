@@ -29,7 +29,7 @@ module.exports = {
 
     getData: function (values, proxyURL, language) {
         return new Promise(function (resolve, reject) {
-            resolve ('hello');
+            resolve('hello');
         });
     },
 
@@ -40,7 +40,7 @@ module.exports = {
      */
 
     getName: function () {
-        return _("ColorPicker", "colorpicker");
+        return _("Caesar cypher", "caesar_cypher");
     },
 
     /**
@@ -48,7 +48,7 @@ module.exports = {
      * Otherwise, if your name doesn't need to be translated, use this attribute.
      */
 
-    name: "ColorPicker",
+    name: "Caesar cypher",
 
     /**
      * (OPTIONAL/NEEDED)
@@ -56,7 +56,7 @@ module.exports = {
      * @returns keyword translated
      */
     getKeyword: function () {
-        return _("color picker", "colorpicker");
+        return _("caesar cipher", "caesar_cypher");
     },
 
     /**
@@ -65,7 +65,7 @@ module.exports = {
      * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
      */
 
-    keyword: "color picker",
+    keyword: "caesar cipher",
 
     /**
      * (OPTIONAL)
@@ -94,7 +94,7 @@ module.exports = {
      * 			- i : insensitive
      */
 
-    flag: "gmi",
+    flag: "",
 
     /**
      * (NEEDED)
