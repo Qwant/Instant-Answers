@@ -29,25 +29,7 @@ module.exports = {
 
     getData: function (values, proxyURL, language) {
         return new Promise(function (resolve, reject) {
-            var size = parseInt(values[2]);
-            var arrayPass = [];
-            var password = "";
-            var charlist = "!#$%&()*+,-./0123456789:;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~";
-            if (!size || size < 1) {
-                size = 5;
-            }
-            for (var i = 0; i < size; ++i) {
-                var code = Math.trunc(Math.random() * 1000) % charlist.length;
-                password += charlist.charAt(code);
-                if (password.length >= 110) {
-                    arrayPass.push(password);
-                    password = "";
-                }
-            }
-            if (password.length !== 0) {
-                arrayPass.push(password);
-            }
-            resolve({size : size, password : arrayPass});
+            resolve("Hello World!");
         });
     },
 
@@ -58,7 +40,7 @@ module.exports = {
      */
 
     getName: function () {
-        return _("generate password", "generate password");
+        return _("password", "password");
     },
 
     /**
@@ -74,7 +56,7 @@ module.exports = {
      * @returns keyword translated
      */
     getKeyword: function () {
-        return _("password", "password");
+        return _("generate password", "password");
     },
 
     /**
@@ -90,7 +72,7 @@ module.exports = {
      * script : If your IA includes a script, place it under public/javascript/xxx.js and replace "hello" by "xxx".
      */
 
-    
+    script: "password",
 
     /**
      * (NEEDED)
