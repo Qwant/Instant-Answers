@@ -29,7 +29,7 @@ module.exports = {
 
     getData: function (values, proxyURL, language) {
         return new Promise(function (resolve, reject) {
-            // do something with the data (values)
+            resolve("hello");
         });
     },
 
@@ -65,14 +65,14 @@ module.exports = {
      * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
      */
 
-    keyword: "(?:jour||day)\\s(?:[0-9]{2})\\s(?:[a-z]+)\\s(?:[0-9]{4})",
+    keyword: "^(?=.*courante)(?=.*numero)(?=.*semaine).*$",
 
     /**
      * (OPTIONAL)
      * script : If your IA includes a script, place it under public/javascript/xxx.js and replace "hello" by "xxx".
      */
 
-    script: "script.js",
+    script: "script",
 
     /**
      * (NEEDED)

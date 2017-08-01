@@ -3,3 +3,7 @@
 -->
 <link rel="stylesheet" href="css/searchweek.css" type="text/css">
 <script src="javascript/script.js"></script>
+<div id="case" class="style_case">
+    <div id="result" class="style_result"></div>
+    <div id="current_date" class="style_currentdate"></div>
+</div>

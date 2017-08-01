@@ -25,10 +25,21 @@ var IARuntime = function() {
             var dayDiff = (target - jan4) / 86400000;
             console.log(dayDiff);
             var weekNr = Math.ceil(dayDiff / 7);
-            console.log(weekNr);
+            document.getElementById('result').innerHTML = weekNr;
+            var tab_mois= ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = tab_mois[today.getMonth()]; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if(dd<10) {
+                dd = '0'+dd
+            }
+            today = dd + ' ' + mm + ' ' + yyyy;
+            document.getElementById('current_date').innerHTML = today;
 
         }
-        test(new Date("2017-02-2T03:24:00"));
+        test(new Date());
     };
 
     /**

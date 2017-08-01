@@ -1,3 +1,21 @@
-/**
-* This is your main CSS file. Please refer to the documentation for more information.
-*/
+.style_case{
+    width: 30%;
+    height: 200px;
+    box-shadow: 2px 2px 5px #888888;
+    padding: 25px;
+    margin-left: 35px;
+    margin-top:15px;
+
+}
+.style_result{
+    font-size: 50px;
+    font-weight: bold;
+    font-family: Helvetica;
+    text-align: center;
+    margin-top:25px;
+}
+.style_currentdate{
+    text-align: center;
+    color: #888888;
+    font-family: Helvetica;
+}
