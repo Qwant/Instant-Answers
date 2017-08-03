@@ -65,7 +65,7 @@ module.exports = {
      * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
      */
 
-    keyword: "base",
+    keyword: "base64 encode",
 
     /**
      * (OPTIONAL)
