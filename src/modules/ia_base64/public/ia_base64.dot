@@ -10,7 +10,6 @@
 
 </div>
 <div class="cont_output">
-    <label type="text" class="style_key">Result</label>
-    <textarea id="result" class="style_text_o" rows="4" cols="50" readonly></textarea>
-    <button class="cript_button" id="change_cript"><img src="{{=it.images_path}}/caesar_cypher/couple-of-arrows-changing-places_318-41860.png" width="15" height="15"></button>
+    <textarea id="result" class="style_text_o" rows="4" cols="50" placeholder="Result..." readonly></textarea>
+    <button class="cript_button" id="change_cript"><img src="{{=it.images_path}}/ia_base64/couple-of-arrows-changing-places_318-41860.png" width="15" height="15"></button>
 </div>

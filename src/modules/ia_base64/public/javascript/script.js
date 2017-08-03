@@ -27,7 +27,7 @@ var IARuntime = function() {
         }
         change_crypt.onclick = function (){
             document.getElementById("text").value = "";
-            document.getElementById("result").value = "";
+            document.getElementById("result").innerHTML = "";
             if(screen === 0){
                 document.getElementById("go").style.display = "none";
                 document.getElementById("go_decrypt").style.display = "block";
