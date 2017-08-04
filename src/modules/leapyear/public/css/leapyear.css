@@ -1,0 +1,13 @@
+.ia__leapyear__body {
+    width  : 100%;
+    height : 220px;
+}
+
+.ia__leapyear__content {
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.ia__leapyear__text {
+    font-family : Helvetica;
+}

@@ -1,0 +1,17 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/leapyear.css" type="text/css">
+<div class="ia__leapyear__body">
+	<div class="ia__leapyear__content">
+		<div class="ia__leapyear__text">
+			{{~ it.data:year:i }}
+				{{? i == 0 }}
+					{{= year }}
+				{{??}}
+					, {{= year }}
+				{{?}}
+			{{~}}
+		</div>
+	</div>
+</div>

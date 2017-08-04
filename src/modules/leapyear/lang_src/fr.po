@@ -1,0 +1,3 @@
+msgctxt "leapyear"
+msgid "leapyear"
+msgstr "année bisextile"
