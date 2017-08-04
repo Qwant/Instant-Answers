@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="css/base_conversion.css" type="text/css">
+<script src="javascript/base_conversion.js"></script>
+<div class="ia__baseconversion__body">
+	<div class="ia__baseconversion__content">
+		<div class="ia__baseconversion__column__left">
+			<div class="ia__baseconversion__base">Base:</div>
+			<div class="ia__baseconversion__base">Number:</div>
+		</div>
+		<div class="ia__baseconversion__column">
+			<div class="ia__baseconversion__line">
+				<input class="ia__baseconversion__textfield" value="" placeholder="From" type="text" id="from">
+				<input class="ia__baseconversion__textfield" value="" placeholder="To" type="text" id="to">
+			</div>
+			<div class="ia__baseconversion__line">
+        		<input class="ia__baseconversion__textfield" value="" placeholder="number" type="text" id="number">
+        		<input class="ia__baseconversion__result" value="" placeholder="result" id="result">
+        	</div>
+        </div>
+        <div class="ia__baseconversion__column__right">
+        	<div class="ia__baseconversion__button" id="fbinary">From: Binary</div>
+        	<div class="ia__baseconversion__button" id="foctal">From: Octal</div>
+        	<div class="ia__baseconversion__button" id="fhexa">From: Hexa</div>
+			<div class="ia__baseconversion__button" id="start">Go!</div>
+        </div>
+        <div class="ia__baseconversion__column__right">
+            <div class="ia__baseconversion__button" id="tbinary">To: Binary</div>
+            <div class="ia__baseconversion__button" id="toctal">To: Octal</div>
+            <div class="ia__baseconversion__button" id="thexa">To: Hexa</div>
+        </div>
+	</div>
+</div>
