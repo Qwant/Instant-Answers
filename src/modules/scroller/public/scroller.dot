@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="css/scroller.css" type="text/css">
+<script src="javascript/scroller.js"></script>
+<div id="background_games" class="back_games">
+	<button class="play_game" id="start">Play</button>
+	<div id="game" class="games">
+		<canvas id="mycanvas" class="style_canvas" width="800px" height="600px">Votre Navigateur ne support pas encore la technologie Canvas</canvas>
+	</div>
+	<span id="cross" class="style_cross"><img src="{{=it.images_path}}/scroller/greycross.png" width="50" height="50"></span>
+</div>
+<audio id="music_start">
+  <source src="{{=it.images_path}}/scroller/music_start.mp3" type="audio/mpeg">
+</audio>
+<audio id="music">
+  <source src="{{=it.images_path}}/scroller/music.mp3" type="audio/mpeg">
+</audio>
+<audio id="music_stop">
+  <source src="{{=it.images_path}}/scroller/music_stop.mp3" type="audio/mpeg">
+</audio>
+<audio id="explosion">
+  <source src="{{=it.images_path}}/scroller/explosion.mp3" type="audio/mpeg">
+</audio>
+<img style="display:none" src="{{=it.images_path}}/scroller/background_start.jpg" id="background_start">
+<img style="display:none" src="{{=it.images_path}}/scroller/background.jpg" id="background">
+<img style="display:none" src="{{=it.images_path}}/scroller/background_stop.jpg" id="background_stop">
+<img style="display:none" src="{{=it.images_path}}/scroller/block.png" id="block">
+<img style="display:none" src="{{=it.images_path}}/scroller/dynamic_block.png" id="dynamic_block">
+<img style="display:none" src="{{=it.images_path}}/scroller/player.png" id="player">
+<img style="display:none" src="{{=it.images_path}}/scroller/spike.png" id="spike">
+<img style="display:none" src="{{=it.images_path}}/scroller/obstacle.png" id="obstacle">
+<img style="display:none" src="{{=it.images_path}}/scroller/die.png" id="die">
