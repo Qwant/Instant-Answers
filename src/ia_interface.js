@@ -95,7 +95,6 @@ instant_answer.prototype.solveData = function (query, lang) {
                     var moduleURL = self.iaModuleBase + lang + '/' + moduleFile + '.js?' + iaVersion;
                     var moduleScriptURL = self.iaScriptBase + lang + '/' + moduleScript + '.js?' + iaVersion;
                     var moduleImagesURL = self.iaImagesBase;
-                    var modulePosition = self.module.canBeDisplayedVertically;
                     var realQuery = query[0];
 
                     var jsonResponse = {
@@ -128,8 +127,6 @@ instant_answer.prototype.solveData = function (query, lang) {
                             }
                         ];
                     }
-
-                    jsonResponse.canBeDisplayedVertically = modulePosition || false;
 
                     resolve(jsonResponse);
                 })

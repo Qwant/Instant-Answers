@@ -82,7 +82,7 @@
 .ia-weather-pic--main {
     width  : 92px;
     height : 92px;
-    margin : 6px 12px 0;
+    margin : 6px 0 0;
 }
 
 #ia-weather {
@@ -132,6 +132,9 @@
     font-size      : 1.18em;
     letter-spacing : -0.01em;
     color          : #778;
+    white-space    : nowrap;
+    overflow       : hidden;
+    text-overflow  : ellipsis;
 }
 
 .ia-weather-status {
@@ -171,22 +174,23 @@
     margin : -2px 0 2px 0;
 }
 
+.ia-weather-current-container {
+    background : #F8F9FA;
+}
+
 .ia-weather-current {
-    background : rgba(248, 250, 252, 0.5);
-    float      : left;
-    width      : 450px;
-    height     : 200px;
-    position   : relative;
-    padding    : 12px 6px 0 0;
+    float    : left;
+    width    : 450px;
+    height   : 200px;
+    position : relative;
+    padding  : 12px 0 0 0;
 
 }
 
 .ia-weather-current-container, #ia-weather-forecast-five {
     position      : relative;
     width         : 100%;
-    float         : left;
     height        : 200px;
-    margin-bottom : 20px;
 }
 
 .ia-weather-forecast-temperature {
@@ -209,6 +213,7 @@
     width      : -webkit-calc(100% - 450px);
     width      : -moz-calc(100% - 450px);
     width      : calc(100% - 450px);
+    overflow   : hidden;
 }
 
 #ia-weather-temperature-chart {
@@ -252,10 +257,15 @@
     background-position : -340px -124px;
 }
 
+.ia-weather-pressure .ia-weather-column-meta--item--value {
+    width : 83px;
+}
+
 .ia-weather-column-meta--item--pic {
-    width  : 32px;
-    height : 32px;
-    float  : left;
+    width     : 32px;
+    height    : 32px;
+    float     : left;
+    transform : scale(0.75) translateX(7px);
 }
 
 .ia-weather-column-meta--item--value {
@@ -269,8 +279,8 @@
 
 .ia-weather-column-meta {
     float       : left;
-    width       : 210px;
-    margin-left : 22px;
+    width       : 250px;
+    margin-left : 5px;
 }
 
 .ia-weather--back-link-container {
@@ -278,7 +288,7 @@
     color       : #999;
     font-size   : 0.8em;
     clear       : both;
-    margin-left : 116px;
+    margin-left : 93px;
     padding-top : 8px;
 }
 
@@ -317,15 +327,6 @@
 
 .ia-weather--back-link:hover {
     text-decoration : underline;
-}
-
-.ia_container--vertical .ia-weather--back-link--container {
-    bottom : -17px;
-    color  : #999;
-}
-
-.ia_container--vertical .ia-weather--back-link {
-    color : #6E8799;
 }
 
 .ia-weather-pic-01 {
@@ -450,6 +451,11 @@
     -o-transform      : scale(0.8);
     transform         : scale(0.8);
     margin-bottom     : 40px;
+    margin-top        : -4px;
+}
+
+.ia_container-web_desktop .ia-weather-pic--main {
+    margin-top : -22px;
 }
 
 .ia-weather-pic--forecast {
@@ -511,10 +517,6 @@
     letter-spacing : -0.01em;
 }
 
-.ia_container--vertical .ia-weather-forecast-five-snapshot-temperature--max {
-    color : rgba(46, 52, 64, 0.92);
-}
-
 .ia-weather-forecast-five-snapshot-temperature {
     width : 75px;
 }
@@ -524,10 +526,6 @@
     color     : rgb(255, 255, 255);
     font-size : 0.65em;
     position  : relative;
-}
-
-.ia_container--vertical .ia-weather-forecast-five-snapshot-temperature--max .ia-weather-temperature--unit {
-    color : rgb(122, 124, 126);
 }
 
 .ia-weather-forecast-five-snapshot-pictogram {
@@ -544,116 +542,12 @@
     color       : rgba(255, 255, 255, 0.8);
 }
 
-.ia_container--vertical .ia-weather-forecast-five-snapshot-temperature--min {
-    color : rgba(46, 52, 64, 0.72);
-}
-
 .ia-weather-forecast-five-snapshot-temperature--min .ia-weather-temperature--unit {
     display : none;
 }
 
-/* Ribbon Vertical */
-
-.ia_container--vertical .ia-weather-column-meta {
-    width       : 130px;
-    margin-left : 20px;
-}
-
-.ia_container--vertical .ia-weather-column-meta--item {
-    width : 100%;
-}
-
-.ia_container--vertical .ia-weather-column-meta--item:nth-of-type(3) {
-    margin-top : 0;
-    width      : 100%;
-}
-
-.ia_container--vertical .ia-weather-forecast-five-container-cross-fade-helper {
-    opacity            : 0;
-    -webkit-transition : opacity 0.5s linear;
-    -moz-transition    : opacity 0.5s linear;
-    -o-transition      : opacity 0.5s linear;
-    transition         : opacity 0.5s linear;
-    height             : 300px;
-    width              : 100%;
-    position           : absolute;
-    top                : 0;
-    left               : 0;
-    display            : block;
-}
-
-.ia_container--vertical #ia-weather-forecast-five {
-    position   : absolute;
-    background : none;
-}
-
-.ia_container--vertical .ia-weather-localisation {
-    margin-top  : 24px;
-    white-space : normal;
-}
-
-.ia_container--vertical .ia-weather-status {
-    position : initial;
-    top      : 47px;
-    left     : 260px;
-    margin   : 10px 0 4px;
-}
-
-.ia_container--vertical .ia-weather-temperature--secondary {
-    margin : 10px 0 0 0;
-}
-
-.ia_container--vertical .ia-weather-current {
-    width      : 100%;
-    height     : auto;
-    padding    : 0 20px 0 0;
-    background : #F9FAFB;
-    background : -moz-linear-gradient(top, #F9FAFB 0%, #FFF 100%);
-    background : -webkit-linear-gradient(top, #F9FAFB 0%, #FFF 100%);
-    background : linear-gradient(to top, #F9FAFB 0%, #FFF 100%);
-}
-
-.ia_container--vertical .ia-weather-forecast-temperature--max {
-    font-size : 1.75em;
-}
-
-.ia_container--vertical .ia-weather-column-temp {
-    margin : 0 0 0 28px;
-    clear  : both;
-}
-
-.ia_container--vertical .ia-weather--back-link-container {
-    margin  : 0;
-    padding : 10px 0 10px 28px;
-}
-
-.ia_container--vertical #ia-weather-forecast-five, #ia-weather-temperature-chart {
-    width : 1800px;
-}
-
-.ia_container--vertical .ia-weather-forecast-container {
-    width : 300px;
-}
-
-.ia_container--vertical .ia-weather-current-container,
-.ia_container--vertical #ia-weather-forecast-five {
-    margin-left        : 0;
-    -webkit-transition : margin 0.25s;
-    -moz-transition    : margin 0.25s;
-    -o-transition      : margin 0.25s;
-    transition         : margin 0.25s;
-}
-
 .ia-weather-forecast-five-container {
     display : block;
-}
-
-.ia_container--vertical .ia-weather-forecast-five-container {
-    background : #5A7586;
-    height     : 210px;
-    width      : 300px;
-    overflow   : hidden;
-    position   : relative;
 }
 
 #ia-weather-forecast-nav--right,
@@ -661,57 +555,8 @@
     display : none;
 }
 
-.ia_container--vertical #ia-weather-forecast-nav--left,
-.ia_container--vertical #ia-weather-forecast-nav--right {
-    display             : block;
-    position            : absolute;
-    top                 : 0;
-    height              : 215px;
-    width               : 60px;
-    z-index             : 1;
-    background-position : -372px -92px;
-    text-align          : center;
-    cursor              : pointer;
-}
-
-.ia_container--vertical #ia-weather-forecast-nav-pic--left,
-.ia_container--vertical #ia-weather-forecast-nav-pic--right {
-    display : inline-block;
-    height  : 32px;
-    width   : 32px;
-    margin  : 90px 0 0 0;
-}
-
 #ia-weather-forecast-nav--right {
     right : 0;
-}
-
-.ia_container--vertical #ia-weather-forecast-nav-pic--left {
-    background-position : -372px -92px;
-}
-
-.ia_container--vertical #ia-weather-forecast-nav-pic--right {
-    background-position : -372px -92px;
-    -webkit-transform   : rotate(180deg);
-    -moz-transform      : rotate(180deg);
-    -ms-transform       : rotate(180deg);
-    -o-transform        : rotate(180deg);
-    transform           : rotate(180deg);
-}
-
-.ia_container--vertical .ia-weather-pic--main {
-    height : 92px;
-    margin : 15px 8px 4px 13px;
-}
-
-.ia_container--vertical .ia-weather-current-container {
-    margin : 0 0 30px 0;
-    width  : 100%;
-    height : auto;
-}
-
-.ia_container--vertical .ia-weather-forecast-five-snapshot {
-    display : table;
 }
 
 .ia-weather-forecast-five--mobile, .ia-weather--mobile--temperature {
@@ -728,9 +573,6 @@
 @media (max-width : 1000px) {
     #ia-weather {
         height        : 170px;
-        margin-bottom : 15px;
-        margin-top    : 5px;
-        margin-left   : -15px;
     }
 
     .ia-weather-localisation {
@@ -744,7 +586,7 @@
         -ms-transform     : scale(0.65);
         -o-transform      : scale(0.65);
         transform         : scale(0.65);
-        margin            : -12px 15px 0 13px;
+        margin            : -26px 15px 0 13px;
     }
 
     .ia-weather-forecast-five--mobile {
@@ -769,16 +611,15 @@
     }
 
     .ia-weather-current {
-        background-color : transparent;
-        height           : 130px;
-        width            : 40%;
-        padding-right    : 10px;
-        margin-left      : 0;
+        height        : 130px;
+        width         : 40%;
+        padding-right : 10px;
+        margin-left   : 0;
+        padding-top   : 18px;
     }
 
     .ia-weather-current-container, #ia-weather-forecast-five {
         height : auto;
-        margin : 0;
     }
 
     .ia-weather-pic--snapshot {
@@ -800,11 +641,15 @@
         padding    : 8px 0;
     }
 
+    .ia-weather-forecast-five-snapshot-day--mobile p {
+        padding-right : 0;
+    }
+
     .ia-weather--mobile--temperature {
         font-size  : 27px;
         display    : inline-block;
         position   : absolute;
-        top        : 78px;
+        top        : 65px;
         left       : 0;
         width      : 114px;
         text-align : center;
@@ -814,83 +659,51 @@
         display : none;
     }
 
+    .ia-weather-rain {
+        margin-top : -5px;
+    }
+
     .ia-weather-wind, .ia-weather-rain {
         width : 100%;
     }
 
     .ia-weather--back-link-container {
-        margin-left : 120px;
-        padding     : 0;
+        margin-left  : 230px;
+        padding      : 13px 0 0 0;
+        margin-right : -25px;
     }
 
-    .ia_container--vertical .ia-weather-column-meta {
-        width       : 120px;
-        margin-left : -5px;
-    }
-
-    .ia_container--vertical .ia-weather-forecast-five-snapshot {
-        display : none;
-    }
-
-    .ia_container--vertical .ia-weather-current {
-        width       : 40%;
-        height      : 130px;
-        padding     : 12px 10px 0 0;
-        margin-left : 0;
-        background  : none;
-    }
-
-    .ia_container--vertical .ia-weather-pic--main {
-        margin : -12px 15px 0 13px;
-    }
-
-    .ia_container--vertical .ia-weather-localisation {
-        margin-top  : 0;
-        white-space : nowrap;
-    }
-
-    .ia_container--vertical .ia-weather--back-link-container {
-        margin-left : 120px;
-        padding     : 0;
-    }
-
-    .ia_container--vertical .ia-weather-forecast-five-snapshot-temperature--max {
-        color : rgb(255, 255, 255);
-    }
-
-    .ia_container--vertical .ia-weather-forecast-five-snapshot-temperature--max .ia-weather-temperature--unit {
-        color : rgb(255, 255, 255);
-    }
-
-    .ia_container--vertical .ia-weather-forecast-five-snapshot-temperature--min {
-        color : rgba(255, 255, 255, 0.8);
-    }
-
-    .ia_container--vertical .ia-weather--back-link--container {
-        bottom : 5px;
-        color  : white;
-    }
-
-    .ia_container--vertical .ia-weather--back-link {
-        color : white;
-    }
-}
-
-@media (max-width : 800px) {
     #ia-weather {
-        height        : 300px;
-        margin-left   : 10px;
-        margin-bottom : 25px;
-        margin-top    : -10px;
+        height : 300px;
+    }
+
+    .ia-weather-pic--main {
+        margin : -16px 15px 0 13px;
+    }
+
+    .ia-weather--mobile--temperature {
+        top : 78px;
     }
 
     .ia-weather-column-meta {
-        display : none;
+        display     : inline-block;
+        width       : -webkit-calc(100% - 111px);
+        width       : -moz-calc(100% - 111px);
+        width       : calc(100% - 111px);
+        margin-top  : -20px;
+        margin-left : 111px;
+        max-height  : 40px;
+        overflow    : hidden;
+    }
+
+    .ia-weather-column-meta--item {
+        width     : 25%;
+        display   : inline-block;
+        min-width : 125px;
     }
 
     .ia-weather-current {
-        width       : 100%;
-        margin-left : -23px;
+        width : 100%;
     }
 
     .ia-weather-localisation {
@@ -901,33 +714,32 @@
         width : 100%;
     }
 
-    .ia_container--vertical .ia-weather-current {
-        width       : 100%;
-        margin-left : -23px;
+    .ia-weather--back-link-container {
+        padding : 0 !important;
+        margin  : -14px -2px 0 0;
+        float   : right;
     }
 
-    .ia_container--vertical .ia-weather-localisation {
-        margin-top : 9px;
+    .ia-weather--back-link--container {
+        padding-right : 2px !important;
     }
 }
 
 /* Mobile */
 @media (max-width : 640px) {
     #ia-weather {
-        height        : 290px;
-        margin-left   : 0;
-        margin-bottom : 15px;
+        height : 290px;
     }
 
     .ia-weather-current {
         height      : 145px;
         margin-left : 0;
-        padding     : 0;
+        padding     : 10px 0 0 0;
     }
 
     .ia-weather--mobile--temperature {
         font-size : 25px;
-        top       : 70px;
+        top       : 76px;
     }
 
     .ia-weather-localisation {
@@ -939,11 +751,9 @@
         width      : -webkit-calc(100% - 120px);
         width      : -moz-calc(100% - 120px);
         width      : calc(100% - 120px);
-        margin-top : 10px;
-    }
-
-    .ia-weather-column-meta--item:nth-of-type(3) {
-        margin-top : 0;
+        margin-top : -9px;
+        max-height : 62px;
+        overflow   : hidden;
     }
 
     .ia-weather-column-meta--item--pic {
@@ -959,26 +769,30 @@
         font-size : 12px;
     }
 
+    .ia-weather-column-meta--item:nth-of-type(3),
     .ia-weather-pressure, .ia-weather-humidity {
-        display : inline-block;
+        display    : inline-block;
+        margin-top : -7px;
+    }
+
+    .ia-weather-column-meta--item .ia-weather-rain{
+        margin-top: -7px;
     }
 
     .ia-weather-column-meta--item {
-        width : 50%;
+        width : 40%;
+    }
+
+    .ia-weather-pressure, .ia-weather-rain {
+        width : 60%;
     }
 
     .ia-weather--back-link-container {
         position   : absolute;
-        bottom     : 18px;
-        left       : 28px;
-        margin     : 0;
-        padding    : 0;
+        bottom     : 4px;
+        left       : auto;
+        right      : 9px;
         text-align : center;
-    }
-
-    .ia-weather--back-link-container--link {
-        display    : block;
-        margin-top : 4px;
     }
 
     .ia-weather-forecast-five--mobile {
@@ -1003,35 +817,83 @@
         font-size   : 13px;
     }
 
-    .ia_container--vertical #ia-weather {
-        height        : 287px;
-        margin-left   : 0;
-        margin-bottom : 0;
+    .ia-weather-current-container, #ia-weather-forecast-five {
+        margin       : 5px;
+        width        : auto;
+        background   : #FFF;
+        box-shadow   : 0 3px 7px rgba(0, 0, 0, 0.04);
+        border-color : rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.11);
+        border-width : 1px;
+        border-style : solid;
     }
 
-    .ia_container--vertical .ia-weather-current {
-        height      : 145px;
-        margin-left : 0;
-        padding     : 0;
-    }
+}
 
-    .ia_container--vertical .ia-weather--back-link-container {
-        margin : 0;
-    }
-
-    .ia_container--vertical .ia-weather-column-meta {
-        width : -webkit-calc(100% - 120px);
-        width : -moz-calc(100% - 120px);
-        width : calc(100% - 120px);
-    }
-
-    .ia_container--vertical .ia-weather-column-meta--item {
-        width : 50%;
-    }
-
-    .ia_container--vertical .ia-weather-column-meta--item:nth-of-type(3) {
-        width      : 50%;
-        margin-top : 0;
+/* hide some forcast days as the resolution reduces */
+@media (max-width : 500px) {
+    .ia-weather-forecast-five-snapshot-day--mobile:nth-child(5) {
+        display : none;
     }
 }
 
+@media (max-width : 350px) {
+    .ia-weather-forecast-five-snapshot-day--mobile:nth-child(4) {
+        display : none;
+    }
+}
+
+/* Web desktop */
+
+.ia_container-web_desktop #ia-weather {
+    height        : auto;
+    margin-top    : -10px;
+}
+
+.ia_container-web_desktop .ia-weather-current-container {
+    height : auto;
+}
+
+.ia_container-web_desktop .ia-weather-current {
+    width       : 100%;
+    margin-left : 0;
+    height: 174px;
+    float       : none;
+    overflow    : hidden;
+}
+
+.ia_container-web_desktop .ia-weather-localisation {
+    margin-top : 9px;
+}
+
+.ia_container-web_desktop .ia-weather-forecast-five--mobile {
+    width : 100%;
+}
+
+.ia_container-web_desktop #ia-weather-forecast-five {
+    width           : 100%;
+    float           : none;
+    overflow        : hidden;
+    height          : 160px;
+    background-size : 150% 100% !important;
+}
+
+.ia_container-web_desktop #ia-weather-forecast-five .ia-weather-forecast-container {
+    width  : 140px !important;
+    height : 148px;
+}
+
+.ia_container-web_desktop #ia-weather-temperature-chart {
+    display : none;
+}
+
+.ia_container-web_desktop .ia-weather-forecast-temperature {
+    margin-top : 10px;
+}
+
+.ia_container-web_desktop .ia-weather--back-link-container {
+    position   : absolute;
+    bottom     : 4px;
+    left       : auto;
+    right      : 9px;
+    text-align : center;
+}

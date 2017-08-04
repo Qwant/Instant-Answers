@@ -22,7 +22,7 @@ body {
   margin-bottom: 20px;
 }
 
-#ia_container--h, #ia_container--vertical {
+#ia_container--h {
 
   height: 220px;
   width:100%;
@@ -471,10 +471,6 @@ a
 
 }
 @media screen and (max-width: 1000px) {
-    .sandbox-toggle-container {
-       position:static;
-       margin-top: 50px;
-    }
     .ia-weather-current-container {
         margin-top: 25px;
     }
@@ -487,9 +483,6 @@ a
     #web-column {
         width: 85%;
     }
-     td[class=ia-responsive-vertical]{
-        display: block;
-     }
 
 
 }
@@ -497,16 +490,4 @@ a
     #reset{
         display:none;
     }
-}
-#vertical-switch-icon {
-    background-image: url("../img/move-vertical-480.png");
-    width: 28px;
-    height:28px;
-    margin-top: 5px;
-}
-#horizontal-switch-icon {
-    background-image: url("../img/enlarge_horizontal-512.png");
-    width: 28px;
-    height:28px;
-    margin-top: 5px;
 }

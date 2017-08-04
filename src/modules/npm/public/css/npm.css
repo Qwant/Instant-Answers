@@ -1,8 +1,7 @@
 /** On "All" view **/
 
 .ia__npm {
-    padding: 8px 0 0 22px;
-    background: white;
+    padding: 8px 0 10px 22px;
     border-top: 1px solid rgba(122,124,126,0.16);
 }
 
@@ -91,8 +90,8 @@
 
 @media (max-width: 1000px) {
     .ia__npm {
-        padding    : 0 20px 10px 0px;
-        background : none;
+        padding: 20px;
+        background: #F8F9FA;
         border     : 0;
     }
 }
@@ -100,13 +99,25 @@
 /** Mobile **/
 
 @media (max-width: 640px) {
-    .ia__npm {
-        padding: 5px 0 8px 12px;
-        margin-top: -15px;
-    }
 
     .ia_container--horizontal .ia__npm {
         padding: 3px 0 5px 12px;
         margin-top: 0;
     }
+
+    .ia__npm {
+        padding: 10px 0;
+        margin: 5px;
+        background: #fff;
+        box-shadow: 0px 3px 7px rgba(0,0,0,0.04);
+        border-color: rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.11);
+        border-width: 1px;
+        border-style: solid;
+    }
+}
+
+.ia_container-web_desktop .ia__npm {
+    padding: 10px 0 10px 10px;
+    background: #f8f9fa;
+    border-top: none;
 }

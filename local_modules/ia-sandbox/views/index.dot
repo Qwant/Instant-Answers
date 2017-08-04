@@ -26,19 +26,6 @@
             <input value="[[= decodeURI(model.query) ]]" type="text" name="q" placeholder="Que Recherchez-vous?">
             <span id="reset" title="Effacer la recherche" onclick="document.getElementsByName('q')[0].value = '';"><span class="icon_close"></span></span>
         </div>
-		<div class="sandbox-toggle-container">
-                			<div class="sandbox-toggle-orientation-text">
-                				<div id="vertical-switch-icon"></div>
-                			</div>
-                			<label class="sandbox-toggle-orientation-label">
-                				<input type="checkbox" id="sandbox-toggle-orientation-input" class="sandbox-toggle-orientation-input" value="1">
-                				<div class="sandbox-toggle-slider"></div>
-                			</label>
-                			<div class="sandbox-toggle-orientation-text">
-                				<div id="horizontal-switch-icon"></div>
-                			</div>
-
-                </div>
 	</form>
     <div class="ribbon_tabs" id="ribbon_tabs">
         <a href="#" class="results-page--ia">[[= model.ia.template_name ]]</a>
@@ -55,7 +42,3 @@
 
 
 <script src="https://www.qwant.com/js/app.js" onload="appLoaded(event)"></script>
-
-
-
-

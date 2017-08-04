@@ -72,7 +72,7 @@
 				<div class="ia-weather-column-meta--item ia-weather-pressure" title="{{? currentWeather.pressure }}{{= currentWeather.pressure.label }}{{?}}">
 					<div class="ia-weather-column-meta--item--pic ia-weather-pressure--pic"></div>
 					<div class="ia-weather-column-meta--item--value">
-						{{? currentWeather.pressure && currentWeather.pressure.value }}{{= Math.round(currentWeather.pressure.value) }}{{??}}0{{?}} bar
+						{{? currentWeather.pressure && currentWeather.pressure.value }}{{= Math.round(currentWeather.pressure.value) }}{{??}}0{{?}} hPa
 					</div>
 				</div>
 			</div>
@@ -171,6 +171,5 @@
 				</a>
 			</p>
 		{{?}}
-		<input type="hidden" id="ia-horizontal" value="{{= it.data.isHorizontal }}">
 	</div>
 </div>

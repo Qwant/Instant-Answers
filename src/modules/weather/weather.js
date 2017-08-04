@@ -141,6 +141,5 @@ module.exports = {
     script: "weather",
     flag: "i",
     timeout: 3000,
-    cache: 1800,
-    canBeDisplayedVertically: true
+    cache: 1800
 };

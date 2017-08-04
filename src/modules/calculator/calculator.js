@@ -29,10 +29,14 @@ module.exports = {
                 values[0] = values[0].replace("÷","/");
                 try {
                     var response = math.eval(values[0]);
-                    if (response === Infinity) {
-                        throw 500;
+                    if (response['signatures']) {
+                        resolve(0);
                     } else {
-                        resolve(response);
+                        if (response === Infinity) {
+                            throw 500;
+                        } else {
+                            resolve(response.toString());
+                        }
                     }
                 } catch (e) {
                     reject("Your formula isn't valid");

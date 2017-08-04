@@ -1,9 +1,9 @@
 {
   "name": "IA-Core",
-  "version": "2.1.3",
+  "version": "2.1.11",
   "scripts": {
-    "start": "node --use-openssl-ca ./bin/www",
-    "server": "node --use-openssl-ca ./bin/www",
+    "start": "node ./bin/www",
+    "server": "node ./bin/www",
     "sandbox": "grunt && node ./bin/start_sandbox.js",
     "test": "grunt && npm run test-modules && npm run test-integrity",
     "test-modules": "./node_modules/.bin/mocha src/modules/**/test/*.js",
@@ -39,7 +39,7 @@
     "js-yaml": "3.8.1",
     "load-grunt-configs": "1.0.0",
     "load-grunt-tasks": "3.5.2",
-    "mathjs": "3.11.2",
+    "mathjs": "3.14.2",
     "md5": "2.0.0",
     "minimatch": "3.0.3",
     "npm": "3.8.6",

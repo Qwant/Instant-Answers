@@ -7,7 +7,6 @@ var IARuntime = function() {
             it.temperatures.push(forecast.temperatures.max)
         });
 
-        it.isHorizontal = iaData.isHorizontal;
         it.boxeCount = it.temperatures.length * 2;
         it.canvas = {
             w : 0,
@@ -28,16 +27,12 @@ var IARuntime = function() {
 
     Weather.prototype.setSize = function() {
 
-        if(!this.isHorizontal) {
-            this.canvas.w = 300 * this.temperatures.length;
-        } else {
-            /*
-                92 -> sidebar width
-                450 -> ia-weather-current width
-             */
-            this.canvas.w = window.innerWidth - 92 - 450 - 20;
-            if(this.canvas.w > 880) this.canvas.w = 880; /* keeper */
-        }
+        /*
+            92 -> sidebar width
+            450 -> ia-weather-current width
+         */
+        this.canvas.w = window.innerWidth - 92 - 450 - 20;
+        if(this.canvas.w > 880) this.canvas.w = 880; /* keeper */
 
         var forecastCells = document.getElementsByClassName('ia-weather-forecast-container');
         for(var i = 0; i < forecastCells.length; i += 1) {
@@ -61,9 +56,6 @@ var IARuntime = function() {
     Weather.prototype.initDraw = function() {
         var it = this;
         it.setSize();
-        if(!it.isHorizontal) {
-            return;
-        }
 
         it.resizeWeather = function () {
             it.setSize();

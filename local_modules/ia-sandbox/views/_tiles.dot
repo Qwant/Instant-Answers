@@ -22,8 +22,5 @@
                 <div class="text_query">[[= locals.loremIpsum(locals.config.sandbox.description)]]</div>
             [[ } ]]
 		</td>
-		<td id="social-or-vertical">
-			<div id="ia_container--vertical" class="ia_container--vertical">No result..</div>
-		</td>
 	</tr>
 </table>

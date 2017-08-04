@@ -110,16 +110,7 @@ module.exports = {
 	 * cache : Duration of the data cached (in seconds)
 	 */
 
-    cache: 3600 * 3,
-
-	/**
-	 * (NEEDED)
-	 * canBeDisplayedVertically : This attribute is used for the "web" tab only. If your IA can be displayed
-	 * vertically, like this https://www.qwant.com/?q=m%C3%A9t%C3%A9o%20nice&t=web, toggle it as true.
-	 * If not, like this https://www.qwant.com/?q=2*5&t=web, toggle it as false.
-	 */
-
-    canBeDisplayedVertically: true
+    cache: 3600 * 3
 };
 
 

@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
   let lang = (req.query.lang) ? req.query.lang : "en_gb";
 
   if(typeof req.query.q === 'undefined') {
-    res.redirect('/?q=hello world#horizontal')
+    res.redirect('/?q=hello world')
     return
   }
 

@@ -52,8 +52,7 @@ console.info('Trigger:\t\tWHERE should the keyword be expected in a query ? ex: 
 console.info('Modifiers:\t\tRegex modifier(s), see https://www.w3schools.com/jsref/jsref_obj_regexp.asp');
 console.info('Javascript script:\tFront script, used to interact with how your IA displays, can be modified later');
 console.info('Timeout:\t\tTime before your response is considered as canceled (in milliseconds)');
-console.info('Cache:\t\t\tDuration of the cached data (in seconds)');
-console.info('Vertical display:\tYour IA can be displayed vertically on the "Web" results page. Requires additional CSS\n')
+console.info('Cache:\t\t\tDuration of the cached data (in seconds)\n');
 
 var questions = [
     {
@@ -190,12 +189,6 @@ var questions = [
         },
         filter: Number,
         default: 3600 * 3
-    },
-    {
-        type: 'confirm',
-        name: 'display',
-        message: 'Vertical display',
-        default: false
     }
 ];
 
@@ -246,7 +239,6 @@ inquirer.prompt(questions).then(function (answers) {
             data = data.replace(/{{iaflag}}/g, answers['flag']);
             data = data.replace(/{{iatimeout}}/g, answers['timeout']);
             data = data.replace(/{{iacache}}/g, answers['cache']);
-            data = data.replace(/{{iadisplay}}/g, answers['display']);
             fs.writeFile(iaMain, data, 'utf8', function(err){
                 if (err) return console.error(err);
                 console.info(iaMain + " created");
