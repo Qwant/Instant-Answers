@@ -6,13 +6,14 @@ Object.keys(config).forEach(function(elem) {
     config_set(elem, config[elem]);
 });
 
-var path = require('path');
+const logger = require('@qwant/front-logger')(config_get('app.qwant-ia.logConfig')); // setup Logger configuration (see app.yml)
+const path = require('path');
 const spawn = require('child_process').spawn;
 const chalk = require('chalk');
 const error = chalk.bold.red;
 
 const nodePath = process.execPath;
-const sandBoxCommand = `${path.join(__dirname,'..', 'node_modules', '@qwant', 'ia-sandbox', 'bin', 'www')}`;
+const sandBoxCommand = `${path.join(__dirname,'..', 'local_modules', 'ia-sandbox', 'bin', 'www')}`;
 const iaCommand = `${path.join(__dirname, '..', 'bin', 'www')}`;
 
 
@@ -23,19 +24,15 @@ const MODULE_PATH = config_get('app.qwant-ia.modules-paths');
 console.log(chalk.green('Start test Server'));
 console.log(chalk.green('Spawning sandbox at', `http://localhost:${SANDBOX_HOST_PORT}`));
 
-var sandBox;
-
-sandBox = spawn(nodePath, [sandBoxCommand], {env : {API_PORT : API_PORT, MODULE_PATH: MODULE_PATH, SANDBOX_HOST_PORT : SANDBOX_HOST_PORT}});
+const sandBox = spawn(nodePath, [sandBoxCommand], {env : {API_PORT : API_PORT, MODULE_PATH: MODULE_PATH, SANDBOX_HOST_PORT : SANDBOX_HOST_PORT}});
 
 sandBox.stdout.on('data', (data) => {
     console.log(chalk.green(data.toString().replace('\n', '').replace('\r', '')))
 });
 
 sandBox.stderr.on('data', (data) => {
-    console.log(error('Error with the sandbox... Don\'t forget to `npm install` first!'));
-    process.exit(1);
+    console.log(error(data.toString().replace('\n', '').replace('\r', '')))
 });
-
 sandBox.on('close', (code) => {
     console.log(chalk.green(`child process exited with code ${code}`));
 });

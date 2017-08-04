@@ -8,12 +8,13 @@ module.exports = function () {
             return  "<span style=\'color:#D25717\'>Nothing to translate</span>";
         }
 
+        if (langOrder[0] === "en_gb") {
+            return replacePlaceholders(key, placeholders);
+        }
         var options = getDictionnary(key,context);
         var i18n = options.i18n;
         var nbFallbacks = options.nbFallbacks;
         if (i18n) {
-            if (langOrder[0] === "en_gb" && i18n.entries[context][key] === "")
-                return replacePlaceholders(key, placeholders);
             if (isDevelopmentMode && nbFallbacks === 1)
                 return replacePlaceholders(i18n.entries[context][key], placeholders) + '<span style=\'color:#D25717\'>*</span>';
             if (isDevelopmentMode && nbFallbacks > 1)

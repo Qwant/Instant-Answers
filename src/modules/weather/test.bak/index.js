@@ -9,6 +9,7 @@ Object.keys(config).forEach(function(elem) {
 
 const proxyquire = require('proxyquire');
 const util = require('util');
+const sinon = require('sinon');
 const assert = require('assert');
 
 const i18nMock = require('./mocks/i18n_mock');
