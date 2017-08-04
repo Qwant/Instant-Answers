@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="css/minesweeper.css" type="text/css">
+<script src="javascript/minesweeper.js"></script>
+<div id="background_games" class="back_games">
+	<button class="play_game" id="start">Play</button>
+
+	<div id="game" class="games">
+		<canvas id="mycanvas" class="style_canvas" width="800px" height="600px">Votre Navigateur ne support pas encore la technologie Canvas</canvas>
+	</div>
+	<span id="cross" class="style_cross"><img src="{{=it.images_path}}/minesweeper/greycross.png" width="50" height="50"></span>
+</div>
+<img style="display:none" src="{{=it.images_path}}/minesweeper/sprite.png" id="sprite">
+<img style="display:none" src="{{=it.images_path}}/minesweeper/win.png" id="win">
+<img style="display:none" src="{{=it.images_path}}/minesweeper/lose.png" id="lose">
