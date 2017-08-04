@@ -1,0 +1,20 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/colorpicker.css" type="text/css">
+<script src="javascript/script.js"></script>
+
+<input type="checkbox" id="color-input" checked></input>
+
+<div id="color-picker">
+  <canvas id="color-block" height="200" width="450"></canvas>
+  <canvas id="color-strip" height="30" width="450"></canvas>
+</div>
+
+<label for="color-input" id="color-label" style="background-color: red">
+<div id="hexrgba" class="style-hexrgba">
+    <input type="text" id="hexaValue" placeholder="Hexadecimal">
+    <input type="text" id="rgbaValue" placeholder="RGB">
+    <button id="actionHex" class="buttonStyle">Go To Hexa</button>
+    <button id="actionRgb" class="buttonStyle">Go To Rgb</button>
+</div></label>
