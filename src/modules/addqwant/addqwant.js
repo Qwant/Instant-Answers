@@ -8,7 +8,8 @@
 
 var Promise = require("bluebird");
 var _ = require('@qwant/front-i18n')._;
-var text = require("./src/modules/addqwant/public/text_file.json");
+var data = require('data/text_file.json');
+
 
 module.exports = {
 
@@ -29,44 +30,8 @@ module.exports = {
      */
 
     getData: function () {
-        var result ;
-        var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
 
-        // Firefox 1.0+
-        var isFirefox = typeof InstallTrigger !== 'undefined';
-
-        // Safari 3.0+ "[object HTMLElementConstructor]"
-        var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
-
-        // Internet Explorer 6-11
-        var isIE = /*@cc_on!@*/false || !!document.documentMode;
-
-        // Edge 20+
-        var isEdge = !isIE && !!window.StyleMedia;
-
-        // Chrome 1+
-        var isChrome = !!window.chrome && !!window.chrome.webstore;
-        if (isOpera){
-
-        }else if(isChrome){
-            result = 'chrome';
-
-        }else if(isFirefox){
-            result = 'firfox';
-
-        }else if(isIE){
-            result = 'ie';
-
-        }else if(isSafari){
-            result = 'safari';
-
-        }else if(isEdge){
-            result = 'edge';
-
-        }
-        console.log(result);
-        console.log(text.result);
-        return result;
+         return data;
     },
 
     /**

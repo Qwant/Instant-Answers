@@ -12,7 +12,7 @@
             <li id="add_default" class="navigator_style_off" >Qwant par défaut</li>
         </ul>
     </div>
-    <div id="main_content" class="style_main_content">{{=it.data}}
+    <div id="main_content" class="style_main_content">
     </div>
 </div>
 
