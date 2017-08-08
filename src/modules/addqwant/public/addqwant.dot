@@ -1,0 +1,19 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/addqwant.css" type="text/css">
+<script src="javascript/script.js"></script>
+<div id="main_box" class="style_main_box">
+    <div id="buttons" class="style_buttons">
+
+        <ul id="list_Navigator" class="style_list_navigator">
+            <li id="extension" class="navigator_style_on" >Ajouter l'extension</li>
+            <li id="home" class="navigator_style_off" >En page d'acceuil</li>
+            <li id="add_default" class="navigator_style_off" >Qwant par défaut</li>
+        </ul>
+    </div>
+    <div id="main_content" class="style_main_content">{{=it.data}}
+    </div>
+</div>
+
+
