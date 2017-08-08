@@ -8,7 +8,7 @@
 
 var Promise = require("bluebird");
 var _ = require('@qwant/front-i18n')._;
-var data = require('data/text_file.json');
+var data = require('./data/text_file');
 
 
 module.exports = {
@@ -30,7 +30,6 @@ module.exports = {
      */
 
     getData: function () {
-
          return data;
     },
 
