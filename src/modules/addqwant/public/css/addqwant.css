@@ -13,7 +13,7 @@
 .style_main_content{
     width: calc(100% - 300px);
     float : left;
-    padding: 50px 10px 50px 100px;
+    padding: 50px 50px 50px 100px;
     font-size: 20px;
     font-family: Helvetica;
     color: #424242;

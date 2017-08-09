@@ -1,4 +1,33 @@
 {
-  "firefox" : "<p>Pour installer Qwant sur votre navigateur Chrome, rien de plus simple ! <a target=_blank href=https://chrome.google.com/webstore/detail/qwant-for-chrome/hnlkiofnhhoahaiimdicppgemmmomijo>Rendez-vous sur la page extension de Qwant du Chrome Web Store pour la télécharger ici.</a><br />Une fois installée, l’extension vous permet d’utiliser Qwant par défaut pour toutes vos recherches et de l’afficher au démarrage de votre navigateur.</p>",
-  "chrome" : "blabla"
+  "firefox" : {
+    "part1": [
+      "<p>Utilisez Qwant comme moteur de recherche par défaut et naviguez en toute confidentialité grâce à la protection contre le pistage de Firefox. <a href=\"https://addons.mozilla.org/fr/firefox/addon/qwantcom-for-firefox/\">Allez ici sur la page de l’extension Qwant pour Firefox pour l’installer.</a><br /><br />L’extension Qwant permet d’activer très simplement la protection contre le pistage de Firefox pour mieux protéger votre vie privée lorsque vous naviguez sur le Web, et signaler à chaque site visité que vous souhaitez ne pas être pisté.Pour cela, il suffit d’activer « la protection contre le pistage » de Firefox.<br /><br />En vous connectant à votre compte directement via l’extension, vous avez la possibilité d’accéder aux fonctions essentielles de Qwant. Située à droite dans la barre d’outils de Firefox, près du bouton menu,l’extension vous permet d’accéder rapidement aux paramètres de votre compte, aux Carnets et Favoris Qwant…<br /><br />Les Favoris Qwant vous offrent la possibilité de créer une liste pratique de raccourcis vers vos sites favoris.L’extension Firefox facilite l’ajout de ces favoris grâce au bouton « Nouveau favori ». Ils sont par ailleurs directement accessibles depuis le menu Marque-pages de Firefox.<br /><br />Collectez vos contenus préférés en utilisant les Carnets Qwant. Enrichissez vos carnets de contenu web que vous parcourez, grâce au bouton « Nouvelle note » situé sur la fenêtre de l’extension.</p>"
+    ],
+    "part2": [
+    "<p>Cliquez sur l’icône du menu dans l’angle supérieur droit, puis sélectionnez “Options”. Une nouvelle fenêtre s’ouvre.<br /><br />Dans le menu supérieur, cliquez sur le bouton “Général ” représenté par un interrupteur.Ouvrez le menu déroulant “au démarrage de Firefox”, puis sélectionnez “Afficher ma page d’accueil”.Tapez “https://www.qwant.com/” dans le champ “Page d’accueil”.<br /><br />Qwant s’ouvrira par défaut au prochain démarrage de Firefox.</p>"
+      ],
+    "part3": [
+    "<p>Pour installer Qwant par défault rien de plus simple! Veuillez simplement cliquer <span id=\"windowsadd\">ici</span><br />Puis cocher la case \"En faire le moteur de recherche courant\".</p>"
+    ]
+  },
+  "chrome" : {
+    "part1": [
+      "<p>Pour installer Qwant sur votre navigateur Chrome, rien de plus simple ! <a target=\"_blank\" href=\"https://chrome.google.com/webstore/detail/qwant-for-chrome/hnlkiofnhhoahaiimdicppgemmmomijo\">Rendez-vous sur la page extension de Qwant du Chrome Web Store pour la télécharger ici.</a><br />Une fois installée, l’extension vous permet d’utiliser Qwant par défaut pour toutes vos recherches et de l’afficher au démarrage de votre navigateur.</p>"
+    ],
+    "part2": [
+      "<p>La page d’accueil est la page d’un site web qui apparaît au démarrage du navigateur ou à l’ouverture d’un nouvel onglet. Pour adopter Qwant en page d’accueil de votre navigateur, vous pouvez suivre les indications ci-dessous.<br /><br />Cliquez sur l’icône du menu dans l’angle supérieur droit, puis sélectionnez “Paramètres”. Un nouvel onglet s’ouvre.<br /><br />Dans la section “Au démarrage”, cliquez sur le lien bleu “Ensemble de pages”.Saisissez ensuite “https://www.qwant.com/” dans le champ “Ajouter une page”.Cliquez sur OK pour enregistrer les modifications.<br /><br />Qwant s’ouvrira par défaut au prochain démarrage de Google Chrome !</p>"
+    ],
+    "part3": [
+      "<p>Si vous souhaitez faire de Qwant votre moteur de recherche par défaut et y accéder depuis la barre de recherche ou la barre d’adresse URL, vous pouvez également le faire de la manière suivante :<br /><br /><a href=\"https://www.qwant.com/\">Rendez-vous sur https://www.qwant.com/</a><br />Choisissez “Réglages”.<br /><br />Cliquez sur “Gérer les moteurs de recherche” sous la section “Recherche”.Puis ajoutez Qwant en bas de la liste “Autres moteurs de recherche” en tapant :<br /><br /><ul><li>“Qwant” dans le champ “Nom”</li><li>et “q” dans le champ “Mot clé”</li><li>“https://www.qwant.com/?q=%s” dans le champ “URL”</li><br />Qwant apparaitra dans la section “Autres moteurs de recherche”. Cliquez sur “Définir comme moteur de recherche par default”.<br /><br />Qwant est maintenant le moteur de recherche par défaut de votre navigateur.</p>"
+    ]
+  },
+  "opera" :{
+    "part1": [
+      "<p>L’extension Qwant pour Opera permet d’installer facilement Qwant comme moteur de recherche sur votre navigateur.<br /><br />Pour installer l’extension, rien de plus simple ! <a href=\"https://addons.opera.com/fr/extensions/details/qwant-for-opera/\">Rendez-vous sur la page Qwant des Add-ons Opera pour la télécharger ici.</a><br /><br />Une fois installée, l’extension offre un accès rapide à Qwant à travers le bouton qui figure à droite de votre barre d’adresses.<br /><br />Vous pouvez aussi rechercher avec Qwant directement depuis la barre d’adresses en saisissant la lettre Q avant vos mots clés.</p>"
+    ],
+    "part2": [
+      "<p>Cliquez sur l’icône des paramètres “Opera” dans l’angle supérieur gauche, puis sélectionnez “Réglages”. Une nouvelle fenêtre s’ouvre.<br /><br />Cliquez sur le lien bleu “Ensemble de pages” dans la section “Au démarrage”.Saisissez ensuite “https://www.qwant.com/” dans le champ.Cliquez sur “OK” pour enregistrer les modifications.Qwant s’ouvrira par défaut au prochain démarrage d’Opera</p>"
+    ]
+  }
+
 }

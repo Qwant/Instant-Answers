@@ -13,6 +13,12 @@
         </ul>
     </div>
     <div id="main_content" class="style_main_content">
+    {{var OSName="Unknown OS";}}
+    {{if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";}}
+    {{if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";}}
+    {{if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";}}
+    {{if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";}}
+
     {{var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;}}
 
 
@@ -35,81 +41,33 @@
     {{var data = it.data.data;}}
     {{? isOpera === true}}
         <div id="caddextension">
-                    <p>Pour installer Qwant sur votre navigateur Chrome, rien de plus simple ! <a target="_blank" href="https://chrome.google.com/webstore/detail/qwant-for-chrome/hnlkiofnhhoahaiimdicppgemmmomijo">
-                    Rendez-vous sur la page extension de Qwant du Chrome Web Store pour la télécharger ici.</a>
-                    <br />Une fois installée, l’extension vous permet d’utiliser Qwant par défaut pour toutes vos recherches et de l’afficher au démarrage de votre navigateur.</p>
+            {{= it.data.opera.part1}}
                 </div>
                 <div id="caddhome">
-                    <p>La page d’accueil est la page d’un site web qui apparaît au démarrage du navigateur ou à l’ouverture d’un nouvel onglet. Pour adopter Qwant en page d’accueil de votre navigateur, vous pouvez suivre les indications ci-dessous.<br /><br />
-
-                       Cliquez sur l’icône du menu dans l’angle supérieur droit, puis sélectionnez “Paramètres”. Un nouvel onglet s’ouvre.<br /><br />
-
-                       Dans la section “Au démarrage”, cliquez sur le lien bleu “Ensemble de pages”.
-                       Saisissez ensuite “https://www.qwant.com/” dans le champ “Ajouter une page”.
-                       Cliquez sur OK pour enregistrer les modifications.<br /><br />
-                       Qwant s’ouvrira par défaut au prochain démarrage de Google Chrome !</p>
+            {{= it.data.opera.part2}}
                 </div>
                 <div id="cadddefault">
-                    <p>Si vous souhaitez faire de Qwant votre moteur de recherche par défaut et y accéder depuis la barre de recherche ou la barre d’adresse URL, vous pouvez également le faire de la manière suivante :<br /><br />
-                    <a href="https://www.qwant.com/">Rendez-vous sur https://www.qwant.com/</a><br />
-                    Choisissez “Réglages”.<br /><br />
-                    Cliquez sur “Gérer les moteurs de recherche” sous la section “Recherche”.
-                    Puis ajoutez Qwant en bas de la liste “Autres moteurs de recherche” en tapant :<br /><br />
-                    <ul>
-                        <li>“Qwant” dans le champ “Nom”</li>
-                        <li>et “q” dans le champ “Mot clé”</li>
-                        <li>“https://www.qwant.com/?q=%s” dans le champ “URL”</li><br />
-                        Qwant apparaitra dans la section “Autres moteurs de recherche”. Cliquez sur “Définir comme moteur de recherche par default”.<br /><br />
-                        Qwant est maintenant le moteur de recherche par défaut de votre navigateur.</p>
+                    <p>Malheureusement, pour l'instant votre naviguateur ne permet pas de mettre Qwant par défault...</p>
                 </div>
     {{?? isFirefox === true}}
         <div id="caddextension">
-                    <p>Pour installer Qwant sur votre navigateur Chrome, rien de plus simple ! <a target="_blank" href="https://chrome.google.com/webstore/detail/qwant-for-chrome/hnlkiofnhhoahaiimdicppgemmmomijo">
-                    Rendez-vous sur la page extension de Qwant du Chrome Web Store pour la télécharger ici.</a>
-                    <br />Une fois installée, l’extension vous permet d’utiliser Qwant par défaut pour toutes vos recherches et de l’afficher au démarrage de votre navigateur.</p>
+            {{= it.data.firefox.part1}}
                 </div>
-                <div id="caddhome">
-                    <p>La page d’accueil est la page d’un site web qui apparaît au démarrage du navigateur ou à l’ouverture d’un nouvel onglet. Pour adopter Qwant en page d’accueil de votre navigateur, vous pouvez suivre les indications ci-dessous.<br /><br />
-
-                       Cliquez sur l’icône du menu dans l’angle supérieur droit, puis sélectionnez “Paramètres”. Un nouvel onglet s’ouvre.<br /><br />
-
-                       Dans la section “Au démarrage”, cliquez sur le lien bleu “Ensemble de pages”.
-                       Saisissez ensuite “https://www.qwant.com/” dans le champ “Ajouter une page”.
-                       Cliquez sur OK pour enregistrer les modifications.<br /><br />
-                       Qwant s’ouvrira par défaut au prochain démarrage de Google Chrome !</p>
-                </div>
-                <div id="cadddefault">
-                    <p>Pour installer Qwant par défault rien de plus simple! Veuillez simplement cliquer <span id="windowsadd">ici</span><br />
-                    Puis cocher la case "En faire le moteur de recherche courant"</p>
+        <div id="caddhome">
+            {{= it.data.firefox.part2}}
+        </div>
+        <div id="cadddefault">
+            {{= it.data.firefox.part3}}
                 </div>
     {{?? isChrome === true}}
         <div id="caddextension">
-            <p>Pour installer Qwant sur votre navigateur Chrome, rien de plus simple ! <a target="_blank" href="https://chrome.google.com/webstore/detail/qwant-for-chrome/hnlkiofnhhoahaiimdicppgemmmomijo">
-            Rendez-vous sur la page extension de Qwant du Chrome Web Store pour la télécharger ici.</a>
-            <br />Une fois installée, l’extension vous permet d’utiliser Qwant par défaut pour toutes vos recherches et de l’afficher au démarrage de votre navigateur.</p>
+            {{=it.data.chrome.part1}}
         </div>
         <div id="caddhome">
-            <p>La page d’accueil est la page d’un site web qui apparaît au démarrage du navigateur ou à l’ouverture d’un nouvel onglet. Pour adopter Qwant en page d’accueil de votre navigateur, vous pouvez suivre les indications ci-dessous.<br /><br />
-
-               Cliquez sur l’icône du menu dans l’angle supérieur droit, puis sélectionnez “Paramètres”. Un nouvel onglet s’ouvre.<br /><br />
-
-               Dans la section “Au démarrage”, cliquez sur le lien bleu “Ensemble de pages”.
-               Saisissez ensuite “https://www.qwant.com/” dans le champ “Ajouter une page”.
-               Cliquez sur OK pour enregistrer les modifications.<br /><br />
-               Qwant s’ouvrira par défaut au prochain démarrage de Google Chrome !</p>
+            {{=it.data.chrome.part2}}
         </div>
         <div id="cadddefault">
-            <p>Si vous souhaitez faire de Qwant votre moteur de recherche par défaut et y accéder depuis la barre de recherche ou la barre d’adresse URL, vous pouvez également le faire de la manière suivante :<br /><br />
-            <a href="https://www.qwant.com/">Rendez-vous sur https://www.qwant.com/</a><br />
-            Choisissez “Réglages”.<br /><br />
-            Cliquez sur “Gérer les moteurs de recherche” sous la section “Recherche”.
-            Puis ajoutez Qwant en bas de la liste “Autres moteurs de recherche” en tapant :<br /><br />
-            <ul>
-                <li>“Qwant” dans le champ “Nom”</li>
-                <li>et “q” dans le champ “Mot clé”</li>
-                <li>“https://www.qwant.com/?q=%s” dans le champ “URL”</li><br />
-                Qwant apparaitra dans la section “Autres moteurs de recherche”. Cliquez sur “Définir comme moteur de recherche par default”.<br /><br />
-                Qwant est maintenant le moteur de recherche par défaut de votre navigateur.</p>
+            {{=it.data.chrome.part3}}
         </div>
     {{??}}
         {{var browser = "unknown";}}
