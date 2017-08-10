@@ -2,31 +2,22 @@
 * This is your main CSS file. Please refer to the documentation for more information.
 */
 .IA-IMC{
-    padding:20px 0px 0px 35px;
+    padding:20px 0px 0px 50px;
     font-family: 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
     letter-spacing: -0.02em;
+    background-color: #F8F9FA;
+    height: 180px;
 }
-.IA-IMC input{
-    height: 35px;
+.result{
+    font-size: 50px;
+    font-weight: bold;
+
+}
+.text{
     font-size: 15px;
-    width:100px;
-    margin-right: 5px;
-    margin-left: 10px;
-    text-align: center;
-    border-style: solid;
-    border-color: #4d545c;
-    border-width: 1px;
+    font-weight: lighter;
 }
-.button-style{
-    font-size: 30px;
-    margin-left: 35px;
-    font-family: 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
-    letter-spacing: -0.02em;
-    border-style: solid;
-    border-color: #4d545c;
-    border-width: 1px;
-    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7);
-    background-color: white;
-    padding: 8px;
-    cursor: pointer;
+.result_oms{
+    font-size: 25px;
+    font-weight: lighter;
 }

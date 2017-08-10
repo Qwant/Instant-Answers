@@ -4,8 +4,7 @@
 <link rel="stylesheet" href="css/imc.css" type="text/css">
 
 <div class="IA-IMC">
-    <input id="taille" name="taille">Cm
-    <input id="poids" name="poids">Kg
-    <button class="button-style"id="action" >Mon IMC</button><br /><br />
-    <div id="result"></div>
+    <div class="result">{{= it.data.IMC}}</div>
+    <span class="text">d'après l'OMS vous avez une</span>
+    <div class="result_oms">{{= it.data.OMS}}</div>
 </div>

@@ -27,10 +27,48 @@ module.exports = {
      * @returns data to be displayed.
      */
 
-    getData: function (values, proxyURL, language) {
-        return new Promise(function (resolve, reject) {
-            resolve("hello");
-        });
+    getData: function (values) {
+        var tallweight = values[2];
+        var tempnum = tallweight.indexOf(" ");
+
+        var tall = "";
+        var weight = "";
+        for (var i=0;i<tallweight.length; ++i){
+            if(i<tempnum){
+
+                tall += tallweight[i];
+            }else if(i>tempnum){
+                weight += tallweight[i];
+            }
+        }
+        tall = parseInt(tall);
+        weight = parseInt(weight);
+            tall = tall/100;
+            var imc = weight / (Math.pow(tall, 2));
+            imc = Math.round(imc);
+            if (isNaN(imc)) {
+                imc = "Veuillez remplir correctement les champs ci-dessus"
+            }
+            if (imc <= 16) {
+                var OMS = "ANOREXIE OU DENUTRITION"
+            } else if (imc > 16 && imc <= 18.5) {
+                var OMS = "MAIGREUR"
+            } else if (imc > 18.5 && imc <= 25) {
+                var OMS = "CORPULENCE NORMALE"
+            } else if (imc > 25 && imc <= 30) {
+                var OMS = "SURPOIDS"
+            } else if (imc > 30 && imc <= 35) {
+                var OMS = "OBESITE MODEREE (CLASSE 1)"
+            } else if (imc > 35 && imc <= 40) {
+                var OMS = "OBESITE ELEVE (CLASSE 2)"
+            } else if (imc > 40) {
+                var OMS = "OBESITE MORBIDE OU MASSIVE"
+            }
+            return {
+                OMS : OMS,
+                IMC : imc
+            };
+
     },
 
     /**
@@ -84,7 +122,7 @@ module.exports = {
      *          strict : perfect match with keyword
      */
 
-    trigger: "strict",
+    trigger: "start",
 
     /**
      * (NEEDED)
