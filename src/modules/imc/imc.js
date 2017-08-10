@@ -46,9 +46,7 @@ module.exports = {
             tall = tall/100;
             var imc = weight / (Math.pow(tall, 2));
             imc = Math.round(imc);
-            if (isNaN(imc)) {
-                imc = "Veuillez remplir correctement les champs ci-dessus"
-            }
+
             if (imc <= 16) {
                 var OMS = "ANOREXIE OU DENUTRITION"
             } else if (imc > 16 && imc <= 18.5) {
@@ -63,6 +61,9 @@ module.exports = {
                 var OMS = "OBESITE ELEVE (CLASSE 2)"
             } else if (imc > 40) {
                 var OMS = "OBESITE MORBIDE OU MASSIVE"
+            }
+            if (tall < 1.40){
+                var OMS = "Attention, L'imc pour les enfants n'est pas la même que pour les adultes.\n Ceci n'est donc pas représentatif"
             }
             return {
                 OMS : OMS,
