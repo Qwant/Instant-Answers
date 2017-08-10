@@ -1,42 +1,86 @@
-textarea {
-    resize: none;
+/** On "All" view **/
+
+.ia__encryption {
+    padding: 30px 32px 0;
+    background: white;
+    border-top: 1px solid rgba(122,124,126,0.16);
 }
-button{
-    cursor: pointer;
+
+.ia__encryption__icon {
+    margin-right: 10px;
+    vertical-align: top;
+    font-size: 65px;
 }
-.style_text_o{
-    float:left;
-    padding:5px;
-    border: 1px grey solid;
+
+.ia__encryption__result {
+    display: inline-block;
+    width: -webkit-calc(100% - 100px);
+    width: -moz-calc(100% - 100px);
+    width: calc(100% - 100px);
+    margin: 10px 0;
+    vertical-align: top;
+    font-family: Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+    font-size: 1.87em;
+    letter-spacing: -0.035em;
+    line-height: 45px;
+    word-wrap: break-word;
 }
-.style_text_i{
-    float:left;
-    border: 1px grey solid;
-    padding:5px;
+
+.ia__encryption__description {
+    margin-left: 9px;
+    font-family: 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+    letter-spacing: -0.018em;
+    font-size: 1.03em;
+    color: rgba(122, 124, 126,0.95);
 }
-.go_button{
-    float:left;
+
+.ia__encryption__description--query {
+    color: rgba(46, 52, 58,0.95);
+    font-weight: 600;
 }
-.decrypt_button{
-    float:left;
+
+/** On "Web" view + horizontal **/
+.ia_container--horizontal .ia__encryption {
+    padding: 0 18px 20px 32px;
+    border-top: none;
 }
-.cript_button{
-    float:left;
+
+/** Tablet **/
+
+@media (max-width: 1000px) {
+    .ia__encryption {
+        padding: 0 20px 25px 3px;
+        background: none;
+        border: 0;
+    }
+
+    .ia__encryption__icon {
+        font-size: 58px;
+        vertical-align: middle;
+    }
+
+    .ia__encryption__result {
+        line-height: 29px;
+        font-size :  1.5em;
+        vertical-align: middle;
+        width: -webkit-calc(100% - 90px);
+        width: -moz-calc(100% - 90px);
+        width: calc(100% - 90px);
+    }
+
+    .ia_container--horizontal .ia__encryption {
+        padding: 5px 20px 20px 35px;
+    }
 }
-.style_key{
-    float:left;
-    text-align: center;
-    font-family: Helvetica;
-}
-.cont_input{
-    width : 35%;
-    float:left;
-    height: 150px;
-    display: grid;
-}
-.cont_output{
-    width : 35%;
-    float:left;
-    height: 150px;
-    display: grid;
+
+/** Mobile **/
+
+@media (max-width: 640px) {
+    .ia__encryption {
+        padding: 0 20px 30px 25px;
+    }
+
+    .ia_container--horizontal .ia__encryption {
+        padding: 10px 20px 20px 25px;
+    }
 }

@@ -8,6 +8,7 @@
 
 var Promise = require("bluebird");
 var _ = require('@qwant/front-i18n')._;
+var btoa = require('btoa');
 
 module.exports = {
 
@@ -27,10 +28,16 @@ module.exports = {
      * @returns data to be displayed.
      */
 
-    getData: function (values, proxyURL, language) {
-        return new Promise(function (resolve, reject) {
-           resolve("hello");
-        });
+    getData: function (values) {
+
+        var query = values[2];
+        console.log(query);
+        var result = btoa(query);
+        console.log(result);
+        return {
+            result: result,
+            query: query,
+        };
     },
 
     /**
@@ -65,7 +72,7 @@ module.exports = {
      * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
      */
 
-    keyword: "base64 encode",
+    keyword: "base64",
 
     /**
      * (OPTIONAL)
@@ -84,7 +91,7 @@ module.exports = {
      *          strict : perfect match with keyword
      */
 
-    trigger: "strict",
+    trigger: "start",
 
     /**
      * (NEEDED)
@@ -94,7 +101,7 @@ module.exports = {
      * 			- i : insensitive
      */
 
-    flag: "",
+    flag: "i",
 
     /**
      * (NEEDED)
