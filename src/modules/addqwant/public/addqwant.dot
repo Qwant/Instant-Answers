@@ -59,6 +59,26 @@
         <div id="cadddefault">
             {{= it.data.firefox.part3}}
                 </div>
+    {{?? isSafari === true}}
+            <div id="caddextension">
+                {{= it.data.safari.part1}}
+                    </div>
+            <div id="caddhome">
+                {{= it.data.safari.part2}}
+            </div>
+            <div id="cadddefault">
+                <p>Malheureusement, pour l'instant votre naviguateur ne permet pas de mettre Qwant par défault...</p>
+                    </div>
+    {{?? isEdge === true}}
+                <div id="caddextension">
+                    <p>Malheurseusement, nous ne possèdons pas d'extension pour ce naviguateur</p>
+                        </div>
+                <div id="caddhome">
+                    {{= it.data.edge.part2}}
+                </div>
+                <div id="cadddefault">
+                    {{= it.data.edge.part3}}
+                        </div>
     {{?? isChrome === true}}
         <div id="caddextension">
             {{=it.data.chrome.part1}}
@@ -75,5 +95,3 @@
 
     </div>
 </div>
-
-

@@ -28,6 +28,28 @@
     "part2": [
       "<p>Cliquez sur l’icône des paramètres “Opera” dans l’angle supérieur gauche, puis sélectionnez “Réglages”. Une nouvelle fenêtre s’ouvre.<br /><br />Cliquez sur le lien bleu “Ensemble de pages” dans la section “Au démarrage”.Saisissez ensuite “https://www.qwant.com/” dans le champ.Cliquez sur “OK” pour enregistrer les modifications.Qwant s’ouvrira par défaut au prochain démarrage d’Opera</p>"
     ]
+  },
+  "safari" :{
+    "part1":[
+      "<p>Téléchargez <a href=\"https://www.qwant.com/qwant-safari.safariextz\">le fichier de l’extension Qwant</a> pour l’installer sur votre ordinateur.Une fois installée, l’extension installe Qwant comme moteur de recherche par défaut sur votre navigateur Safari.<br /><br />Une fois installée, l’extension installe Qwant comme moteur de recherche par défaut sur votre navigateur Safari.</p>"
+    ],
+    "part2":[
+      "<p>Cliquez sur l’onglet “Safari” puis sur “Préférences”.<br /><br />Dans le menu supérieur, cliquez sur le bouton “Général” représenté par un interrupteur.Entrez l’url “https://www.qwant.com/” dans le champ “Page d’accueil” et fermez la fenêtre.Qwant s’ouvrira par défaut au prochain démarrage de Safari.</p>"
+    ],
+    "part3":[
+
+    ]
+  },
+  "edge" :{
+    "part1":[
+
+    ],
+    "part2":[
+      "<p>Cliquez sur le menu “plus d’actions” en haut à droite.Choisissez “Réglages”. Dans la section “Ouvrir avec”, cliquez sur “Une ou des pages spécifiques”.Entrez l’URL https://www.qwant.com/ et enregistrez en cliquant sur l’icône à droite.  Qwant s’ouvrira par défaut la prochaine fois que vous ouvrirez Microsoft Edge.</p>"
+    ],
+    "part3":[
+      "<p>Choisissez “Paramètres”.Puis cliquez sur “Paramètres avancés”.Cliquez sur le bouton “Changer de moteur de recherche”.Qwant apparaitra dans la liste. Sélectionnez-le et cliquez sur “Définir par défaut”.Qwant est maintenant le moteur de recherche par défaut de votre navigateur.</p>"
+    ]
   }
 
 }

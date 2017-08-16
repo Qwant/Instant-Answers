@@ -21,13 +21,7 @@ var IARuntime = function() {
         content_addextension.style.display = "block";
         content_adddefault.style.display = "none";
         content_addhome.style.display = "none";
-
         // console.log(home.className);
-
-        // main_content.innerHTML = text['firefox'];
-        // winowsadd.addEventListener('click',function(){
-        //
-        // },false)
         extension.addEventListener('click',function(){
             extension.className = "navigator_style_on";
             home.className = "navigator_style_off";
