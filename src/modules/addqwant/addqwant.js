@@ -30,7 +30,7 @@ module.exports = {
      */
 
     getData: function () {
-         return data;
+         return true;
     },
 
     /**

@@ -18,6 +18,7 @@ var IARuntime = function() {
         var content_addextension = document.getElementById('caddextension');
         var content_addhome = document.getElementById('caddhome');
         var content_adddefault = document.getElementById('cadddefault');
+        var qwantDefault =document.getElementById('addqwantF');
         content_addextension.style.display = "block";
         content_adddefault.style.display = "none";
         content_addhome.style.display = "none";
@@ -47,9 +48,17 @@ var IARuntime = function() {
             content_addextension.style.display = "none";
             content_adddefault.style.display = "block";
             content_addhome.style.display = "none";
+
+        })
+        qwantDefault.addEventListener('click', function(){
+            var XML = "https://www.qwant.com/opensearch.xml";
+                window.external.AddSearchProvider(XML);
         })
 
     };
+  function test(){
+
+  }
 
     /**
      * runs upon exit

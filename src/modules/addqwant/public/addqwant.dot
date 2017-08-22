@@ -47,47 +47,81 @@
             {{= it.data.opera.part2}}
                 </div>
                 <div id="cadddefault">
-                    <p>Malheureusement, pour l'instant votre naviguateur ne permet pas de mettre Qwant par défault...</p>
+                    <p>Unfortunately, for now your browser does not allow to put Qwant by default </p>
                 </div>
     {{?? isFirefox === true}}
         <div id="caddextension">
-            {{= it.data.firefox.part1}}
-                </div>
+           <p>The Qwant extension makes it easy to turn Firefox Tracking Protection to protect your privacy as you browse the Web and to let websites know you do not want to be tracked. To do so, simply activate the “Tracking Protection”.<br /><br />
+           Use Qwant as the default search engine and easily protect you from tracking. Go to the Qwant for Firefox  <a href="https://addons.mozilla.org/fr/firefox/addon/qwantcom-for-firefox/">extension page in the Firefox Add-ons to download it.</a>
+        </div>
         <div id="caddhome">
-            {{= it.data.firefox.part2}}
+            <p>Click on the top right icon of the menu, then select “Options”. A new window will open.In the top menu, click on the “General” button (it looks like a power switch!).<br /><br />
+            Open the drop-down menu “When Firefox starts:”, then select “Show my home page”.
+            Type “https://www.qwant.com/” in the “Home Page” field.<br />
+            Qwant will open by default upon the next launch of Firefox</p>
+
         </div>
         <div id="cadddefault">
-            {{= it.data.firefox.part3}}
-                </div>
+            <p>You can click <span id="addqwantF" class="addqwantF_style">here</span> to add qwant by default.
+            Or go to <a href="https://www.qwant.com/">https://www.qwant.com/.</a>.
+            Click on the magnifying glass in the search bar of the toolbar, then click “Change Search settings” and select Qwant from the list of default search engines.<br /><br />
+            Qwant is now the default search engine on your browser.</p>
+
+        </div>
     {{?? isSafari === true}}
-            <div id="caddextension">
-                {{= it.data.safari.part1}}
-                    </div>
-            <div id="caddhome">
-                {{= it.data.safari.part2}}
-            </div>
-            <div id="cadddefault">
-                <p>Malheureusement, pour l'instant votre naviguateur ne permet pas de mettre Qwant par défault...</p>
-                    </div>
+        <div id="caddextension">
+            <p><a href="https://www.qwant.com/qwant-safari.safariextz">Click here to download the Qwant extension of Safari</a>
+            With the Qwant extension, all of the web is accessible on one single page!
+            The Qwant extension compliments your search experience with added and more detailed information. It is also a shortcut to your favorite search engine.<br /><br />
+            Find the Qwant extension in your browser’s toolbar, to the left of the URL address bar. This shortcut enables you to quickly search with Qwant while also keeping your usual search engine.
+            Results from Qwant are sorted into categories (Web, News, Social, Images and Videos) to enrich your results with new suggestions, no matter what search engine you use.
+            With the Qwant extension, you can also perform searches from the address bar.</p>
+                </div>
+        <div id="caddhome">
+            <p>Click on the “Safari” tab, and then on “Preferences.”
+               In the top menu, click on the “General” button (it looks like a power switch!).
+               In the “Homepage field”, enter the URL “https://www.qwant.com/” and close the window.
+               Qwant will open by default the next time you launch Safari.</p>
+        </div>
+        <div id="cadddefault">
+            <p>Unfortunately, for now your browser does not allow to put Qwant by default </p>
+        </div>
     {{?? isEdge === true}}
                 <div id="caddextension">
-                    <p>Malheurseusement, nous ne possèdons pas d'extension pour ce naviguateur</p>
+                    <p>Unfortunately, we do not have an extension for this browser</p>
                         </div>
                 <div id="caddhome">
-                    {{= it.data.edge.part2}}
+
                 </div>
                 <div id="cadddefault">
-                    {{= it.data.edge.part3}}
+
                         </div>
     {{?? isChrome === true}}
         <div id="caddextension">
-            {{=it.data.chrome.part1}}
+            <p>Installing the Qwant extension couldn’t be easier! <a href="https://chrome.google.com/webstore/detail/qwant-for-chrome/hnlkiofnhhoahaiimdicppgemmmomijo?hl=en">Go to the Qwant extension page In the Chrome Web Store and download it.</a></p>
+
         </div>
         <div id="caddhome">
-            {{=it.data.chrome.part2}}
+            <p>A homepage is the first webpage that appears when you open your browser. To set Qwant as your homepage on your browser, please follow these steps:<br /><br >
+            Click on the menu button located at the top-right corner of the browser window and select “Settings”. A new tab will open.
+            In the “On startup” section, click on the blue link “Set pages”.
+            Then type “https://www.qwant.com/” in the “add a new page” field.
+            Click OK to save changes.
+            Qwant will open by default the next time you launch Google Chrome.</p>
+
         </div>
         <div id="cadddefault">
-            {{=it.data.chrome.part3}}
+            <p>To set Qwant as your default search engine and access it from the search bar or URL address bar, you can also follow these steps:</p><br /><br />
+            Click on the Chrome menu in the upper right corner.
+            Select “Settings”.
+            Under the “Search” section, click on “Manage Search Engines”.
+            Then add Qwant at the bottom of the “Other search engines” list by typing :<br /><br />
+            <ul>
+                <li>“Qwant” in the “Name” field</li>
+                <li>and “q” in the “Keyword” field</li>
+                <li>“https://www.qwant.com/?q=%s” in the “URL” field</li>
+            </ul>
+
         </div>
     {{??}}
         {{var browser = "unknown";}}
