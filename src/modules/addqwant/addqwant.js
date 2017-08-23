@@ -8,7 +8,7 @@
 
 var Promise = require("bluebird");
 var _ = require('@qwant/front-i18n')._;
-var data = require('./data/text_file');
+
 
 
 module.exports = {

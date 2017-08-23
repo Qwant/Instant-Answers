@@ -7,9 +7,9 @@
     <div id="buttons" class="style_buttons">
 
         <ul id="list_Navigator" class="style_list_navigator">
-            <li id="extension" class="navigator_style_on" >Ajouter l'extension</li>
-            <li id="home" class="navigator_style_off" >En page d'acceuil</li>
-            <li id="add_default" class="navigator_style_off" >Qwant par défaut</li>
+            <li id="extension" class="navigator_style_on" >Add extension Qwant</li>
+            <li id="home" class="navigator_style_off" >Qwant as homepage</li>
+            <li id="add_default" class="navigator_style_off" >Qwant by default</li>
         </ul>
     </div>
     <div id="main_content" class="style_main_content">
@@ -41,14 +41,19 @@
     {{var data = it.data.data;}}
     {{? isOpera === true}}
         <div id="caddextension">
-            {{= it.data.opera.part1}}
-                </div>
-                <div id="caddhome">
-            {{= it.data.opera.part2}}
-                </div>
-                <div id="cadddefault">
-                    <p>Unfortunately, for now your browser does not allow to put Qwant by default </p>
-                </div>
+            <p>The Qwant extension compliments your search experience with added and more detailed information. It is also a shortcut to your favorite search engine.
+            Installing the extension couldn’t be easier! <a href="https://addons.opera.com/en/extensions/details/qwant-for-opera/">Go to the Qwant page in Opera Add-ons to download it here.</a><br /><br />
+            Once installed, you will find the Qwant extension on the right side of the address bar. This shortcut enables you to quickly search with Qwant while also keeping your usual search engine.</p>
+        </div>
+        <div id="caddhome">
+            <p>Click on the Opera Settings icon in the top-left corner of the window and click on “Settings”. A new window will open
+            Click on the blue link “Set pages” under the “On startup” section.
+            Then type “https://www.qwant.com/” in the field. Click on OK to save changes.
+            Qwant will open by default the next time you launch Opera.</p>
+        </div>
+        <div id="cadddefault">
+            <p>Unfortunately, for now your browser does not allow to put Qwant by default </p>
+        </div>
     {{?? isFirefox === true}}
         <div id="caddextension">
            <p>The Qwant extension makes it easy to turn Firefox Tracking Protection to protect your privacy as you browse the Web and to let websites know you do not want to be tracked. To do so, simply activate the “Tracking Protection”.<br /><br />
@@ -87,15 +92,27 @@
             <p>Unfortunately, for now your browser does not allow to put Qwant by default </p>
         </div>
     {{?? isEdge === true}}
-                <div id="caddextension">
-                    <p>Unfortunately, we do not have an extension for this browser</p>
-                        </div>
-                <div id="caddhome">
-
+        <div id="caddextension">
+            <p>Unfortunately, we do not have an extension for this browser
+            </p>
                 </div>
-                <div id="cadddefault">
+        <div id="caddhome">
+            <p>Click on the “More actions” button on the top-right.
+            Select Settings. Go to the “Open with” section and click on “A specific page or pages”.
 
-                        </div>
+            Enter the URL https://www.qwant.com/ and save with the icon on the right side. Qwant will open by default the next time you launch Windows edge.</p>
+
+        </div>
+        <div id="cadddefault">
+            <p>Click on the “More actions” button on the top-right.
+            Select Settings.
+            Then click on “View advanced settings”.
+
+            In the section “Search in the adress bar with”, Click on “Change search engine”.<br /><br />
+            Qwant will appear in the “Choose one” list. Select it and click on “Add as default”.
+
+            Qwant is now the default search engine on your browser.</p>
+        </div>
     {{?? isChrome === true}}
         <div id="caddextension">
             <p>Installing the Qwant extension couldn’t be easier! <a href="https://chrome.google.com/webstore/detail/qwant-for-chrome/hnlkiofnhhoahaiimdicppgemmmomijo?hl=en">Go to the Qwant extension page In the Chrome Web Store and download it.</a></p>
@@ -111,7 +128,7 @@
 
         </div>
         <div id="cadddefault">
-            <p>To set Qwant as your default search engine and access it from the search bar or URL address bar, you can also follow these steps:</p><br /><br />
+            <p>To set Qwant as your default search engine and access it from the search bar or URL address bar, you can also follow these steps:<br /><br />
             Click on the Chrome menu in the upper right corner.
             Select “Settings”.
             Under the “Search” section, click on “Manage Search Engines”.
@@ -121,7 +138,25 @@
                 <li>and “q” in the “Keyword” field</li>
                 <li>“https://www.qwant.com/?q=%s” in the “URL” field</li>
             </ul>
+            </p>
 
+        </div>
+    {{?? isIE === true}}
+        <div id="caddextension">
+             <p>Unfortunately, we do not have an extension for this browser</p>
+
+        </div>
+        <div id="caddhome">
+            <p>Click on the top-right preferences menu icon (it looks like a gear!), then select “Internet Options”.
+               In the section “Startup Page”
+               Type “https://www.qwant.com/” in the homepage field.
+               Click OK to save changes.
+               Qwant will open by default the next time you launch Internet Explorer.<br /><br />
+               Internet Explorer is an old browser which does not allow you to choose your search engine freely. We advise you to choose a newer and more open browser, such as Firefox, that will allow you to use Qwant by default for all your search queries and to protect your privacy online</p>
+
+        </div>
+        <div id="cadddefault">
+            <p>Unfortunately, for now your browser does not allow to put Qwant by default </p>
         </div>
     {{??}}
         {{var browser = "unknown";}}
