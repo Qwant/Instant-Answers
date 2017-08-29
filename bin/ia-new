@@ -4,7 +4,7 @@ var inquirer = require('inquirer');
 var mkdirp = require('mkdirp');
 var fs = require('fs');
 var path = require('path');
-var slug = require('slug');
+var slug = require('slugify');
 var iaCoreName = require('../package.json').name;
 var iaCoreVersion = require('../package.json').version;
 
