@@ -1,5 +1,7 @@
 var Promise = require("bluebird");
 var iaVersion = require('../package.json').version;
+var fs = require('fs');
+var hasher = require('folder-hash');
 
 /** Constructor interface **/
 function instant_answer(module) {
@@ -92,43 +94,48 @@ instant_answer.prototype.solveData = function (query, lang) {
                     var moduleFile = self.module.file;
                     var moduleScript = self.module.script;
                     var moduleExpiration = self.getCacheTime();
-                    var moduleURL = self.iaModuleBase + lang + '/' + moduleFile + '.js?' + iaVersion;
-                    var moduleScriptURL = self.iaScriptBase + lang + '/' + moduleScript + '.js?' + iaVersion;
-                    var moduleImagesURL = self.iaImagesBase;
-                    var realQuery = query[0];
+                    var moduleURL = self.iaModuleBase + lang + '/' + moduleFile + '.js';
+                    var moduleScriptURL = self.iaScriptBase + lang + '/' + moduleScript + '.js';
+                    var moduleVersion = iaVersion;
+                    hasher.hashElement('../src/modules/' + moduleFile + '', __dirname, {encoding: 'hex'}).then(function (hash) {
+                        if (hash.hash) moduleVersion = hash.hash;
 
-                    var jsonResponse = {
-                        runtime: "nodejs",
-                        template_name: moduleFile,
-                        display_name: moduleName,
-                        images_path: moduleImagesURL,
-                        data: response,
-                        query: realQuery,
-                        status: "success",
-                        cacheExpirationTime: moduleExpiration
-                    };
+                        var moduleImagesURL = self.iaImagesBase;
+                        var realQuery = query[0];
 
-                    if (moduleScript) {
-                        jsonResponse.files = [
-                            {
-                                "url": moduleURL,
-                                "type": "template"
-                            },
-                            {
-                                "url": moduleScriptURL,
-                                "type": "script"
-                            }
-                        ];
-                    } else {
-                        jsonResponse.files = [
-                            {
-                                "url": moduleURL,
-                                "type": "template"
-                            }
-                        ];
-                    }
+                        var jsonResponse = {
+                            runtime: "nodejs",
+                            template_name: moduleFile,
+                            display_name: moduleName,
+                            images_path: moduleImagesURL,
+                            data: response,
+                            query: realQuery,
+                            status: "success",
+                            cacheExpirationTime: moduleExpiration
+                        };
 
-                    resolve(jsonResponse);
+                        if (moduleScript) {
+                            jsonResponse.files = [
+                                {
+                                    "url": moduleURL + '?' + moduleVersion,
+                                    "type": "template"
+                                },
+                                {
+                                    "url": moduleScriptURL + '?' + moduleVersion,
+                                    "type": "script"
+                                }
+                            ];
+                        } else {
+                            jsonResponse.files = [
+                                {
+                                    "url": moduleURL + '?' + moduleVersion,
+                                    "type": "template"
+                                }
+                            ];
+                        }
+
+                        resolve(jsonResponse);
+                    });
                 })
                 .timeout(self.module.timeout, 'Timeout on module')
                 .catch(function (error) {

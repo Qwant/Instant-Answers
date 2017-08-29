@@ -130,6 +130,7 @@ body {
   margin: 0 auto;
   padding: 20px 0 9px 0;
   text-align: center;
+  cursor: pointer;
 }
 #logo
 {
@@ -256,7 +257,6 @@ body {
 }
 
 .full-it td {
-  color:#456;
   vertical-align: top;
   max-width: 600px;
 
@@ -490,4 +490,5 @@ a
     #reset{
         display:none;
     }
+}  margin-top: 5px;
 }

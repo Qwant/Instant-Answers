@@ -11,6 +11,7 @@ var iaCoreVersion = require('../package.json').version;
 require('../src/binder')();
 
 var config = require('@qwant/config');
+config.import('app');
 config.import('languages');
 
 Object.keys(config).forEach(function(elem) {

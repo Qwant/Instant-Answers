@@ -1,7 +1,8 @@
-<table class="full-it">
+<table class="full-it" id="full-it-id">
 	<tr>
 		<td id="web-column">
 		    <h2 class="results-page"><div id="icon_web"></div>Web</h2>
+			<div id="ia_container--web" class="ia_container--v ia_container-web_desktop"></div>
 			[[ for (var i=0; i<10; i++) { ]]
                 <div class="title_results">[[= locals.loremIpsum(locals.config.sandbox.title) ]]</div>
                 <div class="url_results">www.<strong>[[= locals.loremIpsum(locals.config.sandbox.url) ]]</strong>.com</div>

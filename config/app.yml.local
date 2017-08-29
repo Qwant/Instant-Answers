@@ -6,6 +6,7 @@ qwant-ia:
   script-base: "ia/javascript/"
   images-base: "ia/img/"
   excludedIA: ["weather"]
+  cert: ""
   logConfig:
     cli:
       level: "debug"

@@ -17,7 +17,12 @@
 <div class="sandbox-sidebar">
 	<div class="sandbox-sidebar-top"><div id="logo"></div></div>
 	[[~ locals.config.search.categories:category ]]
-	    <div class="sidebar_item"><div id="cat-sidebar--[[= category ]]"></div><div id="label-cat">[[= category ]]</div></div>
+	    [[? category === 'All' || category ==='Web']]
+	        <div class="sidebar_item" onclick="toggle('[[= category ]]')"><div id="cat-sidebar--[[= category ]]"></div><div id="label-cat">[[= category ]]</div></div>
+	    [[??]]
+	        <div class="sidebar_item"><div id="cat-sidebar--[[= category ]]"></div><div id="label-cat">[[= category ]]</div></div>
+	    [[?]]
+
     [[~]]
 </div>
 <div class="sandbox-content">
@@ -42,3 +47,7 @@
 
 
 <script src="https://www.qwant.com/js/app.js" onload="appLoaded(event)"></script>
+
+
+
+

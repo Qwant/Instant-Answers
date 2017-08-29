@@ -32,32 +32,59 @@ module.exports = {
             if (proxyURL != '') {
                 requestParams.proxy = proxyURL;
             }
-            request(requestParams,
-                    function (error, response, body) {
-                        if (error || body == "" || response.statusCode == 404) {
-                            reject(error);
+
+            function checkAuthors(body_parsed) {
+                if ((!body_parsed.author || !body_parsed.author.name) && (!body_parsed.authors)) return "";
+                var authors = "";
+                if (body_parsed.authors) {
+                    body_parsed.authors.forEach(function(author){
+                        if (author.name) {
+                            if (authors !== "") authors += ", ";
+                            authors += author.name;
                         }
+                    });
+                } else {
+                    authors = body_parsed.author.name;
+                }
+                return authors;
+            }
+
+            request(requestParams,
+                function (error, response, body) {
+                    if (error) {
+                        reject(error);
+                    } else if (body === "") {
+                        reject("Unexpected API answer");
+
+                    } else if (response.statusCode === "404") {
+                        reject("NPM package not found");
+                    } else {
                         try {
                             var body_parsed = JSON.parse(body);
                         } catch (e) {
                             reject(e);
                         }
                         if (body_parsed) {
+                            var authors = checkAuthors(body_parsed);
                             if (!body_parsed.name) reject("There is no name in json file");
-                            if (!body_parsed.version) reject("There is no version in json file");
-                            if (!body_parsed.description) reject("There is no description in json file");
-                            if (!body_parsed.author || !body_parsed.author.name) reject("There is no author or author name in json file");
-                        }
-                        else {
+                            else if (!body_parsed.version) reject("There is no version in json file");
+                            else if (!body_parsed.description) reject("There is no description in json file");
+                            else if (authors === "") reject("There is no author or author name in json file");
+                            else {
+                                resolve({
+                                    npm_module: body_parsed.name,
+                                    version: body_parsed.version,
+                                    description: body_parsed.description,
+                                    author: authors
+                                });
+                            }
+                        } else {
                             reject("There is a truthy json");
                         }
-                        resolve({
-                            npm_module: body_parsed.name,
-                            version: body_parsed.version,
-                            description: body_parsed.description,
-                            author: body_parsed.author.name
-                        });
-                    });
+                    }
+
+                }
+            );
         });
     },
 
