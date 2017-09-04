@@ -46,57 +46,30 @@ function checkGrid() {
     return true;
 }
 
-var IARuntime = function() {
-    function Sudoku (iaData) {
-        // constructor
-    //}
-    //var Shuffle = function() {
+function ClearPlays() {
+    var table = document.getElementById("dokutab");
+    for (var i=0; i<9; i++) {
+        var bh = 0, bv = 0;
+        for (var j=0; j<9; j++) {
+            if (table.rows[i].cells[j].style.fontWeight == "normal") {
+                table.rows[i].cells[j].innerText = "";
+            }
+        }
+    } 
+}
+
+function Shuffle() {
         //var a[81];
         var a = [];
         var table = document.getElementById("dokutab");
-
-        var btn = document.getElementById("dokucheck");
-        btn.addEventListener('click', function(e){
-            r = checkGrid();
-            if (r) {
-                btn.value = "Great!";
-            }
-            else {
-                btn.value = "Nope. :(";
-            }
-        });
-        
-        //table.addEventListener('click', function(e){
-        table.addEventListener('mouseup', function(e){
-            console.log(e);
-            console.log(e.target);
-            //if (e.target.innerText=="" || e.target.style.color == "red") {
-            if (e.target.innerText=="" || e.target.style.fontWeight == "normal") {
-                if (e.button != 2 /* right */) {
-                    if (e.target.innerText < 9)
-                        e.target.innerText++;
-                    else
-                        e.target.innerText = "";
-                }
-                else {
-                    if (e.target.innerText > 1)
-                        e.target.innerText--;
-                    else
-                        e.target.innerText = "";
-                }
-                //e.target.style.color = "red";
-                e.target.style.fontWeight = "normal";
-            }
-        });
-
         for (var i=0, row; row=table.rows[i]; i++) {
             for (var j=0, col; col=row.cells[j]; j++) {
                 a[9*i + j] = col.innerText;
             }
         }
-        for (var i=0; i<getRandomInt(3,20); i++)
+        for (var i=0; i<getRandomInt(10,50); i++)
         {
-            fi = getRandomInt(0,3);
+            fi = getRandomInt(0,4);
             switch (fi) {
                 case 0: //this.shuffleVertical();break;
                     //Sudoku.prototype.shuffleVertical = function() {
@@ -153,6 +126,12 @@ var IARuntime = function() {
                 col.style.fontWeight = "bold";
             }
         }
+}
+
+var IARuntime = function() {
+    function Sudoku (iaData) {
+        // constructor
+    //}
     };
 
     /**
@@ -168,6 +147,48 @@ var IARuntime = function() {
                 console.log(col);
             }
         }*/
+        Shuffle();
+
+        var btn = document.getElementById("dokucheck");
+        btn.addEventListener('click', function(e){
+            r = checkGrid();
+            if (r) {
+                btn.innerText = "Great!";
+            }
+            else {
+                btn.innerText = "Nope. :(";
+            }
+        });
+        
+        //table.addEventListener('click', function(e){
+        table.addEventListener('mouseup', function(e){
+            console.log(e);
+            console.log(e.target);
+            //if (e.target.innerText=="" || e.target.style.color == "red") {
+            if (e.target.innerText=="" || e.target.style.fontWeight == "normal") {
+                if (e.button != 2 /* right */) {
+                    if (e.target.innerText < 9)
+                        e.target.innerText++;
+                    else
+                        e.target.innerText = "";
+                }
+                else {
+                    if (e.target.innerText > 1)
+                        e.target.innerText--;
+                    else
+                        e.target.innerText = "";
+                }
+                //e.target.style.color = "red";
+                e.target.style.fontWeight = "normal";
+            }
+        });
+
+
+        var btnnew = document.getElementById("dokunew");
+        btnnew.addEventListener('click', function(e){
+            ClearPlays();
+            Shuffle();
+        });
 
     };
 
