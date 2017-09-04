@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="css/sudoku.css" type="text/css">
 <script src="javascript/sudoku.js"></script>
 <style>
-table { float:left; margin: auto; border-collapse: collapse; font-family: Calibri, sans-serif; }
+table { float:left; margin: 20px; border-collapse: collapse; font-family: Calibri, sans-serif; }
 colgroup, tbody { border: solid medium; }
 td { border: solid thin; height: 1.4em; width: 1.4em; text-align: center; padding: 0; }
 </style>
@@ -27,5 +27,10 @@ td { border: solid thin; height: 1.4em; width: 1.4em; text-align: center; paddin
    <tr> <td>  <td>  <td>  <td>  <td>7 <td>  <td>  <td>  <td>
    <tr> <td>9 <td>  <td>  <td>8 <td>  <td>2 <td>  <td>  <td>5
 </table>
-Place holder for game instructions
+Game instructions<br>
+----------------------------------<br>
+Use clicks to set numbers:<br>
+ left for +<br>
+ right for -<br>
 <br>
+<input type=button id="dokucheck" value="Validate">
