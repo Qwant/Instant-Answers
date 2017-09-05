@@ -3,15 +3,10 @@
 -->
 <link rel="stylesheet" href="css/sudoku.css" type="text/css">
 <script src="javascript/sudoku.js"></script>
-<style>
-table { float:left; margin: 20px; border-collapse: collapse; font-family: Calibri, sans-serif; }
-colgroup, tbody { border: solid medium; }
-td { border: solid thin; height: 1.4em; width: 1.4em; text-align: center; padding: 0; }
-button { border: 2px; }
-</style>
 <br>
-<table id="dokutab">
-  <!---caption>Sudoku of the day</caption--->
+<!---div style="overflow: auto;"--->
+<table><tr><td>
+<table id="dokutab"class="dokutable" oncontextmenu="return false;">
   <colgroup><col><col><col>
   <colgroup><col><col><col>
   <colgroup><col><col><col>
@@ -27,15 +22,29 @@ button { border: 2px; }
    <tr> <td>6 <td>  <td>  <td>  <td>5 <td>  <td>  <td>  <td>2
    <tr> <td>  <td>  <td>  <td>  <td>7 <td>  <td>  <td>  <td>
    <tr> <td>9 <td>  <td>  <td>8 <td>  <td>2 <td>  <td>  <td>5
-</table><br>
-Game instructions<br>
-----------------------------------<br>
-Use clicks to set numbers:<br>
- left for +<br>
- right for -<br>
-<br>
-<button type="button" id="dokucheck">Validate</button>
- <button type="button" id="dokunew">New roll</button>
-<br>
-<br>
-<br>
+</table>
+</td>
+<td>
+ <tr>
+  <br>
+   Game instructions<br>
+   ----------------------------------<br>
+   Use clicks to set numbers:<br>
+   - Left for +<br>
+   - Right for -<br>
+  <br>
+ </tr>
+ <tr>
+  <div id="speech-bubble">Try to fill in the missing numbers!
+  </div>
+ </tr>
+ <tr>
+ <br>
+ <button type="button" id="dokucheck" class="testbutton">Validate</button>
+  <button type="button" id="dokunew" class="testbutton">New roll</button>
+ <br>
+ <button type="button" id="dokustatus" class="testbutton" width=40px>Play!</button>
+ </tr>
+</td></tr></table>
+<!---p id="textarea" style="font:Segoe UI; text-align:center; border:2px; width:100px" border="2px"></p--->
+<!---/div--->

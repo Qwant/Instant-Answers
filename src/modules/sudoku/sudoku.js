@@ -70,7 +70,7 @@ module.exports = {
      * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
      */
 
-    keyword: "sudoku",
+    keyword: "sudoku ?.*",
 
     /**
      * (OPTIONAL)
@@ -90,6 +90,7 @@ module.exports = {
      */
 
     trigger: "strict",
+    //trigger: "start",
 
     /**
      * (NEEDED)
