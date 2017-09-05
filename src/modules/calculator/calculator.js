@@ -29,6 +29,7 @@ module.exports = {
                 values[0] = values[0].replace("÷","/");
                 try {
                     var response = math.eval(values[0]);
+                    response = math.format(response, {precision: 14});
                     if (response['signatures']) {
                         resolve(0);
                     } else {
