@@ -44,7 +44,10 @@ def     valid_play(grid, ec, p):
                 return False
     return True
 
+rec = 0
 def     bt(grid):
+    global rec
+    rec += 1
     ec = get_empty_cell(grid)
     if not ec:
         return True # solution reached
@@ -65,19 +68,42 @@ def     randomInsert(grid):
     which = random.choice(range(1,10))
     print("number:", which)
     if valid_play(grid, where, which):
-        y, x = where
+        x, y = where
         grid[y][x] = which
+        return True
+    return False
+
+def     randomRemove(grid):
+    x, y = random.choice(range(WIDTH)), random.choice(range(WIDTH))
+    if grid[y][x] <> 0:
+        grid[y][x] = 0
         return True
     return False
 
 def     main():
     grid = [[0 for i in range(WIDTH)] for j in range(WIDTH)]
+    # Randomize Grid Generation
     i = 0
-    while i < 5:
+    while i < 8:
         if randomInsert(grid):
             i += 1
     disp(grid)
-    print bt(grid)
+    # Solve Grid
+    global rec
+    try:    print bt(grid)
+    except: print rec
+    disp(grid)
+    # Put Holes in Grid
+    i = 0
+    rmnb = 2*WIDTH**2/3
+    print rmnb
+    while i < rmnb:
+        if randomRemove(grid):
+            i += 1
+    print
+    disp(grid)
+    # Check if still solvable (why it would not be?)
+    print(bt(grid))
     disp(grid)
     return False
 
