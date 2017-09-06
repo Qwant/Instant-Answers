@@ -150,14 +150,14 @@ var IARuntime = function() {
         Shuffle();
 
         var btn = document.getElementById("dokucheck");
-        var txt = document.getElementById("textarea");
+        var sts = document.getElementById("dokustatus");
         btn.addEventListener('click', function(e){
             r = checkGrid();
             if (r) {
-                txt.innerText = "Great!";
+                sts.innerText = "Great!";
             }
             else {
-                txt.innerText = "Nope. :(";
+                sts.innerText = "Nope. :(";
             }
         });
         
