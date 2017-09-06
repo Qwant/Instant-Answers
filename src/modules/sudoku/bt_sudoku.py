@@ -51,7 +51,10 @@ def     bt(grid):
     ec = get_empty_cell(grid)
     if not ec:
         return True # solution reached
-    for p in range(1,10):
+    pool = range(1,10)
+    random.shuffle(pool)
+    #for p in range(1,10):
+    for p in pool:
         if valid_play(grid, ec, p):
             x, y = ec
             grid[y][x] = p
@@ -91,20 +94,23 @@ def     main():
     # Solve Grid
     global rec
     try:    print bt(grid)
-    except: print rec
+    except: print 'rec', rec
+    print 'rec', rec
     disp(grid)
     # Put Holes in Grid
     i = 0
     rmnb = 2*WIDTH**2/3
-    print rmnb
+    print 'number of removes', rmnb
     while i < rmnb:
         if randomRemove(grid):
             i += 1
     print
     disp(grid)
     # Check if still solvable (why it would not be?)
+    rec = 0
     print(bt(grid))
     disp(grid)
+    print 'rec', rec
     return False
 
 if __name__ == "__main__":
