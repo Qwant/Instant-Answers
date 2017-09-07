@@ -1,56 +1,96 @@
 /**
  * This is your main CSS file. Please refer to the documentation for more information.
  */
-.dokutable { float:left; margin: 20px; border-collapse: collapse; font-family: 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif, Calibri, sans-serif; font-size: 16px; font-style: normal; }
-table.dokutable colgroup, tbody { border: solid medium; }
-table.dokutable td { border: solid thin; height: 1.4em; width: 1.4em; text-align: center; padding: 0; }
-
-#speech-bubble {
-    width: auto; 
-    height: auto; 
-    background: blue;
-    position: absolute;
-    -moz-border-radius: 10px; 
-    -webkit-border-radius: 10px; 
-    border-radius: 10px;
-    color: white;
-}
-#speech-bubble:before {
-    content:"";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 13px solid transparent;
-    border-right: 26px solid blue;
-    border-bottom: 13px solid transparent;
-    margin: 13px 0 0 -25px;
+.container {
+    display: block;
+    width: 100%;
+    min-height: 280px;
 }
 
-.testbutton {
-    font-family: arial;
-    color: #14396A !important;
-    font-size: 14px;
-    text-shadow: 1px 1px 0px #7CACDE;
-    box-shadow: 1px 1px 1px #BEE2F9;
-    padding: 8px 20px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    border: 2px solid #3866A3;
-    background: #63B8EE;
-    background: linear-gradient(top,  #63B8EE,  #468CCF);
-    background: -ms-linear-gradient(top,  #63B8EE,  #468CCF);
-    background: -webkit-gradient(linear, left top, left bottom, from(#63B8EE), to(#468CCF));
-    background: -moz-linear-gradient(top,  #63B8EE,  #468CCF);
+.dokutable {
+    margin: 20px;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif, Calibri, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-.testbutton:hover {
-    color: #14396A !important;
-    background: #468CCF;
-    background: linear-gradient(top,  #468CCF,  #63B8EE);
-    background: -ms-linear-gradient(top,  #468CCF,  #63B8EE);
-    background: -webkit-gradient(linear, left top, left bottom, from(#468CCF), to(#63B8EE));
-    background: -moz-linear-gradient(top,  #468CCF,  #63B8EE);
+
+table.dokutable colgroup, tbody { 
+    border: solid medium;
 }
+
+table.dokutable td {
+    border: solid thin;
+    height: 1.4em;
+    width: 1.4em;
+    text-align: center;
+    padding: 0;
+}
+
+table.dokutable td.empty:hover {
+    cursor: pointer;
+}
+
+table.dokutable td.number:hover {
+    cursor: default; 
+}
+
+.grid {
+    width: 250px;
+    float: left;
+}
+
+.control {
+    width: 200px;
+    float: left;
+    text-align: left;
+}
+
+.icon {
+    display: none;
+}
+
+.instructions {
+    font-weight: bold;
+    border-bottom: 2px solid #444444;
+    margin-bottom: 10px;
+}
+
+#dokustatus {
+    width: 100%;
+    background-color: #DDDDDD;
+    text-align: center;
+    padding: 5px;
+    margin: 10px 0 10px 0;
+    border-radius: 5px;
+}
+
+.dokubutton {
+    text-align: center;
+    width: 100%;
+}
+
+.dokubutton button:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .grid {
+        float: none;
+    }
+    .control {
+        float: none;
+        text-align: center;
+        width: 250px;
+        padding: 10px;
+    }
+}
+
 .testbutton {
     font-family: arial;
     color: #6A6A6A !important;

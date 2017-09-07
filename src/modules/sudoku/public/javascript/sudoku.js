@@ -3,8 +3,8 @@
  */
 function    get_empty_cell(grid)
 {
-    for (i=0; i<9; i++) {
-        for (j=0; j<9; j++) {
+    for (var i=0; i<9; i++) {
+        for (var j=0; j<9; j++) {
             if (grid[i][j] == 0)
                 return [j, i];
         }
@@ -14,7 +14,7 @@ function    get_empty_cell(grid)
 
 function    is_play_valid(grid, ec, p) {
     var [x, y] = ec;
-    for (i = 0; i < 9; i++) {
+    for (var i = 0; i < 9; i++) {
         if (grid[y][i] == p)
             return false;
         if (grid[i][x] == p)
@@ -22,8 +22,8 @@ function    is_play_valid(grid, ec, p) {
     }
     x = Math.floor(x / 3) * 3;
     y = Math.floor(y / 3) * 3;
-    for (i = 0; i < 3; i++) {
-        for (j = 0; j < 3; j++) {
+    for (var i = 0; i < 3; i++) {
+        for (var j = 0; j < 3; j++) {
             if (grid[y + i][x + j] == p)
                 return false;
         }
@@ -44,8 +44,8 @@ function shuffle(array) {
     return array;
 }
 
-function    bt(grid, r) {
-    if (r > 999)
+function    bt(grid, rec) {
+    if (rec > 999)
         return true;
     ec = get_empty_cell(grid);
     if (ec == null)
@@ -53,11 +53,11 @@ function    bt(grid, r) {
     //pool = _.range(1,10);
     pool = [1,2,3,4,5,6,7,8,9];
     shuffle(pool);
-    for (i = 0; i < 9; i++) {
+    for (var i = 0; i < 9; i++) {
         if (is_play_valid(grid, ec, pool[i])) {
             var [x, y] = ec;
             grid[y][x] = pool[i];
-            var r = bt(grid, r + 1);
+            var r = bt(grid, rec + 1);
             if (r)
                 return true;
             else
@@ -93,7 +93,7 @@ function    randomRemove(grid) {
 }
 
 function    dbgDisp(grid) {
-    for (i=0;i<9;i++)
+    for (var i=0;i<9;i++)
     {
         console.log(grid[i]);
     }
@@ -101,37 +101,42 @@ function    dbgDisp(grid) {
 
 function    getSudokuGrid() {
     var grid = [];
-    for (i = 0; i < 9; i++) {
+    for (var i = 0; i < 9; i++) {
         grid[i] = [];
-        console.log(grid);
-        for (j = 0; j < 9; j++) {
+        //console.log(grid);
+        for (var j = 0; j < 9; j++) {
             grid[i][j] = 0;
         }
-        console.log(grid);
+        //console.log(grid);
     }
     console.log("Empty grid:");
     dbgDisp(grid);
     var i = 0;
-    while (i < 8) {
+    while (i < 0) {
         console.log("RandomInsert");
         if (randomInsert(grid))
             i++;
     }
     dbgDisp(grid);
+    //return (grid);
     // Solve it
-    if (!bt(grid, 0))
+    if (!bt(grid, 0)) {
+        console.log("unsolvable:(");
         return null;
+    }
     else
         console.log("solved!");
     // Put holes
     dbgDisp(grid);
     i = 0;
     j = 0;
-    while (i < 2*9**2/3) {
+    rmn = 1;
+    //while (i < 2*9**2/3) {
+    while (i < rmn) {
         if (randomRemove(grid))
             i++;
         j++;
-        if (j > 10 * 2*9**2/3)
+        if (j > 10 * rmn)
             break;
     }
     return (grid);
@@ -142,21 +147,23 @@ function checkGrid() {
     for (var i=0; i<9; i++) {
         var bh = 0, bv = 0;
         for (var j=0; j<9; j++) {
-            bh |= (1 << table.rows[i].cells[j].innerText)
-                //bv |= table.rows[i].cells[j];
-                bv |= (1 << table.rows[j].cells[i].innerText)
-                /*if (bh != 1022) {
-                  table.rows[i].style.backgroundColor = "red";
-                  return false;
-                  }
-                  if (bv != 1022) {
-                  table.rows[j].style.backgroundColor = "red";
-                  return false;
-                  }*/
-                if (bh != 1022 || bv != 1022)
-                    return false;
-            //colorer la ligne/col
+            console.log(table.rows[i].cells[j].innerText);
+            console.log(table.rows[j].cells[i].innerText);
+            bh |= (1 << table.rows[i].cells[j].innerText);
+            //bv |= table.rows[i].cells[j];
+            bv |= (1 << table.rows[j].cells[i].innerText);
+            /*if (bh != 1022) {
+              table.rows[i].style.backgroundColor = "red";
+              return false;
+              }
+              if (bv != 1022) {
+              table.rows[j].style.backgroundColor = "red";
+              return false;
+              }*/
         }
+        if (bh != 1022 || bv != 1022)
+            return false;
+        //colorer la ligne/col
     }
     for (var i=0; i<3; i++) {
         for (var j=0; j<3; j++) {
@@ -185,71 +192,34 @@ function ClearPlays() {
     } 
 }
 
-function Shuffle() {
-    var a = [];
+function    grid2table(g, tab)
+{
+    for (var i=0; i<9; i++) {
+        for (var j=0; j<9; j++) {
+            if (g[i][j]) {
+                tab.rows[j].cells[i].innerText = g[i][j];
+                tab.rows[j].cells[i].style.fontWeight = "bold";
+                tab.rows[j].cells[i].style.color = "black";
+                tab.rows[j].cells[i].setAttribute("class", "number");
+            }
+            else {
+                tab.rows[j].cells[i].innerText = '';
+                tab.rows[j].cells[i].style.fontWeight = "normal";
+                tab.rows[j].cells[i].style.color = "#888888";
+                tab.rows[j].cells[i].setAttribute("class", "empty");
+            }
+        }
+    }
+}
+
+function    Generate() {
     var table = document.getElementById("dokutab");
-    for (var i=0, row; row=table.rows[i]; i++) {
-        for (var j=0, col; col=row.cells[j]; j++) {
-            a[9*i + j] = col.innerText;
-        }
-    }
-    for (var i=0; i<getRandomInt(10,50); i++)
-    {
-        fi = getRandomInt(0,4);
-        switch (fi) {
-            case 0: //this.shuffleVertical();break;
-                for (var i=0; i<81; i++) {
-                    if (i % 9 < 4) {
-                        var tmp = a[i];
-                        div9 = Math.floor(i / 9);
-                        tmpIx = (9 * div9 + 8) - (i - (9 * div9));
-                        a[i] = a[tmpIx];
-                        a[tmpIx] = tmp;
-                    }
-                }
-                break;
-            case 1: //this.shuffleHorizontal();break;
-                for (var i=0; i<81; i++) {
-                    if (Math.floor(i / 9) < 4) {
-                        mod9 = Math.floor(i % 9);
-                        div9 = Math.floor(i / 9);
-                        tmp = a[i];
-                        tmpIx = mod9 + (8 - div9) * 9;
-                        a[i] = a[tmpIx];
-                        a[tmpIx] = tmp;
-                    }
-                }
-                break;
-            case 2: //this.shuffleDiagMaj();break;
-                for (var i=0; i<81; i++) {
-                    if ((Math.floor(i / 9) + (i % 9)) < 8) {
-                        mod9 = Math.floor(i % 9);
-                        div9 = Math.floor(i / 9);
-                        tmp = a[i];
-                        tmpIx = (8 - mod9) * 9 + 8 - div9;
-                        a[i] = a[tmpIx];
-                        a[tmpIx] = tmp;
-                    }
-                }
-                break;
-            case 3: //this.shuffeDiagMin();break;
-                for (var i=0; i<81; i++) {
-                    if (Math.floor(i / 9) < i % 9) {
-                        mod9 = Math.floor(i % 9);
-                        div9 = Math.floor(i / 9);
-                        tmp = a[i];
-                        tmpIx = div9 + mod9 * 9;
-                        a[i] = a[tmpIx];
-                        a[tmpIx] = tmp;
-                    }
-                }
-        }
-    }
-    for (var i=0, row; row=table.rows[i]; i++) {
-        for (var j=0, col; col=row.cells[j]; j++) {
-            col.innerText = a[9*i + j];
-            col.style.fontWeight = "bold";
-        }
+
+    g = getSudokuGrid();
+    console.log(g);
+    if (g) {
+        console.log("g ok");
+        grid2table(g, table);
     }
 }
 
@@ -258,20 +228,17 @@ var IARuntime = function() {
         // constructor
         //}
 };
-
 /**
  * runs at runtime
  */
 Sudoku.prototype.run = function() {
     // function that's gonna run at runtime
     var table = document.getElementById("dokutab");
-    Shuffle();
-
-    getSudokuGrid();
-
     var btn = document.getElementById("dokucheck");
     var sts = document.getElementById("dokustatus");
-    btn.addEventListener('click', function(e){
+
+    Generate();
+    btn.addEventListener('click', function(e) {
         r = checkGrid();
         if (r) {
             sts.innerText = "Great!";
@@ -289,7 +256,6 @@ Sudoku.prototype.run = function() {
     table.addEventListener('mouseup', function(e){
         console.log(e);
         console.log(e.target);
-        //if (e.target.innerText=="" || e.target.style.color == "red") {
         if (e.target.innerText=="" || e.target.style.fontWeight == "normal") {
             if (e.button != 2 /* right */) {
                 if (e.target.innerText < 9)
@@ -310,8 +276,8 @@ Sudoku.prototype.run = function() {
 
     var btnnew = document.getElementById("dokunew");
     btnnew.addEventListener('click', function(e){
+        Generate();
         ClearPlays();
-        Shuffle();
         sts.innerHTML = "Status: playing";
     });
 
