@@ -49,8 +49,7 @@ function    bt(grid, rec) {
         return true;
     ec = get_empty_cell(grid);
     if (ec == null)
-        return true; // A solution has been reached
-    //pool = _.range(1,10);
+        return true; // No empty cell left, a solution has been reached!
     pool = [1,2,3,4,5,6,7,8,9];
     shuffle(pool);
     for (var i = 0; i < 9; i++) {
@@ -67,7 +66,7 @@ function    bt(grid, rec) {
     return false;
 }
 
-function getRandomInt (min, max) {
+function    getRandomInt (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -103,35 +102,24 @@ function    getSudokuGrid() {
     var grid = [];
     for (var i = 0; i < 9; i++) {
         grid[i] = [];
-        //console.log(grid);
         for (var j = 0; j < 9; j++) {
             grid[i][j] = 0;
         }
-        //console.log(grid);
     }
-    console.log("Empty grid:");
-    dbgDisp(grid);
     var i = 0;
     while (i < 0) {
-        console.log("RandomInsert");
         if (randomInsert(grid))
             i++;
     }
     dbgDisp(grid);
-    //return (grid);
     // Solve it
     if (!bt(grid, 0)) {
-        console.log("unsolvable:(");
         return null;
     }
-    else
-        console.log("solved!");
     // Put holes
-    dbgDisp(grid);
     i = 0;
     j = 0;
-    rmn = 1;
-    //while (i < 2*9**2/3) {
+    rmn = 2*9**2/3;
     while (i < rmn) {
         if (randomRemove(grid))
             i++;
@@ -147,23 +135,12 @@ function checkGrid() {
     for (var i=0; i<9; i++) {
         var bh = 0, bv = 0;
         for (var j=0; j<9; j++) {
-            console.log(table.rows[i].cells[j].innerText);
-            console.log(table.rows[j].cells[i].innerText);
             bh |= (1 << table.rows[i].cells[j].innerText);
-            //bv |= table.rows[i].cells[j];
             bv |= (1 << table.rows[j].cells[i].innerText);
-            /*if (bh != 1022) {
-              table.rows[i].style.backgroundColor = "red";
-              return false;
-              }
-              if (bv != 1022) {
-              table.rows[j].style.backgroundColor = "red";
-              return false;
-              }*/
         }
         if (bh != 1022 || bv != 1022)
             return false;
-        //colorer la ligne/col
+        // TODO: Redify bad number
     }
     for (var i=0; i<3; i++) {
         for (var j=0; j<3; j++) {
@@ -218,7 +195,6 @@ function    Generate() {
     g = getSudokuGrid();
     console.log(g);
     if (g) {
-        console.log("g ok");
         grid2table(g, table);
     }
 }
@@ -226,60 +202,56 @@ function    Generate() {
 var IARuntime = function() {
     function Sudoku (iaData) {
         // constructor
-        //}
-};
-/**
- * runs at runtime
- */
-Sudoku.prototype.run = function() {
-    // function that's gonna run at runtime
-    var table = document.getElementById("dokutab");
-    var btn = document.getElementById("dokucheck");
-    var sts = document.getElementById("dokustatus");
+    }
+    /**
+     * runs at runtime
+     */
+    Sudoku.prototype.run = function() {
+        // function that's gonna run at runtime
+        var table = document.getElementById("dokutab");
+        var btn = document.getElementById("dokucheck");
+        var sts = document.getElementById("dokustatus");
 
-    Generate();
-    btn.addEventListener('click', function(e) {
-        r = checkGrid();
-        if (r) {
-            sts.innerText = "Great!";
-        }
-        else {
-            sts.innerText = "Nope. :(";
-            var tmr = setInterval(restSts, 2000);
-            function restSts() {
-                sts.innerText = "Try again!";
-                clearInterval(tmr);
-            }
-        }
-    });
-
-    table.addEventListener('mouseup', function(e){
-        console.log(e);
-        console.log(e.target);
-        if (e.target.innerText=="" || e.target.style.fontWeight == "normal") {
-            if (e.button != 2 /* right */) {
-                if (e.target.innerText < 9)
-                    e.target.innerText++;
-                else
-                    e.target.innerText = "";
+        Generate();
+        btn.addEventListener('click', function(e) {
+            r = checkGrid();
+            if (r) {
+                sts.innerText = "Great!";
             }
             else {
-                if (e.target.innerText > 1)
-                    e.target.innerText--;
-                else
-                    e.target.innerText = "";
+                sts.innerText = "Nope. :(";
+                var tmr = setInterval(restSts, 1000);
+                function restSts() {
+                    sts.innerText = "Try again!";
+                    clearInterval(tmr);
+                }
             }
-            //e.target.style.color = "red";
-            e.target.style.fontWeight = "normal";
-        }
-    });
+        });
 
-    var btnnew = document.getElementById("dokunew");
-    btnnew.addEventListener('click', function(e){
-        Generate();
-        ClearPlays();
-        sts.innerHTML = "Status: playing";
-    });
+        table.addEventListener('mouseup', function(e){
+            if (e.target.innerText=="" || e.target.style.fontWeight == "normal") {
+                if (e.button != 2 /* right */) {
+                    if (e.target.innerText < 9)
+                        e.target.innerText++;
+                    else
+                        e.target.innerText = "";
+                }
+                else {
+                    if (e.target.innerText > 1)
+                        e.target.innerText--;
+                    else
+                        e.target.innerText = "";
+                }
+                e.target.style.fontWeight = "normal";
+            }
+        });
+
+        var btnnew = document.getElementById("dokunew");
+        btnnew.addEventListener('click', function(e){
+            Generate();
+            //ClearPlays();
+            sts.innerHTML = "Status: playing";
+        });
 
     };
 
