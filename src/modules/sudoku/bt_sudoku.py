@@ -108,7 +108,7 @@ def     main():
     disp(grid)
     # Check if still solvable (why it would not be?)
     rec = 0
-    print(bt(grid))
+    #print(bt(grid))
     disp(grid)
     print 'rec', rec
     return False
