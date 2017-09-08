@@ -4,11 +4,11 @@
 .container {
     display: block;
     width: 100%;
-    min-height: 280px;
+    min-height: 220px;
 }
 
 .dokutable {
-    margin: 20px;
+    margin: 0 0 0 20px;
     border-collapse: collapse;
     font-family: 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif, Calibri, sans-serif;
     font-size: 16px;
