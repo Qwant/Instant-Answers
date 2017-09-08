@@ -91,7 +91,7 @@ table.dokutable td.number:hover {
     }
 }
 
-.testbutton {
+.sdkubutton {
     font-family: arial;
     color: #6A6A6A !important;
     font-size: 14px;
@@ -108,7 +108,7 @@ table.dokutable td.number:hover {
     background: -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CFCFCF));
     background: -moz-linear-gradient(top,  #EEEEEE,  #CFCFCF);
 }
-.testbutton:hover {
+.sdkubutton:hover {
     color: #6A6A6A !important;
     background: #CFCFCF;
     background: linear-gradient(top,  #CFCFCF,  #EEEEEE);

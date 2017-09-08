@@ -112,7 +112,6 @@ function    getSudokuGrid() {
         if (randomInsert(grid))
             i++;
     }
-    //dbgDisp(grid);
     // Solve it
     if (!bt(grid, 0)) {
         return null;
@@ -230,7 +229,7 @@ var IARuntime = function() {
 
         table.addEventListener('mouseup', function(e){
             if (e.target.innerText=="" || e.target.style.fontWeight == "normal") {
-                if (e.button != 2 /* right */) {
+                if (e.button != 2 /* right click */) {
                     if (e.target.innerText < 9)
                         e.target.innerText++;
                     else
@@ -249,8 +248,6 @@ var IARuntime = function() {
         var btnnew = document.getElementById("dokunew");
         btnnew.addEventListener('click', function(e){
             Generate();
-            //ClearPlays();
-            //sts.innerHTML = "playing";
             sts.innerHTML = _("Play!", "sudoku");
         });
 

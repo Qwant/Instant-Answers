@@ -37,10 +37,10 @@
             {{= _("Play!", "sudoku") }}
         </div>
         <div class="dokubutton">
-            <button type="button" id="dokucheck" class="testbutton">
+            <button type="button" id="dokucheck" class="sdkubutton">
                 {{= _("Validate", "sudoku") }}
             </button>
-            <button type="button" id="dokunew" class="testbutton">
+            <button type="button" id="dokunew" class="sdkubutton">
                 {{= _("New Game", "sudoku") }}
             </button>
         </div>
