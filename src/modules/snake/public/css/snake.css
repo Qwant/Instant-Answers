@@ -1,0 +1,40 @@
+/**
+* This is your main CSS file. Please refer to the documentation for more information.
+*/
+.back_games{
+    height: 200px;
+    width: 100%;
+    background-color: #F0F0F0;
+    display: flex;
+    justify-content: center;
+    -webkit-transition: height 1s, -webkit-transform 1s;
+    transition: height 1s,transform 1s;
+}
+.play_game{
+    text-align: center;
+    font-family: Helvetica;
+    font-size: 50px;
+    width: 100%;
+    -webkit-transition: height 1s, -webkit-transform 1s;
+    transition: height 1s,transform 1s;
+    cursor: pointer;
+}
+.games{
+    margin-left: -400px;
+    margin-top: -200px;
+    position:absolute;
+    left: 50%;
+    top: 45%;
+    cursor: pointer;
+}
+.style_canvas{
+    background-color: #e2e2e2;
+}
+.style_cross{
+
+    width: 50px;
+    height: 50px;
+    margin-top: 25px;
+    margin-right: 25px;
+    cursor: pointer;
+}
