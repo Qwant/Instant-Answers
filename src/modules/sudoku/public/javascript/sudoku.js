@@ -1,6 +1,7 @@
 /**
  * This is your main script file. Please refer to the documentation for more information.
  */
+
 function    get_empty_cell(grid)
 {
     for (var i=0; i<9; i++) {
@@ -111,7 +112,7 @@ function    getSudokuGrid() {
         if (randomInsert(grid))
             i++;
     }
-    dbgDisp(grid);
+    //dbgDisp(grid);
     // Solve it
     if (!bt(grid, 0)) {
         return null;
@@ -193,7 +194,6 @@ function    Generate() {
     var table = document.getElementById("dokutab");
 
     g = getSudokuGrid();
-    console.log(g);
     if (g) {
         grid2table(g, table);
     }
@@ -216,13 +216,13 @@ var IARuntime = function() {
         btn.addEventListener('click', function(e) {
             r = checkGrid();
             if (r) {
-                sts.innerText = "Great!";
+                sts.innerText = _("Great!", "sudoku");
             }
             else {
-                sts.innerText = "Nope. :(";
+                sts.innerText = _("Nope :(", "sudoku");
                 var tmr = setInterval(restSts, 1000);
                 function restSts() {
-                    sts.innerText = "Try again!";
+                    sts.innerText = _("Try again!", "sudoku");
                     clearInterval(tmr);
                 }
             }
@@ -250,7 +250,8 @@ var IARuntime = function() {
         btnnew.addEventListener('click', function(e){
             Generate();
             //ClearPlays();
-            sts.innerHTML = "Status: playing";
+            //sts.innerHTML = "playing";
+            sts.innerHTML = _("Play!", "sudoku");
         });
 
     };

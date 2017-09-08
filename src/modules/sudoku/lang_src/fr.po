@@ -1,3 +1,36 @@
 #
 # This is your fr_fr language file. Please refer to the documentation for more information.
 #
+
+msgctxt "sudoku"
+msgid "New Game"
+msgstr "Nouvelle partie"
+
+msgctxt "sudoku"
+msgid "Validate"
+msgstr "Vérifier"
+
+msgctxt "sudoku"
+msgid "Game instructions"
+msgstr "Instructions du jeu"
+
+msgctxt "sudoku"
+msgid "Use right and lift click to set numbers"
+msgstr "Utiliser le clic gauche ou droit pour placer les chiffres"
+
+msgctxt "sudoku"
+msgid "Play!"
+msgstr "Jouer !"
+
+msgctxt "sudoku"
+msgid "Nope :("
+msgstr "Pas bon :("
+
+msgctxt "sudoku"
+msgid "Try again!"
+msgstr "Essaie encore!"
+
+msgctxt "sudoku"
+msgid "Great!"
+msgstr "Bravo!"
+

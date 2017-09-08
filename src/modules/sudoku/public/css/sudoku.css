@@ -25,7 +25,7 @@ table.dokutable colgroup, tbody {
 }
 
 table.dokutable td {
-    border: solid thin;
+    border: solid thin black;
     height: 1.4em;
     width: 1.4em;
     text-align: center;

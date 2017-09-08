@@ -60,9 +60,9 @@ module.exports = {
      * If your keyword needs to be translated, use this function getKeyword().
      * @returns keyword translated
      */
+
     getKeyword: function () {
         return _("sudoku", "sudoku");
-    },
 
     /**
      * (OPTIONAL/NEEDED)

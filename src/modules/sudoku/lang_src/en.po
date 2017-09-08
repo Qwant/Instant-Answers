@@ -1,3 +1,36 @@
 #
 # This is your en_gb language file. Please refer to the documentation for more information.
 #
+
+msgctxt "sudoku"
+msgid "New Game"
+msgstr "New Game"
+
+msgctxt "sudoku"
+msgid "Validate"
+msgstr "Validate"
+
+msgctxt "sudoku"
+msgid "Game instructions"
+msgstr "Game instructions"
+
+msgctxt "sudoku"
+msgid "Use right and left click to set numbers"
+msgstr "Use right and left click to set numbers"
+
+msgctxt "sudoku"
+msgid "Play!"
+msgstr "Play!"
+
+msgctxt "sudoku"
+msgid "Nope :("
+msgstr "Nope :("
+
+msgctxt "sudoku"
+msgid "Try again!"
+msgstr "Try again!"
+
+msgctxt "sudoku"
+msgid "Great!"
+msgstr "Great!"
+
