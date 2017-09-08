@@ -25,6 +25,7 @@ module.exports = {
             if(!isNaN(values[0])) {
                 reject("Don't allow function identity");
             } else {
+                values[0] = values[0].toLowerCase();
                 values[0] = values[0].replace("×","*");
                 values[0] = values[0].replace("÷","/");
                 try {
@@ -58,7 +59,7 @@ module.exports = {
      * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
      */
 
-    keyword: "(\\+|\\-|\\*|\\/|×|÷|[0-9]|\\(|\\)|\\.|\\s|E|PI|cos|sin|sqrt|log|tan|exp|\\^|e)*",
+    keyword: "(\\+|\\-|\\*|\\/|×|÷|[0-9]|\\(|\\)|\\.|\\s|E|PI|PHI|cos|sin|sqrt|log|tan|exp|\\^)*",
 
     /**
      * (NEEDED)
@@ -80,7 +81,7 @@ module.exports = {
      * 			- i : insensitive
      */
 
-    flag: "",
+    flag: "i",
 
     /**
      * (NEEDED)
