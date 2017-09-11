@@ -1,13 +1,13 @@
 /**
  * This is your main CSS file. Please refer to the documentation for more information.
  */
-.container {
+.__ia__sudoku__container {
     display: block;
     width: 100%;
     min-height: 220px;
 }
 
-.dokutable {
+.__ia__sudoku__dokutable {
     margin: 0 0 0 20px;
     border-collapse: collapse;
     font-family: 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif, Calibri, sans-serif;
@@ -20,11 +20,11 @@
     user-select: none;
 }
 
-table.dokutable colgroup, tbody { 
+table.__ia__sudoku__dokutable colgroup, tbody {
     border: solid medium;
 }
 
-table.dokutable td {
+table.__ia__sudoku__dokutable td {
     border: solid thin black;
     height: 1.4em;
     width: 1.4em;
@@ -32,36 +32,36 @@ table.dokutable td {
     padding: 0;
 }
 
-table.dokutable td.empty:hover {
+table.__ia__sudoku__dokutable td.empty:hover {
     cursor: pointer;
 }
 
-table.dokutable td.number:hover {
+table.__ia__sudoku__dokutable td.number:hover {
     cursor: default; 
 }
 
-.grid {
+.__ia__sudoku__grid {
     width: 250px;
     float: left;
 }
 
-.control {
+.__ia__sudoku__control {
     width: 200px;
     float: left;
     text-align: left;
 }
 
-.icon {
+.__ia__sudoku__icon {
     display: none;
 }
 
-.instructions {
+.__ia__sudoku__instructions {
     font-weight: bold;
     border-bottom: 2px solid #444444;
     margin-bottom: 10px;
 }
 
-#dokustatus {
+#__ia__sudoku__dokustatus {
     width: 100%;
     background-color: #DDDDDD;
     text-align: center;
@@ -70,20 +70,20 @@ table.dokutable td.number:hover {
     border-radius: 5px;
 }
 
-.dokubutton {
+.__ia__sudoku__dokubutton {
     text-align: center;
     width: 100%;
 }
 
-.dokubutton button:hover {
+.__ia__sudoku__dokubutton button:hover {
     cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
-    .grid {
+    .__ia__sudoku__grid {
         float: none;
     }
-    .control {
+    .__ia__sudoku__control {
         float: none;
         text-align: center;
         width: 250px;
@@ -91,7 +91,7 @@ table.dokutable td.number:hover {
     }
 }
 
-.sdkubutton {
+.__ia__sudoku__sdkubutton {
     font-family: arial;
     color: #6A6A6A !important;
     font-size: 14px;
@@ -108,7 +108,7 @@ table.dokutable td.number:hover {
     background: -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CFCFCF));
     background: -moz-linear-gradient(top,  #EEEEEE,  #CFCFCF);
 }
-.sdkubutton:hover {
+.__ia__sudoku__sdkubutton:hover {
     color: #6A6A6A !important;
     background: #CFCFCF;
     background: linear-gradient(top,  #CFCFCF,  #EEEEEE);

@@ -209,7 +209,7 @@ var IARuntime = function() {
         // function that's gonna run at runtime
         var table = document.getElementById("dokutab");
         var btn = document.getElementById("dokucheck");
-        var sts = document.getElementById("dokustatus");
+        var sts = document.getElementById("__ia__sudoku__dokustatus");
 
         Generate();
         btn.addEventListener('click', function(e) {

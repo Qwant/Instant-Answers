@@ -63,6 +63,7 @@ module.exports = {
 
     getKeyword: function () {
         return _("sudoku", "sudoku");
+    },
 
     /**
      * (OPTIONAL/NEEDED)
