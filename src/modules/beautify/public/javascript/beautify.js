@@ -16,11 +16,34 @@ var IARuntime = function() {
         console.log('Beautify.run()');
         console.log(this.iaData);
         var structureId = 0;
-        var result = $(".ia__beautify .result");
-        3 != this.iaData.template && result.find(".json").find(".sBrace, .sBracket").each(function(i) {
-            "{" == $(this).text() || "[" == $(this).text() ? ($(this).addClass("structure-" + ++structureId),
-            $(this).append(' <a href="javascript:;"><i class="fa fa-minus-square-o"></i></a> ')) : "}" != $(this).text() && "]" != $(this).text() || $(this).addClass("structure-" + structureId--)
-        });
+        if(3 != this.iaData.template){
+          var braces = document.getElementsByClassName('sBrace');
+          var brackets = document.getElementsByClassName('sBracket');
+          for (collection of Array.prototype.concat.call(brackets, braces)) {
+            for(var i = 0; i < collection.length; i++){
+              var bra = collection[i];console.log(bra.innerHTML);
+              if("{" == bra.innerHTML || "[" == bra.innerHTML){
+                console.log('opening');
+                var classe = "structure-" + ++structureId;
+                bra.className = bra.className+" "+classe;
+                bra.innerHTML = bra.innerHTML+' <a href="javascript:;" onclick="fold('+classe+')"><i class="fa fa-minus-square-o"></i></a> '
+              }
+              else if ("}" == bra.innerHTML || "]" == bra.innerHTML) {
+                var classe = "structure-" + structureId--;
+                bra.className = bra.className+" "+classe;
+              }
+            }
+          }
+        }
+
+        // result.find(".json").find(".sBrace, .sBracket").each(function(i) {
+        //     "{" == $(this).text() || "[" == $(this).text() ?
+        //       (
+        //         $(this).addClass("structure-" + ++structureId),
+        //         $(this).append(' <a href="javascript:;"><i class="fa fa-minus-square-o"></i></a> ')
+        //       )
+        //     : "}" != $(this).text() && "]" != $(this).text() || $(this).addClass("structure-" + structureId--)
+        // });
     };
 
     /**
