@@ -1,13 +1,16 @@
-/**
- * This is your main app file. Please refer to the documentation for more information.
- */
-
-/**
- * If you need to import extra node_modules, use "npm install xxx --save" and place them there.
- */
-
 var Promise = require("bluebird");
 var _ = require('@qwant/front-i18n')._;
+var S = require('string');
+var request = require("request");
+
+var commonEntities = [
+    {char : "<", html : "&lt;"},
+    {char : ">", html : "&gt;"},
+    {char : '"', html : "&quot;"},
+    {char : "&", html : "&amp;"},
+    {char : "{", html : "%7B"},
+    {char : "}", html : "%7D"}
+];
 
 module.exports = {
 
@@ -28,8 +31,61 @@ module.exports = {
      */
 
     getData: function (values, proxyURL, language) {
+      console.log("===> BEAUTIFY("+values[1]+")");
         return new Promise(function (resolve, reject) {
-            resolve('Work in progress ;)');
+            S.extendPrototype();
+            var stringToBeautify = values[1];
+            commonEntities.forEach(function(entity) {
+              stringToBeautify = stringToBeautify.replace(entity.html, entity.char);
+            });
+            if(
+              (stringToBeautify.startsWith('{') && stringToBeautify.endsWith('}'))
+                ||
+              (stringToBeautify.startsWith('[') && stringToBeautify.endsWith(']'))
+            ){
+                var url = "https://jsonformatter.curiousconcept.com/process";
+                var standards = {
+                  RFC_4627: 1,
+                  RFC_7159: 2,
+                  ECMA_404: 3,
+                  DONT_VALIDATE: 0
+                }
+                var templates = {
+                  FOUR_SPACES : 0,
+                  THREE_SPACES : 1,
+                  TWO_SPACES : 2,
+                  COMPACT : 3,
+                };
+                var form = {
+                  jsondata:stringToBeautify,
+                  jsonstandard:standards.RFC_4627,
+                  jsontemplate:templates.TWO_SPACES
+                };
+                var requestParams = {
+                    url: url,
+                    timeout: 5*1000,
+                    form:form
+                };
+
+                 if (proxyURL !== '') {
+                     requestParams.proxy = proxyURL;
+                 }
+
+                 console.log("requestParams",requestParams);
+
+                 request.post(url, requestParams,function (error, response) {
+                   if(error){
+                     console.log("error",error);
+                     reject(error);
+                   }
+                   var json = JSON.parse(response.body);
+                   console.log("json.result",json.result);
+                   resolve(json.result);
+                 });
+            } else {
+              reject('unknown string format')
+            }
+            // S.restorePrototype();
         });
     },
 
@@ -38,7 +94,6 @@ module.exports = {
      * If your name needs to be translated, use this function getName().
      * @returns the tab name translated
      */
-
     getName: function () {
         return _("Beautify", "beautify");
     },
@@ -57,14 +112,14 @@ module.exports = {
      * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
      */
 
-    keyword: "({.+})",
+    keyword: "(({.+})|(\\[.+\\]))",
 
     /**
      * (OPTIONAL)
      * script : If your IA includes a script, place it under public/javascript/xxx.js and replace "hello" by "xxx".
      */
 
-    script: "beautify.js",
+    script: "beautify",
 
     /**
      * (NEEDED)
@@ -93,12 +148,14 @@ module.exports = {
      * timeout : Time before your response is considered as canceled (in milliseconds)
      */
 
-    timeout: 3600,
+    timeout: 10*1000,
 
     /**
      * (NEEDED)
      * cache : Duration of the data cached (in seconds)
      */
 
-    cache: 10800
+    cache: 200
+
+
 };

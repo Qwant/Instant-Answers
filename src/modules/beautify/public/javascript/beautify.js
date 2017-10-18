@@ -3,15 +3,24 @@
  */
 
 var IARuntime = function() {
+    var iaData = {};
+
     function Beautify (iaData) {
-        // constructor
+      this.iaData = iaData;
     }
 
     /**
      * runs at runtime
      */
     Beautify.prototype.run = function() {
-        // function that's gonna run at runtime
+        console.log('Beautify.run()');
+        console.log(this.iaData);
+        var structureId = 0;
+        var result = $(".ia__beautify .result");
+        3 != this.iaData.template && result.find(".json").find(".sBrace, .sBracket").each(function(i) {
+            "{" == $(this).text() || "[" == $(this).text() ? ($(this).addClass("structure-" + ++structureId),
+            $(this).append(' <a href="javascript:;"><i class="fa fa-minus-square-o"></i></a> ')) : "}" != $(this).text() && "]" != $(this).text() || $(this).addClass("structure-" + structureId--)
+        });
     };
 
     /**
