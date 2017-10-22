@@ -1,0 +1,39 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<!-- VENDOR -->
+<link rel="stylesheet" href="css/curiousconcept.style.3a7624a2.css">
+<script src="javascript/curiousconcept.script.e285c5fa.js" charset="utf-8"></script>
+<script src="javascript/jquery-3.2.1.min.js" charset="utf-8"></script>
+<!-- OWN -->
+<link rel="stylesheet" href="css/beautify.css" type="text/css">
+<script src="javascript/beautify.js"></script>
+
+<div class="ia__beautify">
+    <span class="ia__beautify__icon icon icon-md5"></span>
+    <span class="ia__beautify__result">
+      <div class="status {{? it.data.valid }}valid{{??}}invalid{{?}}">
+          {{? it.data.valid }}
+            JSON valid according to {{= it.data.jsonstandard }}
+          {{??}}
+            JSON ERROR according to {{= it.data.jsonstandard }}
+          {{?}}
+        </div>
+        <div class="results">
+          <div class="result">
+            {{? !it.data.valid }}
+              <ul class="errors">
+              {{ for(var error of it.data.errors) { }}
+                <li>
+                  Error : {{= error.message }} (code {{= error.code }}, element {{= error.element}})
+                </li>
+              {{ } }}
+              </ul>
+            {{?}}
+            <div class="json">
+              {{= it.data.json }}
+            </div>
+          </div>
+        </div>
+    </span>
+</div>
