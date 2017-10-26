@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="css/my_ip.css" type="text/css">
+
+<div class="ia__myip">
+    <span class="ia__myip__icon icon icon-md5"></span>
+    <span class="ia__myip__result">
+        {{= it.data.ip }}
+    </span>
+    <div class="ia__myip__description">
+        {{= it.data.city }},
+        {{= it.data.zip_code }},
+        <span class="ia__myip__description--query">
+            {{= it.data.country_name }}
+        </span><br/>
+        (lat {{= it.data.latitude }}, lng {{= it.data.longitude }})
+    </div>
+</div>
