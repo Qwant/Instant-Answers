@@ -4,7 +4,7 @@
     <span class="ia__calculator__icon icon icon-calc"></span>
     <div class="ia__calculator__container">
         <span class="ia__calculator__query">
-            {{= it.query }} <!-- prints the original query (ex: 2+2) -->
+            {{= it.query.toLowerCase() }} <!-- prints the original query (ex: 2+2) -->
         </span>
         <span class="ia__calculator__operator">
 			&nbsp;=&nbsp;

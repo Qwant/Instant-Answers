@@ -78,6 +78,7 @@ module.exports = {
             try {
                 var query = number + firstPrefix + firstConstant + " " + keyword + " " + resultPrefix + resultConstant;
                 var result = math.eval(query);
+                result = math.format(result, {precision: 14});
             } catch (e) {
                 reject("Your conversion isn't valid");
             }
@@ -114,13 +115,17 @@ module.exports = {
             firstFamily = firstFamily.charAt(0).toUpperCase() + firstFamily.slice(1);
             resultFamily = resultFamily.charAt(0).toUpperCase() + resultFamily.slice(1);
 
+            var numberFormatReturn = math.eval(number);
+
             resolve({
-                number: number,
+                number: numberFormatReturn,
                 firstUnit: firstUnit,
                 firstFamily: firstFamily,
                 resultUnit: resultUnit,
                 resultFamily: resultFamily,
-                result: result
+                result: {
+                    value: result.toString().replace(' ' + resultUnit, '')
+                }
             });
         });
     },

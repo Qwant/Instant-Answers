@@ -14,8 +14,8 @@
 		}
 
 		function temp(temperature, isPrimary, unit) {
-			if(typeof temperature === 'undefined') {
-				return "";
+			if(isNaN(temperature)) {
+				return 'N/A'
 			}
             var isFahrenheit = applicationState.user.userSetting.searchRegionKey === "US";
 			if((isPrimary && !isFahrenheit) || (!isPrimary && isFahrenheit)) {
@@ -27,6 +27,11 @@
 			}
 			return Math.round(temperature) + '<span class="ia-weather-temperature--deg">&deg;</span><span class="ia-weather-temperature--unit">' + unit + '</span>';
 		}
+
+        function dateDay(dateTime) {
+    	    var date = new Date(dateTime);
+    	    return i18n['date'].dayNames[date.getDay()];
+        }
 	}}
 	<div class="ia-weather-current-container">
 		<div class="ia-weather-current">
@@ -37,7 +42,7 @@
 			<div class="ia-weather-localisation" title="{{= localisation.city }} {{= localisation.country.toUpperCase() }}">
 				{{= localisation.city }}, {{= localisation.country.toUpperCase() }}
 			</div>
-			{{ var dayName = strftime("%A", date, i18n['date']); }}
+			{{ var dayName = dateDay(date); }}
 			{{ dayName = dayName.charAt(0).toUpperCase() + dayName.slice(1); }}
 			<p class="ia-weather-date-day">
 				{{= dayName }} {{= strftime(i18n.date.longFormat, date, i18n['date']) }}
@@ -103,7 +108,7 @@
 							</span>
 						{{??}}
 							<span class="ia-weather-forecast-container--forecast">
-								{{= strftime("%A", new Date(forecast.date * 1000), i18n['date']).toUpperCase() }}
+								{{= dateDay(forecast.date * 1000).toUpperCase() }}
 							</span>
 						{{?}}
 						<div class="ia-weather-pic--forecast ia-weather-pic-{{? forecast.weather.iconId }}{{= forecast.weather.iconId.substring(0,2) }}{{??}}none{{?}}" title="{{? forecast.weather.status }}{{= forecast.weather.status }}{{?}}"></div>
@@ -124,7 +129,7 @@
 				{{~ it.data.forecastFive:forecast:index }}
 					<tr class="ia-weather-forecast-five-snapshot--{{= index % 2 == 0 ? 'even' : 'odd' }}">
 						<td class="ia-weather-forecast-five-snapshot-day">
-							{{= strftime("%A", new Date(forecast.date * 1000), i18n['date']).toUpperCase().substring(0,2) }}
+							{{= dateDay(forecast.date * 1000).toUpperCase().substring(0,2) }}
 						</td>
 						<td class="ia-weather-forecast-five-snapshot-pictogram">
 							<div class="ia-weather-pic--snapshot ia-weather-pic-{{? forecast.weather.iconId }}{{= forecast.weather.iconId.substring(0,2) }}{{??}}none{{?}}"></div>
@@ -149,7 +154,7 @@
 				{{~ it.data.forecastFive:forecast:index }}
 					<td class="ia-weather-forecast-five-snapshot-day--mobile" style="background:rgba(0,5,10,{{= 0.03 - (0.03/(index+1)) }});">
 						<p>
-							{{= strftime("%A", new Date(forecast.date * 1000), i18n['date']).toUpperCase().substring(0,2) }}
+							{{= dateDay(forecast.date * 1000).toUpperCase().substring(0,2) }}
 						</p>
 						<div class="ia-weather-pic--forecast ia-weather-pic-{{= forecast.weather.iconId.substring(0,2) }}" title="{{= forecast.weather.status }}"></div>
 

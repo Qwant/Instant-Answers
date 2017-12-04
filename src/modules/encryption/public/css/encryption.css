@@ -2,7 +2,8 @@
 
 .ia__encryption {
     padding: 30px 32px 40px;
-    border-top: 1px solid rgba(122,124,126,0.16);
+    background: #F8F9FA;
+	border-top: 1px solid rgba(122,124,126,0.16);
 }
 
 .ia__encryption__icon {
@@ -79,7 +80,6 @@
 }
 
 /** Mobile **/
-
 @media (max-width: 640px) {
 
     .ia_container-web_desktop .ia__encryption {

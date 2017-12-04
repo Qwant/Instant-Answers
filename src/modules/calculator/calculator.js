@@ -23,7 +23,7 @@ module.exports = {
     getData: function (values) {
         return new Promise(function (resolve, reject) {
             if(!isNaN(values[0])) {
-                reject("Don't allow function identity");
+                reject("Don't allow function identity", {module : "calculator"});
             } else {
                 values[0] = values[0].toLowerCase();
                 values[0] = values[0].replace("×","*");
@@ -31,6 +31,9 @@ module.exports = {
                 try {
                     var response = math.eval(values[0]);
                     response = math.format(response, {precision: 14});
+                    if(response === 'function') {
+                        reject("The query is poorly formulated", {module : "calculator"});
+                    }
                     if (response['signatures']) {
                         resolve(0);
                     } else {
@@ -41,7 +44,7 @@ module.exports = {
                         }
                     }
                 } catch (e) {
-                    reject("Your formula isn't valid");
+                    reject("Your formula isn't valid", {module : "calculator"});
                 }
             }
         });

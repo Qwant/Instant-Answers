@@ -10,8 +10,9 @@ module.exports = function(weatherResponse, openWeatherRawResponseForecast, city)
     
     /* current weather forecast */
     var currentWeather = new Forecast(weatherResponse);
+
     currentWeather.temperatures = {
-        current : weatherResponse.main.temp
+        current : (typeof weatherResponse.main.temp === 'undefined') ? 'N/A' : weatherResponse.main.temp
     };
 
     var localisation = { city : city.name, country : city.country };
@@ -114,7 +115,7 @@ module.exports = function(weatherResponse, openWeatherRawResponseForecast, city)
     });
 
     forecastFive = forecastFive.map(function(forecast,index) {
-        var minTemperature,maxTemperature = 0;
+        var minTemperature,maxTemperature = 'N/A';
 
         if(minTemperatures[index]) {
             minTemperature = minTemperatures[index].t;
@@ -125,7 +126,7 @@ module.exports = function(weatherResponse, openWeatherRawResponseForecast, city)
         }
 
         forecast.temperatures = {min : minTemperature, max : maxTemperature};
-        return forecast
+        return forecast;
     });
 
     return { localisation : localisation, currentWeather : currentWeather, forecastFive : forecastFive };

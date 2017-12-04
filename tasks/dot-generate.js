@@ -39,7 +39,7 @@ module.exports = function (grunt, gruntDotItem) {
                                 tempFile = tempFile.replace(file, "<style>" + grunt.file.read(sourcePath) + "</style>");
                             });
                         }
-                        var translationPattern = /_\(\s*(?:"|')(?:\w|\s|-|'|_)+(?:"|')\s*,\s*(?:"|')(?:\w|\s|-|'|_)+(?:"|')\s*\)/g;
+                        var translationPattern = /_\(\s*(?:"|')(?:\w|:|\?|,|;|!|\s|-|'|_)+(?:"|')\s*,\s*(?:"|')(?:\w|:|\?|,|;|!|\s|-|'|_)+(?:"|')\s*\)/g;
                         var translations = tempFile.match(translationPattern);
                         Object.keys(languageList).forEach(function(key){
                             var language = languageList[key];

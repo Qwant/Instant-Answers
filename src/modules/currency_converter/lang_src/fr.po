@@ -1,0 +1,555 @@
+#
+# This is your fr_fr language file. Please refer to the documentation for more information.
+#
+
+msgctxt "currency_converter"
+msgid "Currency converter"
+msgstr "Convertisseur de monnaie"
+
+msgctxt "currency_converter"
+msgid "Last update:"
+msgstr "Dernière mise à jour :"
+
+msgctxt "currency_converter"
+msgid "Other possible conversions:"
+msgstr "Autres conversions possibles :"
+
+msgctxt "currency_converter"
+msgid "dollars?"
+msgstr "dollars?"
+
+msgctxt "currency_converter"
+msgid "american dollars?"
+msgstr "dollars? américains?"
+
+msgctxt "currency_converter"
+msgid "canadian dollars?"
+msgstr "dollars? canadiens?"
+
+msgctxt "currency_converter"
+msgid "australian dollars?"
+msgstr "dollars? australiens?"
+
+msgctxt "currency_converter"
+msgid "new zealand dollars?"
+msgstr "dollars? n(?:é|e)o(?:-|\s)?zélandais"
+
+msgctxt "currency_converter"
+msgid "mexican pesos?"
+msgstr "pesos? m(?:é|e)xicains?"
+
+msgctxt "currency_converter"
+msgid "hong kong dollars?"
+msgstr "dollars? hong(?:-|\s)?kongais"
+
+msgctxt "currency_converter"
+msgid "brazilian reals?"
+msgstr "r(?:é|e)als? br(?:é|e)siliens?"
+
+msgctxt "currency_converter"
+msgid "reals?"
+msgstr "r(?:é|e)als?"
+
+msgctxt "currency_converter"
+msgid "bulgarian levs?"
+msgstr "levs? bulgares?"
+
+msgctxt "currency_converter"
+msgid "levs?"
+msgstr "levs?"
+
+msgctxt "currency_converter"
+msgid "swiss francs?"
+msgstr "francs? suisses?"
+
+msgctxt "currency_converter"
+msgid "japanese yens?"
+msgstr "yens? japonais"
+
+msgctxt "currency_converter"
+msgid "yens?"
+msgstr "yens?"
+
+msgctxt "currency_converter"
+msgid "chinese yuans?"
+msgstr "yuans? chinois"
+
+msgctxt "currency_converter"
+msgid "chinese renminbis?"
+msgstr "renminbis? chinois"
+
+msgctxt "currency_converter"
+msgid "yuans?"
+msgstr "yuans?"
+
+msgctxt "currency_converter"
+msgid "renminbis?"
+msgstr "renminbis?"
+
+msgctxt "currency_converter"
+msgid "danish krones?"
+msgstr "couron{1,2}es? danoises?"
+
+msgctxt "currency_converter"
+msgid "danish crowns?"
+msgstr "couron{1,2}es? danoises?"
+
+msgctxt "currency_converter"
+msgid "krones?"
+msgstr "couron{1,2}es?"
+
+msgctxt "currency_converter"
+msgid "swedish kronas?"
+msgstr "couron{1,2}es? su(?:é|e)doises?"
+
+msgctxt "currency_converter"
+msgid "swedish kronors?"
+msgstr "couron{1,2}es? su(?:é|e)doises?"
+
+msgctxt "currency_converter"
+msgid "kronors?"
+msgstr "couron{1,2}es?"
+
+msgctxt "currency_converter"
+msgid "kronas?"
+msgstr "couro{1,2}nes?"
+
+msgctxt "currency_converter"
+msgid "swedish crowns?"
+msgstr "couron{1,2}es? su(?:é|e)doises?"
+
+msgctxt "currency_converter"
+msgid "norwegian krones?"
+msgstr "couron{1,2}es? norv(?:é|e)giennes?"
+
+msgctxt "currency_converter"
+msgid "norwegian crowns?"
+msgstr "couron{1,2}es? norv(?:é|e)gien{1,2}es?"
+
+msgctxt "currency_converter"
+msgid "croatian kunas?"
+msgstr "kunas? croates?"
+
+msgctxt "currency_converter"
+msgid "kunas?"
+msgstr "kunas?"
+
+msgctxt "currency_converter"
+msgid "czech korunas?"
+msgstr "couron{1,2}es? tchèques?"
+
+msgctxt "currency_converter"
+msgid "czech crowns?"
+msgstr "couron{1,2}es? tchéques?"
+
+msgctxt "currency_converter"
+msgid "korunas?"
+msgstr "couron{1,2}es?"
+
+msgctxt "currency_converter"
+msgid "euros?"
+msgstr "euros?"
+
+msgctxt "currency_converter"
+msgid "british pounds?"
+msgstr "livres? sterlings?"
+
+msgctxt "currency_converter"
+msgid "pounds?"
+msgstr "livres?"
+
+msgctxt "currency_converter"
+msgid "pounds? sterlings?"
+msgstr "livres? sterlings?"
+
+msgctxt "currency_converter"
+msgid "sterlings?"
+msgstr "sterlings?"
+
+msgctxt "currency_converter"
+msgid "hungarian forints?"
+msgstr "forints? hongrois"
+
+msgctxt "currency_converter"
+msgid "forints?"
+msgstr "forints?"
+
+msgctxt "currency_converter"
+msgid "indonesian rupiahs?"
+msgstr "roup{1,2}ies? indon(?:é|e)sien{1,2}es?"
+
+msgctxt "currency_converter"
+msgid "rupiahs?"
+msgstr "roup{1,2}ies?"
+
+msgctxt "currency_converter"
+msgid "israeli shekels?"
+msgstr "shekels? isra(?:é|e)liens?"
+
+msgctxt "currency_converter"
+msgid "shekels?"
+msgstr "shekels?"
+
+msgctxt "currency_converter"
+msgid "indian rupees?"
+msgstr "roup{1,2}ies? indien{1,2}es?"
+
+msgctxt "currency_converter"
+msgid "rupees?"
+msgstr "rouppies?"
+
+msgctxt "currency_converter"
+msgid "south korean wons?"
+msgstr "wons? sud(?:-|\s)?cor(é|e)ns?"
+
+msgctxt "currency_converter"
+msgid "korean wons?"
+msgstr "wons? cor(?:é|e)ns?"
+
+msgctxt "currency_converter"
+msgid "wons?"
+msgstr "wons?"
+
+msgctxt "currency_converter"
+msgid "malaysian ring{1,2}its?"
+msgstr "ring{1,2}its? malais"
+
+msgctxt "currency_converter"
+msgid "ring{1,2}its?"
+msgstr "ring{1,2}its?"
+
+msgctxt "currency_converter"
+msgid "philippine pesos?"
+msgstr "pesos? philippins?"
+
+msgctxt "currency_converter"
+msgid "pesos?"
+msgstr "pesos?"
+
+msgctxt "currency_converter"
+msgid "polish z(?:l|ł)otys?"
+msgstr "z(?:l|ł)otys? polonais"
+
+msgctxt "currency_converter"
+msgid "z(?:l|ł)otys?"
+msgstr "z(?:l|ł)otys?"
+
+msgctxt "currency_converter"
+msgid "romanian leus?"
+msgstr "leus? roumains?"
+
+msgctxt "currency_converter"
+msgid "leus?"
+msgstr "leus?"
+
+msgctxt "currency_converter"
+msgid "russian rubles?"
+msgstr "roubles? russes?"
+
+msgctxt "currency_converter"
+msgid "rubles?"
+msgstr "roubles?"
+
+msgctxt "currency_converter"
+msgid "sudanese pounds?"
+msgstr "livres? soudanaises?"
+
+msgctxt "currency_converter"
+msgid "thai bahts?"
+msgstr "bahts? tha(?:i|ï)landais?"
+
+msgctxt "currency_converter"
+msgid "bahts?"
+msgstr "bahts?"
+
+msgctxt "currency_converter"
+msgid "turkish liras?"
+msgstr "livres? (?:turques?|turcs?)?"
+
+msgctxt "currency_converter"
+msgid "liras?"
+msgstr "livres?"
+
+msgctxt "currency_converter"
+msgid "south african rands?"
+msgstr "rands? sud(?:-|\s)?africains?"
+
+msgctxt "currency_converter"
+msgid "rands?"
+msgstr "rands?"
+
+msgctxt "currency_converter"
+msgid "US Dollar"
+msgstr "Dollar américain"
+
+msgctxt "currency_converter"
+msgid "Canadian Dollar"
+msgstr "Dollar canadien"
+
+msgctxt "currency_converter"
+msgid "Australian Dollar"
+msgstr "Dollar australien"
+
+msgctxt "currency_converter"
+msgid "New Zealand Dollar"
+msgstr "Dollar néo-zélandais"
+
+msgctxt "currency_converter"
+msgid "Mexican Peso"
+msgstr "Peso méxicain"
+
+msgctxt "currency_converter"
+msgid "Hong Kong Dollar"
+msgstr "Dollar hongkongais"
+
+msgctxt "currency_converter"
+msgid "Brazilian Real"
+msgstr "Réal brésilien"
+
+msgctxt "currency_converter"
+msgid "Bulgarian Lev"
+msgstr "Lev bulgare"
+
+msgctxt "currency_converter"
+msgid "Swiss Franc"
+msgstr "Franc suisse"
+
+msgctxt "currency_converter"
+msgid "Japanese Yen"
+msgstr "Yen japonais"
+
+msgctxt "currency_converter"
+msgid "Chinese Yuan"
+msgstr "Yuan chinois"
+
+msgctxt "currency_converter"
+msgid "Danish Krone"
+msgstr "Couronne danoise"
+
+msgctxt "currency_converter"
+msgid "Swedish Krona"
+msgstr "Couronne suédoise"
+
+msgctxt "currency_converter"
+msgid "Norwegian Krone"
+msgstr "Couronne norvégienne"
+
+msgctxt "currency_converter"
+msgid "Croatian Kuna"
+msgstr "Kuna croate"
+
+msgctxt "currency_converter"
+msgid "Czech Koruna"
+msgstr "Couronne tchèque"
+
+msgctxt "currency_converter"
+msgid "Euro"
+msgstr "Euro"
+
+msgctxt "currency_converter"
+msgid "British Pound"
+msgstr "Livre sterling"
+
+msgctxt "currency_converter"
+msgid "Hungarian Forint"
+msgstr "Forint hongrois"
+
+msgctxt "currency_converter"
+msgid "Indonesian Rupiah"
+msgstr "Roupie indonésienne"
+
+msgctxt "currency_converter"
+msgid "Israeli Shekel"
+msgstr "Shekel israélien"
+
+msgctxt "currency_converter"
+msgid "Indian Rupee"
+msgstr "Roupie indienne"
+
+msgctxt "currency_converter"
+msgid "South Korean Won"
+msgstr "Won sud-coréen"
+
+msgctxt "currency_converter"
+msgid "Malaysian Ringgit"
+msgstr "Ringgit malais"
+
+msgctxt "currency_converter"
+msgid "Philippine Peso"
+msgstr "Peso philippin"
+
+msgctxt "currency_converter"
+msgid "Polish Złoty"
+msgstr "Złoty polonais"
+
+msgctxt "currency_converter"
+msgid "Romanian Leu"
+msgstr "Leu roumain"
+
+msgctxt "currency_converter"
+msgid "Russian Ruble"
+msgstr "Rouble russe"
+
+msgctxt "currency_converter"
+msgid "Sudanese Pound"
+msgstr "Livre soudanaise"
+
+msgctxt "currency_converter"
+msgid "Thai Baht"
+msgstr "Baht thaïlandais"
+
+msgctxt "currency_converter"
+msgid "Turkish Lira"
+msgstr "Livre turque"
+
+msgctxt "currency_converter"
+msgid "South African Rand"
+msgstr "Rand sud-africain"
+
+msgctxt "currency_converter"
+msgid "US Dollars"
+msgstr "Dollars américains"
+
+msgctxt "currency_converter"
+msgid "Canadian Dollars"
+msgstr "Dollars canadiens"
+
+msgctxt "currency_converter"
+msgid "Australian Dollars"
+msgstr "Dollars australiens"
+
+msgctxt "currency_converter"
+msgid "New Zealand Dollars"
+msgstr "Dollars néo-zélandais"
+
+msgctxt "currency_converter"
+msgid "Mexican Pesos"
+msgstr "Pesos méxicains"
+
+msgctxt "currency_converter"
+msgid "Hong Kong Dollars"
+msgstr "Dollars hongkongais"
+
+msgctxt "currency_converter"
+msgid "Brazilian Reals"
+msgstr "Réals brésiliens"
+
+msgctxt "currency_converter"
+msgid "Bulgarian Levs"
+msgstr "Levs bulgares"
+
+msgctxt "currency_converter"
+msgid "Swiss Francs"
+msgstr "Francs suisses"
+
+msgctxt "currency_converter"
+msgid "Japanese Yens"
+msgstr "Yens japonais"
+
+msgctxt "currency_converter"
+msgid "Chinese Yuans"
+msgstr "Yuans chinois"
+
+msgctxt "currency_converter"
+msgid "Danish Krones"
+msgstr "Couronnes danoises"
+
+msgctxt "currency_converter"
+msgid "Swedish Kronas"
+msgstr "Couronnes suédoises"
+
+msgctxt "currency_converter"
+msgid "Norwegian Krones"
+msgstr "Couronnes norvégiennes"
+
+msgctxt "currency_converter"
+msgid "Croatian Kunas"
+msgstr "Kunas croates"
+
+msgctxt "currency_converter"
+msgid "Czech Korunas"
+msgstr "Couronnes tchèques"
+
+msgctxt "currency_converter"
+msgid "Euros"
+msgstr "Euros"
+
+msgctxt "currency_converter"
+msgid "British Pounds"
+msgstr "Livres sterling"
+
+msgctxt "currency_converter"
+msgid "Hungarian Forints"
+msgstr "Forints hongrois"
+
+msgctxt "currency_converter"
+msgid "Indonesian Rupiahs"
+msgstr "Roupies indonésiennes"
+
+msgctxt "currency_converter"
+msgid "Israeli Shekels"
+msgstr "Shekels israéliens"
+
+msgctxt "currency_converter"
+msgid "Indian Rupees"
+msgstr "Roupies indiennes"
+
+msgctxt "currency_converter"
+msgid "South Korean Wons"
+msgstr "Wons sud-coréens"
+
+msgctxt "currency_converter"
+msgid "Malaysian Ringgits"
+msgstr "Ringgits malais"
+
+msgctxt "currency_converter"
+msgid "Philippine Pesos"
+msgstr "Pesos philippins"
+
+msgctxt "currency_converter"
+msgid "Polish Złotys"
+msgstr "Złotys polonais"
+
+msgctxt "currency_converter"
+msgid "Romanian Leus"
+msgstr "Leus roumains"
+
+msgctxt "currency_converter"
+msgid "Russian Rubles"
+msgstr "Roubles russes"
+
+msgctxt "currency_converter"
+msgid "Sudanese Pounds"
+msgstr "Livres soudanaises"
+
+msgctxt "currency_converter"
+msgid "Thai Bahts"
+msgstr "Bahts thaïlandais"
+
+msgctxt "currency_converter"
+msgid "Turkish Liras"
+msgstr "Livres turques"
+
+msgctxt "currency_converter"
+msgid "South African Rands"
+msgstr "Rands sud-africains"
+
+msgctxt "currency_converter"
+msgid "See more"
+msgstr "Voir plus"
+
+msgctxt "currency_converter"
+msgid "See less"
+msgstr "Voir moins"
+
+msgctxt "currency_converter"
+msgid "Disclaimer"
+msgstr "Clause de non-responsabilité"
+
+msgctxt "currency_converter"
+msgid "in|to|for"
+msgstr "en|pour"
+
+msgctxt "currency_converter"
+msgid "help_link_currency-converter"
+msgstr "https://help.qwant.com/fr/aide/qwant-com/reponses-instantanees/convertisseur-de-monnaie/"

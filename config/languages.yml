@@ -55,3 +55,33 @@ languages:
     match: es
     files:
     - es.po
+  it_it:
+    name: Italian
+    code: it_it
+    match: it
+    files:
+    - it.po
+  nl_nl:
+    name: Dutch
+    code: nl_nl
+    match: nl
+    files:
+    - nl.po
+  ru_ru:
+    name: Russian
+    code: ru_ru
+    match: ru
+    files:
+    - ru.po
+  pl_pl:
+    name: Polish
+    code: pl_pl
+    match: pl
+    files:
+    - pl.po
+  pt_pt:
+    name: Portuguese
+    code: pt_pt
+    match: pt
+    files:
+    - pt.po

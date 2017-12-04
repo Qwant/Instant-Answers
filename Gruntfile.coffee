@@ -33,7 +33,7 @@ module.exports = (grunt, options) ->
   grunt.initConfig
 
     'clean':
-      'config': ['config/**/*.json'],
+      'config': ['config/**/*.json', '!config/blacklistAPIs.json'],
       'tmp': ['tmp/'],
       'i18n': ['tmp/po-json', 'public/js/lang/*.js', 'lang/'],
       'po_js': ['lang_src/*.po'],
@@ -156,6 +156,11 @@ module.exports = (grunt, options) ->
           'lang_src/eu.po': ['lang_src/common/eu.po', 'src/modules/**/lang_src/eu.po']
           'lang_src/ca.po': ['lang_src/common/ca.po', 'src/modules/**/lang_src/ca.po']
           'lang_src/es.po': ['lang_src/common/es.po', 'src/modules/**/lang_src/es.po']
+          'lang_src/it.po': ['lang_src/common/it.po', 'src/modules/**/lang_src/it.po']
+          'lang_src/nl.po': ['lang_src/common/nl.po', 'src/modules/**/lang_src/nl.po']
+          'lang_src/ru.po': ['lang_src/common/ru.po', 'src/modules/**/lang_src/ru.po']
+          'lang_src/pl.po': ['lang_src/common/pl.po', 'src/modules/**/lang_src/pl.po']
+          'lang_src/pt.po': ['lang_src/common/pt.po', 'src/modules/**/lang_src/pt.po']
     'watch' : {
       files: ['./src/modules/**/*.*'],
       tasks: ['build']

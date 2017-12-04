@@ -8,6 +8,9 @@ tmp/
 #php storm local config
 .idea/
 
+#IntelliJ local config
+*.iml
+
 #node modules & task generated files
 node_modules/
 dist/
@@ -15,6 +18,7 @@ lang/
 
 #config
 config/*.json
+!config/blacklistAPIs.json
 
 DISTS/*
 npm-debug.log*
