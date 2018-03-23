@@ -20,7 +20,6 @@
     "express-dot-engine": "1.0.7",
     "fast-csv": "2.4.1",
     "folder-hash": "1.1.2",
-    "fs": "0.0.1-security",
     "get-folder-size": "1.0.1",
     "glob": "7.1.2",
     "inquirer": "5.1.0",
