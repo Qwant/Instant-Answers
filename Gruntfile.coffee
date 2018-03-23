@@ -37,7 +37,7 @@ module.exports = (grunt, options) ->
       'tmp': ['tmp/'],
       'i18n': ['tmp/po-json', 'public/js/lang/*.js', 'lang/'],
       'po_js': ['lang_src/*.po'],
-      'dist': ['dist/**/**'],
+      'dist': ['dist/**/**', 'src/modules/**/public/css/*.css'],
       'grunt': ['Gruntfile.js', 'Gruntfile.js.map']
 
     'coffee':
@@ -90,9 +90,9 @@ module.exports = (grunt, options) ->
 
         patterns: [
           {
-            # [[ 'config/example.yml:foo:bar' ]]
-            # [[ 'config/example.yml:foo:bar: day=night' ]]
-            # [[ 'config/example.yml:foo:bar: day=night, low=high' ]]
+# [[ 'config/example.yml:foo:bar' ]]
+# [[ 'config/example.yml:foo:bar: day=night' ]]
+# [[ 'config/example.yml:foo:bar: day=night, low=high' ]]
             match: /\[\[\s*(["'])([\w.\/_ @?+:-]+ya?ml):([^\s:,'"](?:[^\s:,'"]|:[^\s:,'"])+)(?::\s([^'"]+))?\1\s*]]/g
             replacement: (match, quote, filename, symbol, patterns) ->
               data = YAML_extract(filename, symbol)
@@ -106,7 +106,7 @@ module.exports = (grunt, options) ->
                 return JSON.stringify(data)
           },
           {
-            # "/path/to/example.css?<checksum>"
+# "/path/to/example.css?<checksum>"
             match: /([\w/.\\_+-][\w/.\\_\s+@-]*)\?<(checksum)>/g
             replacement: (match, filename, checksum) ->
 
@@ -133,7 +133,7 @@ module.exports = (grunt, options) ->
                 return replace(cwd, path.join(cwd, filename))
           },
           {
-            # Header
+# Header
             match: /(###|\/\*|<!--) Build using grunt.* (###|\*\/|-->)/
             replacement: (_, prefix, suffix) -> "#{prefix} Generated from \"#{@file.src}\" using grunt #{@nameArgs} #{suffix}"
           }
@@ -142,6 +142,19 @@ module.exports = (grunt, options) ->
       'config':files:
         'config/languages.json': 'config/languages.json'
         'config/app.json': 'config/app.json'
+
+    'sass':
+      dist:
+        options: {
+          style: 'expanded'
+        },
+        files: [{
+          expand: true,
+          cwd: 'src/modules',
+          src: ['**/*.scss'],
+          dest: 'src/modules',
+          ext: '.css',
+        }]
 
     'dot': gruntDotItem,
     'copy': gruntCopyFiles,
@@ -198,9 +211,10 @@ module.exports = (grunt, options) ->
   grunt.registerTask 'default',             ['build']
   grunt.registerTask 'transpile',           ['coffee:Gruntfile']
   grunt.registerTask 'build:i18n',          ['clean:i18n', 'concat', 'po_js', 'clean:po_js']
-  grunt.registerTask 'build',               ['clean:dist', 'transpile', 'build:config', 'build:i18n', 'build:templates.js']
+  grunt.registerTask 'build',               ['clean:dist', 'transpile', 'build:sass', 'build:config', 'build:i18n', 'build:templates.js']
   grunt.registerTask 'build:config',        ['clean:config', 'yaml2json:config', 'preprocess:config']
   grunt.registerTask 'build:templates.js',  ['dot-generate', 'dot', 'js-generate', 'images-generate', 'copy', 'clean:tmp']
+  grunt.registerTask 'build:sass',          ['sass']
 
   grunt.registerMultiTask 'preprocess', ->
     log = if grunt.option('verbose') then grunt.log.writeln else pass

@@ -13,29 +13,29 @@ config.import('weather');
 config.import('app');
 
 Object.keys(config).forEach(function(elem) {
-	config_set(elem, config[elem]);
+    config_set(elem, config[elem]);
 });
 
 const excludedIAList = config_get('app.qwant-ia.excludedIA');
 
 describe('Integrity', function() {
 
-	describe('Require time', function () {
-		describe(`Require time`, function() {
-			modules.forEach((module) => {
-				if (excludedIAList.indexOf(module) == -1) {
-					this.timeout(REQUIRE_TIMEOUT);
-					it(`Module ${module} takes less than ${REQUIRE_TIMEOUT} ms to be required`, function () {
-						require(`../src/modules/${module}/${module}`);
-					})
-				}
-			})
+    describe('Require time', function () {
+        describe(`Require time`, function() {
+            modules.forEach((module) => {
+                if (excludedIAList.indexOf(module) == -1) {
+                this.timeout(REQUIRE_TIMEOUT);
+                it(`Module ${module} takes less than ${REQUIRE_TIMEOUT} ms to be required`, function () {
+                    require(`../src/modules/${module}/${module}`);
+                })
+            }
+        })
 
-		})
-	});
+        })
+    });
 
-	describe('Module size', function () {
-		modules.forEach(function (module) {
+    describe('Module size', function () {
+        modules.forEach(function (module) {
             if (excludedIAList.indexOf(module) == -1) {
                 it(`Module ${module} directory is less than 1 mo`, function (done) {
                     let moduleFolderPath = path.join(__dirname, '..', 'src', 'modules', module);
@@ -45,7 +45,7 @@ describe('Integrity', function() {
                     })
                 })
             }
-		})
+        })
 
-	});
+    });
 });
