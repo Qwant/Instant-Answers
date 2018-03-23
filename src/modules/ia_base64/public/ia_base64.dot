@@ -1,0 +1,18 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/ia_base64.css" type="text/css">
+<script src="javascript/script.js"></script>
+<div class="ia__encryption">
+    <span class="ia__encryption__icon icon icon-md5"></span>
+    <span class="ia__encryption__result">
+        {{= it.data.result }}
+    </span>
+    <div class="ia__encryption__description">
+            {{= _("Hash","encryption") }}&nbsp;BASE64 :&nbsp;
+            <span class="ia__encryption__description--query">
+    			{{! it.data.query }}
+    		</span>
+        </div>
+</div>
+
