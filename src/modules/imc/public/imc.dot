@@ -1,0 +1,10 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/imc.css" type="text/css">
+
+<div class="IA-IMC">
+    <div class="result">{{= it.data.IMC}}</div>
+    <span class="text">d'après l'OMS vous êtes en</span>
+    <div class="result_oms">{{= it.data.OMS}}</div>
+</div>

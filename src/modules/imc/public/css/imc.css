@@ -1,0 +1,23 @@
+/**
+* This is your main CSS file. Please refer to the documentation for more information.
+*/
+.IA-IMC{
+    padding:20px 0px 0px 50px;
+    font-family: 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+    letter-spacing: -0.02em;
+    background-color: #F8F9FA;
+    height: 180px;
+}
+.result{
+    font-size: 50px;
+    font-weight: bold;
+
+}
+.text{
+    font-size: 15px;
+    font-weight: lighter;
+}
+.result_oms{
+    font-size: 25px;
+    font-weight: lighter;
+}
