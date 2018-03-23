@@ -1,0 +1,9 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/searchweek.css" type="text/css">
+<script src="javascript/script.js"></script>
+<div id="case" class="style_case">
+    <div id="result" class="style_result">{{= it.data.result}}</div>
+    <div id="current_date" class="style_currentdate">{{= it.data.today}}</div>
+</div>
