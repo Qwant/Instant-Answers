@@ -1,0 +1,166 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/addqwant.css" type="text/css">
+<script src="javascript/script.js"></script>
+<div id="main_box" class="style_main_box">
+    <div id="buttons" class="style_buttons">
+
+        <ul id="list_Navigator" class="style_list_navigator">
+            <li id="extension" class="navigator_style_on" >Add extension Qwant</li>
+            <li id="home" class="navigator_style_off" >Qwant as homepage</li>
+            <li id="add_default" class="navigator_style_off" >Qwant by default</li>
+        </ul>
+    </div>
+    <div id="main_content" class="style_main_content">
+    {{var OSName="Unknown OS";}}
+    {{if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";}}
+    {{if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";}}
+    {{if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";}}
+    {{if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";}}
+
+    {{var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;}}
+
+
+    {{var isFirefox = typeof InstallTrigger !== 'undefined';}}
+
+
+    {{ var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification));}}
+
+
+    {{var isIE = /*@cc_on!@*/false || !!document.documentMode;}}
+
+
+    {{var isEdge = !isIE && !!window.StyleMedia;}}
+
+
+    {{var isChrome = !!window.chrome && !!window.chrome.webstore;}}
+
+
+    {{var isBlink = (isChrome || isOpera) && !!window.CSS;}}
+    {{var data = it.data.data;}}
+    {{? isOpera === true}}
+        <div id="caddextension">
+            <p>The Qwant extension compliments your search experience with added and more detailed information. It is also a shortcut to your favorite search engine.
+            Installing the extension couldn’t be easier! <a href="https://addons.opera.com/en/extensions/details/qwant-for-opera/">Go to the Qwant page in Opera Add-ons to download it here.</a><br /><br />
+            Once installed, you will find the Qwant extension on the right side of the address bar. This shortcut enables you to quickly search with Qwant while also keeping your usual search engine.</p>
+        </div>
+        <div id="caddhome">
+            <p>Click on the Opera Settings icon in the top-left corner of the window and click on “Settings”. A new window will open
+            Click on the blue link “Set pages” under the “On startup” section.
+            Then type “https://www.qwant.com/” in the field. Click on OK to save changes.
+            Qwant will open by default the next time you launch Opera.</p>
+        </div>
+        <div id="cadddefault">
+            <p>Unfortunately, for now your browser does not allow to put Qwant by default </p>
+        </div>
+    {{?? isFirefox === true}}
+        <div id="caddextension">
+           <p>The Qwant extension makes it easy to turn Firefox Tracking Protection to protect your privacy as you browse the Web and to let websites know you do not want to be tracked. To do so, simply activate the “Tracking Protection”.<br /><br />
+           Use Qwant as the default search engine and easily protect you from tracking. Go to the Qwant for Firefox  <a href="https://addons.mozilla.org/fr/firefox/addon/qwantcom-for-firefox/">extension page in the Firefox Add-ons to download it.</a>
+        </div>
+        <div id="caddhome">
+            <p>Click on the top right icon of the menu, then select “Options”. A new window will open.In the top menu, click on the “General” button (it looks like a power switch!).<br /><br />
+            Open the drop-down menu “When Firefox starts:”, then select “Show my home page”.
+            Type “https://www.qwant.com/” in the “Home Page” field.<br />
+            Qwant will open by default upon the next launch of Firefox</p>
+
+        </div>
+        <div id="cadddefault">
+            <p>You can click <span id="addqwantF" class="addqwantF_style">here</span> to add qwant by default.
+            Or go to <a href="https://www.qwant.com/">https://www.qwant.com/.</a>.
+            Click on the magnifying glass in the search bar of the toolbar, then click “Change Search settings” and select Qwant from the list of default search engines.<br /><br />
+            Qwant is now the default search engine on your browser.</p>
+
+        </div>
+    {{?? isSafari === true}}
+        <div id="caddextension">
+            <p><a href="https://www.qwant.com/qwant-safari.safariextz">Click here to download the Qwant extension of Safari</a>
+            With the Qwant extension, all of the web is accessible on one single page!
+            The Qwant extension compliments your search experience with added and more detailed information. It is also a shortcut to your favorite search engine.<br /><br />
+            Find the Qwant extension in your browser’s toolbar, to the left of the URL address bar. This shortcut enables you to quickly search with Qwant while also keeping your usual search engine.
+            Results from Qwant are sorted into categories (Web, News, Social, Images and Videos) to enrich your results with new suggestions, no matter what search engine you use.
+            With the Qwant extension, you can also perform searches from the address bar.</p>
+                </div>
+        <div id="caddhome">
+            <p>Click on the “Safari” tab, and then on “Preferences.”
+               In the top menu, click on the “General” button (it looks like a power switch!).
+               In the “Homepage field”, enter the URL “https://www.qwant.com/” and close the window.
+               Qwant will open by default the next time you launch Safari.</p>
+        </div>
+        <div id="cadddefault">
+            <p>Unfortunately, for now your browser does not allow to put Qwant by default </p>
+        </div>
+    {{?? isEdge === true}}
+        <div id="caddextension">
+            <p>Unfortunately, we do not have an extension for this browser
+            </p>
+                </div>
+        <div id="caddhome">
+            <p>Click on the “More actions” button on the top-right.
+            Select Settings. Go to the “Open with” section and click on “A specific page or pages”.
+
+            Enter the URL https://www.qwant.com/ and save with the icon on the right side. Qwant will open by default the next time you launch Windows edge.</p>
+
+        </div>
+        <div id="cadddefault">
+            <p>Click on the “More actions” button on the top-right.
+            Select Settings.
+            Then click on “View advanced settings”.
+
+            In the section “Search in the adress bar with”, Click on “Change search engine”.<br /><br />
+            Qwant will appear in the “Choose one” list. Select it and click on “Add as default”.
+
+            Qwant is now the default search engine on your browser.</p>
+        </div>
+    {{?? isChrome === true}}
+        <div id="caddextension">
+            <p>Installing the Qwant extension couldn’t be easier! <a href="https://chrome.google.com/webstore/detail/qwant-for-chrome/hnlkiofnhhoahaiimdicppgemmmomijo?hl=en">Go to the Qwant extension page In the Chrome Web Store and download it.</a></p>
+
+        </div>
+        <div id="caddhome">
+            <p>A homepage is the first webpage that appears when you open your browser. To set Qwant as your homepage on your browser, please follow these steps:<br /><br >
+            Click on the menu button located at the top-right corner of the browser window and select “Settings”. A new tab will open.
+            In the “On startup” section, click on the blue link “Set pages”.
+            Then type “https://www.qwant.com/” in the “add a new page” field.
+            Click OK to save changes.
+            Qwant will open by default the next time you launch Google Chrome.</p>
+
+        </div>
+        <div id="cadddefault">
+            <p>To set Qwant as your default search engine and access it from the search bar or URL address bar, you can also follow these steps:<br /><br />
+            Click on the Chrome menu in the upper right corner.
+            Select “Settings”.
+            Under the “Search” section, click on “Manage Search Engines”.
+            Then add Qwant at the bottom of the “Other search engines” list by typing :<br /><br />
+            <ul>
+                <li>“Qwant” in the “Name” field</li>
+                <li>and “q” in the “Keyword” field</li>
+                <li>“https://www.qwant.com/?q=%s” in the “URL” field</li>
+            </ul>
+            </p>
+
+        </div>
+    {{?? isIE === true}}
+        <div id="caddextension">
+             <p>Unfortunately, we do not have an extension for this browser</p>
+
+        </div>
+        <div id="caddhome">
+            <p>Click on the top-right preferences menu icon (it looks like a gear!), then select “Internet Options”.
+               In the section “Startup Page”
+               Type “https://www.qwant.com/” in the homepage field.
+               Click OK to save changes.
+               Qwant will open by default the next time you launch Internet Explorer.<br /><br />
+               Internet Explorer is an old browser which does not allow you to choose your search engine freely. We advise you to choose a newer and more open browser, such as Firefox, that will allow you to use Qwant by default for all your search queries and to protect your privacy online</p>
+
+        </div>
+        <div id="cadddefault">
+            <p>Unfortunately, for now your browser does not allow to put Qwant by default </p>
+        </div>
+    {{??}}
+        {{var browser = "unknown";}}
+    {{?}}
+
+    </div>
+</div>

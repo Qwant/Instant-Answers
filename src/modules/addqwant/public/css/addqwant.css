@@ -1,0 +1,97 @@
+.style_main_box{
+    width: 100%;
+    height: 240px;
+    background-color: #fafafa;
+    display: flex;
+    flex-wrap: wrap;
+}
+.style_list_navigator{
+    list-style-type:none;
+    height:100%;
+
+}
+.style_main_content{
+    width: calc(100% - 300px);
+    float : left;
+    padding: 50px 50px 50px 100px;
+    font-size: 18px;
+    font-weight: lighter;
+    font-family: Helvetica;
+    color: #424242;
+    overflow-y: scroll;
+    max-height: 200px;
+
+}
+.style_main_content a{
+    color: #0075BE;
+    text-decoration: none;
+}
+.style_buttons{
+    height:100%;
+    width: 300px;
+}
+.navigator_style_off{
+    cursor: pointer;
+    height: 80px;
+    font-family: Helvetica;
+    font-size: 20px;
+    font-weight: lighter;
+    background-color: white;
+    color : #22292C;
+    display: flex;
+    border: solid 0.5px #EEEEEE;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+}
+.navigator_style_on{
+    cursor: default;
+    height: 80px;
+    font-family: Helvetica;
+    font-weight: lighter;
+    font-size: 20px;
+    color : #22292C;
+    display: flex;
+    border: solid 0.5px #EEEEEE;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 20px;
+}
+.navigator_style_off:hover{
+    z-index: 1;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.02);
+}
+.navigator_style:active{
+    background-color: #EEEEEE;
+    color: white;
+}
+.navigator_stylel{
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+.style_lightbox{
+    position: fixed;
+    background-color: #EEEEEE;
+    top: 15%;
+    left: 42%;
+    width: 300px;
+    height: 400px;
+    overflow: scroll;
+}
+.style_text_label{
+    color : #C1C1C1;
+    font-family: Helvetica;
+    font-size: 30px;
+}
+.addqwantF_style{
+    color :#0075BE;
+    cursor: pointer;
+}
