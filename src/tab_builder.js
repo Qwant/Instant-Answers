@@ -90,7 +90,26 @@ module.exports = function (iaLoadedModules) {
                                 if (excludedIAList.indexOf(initialName) === -1 && (!moduleLanguages || moduleLanguages.indexOf(region) > -1)) patterns[language][initialName] = ia.getPattern().toString();
 							})
 				});
-				resolve(patterns);
+
+				/* FIX #IA-477 */
+                var sortedPatterns = {};
+                var stackoverflow = '';
+                for (var language in patterns) {
+                    sortedPatterns[language] = {};
+                    for (var ia in patterns[language]) {
+                        if(ia === 'stackoverflow') {
+                            stackoverflow = patterns[language][ia];
+                        } else {
+                            sortedPatterns[language][ia] = patterns[language][ia];
+                        }
+                    }
+                    if(stackoverflow && stackoverflow.length !== 0) {
+                        sortedPatterns[language]['stackoverflow'] = stackoverflow;
+                        stackoverflow = '';
+                    }
+                }
+
+				resolve(sortedPatterns);
 			});
         }
     }

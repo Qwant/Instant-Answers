@@ -32,13 +32,16 @@
                         <p>
                         {{= rate.amount + ' ' + rate.from_label + ' (' + rate.from_symbol + ') = ' + rate.result + ' ' + rate.to_label + ' (' + rate.to_symbol + ')' }}
                         </p>
-            {{? index === (it.data.length - 1) }}
+            {{? index === it.data.length - 1 }}
                     </div>
-                    <span class="ia__currency_converter--others__see_more">{{= _("See more", "currency_converter") }}</span>
+                    {{? index > 2 }}
+                    	<span class="ia__currency_converter--others__see_more">{{= _("See more", "currency_converter") }}</span>
+                    {{?}}
                 </div>
             {{?}}
         {{?}}
     {{~}}
+    <div class="ia__currency_converter__clear"></div>
     <div class="ia__currency_converter--last_update ia__currency_converter--last_update--mobile">
         <a onmousedown="LinkHelper.logHandler(this, Event, {AjaxRoute: 'ribbon', ia_name: 'currency_converter', ia_link: 'disclaimer'});" onclick="LinkHelper.clickHandler(this, Event)" onmouseup="LinkHelper.mouseUpHandler(this, Event)" href="{{= _("help_link_currency-converter", "currency_converter") }}" {{= SecurityHelper.targetBlank() }}>{{= _("Disclaimer", "currency_converter") }}</a>
     </div>
