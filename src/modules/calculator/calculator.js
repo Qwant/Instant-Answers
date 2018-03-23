@@ -30,7 +30,8 @@ module.exports = {
                 values[0] = values[0].replace("÷","/");
                 try {
                     var response = math.eval(values[0]);
-                    response = math.format(response, {precision: 14});
+                    response = math.format(response, {notation: "fixed", precision: 14});
+                    response = parseFloat(response); // remove extra zero precision
                     if(response === 'function') {
                         reject("The query is poorly formulated", {module : "calculator"});
                     }
