@@ -15,6 +15,7 @@ tmp/
 node_modules/
 dist/
 lang/
+/src/modules/**/*.css
 
 #config
 config/*.json

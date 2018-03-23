@@ -5,7 +5,7 @@ qwant-ia:
   modules-base: "ia/template/"
   script-base: "ia/javascript/"
   images-base: "ia/img/"
-  excludedIA: ["weather"]
+  excludedIA: ["weather", "currency_converter"]
   cert: ""
   logConfig:
     cli:
