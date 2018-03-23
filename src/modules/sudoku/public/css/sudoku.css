@@ -1,0 +1,118 @@
+/**
+ * This is your main CSS file. Please refer to the documentation for more information.
+ */
+.__ia__sudoku__container {
+    display: block;
+    width: 100%;
+    min-height: 220px;
+}
+
+.__ia__sudoku__dokutable {
+    margin: 0 0 0 20px;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif, Calibri, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+table.__ia__sudoku__dokutable colgroup, tbody {
+    border: solid medium;
+}
+
+table.__ia__sudoku__dokutable td {
+    border: solid thin black;
+    height: 1.4em;
+    width: 1.4em;
+    text-align: center;
+    padding: 0;
+}
+
+table.__ia__sudoku__dokutable td.empty:hover {
+    cursor: pointer;
+}
+
+table.__ia__sudoku__dokutable td.number:hover {
+    cursor: default; 
+}
+
+.__ia__sudoku__grid {
+    width: 250px;
+    float: left;
+}
+
+.__ia__sudoku__control {
+    width: 200px;
+    float: left;
+    text-align: left;
+}
+
+.__ia__sudoku__icon {
+    display: none;
+}
+
+.__ia__sudoku__instructions {
+    font-weight: bold;
+    border-bottom: 2px solid #444444;
+    margin-bottom: 10px;
+}
+
+#__ia__sudoku__dokustatus {
+    width: 100%;
+    background-color: #DDDDDD;
+    text-align: center;
+    padding: 5px;
+    margin: 10px 0 10px 0;
+    border-radius: 5px;
+}
+
+.__ia__sudoku__dokubutton {
+    text-align: center;
+    width: 100%;
+}
+
+.__ia__sudoku__dokubutton button:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .__ia__sudoku__grid {
+        float: none;
+    }
+    .__ia__sudoku__control {
+        float: none;
+        text-align: center;
+        width: 250px;
+        padding: 10px;
+    }
+}
+
+.__ia__sudoku__sdkubutton {
+    font-family: arial;
+    color: #6A6A6A !important;
+    font-size: 14px;
+    text-shadow: 1px 1px 0px #DEDEDE;
+    box-shadow: 1px 1px 1px #F9F9F9;
+    padding: 6px 14px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 8px;
+    border: 2px solid #A3A3A3;
+    background: #EEEEEE;
+    background: linear-gradient(top,  #EEEEEE,  #CFCFCF);
+    background: -ms-linear-gradient(top,  #EEEEEE,  #CFCFCF);
+    background: -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#CFCFCF));
+    background: -moz-linear-gradient(top,  #EEEEEE,  #CFCFCF);
+}
+.__ia__sudoku__sdkubutton:hover {
+    color: #6A6A6A !important;
+    background: #CFCFCF;
+    background: linear-gradient(top,  #CFCFCF,  #EEEEEE);
+    background: -ms-linear-gradient(top,  #CFCFCF,  #EEEEEE);
+    background: -webkit-gradient(linear, left top, left bottom, from(#CFCFCF), to(#EEEEEE));
+    background: -moz-linear-gradient(top,  #CFCFCF,  #EEEEEE);
+}
