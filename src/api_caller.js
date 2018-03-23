@@ -13,6 +13,7 @@ module.exports = {
      *	- apiRequest: This is the API request URL,
      *  - structure: This is the structure of the data returned by the API,
      *  - proxyURL
+     *  - timeout
      * @returns data to be processed.
      */
     call: function (apiRequest, structure, proxyURL, timeout) {
@@ -52,6 +53,7 @@ module.exports = {
                             logger.error(apiResponse.error);
                     } catch(e) {
                         logger.error(e);
+                        logger.error("error API message: " + response.body);
                         reject(e);
                         return;
                     }

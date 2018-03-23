@@ -5,7 +5,6 @@ var winstonFastRabbitMq = require('winston-fast-rabbitmq');
 var os = require('os');
 var crypto = require('crypto');
 var fs = require('fs');
-var iaCoreVersion = require('../../../package.json').version;
 
 var const_hostname = os.hostname();
 
@@ -13,6 +12,7 @@ var Logger = {};
 
 Logger.init = function(logConfig, projectRootPath) {
     if (logConfig) {
+        var iaCoreVersion = require(projectRootPath + '/package.json').version
         if (logConfig.hasOwnProperty('rabbitMQ')) {
             var rabbitMQ = logConfig.rabbitMQ;
             winston.loggers.add('datahub', {

@@ -136,15 +136,15 @@ module.exports = {
             }
             fs.readFile(fd, 'utf8', (err, data) => {
             if (err) throw err;
-        let blacklistAPIs = JSON.parse(data);
-        blacklistAPIs.apis.push(host);
-        let blacklistAPIsJson = JSON.stringify(blacklistAPIs);
-        fs.writeFile(BLACKLIST_PATH_FILE, blacklistAPIsJson, (err) => {
-            if (err) throw err;
-        logger.info('[' + host + '] added to the blacklist', {"module": "api-caller"});
-    });
-    });
-    });
+                let blacklistAPIs = JSON.parse(data);
+                blacklistAPIs.apis.push(host);
+                let blacklistAPIsJson = JSON.stringify(blacklistAPIs);
+                fs.writeFile(BLACKLIST_PATH_FILE, blacklistAPIsJson, (err) => {
+                    if (err) throw err;
+                    logger.info('[' + host + '] added to the blacklist', {"module": "api-caller"});
+                });
+            });
+        });
     },
 
     /**
@@ -195,13 +195,13 @@ module.exports = {
                 throw err;
             }
             fs.readFile(fd, 'utf8', (err, data) => {
-            if (err) throw err;
-        let blacklistAPIs = algoBLtimeout(host, JSON.parse(data));
-        let blacklistAPIsJson = JSON.stringify(blacklistAPIs);
-        fs.writeFile(BLACKLIST_PATH_FILE, blacklistAPIsJson, (err) => {
-            if (err) throw err;
-    });
-    });
-    });
+                if (err) throw err;
+                let blacklistAPIs = algoBLtimeout(host, JSON.parse(data));
+                let blacklistAPIsJson = JSON.stringify(blacklistAPIs);
+                fs.writeFile(BLACKLIST_PATH_FILE, blacklistAPIsJson, (err) => {
+                    if (err) throw err;
+                });
+            });
+        });
     }
 };

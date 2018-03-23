@@ -11,6 +11,8 @@ var winston = require('winston');
 var logger = winston.loggers.get('logger');
 var _ = require('@qwant/front-i18n')._;
 var cachedApi = [];
+const TIMEOUT_CURRENCY_CONVERTER = 10800;
+const CACHE_CURRENCY_CONVERTER = 10800;
 
 module.exports = {
 
@@ -29,6 +31,7 @@ module.exports = {
      *  - language : Current language called
      * @returns data to be displayed.
      */
+
 
     getData: function (values, proxyURL) {
         return new Promise(function (resolve, reject) {
@@ -83,9 +86,10 @@ module.exports = {
             function pullApi(from) {
                 var cacheKey = "fixer_" + from;
                 var fromCache = false;
-                if ((cachedApi[cacheKey] && cachedApi[cacheKey]["data"].length > 0
-                    && (new Date().getTime() - cachedApi[cacheKey]["lastUpdate"]) > (this.cache * 1000))
-                    || !cachedApi[cacheKey] || cachedApi[cacheKey]["data"].length === 0)
+
+                if ((cachedApi[cacheKey] && Object.keys(cachedApi[cacheKey]["data"]).length > 0
+                     && (new Date().getTime() - cachedApi[cacheKey]["lastUpdate"]) > (CACHE_CURRENCY_CONVERTER * 1000))
+                    || !cachedApi[cacheKey] || Object.keys(cachedApi[cacheKey]["data"]).length === 0)
                 {
                     var apiCaller = require('../../api_caller');
                     var api_request = 'http://api.fixer.io/latest?base=' + from;
@@ -128,7 +132,7 @@ module.exports = {
                         }
                     };
                     delete structure["rates"][from];
-                    var apiPromise = apiCaller.call(api_request, structure, proxyURL, this.timeout);
+                    var apiPromise = apiCaller.call(api_request, structure, proxyURL, TIMEOUT_CURRENCY_CONVERTER);
                 } else {
                     fromCache = true;
                     var apiPromise = new Promise(function(resolve, reject) { resolve(cachedApi[cacheKey]["data"]); });
@@ -314,12 +318,12 @@ module.exports = {
      * timeout : Time before your response is considered as canceled (in milliseconds)
      */
 
-    timeout: 10800,
+    timeout: TIMEOUT_CURRENCY_CONVERTER,
 
     /**
      * (NEEDED)
      * cache : Duration of the data cached (in seconds)
      */
 
-    cache: 10800
+    cache: CACHE_CURRENCY_CONVERTER
 };

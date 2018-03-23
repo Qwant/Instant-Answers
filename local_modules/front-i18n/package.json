@@ -1,12 +1,11 @@
 {
   "name": "@qwant/front-i18n",
-  "description": "Qwant front/search config",
   "main": "index.js",
   "version": "0.0.9",
   "dependencies": {
-    "bluebird": "2.9.30",
+    "bluebird": "3.5.1",
     "mkdirp": "0.5.1",
-    "rimraf": "2.4.3"
+    "rimraf": "2.6.2"
   },
   "description": "i18n tool and helper for qwant projects",
   "devDependencies": {}
