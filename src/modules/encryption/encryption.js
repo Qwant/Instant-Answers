@@ -2,6 +2,7 @@ var _ = require('@qwant/front-i18n')._;
 var sha1 = require('sha1');
 var createHash = require('sha.js');
 var md5 = require('md5');
+var btoa = require('btoa');
 
 var commonEntities = [
     {char : "<", html : "&lt;"},
@@ -48,6 +49,8 @@ module.exports = {
             case 'MD5':
                 result = md5(stringToHash);
                 break;
+            case 'BASE64':
+                result = btoa(stringToHash);
         }
         return {
             result: result,
@@ -69,7 +72,7 @@ module.exports = {
      * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
      */
 
-    keyword: "sha1|sha256|md5",
+    keyword: "sha1|sha256|md5|base64",
 
     /**
      * (NEEDED)
