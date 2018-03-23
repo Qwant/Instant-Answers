@@ -5,7 +5,7 @@ var winstonFastRabbitMq = require('winston-fast-rabbitmq');
 var os = require('os');
 var crypto = require('crypto');
 var fs = require('fs');
-var iaCoreVersion = require('../../../package.json').version;
+var iaCoreVersion = require('../../package.json').version;
 
 var const_hostname = os.hostname();
 
