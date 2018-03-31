@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="css/cestlagreve.css" type="text/css">
+
+<div class="ia__cestlagreve">
+    <div class="ia__cestlagreve__header">
+        {{= _("C'est la grève ?", "cestlagreve") }}
+    </div>
+    <span class="ia__cestlagreve__icon icon icon-homepage-calendar"></span>
+    <div class="ia__cestlagreve__container">
+        <div class="ia__cestlagreve__result">
+            <h3>{{= _("Grèves en cours", "cestlagreve") }}</h2>
+            {{~ it.data.oncoming_events:rate:index }}
+                <div class="ia__cestlagreve__greve">
+                    {{? rate.url !== ''}}<a href="{{= rate.url }}" onmousedown="LinkHelper.logHandler(this, Event, {AjaxRoute: 'ribbon', ia_name: 'cestlagreve', ia_link: 'cestlagreve_out'});" onclick="LinkHelper.clickHandler(this, Event)" onmouseup="LinkHelper.mouseUpHandler(this, Event)" {{= SecurityHelper.targetBlank() }}>{{?}}
+                    <span class="ia__cestlagreve__date">{{= rate.date }}</span>
+                    <span class="ia__cestlagreve__title">{{= rate.title }}</span>
+                    {{? rate.url !== ''}}</a>{{?}}
+                </div>
+            {{~}}
+        </div>
+        <div class="ia__cestlagreve__result upcoming">
+            <h3>{{= _("Grèves à venir", "cestlagreve") }}</h2>
+			{{~ it.data.upcoming_events:rate:index }}
+			    <div class="ia__cestlagreve__greve">
+			        {{? rate.url !== ''}}<a href="{{= rate.url }}">{{?}}
+			        <span class="ia__cestlagreve__date">{{= rate.date }}</span>
+			        <span class="ia__cestlagreve__title">{{= rate.title }}</span>
+			        {{? rate.url !== ''}}</a>{{?}}
+                </div>
+			{{~}}
+		</div>
+    </div>
+</div>
