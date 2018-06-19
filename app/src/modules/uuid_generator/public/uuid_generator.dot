@@ -1,0 +1,7 @@
+<link rel="stylesheet" href="css/uuid_generator.css" type="text/css">
+<div class="ia__uuid__generator">
+    <span class="ia__uuid__generator__icon icon icon-nav-selector-icon-small-reverse"></span>
+    <span class="ia__uuid__generator__result">
+        {{= it.data }}
+    </span>
+</div>

@@ -1,0 +1,5 @@
+
+#: src/model/uuid_generator/uuid_generator.js:28
+msgctxt "uuid_generator"
+msgid "UUID Generator"
+msgstr "UUID-generator"
