@@ -10,9 +10,9 @@ module.exports = {
      *	- values : This is an array of values caught by regex.
      *	For example, if you use the keyword "test" with the trigger "start", and you type "test working?",
      *  values would be like this :
-     *		* values[0] = "test working?"
-     *		* values[1] = "test"
-     *		* values[2] = "working?"
+     *      * values[0] = "test working?"
+     *      * values[1] = "test"
+     *      * values[2] = "working?"
      *  But, if you use the trigger "strict", there will be only one value in this array (values[0] = "test working?")
      *  - proxyURL : If you need to call an external API, use the package "request" with proxyURL as value for
      *  "proxy" attribute (you can refer to weather IA to check how to use it properly)
@@ -25,11 +25,11 @@ module.exports = {
         return new Promise(function (resolve, reject) {
             if(!isNaN(values[0])) {
                 reject("Don't allow function identity", {module : "calculator"});
-			} else if(/^[a-z]+\s+to/i.test(values[0])) {
+            } else if(/^[a-z]+\s+to/i.test(values[0])) {
                 // conversion expression: <base A> to <base B> <number>
-				var expression = /^(bin|hex|dec|oct)\s+to\s+(bin|hex|dec|oct)\s+([0-9a-f]+)$/i.exec(values[0]);
-				if(!expression) {
-					reject("This conversion is invalid", {module : "calculator"});
+                var expression = /^(bin|hex|dec|oct)\s+to\s+(bin|hex|dec|oct)\s+([0-9a-f]+)$/i.exec(values[0]);
+                if(!expression) {
+                    reject("This conversion is invalid", {module : "calculator"});
                 } else {
                     var radices = { 'bin': 2, 'oct': 8, 'dec': 10, 'hex': 16 };
                     var sourceRadix = radices[expression[1].toLowerCase()];
@@ -41,7 +41,7 @@ module.exports = {
                     } else {
                         reject("This conversion is incoherent", {module : "calculator"});
                     }
-				}
+                }
             } else {
                 values[0] = values[0].toLowerCase();
                 values[0] = values[0].replace("×","*");
