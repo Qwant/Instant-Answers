@@ -1,0 +1,11 @@
+#
+# This is your fr_fr language file. Please refer to the documentation for more information.
+#
+
+msgctxt "country_flags"
+msgid "Country flags"
+msgstr "Drapeaux nationaux"
+
+msgctxt "country_flags"
+msgid "flag"
+msgstr "drapeau"

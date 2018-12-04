@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+docker exec $(docker ps --filter "name=qwant_ia_instant-answers" --format='{{.Names}}') bash -c "grunt clean && unlink /src/front/public/dist && rm -rf node_modules"
+docker-compose -p "qwant_ia" down "$@"

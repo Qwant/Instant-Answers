@@ -1,0 +1,18 @@
+#
+# This is your fr_fr language file. Please refer to the documentation for more information.
+#
+msgctxt "current_week"
+msgid "week number"
+msgstr "(current week)|sem(aines?)?( (num((é|e)ro)|actuel(le)?s?|courante?s?))?|(num((é|e)ro)? sem(aines?)?( (actuel(le)?s?|courante?s?)?)?)"
+
+msgctxt "current_week"
+msgid "Week"
+msgstr "Semaine"
+
+msgctxt "current_week"
+msgid "From"
+msgstr "Du"
+
+msgctxt "current_week"
+msgid "To"
+msgstr "Au"

@@ -1,0 +1,11 @@
+#
+# This is your en_gb language file. Please refer to the documentation for more information.
+#
+
+msgctxt "current_week"
+msgid "week number"
+msgstr "week number|current week"
+
+msgctxt "current_week"
+msgid "Week"
+msgstr ""

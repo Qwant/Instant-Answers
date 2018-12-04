@@ -1,0 +1,21 @@
+
+<link rel="stylesheet" href="css/current_week.css" type="text/css">
+
+<div class="ia__current-week">
+
+    <div class="ia__current-week__container">
+        <div class="ia__current-week__result">{{= _('Week', 'current_week') }} <span class="stronger">{{= it.data.wN }}</span>
+        </div>
+    	{{? it.data.day && it.data.day.length === 2 }}
+            <div class="ia__current-week__day_2lines">
+                {{= _('From', 'current_week') }} {{= it.data.day[0] }}<br>{{= _('To','current_week') }} {{= it.data.day[1] }}
+            </div>
+        {{?? it.data.day }}
+            <div class="ia__current-week__day">
+                {{= it.data.day }}
+             </div>
+        {{?}}
+
+    </div>
+
+</div>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="840" height="63" viewBox="0 0 840 63">
+    <defs>
+        <path id="a" d="M.999 0H839c-34.382 24.883-79.182 46.396-130 63H72C47.494 56.715 24.028 49.44.999 42V0z"/>
+        <path id="c" d="M.718 63C.243 58.565 0 54.06 0 49.5 0 31.922 3.614 15.188 10.14 0h230.72c.753 1.75 1.466 3.522 2.14 5.313V63H.718z"/>
+        <path id="d" d="M210.603 0a216.031 216.031 0 0 1-21.69 63H0V0h210.603z"/>
+        <path id="e" d="M183.714 0a177.173 177.173 0 0 1-27.819 63H0V0h183.714z"/>
+        <path id="f" d="M0 0h245v5.602C211.789 28.118 169.964 47.656 123 63c-47.764-.008-88.764-.012-123-.01V0z"/>
+        <path id="g" d="M23.542 63C11.259 44.506 3.037 23.082.149 0H182v63H23.542z"/>
+        <path id="h" d="M26.013 63C12.208 45.227 3.132 23.597.673 0h246.654a123.566 123.566 0 0 1-3.121 17.56c-4.25 16.771-11.919 32.179-22.22 45.44H26.014z"/>
+        <path id="i" d="M.12 63C.04 61.177 0 59.343 0 57.5 0 36.758 5.073 17.2 14.045 0H101v63H.12z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(-1)">
+        <mask id="b" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <g mask="url(#b)">
+            <use fill="#5A797F" fill-rule="nonzero" transform="translate(198)" xlink:href="#c"/>
+        </g>
+        <g mask="url(#b)">
+            <use fill="#708B93" fill-rule="nonzero" transform="translate(79)" xlink:href="#d"/>
+        </g>
+        <g mask="url(#b)">
+            <use fill="#79A3AB" fill-rule="nonzero" transform="translate(1)" xlink:href="#e"/>
+        </g>
+        <g mask="url(#b)">
+            <use fill="#414E55" fill-rule="nonzero" transform="translate(586)" xlink:href="#f"/>
+        </g>
+        <g mask="url(#b)">
+            <use fill="#50626A" fill-rule="nonzero" transform="translate(364)" xlink:href="#g"/>
+        </g>
+        <g mask="url(#b)">
+            <use fill="#414E55" fill-rule="nonzero" transform="translate(447)" xlink:href="#h"/>
+        </g>
+        <g mask="url(#b)">
+            <use fill="#50626A" fill-rule="nonzero" transform="translate(747)" xlink:href="#i"/>
+        </g>
+    </g>
+</svg>

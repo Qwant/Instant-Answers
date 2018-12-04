@@ -1,0 +1,11 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/country_flags.css" type="text/css">
+<div class="ia__country_flags">
+    <div class="ia__country_flags__container">
+        <span class="ia__country_flags__result">
+			<img src="{{= it.images_path }}/country_flags/flags/{{= it.data.country_code }}.png" alt="{{= it.data.country_name }}" /> {{= it.data.country_name }}
+	</span>
+    </div>
+</div>

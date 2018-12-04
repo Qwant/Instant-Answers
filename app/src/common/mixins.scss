@@ -1,0 +1,214 @@
+@function prefix($property, $prefixes: (webkit moz o ms)) {
+  $vendor-prefixed-properties: transform background-clip background-size;
+  $result: ();
+  @each $prefix in $prefixes {
+    @if index($vendor-prefixed-properties, $property) {
+      $property: -#{$prefix}-#{$property}
+    }
+    $result: append($result, $property);
+  }
+  @return $result;
+}
+
+@function trans-prefix($transition, $prefix: moz) {
+  $prefixed: ();
+  @each $trans in $transition {
+    $prop-name: nth($trans, 1);
+    $vendor-prop-name: prefix($prop-name, $prefix);
+    $prop-vals: nth($trans, 2);
+    $prefixed: append($prefixed, ($vendor-prop-name $prop-vals), comma);
+  }
+
+  @return $prefixed;
+}
+
+@mixin transition($values...) {
+  $transitions: ();
+  @each $declaration in $values {
+    $prop: nth($declaration, 1);
+    $prop-opts: ();
+    @each $var in $declaration {
+      $prop-opts: append($prop-opts, $var);
+    }
+    $trans: ($prop, $prop-opts);
+    $transitions: append($transitions, $trans, comma);
+  }
+
+  -webkit-transition: trans-prefix($transitions, webkit);
+  -moz-transition: trans-prefix($transitions, moz);
+  -o-transition: trans-prefix($transitions, o);
+  transition: $values;
+}
+
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  -o-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin transform-origin($transforms) {
+  -webkit-transform-origin: $transforms;
+  -moz-transform-origin: $transforms;
+  -ms-transform-origin: $transforms;
+  -o-transform-origin: $transforms;
+  transform-origin: $transforms;
+}
+
+@mixin calc($property, $values) {
+  #{$property}: -webkit-calc(#{$values});
+  #{$property}: -moz-calc(#{$values});
+  #{$property}: calc(#{$values});
+}
+
+@mixin animation($name, $duration) {
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -ms-animation-duration: $duration;
+  -o-animation-duration: $duration;
+  animation-duration: $duration;
+  -webkit-animation-name: $name;
+  -moz-animation-name: $name;
+  -ms-animation-name: $name;
+  -o-animation-name: $name;
+  animation-name: $name;
+}
+
+@mixin bg-linear-gradient($defaultColor, $type: vertical, $colors...) {
+  @if $colors {
+
+    background: $defaultColor;
+
+    $webkit: 'left top, left bottom';
+    $spec: 'top';
+
+    @if $type == vertical {
+      $webkit: 'left top, left bottom';
+      $spec: 'top';
+    }
+    @if $type == horizontal {
+      $webkit: 'left top, right top';
+      $spec: 'to right';
+    }
+    @if $type == left-right {
+      $webkit: 'left top, right bottom';
+      $spec: '135deg';
+    }
+    @if $type == right-left {
+      $webkit: 'left bottom, right top';
+      $spec: '45deg';
+    }
+
+    background: -webkit-gradient($type, #{$webkit}, $colors);
+    background: -webkit-linear-gradient(#{$spec}, $colors);
+    background: -ms-linear-gradient(#{$spec}, $colors);
+    background: linear-gradient(#{$spec}, $colors);
+  }
+}
+
+@mixin vertical_gradient($startColor,$endColor){
+  background    : $startColor;
+  background    : -webkit-linear-gradient(top, $startColor, $endColor);
+  background    : -o-linear-gradient(bottom, $startColor, $endColor);
+  background    : -moz-linear-gradient(bottom, $startColor, $endColor);
+  background    : linear-gradient(to bottom, $startColor, $endColor);
+}
+
+// Mixin to help people make an image x2 or x2 and x4 if size == 4
+
+@mixin image-format($class, $size, $image, $extension, $bg_size, $options) {
+
+  @media #{$x2_media_query} {
+    #{$class} {
+      background: url('/img/#{$image}-x2.#{$extension}?@@build') $options;
+      background-size: $bg_size;
+    }
+  }
+
+  @if $size == 4 {
+    @media #{$x4_media_query} {
+      #{$class} {
+        background: url('/img/#{$image}-x4.#{$extension}?@@build') $options;
+        background-size: $bg_size;
+      }
+    }
+  }
+}
+
+@mixin font(
+  $size: 16px,
+  $height: 1.25,
+  $weight: 400,
+  $spacing: 0,
+  $family: 'Asap'
+) {
+  font-family: $family, sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  letter-spacing: $spacing;
+  line-height: $height;
+}
+
+@mixin zeta($color: $color-dark-blue) {
+  @include font(13px, 16px);
+  color: $color;
+}
+
+@mixin epsilon($color: $color-dark-blue) {
+  @include font(14px, 19px);
+  color: $color;
+}
+
+@mixin delta($color: $color-dark-blue, $weight: 400) {
+  @include font(16px, 20px, $weight);
+  color: $color;
+}
+
+@mixin gamma($color: $color-dark-blue) {
+  @include font(18px, 22px);
+  color: $color;
+}
+
+@mixin beta($color: $color-dark-blue) {
+  @include font(20px, 25px);
+  color: $color;
+}
+
+@mixin alpha($color: $color-dark-blue) {
+  @include font(22px, 30px);
+  color: $color;
+}
+
+@mixin mega($color: $color-dark-blue) {
+  @include font(28px, 35px);
+  color: $color;
+}
+
+@mixin giga($color: $color-dark-blue) {
+  @include font(34px, 40px);
+  color: $color;
+}
+
+@mixin caption($color: $color-dark-blue, $weight: 500) {
+  @include font(12px, normal, $weight);
+  color: $color;
+  text-transform: uppercase;
+}
+
+@mixin title-section($color: $color-dark-blue) {
+  @include font(14px, normal, 500);
+  color: $color;
+  text-transform: uppercase;
+}
+
+@mixin align($justify: inherit, $items: inherit, $content: inherit) {
+  justify-content: $justify;
+  align-items: $items;
+  align-content: $content;
+}
+
+@mixin size($width: inherit, $height: inherit) {
+  width: $width;
+  height: $height;
+}

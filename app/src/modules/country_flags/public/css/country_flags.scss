@@ -1,0 +1,23 @@
+/**
+* This is your main SCSS file. Please refer to the documentation for more information.
+*/
+.ia__country_flags {
+    padding: 21px 25px 0;
+    background: white;
+    border-top: 1px solid rgba(122,124,126,0.16);
+}
+
+.ia__country_flags__container {
+    display: inline-block;
+    width: -webkit-calc(100% - 110px);
+    width: -moz-calc(100% - 110px);
+    width: calc(100% - 110px);
+    margin: 14px 0;
+    vertical-align: middle;
+    word-wrap: break-word;
+}
+
+.ia__country_flags__result {
+    font-size: 14px;
+    font-family: 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+}

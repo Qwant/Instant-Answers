@@ -1,0 +1,3 @@
+#
+# This is your pt_pt language file. Please refer to the documentation for more information.
+#
