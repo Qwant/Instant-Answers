@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;EAEE;AAEF,qBAAsB;EAClB,OAAO,EAAE,IAAI;;;AAGjB,6BAA8B;EAC1B,SAAS,EAAE,IAAI",
+"sources": ["random_generator.scss"],
+"names": [],
+"file": "random_generator.css"
+}

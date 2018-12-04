@@ -1,0 +1,77 @@
+
+#: src/model/weather/public/weather.dot:92
+msgctxt "ia-weather"
+msgid "by"
+msgstr "per"
+
+#: src/model/weather/public/weather.dot:113
+msgctxt "ia-weather"
+msgid "Tomorrow"
+msgstr "Demà"
+
+#: src/model/weather/public/weather.dot:179
+msgctxt "ia-weather"
+msgid "Forecast by"
+msgstr "Pronosticat per"
+
+#: src/model/weather/forecast.js:133 src/model/weather/drivers/wetter.js:49
+msgctxt "ia-weather"
+msgid "Wind"
+msgstr "Vent"
+
+#: src/model/weather/forecast.js:139 src/model/weather/drivers/wetter.js:53
+msgctxt "ia-weather"
+msgid "Humidity"
+msgstr "Humitat"
+
+#: src/model/weather/forecast.js:145
+msgctxt "ia-weather"
+msgid "Rain"
+msgstr "Pluja"
+
+#: src/model/weather/forecast.js:151
+msgctxt "ia-weather"
+msgid "Pressure"
+msgstr "Pressió"
+
+#: src/model/weather/weather.js:130
+msgctxt "weather"
+msgid "Weather"
+msgstr "Temps"
+
+#: src/model/weather/weather.js:133
+msgctxt "weather"
+msgid "weather"
+msgstr "temps|tiempo"
+
+msgctxt "ia-weather"
+msgid "Today"
+msgstr "Avui"
+
+msgctxt "ia-weather"
+msgid "Sunday"
+msgstr "Diumenge"
+
+msgctxt "ia-weather"
+msgid "Monday"
+msgstr "Dilluns"
+
+msgctxt "ia-weather"
+msgid "Tuesday"
+msgstr "Dimarts"
+
+msgctxt "ia-weather"
+msgid "Wednesday"
+msgstr "Dimecres"
+
+msgctxt "ia-weather"
+msgid "Thursday"
+msgstr "Dijous"
+
+msgctxt "ia-weather"
+msgid "Friday"
+msgstr "Divendres"
+
+msgctxt "ia-weather"
+msgid "Saturday"
+msgstr "Dissabte"

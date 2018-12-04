@@ -1,0 +1,45 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/currency_converter.css" type="text/css">
+<div class="ia__currency_converter">
+    <span class="ia__currency_converter__icon icon icon-ia-currency-converter"></span>
+    {{ var lastUpdate; }}
+    {{~ it.data:rate:index }}
+        {{? index === 0 }}
+            {{ lastUpdate = rate.lastUpdate; }}
+            <div class="ia__currency_converter--main">
+                <div class="ia__currency_converter__from">
+                    {{= rate.amount + ' ' + rate.from_label + ' (' + rate.from_symbol + ')' }}&nbsp;=
+                </div>
+                <div class="ia__currency_converter__result">
+                    {{= rate.result }} <span class="ia__currency_converter__result--label">{{= rate.to_label + ' (' + rate.to_symbol + ')' }}</span>
+                </div>
+                <div class="ia__currency_converter--last_update ia__currency_converter--last_update--nomobile">
+                    <a onmousedown="LinkHelper.logHandler(this, Event, {AjaxRoute: 'ribbon', ia_name: 'currency_converter', ia_link: 'disclaimer'});" onclick="LinkHelper.clickHandler(this, Event)" onmouseup="LinkHelper.mouseUpHandler(this, Event)" href="{{= _("help_link_currency-converter", "currency_converter") }}" {{= SecurityHelper.targetBlank() }}>{{= _("Disclaimer", "currency_converter") }}</a>
+                </div>
+            </div>
+
+
+        {{??}}
+            {{? index === 1 }}
+                <div class="ia__currency_converter--others">
+                    <span class="ia__currency_converter--others_title">
+                        {{= _("Other possible conversions:", "currency_converter") }}
+                    </span>
+                    <div class="ia__currency_converter--others_lines">
+            {{?}}
+                        <p>
+                        {{= rate.amount + ' ' + rate.from_label + ' (' + rate.from_symbol + ') = ' + rate.result + ' ' + rate.to_label + ' (' + rate.to_symbol + ')' }}
+                        </p>
+            {{? index === it.data.length - 1 }}
+                    </div>
+                    {{? index > 2 }}
+                    	<span class="ia__currency_converter--others__see_more">{{= _("See more", "currency_converter") }}</span>
+                    {{?}}
+                </div>
+            {{?}}
+        {{?}}
+    {{~}}
+    <div class="ia__currency_converter__clear"></div>
+</div>

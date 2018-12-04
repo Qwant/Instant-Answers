@@ -15,11 +15,13 @@ tmp/
 node_modules/
 dist/
 lang/
-/src/modules/**/*.css
+src/modules/**/*.css
+.sass-cache/
+yarn.lock
+yarn-error.log
 
 #config
 config/*.json
-!config/blacklistAPIs.json
 
 DISTS/*
 npm-debug.log*

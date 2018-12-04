@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -a
+source .env
+set +a
+docker-compose exec iaredis redis-cli -h "$REDIS_IA_HOST" -p "$REDIS_IA_PORT" -a "$REDIS_IA_PASSWORD" "$@"

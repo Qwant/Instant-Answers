@@ -1,9 +1,0 @@
-{
-  "name": "@qwant/binder",
-  "description": "Config binder",
-  "dependencies": {
-    "js-yaml": "3.11.0",
-  },
-  "main": "index.js",
-  "version": "0.1.0"
-}

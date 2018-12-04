@@ -1,0 +1,2 @@
+elasticsearch:
+  host: "10.100.31.26:9200"

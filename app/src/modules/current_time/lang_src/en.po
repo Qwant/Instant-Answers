@@ -1,0 +1,7 @@
+#
+# This is your en_gb language file. Please refer to the documentation for more information.
+#
+msgctxt "current_time"
+
+msgid "time in"
+msgstr "time in|time|current time in|current time"

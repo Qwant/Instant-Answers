@@ -1,0 +1,2463 @@
+#
+# This is your fr_fr language file. Please refer to the documentation for more information.
+#
+
+msgctxt "currency_converter"
+msgid "Currency converter"
+msgstr "Convertisseur de monnaie"
+
+msgctxt "currency_converter"
+msgid "Last update:"
+msgstr "Dernière mise à jour :"
+
+msgctxt "currency_converter"
+msgid "Other possible conversions:"
+msgstr "Autres conversions possibles :"
+
+msgctxt "currency_converter"
+msgid "United Arab Emirates Dirhams?"
+msgstr "Dirhams? des Émirats arabes unis"
+
+msgctxt "currency_converter"
+msgid "dirhams?"
+msgstr "dirhams?"
+
+msgctxt "currency_converter"
+msgid "Afghan Afghanis?"
+msgstr "Afghanis? afghans?"
+
+msgctxt "currency_converter"
+msgid "Afghanis?"
+msgstr "Afghanis?"
+
+msgctxt "currency_converter"
+msgid "Albanian Leks?"
+msgstr "leks? albanais"
+
+msgctxt "currency_converter"
+msgid "Leks?"
+msgstr "leks?"
+
+msgctxt "currency_converter"
+msgid "Armenian Drams?"
+msgstr "drams? arm(?:é|e)niens?"
+
+msgctxt "currency_converter"
+msgid "Drams?"
+msgstr "drams?"
+
+msgctxt "currency_converter"
+msgid "Netherlands Antillean Guilders?"
+msgstr "Florins? des Antilles néerlandaises"
+
+msgctxt "currency_converter"
+msgid "Guilders?"
+msgstr "Florins?"
+
+msgctxt "currency_converter"
+msgid "Angolan Kwanzas?"
+msgstr "Kwanzas? angolais"
+
+msgctxt "currency_converter"
+msgid "kwanzas?"
+msgstr "kwanzas?"
+
+msgctxt "currency_converter"
+msgid "Argentine Pesos?"
+msgstr "Pesos? argentins?"
+
+msgctxt "currency_converter"
+msgid "pesos?"
+msgstr "pesos?"
+
+msgctxt "currency_converter"
+msgid "australian dollars?"
+msgstr "dollars? australiens?"
+
+msgctxt "currency_converter"
+msgid "dollars?"
+msgstr "dollars?"
+
+msgctxt "currency_converter"
+msgid "Aruban Florins?"
+msgstr "Florins? arubais"
+
+msgctxt "currency_converter"
+msgid "florins?"
+msgstr "florins?"
+
+msgctxt "currency_converter"
+msgid "Azerbaijani Manats?"
+msgstr "Manats? azerbaïdjanais"
+
+msgctxt "currency_converter"
+msgid "manats?"
+msgstr "manats?"
+
+msgctxt "currency_converter"
+msgid "Bosnia-Herzegovina Convertible Marks?"
+msgstr "marks? convertibles?"
+
+msgctxt "currency_converter"
+msgid "Convertible Marks?"
+msgstr "marks? convertibles?"
+
+msgctxt "currency_converter"
+msgid "Marks?"
+msgstr "marks?"
+
+msgctxt "currency_converter"
+msgid "Barbadian Dollars?"
+msgstr "Dollars? barbadiens?"
+
+msgctxt "currency_converter"
+msgid "Bangladeshi Takas?"
+msgstr "Takas? bengali"
+
+msgctxt "currency_converter"
+msgid "takas?"
+msgstr "takas?"
+
+msgctxt "currency_converter"
+msgid "bulgarian levs?"
+msgstr "levs? bulgares?"
+
+msgctxt "currency_converter"
+msgid "levs?"
+msgstr "levs?"
+
+msgctxt "currency_converter"
+msgid "Bahraini Dinars?"
+msgstr "Dinars? bahreïnis?"
+
+msgctxt "currency_converter"
+msgid "dinars?"
+msgstr "dinars?"
+
+msgctxt "currency_converter"
+msgid "Burundian Francs?"
+msgstr "Francs? burundais"
+
+msgctxt "currency_converter"
+msgid "francs?"
+msgstr "francs?"
+
+msgctxt "currency_converter"
+msgid "Bermudian Dollars?"
+msgstr "dollars? bermudiens?"
+
+msgctxt "currency_converter"
+msgid "Brunei Dollars?"
+msgstr "dollars? de Brunei"
+
+msgctxt "currency_converter"
+msgid "Bolivian Bolivianos?"
+msgstr "bolivianos? boliviens?"
+
+msgctxt "currency_converter"
+msgid "bolivianos?"
+msgstr "bolivianos?"
+
+msgctxt "currency_converter"
+msgid "brazilian reals?"
+msgstr "r(?:é|e)als? brésiliens?"
+
+msgctxt "currency_converter"
+msgid "reals?"
+msgstr "r(?:é|e)als?"
+
+msgctxt "currency_converter"
+msgid "Bahamian Dollars?"
+msgstr "dollars? baham(é|e)ens?"
+
+msgctxt "currency_converter"
+msgid "Bitcoins?"
+msgstr "bitcoins?"
+
+msgctxt "currency_converter"
+msgid "Bhutanese Ngultrums?"
+msgstr "ngultrums? boutanais"
+
+msgctxt "currency_converter"
+msgid "ngultrums?"
+msgstr "ngultrums?"
+
+msgctxt "currency_converter"
+msgid "Botswana Pulas?"
+msgstr "pulas? botswanais"
+
+msgctxt "currency_converter"
+msgid "pulas?"
+msgstr "pulas?"
+
+msgctxt "currency_converter"
+msgid "New Belarusian Rubles?"
+msgstr "nouveaux? roubles? biélorusses?"
+
+msgctxt "currency_converter"
+msgid "belarusian rubles?"
+msgstr "roubles? biélorusses?"
+
+msgctxt "currency_converter"
+msgid "rubles?"
+msgstr "roubles?"
+
+msgctxt "currency_converter"
+msgid "Belize Dollars?"
+msgstr "dollars? b(?:é|e)liziens?"
+
+msgctxt "currency_converter"
+msgid "canadian dollars?"
+msgstr "dollars? canadiens?"
+
+msgctxt "currency_converter"
+msgid "Congolese Francs?"
+msgstr "francs? congolais"
+
+msgctxt "currency_converter"
+msgid "swiss francs?"
+msgstr "francs? suisses?"
+
+msgctxt "currency_converter"
+msgid "Chilean Units? of Account"
+msgstr "Unidad(?:es)? de Fomento"
+
+msgctxt "currency_converter"
+msgid "Unidad(?:es)? de Fomento"
+msgstr "Unidad(?:es)? de Fomento"
+
+msgctxt "currency_converter"
+msgid "Chilean Pesos?"
+msgstr "Pesos? chiliens?"
+
+msgctxt "currency_converter"
+msgid "chinese yuans?"
+msgstr "yuans? chinois"
+
+msgctxt "currency_converter"
+msgid "chinese renminbis?"
+msgstr "renminbis? chinois"
+
+msgctxt "currency_converter"
+msgid "yuans?"
+msgstr "yuans?"
+
+msgctxt "currency_converter"
+msgid "renminbis?"
+msgstr "renminbis?"
+
+msgctxt "currency_converter"
+msgid "Colombian Pesos?"
+msgstr "Pesos? colombiens?"
+
+msgctxt "currency_converter"
+msgid "Costa Rican Col(?:ó|o)n(?:es)?"
+msgstr "col(?:ó|o)ns? costariciens?"
+
+msgctxt "currency_converter"
+msgid "col(?:ó|o)n(?:es)?"
+msgstr "col(?:ó|o)ns?"
+
+msgctxt "currency_converter"
+msgid "Cuban Convertible Pesos?"
+msgstr "Pesos? cubains? convertibles?"
+
+msgctxt "currency_converter"
+msgid "Cuban Pesos?"
+msgstr "pesos? cubains?"
+
+msgctxt "currency_converter"
+msgid "Cape Verdean Escudos?"
+msgstr "escudos? cap-verdiens?"
+
+msgctxt "currency_converter"
+msgid "escudos?"
+msgstr "escudos?"
+
+msgctxt "currency_converter"
+msgid "czech korunas?"
+msgstr "couronnes? tch(?:è|e)ques?"
+
+msgctxt "currency_converter"
+msgid "czech crowns?"
+msgstr "couronnes? tch(?:è|e)ques?"
+
+msgctxt "currency_converter"
+msgid "korunas?"
+msgstr "couronnes?"
+
+msgctxt "currency_converter"
+msgid "Djiboutian Francs?"
+msgstr "francs? djiboutis?"
+
+msgctxt "currency_converter"
+msgid "danish krones?"
+msgstr "couronnes? danoises?"
+
+msgctxt "currency_converter"
+msgid "danish crowns?"
+msgstr "couronnes? danoises?"
+
+msgctxt "currency_converter"
+msgid "krones?"
+msgstr "couronnes?"
+
+msgctxt "currency_converter"
+msgid "Dominican Pesos?"
+msgstr "pesos? dominicains?"
+
+msgctxt "currency_converter"
+msgid "Algerian Dinars?"
+msgstr "dinars? alg(?:é|e)riens?"
+
+msgctxt "currency_converter"
+msgid "Egyptian Pounds?"
+msgstr "livres? (?:é|e)gyptiennes?"
+
+msgctxt "currency_converter"
+msgid "pounds?"
+msgstr "livres?|pounds?"
+
+msgctxt "currency_converter"
+msgid "Eritrean Nakfas?"
+msgstr "Nakfas? érythréens?"
+
+msgctxt "currency_converter"
+msgid "nafkas?"
+msgstr "nafkas?"
+
+msgctxt "currency_converter"
+msgid "Ethiopian Birrs?"
+msgstr "Birrs? éthiopiens?"
+
+msgctxt "currency_converter"
+msgid "birrs?"
+msgstr "birrs?"
+
+msgctxt "currency_converter"
+msgid "euros?"
+msgstr "euros?"
+
+msgctxt "currency_converter"
+msgid "Fijian Dollars?"
+msgstr "dollars? (?:de )?fidji(?:en)?s?"
+
+msgctxt "currency_converter"
+msgid "Falkland Islands Pounds?"
+msgstr "livres? des Îles Malouines"
+
+msgctxt "currency_converter"
+msgid "british pounds?"
+msgstr "livres? sterlings?"
+
+msgctxt "currency_converter"
+msgid "pounds? sterlings?"
+msgstr "livres? sterlings?"
+
+msgctxt "currency_converter"
+msgid "sterlings?"
+msgstr "sterlings?"
+
+msgctxt "currency_converter"
+msgid "Georgian Laris?"
+msgstr "laris? géorgiens?"
+
+msgctxt "currency_converter"
+msgid "laris?"
+msgstr "laris?"
+
+msgctxt "currency_converter"
+msgid "Guernsey Pounds?"
+msgstr "livres? guernesiaises?"
+
+msgctxt "currency_converter"
+msgid "Ghanaian Cedis?"
+msgstr "c(?:é|e)dis? ghanéens?"
+
+msgctxt "currency_converter"
+msgid "cedis?"
+msgstr "c(?:é|e)dis?"
+
+msgctxt "currency_converter"
+msgid "Gibraltar Pounds?"
+msgstr "livres? (?:de )?Gibraltar(?:ien)?s?"
+
+msgctxt "currency_converter"
+msgid "Gambian Dalasis?"
+msgstr "dalasis? gambiens?"
+
+msgctxt "currency_converter"
+msgid "dalasis?"
+msgstr "dalasis?"
+
+msgctxt "currency_converter"
+msgid "Guinean Francs?"
+msgstr "francs? guin(?:é|e)?ens?"
+
+msgctxt "currency_converter"
+msgid "Guatemalan Quetzals?"
+msgstr "Quetzals? guatémaltèques?"
+
+msgctxt "currency_converter"
+msgid "quetzals?"
+msgstr "quetzals?"
+
+msgctxt "currency_converter"
+msgid "Guyanaese Dollars?"
+msgstr "dollars? guyanais"
+
+msgctxt "currency_converter"
+msgid "hong kong dollars?"
+msgstr "dollars? (?:de hong kong|hong(?: )?kongais)"
+
+msgctxt "currency_converter"
+msgid "Honduran Lempiras?"
+msgstr "lempiras? honduriens?"
+
+msgctxt "currency_converter"
+msgid "lempiras?"
+msgstr "lempiras?"
+
+msgctxt "currency_converter"
+msgid "croatian kunas?"
+msgstr "kunas? croates?"
+
+msgctxt "currency_converter"
+msgid "kunas?"
+msgstr "kunas?"
+
+msgctxt "currency_converter"
+msgid "Haitian Gourdes?"
+msgstr "Gourdes? haïtiennes?"
+
+msgctxt "currency_converter"
+msgid "gourdes?"
+msgstr "gourdes?"
+
+msgctxt "currency_converter"
+msgid "hungarian forints?"
+msgstr "forints? hongrois?"
+
+msgctxt "currency_converter"
+msgid "forints?"
+msgstr "forints?"
+
+msgctxt "currency_converter"
+msgid "indonesian rupiahs?"
+msgstr "Roupies? indonésiennes?"
+
+msgctxt "currency_converter"
+msgid "rupiahs?"
+msgstr "roupies?"
+
+msgctxt "currency_converter"
+msgid "israeli shekels?"
+msgstr "shekels? isra(é|e)liens?"
+
+msgctxt "currency_converter"
+msgid "shekels?"
+msgstr "shekels?"
+
+msgctxt "currency_converter"
+msgid "Manx pounds?"
+msgstr "livres? mannoises?"
+
+msgctxt "currency_converter"
+msgid "indian rupees?"
+msgstr "roupies? indiennes?"
+
+msgctxt "currency_converter"
+msgid "rupees?"
+msgstr "roupies?"
+
+msgctxt "currency_converter"
+msgid "Iraqi Dinars?"
+msgstr "dinars? irakiens?"
+
+msgctxt "currency_converter"
+msgid "Iranian Rials?"
+msgstr "rials? iraniens?"
+
+msgctxt "currency_converter"
+msgid "rials?"
+msgstr "rials?"
+
+msgctxt "currency_converter"
+msgid "Icelandic Kr(ó|o)na"
+msgstr "couronne islandaise"
+
+msgctxt "currency_converter"
+msgid "Icelandic Kr(ó|o)nur"
+msgstr "couronnes islandaises"
+
+msgctxt "currency_converter"
+msgid "kr(ó|o)na?"
+msgstr "couronne"
+
+msgctxt "currency_converter"
+msgid "kr(ó|o)nur"
+msgstr "couronnes"
+
+msgctxt "currency_converter"
+msgid "Jersey Pounds?"
+msgstr "livres? de Jersey"
+
+msgctxt "currency_converter"
+msgid "Jamaican Dollars?"
+msgstr "dollars? jama(i|ï)cains?"
+
+msgctxt "currency_converter"
+msgid "Jordanian Dinars?"
+msgstr "dinars? jordaniens?"
+
+msgctxt "currency_converter"
+msgid "japanese yens?"
+msgstr "yens? japonais"
+
+msgctxt "currency_converter"
+msgid "yens?"
+msgstr "yens?"
+
+msgctxt "currency_converter"
+msgid "Kenyan Shillings?"
+msgstr "shillings? k(é|e)nyans?"
+
+msgctxt "currency_converter"
+msgid "shillings?"
+msgstr "shillings?"
+
+msgctxt "currency_converter"
+msgid "Kyrgystani Soms?"
+msgstr "soms? kirghizes?"
+
+msgctxt "currency_converter"
+msgid "soms?"
+msgstr "soms?"
+
+msgctxt "currency_converter"
+msgid "Cambodian Riels?"
+msgstr "riels? cambodgiens?"
+
+msgctxt "currency_converter"
+msgid "riels?"
+msgstr "riels?"
+
+msgctxt "currency_converter"
+msgid "Comorian Francs?"
+msgstr "francs? comoriens?"
+
+msgctxt "currency_converter"
+msgid "North Korean Wons?"
+msgstr "wons? nord(-| )cor(é|e)ens?"
+
+msgctxt "currency_converter"
+msgid "wons?"
+msgstr "wons?"
+
+msgctxt "currency_converter"
+msgid "south korean wons?"
+msgstr "wons? sud(-| )cor(é|e)ens?"
+
+msgctxt "currency_converter"
+msgid "korean wons?"
+msgstr "wons? cor(é|è)ens?"
+
+msgctxt "currency_converter"
+msgid "Kuwaiti Dinars?"
+msgstr "dinars? kowe(ï|i)tiens?"
+
+msgctxt "currency_converter"
+msgid "Cayman Islands Dollars?"
+msgstr "dollars? des (î|i)les ca(ï|i)mans"
+
+msgctxt "currency_converter"
+msgid "Kazakhstani Te(n|ń)ge"
+msgstr "tengu?(e|é) kazakhs?"
+
+msgctxt "currency_converter"
+msgid "te(n|ń)ge"
+msgstr "tengu?(e|é)"
+
+msgctxt "currency_converter"
+msgid "Laotian Kips?"
+msgstr "kips? laotiens?"
+
+msgctxt "currency_converter"
+msgid "lao kips?"
+msgstr "kips? laotiens?"
+
+msgctxt "currency_converter"
+msgid "kips?"
+msgstr "kips?"
+
+msgctxt "currency_converter"
+msgid "Lebanese Pounds?"
+msgstr "livres? libanaises?"
+
+msgctxt "currency_converter"
+msgid "Sri Lankan Rupees?"
+msgstr "roupies? sri(-| )?lankaises?"
+
+msgctxt "currency_converter"
+msgid "Liberian Dollars?"
+msgstr "dollars? lib(é|e)riens?"
+
+msgctxt "currency_converter"
+msgid "Lesotho (ma)?Loti"
+msgstr "(ma)?loti l(é|e)soth(ans?|iens?)"
+
+msgctxt "currency_converter"
+msgid "(ma)?loti"
+msgstr "(ma)?loti"
+
+msgctxt "currency_converter"
+msgid "Lithuanian Litai?"
+msgstr "Litas lithuaniens?"
+
+msgctxt "currency_converter"
+msgid "litai?"
+msgstr "litas"
+
+msgctxt "currency_converter"
+msgid "Libyan Dinars?"
+msgstr "dinars? libyens?"
+
+msgctxt "currency_converter"
+msgid "Moroccan Dirhams?"
+msgstr "dirhams? marocains?"
+
+msgctxt "currency_converter"
+msgid "Moldovan Le(u|i)"
+msgstr "le(u|i) moldaves?"
+
+msgctxt "currency_converter"
+msgid "le(u|i)"
+msgstr "le(u|i)"
+
+msgctxt "currency_converter"
+msgid "Malagasy Ariary"
+msgstr "ariarys? malgaches?"
+
+msgctxt "currency_converter"
+msgid "ariary"
+msgstr "ariarys?"
+
+msgctxt "currency_converter"
+msgid "Macedonian Denar(i|s)?"
+msgstr "denars? mac(é|e)doniens?"
+
+msgctxt "currency_converter"
+msgid "denar(i|s)?"
+msgstr "denars?"
+
+msgctxt "currency_converter"
+msgid "Myanma Kyats?"
+msgstr "kyats? de Myanmar"
+
+msgctxt "currency_converter"
+msgid "Burmese kyats?"
+msgstr "kyats? birmans?"
+
+msgctxt "currency_converter"
+msgid "kyats?"
+msgstr "kyats?"
+
+msgctxt "currency_converter"
+msgid "Mongolian t(ö|o)gr(ö|o)g|tugrik"
+msgstr "tugrik|tugrug|t(ö|o)gr(ö|o)g mongoliens?"
+
+msgctxt "currency_converter"
+msgid "t(ö|o)gr(ö|o)g|tugrik"
+msgstr "tugrik|tugrug|t(ö|o)gr(ö|o)g"
+
+msgctxt "currency_converter"
+msgid "Macanese Patacas?"
+msgstr "patacas? macanais"
+
+msgctxt "currency_converter"
+msgid "patacas?"
+msgstr "patacas?"
+
+msgctxt "currency_converter"
+msgid "Mauritanian Ougu?iyas?"
+msgstr "ouguiyas? mauritaniens?"
+
+msgctxt "currency_converter"
+msgid "Ougu?iyas?"
+msgstr "ouguiyas?"
+
+msgctxt "currency_converter"
+msgid "Mauritian Rupees?"
+msgstr "roupies? mauriciennes?"
+
+msgctxt "currency_converter"
+msgid "Maldivian Rufiyaas?"
+msgstr "(rufiyaas?|roupies?) maldiviennes?"
+
+msgctxt "currency_converter"
+msgid "rufiyaas?"
+msgstr "rufiyaas?|roupies?"
+
+msgctxt "currency_converter"
+msgid "Malawi(an)? kwachas?"
+msgstr "Kwachas? malawi(te|en)s?"
+
+msgctxt "currency_converter"
+msgid "kwachas?"
+msgstr "kwachas?"
+
+msgctxt "currency_converter"
+msgid "mexican pesos?"
+msgstr "pesos? m(e|é)xicains?"
+
+msgctxt "currency_converter"
+msgid "malaysian ringgits?"
+msgstr "ringgits? malaysiens?"
+
+msgctxt "currency_converter"
+msgid "ringgits?"
+msgstr "ringgits?"
+
+msgctxt "currency_converter"
+msgid "Mozambican Meticals?"
+msgstr "metica(l|is) Mozambicains?"
+
+msgctxt "currency_converter"
+msgid "meticals?"
+msgstr "metica(l|is)"
+
+msgctxt "currency_converter"
+msgid "Namibian Dollars?"
+msgstr "dollars? namibiens?"
+
+msgctxt "currency_converter"
+msgid "Nigerian Naira"
+msgstr "na(ï|i)ras? nig(é|e)rians?"
+
+msgctxt "currency_converter"
+msgid "naira"
+msgstr "na(ï|i)ras?"
+
+msgctxt "currency_converter"
+msgid "Nicaraguan c(ó|o)rdobas?"
+msgstr "c(ó|o)rdobas? d'or"
+
+msgctxt "currency_converter"
+msgid "c(ó|o)rdobas?"
+msgstr "c(ó|o)rdobas"
+
+msgctxt "currency_converter"
+msgid "norwegian krones?"
+msgstr "couronnes? norv(é|e)giennes?"
+
+msgctxt "currency_converter"
+msgid "norwegian crowns?"
+msgstr "couronnes? norv(é|e)giennes?"
+
+msgctxt "currency_converter"
+msgid "krones?"
+msgstr "couronnes?"
+
+msgctxt "currency_converter"
+msgid "Nepalese Rupees?"
+msgstr "roupies? n(é|e)palaises?"
+
+msgctxt "currency_converter"
+msgid "Nepalese Rupees?"
+msgstr "roupies? n(é|e)palaises?"
+
+msgctxt "currency_converter"
+msgid "new zealand dollars?"
+msgstr "dollars? n(é|e)o-z(é|e)landais"
+
+msgctxt "currency_converter"
+msgid "Omani Rials?"
+msgstr "rials? omanais"
+
+msgctxt "currency_converter"
+msgid "rials?"
+msgstr "rials?"
+
+msgctxt "currency_converter"
+msgid "Panamanian Balboas?"
+msgstr "balboas? panaméens?"
+
+msgctxt "currency_converter"
+msgid "balboas?"
+msgstr "balboas?"
+
+msgctxt "currency_converter"
+msgid "Peruvian Nuevo Sol(es)?"
+msgstr "sols? péruviens?"
+
+msgctxt "currency_converter"
+msgid "sol(es)?"
+msgstr "sols?"
+
+msgctxt "currency_converter"
+msgid "Papua New Guinean Kina"
+msgstr "kinas? Papouasiens?"
+
+msgctxt "currency_converter"
+msgid "kina"
+msgstr "kinas?"
+
+msgctxt "currency_converter"
+msgid "philippine pesos?"
+msgstr "pesos? philippins?"
+
+msgctxt "currency_converter"
+msgid "Pakistani Rupees?"
+msgstr "roupies? pakistanaises?"
+
+msgctxt "currency_converter"
+msgid "polish z(l|ł)otys?"
+msgstr "z(l|ł)otys? polonais"
+
+msgctxt "currency_converter"
+msgid "z(l|ł)otys?"
+msgstr "z(l|ł)otys?"
+
+msgctxt "currency_converter"
+msgid "Paraguayan guaran(í|i)?(es)?"
+msgstr "guaran(í|i)(es)? paraguayens?"
+
+msgctxt "currency_converter"
+msgid "guaran(í|i)?(es)?"
+msgstr "guaran(í|i)?(es)?"
+
+msgctxt "currency_converter"
+msgid "Qatari Riyals?"
+msgstr "Riyals? qatariens?"
+
+msgctxt "currency_converter"
+msgid "riyals?"
+msgstr "riyals?"
+
+msgctxt "currency_converter"
+msgid "romanian le(u|i)?"
+msgstr "le(u|i) roumains?"
+
+msgctxt "currency_converter"
+msgid "le(u|i)"
+msgstr "le(u|i)"
+
+msgctxt "currency_converter"
+msgid "Serbian Dinars?"
+msgstr "dinars? serbes?"
+
+msgctxt "currency_converter"
+msgid "russian rubles?"
+msgstr "roubles? russes?"
+
+msgctxt "currency_converter"
+msgid "rubles?"
+msgstr "roubles?"
+
+msgctxt "currency_converter"
+msgid "Rwandan Francs?"
+msgstr "francs? rwandais"
+
+msgctxt "currency_converter"
+msgid "Saudi riyals?"
+msgstr "riyals? saoudiens?"
+
+msgctxt "currency_converter"
+msgid "Solomon Islands Dollars?"
+msgstr "dollars? (des (î|i)les salomon|salomoniens?)"
+
+msgctxt "currency_converter"
+msgid "Seychellois Rupees?"
+msgstr "roupies? seychelloises?"
+
+msgctxt "currency_converter"
+msgid "sudanese pounds?"
+msgstr "livres? soudanaises?"
+
+msgctxt "currency_converter"
+msgid "swedish kronas?"
+msgstr "couronnes? su(é|e)doises?"
+
+msgctxt "currency_converter"
+msgid "swedish kronors?"
+msgstr "couronnes? su(é|e)doises?"
+
+msgctxt "currency_converter"
+msgid "kronors?"
+msgstr "couronnes?"
+
+msgctxt "currency_converter"
+msgid "kronas?"
+msgstr "couronnes?"
+
+msgctxt "currency_converter"
+msgid "swedish crowns?"
+msgstr "couronnes? su(é|e)doises?"
+
+msgctxt "currency_converter"
+msgid "Singapore Dollars?"
+msgstr "dollars? (de singapour|singapouriens?)"
+
+msgctxt "currency_converter"
+msgid "Saint Helena Pounds?"
+msgstr "livres de sainte-h(é|e)l(è|e)ne"
+
+msgctxt "currency_converter"
+msgid "Sierra Leonean leones?"
+msgstr "leones? sierral(é|e)onais"
+
+msgctxt "currency_converter"
+msgid "leones?"
+msgstr "leones?"
+
+msgctxt "currency_converter"
+msgid "Somali Shillings?"
+msgstr "shillings? somaliens?"
+
+msgctxt "currency_converter"
+msgid "Surinamese Dollars?"
+msgstr "dollars? surinamiens?"
+
+msgctxt "currency_converter"
+msgid "S(ã|a)o Tom(é|e) and Pr(í|i)ncipe dobras?"
+msgstr "dobras? de S(ã|a)o Tom(é|e)(-| )et(-| )Principe"
+
+msgctxt "currency_converter"
+msgid "dobras?"
+msgstr "dobras?"
+
+msgctxt "currency_converter"
+msgid "Salvadoran Col(ó|o)n(es)?"
+msgstr "col(ó|o)ns? salvadoriens?"
+
+msgctxt "currency_converter"
+msgid "col(ó|o)n(es)?"
+msgstr "col(ó|o)ns?"
+
+msgctxt "currency_converter"
+msgid "Syrian Pounds?"
+msgstr "livres? syriennes?"
+
+msgctxt "currency_converter"
+msgid "Swazi (lilangeni|emalangeni)"
+msgstr "(lilangeni|emalangeni) swazi"
+
+msgctxt "currency_converter"
+msgid "(lilangeni|emalangeni)"
+msgstr "(lilangeni|emalangeni)"
+
+msgctxt "currency_converter"
+msgid "thai bahts?"
+msgstr "bahts? tha(ï|i)landais"
+
+msgctxt "currency_converter"
+msgid "bahts?"
+msgstr "bahts?"
+
+msgctxt "currency_converter"
+msgid "Tajikistani Somoni"
+msgstr "somonis? tadjiks?"
+
+msgctxt "currency_converter"
+msgid "somoni"
+msgstr "somonis?"
+
+msgctxt "currency_converter"
+msgid "Turkmenistan manats?"
+msgstr "manats? Turkm(è|e)nes?"
+
+msgctxt "currency_converter"
+msgid "manats?"
+msgstr "manats?"
+
+msgctxt "currency_converter"
+msgid "Tunisian Dinars?"
+msgstr "dinars? tunisiens?"
+
+msgctxt "currency_converter"
+msgid "Tongan pa'anga"
+msgstr "Pa'anga tongiens?"
+
+msgctxt "currency_converter"
+msgid "pa'anga"
+msgstr "pa'anga"
+
+msgctxt "currency_converter"
+msgid "turkish liras?"
+msgstr "livres? turques?"
+
+msgctxt "currency_converter"
+msgid "liras?"
+msgstr "livres?"
+
+msgctxt "currency_converter"
+msgid "Trinidad and Tobago Dollars?"
+msgstr "dollars? trinidadiens?"
+
+msgctxt "currency_converter"
+msgid "New Taiwan Dollars?"
+msgstr "nouveaux? dollars? de Taïwan"
+
+msgctxt "currency_converter"
+msgid "Taiwan Dollars?"
+msgstr "dollars? de Taïwan"
+
+msgctxt "currency_converter"
+msgid "Tanzanian Shillings?"
+msgstr "Shillings? tanzaniens?"
+
+msgctxt "currency_converter"
+msgid "Ukrainian Hryvnia"
+msgstr "Hryvnias? ukrainiennes?"
+
+msgctxt "currency_converter"
+msgid "Hryvnia"
+msgstr "Hryvnias?"
+
+msgctxt "currency_converter"
+msgid "Ugandan Shillings?"
+msgstr "shillings? ougandais?"
+
+msgctxt "currency_converter"
+msgid "american dollars?"
+msgstr "dollars? am(é|e)ricains?"
+
+msgctxt "currency_converter"
+msgid "US dollars?"
+msgstr "dollars? US"
+
+msgctxt "currency_converter"
+msgid "Uruguayan Pesos?"
+msgstr "pesos? uruguayens?"
+
+msgctxt "currency_converter"
+msgid "Uzbekistan So'?ms?"
+msgstr "so?ums? ouzbeks?"
+
+msgctxt "currency_converter"
+msgid "so'?ms?"
+msgstr "so?ums?"
+
+msgctxt "currency_converter"
+msgid "Venezuelan Bol(í|i)var(es)?( fuertes?)?"
+msgstr "Bol(í|i)vars?( fuertes?)? vénézuéliens?"
+
+msgctxt "currency_converter"
+msgid "Bol(í|i)var(es)?( fuertes?)?"
+msgstr "Bol(í|i)vars?( fuertes?)?"
+
+msgctxt "currency_converter"
+msgid "Vietnamese (đ|d|Đ)(ồ|o)ng"
+msgstr "(đ|d|Đ)(ồ|o)ng vietnamiens?"
+
+msgctxt "currency_converter"
+msgid "(đ|d|Đ)(ồ|o)ng"
+msgstr "(đ|d|Đ)(ồ|o)ng"
+
+msgctxt "currency_converter"
+msgid "Vanuatu Vatu"
+msgstr "vatu (vanuatais|ni-vanuatu)"
+
+msgctxt "currency_converter"
+msgid "vatu"
+msgstr "vatu"
+
+msgctxt "currency_converter"
+msgid "Samoan t(ā|a)l(ā|a)"
+msgstr "t(ā|a)l(ā|a)s? samoans?"
+
+msgctxt "currency_converter"
+msgid "t(ā|a)l(ā|a)"
+msgstr "t(ā|a)l(ā|a)s?"
+
+msgctxt "currency_converter"
+msgid "CFA francs?"
+msgstr "Francs? CFA"
+
+msgctxt "currency_converter"
+msgid "(Troy )?ounces? of silver"
+msgstr "onces? d'argent"
+
+msgctxt "currency_converter"
+msgid "(Troy )?ounces? of gold"
+msgstr "onces? d'or"
+
+msgctxt "currency_converter"
+msgid "Eastern Caribbean dollars?"
+msgstr "dollars? (des Cara(ï|i)bes orientales|est(-| )caribéens?)"
+
+msgctxt "currency_converter"
+msgid "Caribbean dollars?"
+msgstr "dollars? (des cara(ï|i)bes|caribéens?)"
+
+msgctxt "currency_converter"
+msgid "Special drawing rights"
+msgstr "droits? de tirage spécia(ux|l)"
+
+msgctxt "currency_converter"
+msgid "SDR"
+msgstr "DTS"
+
+msgctxt "currency_converter"
+msgid "CFP francs?"
+msgstr "francs? (pacifiques?|CFP)"
+
+msgctxt "currency_converter"
+msgid "Yemeni riy?als?"
+msgstr ""
+
+msgctxt "currency_converter"
+msgid "riy?als?"
+msgstr "Rials? y(é|e)m(é|e)nites?"
+
+msgctxt "currency_converter"
+msgid "south african rands?"
+msgstr "rands? sud(-| )africains?"
+
+msgctxt "currency_converter"
+msgid "rands?"
+msgstr "rands?"
+
+msgctxt "currency_converter"
+msgid "Zambian kwachas?"
+msgstr "kwachas? zambiens?"
+
+msgctxt "currency_converter"
+msgid "Zimbabwean dollars?"
+msgstr "dollars? zimbabw(é|e)ens?"
+
+msgctxt "currency_converter"
+msgid "American Dollar"
+msgstr "Dollar américain"
+
+msgctxt "currency_converter"
+msgid "American Dollars"
+msgstr "Dollars américains"
+
+msgctxt "currency_converter"
+msgid "Canadian Dollar"
+msgstr "Dollar canadien"
+
+msgctxt "currency_converter"
+msgid "Canadian Dollars"
+msgstr "Dollars canadiens"
+
+msgctxt "currency_converter"
+msgid "Australian Dollar"
+msgstr "Dollar australien"
+
+msgctxt "currency_converter"
+msgid "Australian Dollars"
+msgstr "Dollars australiens"
+
+msgctxt "currency_converter"
+msgid "New Zealand Dollar"
+msgstr "Dollar néo-zélandais"
+
+msgctxt "currency_converter"
+msgid "New Zealand Dollars"
+msgstr "Dollars néo-zélandais"
+
+msgctxt "currency_converter"
+msgid "Mexican Peso"
+msgstr "Peso mexicain"
+
+msgctxt "currency_converter"
+msgid "Mexican Pesos"
+msgstr "Pesos mexicains"
+
+msgctxt "currency_converter"
+msgid "Hong Kong Dollar"
+msgstr "Dollar de Hong Kong"
+
+msgctxt "currency_converter"
+msgid "Hong Kong Dollars"
+msgstr "Dollars de Hong Kong"
+
+msgctxt "currency_converter"
+msgid "Argentine Peso"
+msgstr "Peso argentin"
+
+msgctxt "currency_converter"
+msgid "Argentine Pesos"
+msgstr "Pesos argentins"
+
+msgctxt "currency_converter"
+msgid "Bermudian Dollar"
+msgstr "Dollar bermudien"
+
+msgctxt "currency_converter"
+msgid "Bermudian Dollars"
+msgstr "Dollars bermudiens"
+
+msgctxt "currency_converter"
+msgid "Bahamian Dollar"
+msgstr "Dollar bahaméen"
+
+msgctxt "currency_converter"
+msgid "Bahamian Dollars"
+msgstr "Dollars bahaméens"
+
+msgctxt "currency_converter"
+msgid "Belize Dollar"
+msgstr "Dollar bélizien"
+
+msgctxt "currency_converter"
+msgid "Belize Dollars"
+msgstr "Dollars béliziens"
+
+msgctxt "currency_converter"
+msgid "Chilean Peso"
+msgstr "Peso chilien"
+
+msgctxt "currency_converter"
+msgid "Chilean Pesos"
+msgstr "Pesos chiliens"
+
+msgctxt "currency_converter"
+msgid "Colombian Peso"
+msgstr "Peso colombien"
+
+msgctxt "currency_converter"
+msgid "Colombian Pesos"
+msgstr "Pesos colombiens"
+
+msgctxt "currency_converter"
+msgid "Cuban Convertible Peso"
+msgstr "Peso cubain convertible"
+
+msgctxt "currency_converter"
+msgid "Cuban Convertible Pesos"
+msgstr "Pesos cubains convertibles"
+
+msgctxt "currency_converter"
+msgid "Cuban Peso"
+msgstr "Peso cubain"
+
+msgctxt "currency_converter"
+msgid "Cuban Pesos"
+msgstr "Pesos cubains"
+
+msgctxt "currency_converter"
+msgid "Cape Verdean Escudo"
+msgstr "Escudo cap-verdien"
+
+msgctxt "currency_converter"
+msgid "Cape Verdean Escudos"
+msgstr "Escudos cap-verdiens"
+
+msgctxt "currency_converter"
+msgid "Dominican Peso"
+msgstr "Peso dominicain"
+
+msgctxt "currency_converter"
+msgid "Dominican Pesos"
+msgstr "Pesos dominicains"
+
+msgctxt "currency_converter"
+msgid "Fijian Dollar"
+msgstr "Dollar de Fidji"
+
+msgctxt "currency_converter"
+msgid "Fijian Dollars"
+msgstr "Dollars de Fidji"
+
+msgctxt "currency_converter"
+msgid "Guyanaese Dollar"
+msgstr "Dollar guyanais"
+
+msgctxt "currency_converter"
+msgid "Guyanaese Dollars"
+msgstr "Dollars guyanais"
+
+msgctxt "currency_converter"
+msgid "Jamaican Dollar"
+msgstr "Dollar jamaïcain"
+
+msgctxt "currency_converter"
+msgid "Jamaican Dollars"
+msgstr "Dollars jamaïcains"
+
+msgctxt "currency_converter"
+msgid "Cayman Islands Dollar"
+msgstr "Dollar des Îles Caïmans"
+
+msgctxt "currency_converter"
+msgid "Cayman Islands Dollars"
+msgstr "Dollars des Îles Caïmans"
+
+msgctxt "currency_converter"
+msgid "Singapore Dollar"
+msgstr "Dollar de Singapour"
+
+msgctxt "currency_converter"
+msgid "Singapore Dollars"
+msgstr "Dollars de Singapour"
+
+msgctxt "currency_converter"
+msgid "Solomon Islands Dollar"
+msgstr "Dollar des Salomon"
+
+msgctxt "currency_converter"
+msgid "Solomon Islands Dollars"
+msgstr "Dollars des Salomon"
+
+msgctxt "currency_converter"
+msgid "Surinamese Dollar"
+msgstr "Dollar surinamien"
+
+msgctxt "currency_converter"
+msgid "Surinamese Dollars"
+msgstr "Dollars surinamiens"
+
+msgctxt "currency_converter"
+msgid "Trinidad and Tobago Dollar"
+msgstr "Dollar de Trinité-et-Tobago"
+
+msgctxt "currency_converter"
+msgid "Trinidad and Tobago Dollars"
+msgstr "Dollars de Trinité-et-Tobago"
+
+msgctxt "currency_converter"
+msgid "New Taiwan Dollar"
+msgstr "Nouveau dollar de Taïwan"
+
+msgctxt "currency_converter"
+msgid "New Taiwan Dollars"
+msgstr "Nouveaux dollars de Taïwan"
+
+msgctxt "currency_converter"
+msgid "Uruguayan Peso"
+msgstr "Peso uruguayen"
+
+msgctxt "currency_converter"
+msgid "Uruguayan Pesos"
+msgstr "Pesos uruguayens"
+
+msgctxt "currency_converter"
+msgid "Eastern Caribbean Dollar"
+msgstr "Dollar est-caribéen"
+
+msgctxt "currency_converter"
+msgid "Eastern Caribbean Dollars"
+msgstr "Dollars est-caribéens"
+
+msgctxt "currency_converter"
+msgid "Zimbabwean Dollar"
+msgstr "Dollar zimbabwéen"
+
+msgctxt "currency_converter"
+msgid "Zimbabwean Dollars"
+msgstr "Dollars zimbabwéens"
+
+msgctxt "currency_converter"
+msgid "Barbadian Dollar"
+msgstr "Dollar barbadien"
+
+msgctxt "currency_converter"
+msgid "Barbadian Dollars"
+msgstr "Dollars barbadiens"
+
+msgctxt "currency_converter"
+msgid "Brunei Dollar"
+msgstr "Dollar de Brunei"
+
+msgctxt "currency_converter"
+msgid "Brunei Dollars"
+msgstr "Dollars de Brunei"
+
+msgctxt "currency_converter"
+msgid "Brazilian Real"
+msgstr "Réal brésilien"
+
+msgctxt "currency_converter"
+msgid "Brazilian Reals"
+msgstr "Réals brésiliens"
+
+msgctxt "currency_converter"
+msgid "Liberian Dollar"
+msgstr "Dollar libérien"
+
+msgctxt "currency_converter"
+msgid "Liberian Dollars"
+msgstr "Dollars libériens"
+
+msgctxt "currency_converter"
+msgid "Namibian Dollar"
+msgstr "Dollar namibien"
+
+msgctxt "currency_converter"
+msgid "Namibian Dollars"
+msgstr "Dollars namibiens"
+
+msgctxt "currency_converter"
+msgid "Nicaraguan Córdoba"
+msgstr "Córdoba d'or nicaraguayen"
+
+msgctxt "currency_converter"
+msgid "Nicaraguan Córdobas"
+msgstr "Córdobas d'or nicaraguayens"
+
+msgctxt "currency_converter"
+msgid "Tongan Pa'anga"
+msgstr "Pa'anga tongien"
+
+msgctxt "currency_converter"
+msgid "Samoan Tālā"
+msgstr "Tālā de Samoa"
+
+msgctxt "currency_converter"
+msgid "Samoan Tālā"
+msgstr "Tālās de Samoa"
+
+msgctxt "currency_converter"
+msgid "Chinese Yuan"
+msgstr "Yuan chinois"
+
+msgctxt "currency_converter"
+msgid "Chinese Yuans"
+msgstr "Yuans chinois"
+
+msgctxt "currency_converter"
+msgid "Japanese Yen"
+msgstr "Yen japonais"
+
+msgctxt "currency_converter"
+msgid "Japanese Yens"
+msgstr "Yens japonais"
+
+msgctxt "currency_converter"
+msgid "Danish Krone"
+msgstr "Couronne danoise"
+
+msgctxt "currency_converter"
+msgid "Danish Krones"
+msgstr "Couronnes danoises"
+
+msgctxt "currency_converter"
+msgid "Icelandic Króna"
+msgstr "Couronne islandaise"
+
+msgctxt "currency_converter"
+msgid "Icelandic Krónur"
+msgstr "Couronnes islandaises"
+
+msgctxt "currency_converter"
+msgid "Norwegian Krone"
+msgstr "Couronne norvégienne"
+
+msgctxt "currency_converter"
+msgid "Norwegian Krones"
+msgstr "Couronnes norvégiennes"
+
+msgctxt "currency_converter"
+msgid "Swedish Krona"
+msgstr "Couronne suédoise"
+
+msgctxt "currency_converter"
+msgid "Swedish Kronors"
+msgstr "Couronnes suédoises"
+
+msgctxt "currency_converter"
+msgid "British Pound"
+msgstr "Livre sterling"
+
+msgctxt "currency_converter"
+msgid "British Pounds"
+msgstr "Livres sterling"
+
+msgctxt "currency_converter"
+msgid "Egyptian Pound"
+msgstr "Livre egyptienne"
+
+msgctxt "currency_converter"
+msgid "Egyptian Pounds"
+msgstr "Livres egyptiennes"
+
+msgctxt "currency_converter"
+msgid "Falkland Islands Pound"
+msgstr "Livre des Îles Malouines"
+
+msgctxt "currency_converter"
+msgid "Falkland Islands Pounds"
+msgstr "Livres des Îles Malouines"
+
+msgctxt "currency_converter"
+msgid "Guernsey Pound"
+msgstr "Livre guernesiaise"
+
+msgctxt "currency_converter"
+msgid "Guernsey Pounds"
+msgstr "Livres guernesiaises"
+
+msgctxt "currency_converter"
+msgid "Gibraltar Pound"
+msgstr "Livre de Gibraltar"
+
+msgctxt "currency_converter"
+msgid "Gibraltar Pounds"
+msgstr "Livres de Gibraltar"
+
+msgctxt "currency_converter"
+msgid "Manx Pound"
+msgstr "Livre mannoise"
+
+msgctxt "currency_converter"
+msgid "Manx Pounds"
+msgstr "Livres mannoises"
+
+msgctxt "currency_converter"
+msgid "Jersey Pound"
+msgstr "Livre de Jersey"
+
+msgctxt "currency_converter"
+msgid "Jersey Pounds"
+msgstr "Livres de Jersey"
+
+msgctxt "currency_converter"
+msgid "Lebanese Pound"
+msgstr "Livre libanaise"
+
+msgctxt "currency_converter"
+msgid "Lebanese Pounds"
+msgstr "Livres libanaises"
+
+msgctxt "currency_converter"
+msgid "Sudanese Pound"
+msgstr "Livre soudanaise"
+
+msgctxt "currency_converter"
+msgid "Sudanese Pounds"
+msgstr "Livres soudanaises"
+
+msgctxt "currency_converter"
+msgid "Saint Helena Pound"
+msgstr "Livre de Sainte-Hélène"
+
+msgctxt "currency_converter"
+msgid "Saint Helena Pounds"
+msgstr "Livres de Sainte-Hélène"
+
+msgctxt "currency_converter"
+msgid "Syrian Pound"
+msgstr "Livre syrienne"
+
+msgctxt "currency_converter"
+msgid "Syrian Pounds"
+msgstr "Livres syriennes"
+
+msgctxt "currency_converter"
+msgid "New Belarusian Ruble"
+msgstr "Nouveau rouble biélorusse"
+
+msgctxt "currency_converter"
+msgid "New Belarusian Rubles"
+msgstr "Nouveaux roubles biélorusses"
+
+msgctxt "currency_converter"
+msgid "Ethiopian Birr"
+msgstr "Birr éthiopien"
+
+msgctxt "currency_converter"
+msgid "Ethiopian Birrs"
+msgstr "Birrs éthiopiens"
+
+msgctxt "currency_converter"
+msgid "Saudi Riyal"
+msgstr "Riyal saoudien"
+
+msgctxt "currency_converter"
+msgid "Saudi Riyals"
+msgstr "Riyals saoudiens"
+
+msgctxt "currency_converter"
+msgid "Seychellois Rupee"
+msgstr "Roupie seychelloise"
+
+msgctxt "currency_converter"
+msgid "Seychellois Rupees"
+msgstr "Roupies seychelloises"
+
+msgctxt "currency_converter"
+msgid "United Arab Emirates Dirham"
+msgstr "Dirham des Émirats arabes unis"
+
+msgctxt "currency_converter"
+msgid "United Arab Emirates Dirhams"
+msgstr "Dirhams des Émirats arabes unis"
+
+msgctxt "currency_converter"
+msgid "Afghan Afghani"
+msgstr "Afghani"
+
+msgctxt "currency_converter"
+msgid "Afghan Afghanis"
+msgstr "Afghanis"
+
+msgctxt "currency_converter"
+msgid "Albanian Lek"
+msgstr "Lek albanais"
+
+msgctxt "currency_converter"
+msgid "Albanian Leks"
+msgstr "Leks albanais"
+
+msgctxt "currency_converter"
+msgid "Armenian Dram"
+msgstr "Dram arménien"
+
+msgctxt "currency_converter"
+msgid "Armenian Dram"
+msgstr "Drams arméniens"
+
+msgctxt "currency_converter"
+msgid "Netherlands Antillean Guilder"
+msgstr "Florin des Antilles néerlandaises"
+
+msgctxt "currency_converter"
+msgid "Netherlands Antillean Guilder"
+msgstr "Florins des Antilles néerlandaises"
+
+msgctxt "currency_converter"
+msgid "Angolan Kwanza"
+msgstr "Kwanza angolais"
+
+msgctxt "currency_converter"
+msgid "Angolan Kwanzas"
+msgstr "Kwanzas angolais"
+
+msgctxt "currency_converter"
+msgid "Aruban Florin"
+msgstr "Florin d'Aruba"
+
+msgctxt "currency_converter"
+msgid "Aruban Florins"
+msgstr "Florins d'Aruba"
+
+msgctxt "currency_converter"
+msgid "Azerbaijani Manat"
+msgstr "Manat azerbaïdjanais"
+
+msgctxt "currency_converter"
+msgid "Azerbaijani Manats"
+msgstr "Manats azerbaïdjanais"
+
+msgctxt "currency_converter"
+msgid "Bosnia-Herzegovina Convertible Mark"
+msgstr "Mark convertible de Bosnie-Herzégovine"
+
+msgctxt "currency_converter"
+msgid "Bosnia-Herzegovina Convertible Marks"
+msgstr "Marks convertibles de Bosnie-Herzégovine"
+
+msgctxt "currency_converter"
+msgid "Bangladeshi Taka"
+msgstr "Taka bengalis"
+
+msgctxt "currency_converter"
+msgid "Bangladeshi Takas"
+msgstr "Takas bengalis"
+
+msgctxt "currency_converter"
+msgid "Bulgarian Lev"
+msgstr "Lev bulgare"
+
+msgctxt "currency_converter"
+msgid "Bulgarian Levs"
+msgstr "Levs bulgares"
+
+msgctxt "currency_converter"
+msgid "Bahraini Dinar"
+msgstr "Dinar bahreïni"
+
+msgctxt "currency_converter"
+msgid "Bahraini Dinars"
+msgstr "Dinars bahreïnis"
+
+msgctxt "currency_converter"
+msgid "Burundian Franc"
+msgstr "Franc burundais"
+
+msgctxt "currency_converter"
+msgid "Burundian Francs"
+msgstr "Francs burundais"
+
+msgctxt "currency_converter"
+msgid "Bolivian Bolivianos"
+msgstr "Boliviano"
+
+msgctxt "currency_converter"
+msgid "Bolivian Bolivianos"
+msgstr "Bolivianos"
+
+msgctxt "currency_converter"
+msgid "Bitcoin"
+msgstr "Bitcoin"
+
+msgctxt "currency_converter"
+msgid "Bitcoins"
+msgstr "Bitcoins"
+
+msgctxt "currency_converter"
+msgid "Bhutanese Ngultrum"
+msgstr "Ngultrum"
+
+msgctxt "currency_converter"
+msgid "Bhutanese Ngultrums"
+msgstr "Ngultrums"
+
+msgctxt "currency_converter"
+msgid "Botswana Pula"
+msgstr "Pula botswanais"
+
+msgctxt "currency_converter"
+msgid "Botswana Pulas"
+msgstr "Pulas botswanais"
+
+msgctxt "currency_converter"
+msgid "Congolese Franc"
+msgstr "Franc congolais"
+
+msgctxt "currency_converter"
+msgid "Congolese Francs"
+msgstr "Francs congolais"
+
+msgctxt "currency_converter"
+msgid "Swiss Franc"
+msgstr "Franc suisse"
+
+msgctxt "currency_converter"
+msgid "Swiss Francs"
+msgstr "Francs suisses"
+
+msgctxt "currency_converter"
+msgid "Chilean Units of Account"
+msgstr "Unidad de Fomento"
+
+msgctxt "currency_converter"
+msgid "Chilean Unit of Account"
+msgstr "Unidades de Formento"
+
+msgctxt "currency_converter"
+msgid "Costa Rican Colón"
+msgstr "Colón costaricien"
+
+msgctxt "currency_converter"
+msgid "Costa Rican Colónes"
+msgstr "Colóns costaricien"
+
+msgctxt "currency_converter"
+msgid "Czech Koruna"
+msgstr "Couronne tchèque"
+
+msgctxt "currency_converter"
+msgid "Czech Korunas"
+msgstr "Couronnes tchèques"
+
+msgctxt "currency_converter"
+msgid "Djiboutian Franc"
+msgstr "Franc Djibouti"
+
+msgctxt "currency_converter"
+msgid "Djiboutian Francs"
+msgstr "Francs Djibouti"
+
+msgctxt "currency_converter"
+msgid "Algerian Dinar"
+msgstr "Dinar algérien"
+
+msgctxt "currency_converter"
+msgid "Algerian Dinars"
+msgstr "Dinars algériens"
+
+msgctxt "currency_converter"
+msgid "Eritrean Nakfa"
+msgstr "Nakfa érythréen"
+
+msgctxt "currency_converter"
+msgid "Eritrean Nakfas"
+msgstr "Nakfas érythréens"
+
+msgctxt "currency_converter"
+msgid "Euro"
+msgstr "Euro"
+
+msgctxt "currency_converter"
+msgid "Euros"
+msgstr "Euros"
+
+msgctxt "currency_converter"
+msgid "Georgian Lari"
+msgstr "Lari géorgien"
+
+msgctxt "currency_converter"
+msgid "Georgian Laris"
+msgstr "Laris géorgiens"
+
+msgctxt "currency_converter"
+msgid "Ghanaian Cedi"
+msgstr "Cedi ghanéen"
+
+msgctxt "currency_converter"
+msgid "Ghanaian Cedis"
+msgstr "Cedis ghanéens"
+
+msgctxt "currency_converter"
+msgid "Gambian Dalasi"
+msgstr "Dalasi"
+
+msgctxt "currency_converter"
+msgid "Gambian Dalasis"
+msgstr "Dalasis"
+
+msgctxt "currency_converter"
+msgid "Guinean Franc"
+msgstr "Franc guinéen"
+
+msgctxt "currency_converter"
+msgid "Guinean Francs"
+msgstr "Francs guinéens"
+
+msgctxt "currency_converter"
+msgid "Guatemalan Quetzal"
+msgstr "Quetzal guatémaltèque"
+
+msgctxt "currency_converter"
+msgid "Guatemalan Quetzals"
+msgstr "Quetzales guatémaltèques"
+
+msgctxt "currency_converter"
+msgid "Honduran Lempira"
+msgstr "Lempira hondurien"
+
+msgctxt "currency_converter"
+msgid "Honduran Lempiras"
+msgstr "Lempiras honduriens"
+
+msgctxt "currency_converter"
+msgid "Croatian Kuna"
+msgstr "Kuna croate"
+
+msgctxt "currency_converter"
+msgid "Croatian Kunas"
+msgstr "Kunas croates"
+
+msgctxt "currency_converter"
+msgid "Haitian Gourde"
+msgstr "Gourde haïtienne"
+
+msgctxt "currency_converter"
+msgid "Haitian Gourdes"
+msgstr "Gourdes haïtiennes"
+
+msgctxt "currency_converter"
+msgid "Hungarian Forint"
+msgstr "Forint hongrois"
+
+msgctxt "currency_converter"
+msgid "Hungarian Forints"
+msgstr "Forints hongrois"
+
+msgctxt "currency_converter"
+msgid "Indonesian Rupiah"
+msgstr "Roupie indonésienne"
+
+msgctxt "currency_converter"
+msgid "Indonesian Rupiahs"
+msgstr "Roupies indonésiennes"
+
+msgctxt "currency_converter"
+msgid "Israeli Shekel"
+msgstr "Shekel"
+
+msgctxt "currency_converter"
+msgid "Israeli Shekels"
+msgstr "Shekalim"
+
+msgctxt "currency_converter"
+msgid "Indian Rupee"
+msgstr "Roupie indienne"
+
+msgctxt "currency_converter"
+msgid "Indian Rupees"
+msgstr "Roupies indiennes"
+
+msgctxt "currency_converter"
+msgid "Iraqi Dinar"
+msgstr "Dinar irakien"
+
+msgctxt "currency_converter"
+msgid "Iraqi Dinars"
+msgstr "Dinars irakiens"
+
+msgctxt "currency_converter"
+msgid "Iranian Rial"
+msgstr "Rial iranien"
+
+msgctxt "currency_converter"
+msgid "Iranian Rials"
+msgstr "Rials iraniens"
+
+msgctxt "currency_converter"
+msgid "Jordanian Dinar"
+msgstr "Dinar jordanien"
+
+msgctxt "currency_converter"
+msgid "Jordanian Dinars"
+msgstr "Dinars jordaniens"
+
+msgctxt "currency_converter"
+msgid "Kenyan Shilling"
+msgstr "Shilling kényan"
+
+msgctxt "currency_converter"
+msgid "Kenyan Shillings"
+msgstr "Shillings kényans"
+
+msgctxt "currency_converter"
+msgid "Kyrgystani Som"
+msgstr "Som kirghize"
+
+msgctxt "currency_converter"
+msgid "Kyrgystani Soms"
+msgstr "Soms kirghizes"
+
+msgctxt "currency_converter"
+msgid "Cambodian Riel"
+msgstr "Riel cambodgien"
+
+msgctxt "currency_converter"
+msgid "Cambodian Riels"
+msgstr "Riels cambodgiens"
+
+msgctxt "currency_converter"
+msgid "Comorian Francs"
+msgstr "Franc comorien"
+
+msgctxt "currency_converter"
+msgid "Comorian Francs"
+msgstr "Francs comoriens"
+
+msgctxt "currency_converter"
+msgid "North Korean Won"
+msgstr "Won nord-coréen"
+
+msgctxt "currency_converter"
+msgid "North Korean Wons"
+msgstr "Wons nord-coréens"
+
+msgctxt "currency_converter"
+msgid "South Korean Won"
+msgstr "Won sud-coréen"
+
+msgctxt "currency_converter"
+msgid "South Korean Wons"
+msgstr "Wons sud-coréens"
+
+msgctxt "currency_converter"
+msgid "Kuwaiti Dinar"
+msgstr "Dinar koweïtien"
+
+msgctxt "currency_converter"
+msgid "Kuwaiti Dinars"
+msgstr "Dinars koweïtiens"
+
+msgctxt "currency_converter"
+msgid "Kazakhstani Teńge"
+msgstr "Tengue"
+
+msgctxt "currency_converter"
+msgid "Kazakhstani Teńge"
+msgstr "Tengue"
+
+msgctxt "currency_converter"
+msgid "Laotian Kip"
+msgstr "Kip laotien"
+
+msgctxt "currency_converter"
+msgid "Laotian Kips"
+msgstr "Kips laotiens"
+
+msgctxt "currency_converter"
+msgid "Sri Lankan Rupee"
+msgstr "Roupie srilankais"
+
+msgctxt "currency_converter"
+msgid "Sri Lankan Rupees"
+msgstr "Roupies srilankais"
+
+msgctxt "currency_converter"
+msgid "Lesotho Loti"
+msgstr "Loti"
+
+msgctxt "currency_converter"
+msgid "Lesotho Maloti"
+msgstr "Maloti"
+
+msgctxt "currency_converter"
+msgid "Lithuanian Lita"
+msgstr "Litas lituanien"
+
+msgctxt "currency_converter"
+msgid "Lithuanian Litai"
+msgstr "Litas lituaniens"
+
+msgctxt "currency_converter"
+msgid "Libyan Dinar"
+msgstr "Dinar libyen"
+
+msgctxt "currency_converter"
+msgid "Libyan Dinars"
+msgstr "Dinars libyens"
+
+msgctxt "currency_converter"
+msgid "Moroccan Dirham"
+msgstr "Dirham marocain"
+
+msgctxt "currency_converter"
+msgid "Moroccan Dirhams"
+msgstr "Dirhams marocains"
+
+msgctxt "currency_converter"
+msgid "Moldovan Leu"
+msgstr "Leu moldave"
+
+msgctxt "currency_converter"
+msgid "Moldovan Lei"
+msgstr "Lei moldaves"
+
+msgctxt "currency_converter"
+msgid "Malagasy Ariary"
+msgstr "Ariary malgache"
+
+msgctxt "currency_converter"
+msgid "Malagasy Ariary"
+msgstr "Ariarys malgaches"
+
+msgctxt "currency_converter"
+msgid "Macedonian Denar"
+msgstr "Denar macédonien"
+
+msgctxt "currency_converter"
+msgid "Macedonian Denari"
+msgstr "Denars macédoniens"
+
+msgctxt "currency_converter"
+msgid "Myanma Kyat"
+msgstr "Kyat"
+
+msgctxt "currency_converter"
+msgid "Myanma Kyats"
+msgstr "Kyats"
+
+msgctxt "currency_converter"
+msgid "Mongolian Tögrög"
+msgstr "Tögrög"
+
+msgctxt "currency_converter"
+msgid "Mongolian Tugrik"
+msgstr "Tugrik"
+
+msgctxt "currency_converter"
+msgid "Macanese Pataca"
+msgstr "Pataca"
+
+msgctxt "currency_converter"
+msgid "Macanese Patacas"
+msgstr "Patacas"
+
+msgctxt "currency_converter"
+msgid "Mauritanian Ougiya (1973-2017)"
+msgstr "Ouguiya (1973-2017)"
+
+msgctxt "currency_converter"
+msgid "Mauritanian Ougiyas (1973-2017)"
+msgstr "Ouguiyas (1973-2017)"
+
+msgctxt "currency_converter"
+msgid "Mauritian Rupee"
+msgstr "Roupie mauricienne"
+
+msgctxt "currency_converter"
+msgid "Mauritian Rupees"
+msgstr "Roupies mauriciennes"
+
+msgctxt "currency_converter"
+msgid "Maldivian Rufiyaa"
+msgstr "Rufiyaa"
+
+msgctxt "currency_converter"
+msgid "Maldivian Rufiyaas"
+msgstr "Rufiyaas"
+
+msgctxt "currency_converter"
+msgid "Malawi Kwacha"
+msgstr "Kwacha malawien"
+
+msgctxt "currency_converter"
+msgid "Malawi Kwachas"
+msgstr "Kwachas malawiens"
+
+msgctxt "currency_converter"
+msgid "Malaysian Ringgit"
+msgstr "Ringgit (roupie malaysienne)"
+
+msgctxt "currency_converter"
+msgid "Malaysian Ringgits"
+msgstr "Ringgits (roupies malaysiennes)"
+
+msgctxt "currency_converter"
+msgid "Mozambican Metical"
+msgstr "Metical"
+
+msgctxt "currency_converter"
+msgid "Mozambican Meticals"
+msgstr "Meticais"
+
+msgctxt "currency_converter"
+msgid "Nigerian Naira"
+msgstr "Naira"
+
+msgctxt "currency_converter"
+msgid "Nigerian Naira"
+msgstr "Nairas"
+
+msgctxt "currency_converter"
+msgid "Nepalese Rupee"
+msgstr "Roupie népalaise"
+
+msgctxt "currency_converter"
+msgid "Nepalese Rupees"
+msgstr "Roupies népalaises"
+
+msgctxt "currency_converter"
+msgid "Omani Rial"
+msgstr "Rial omanais"
+
+msgctxt "currency_converter"
+msgid "Omani Rials"
+msgstr "Rials omanais"
+
+msgctxt "currency_converter"
+msgid "Panamanian Balboa"
+msgstr "Balboa panaméen"
+
+msgctxt "currency_converter"
+msgid "Panamanian Balboas"
+msgstr "Balboas panaméen"
+
+msgctxt "currency_converter"
+msgid "Peruvian Nuevo Sol"
+msgstr "Sol péruvien"
+
+msgctxt "currency_converter"
+msgid "Peruvian Nuevo Soles"
+msgstr "Soles péruviens"
+
+msgctxt "currency_converter"
+msgid "Papua New Guinean Kina"
+msgstr "Kina"
+
+msgctxt "currency_converter"
+msgid "Papua New Guinean Kina"
+msgstr "Kinas"
+
+msgctxt "currency_converter"
+msgid "Philippine Peso"
+msgstr "Peso philippin"
+
+msgctxt "currency_converter"
+msgid "Philippine Pesos"
+msgstr "Pesos philippins"
+
+msgctxt "currency_converter"
+msgid "Pakistani Rupee"
+msgstr "Roupie pakistanaise"
+
+msgctxt "currency_converter"
+msgid "Pakistani Rupees"
+msgstr "Roupies pakistanaises"
+
+msgctxt "currency_converter"
+msgid "Polish Złoty"
+msgstr "Złoty"
+
+msgctxt "currency_converter"
+msgid "Polish Złotys"
+msgstr "Złotys"
+
+msgctxt "currency_converter"
+msgid "Paraguayan Guaraní"
+msgstr "Guaraní"
+
+msgctxt "currency_converter"
+msgid "Paraguayan Guaraníes"
+msgstr "Guaraníes"
+
+msgctxt "currency_converter"
+msgid "Qatari Riyal"
+msgstr "Riyal qatari"
+
+msgctxt "currency_converter"
+msgid "Qatari Riyals"
+msgstr "Riyals qataris"
+
+msgctxt "currency_converter"
+msgid "Romanian Leu"
+msgstr "Leu roumain"
+
+msgctxt "currency_converter"
+msgid "Romanian Leus"
+msgstr "Leus roumains"
+
+msgctxt "currency_converter"
+msgid "Serbian Dinar"
+msgstr "Dinar serbe"
+
+msgctxt "currency_converter"
+msgid "Serbian Dinars"
+msgstr "Dinars serbes"
+
+msgctxt "currency_converter"
+msgid "Russian Ruble"
+msgstr "Rouble russe"
+
+msgctxt "currency_converter"
+msgid "Russian Rubles"
+msgstr "Roubles russes"
+
+msgctxt "currency_converter"
+msgid "Rwandan Franc"
+msgstr "Franc rwandais"
+
+msgctxt "currency_converter"
+msgid "Rwandan Francs"
+msgstr "Francs rwandais"
+
+msgctxt "currency_converter"
+msgid "Sierra Leonean Leone"
+msgstr "Leone"
+
+msgctxt "currency_converter"
+msgid "Sierra Leonean Leones"
+msgstr "Leones"
+
+msgctxt "currency_converter"
+msgid "Somali Shilling"
+msgstr "Shilling somalien"
+
+msgctxt "currency_converter"
+msgid "Somali Shillings"
+msgstr "Shillings somaliens"
+
+msgctxt "currency_converter"
+msgid "São Tomé and Príncipe Dobra"
+msgstr "Dobra"
+
+msgctxt "currency_converter"
+msgid "São Tomé and Príncipe Dobras"
+msgstr "Dobras"
+
+msgctxt "currency_converter"
+msgid "Salvadoran Colón"
+msgstr "Colón salvadorien"
+
+msgctxt "currency_converter"
+msgid "Salvadoran Colónes"
+msgstr "Colóns salvadoriens"
+
+msgctxt "currency_converter"
+msgid "Swazi Lilangeni"
+msgstr "Lilangeni"
+
+msgctxt "currency_converter"
+msgid "Swazi Emalangeni"
+msgstr "Emalangeni"
+
+msgctxt "currency_converter"
+msgid "Thai Baht"
+msgstr "Baht"
+
+msgctxt "currency_converter"
+msgid "Thai Bahts"
+msgstr "Bahts"
+
+msgctxt "currency_converter"
+msgid "Tajikistani Somoni"
+msgstr "Somoni"
+
+msgctxt "currency_converter"
+msgid "Tajikistani Somoni"
+msgstr "Somoni"
+
+msgctxt "currency_converter"
+msgid "Turkmenistan Manat"
+msgstr "Manat turkmène"
+
+msgctxt "currency_converter"
+msgid "Turkmenistan Manat"
+msgstr "Manats turkmènes"
+
+msgctxt "currency_converter"
+msgid "Tunisian Dinar"
+msgstr "Dinar tunisien"
+
+msgctxt "currency_converter"
+msgid "Tunisian Dinars"
+msgstr "Dinars tunisiens"
+
+msgctxt "currency_converter"
+msgid "Turkish Lira"
+msgstr "Livre turque"
+
+msgctxt "currency_converter"
+msgid "Turkish Liras"
+msgstr "Livres turques"
+
+msgctxt "currency_converter"
+msgid "Tanzanian Shilling"
+msgstr "Shilling tanzanien"
+
+msgctxt "currency_converter"
+msgid "Tanzanian Shillings"
+msgstr "Shillings tanzaniens"
+
+msgctxt "currency_converter"
+msgid "Ukrainian Hryvnia"
+msgstr "Hryvnia"
+
+msgctxt "currency_converter"
+msgid "Ukrainian Hryvnia"
+msgstr "Hryvnia"
+
+msgctxt "currency_converter"
+msgid "Ugandan Shilling"
+msgstr "Shilling ougandais"
+
+msgctxt "currency_converter"
+msgid "Ugandan Shillings"
+msgstr "Shillings ougandais"
+
+msgctxt "currency_converter"
+msgid "Uzbekistan So'm"
+msgstr "Sum ouzbek"
+
+msgctxt "currency_converter"
+msgid "Uzbekistan So'ms"
+msgstr "Sums ouzbeks"
+
+msgctxt "currency_converter"
+msgid "Venezuelan Bolívar Fuerte"
+msgstr "Bolívar fuerte"
+
+msgctxt "currency_converter"
+msgid "Venezuelan Bolívar Fuertes"
+msgstr "Bolívares fuertes"
+
+msgctxt "currency_converter"
+msgid "Vietnamese Đồng"
+msgstr "Đồng"
+
+msgctxt "currency_converter"
+msgid "Vietnamese Đồng"
+msgstr "Đồng"
+
+msgctxt "currency_converter"
+msgid "Vanuatu Vatu"
+msgstr "Vatu"
+
+msgctxt "currency_converter"
+msgid "Vanuatu Vatu"
+msgstr "Vatu"
+
+msgctxt "currency_converter"
+msgid "Central African CFA Franc"
+msgstr "Franc CFA d'Afrique Centrale"
+
+msgctxt "currency_converter"
+msgid "Central African CFA Francs"
+msgstr "Francs CFA d'Afrique Centrale"
+
+msgctxt "currency_converter"
+msgid "Troy Ounce of Silver"
+msgstr "Once d'argent"
+
+msgctxt "currency_converter"
+msgid "Troy Ounces of Silver"
+msgstr "Onces d'argent"
+
+msgctxt "currency_converter"
+msgid "Troy Ounce of Gold"
+msgstr "Once d'or"
+
+msgctxt "currency_converter"
+msgid "Troy Ounces of Gold"
+msgstr "Onces d'or"
+
+msgctxt "currency_converter"
+msgid "Special Drawing Rights"
+msgstr "Droit de tirage spécial"
+
+msgctxt "currency_converter"
+msgid "Special Drawing Rights"
+msgstr "Droits de tirage spéciaux"
+
+msgctxt "currency_converter"
+msgid "West African CFA Franc"
+msgstr "Franc CFA de l'Afrique de l'Ouest"
+
+msgctxt "currency_converter"
+msgid "West African CFA Francs"
+msgstr "Francs CFA de l'Afrique de l'Ouest"
+
+msgctxt "currency_converter"
+msgid "CFP Franc"
+msgstr "Franc CFP"
+
+msgctxt "currency_converter"
+msgid "CFP Francs"
+msgstr "Francs CFP"
+
+msgctxt "currency_converter"
+msgid "Yemeni Rial"
+msgstr "Rial yéménite"
+
+msgctxt "currency_converter"
+msgid "Yemeni Rials"
+msgstr "Rials yéménites"
+
+msgctxt "currency_converter"
+msgid "South African Rand"
+msgstr "Rand sud-africain"
+
+msgctxt "currency_converter"
+msgid "South African Rands"
+msgstr "Rands sud-africains"
+
+msgctxt "currency_converter"
+msgid "Zambian Kwacha"
+msgstr "Kwacha zambien"
+
+msgctxt "currency_converter"
+msgid "Zambian Kwachas"
+msgstr "Kwachas zambiens"
+
+msgctxt "currency_converter"
+msgid "See more"
+msgstr "Voir plus"
+
+msgctxt "currency_converter"
+msgid "See less"
+msgstr "Voir moins"
+
+msgctxt "currency_converter"
+msgid "Disclaimer"
+msgstr "Clause de non-responsabilité"
+
+msgctxt "currency_converter"
+msgid "in|to|for"
+msgstr "en|pour|in|to|for"
+
+msgctxt "currency_converter"
+msgid "help_link_currency-converter"
+msgstr "https://help.qwant.com/fr/aide/qwant-com/reponses-instantanees/convertisseur-de-monnaie/"

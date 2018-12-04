@@ -1,0 +1,9 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/random_generator.css" type="text/css">
+<div class="ia__random_generator">
+    <span class="ia__random_generator__result">
+        {{= it.data }}
+    </span>
+</div>

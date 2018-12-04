@@ -1,0 +1,19 @@
+#
+# This is your de_de language file. Please refer to the documentation for more information.
+#
+
+msgctxt "current_time"
+msgid "time in"
+msgstr "time in|zeit(?: in)?|uhrzeit(?: in)?"
+
+msgctxt "current_time"
+msgid "It is"
+msgstr "Es ist"
+
+msgctxt "current_time"
+msgid "in"
+msgstr "in"
+
+msgctxt "current_time"
+msgid "Week"
+msgstr "Woche"

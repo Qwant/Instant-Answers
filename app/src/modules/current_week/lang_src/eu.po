@@ -1,0 +1,20 @@
+#
+# This is your eu_fr language file. Please refer to the documentation for more information.
+#
+msgctxt "current_week"
+msgid "week number"
+msgstr "current week|(?:num(?:(?:é|e)ro)?|no )?sem(?:aines?)?|sem(?:aines?)?(?: num(?:(?:é|e)ro)?)?"
+
+#msgstr "current week|numéro semaines?|numero semaines|num semaines|num semaines|numéro semaine|numero semaine|num semaine|num semaine|num sem|semaine numéro|semaine numero|semaine num|sem numéro|sem numero|sem num|no semaines|no semaine|no sem|semaine|sem"
+
+msgctxt "current_week"
+msgid "Week"
+msgstr "Semaine"
+
+msgctxt "current_week"
+msgid "From"
+msgstr "Du"
+
+msgctxt "current_week"
+msgid "To"
+msgstr "Au"
