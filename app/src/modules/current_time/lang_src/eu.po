@@ -1,0 +1,25 @@
+#
+# This is your eu_fr language file. Please refer to the documentation for more information.
+#
+#
+# This is your br_fr language file. Please refer to the documentation for more information.
+#
+#
+# This is your fr_fr language file. Please refer to the documentation for more information.
+#
+
+msgctxt "current_time"
+msgid "time in"
+msgstr "time in|heure à|heure a|heure|(q|Q)uelle heure est( | ?-)il (a|à)"
+
+msgctxt "current_time"
+msgid "It is"
+msgstr "Il est"
+
+msgctxt "current_time"
+msgid "in"
+msgstr "à"
+
+msgctxt "current_time"
+msgid "Week"
+msgstr "Semaine"

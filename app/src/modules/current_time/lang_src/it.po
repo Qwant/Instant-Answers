@@ -1,0 +1,19 @@
+#
+# This is your it_it language file. Please refer to the documentation for more information.
+#
+
+msgctxt "current_time"
+msgid "time in"
+msgstr "time in|ora(?: a)?"
+
+msgctxt "current_time"
+msgid "It is"
+msgstr "Sono le"
+
+msgctxt "current_time"
+msgid "in"
+msgstr "a"
+
+msgctxt "current_time"
+msgid "Week"
+msgstr "Settimana"

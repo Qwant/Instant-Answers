@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+docker-compose -p "qwant_ia" down "$@"

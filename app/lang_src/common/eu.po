@@ -1,0 +1,405 @@
+#
+# Translators:
+# Jean-Manuel ROZAN <contact@qwant.com>, 2015
+# Marieme <m.menuet@qwant.com>, 2015
+# Maxime EUZIERE <maxime.euziere@gmail.com>, 2015
+# Victoire YAU <v.yau@qwant.com>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: Qwant search\n"
+"POT-Creation-Date: 2017-03-28 14:47+0100\n"
+"PO-Revision-Date: 2017-04-13 10:35+0200\n"
+"Last-Translator: Nicolas Corbi <n.corbi@qwant.com>\n"
+"Language-Team: French (http://www.transifex.com/qwant-1/qwant/language/fr/)\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _n:1,2,4c;_:1,2c;_n:1,2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ./src/modules\n"
+
+#~ msgctxt "map"
+#~ msgid "map"
+#~ msgstr "carte"
+
+#~ msgctxt "title"
+#~ msgid "Contact us"
+#~ msgstr "Contactez-nous"
+
+#~ msgctxt "title"
+#~ msgid "Settings"
+#~ msgstr "Réglages"
+
+#~ msgctxt "title"
+#~ msgid "Select language"
+#~ msgstr "Langue de l'application"
+
+#~ msgctxt "title"
+#~ msgid "Privacy"
+#~ msgstr "Vie privée"
+
+#~ msgctxt "title"
+#~ msgid "Error"
+#~ msgstr "Erreur"
+
+#~ msgctxt "title"
+#~ msgid "Qwick"
+#~ msgstr "Qwick"
+
+#~ msgctxt "title"
+#~ msgid "Terms of Service"
+#~ msgstr "Mentions légales - CGU"
+
+#~ msgctxt "SEO"
+#~ msgid "Qwant is a search engine that respects your privacy and eases discovering and sharing via a social approach."
+#~ msgstr "Qwant est un moteur de recherche qui respecte votre vie privée tout en facilitant la découverte et le partage grâce à une approche sociale."
+
+#~ msgctxt "SEO"
+#~ msgid "qwant search engine privacy"
+#~ msgstr "qwant search engine privacy"
+
+#~ msgctxt "SEO"
+#~ msgid "Qwant lite is a search engine that respects your privacy and eases discovering and sharing via a social approach."
+#~ msgstr "Qwant Lite est un moteur de recherche qui respecte votre vie privée tout en facilitant la découverte et le partage grâce à une approche sociale."
+
+#~ msgctxt "SEO"
+#~ msgid "qwant lite search engine privacy"
+#~ msgstr "qwant search engine lite privacy"
+
+#~ msgctxt "contact"
+#~ msgid "Request for information"
+#~ msgstr "Information"
+
+#~ msgctxt "contact"
+#~ msgid "Report a bug"
+#~ msgstr "Signaler un bug"
+
+#~ msgctxt "contact"
+#~ msgid "Report an illicit content"
+#~ msgstr "Signaler un contenu illicite"
+
+#~ msgctxt "contact"
+#~ msgid "Recruitment"
+#~ msgstr "Recrutement"
+
+#~ msgctxt "contact"
+#~ msgid "Delisting right"
+#~ msgstr "Droit à l'oubli"
+
+#~ msgctxt "contact"
+#~ msgid "SEA Shopping"
+#~ msgstr "Shopping"
+
+#~ msgctxt "contact"
+#~ msgid "Other"
+#~ msgstr "Autre"
+
+#~ msgctxt "settings"
+#~ msgid "SafeSearch"
+#~ msgstr "Filtre du contenu adulte des résultats de recherche"
+
+#~ msgctxt "safeSettings"
+#~ msgid "None"
+#~ msgstr "Aucun"
+
+#~ msgctxt "safeSettings"
+#~ msgid "Moderate"
+#~ msgstr "Modéré"
+
+#~ msgctxt "safeSettings"
+#~ msgid "Strict"
+#~ msgstr "Strict"
+
+#~ msgctxt "settings"
+#~ msgid "Open outgoing links in a new window"
+#~ msgstr "Ouvrir les liens sortants dans une nouvelle fenêtre"
+
+#~ msgctxt "settings"
+#~ msgid "Activate the search suggestion"
+#~ msgstr "Activer les suggestions de recherche"
+
+#~ msgctxt "categories"
+#~ msgid "Web"
+#~ msgstr "Web"
+
+#~ msgctxt "categories"
+#~ msgid "News"
+#~ msgstr "Actualités"
+
+#~ msgctxt "categories"
+#~ msgid "Social"
+#~ msgstr "Social"
+
+#~ msgctxt "categories"
+#~ msgid "Images"
+#~ msgstr "Images"
+
+#~ msgctxt "categories"
+#~ msgid "Videos"
+#~ msgstr "Vidéos"
+
+#~ msgctxt "categories"
+#~ msgid "Shopping"
+#~ msgstr "Shopping"
+
+#~ msgctxt "settings"
+#~ msgid "Apply"
+#~ msgstr "Appliquer"
+
+#~ msgid "Qwick in a few words"
+#~ msgstr "QWICK EN QUELQUES MOTS"
+
+#~ msgid "Qwick allows you to get a direct research “into” the website (informations, travel, shopping, cooking sites, Wikipedia…)."
+#~ msgstr "Les Qwick's vous permettent d'effectuer une recherche directement « à l'intérieur » d'un site internet (site d'information, de voyage, shopping, cuisine, wikipedia...)."
+
+#~ msgid "By adding the symbol '&' followed by the name of your favorite website (e.g. Amazon), you immediately have access to the result. Optimize your research and save valuable time!"
+#~ msgstr "En ajoutant le signe '&', suivi du nom de votre site préféré (Ex. Amazon) vous accédez instantanément au résultat. De quoi optimiser votre recherche et gagner un temps précieux !"
+
+#~ msgid "No results found"
+#~ msgstr "Pas de résultats trouvés"
+
+#~ msgctxt "result"
+#~ msgid "picture"
+#~ msgstr "image"
+
+#~ msgctxt "result"
+#~ msgid "The following results are probably not relevant, please rephrase your query."
+#~ msgstr "Les résultats suivants sont probablement peu pertinents, veuillez reformuler votre requête."
+
+#~ msgctxt "result"
+#~ msgid "Next"
+#~ msgstr "Suivant"
+
+#~ msgctxt "result"
+#~ msgid "Previous"
+#~ msgstr "Précédent"
+
+#~ msgid "Website"
+#~ msgstr "Site Web"
+
+#~ msgid "Qwick"
+#~ msgstr "Qwick"
+
+#~ msgctxt "contact"
+#~ msgid "Contact us"
+#~ msgstr "Contactez-nous"
+
+#~ msgctxt "contact"
+#~ msgid "Your e-mail address"
+#~ msgstr "Votre adresse email"
+
+#~ msgctxt "contact"
+#~ msgid "Send"
+#~ msgstr "Envoyer"
+
+#~ msgctxt "legal contact"
+#~ msgid "The information you provide are collected and processed only by Qwant, in accordance with the currently applicable data protection regulations. Qwant guarantees not to sell or disclose the user’s data in any way. These informations are strictly necessary to process you request. You are entitled to access your personal information and to have it amended, updated or deleted, by contacting : <a class=\"edu__register_page__mailto\" href=\"mailto:privacy@qwant.com\">privacy@qwant.com</a>"
+#~ msgstr "Les informations que vous communiquez dans le cadre de votre demande de contact sont collectées et traitées exclusivement par Qwant, conformément à la réglementation applicable à la protection des données à caractère personnel. Aucune divulgation ou cession de ces informations n’est réalisée par Qwant. Ces informations sont strictement nécessaires au traitement de votre demande. Vous pouvez exercer vos droits d’accès, d’opposition et de rectification à l’adresse suivante : <a class=\"edu__register_page__mailto\" href=\"mailto:privacy@qwant.com\">privacy@qwant.com</a>"
+
+#~ msgctxt "settings"
+#~ msgid "Settings"
+#~ msgstr "Réglages"
+
+#~ msgctxt "settings"
+#~ msgid "Language"
+#~ msgstr "Langue"
+
+#~ msgctxt "Settings"
+#~ msgid "Cancel"
+#~ msgstr "Annuler"
+
+#~ msgctxt "tos"
+#~ msgid "Terms of service"
+#~ msgstr "Conditions d'utilisation"
+
+#~ msgctxt "tos"
+#~ msgid "<i class=\"static-updated\">Last updated : June 15th 2015</i><br><div class=\"static-section\"><h2 class=\"static-section__subtitle\">SITE EDITOR</h2><div class=\"static-section__content\"><table><tr><th>Company name:</th><td>QWANT</td></tr><tr><th>Company status:</th><td>Joint Stock Company</td></tr><tr><th>RCC:</th><td>Paris n° B 532 867 256</td></tr><tr><th>EU VAT N°:</th><td>FR 70 532 867 256</td></tr><tr><th>Registered Capital:</th><td>€18 127,33</td></tr><tr><th>Head Office:</th><td>28 rue de l'université, 75007 Paris</td></tr><tr><th>Email:</th><td>contact@qwant.com</td></tr><tr><th>Telephone:</th><td>+33 183 648 937</td></tr><tr><th>Legal representative:</th><td>President: Jean-Manuel ROZAN</td></tr><tr><th>Name of editor:</th><td>Jean-Manuel ROZAN</td></tr></table></div><h2 class=\"static-section__subtitle\">HOST</h2><div class=\"static-section__content\"><p>Telecity,<br>130-136 Boulevard de Verdun, Paris,<br>92413 Courbevoie cedex, France<br>+33 (0)1 49 97 30 60</p></div><h2 class=\"static-section__subtitle\">ACCESS TO THE WEBSITE</h2><div class=\"static-section__content\"><p>The purpose of the site {linkToLite} (hereafter “the Website”) is to provide a light version of the Qwant Search Engine (https://qwant.com). This version is compatible with the previous versions of Windows Internet Explorer 9. This service is free of charge. The user acknowledges having the skills and means to access and use the Website. The user certifies having read and agreed to the legal notice and the terms of service and undertakes to respect it. QWANT reserves the right to unilaterally modify these terms of service to adapt to the future developments of the site and/or its operation.</p><p>The user is made aware that it is possible to access the Website 24 hours a day, 7 days a week, except in the event of force majeure or other technical difficulties. Qwant declines any responsibility in case of server problems, problems caused by the telecommunications network infrastructures or any other event beyond its control. </p><p>QWANT reserves the right to interrupt, temporarily suspend or modify access without prior notice to all or part of the Website in order to provide its maintenance and/or checking, or for testing purposes. The interruption, the suspension or the modification confers no right to any obligation or compensation. QWANT will endeavor to inform the users beforehand. The user is precluded from using the Website for unintended use (for example, unauthorized access to the Website, to servers, computers or databases related to the Website, flooding and denial of services attacks, introduction of malicious software…). QWANT reserves the unilateral right to refuse the Website’s access to the user who is in breach of these terms of service.</p></div><h2 class=\"static-section__subtitle\">GOVERNING LAW AND JURISDICTION CLAUSE</h2><div class=\"static-section__content\"><p>The Website and its terms of service are governed by French Law, regardless of the place of use. If an amicable settlement is not reached or unsought, the French courts of the jurisdiction of the Court of Appeal of Paris will have sole competence for all disputes arising out or relating to these provisions.</p></div><h2 class=\"static-section__subtitle\">INFORMATION MADE AVAILABLE BY THE SEARCH ENGINE</h2><div class=\"static-section__content\"><p>The information provided by the site {linkToLite} is for general informational purposes only. QWANT will endeavor to ensure the accuracy of the information updated in real time on the Website. QWANT may however neither guarantee that the results and information obtained are free of any error or flaw nor guarantee the wholeness, accuracy, comprehensiveness, or absence of change by a third party. Therefore, QWANT accept no liability in the following circumstances:</p><ul><li>The inaccuracy, error or omission of an information available on the Website ;</li><li>The unavailability of a piece of information ;</li><li>For any incidental and/or consequential damages, regardless of the causes, origins, nature, or consequences caused by anyone accessing the Site or being unable to access it ;</li><li>For use of the Website and/or the credence given to any information coming directly or indirectly from the Website ;</li><li>For a decision made on the basis of an information available on the Website and its use by a third party. </li></ul></div><h2 class=\"static-section__subtitle\">NON-COMMERCIAL LINKS </h2><div class=\"static-section__content\"><p>QWANT offers hyperlinks to other websites or other information sources edited and/or operated by third parties, for the purpose of improving the user’s navigation. QWANT cannot have any control over the content of these external sources. Therefore, QWANT accept no liability regarding the third-party sites and especially regarding the availability of their resources, their content, any personal data gathering and transmission, use of cookies or any other method for similar purposes.</p></div><h2 class=\"static-section__subtitle\">COMMERCIAL LINKS </h2><div class=\"static-section__content\"><p>The user acknowledges having been informed of the nature of the links listed on QWANT SHOPPING: every link potentially matches with an advertisement on which QWANT perceives a fee. QWANT is only compelled to inform its users about the commercial nature of these links. If the user clicks on a link, he/she will be redirected into the targeted website. QWANT accept no liability regarding the consumer contracts regulations. Each e-merchant have to comply with its legal and regulatory obligations.</p><p>To be listed on QWANT SHOPPING, please contact us at <a href=\"mailto:shopping@qwant.com\">shopping@qwant.com</a>.</p></div><h2 class=\"static-section__subtitle\">INTELLECTUAL PROPERTY</h2><div class=\"static-section__content\"><p>The user is not entitled to have any intellectual property right neither on the Website and its services nor on its content. Except where national law or regulation provides otherwise, the user is not allowed to use the content available on the Website and its services. All rights reserved, QWANT® is a registered trademark owned by QWANT SAS. Any total or partial reproduction of the trademark and its logo, without QWANT’s express and prior written authorization is prohibited, especially for advertising purposes. The Website and its composing elements (texts, pictures, photographs, software, databases…) are the exclusive property of QWANT SAS. </p></div><h2 class=\"static-section__subtitle\">PERSONAL DATA PROTECTION</h2><div class=\"static-section__content\"><p>Our privacy commitments are available {linkToPrivacy}</p><p>We ask users to give personal data such as their name, surname, contact details and e-mail address to process information requests and registration to the services.</p><p>The data is gathered and processed by QWANT, in accordance with the currently applicable data protection regulations, for the following purposes:</p><ul><li>Information requests management ;</li><li>The processing of personal data protection requests (right to be delisted, to access, to amend, to update or delete the user’s personal data) ;</li><li>Qwant’s information systems security.</li></ul><p>The user acknowledges being entitled to refuse the processing of his personal data. He is also entitled to access his personal information and to have it amended, updated or deleted, by contacting us by:</p><ul><li>Regular mail : QWANT – Service juridique, 28 rue de l’Université - 75007 Paris </li><li>E-mail address: <a href=\"mailto:privacy@qwant.com\">privacy@qwant.com</a></li></ul><p>The user’s personal data are intended for QWANT only and are retained as long as is absolutely necessary to fulfill the purpose for which it was gathered. Qwant guarantees not to sell or disclose the user’s data in any way, subject to regulatory obligations applicable to the search engines. QWANT will make its best-efforts to ensure the transmitted data’s security and confidentiality.</p></div><h2 class=\"static-section__subtitle\">REPORTING OF ILLICIT CONTENTS</h2><div class=\"static-section__content\"><p>QWANT is a host within the meaning of the Directive 2000/31/EC on electronic commerce. Consequently, QWANT is required to remove the illicit contents which have been apprised in compliance with the following notification procedure:<p>Assuming that the user detects an illicit content while browsing on the BOARDS, he is able to report it by contacting us at legal@qwant.com. QWANT commits to make its best-efforts to delist promptly the reported contents. The aforementioned notification must contain the following information:<ul><li>The date of the notification;<li>the notifying party is a natural person : his surname, names, profession, residence, nationality, date and place of birth; if the notifying party is a legal entity : its status, company name, head office and its legal representative;<li>The recipient’s names and residence or, for a legal entity, its company name and head office;<li>The description of the litigious facts and their precise location (e.g.: the URL link);<li>The reasons why the content must be removed, including reference to legal conditions and supporting evidence;<li>The copy of the message sent to the author or to the editor, requesting for the interruption, removal, modification of information or the litigious activity; or the justification explaining why the author or editor could not be contacted.</ul><p>Please note that any incomplete notification will be considered as invalid.<p>QWANT reserves the right to remove access to any content which violates these terms and conditions. QWANT accept no liability in the following events:<ul><li>if QWANT did not have actual knowledge of illegal activity or information;</li><li>if QWANT, upon obtaining such knowledge or awareness, acts expeditiously to remove or to disable access to the information.</li></ul><p>Website powered by Qwant SAS</p></div></div>"
+#~ msgstr ""
+#~ "<i class=\"static-updated\">Mis à jour le 15 juin 2015</i><br><div class=\"static-section\"><h2 class=\"static-section__subtitle\">Editeur du site</h2><div class=\"static-section__content\"><table><tr><th>Dénomination sociale de l’éditeur :</th><td>QWANT</td></tr><tr><th>Statut de la société : </th><td>Société par actions simplifiée </td></tr><tr><th>RCS:</th><td>Paris n° B 532 867 256</td></tr><tr><th>N° TVA intercommunautaire : </th><td>FR 70 532 867 256</td></tr><tr><th>Capital social : </th><td>€18 127,33</td></tr><tr><th>Siège social : </th><td>28 rue de l'université, 75007 Paris</td></tr><tr><th>Adresse électronique : </th><td>contact@qwant.com</td></tr><tr><th>Téléphone :</th><td>+33 183 648 937</td></tr><tr><th>Représentant légal :</th><td>Président: Jean-Manuel ROZAN</td></tr><tr><th>Nom du Directeur de la publication :</th><td>Jean-Manuel ROZAN</td></tr></table></div><h2 class=\"static-section__subtitle\">Hébergeur</h2><div class=\"static-section__content\"><p>Telecity,<br>130-136 Boulevard de Verdun, Paris,<br>92413 Courbevoie cedex, France<br>+33 (0)1 49 97 30 60</p></div><h2 class=\"static-section__subtitle\">ACCESS TO THE WEBSITE</h2><div class=\"static-section__content\"><p>Le site {linkToLite} (ci-après « le Site ») a pour objet de fournir à titre gratuit une version allégée du moteur de recherche Qwant Search disponible à l’URL https://qwant.com. Cette version du moteur est compatible avec les versions antérieures à Windows Internet Explorer 9.</p><p>L'utilisateur reconnaît disposer de la compétence et des moyens nécessaires pour accéder à ce Site et l'utiliser. Il reconnaît également avoir pris connaissance des mentions légales et des conditions générales d’utilisation et s’engage à les respecter. QWANT se réserve le droit de modifier les termes des présentes Conditions Générales d’Utilisation à tout moment afin de les adapter aux évolutions du site et/ou de son exploitation.<p>L'utilisateur est informé que le Site est accessible 24h sur 24 et 7 jours sur 7 et reconnaît que cette accessibilité pourra toutefois être interrompue en cas de force majeure ou de difficultés techniques. QWANT ne saurait être tenu responsable des dysfonctionnements du réseau ou des serveurs ou de tout autre événement échappant à son contrôle, qui ferait obstacle ou dégraderait l'accès au Site.</p><p>QWANT se réserve la faculté d'interrompre, de suspendre momentanément ou de modifier sans préavis l'accès à tout ou partie du Service, afin d'en assurer la maintenance et/ou le contrôle, ou à des fins de node_test, sans que l'interruption, la suspension ou la modification n'ouvrent droit à aucune obligation ni indemnisation. QWANT s’efforcera d’en avertir préalablement les utilisateurs. L’utilisateur s’engage par ailleurs à ne pas utiliser le Site de façon impropre (par exemple, l’accès de manière non autorisée au site, aux serveurs, ordinateurs ou bases de données en lien avec le Site, les attaques par saturation ou l’introduction de matériel malveillant ou nuisible…) sous peine de poursuites judiciaires. QWANT se réserve le droit unilatéral de refuser l'accès au service à tout utilisateur ne respectant pas les présentes conditions d'utilisation.</p></div><h2 class=\"static-section__subtitle\">CLAUSE ATTRIBUTIVE DE JURIDICTION ET LOI APPLICABLE</h2><div class=\"static-section__content\"><p>Le Site et ses conditions d’utilisation sont régis par la loi française, quel que soit le lieu d’utilisation. En cas d’échec des solutions amiables ou dans l’absence de leur recherche, les tribunaux français du ressort de la Cour d’appel de Paris sont seuls compétents pour connaître de tout différend né des présentes dispositions.</p></div><h2 class=\"static-section__subtitle\">INFORMATIONS MISES À DISPOSITION PAR LE MOTEUR DE RECHERCHE</h2><div class=\"static-section__content\"><p>Les informations fournies sur le Site par son moteur de recherche sont à vocation purement informative. QWANT s'efforce d'assurer l'exactitude des informations actualisées en temps réel, diffusées sur le Site. Il ne peut toutefois ni garantir que les résultats et les informations obtenus soient exempts de toute erreur ou de tout défaut, ni garantir la complétude, la précision, l'exhaustivité ou l'absence de modification par un tiers :</p><ul><li>en cas d'imprécision, inexactitude, erreur ou omission portant sur des informations disponibles sur le Site ;</li><li>d'une absence de disponibilité des informations ;</li><li>pour tous dommages, directs et/ou indirects, quelles qu'en soient les causes, origines, nature ou conséquences, provoqués à raison de l'accès de quiconque au Site ou de l'impossibilité d'y accéder ;</li><li>de l'utilisation du Site et/ou du crédit accordé à une quelconque information provenant directement ou indirectement du Site ;</li><li>de décisions prises sur la base d'une information contenue sur le Site, et de l'utilisation qui pourrait en être faite par des tiers.</li></ul></div><h2 class=\"static-section__subtitle\">LIENS NON COMMERCIAUX</h2><div class=\"static-section__content\"><p>QWANT propose des liens hypertextes vers d’autres sites internet ou d’autres sources d’informations édités et/ou gérés par des tiers, en vue d’améliorer la pertinence de la navigation de l’utilisateur. Dans la mesure où QWANT ne peut exercer aucun contrôle sur les contenus de ces sources externes, l'utilisateur reconnaît que QWANT n'assume aucune responsabilité relative à la mise à disposition de ces ressources, à leur contenu, aux éventuelles collectes et transmission de données personnelles, installations de cookies ou tout autre procédé tendant aux mêmes fins, effectués par ces sites.</p></div><h2 class=\"static-section__subtitle\">LIENS COMMERCIAUX</h2><div class=\"static-section__content\"><p>L’utilisateur reconnaît avoir été informé de la nature des liens référencés dans QWANT SHOPPING : chaque lien correspond à une annonce commerciale provenant de marchands référencés à titre payant. QWANT est uniquement tenu d’informer les utilisateurs du caractère commercial des liens référencés sur QWANT SHOPPING. Le clic sur ces liens ne fait que renvoyer vers les sites cibles. Qwant se décharge de toute responsabilité liée aux obligations relatives aux contrats de vente à distance avec les sites de e-commerce référencés. Chaque e-commerçant est tenu de respecter les obligations réglementaires et légales qui lui sont applicables.</p><p>Si vous souhaitez être référencé dans QWANT SHOPPING, vous pouvez adresser un courrier électronique à <a href=\"mailto:shopping@qwant.com\">shopping@qwant.com</a>.</p></div><h2 class=\"static-section__subtitle\">PROPRIÉTÉ INTELLECTUELLE</h2><div class=\"static-section__content\"><p>L’utilisateur ne dispose d’aucun droit de propriété intellectuelle sur le Site et ses services, ainsi que sur leur contenu. Sauf à y être autorisé par des dispositions légales, l’utilisateur n’est pas autorisé à utiliser les contenus obtenus par l’intermédiaire du Site et de ses services. Tous droits réservés, QWANT® est une marque déposée de la société QWANT. Toute reproduction totale ou partielle de cette marque et de son logo à quelque titre que ce soit, et notamment à des fins publicitaires, sans l'accord préalable et écrit du titulaire de la marque est interdite sous peine de poursuites judiciaires. Le Site ainsi que les éléments qui le composent (textes, images, photographies, logiciels, bases de données…) sont la propriété exclusive de la société QWANT.</p></div><h2 class=\"static-section__subtitle\">INFORMATIQUE ET LIBERTÉS</h2><div class=\"static-section__content\"><p>Les engagements de QWANT pour la protection de la vie privée des utilisateurs du Site sont disponibles {linkToPrivacy}</p><p>Le traitement des demandes d’informations ainsi que l’inscription à certains services peuvent requérir des utilisateurs de communiquer des données à caractère personnel telles que leur nom, prénom, coordonnées et adresse électronique.</p><p>Ces données sont collectées et traitées par QWANT conformément à la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés modifiée, à des fins de :</p><ul><li>de gestion des demandes d’informations déposées via le formulaire de contact disponible sur le Site ;</li><li>de gestion des demandes de déréférencement et des demandes liées à l’exercice des droits d’accès, de rectification et de suppression portant sur les données personnelles ;</li><li>la sécurité du système d’information de Qwant.</li></ul><p>L'utilisateur du Site est informé qu'il dispose d'un droit d’opposition au traitement de ses données, d’un droit d'accès, de rectification et de suppression sur les données le concernant. Les demandes portant sur ses droits ainsi que sur le droit au déréférencement peuvent être exercées :</p><ul><li>soit en écrivant par courrier à QWANT - 28 rue de l’Université - 75007 Paris </li><li>soit en adressant un courrier électronique à :  <a href=\"mailto:privacy@qwant.com\">privacy@qwant.com</a></li></ul><p>Les données personnelles communiquées par l'utilisateur sont uniquement destinées à QWANT et sont conservées pour la durée strictement nécessaire à la réalisation des finalités visées ci-dessus. Elles ne feront l’objet d’aucune divulgation et/ou cession à des tiers, sous réserve des obligations réglementaires et légales applicables aux moteurs de recherche. QWANT s’engage à mettre en place tous les moyens nécessaires pour garantir la sécurité et la confidentialité des données transmises.</p></div><h2 class=\"static-section__subtitle\">SIGNALEMENT DE CONTENUS ILLICITES </h2><div class=\"static-section__content\"><p>En sa qualité d’hébergeur au sens de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN), QWANT est tenu de procéder au retrait des contenus manifestement illicites qui lui seraient notifiés dans le respect du formalisme de l’article 6-1-5 de la LCEN.<p>Dans l’hypothèse où l’utilisateur constaterait la présence d’un contenu manifestement illicite lors de sa navigation, celui-ci dispose de la faculté de signaler ledit contenu en adressant une notification à l’adresse <a href=\"mailto:legal@qwant.com\">legal@qwant.com</a>. QWANT s’engage à déréférencer promptement les contenus signalés, dès lors que le contenu est manifestement illicite et que la notification de signalement comporte les éléments suivants :<ul><li>la date de la notification ;<li>si le notifiant est une personne physique : ses nom, prénoms, profession, domicile, nationalité, date et lieu de naissance ; si le requérant est une personne morale : sa forme, sa dénomination, son siège social et l’organe qui la représente légalement ;<li>les noms et domicile du destinataire ou, s’il s’agit d’une personne morale, sa dénomination et son siège social ;<li>la description des faits litigieux et leur localisation précise ;<li>les motifs pour lesquels le contenu doit être retiré, comprenant la mention des dispositions légales et des justifications de faits ;<li>la copie de la correspondance adressée à l’auteur ou à l’éditeur des informations ou activités litigieuses demandant leur interruption, leur retrait ou leur modification, ou la justification de ce que l’auteur ou l’éditeur n’a pas pu être contacté. </ul><p>A ce titre, QWANT se réserve le droit de supprimer l’accès à tout contenu qui ne respecterait pas les termes des présentes CGU. QWANT ne pourra voir sa responsabilité recherchée ni engagée :<ul><li>si QWANT n’avait pas effectivement connaissance de leur caractère illicite ou des faits et circonstances faisant apparaître ce caractère ;</li><li>\n"
+#~ "ou si QWANT a agi promptement pour retirer ou rendre inaccessible le contenu dès le moment où il a été porté à sa connaissance.</li></ul><p>Site créé par Qwant SAS</p></div></div>"
+
+#~ msgctxt "error"
+#~ msgid "Your page has not been found"
+#~ msgstr "La page est introuvable."
+
+#~ msgctxt "error"
+#~ msgid "Go back to home page ?"
+#~ msgstr "Définir Qwant comme page d'accueil"
+
+#~ msgctxt "error"
+#~ msgid "Report a bug ?"
+#~ msgstr "Signaler un bug"
+
+#~ msgctxt "privacy"
+#~ msgid "QWANT LITE - Privacy Policy "
+#~ msgstr "QWANT LITE - Vie privée"
+
+#~ msgctxt "privacy"
+#~ msgid "<p>You are entitled to access your personal information and to have it amended, updated or deleted or to submit a delisting request by contacting : <a href='mailto:privacy@qwant.com'>privacy@qwant.com</a>"
+#~ msgstr "<p>Afin d’exercer vos droits d’accès, d’opposition, de rectification, ou encore effectuer une demande de droit à l’oubli, veuillez contacter le service Privacy de QWANT à l’adresse <a href=\"mailto:privacy@qwant.com\">privacy@qwant.com</a>"
+
+#~ msgctxt "privacy"
+#~ msgid "Qwant's philosophy is based on two principles: no user tracking and no filter bubble.<br>We do our best to respect the privacy of our online visitors while ensuring a secure environment and relevant results.<br>Here are our commitments for the user’s data protection :<br>If you wish to send us a request by way of our contact form, we may ask you to disclose personal data. Thus, you are entitled to protection under the European data protection regulation.<br>This Privacy Policy aims to present our ethical positioning with regard to the collection and processing of data: we guarantee not to sell or disclose the user’s data in any way, especially for commercial purposes."
+#~ msgstr "La philosophie de Qwant repose sur 2 principes : ne pas tracer les utilisateurs et ne pas filtrer le contenu d’internet.<br>Nous faisons tout notre possible pour respecter la vie privée des internautes tout en garantissant un environnement sécurisé et des résultats pertinents.<br>Voici nos engagements en matière de protection des données des utilisateurs :<br>Afin de nous adresser une demande via l’un de nos formulaires de contact, nous pouvons vous demander de communiquer des données à caractère personnel et à ce titre, vous bénéficiez de la protection de la loi dite « Informatique et Libertés ».<br>Cette charte a pour objet de vous présenter notre positionnement éthique en matière de collecte et de traitement de vos données : en aucun cas nous n’utilisons vos données personnelles pour les revendre à des fins commerciales."
+
+#~ msgctxt "privacy"
+#~ msgid "How do we collect data from our users?"
+#~ msgstr "Comment collectons-nous les données de nos utilisateurs ?"
+
+#~ msgctxt "privacy"
+#~ msgid "We collect personal data such as your full name and e-mail address, when you register for our services or complete forms that are made available on the site.<br>You can modify, correct and update the information directly on the site.<br>Furthermore, we do not use cookies or other advertising tracker (pixel, fingerprinting) while you are browsing the site."
+#~ msgstr "Nous collectons certaines données personnelles telles que votre nom, prénom et votre adresse électronique par le biais du formulaire mis à votre disposition sur le site.<br>Par ailleurs, nous n’utilisons aucune technologie de stockage ou de traçage des internautes (cookies, fingerprinting, pixel ou local storage) lors de votre navigation sur le site."
+
+#~ msgctxt "privacy"
+#~ msgid "Why do we collect data?"
+#~ msgstr "Quelles sont les raisons de cette collecte de données ?"
+
+#~ msgctxt "privacy"
+#~ msgid "The personal data of users are collected by Qwant for the following purposes:<ul><li>Management of information requests and applications submitted on the site;<li>Management of requests for removal and requests related to the exercise of rights of access, rectification and deletion relating to personal data;</ul>"
+#~ msgstr "Les données personnelles des utilisateurs sont collectées par QWANT pour les finalités suivantes :<ul><li>la gestion des demandes d’informations déposées via le formulaire de contact disponible sur le Site ;<li>la gestion des demandes de déréférencement et des demandes liées à l’exercice des droits d’accès, de rectification et de suppression portant sur les données personnelles ;<li>la sécurité du système d’information de Qwant.</ul>"
+
+#~ msgctxt "privacy"
+#~ msgid "What are the procedures and formalities conducted by Qwant to ensure the protection of your personal data?"
+#~ msgstr "Quelles sont les démarches et formalités effectuées par QWANT pour assurer la protection de vos données personnelles ?"
+
+#~ msgctxt "privacy"
+#~ msgid "Qwant has established a Privacy Service dedicated to protect your privacy and has also appointed a Data Protection Officer (DPO) with the French Data Protection Authority (CNIL). Working closely with the Privacy Service, the DPO is responsible inter alia for ensuring the compliance with legal requirements relating to the protection of personal data.<br>The DPO maintains a register of personal data processed by Qwant as part of its operation (for example, how to store the information you enter when registering on the site). The DPO makes the register available to any user who submits a request to the following address: <a href='mailto:privacy@qwant.com'>privacy@qwant.com</a>."
+#~ msgstr "QWANT s’est doté d’un service Privacy dédié à la protection de votre vie privée et a également désigné un Correspondant Informatique et Libertés (CIL) auprès de la CNIL. En collaboration étroite avec le service Privacy, le CIL est notamment chargé de veiller à la bonne application et au respect des prescriptions légales relatives à la protection des données à caractère personnel.<br>Le CIL tient le registre des traitements de données personnelles effectués par QWANT dans le cadre de son activité (par exemple, les modalités de conservation des informations que vous renseignez lors de son inscription sur le site). Le CIL tient le registre à la disposition de tout utilisateur qui en ferait la demande à l’adresse suivante : <a href='mailto:privacy@qwant.com'>privacy@qwant.com</a>."
+
+#~ msgctxt "privacy"
+#~ msgid "What happens to your personal data?"
+#~ msgstr "Que deviennent vos données personnelles ?"
+
+#~ msgctxt "privacy"
+#~ msgid "The personal data you provide are not disclosed and/or resold to third parties by Qwant."
+#~ msgstr "Les données personnelles que vous communiquez ne font l’objet d’aucune divulgation et/ou revente à des tiers de la part de QWANT."
+
+#~ msgctxt "privacy"
+#~ msgid "The personal data you provide are not disclosed and/or resold to third parties by Qwant.<br>Your data is stored on servers that belong solely to us and are never transmitted to external technical service providers. The Telecity Company (referred to as host in our {linkToTOS}) merely provides secure storage for our servers and has no access to this data.<br>However, judicial or administrative authorities may require the disclosure of data allowing the identification of a user. The Privacy Service and the DPO undertake to examine them carefully and to refuse any improper disclosure of data.<br>Regarding the French law on intelligence passed on 24 June 2015, we found that the recommendations of the CNIL had gained very little currency: as a search engine, we emphatically do not endorse the measures adopted, especially as they are particularly intrusive from the point of view of individual privacy. Accordingly, we will make every effort to ensure the protection of our users' personal data."
+#~ msgstr "Les données personnelles que vous communiquez ne font l’objet d’aucune divulgation et/ou revente à des tiers de la part de QWANT.<br>Vos données sont stockées sur des serveurs qui nous appartiennent en propre et ne sont en aucun cas transmises à des prestataires techniques externes. La société TELECITY (désignée comme hébergeur dans nos {linkToTOS}) se contente de fournir des locaux sécurisés pour nos serveurs, et n’a en aucun cas accès à ces données.<br>Toutefois, les autorités judiciaires ou administratives peuvent exiger la communication des données permettant l’identification d’un utilisateur. Le service Privacy et le CIL s’engagent à les examiner attentivement et à refuser toute communication de données abusive.<br>S’agissant de la loi sur le renseignement votée le 24 juin 2015, nous avons constaté que les recommandations émises par la CNIL n’ont que très peu été suivies d’effets : en tant que moteur de recherche, nous ne cautionnons en aucun cas les mesures adoptées, notamment lorsqu’elles sont particulièrement intrusives du point de vue de la vie privée des personnes. En conséquence, nous mettrons tout en œuvre afin d’assurer la protection des données personnelles de nos utilisateurs."
+
+#~ msgctxt "privacy"
+#~ msgid "For how long do we keep the data?"
+#~ msgstr "Pour combien de temps conservons-nous ces données ?"
+
+#~ msgctxt "privacy"
+#~ msgid "Regarding requests for access, opposition and rectification of your personal data and your delisting request, your information will be deleted six months after sending your request."
+#~ msgstr "S’agissant des demandes de droit d’accès, d’opposition et de rectification de vos données personnelles ainsi que de vos demandes de droit à l’oubli, vos informations seront supprimées 6 mois après l’envoi de votre demande."
+
+#~ msgctxt "privacy"
+#~ msgid "What measures does Qwant take to ensure the security and confidentiality of your personal data?"
+#~ msgstr "Quelles sont les mesures prises par Qwant pour assurer la sécurité et la confidentialité de vos données personnelles ?"
+
+#~ msgctxt "privacy"
+#~ msgid "We pledge to make every effort to ensure the security and confidentiality of the personal data of our users and in particular to prevent such data from being damaged, deleted, or accessed by unauthorized parties.<br>Moreover, we allow you to search safely by banning the use of any advertising tracker that would determine your profile for commercial purposes.<br>In addition, the Qwant URL includes “HTTPS” which allows a secure exchange of user data. Technically, SSL guarantees that visitor’s data cannot be intercepted by fraudulent means. Moreover, the green padlock which appears before the Qwant URL indicates that you are browsing a secure website."
+#~ msgstr "Nous nous engageons à tout mettre en œuvre afin de garantir la sécurité et la confidentialité des données personnelles de ses utilisateurs et notamment à empêcher que ces données ne soient endommagées, effacées ou que des tiers non autorisés y aient accès.<br>Ainsi, vos requêtes sont entièrement anonymisées dans la mesure où elles sont dissociées de votre adresse IP, en conformité avec les préconisations de la CNIL.<br>Par ailleurs, nous vous permettons de rechercher en toute sécurité en bannissant l’utilisation de tout traceur publicitaire qui aurait pour but de dresser votre profil à des fins commerciales.<br>De plus, l’URL de Qwant comporte la mention HTTPS qui permet un échange sécurisé des données des utilisateurs. Techniquement, le SSL garantit aux visiteurs que leurs données ne peuvent être interceptées de manière frauduleuse. Par ailleurs, le cadenas vert présent devant l'URL de Qwant indique que vous êtes en train de naviguer sur un site sécurisé."
+
+#~ msgctxt "privacy"
+#~ msgid "What are your rights? How do you exercise them?"
+#~ msgstr "Quels sont vos droits ? Comment les exercer ?"
+
+#~ msgctxt "privacy"
+#~ msgid "You are entitled to access your personal information and to have it amended, updated or deleted. <h3>Right of access</h3><br>You can ask us directly whether we hold information about you and request that we communicate all this data to you. The exercise of the right of access enables users to monitor data accuracy and, if necessary, have them corrected or deleted.<h3>Right of opposition</h3><br>You have the opportunity to object, for legitimate reasons, to being included in our files. You do not need to prove a legitimate reason regarding commercial prospection. You may object to your data dissemination, transmission or storage. <h3>Right of correction or deletion</h3><br>You may request correction of inaccurate information about you, to prevent us from processing or disseminating false information about you.<h3>Right to delisting (right to be forgotten)</h3><br>This right is specifically directed at search engines. You can send us a delisting request for a web page associated with your surname and first name.<br>Furthermore, the rights set out above rights may be exercised:<ul><li>either by writing to Qwant by traditional mail to - Service juridique, 28 rue de l'Université, 75007 Paris;<li>or by sending an e-mail to <a href='mailto:privacy@qwant.com'>privacy@qwant.com</a>.</ul>"
+#~ msgstr "Vous disposez d’un droit d’accès, d’opposition et de rectification ou de suppression des informations incomplètes ou inexactes vous concernant.<h3>Droit d’accès</h3><br>Vous pouvez nous demander directement si nous détenons des informations vous concernant et demander à ce que l’on vous communique l’intégralité de ces données. L'exercice du droit d’accès permet de contrôler l'exactitude des données et, au besoin, de les faire rectifier ou effacer.<h3>Droit d’opposition</h3><br>Vous avez la possibilité de vous opposer, pour des motifs légitimes, à figurer dans nos fichiers. En matière de prospection commerciale, vous n’avez pas besoin de justifier d'un motif légitime. Vous pouvez vous opposer à ce que les données vous concernant soient diffusées, transmises ou conservées.<h3>Droit de rectification ou de suppression</h3><br>Vous pouvez demander la rectification des informations inexactes vous concernant, afin d’éviter que nous ne traitions ou ne diffusions de fausses informations à votre sujet.<h3>Droit à l’oubli (droit au déréférencement)</h3><br>Il s’agit d’un droit spécifique aux moteurs de recherche. Vous pouvez nous adresser une demande de déréférencement d’une page web associée à vos nom et prénom.<br>Par ailleurs, les droits détaillés ci-dessus peuvent être exercés :<ul><li>soit en écrivant par courrier à QWANT – Service juridique, 28 rue de l'université, 75007 Paris ;<li>soit en adressant un courrier électronique à l’adresse <a href='mailto:privacy@qwant.com'>privacy@qwant.com</a>.</ul>"
+
+#~ msgctxt "privacy"
+#~ msgid "Additional information and recommendations"
+#~ msgstr "Autres informations et recommandations"
+
+#~ msgctxt "privacy"
+#~ msgid "In case you pass through our services to access other sites with different privacy and data protection policies, we invite you to examine the rules applicable to the use and disclosure of personal data communicated on these sites.<br>We also recommend you to remain vigilant in your use of third-party personal data (e.g., photos collected on the BOARDS LITE service), and in particular to respect the applicable regulations regarding data protection."
+#~ msgstr "Dans l’hypothèse où vous accéderiez par le biais de nos services à d’autres sites présentant des politiques de confidentialité et de protection des données différentes, nous vous invitons à examiner les règles applicables à l'utilisation et à la divulgation des données personnelles communiquées sur ces sites.<br>Nous vous recommandons également d’être vigilants quant à l’utilisation que vous faites des données personnelles de tiers (par exemple, des photos récoltées sur le service BOARDS LITE), et notamment de respecter la réglementation applicable en matière de protection des données."
+
+#~ msgctxt "footer"
+#~ msgid "Contact us"
+#~ msgstr "Contactez-nous"
+
+#~ msgctxt "footer"
+#~ msgid "Settings"
+#~ msgstr "Réglages"
+
+#~ msgctxt "footer"
+#~ msgid "Privacy"
+#~ msgstr "Vie privée"
+
+#~ msgctxt "footer"
+#~ msgid "Terms of service"
+#~ msgstr "Conditions d'utilisation"
+
+#~ msgctxt "footer"
+#~ msgid "Qwicks"
+#~ msgstr "Qwick"
+
+#~ msgctxt "footer"
+#~ msgid " &#169; Qwant 2015, all rights reserved"
+#~ msgstr " &#169; Qwant 2015,  tous droits réservés"
+
+#~ msgctxt "error"
+#~ msgid "Internal Server Error"
+#~ msgstr "Une erreur interne est survenue"
+
+#~ msgctxt "home"
+#~ msgid "Search"
+#~ msgstr "Recherche"
+
+#~ msgctxt "language"
+#~ msgid "Language"
+#~ msgstr "Langue"
+
+#~ msgctxt "language"
+#~ msgid "Choose"
+#~ msgstr "Choisir"
+
+#~ msgctxt "home"
+#~ msgid "Web"
+#~ msgstr "Web"
+
+#~ msgctxt "home"
+#~ msgid "News"
+#~ msgstr "Actualités"
+
+#~ msgctxt "home"
+#~ msgid "Social"
+#~ msgstr "Social"
+
+#~ msgctxt "home"
+#~ msgid "Images"
+#~ msgstr "Images"
+
+#~ msgctxt "home"
+#~ msgid "Videos"
+#~ msgstr "Vidéos"
+
+#~ msgctxt "home"
+#~ msgid "Shopping"
+#~ msgstr "Shopping"
+
+#~ msgctxt "footer"
+#~ msgid "Language"
+#~ msgstr "Langue"
+
+#~ msgid "Request for information"
+#~ msgstr "Demander une information"
+
+#~ msgid "Report a bug"
+#~ msgstr "Signaler un bug"
+
+#~ msgid "Report an illicit content"
+#~ msgstr "Signaler un contenu illicite"
+
+#~ msgid "Recruitment"
+#~ msgstr "Recrutement"
+
+#~ msgid "Delisting right"
+#~ msgstr "Droit à l'oubli"
+
+#~ msgid "SEA Shopping"
+#~ msgstr "SEA Shopping"
+
+#~ msgctxt "title"
+#~ msgid "Home"
+#~ msgstr "Accueil"

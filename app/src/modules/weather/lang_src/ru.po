@@ -1,0 +1,77 @@
+
+#: src/model/weather/public/weather.dot:92
+msgctxt "ia-weather"
+msgid "by"
+msgstr ""
+
+#: src/model/weather/public/weather.dot:113
+msgctxt "ia-weather"
+msgid "Tomorrow"
+msgstr "Завтра"
+
+#: src/model/weather/public/weather.dot:179
+msgctxt "ia-weather"
+msgid "Forecast by"
+msgstr ""
+
+#: src/model/weather/forecast.js:133 src/model/weather/drivers/wetter.js:49
+msgctxt "ia-weather"
+msgid "Wind"
+msgstr ""
+
+#: src/model/weather/forecast.js:139 src/model/weather/drivers/wetter.js:53
+msgctxt "ia-weather"
+msgid "Humidity"
+msgstr ""
+
+#: src/model/weather/forecast.js:145
+msgctxt "ia-weather"
+msgid "Rain"
+msgstr ""
+
+#: src/model/weather/forecast.js:151
+msgctxt "ia-weather"
+msgid "Pressure"
+msgstr ""
+
+#: src/model/weather/weather.js:130
+msgctxt "weather"
+msgid "Weather"
+msgstr "Погода"
+
+#: src/model/weather/weather.js:133
+msgctxt "weather"
+msgid "weather"
+msgstr "Погода"
+
+msgctxt "ia-weather"
+msgid "Today"
+msgstr "сегодня"
+
+msgctxt "ia-weather"
+msgid "Sunday"
+msgstr "воскресенье"
+
+msgctxt "ia-weather"
+msgid "Monday"
+msgstr "понедельник"
+
+msgctxt "ia-weather"
+msgid "Tuesday"
+msgstr "вторник"
+
+msgctxt "ia-weather"
+msgid "Wednesday"
+msgstr "среда"
+
+msgctxt "ia-weather"
+msgid "Thursday"
+msgstr "четверг"
+
+msgctxt "ia-weather"
+msgid "Friday"
+msgstr "пятница"
+
+msgctxt "ia-weather"
+msgid "Saturday"
+msgstr "суббота"

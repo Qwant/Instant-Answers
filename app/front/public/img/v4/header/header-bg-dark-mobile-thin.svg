@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="450px" height="6px" viewBox="0 0 450 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Elements/Small/360</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M3.00444444,0 L446,0 C447.656854,-3.12075852e-14 449,1.34314575 449,3 L449,6 L0.00444444444,6 L0.00444444444,3 C0.00444444444,1.34314575 1.34759019,3.04359188e-16 3.00444444,0 Z" id="path-1"></path>
+    </defs>
+    <g id="Elements/Small/360" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Rectangle-path" fill="#5A797F" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <path d="M119.288592,-41 C111.703499,-23.4757143 102.549078,-7.63 92.1740663,6 L54.1178273,6 C59.9592202,-8.57 64.6672086,-24.3485714 68.0674224,-41 L119.288592,-41 Z" id="Shape" fill="#708B93" fill-rule="nonzero" mask="url(#mask-2)"></path>
+            <path d="M68.3306004,-41 C64.9709678,-24.3485714 60.2587558,-8.57 54.3684908,6 L-1,6 L-1,-41 L68.3306004,-41 Z" id="Shape" fill="#79A3AB" fill-rule="nonzero" mask="url(#mask-2)"></path>
+            <path d="M269.060791,6 L183.405183,6 C170.009222,-6.69 158.096853,-22.5357143 148.060791,-41 L248.857762,-41 C254.312143,-24.0128571 261.119211,-8.23428571 269.060791,6 Z" id="Shape" fill="#50626A" fill-rule="nonzero" mask="url(#mask-2)"></path>
+            <path d="M448.395491,-41 L448.395491,6 L334,6 C347.378825,-6.69 359.275956,-22.5357143 369.29918,-41 L448.395491,-41 Z" id="Shape" fill="#414E55" fill-rule="nonzero" mask="url(#mask-2)"></path>
+            <path d="M370.612018,-41 C360.595948,-22.5357143 348.663761,-6.69 335.338034,6 L268.796493,6 C260.870734,-8.23428571 254.033678,-24.0128571 248.590161,-41 L370.612018,-41 Z" id="Shape" fill="#414E55" fill-rule="nonzero" mask="url(#mask-2)"></path>
+            <path d="M449,-41 L449,6 L394,6 C394.643526,-10.1814286 396.359594,-25.8928571 399.105304,-41 L449,-41 Z" id="Shape" fill="#50626A" fill-rule="nonzero" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

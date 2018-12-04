@@ -1,0 +1,119 @@
+/** On "All" view **/
+
+.ia__npm {
+    padding    : 8px 0 10px 42px;
+    border-top : 1px solid rgba(122, 124, 126, 0.16);
+    background : #F8F9FA;
+
+    .ia__npm--container {
+        .ia__npm__icon {
+            font-size : 28px;
+            vertical-align : middle;
+        }
+
+        .ia__npm__name {
+            font-family    : 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+            color          : rgb(24, 32, 48);
+            font-size      : 28px;
+            line-height    : 60px;
+            text-transform : capitalize;
+            font-weight    : 600;
+            margin-right   : 5px;
+            margin-left    : 16px;
+            vertical-align : middle;
+
+            &:hover {
+                color           : #0064BE;
+                text-decoration : none;
+            }
+        }
+
+        .ia__npm__version {
+            color          : rgba(50, 50, 50, 0.8);
+            vertical-align : top;
+            line-height    : 50px;
+            font-size      : 14px;
+        }
+    }
+
+    .ia__npm__description,
+    .ia__npm__author {
+        font-family : Calibri, Candara, 'Segoe UI', 'Helvetica', 'Droid Sans', Arial, sans-serif;
+        font-size   : 16px;
+        color       : rgb(24, 32, 40);
+    }
+
+    .ia__npm__author {
+        font-style : italic;
+        margin     : 4px 0 10px 0;
+        opacity    : 0.56;
+        font-size  : 14px;
+
+        .ia__npm__author--span {
+            font-weight : bold;
+        }
+    }
+
+    .ia__npm__link {
+        color       : rgba(50, 50, 50, 0.65);
+        font-size   : 13px;
+        margin-left : -6px;
+        line-height : 40px;
+
+        &:hover {
+            color           : #0064BE;
+            text-decoration : underline;
+        }
+
+    }
+
+
+    .ia__npm__link__icon {
+        color       : rgba(50, 50, 50, 0.65);
+        margin-left  : 2px;
+        font-size    : 12px;
+        margin-right : 8px;
+    }
+}
+
+/** Tablet **/
+
+@media (max-width : 1000px) {
+    .ia__npm {
+        padding    : 20px 20px 20px 40px;
+        background : #F8F9FA;
+        border     : 0;
+    }
+}
+
+/** Mobile **/
+
+@media (max-width : 640px) {
+
+    .ia__npm {
+        padding      : 10px 0 10px 20px;
+        margin       : 5px;
+        background   : #FFF;
+        box-shadow   : 0px 3px 7px rgba(0, 0, 0, 0.04);
+        border-color : rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.11);
+        border-width : 1px;
+        border-style : solid;
+    }
+}
+
+/** Web view **/
+
+.ia_container-web_desktop {
+    .ia__npm {
+        padding    : 10px 0 10px 30px;
+        background : #F8F9FA;
+        border-top : none;
+    }
+}
+
+/** A/B TESTING #QWANT-1201 **/
+@media (min-width : 1160px) {
+    .ia_container-web_desktop .ia__npm {
+        background: none;
+    }
+}

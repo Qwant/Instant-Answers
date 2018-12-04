@@ -1,0 +1,7 @@
+#!/bin/bash
+set -ueo pipefail
+
+yarn install
+ln -s /src/dist /src/front/public/dist
+grunt
+exec "$@"

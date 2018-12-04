@@ -1,0 +1,371 @@
+<div class="application">
+    <div class="wrapper">
+        <div class="header">
+            <span class="header_mobile_bg header_mobile_bg--classic"></span>
+            <div class="header_content header_content--classic">
+                <button class="home__snippet__extension header__add-qwant">
+                    <span>Installer Qwant</span>
+                </button>
+                <div class="header__item header__item--login">
+                    <svg xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="header__item_label">Connexion</span>
+                </div>
+                <span class="header__item header__item--bookmarks" title="Favoris" aria-label="bookmarks">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                </span>
+                <span class="header__item header__user__language country--fr_FR" title="Changer la région de recherche">
+                    <span class="header__user__language__icon country__icon"></span>
+                </span>
+                <span class="header__item header__item--appmenu" title="Menu d'applications" aria-label="appmenu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+                        <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </span>
+            </div>
+        </div>
+        <div id="main">
+            <div class="content">
+                <div class="results-view results-view--web">
+                    <div class="result-list__top">
+                        <div class="result-list__search-holder">
+                            <div class="search_bar">
+                                <div class="search_bar__form">
+                                    <a href="/" class="search_bar__form__logo">
+                                        <img alt="logo" src="img/v4/qwant-logo-mini.svg" />
+                                    </a>
+                                    <input class="search_bar__form__placeholder" disabled value spellcheck="false" />
+                                    <div class="search_bar__form__icons">
+                                        <span class="search_bar__form__reset" title="Effacer la recherche" onclick="document.getElementById('qwant_search').reset(); document.getElementById('search_input').value = '';">
+                                            <span class="icon icon-switch-close"></span>
+                                        </span>
+                                        <svg onclick="document.getElementById('qwant_search').submit();" class="search_bar__form__search" title="Rechercher" width="24" height="24" viewBox="0 0 24 24">
+                                            <use xlink:href="/img/v4/icon-spritesheet.svg?#icon-search"></use>
+                                        </svg>
+                                    </div>
+                                    <form action="." id="qwant_search">
+                                        <input name="q" id="search_input" class="search_bar__form__input" type="search" autocomplete="off" spellcheck="false" placeholder="Que recherchez-vous ?" value="[[= model.query ]]" aria-label="search_bar" />
+                                        <input name="locale" value="fr_fr" type="hidden" />
+                                        <input name="lang" value="fr_fr" type="hidden" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-list__carousel">
+                            <div class="result-list__carousel__scroll">
+                                <a tag="6" class="result-list__carousel-item  result-list__carousel-item--all" href="??q=[[= model.query ]]&t=all">
+                                    <svg width="16" height="16" viewBox="0 0 24 24">
+                                        <use xlink:href="/img/v4/sidebar-spritesheet.svg?#icon-all"></use>
+                                    </svg>
+                                    <label class="result-list__carousel__title">Tous</label>
+                                </a>
+                                <a tag="7" class="result-list__carousel-item result-list__carousel-item--current result-list__carousel-item--web" href="?q=[[= model.query ]]&t=web">
+                                    <svg width="16" height="16" viewBox="0 0 24 24">
+                                        <use xlink:href="/img/v4/sidebar-spritesheet.svg?#icon-web"></use>
+                                    </svg>
+                                    <label class="result-list__carousel__title">Web</label>
+                                </a>
+                                <a tag="8" class="result-list__carousel-item  result-list__carousel-item--news" href="?q=[[= model.query ]]&t=news">
+                                    <svg width="16" height="16" viewBox="0 0 24 24">
+                                        <use xlink:href="/img/v4/sidebar-spritesheet.svg?#icon-news"></use>
+                                    </svg>
+                                    <label class="result-list__carousel__title">Actualités</label>
+                                </a>
+                                <a tag="9" class="result-list__carousel-item  result-list__carousel-item--social" href="?q=[[= model.query ]]&t=social">
+                                    <svg width="16" height="16" viewBox="0 0 24 24">
+                                        <use xlink:href="/img/v4/sidebar-spritesheet.svg?#icon-social"></use>
+                                    </svg>
+                                    <label class="result-list__carousel__title">Social</label>
+                                </a>
+                                <a tag="10" class="result-list__carousel-item  result-list__carousel-item--images" href="?q=[[= model.query ]]&t=images">
+                                    <svg width="16" height="16" viewBox="0 0 24 24">
+                                        <use xlink:href="/img/v4/sidebar-spritesheet.svg?#icon-images"></use>
+                                    </svg>
+                                    <label class="result-list__carousel__title">Images</label>
+                                </a>
+                                <a tag="11" class="result-list__carousel-item  result-list__carousel-item--videos" href="?q=[[= model.query ]]&t=videos">
+                                    <svg width="16" height="16" viewBox="0 0 24 24">
+                                        <use xlink:href="/img/v4/sidebar-spritesheet.svg?#icon-videos"></use>
+                                    </svg>
+                                    <label class="result-list__carousel__title">Vidéos</label>
+                                </a>
+                                <a tag="12" class="result-list__carousel-item  result-list__carousel-item--shopping" href="?q=[[= model.query ]]&t=shopping">
+                                    <svg width="16" height="16" viewBox="0 0 24 24">
+                                        <use xlink:href="/img/v4/sidebar-spritesheet.svg?#icon-shopping"></use>
+                                    </svg>
+                                    <label class="result-list__carousel__title">Shopping</label>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="verticals__container">
+                        <a class="verticals__item verticals__360 button verticals--selected">
+                            <svg class="verticals__toggle__icon verticals__360__logo">
+                                <use xlink:href="/img/v4/icon-spritesheet.svg?#logo-2"></use>
+                            </svg>
+                            Qwant
+                        </a>
+                        <a class="verticals__item verticals__music button ">
+                            <svg class="verticals__360__logo">
+                                <use xlink:href="/img/v4/icon-spritesheet.svg?#icon-music"></use>
+                            </svg>
+                            Music
+                        </a>
+                        <a class="verticals__toggle button button--round">
+                            <svg class="verticals__toggle__icon">
+                                <use xlink:href="/img/v4/icon-spritesheet.svg?#icon-chevrons-right"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="results-page results-page--web results-page--with-smart">
+                        <div class="results-column results-column--web">
+                            <h2>
+                                <span class="icon icon-sidebar-web"></span>
+                                <span class="result_column__title">Sur le web</span>
+                            </h2>
+                            <div class="query_context"></div>
+                            <div class="ia_container" id="ia--container-mobile"></div>
+                            <div class="result_filters_container">
+                                <span class="icon icon-filter result_filter_toggle_button">Filtrer</span>
+                                <div class="result_filters_container__box">
+                                    <div class="result_filters_container__filters" id="result_filters_container__filters">
+                                        <div class="result_filter__item result_filter__item--desktop result_filter__item--dropdown result_filter__item--freshness">
+                                            <div class="wrapper-dropdown " role="liste déroulante">
+                                                <div class="select-placeholder">Période</div>
+                                                <span class="wrapper-dropdown__icon icon icon-dropdown"></span>
+                                                <div class="dropdown">
+                                                    <div class="dropdown__item dropdown__item__selected" id="a_80">Toutes</div>
+                                                    <div class="dropdown__item " id="a_81">Dernières 24 heures</div>
+                                                    <div class="dropdown__item " id="a_82">Dernière semaine</div>
+                                                    <div class="dropdown__item " id="a_83">Dernier mois</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="result_filter__item result_filter__item--handheld result_filter__item--list result_filter__item--freshness">
+                                            <span class="result_filter__item__label result_filter__item__label--icon-minus" id="a_84">Période</span>
+                                            <div class="wrapper-list" id="l_1">
+                                                <div>
+                                                    <ul class="list ">
+                                                        <li class="list__item  selected ">
+                                                            <span class="list__item__label selected">Toutes</span>
+                                                        </li>
+                                                        <li class="list__item ">
+                                                            <a id="a_85" class="list__item__label " href="#">Dernières 24 heures</a>
+                                                        </li>
+                                                        <li class="list__item ">
+                                                            <a id="a_86" class="list__item__label " href="#">Dernière semaine</a>
+                                                        </li>
+                                                        <li class="list__item ">
+                                                            <a id="a_87" class="list__item__label " href="#">Dernier mois</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="result_filters_container__triangle_shadow"></div>
+                                    <div class="result_filters_container__triangle"></div>
+                                </div>
+                            </div>
+                            <div class="result_fragment result_fragment--first">
+                                [[ var i; ]]
+                                [[ for(i = 0; i <= 30; i++) { ]]
+                                    <div class="result result--web">
+                                        <div class="result_actions">
+                                            <div class="result_actions__button_container">
+                                                <svg viewBox="0 0 24 24">
+                                                    <use xlink:href="/img/v4/icon-spritesheet.svg?#more-vertical"></use>
+                                                </svg>
+                                                <div class="result_actions__menu">
+                                                    <div class="result_actions__menu__item result_action__menu_item_create_note result_actions__menu__item-a_687">
+                                                        <span class="result_actions__create_note_button"></span>
+                                                        <span>Ajouter à mes carnets</span>
+                                                    </div>
+                                                    <div class="result_actions__menu__item result_action__menu_item_star_button result_actions__menu__item-a_688">
+                                                        <span class="result_actions__star_button result_actions__star_button--inactive"></span>
+                                                        <span>Ajouter à mes favoris</span>
+                                                    </div>
+                                                    <div class="result_actions__menu__item result_action__menu_item_star_button result_actions__menu__item-a_689">
+                                                        <span class="result_actions__star_button result_actions__star_button--active"></span>
+                                                        <span>Retirer de mes favoris</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h3><a href="#" rel="noopener" target="_blank" class="result--web--link"><span class="result--web--title">Lorem ipsum</span></a></h3>
+                                        <div class="result_url">
+                                            <span class="result__url__long">loremipsum.lor</span>
+                                        </div>
+                                        <p>Cras varius odio et dolor aliquet, eget efficitur lorem finibus. Duis vitae elementum erat. Nullam eu interdum urna...</p>
+                                    </div>
+                                [[ } ]]
+                            </div>
+                        </div>
+                        <div class="ia_container" id="ia--container-desktop"></div>
+                        <div class="results-column results-column--smart">
+                            <div class="result_fragment">
+                                <div class="result-smart__item result-smart__news">
+                                    <div class="result-smart__header">
+                                        <h3 class="result-smart__title__text">Actualités</h3>
+                                        <div class="result-smart__see-more--container">
+                                            <a class="result-smart__see-more__link" href="#">
+                                                <svg class="result-smart__see-more__icon" title="Voir plus d'actualités" width="17" height="17" viewBox="0 0 17 17">
+                                                    <use xlink:href="/img/v4/icon-spritesheet.svg?#icon-more-arrow"></use>
+                                                </svg>
+                                                <span class="result-smart__see-more__text">Voir plus d'actualités</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <a class="result-smart__news__item" href="#" rel="noopener" target="_blank">
+                                        <div class="result-smart__news__img--container">
+                                            <img class="result-smart__news__item__img" alt="News" src="/img/error/news_error--small.png" />
+                                        </div>
+                                        <div class="result-smart__news__text--container">
+                                            <div class="result-smart__item__title">Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque augue lectus, tristique.</div>
+                                            <div class="result-smart__news__time--container">
+                                                <span>Il y a 1 heure via qwant.com</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="result-smart__news__item" href="#" rel="noopener" target="_blank">
+                                        <div class="result-smart__news__img--container">
+                                            <img class="result-smart__news__item__img" alt="News" src="/img/error/news_error--small.png" />
+                                        </div>
+                                        <div class="result-smart__news__text--container">
+                                            <div class="result-smart__item__title">Nulla ac diam at mauris lobortis ornare nec vel quam. Lorem ipsum dolor sit.</div>
+                                            <div class="result-smart__news__time--container">
+                                                <span>Il y a 2 heures via qwant.com</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="result-smart__item result-smart__social">
+                                    <div class="result-smart__header">
+                                        <h3 class="result-smart__title__text">Social</h3>
+                                        <div class="result-smart__see-more--container">
+                                            <a class="result-smart__see-more__link" href="#">
+                                                <svg class="result-smart__see-more__icon" title="Voir plus de social" width="17" height="17" viewBox="0 0 17 17">
+                                                    <use xlink:href="/img/v4/icon-spritesheet.svg?#icon-more-arrow"></use>
+                                                </svg>
+                                                <span class="result-smart__see-more__text">Voir plus de social</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="result-smart__social__item">
+                                        <a class="result-smart__social__item--container" href="#" rel="noopener" target="_blank"><div class="result-smart__social__img--container"><img class="result-smart__social__item__img" alt="Image" src="/img/error/people_error--small.png"></div><div class="result-smart__social__text--container"><div class="result-smart__item__title result-smart__social__item__title">Lorem ipsum</div><div class="result-smart__social__infos"><span>@Lorem</span><span>10M abonnés</span></div></div></a>
+                                        <p class="result-smart__social__desc">Aenean mi nulla, dignissim non tristique et, finibus quis elit. Ut quis tincidunt eros. In commodo metus ut venenatis tristique. #LoremIpsum</p>
+                                        <div class="result-smart__social__stats">
+                                            <a class="result-smart__social__stats--rt" href="#"><svg title="retweet" width="14" height="14" viewBox="0 0 14 14"><use xlink:href="/img/v4/icon-spritesheet.svg?#icon-retweet"></use></svg><span>1000 retweets</span></a>
+                                            <a class="result-smart__social__stats--like" href="#"><svg title="like" width="14" height="14" viewBox="0 0 14 14"><use xlink:href="/img/v4/icon-spritesheet.svg?#icon-heart"></use><use xlink:href="/img/v4/icon-spritesheet.svg?#icon-heart"></use></svg><span>2002 like</span></a>
+                                            <a class="result-smart__social__time--container" href="#"><span>il y a 1 minute sur twitter</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="result-smart__social__item">
+                                        <a class="result-smart__social__item--container" href="#" rel="noopener" target="_blank"><div class="result-smart__social__img--container"><img class="result-smart__social__item__img" alt="Image" src="/img/error/people_error--small.png"></div><div class="result-smart__social__text--container"><div class="result-smart__item__title result-smart__social__item__title">Lorem ipsum</div><div class="result-smart__social__infos"><span>@Lorem</span><span>10M abonnés</span></div></div></a>
+                                        <p class="result-smart__social__desc">Aenean mi nulla, dignissim non tristique et, finibus quis elit. Ut quis tincidunt eros. In commodo metus ut venenatis tristique. #LoremIpsum</p>
+                                        <div class="result-smart__social__stats">
+                                            <a class="result-smart__social__stats--rt" href="#"><svg title="retweet" width="14" height="14" viewBox="0 0 14 14"><use xlink:href="/img/v4/icon-spritesheet.svg?#icon-retweet"></use></svg><span>1000 retweets</span></a>
+                                            <a class="result-smart__social__stats--like" href="#"><svg title="like" width="14" height="14" viewBox="0 0 14 14"><use xlink:href="/img/v4/icon-spritesheet.svg?#icon-heart"></use><use xlink:href="/img/v4/icon-spritesheet.svg?#icon-heart"></use></svg><span>2002 like</span></a>
+                                            <a class="result-smart__social__time--container" href="#"><span>il y a 1 minute sur twitter</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="verticals__container__mobile">
+                            <a class="verticals__toggle button button--round">
+                                <span class="red_dot"></span>
+                                <svg class="verticals__toggle__icon">
+                                    <use xlink:href="/img/v4/sidebar-spritesheet.svg?#icon-music"></use>
+                                </svg>
+                                <span class="icon icon-switch-close"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <footer>
+            <div class="footer__block footer__block--left">
+                <span class="footer__logo"></span>
+            </div>
+            <nav class="footer__block footer__block--menu">
+                <a class="footer__menu--item" href="#" rel="noopener">Confidentialité</a>
+                <a class="footer__menu--item" href="#" rel="noopener">À propos</a>
+                <a class="footer__menu--item" href="#" rel="noopener">Conditions d'utilisation</a>
+                <a class="footer__menu--item" href="#" rel="noopener">Mentions légales</a>
+                <a class="footer__menu--item" href="#" rel="noopener">Contactez-nous</a>
+                <a class="footer__menu--item" href="#" rel="noopener">F.A.Q.</a>
+                <a class="footer__menu--item" href="#" rel="noopener">Qwick</a>
+                <a class="footer__menu--item" href="#" rel="noopener">Jobs</a>
+                <a class="footer__menu--item" href="#" rel="noopener">Presse</a>
+                <a class="footer__menu--item" href="#" rel="noopener">Blog</a>
+                <a class="footer__menu--item" href="#" rel="noopener">Lite</a>
+            </nav>
+        </footer>
+    </div>
+    <div class="side_bar">
+        <div class="sidebar__mask"></div>
+        <nav class="sidebar" role="navigation">
+            <div class="sidebar__inner">
+                <ul class="sidebar__content">
+                    <li class="sidebar__item sidebar__item--web sidebar__item--current" title="Web">
+                        <a href="#" tag="0" class="sidebar__item__link">
+                            <svg>
+                                <use xlink:href="/img/v4/sidebar-spritesheet.svg?#icon-web"></use>
+                            </svg>
+                            <span class="sidebar__item__label">Web</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item sidebar__item--news" title="Actualités">
+                        <a href="#" tag="1" class="sidebar__item__link">
+                            <svg>
+                                <use xlink:href="/img/v4/sidebar-spritesheet.svg?#icon-news"></use>
+                            </svg>
+                            <span class="sidebar__item__label">Actualités</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item sidebar__item--social" title="Social">
+                        <a href="#" tag="2" class="sidebar__item__link">
+                            <svg>
+                                <use xlink:href="/img/v4/sidebar-spritesheet.svg?#icon-social"></use>
+                            </svg>
+                            <span class="sidebar__item__label">Social</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item sidebar__item--images" title="Images">
+                        <a href="#" tag="3" class="sidebar__item__link">
+                            <svg>
+                                <use xlink:href="/img/v4/sidebar-spritesheet.svg?#icon-images"></use>
+                            </svg>
+                            <span class="sidebar__item__label">Images</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item sidebar__item--videos" title="Vidéos">
+                        <a href="#" tag="4" class="sidebar__item__link">
+                            <svg>
+                                <use xlink:href="/img/v4/sidebar-spritesheet.svg?#icon-videos"></use>
+                            </svg>
+                            <span class="sidebar__item__label">Vidéos</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item sidebar__item--shopping" title="Shopping">
+                        <a href="#" tag="0" class="sidebar__item__link">
+                            <svg>
+                                <use xlink:href="/img/v4/sidebar-spritesheet.svg?#icon-shopping"></use>
+                            </svg>
+                            <span class="sidebar__item__label">Shopping</span>
+                        </a>
+                    </li>
+                    <div class="sidebar__item__bar_cursor sidebar__item__bar_cursor--web" style="top: 12px;"></div>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

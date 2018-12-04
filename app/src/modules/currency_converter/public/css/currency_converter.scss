@@ -1,0 +1,154 @@
+/** On "All" view **/
+
+.ia__currency_converter {
+    padding     : 24px 38px 24px 38px;
+    font-family : "Segoe UI", "Helvetica", "Droid Sans", Arial, sans-serif;
+    background  : #F8F9FA;
+
+    .ia__currency_converter__icon {
+        float        : left;
+        font-size    : 42px;
+        margin-right : 6px;
+    }
+
+    .ia__currency_converter__clear {
+        clear : both;
+    }
+
+    .ia__currency_converter--main {
+        margin-left : 10px;
+        float       : left;
+
+        .ia__currency_converter__from {
+            font-size      : 18px;
+            color          : #777;
+            padding-bottom : 10px;
+        }
+
+        .ia__currency_converter__result {
+            font-size   : 32px;
+            margin-top  : -5px;
+            margin-left : -3px;
+
+            .ia__currency_converter__result--label {
+                font-size : 18px;
+            }
+        }
+    }
+
+    .ia__currency_converter--last_update {
+        font-size : 11px;
+        color     : #999;
+        position  : absolute;
+        bottom    : 5px;
+        right     : 5px;
+
+        a {
+            color : #999;
+            &:hover {
+                text-decoration : underline;
+            }
+        }
+    }
+
+    .ia__currency_converter--others {
+        float       : left;
+        color       : #777;
+        font-size   : 14px;
+        margin-left : 40px;
+
+        .ia__currency_converter--others_lines {
+            max-height         : 38px;
+            margin-top         : 5px;
+            overflow-y         : hidden;
+            -webkit-transition : all .5s cubic-bezier(0, 1, 0, 1);
+            -moz-transition    : all .5s cubic-bezier(0, 1, 0, 1);
+            -o-transition      : all .5s cubic-bezier(0, 1, 0, 1);
+            -ms-transition     : all .5s cubic-bezier(0, 1, 0, 1);
+            transition         : all .5s cubic-bezier(0, 1, 0, 1);
+
+            &.others_lines_expanded {
+                max-height         : 800px;
+                -webkit-transition : all 1s ease-in-out;
+                -moz-transition    : all 1s ease-in-out;
+                -o-transition      : all 1s ease-in-out;
+                -ms-transition     : all 1s ease-in-out;
+                transition         : all 1s ease-in-out;
+            }
+
+            p {
+                line-height : 19px;
+            }
+        }
+
+        .ia__currency_converter--others__see_more {
+            cursor     : pointer;
+            display    : inline-block;
+            margin-top : 12px;
+            font-size  : 12px;
+        }
+    }
+}
+
+@media (max-width : 890px) {
+    .ia__currency_converter .ia__currency_converter--others {
+        margin-left : 64px;
+        margin-top  : 15px;
+    }
+}
+
+/** Mobile **/
+
+@media (max-width : 640px) {
+
+    .ia__currency_converter {
+        padding      : 10px;
+        margin       : 5px;
+        background   : #fff;
+        box-shadow   : 0px 3px 7px rgba(0, 0, 0, 0.04);
+        border-color : rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.11);
+        border-width : 1px;
+        border-style : solid;
+
+        .ia__currency_converter--main {
+            margin : 0 10px;
+            float  : none;
+        }
+
+        .ia__currency_converter--others {
+            margin : 10px;
+            float  : none;
+        }
+
+        .ia__currency_converter__clear {
+            clear : none;
+        }
+    }
+}
+
+.ia_container-web_desktop {
+    .ia__currency_converter {
+        .ia__currency_converter--main {
+            float : none;
+        }
+
+        .ia__currency_converter--others {
+            margin-top : 10px;
+            float      : none;
+        }
+
+        .ia__currency_converter__clear {
+            clear : none;
+        }
+    }
+}
+
+/** A/B TESTING #QWANT-1201 **/
+@media (min-width : 1160px) {
+    .ia_container-web_desktop .ia__currency_converter {
+        background : none;
+        .ia__currency_converter--others {
+            display : none;
+        }
+    }
+}

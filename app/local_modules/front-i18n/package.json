@@ -1,0 +1,12 @@
+{
+  "name": "@qwant/front-i18n",
+  "main": "index.js",
+  "version": "0.1.0",
+  "dependencies": {
+    "bluebird": "2.9.30",
+    "mkdirp": "0.5.1",
+    "rimraf": "2.4.3"
+  },
+  "description": "i18n tool and helper for qwant projects",
+  "devDependencies": {}
+}

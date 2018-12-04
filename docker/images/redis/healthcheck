@@ -1,0 +1,11 @@
+#!/bin/bash
+# Inspired by https://github.com/docker-library/healthcheck/blob/master/redis/docker-healthcheck
+set -eo pipefail
+
+host="$(hostname -i || echo '127.0.0.1')"
+
+if ping="$(redis-cli -h "$REDIS_IA_HOST" -p "$REDIS_IA_PORT" -a "$REDIS_IA_PASSWORD" ping)" && [ "$ping" = 'PONG' ]; then
+	exit 0
+fi
+
+exit 1

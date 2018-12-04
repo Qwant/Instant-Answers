@@ -1,0 +1,109 @@
+/** On ""BIG" screens **/
+.ia__current-week {
+    max-width: 631px;
+    height: 145px;
+    border-radius: 3px;
+    background-color: #ffffff;
+
+
+    .ia__current-week__container {
+        height: inherit;
+
+        .ia__current-week__result {
+            height: inherit;
+            padding : 53px 22px 53px 43px;
+
+            font-family: Asap,'Helvetica', 'Droid Sans', Arial, sans-serif;
+            font-size: 38px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #5c6f84;
+
+            display : inline-block;
+
+            .stronger {
+                font-weight: 500;
+                color: #353c52;
+            }
+        }
+
+        .ia__current-week__day {
+            font-family: Asap, 'Helvetica', 'Droid Sans', Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.36;
+            letter-spacing: normal;
+            color: #5c6f84;
+
+            display : inline-block;
+            vertical-align: super;
+        }
+        .ia__current-week__day_2lines {
+            font-family: Asap, 'Helvetica', 'Droid Sans', Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.36;
+            letter-spacing: normal;
+            color: #5c6f84;
+            vertical-align: sub;
+            display : inline-block;
+        }
+    }
+}
+
+
+@media (max-width: 1290px) and (min-width: 1200px) {
+    .ia__current-week {
+        .ia__current-week__container {
+            .ia__current-week__result {
+                padding : 57px 20px 0px 20px;
+                font-size: 32px;
+            }
+        }
+    }
+}
+
+/** Mobile **/
+
+@media (max-width: 640px) {
+    .ia__current-week {
+        max-height: 100px;
+        min-height: 80px;
+        height: auto;
+
+        .ia__current-week__container {
+            height: inherit;
+
+            .ia__current-week__result {
+                padding : 12px 22px 0px 22px;
+                width: 100%;
+                height : auto;
+                font-family: Asap;
+                font-size: 24px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.25;
+                letter-spacing: normal;
+                color: #353c52;
+
+            }
+
+            .ia__current-week__day {
+                padding : 1px 22px 0px 22px;
+
+            }
+
+            .ia__current-week__day_2lines {
+                padding : 5px 22px 10px 22px;
+            }
+        }
+    }
+}

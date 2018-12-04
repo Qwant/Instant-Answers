@@ -1,0 +1,27 @@
+wetter:
+ url: "http://rwds2.wetter.com"
+ name: "qwant"
+ password: "68zBX7xE2ilm"
+ provider_info:
+   url: "http://wetter.com"
+   label: "wetter.com"
+openWeather:
+ url: "http://api.openweathermap.org/data/2.5/%s?lat=%s&lon=%s&mode=json&appid=%s&lang=%s"
+ key: "c6dbebd09962f0fab71b71631cc2a443"
+ provider_info:
+   url: "http://openweathermap.org"
+   label: "openweathermap.org"
+geoCoder:
+ baseUrl: "http://10.100.33.34"
+ port: 9200
+ countryIndex: "geocode_countries"
+ cityIndex: "geocode_cities"
+qwantCast:
+ url: "http://10.100.33.45:3000/%s?latitude=%s&longitude=%s"
+ advice_url: "http://10.100.33.45:3000/%s?temperature=%s&language=%s"
+ provider_info:
+   url: "http://netatmo.commander1.com/c3/?tcs=2338&chn=partners&src=qwant&cmp=logo_search_weather&med=&pub=&crtive=&vson=&fmt=&adgrp=&aff_id=&aff_name=&url=https://www.netatmo.com/product/weather/weatherstation?utm_source=qwant&utm_medium=banner&utm_campaign=partnership_qwant&utm_content=partnership_qwant_logo_weathersearch"
+   label: "netatmo.com"
+   img: "/weather/netatmo.png"
+elasticsearch:
+  host: "10.100.31.26:9200"

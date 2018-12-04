@@ -1,0 +1,211 @@
+<div id="ia-weather">
+
+    <link rel="stylesheet" href="css/weather.css" type="text/css">
+
+    {{? it.data.defaultProvider.label == "wetter.com" }}
+
+        {{ var currentWeather = it.data.currentWeather; }}
+        {{ var localisation = it.data.localisation; }}
+        {{ var date = new Date(); }}
+
+        {{
+            /* Temperature and date functions used in old template (wetter + de_DE) */
+
+            function kToC(k) {
+                return k - 273.15;
+            }
+
+            function kToF(k) {
+                return k * 9 / 5 - 459.67;
+            }
+
+            function temp(temperature, isPrimary, unit) {
+                if(isNaN(temperature)) {
+                    return 'N/A'
+                }
+                var isFahrenheit = applicationState.user.userSetting.searchRegionKey === "US";
+                if((isPrimary && !isFahrenheit) || (!isPrimary && isFahrenheit)) {
+                    temperature = kToC(temperature);
+                    unit = 'C'
+                } else {
+                    temperature = kToF(temperature);
+                    unit = 'F'
+                }
+                return Math.round(temperature) + '<span class="ia-weather-temperature--deg">&deg;</span><span class="ia-weather-temperature--unit">' + unit + '</span>';
+            }
+
+            function dateDay(day) {
+                var date = new Date(day);
+                return ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'][date.getDay()];
+            }
+        }}
+
+        <div class="ia-weather-current-container">
+
+            <div class="ia-weather-current">
+
+                <div class="ia-weather-localisation" title="{{= localisation.city }} {{= localisation.country.toUpperCase() }}">
+                    {{= localisation.city }}, {{= localisation.country.toUpperCase() }}
+                </div>
+
+                {{ var dayName = dateDay(date); }}
+                {{ dayName = dayName.charAt(0).toUpperCase() + dayName.slice(1); }}
+                <p class="ia-weather-date-day">
+                    {{= dayName }} {{= strftime(i18n.date.longFormat, date, i18n['date']) }}
+                </p>
+
+                <div class="ia-weather--temperature">
+                    {{= temp(currentWeather.temperatures.current, true) }}
+                </div>
+
+                <div class="ia-weather-pic--main">
+                    <svg class="ribbon-knowledge-weather-icon" title="{{= currentWeather.weather.status }}" width="24" height="24" viewBox="0 0 24 24">
+                        <use xlink:href="/img/v4/icon-spritesheet-weather.svg#icon-weather-{{= currentWeather.weather.iconId.substring(0,2) }}"></use>
+                    </svg>
+                </div>
+
+                <div class="ia-weather-meta">
+                    <div class="ia-weather-meta--item ia-weather-wind" title="{{? currentWeather.wind }}{{= currentWeather.wind.label }}{{?}}">
+                        <div class="ia-weather-meta--item--label">
+                            {{= currentWeather.wind.label }}
+                        </div>
+                        <div class="ia-weather-meta--item--value">
+                            {{? currentWeather.wind && currentWeather.wind.value }}{{= Math.round(currentWeather.wind.value) }}{{??}}0{{?}}km/h
+                        </div>
+                    </div>
+
+                    <div class="ia-weather-meta--item ia-weather-humidity" title="{{? currentWeather.humidity }}{{= currentWeather.humidity.label }}{{?}}">
+                        <div class="ia-weather-meta--item--label">
+                            {{= currentWeather.humidity.label }}
+                        </div>
+                        <div class="ia-weather-meta--item--value">
+                            {{? currentWeather.humidity && currentWeather.humidity.value }}{{= currentWeather.humidity.value }}{{??}}0{{?}}%
+                        </div>
+                    </div>
+
+                </div>
+
+                {{? it.data.defaultProvider }}
+                    <p class="ia-weather--back-link">
+                        {{= _("Forecast by", 'ia-weather') }}&nbsp;
+                        <a href="{{= it.data.defaultProvider.url }}" {{= SecurityHelper.targetBlank() }} class="ia-weather--back-link" onmousedown="LinkHelper.logHandler(this, Event, {AjaxRoute: 'ribbon', ia_name: 'weather', ia_link: 'provider_wetter'});" onclick="LinkHelper.clickHandler(this, Event)" onmouseup="LinkHelper.mouseUpHandler(this, Event)">
+                            {{= it.data.defaultProvider.label }}
+                        </a>
+                    </p>
+                {{?}}
+            </div>
+
+            <div class="ia-weather-forecast-five-container">
+
+                {{~ it.data.forecastFive:forecast:index }}
+                    <div class="ia-weather-forecast-five-snapshot">
+                        <div class="ia-weather-forecast-five-snapshot-day">
+                            {{= dateDay(forecast.date * 1000) }}
+                        </div>
+
+                        <div class="ia-weather-forecast-five-snapshot-temperature">
+                            <div class="ia-weather-forecast-five-snapshot-temperature--min">
+                                {{= temp(forecast.temperatures.min, true) }}
+                            </div>
+                        </div>
+
+                        <div class="ia-weather-forecast-five-snapshot-pictogram">
+                            <svg class="ribbon-knowledge-weather-icon" title="{{= forecast.weather.status }}" width="24" height="24" viewBox="0 0 24 24">
+                                <use xlink:href="/img/v4/icon-spritesheet-weather.svg#icon-weather-{{= forecast.weather.iconId.substring(0,2) }}"></use>
+                            </svg>
+                        </div>
+                    </div>
+                {{~}}
+            </div>
+
+        </div>
+
+    {{??}}
+
+        <!-- New template, for openweathermap provider and all regions but de_DE -->
+
+        <div id="weather_container">
+
+           <div class="weather_left">
+              <div id="weather_info">
+                 <div id="weather_info_place"></div>
+
+                <div class="weather_icon_min_max">
+                   <div id="weather_info_icon"></div>
+                   <div id="weather_info_temps">
+                      <div id="weather_info_max"></div>
+                      <div id="weather_info_min"></div>
+                   </div>
+                </div>
+
+                <div id="weather_info_day"></div>
+
+                <div id="weather_info_other">
+                <div>
+                    <div class="weather_info_other_label">{{= _("Humidity", "ia-weather") }}</div>
+                    <div id="weather_info_humidity"></div>
+                </div>
+                <div>
+                    <div class="weather_info_other_label">{{= _("Pressure", "ia-weather") }}</div>
+                    <div id="weather_info_pressure"></div>
+                </div>
+                <div>
+                    <div class="weather_info_other_label">{{= _("Rain", "ia-weather") }}</div>
+                    <div id="weather_info_rain"></div>
+                </div>
+                <div>
+                    <div class="weather_info_other_label">{{= _("Wind", "ia-weather") }}</div>
+                    <div id="weather_info_wind"></div>
+                </div>
+              </div>
+              <div class="weather_tabs">
+                <div id="weather_tab_temperature" class="current">{{= _("Temperature", "ia-weather") }}</div>
+                <div id="weather_tab_rain">{{= _("Rain", "ia-weather") }}</div>
+              </div>
+            </div>
+            <div class="weather_hour_highlight_container">
+                <div id="weather_hour_highlight"></div>
+            </div>
+
+            <div id="weather_hour_columns" class="temperature"></div>
+
+            <div class="weather_provider">
+              <svg class="" width="24" height="24" viewBox="0 0 24 24">
+                <use xlink:href="/img/v4/icon-spritesheet.svg?1537523730942#chevrons-right"></use>
+              </svg>
+              <a href="{{= it.data.defaultProvider.url }}" {{= SecurityHelper.targetBlank() }} onmousedown="LinkHelper.logHandler(this, Event, {AjaxRoute: 'ribbon', ia_name: 'weather', ia_link: 'provider_openweathermap'});" onclick="LinkHelper.clickHandler(this, Event)" onmouseup="LinkHelper.mouseUpHandler(this, Event)">
+                {{= _("by", "ia-weather") + " " + it.data.defaultProvider.label }}
+              </a>
+            </div>
+
+          </div>
+
+          <div id="weather_days">
+            <div id="weather_days_inner">
+                <div class="weather_day current" id="day_0">
+                  <div class="weather_day_icon" id="weather_day_icon_0"></div>
+                  <div class="weather_day_name" id="weather_day_name_0"></div>
+                  <div class="weather_day_temp">
+                    <span class="weather_day_max" id="weather_day_max_0"></span>
+                    <span class="weather_day_min" id="weather_day_min_0"></span>
+                  </div>
+                </div>
+
+                {{for(var weatherItemIndex in it.data.forecastFive){ }}
+                  <div class="weather_day" id="day_{{= weatherItemIndex }}">
+                    <div class="weather_day_icon" id="weather_day_icon_{{= weatherItemIndex }}"></div>
+                    <div class="weather_day_name" id="weather_day_name_{{= weatherItemIndex }}"></div>
+                    <div class="weather_day_temp">
+                      <span class="weather_day_max" id="weather_day_max_{{= weatherItemIndex }}"></span>
+                      <span class="weather_day_min" id="weather_day_min_{{= weatherItemIndex }}"></span>
+                    </div>
+                  </div>
+                {{ } }}
+
+            </div>
+          </div>
+
+        </div>
+
+    {{?}}
+</div>

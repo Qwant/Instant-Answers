@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="css/current_time.css" type="text/css">
+<div class="ia__current-time">
+
+    <div class="ia__current-time__container">
+        <span class="ia__current-time__result">{{= it.data.result }}
+        </span>
+    </div>
+
+    <div class="rest">
+        <span class="ia__current-time__city">{{= it.data.ct }}{{? it.data.cc != '' }}, {{= it.data.cc }}{{?}}
+        </span>
+
+        <span class="ia__current-time__day">UTC {{= it.data.utc }}</br>{{= it.data.day }}  -  {{= _('Week', 'current_week') }} <span class="stronger">{{=it.data.week }}</span>
+        </span>
+    </div>
+
+</div>

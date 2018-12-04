@@ -1,0 +1,150 @@
+/** On "BIG" screens **/
+.ia__current-time {
+    position   : relative;
+    background : #ffffff;
+    max-width  : 631px;
+    height     : 145px;
+    box-shadow : 0 3px 7px rgba(0, 0, 0, 0.04);
+
+    .ia__current-time__container {
+        display        : inline-block;
+        padding        : 51px 43px 51px 43px;
+        height         : inherit;
+        vertical-align : top;
+        float          : left;
+        width          : 175px;
+
+        .ia__current-time__result {
+            font-family    : Asap, 'Segoe UI', 'Helvetica', 'Droid Sans', sans-serif;
+            font-size      : 38px;
+            font-weight    : normal;
+            font-style     : normal;
+            font-stretch   : normal;
+            line-height    : normal;
+            letter-spacing : normal;
+            color          : #353c52;
+
+        }
+    }
+
+    .rest {
+        display : inline-block;
+        padding : 38px 43px 38px 0;
+        height  : inherit;
+        float   : left;
+        width   : calc(100% - 175px);
+
+        .ia__current-time__city {
+            font-family    : Asap, 'Segoe UI', 'Helvetica', 'Droid Sans', sans-serif;
+            font-size      : 24px;
+            font-weight    : normal;
+            font-style     : normal;
+            font-stretch   : normal;
+            line-height    : 1.25;
+            letter-spacing : normal;
+            color          : #353c52;
+            width          : auto;
+            overflow       : hidden;
+            text-overflow  : ellipsis;
+            white-space    : nowrap;
+            display        : block;
+
+        }
+
+        .ia__current-time__day {
+            font-family    : Asap, 'Segoe UI', 'Helvetica', 'Droid Sans', sans-serif;
+            font-size      : 14px;
+            font-weight    : normal;
+            font-style     : normal;
+            font-stretch   : normal;
+            line-height    : 1.36;
+            letter-spacing : normal;
+            color          : #5c6f84;
+
+            .stronger {
+                font-weight : 500;
+                color       : #353c52;
+            }
+        }
+    }
+
+}
+
+@media (min-width : 1211px) and (max-width : 1400px) {
+    .ia__current-time {
+
+        .ia__current-time__container {
+            padding : 51px 24px 51px 24px;
+            width   : 137px;
+        }
+
+        .rest {
+            width   : calc(100% - 137px);
+            padding : 38px 24px 38px 0;
+
+            .ia__current-time__day {
+                font-size  : 12px;
+                margin-top : 4px;
+                display    : inline-block;
+            }
+        }
+    }
+}
+
+/** Tablet **/
+
+@media (max-width : 1000px) {
+    .ia__current-time {
+        box-shadow : 0px 3px 7px rgba(0, 0, 0, 0.04);
+        border     : 0;
+        max-width  : 680px;
+
+        .ia__current-time__container {
+
+            .ia__current-time__result {
+
+            }
+
+        }
+        .ia__current-time__day {
+
+        }
+    }
+}
+
+/** Mobile **/
+
+@media (max-width : 640px) {
+    .ia__current-time {
+        height : 77px;
+
+        .ia__current-time__container {
+            float   : left;
+            width   : 72px;
+            padding : 26px 10px 0px 10px;
+        }
+
+        .ia__current-time__result {
+            font-size : 22px !important;
+        }
+
+        .rest {
+            padding : 14px 0 12px 0;
+            float   : left;
+            width   : calc(100% - 72px);
+
+            .ia__current-time__city {
+                font-size     : 14px;
+                width         : auto;
+                overflow      : hidden;
+                text-overflow : ellipsis;
+                white-space   : nowrap;
+                display       : block;
+            }
+
+            .ia__current-time__day {
+                font-size : 13px;
+            }
+        }
+    }
+}

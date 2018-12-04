@@ -1,0 +1,38 @@
+<!doctype HTML>
+<html lang="fr" style="background: rgb(255, 255, 255); overflow: auto; height: auto">
+    <head>
+        <meta charset="utf-8" />
+        <title>Qwant v4</title>
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <link rel="shortcut icon" href="http://www.qwant.com/favicon.ico" />
+        <link rel="icon" href="http://www.qwant.com/favicon.png" />
+        <script src="/js/doT.js"></script>
+        <script>
+            var data = [[? model.ia !== '' ]][[= JSON.stringify(model.ia.data) ]][[??]]''[[?]];
+            var query = "[[= model.query ]]";
+            var lang = "[[= model.lang ]]";
+            var externalFiles = [[? model.ia !== '' ]][[= JSON.stringify(model.ia.files.filter((file) => {return file.type === 'script' })) ]][[??]]''[[?]];
+            var i18n = [[= JSON.stringify(model.i18n) ]];
+        </script>
+        [[? model.ia !== '' ]]
+            <script src="/view/[[= model.ia.template_name ]].js"></script>
+        [[?]]
+        <script src="/js/appLoaded.js"></script>
+    </head>
+    <body id="top" class="desktop v4 blue_links lock_scroll scroll_on_results" onload="appLoaded()">
+        [[? model.error && model.error !== '' ]]
+            <div class="alert" id="alert-bar">
+                <div class="alert__item alert__item--error" style="top: 0px;">
+                    <div class="alert__item--subcontainer">
+                        <span class="icon icon-error"></span>
+                        <p class="alert__item__text">[[= model.error ]]</p>
+                        <span class="alert__item__close" onclick="document.getElementById('alert-bar').style.display = 'none';">✕</span>
+                    </div>
+                </div>
+            </div>
+        [[?]]
+        <div id="app" role="main">
+            [[= partial('_application.dot') ]]
+        </div>
+    </body>
+</html>

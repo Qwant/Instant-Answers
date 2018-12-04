@@ -1,0 +1,5 @@
+fixer:
+  url: "http://data.fixer.io/api/latest?access_key="
+  access_key: "YOUR_API_KEY"
+cryptonator:
+  url: "https://www.cryptonator.com/api/ticker/"

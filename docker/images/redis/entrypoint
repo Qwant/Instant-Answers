@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Inspired by https://github.com/docker-library/redis/blob/99a06c05/3.2/docker-entrypoint.sh
+set -ue
+
+# first arg is `-f` or `--some-option`
+# or first arg is `something.conf`
+if [ "${1#-}" != "$1" ] || [ "${1%.conf}" != "$1" ]; then
+	set -- redis-server "$@"
+fi
+
+# allow the container to be started with `--user`
+if [ "$1" = 'redis-server' -a "$(id -u)" = '0' ]; then
+
+    # Replace variables from configuration
+    mv /usr/local/etc/redis/redis.conf /usr/local/etc/redis/redis.conf.tmpl
+    envsubst < /usr/local/etc/redis/redis.conf.tmpl > /usr/local/etc/redis/redis.conf
+    chown redis /usr/local/etc/redis/redis.conf
+
+    # Start redis as redis user
+	chown -R redis .
+	exec gosu redis "$0" "$@"
+fi
+
+exec "$@"
