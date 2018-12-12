@@ -119,5 +119,5 @@ module.exports = {
      * no order = added at the end, alphabetically
      */
 
-    order: {{iaorder}}
+    {{iaorder}}
 };

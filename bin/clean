@@ -1,3 +1,12 @@
 #!/usr/bin/env bash
-docker exec $(docker ps --filter "name=qwant_ia_instant-answers" --format='{{.Names}}') bash -c "grunt clean && unlink /src/front/public/dist && rm -rf node_modules"
-docker-compose -p "qwant_ia" down "$@"
+
+if [[ $(docker ps --filter "name=qwant_ia_instant-answers" --format='{{.Names}}') = 'qwant_ia_instant-answers_1' ]]; then
+    if [[ $@ = "--all" ]]; then
+        docker exec $(docker ps --filter "name=qwant_ia_instant-answers" --format='{{.Names}}') bash -c "grunt clean && unlink /src/front/public/dist && rm -rf node_modules"
+    else
+        docker exec $(docker ps --filter "name=qwant_ia_instant-answers" --format='{{.Names}}') bash -c "grunt clean && unlink /src/front/public/dist"
+    fi
+    docker-compose -p "qwant_ia" down
+else
+    echo "The main container was NOT found. Please run 'start' before running 'clean' in another terminal."
+fi

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd app/
-node bin/ia-new
+if ! node bin/ia-new; then
+    echo -e '\n\nIf you encountered errors, you may need to run `start` to install node packages.'
+fi
