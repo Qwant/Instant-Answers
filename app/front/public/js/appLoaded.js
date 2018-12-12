@@ -3,7 +3,6 @@ function appLoaded(){
     this.iaContainerMobile = document.getElementById('ia--container-mobile');
     this.iaHTML = "";
     this.mode = "";
-    console.log(data);
     if (data !== '') {
         this.iaHTML = template({data : data, query : query, images_path: "/img"});
 

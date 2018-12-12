@@ -245,7 +245,7 @@ inquirer.prompt(questions).then(function (answers) {
             data = data.replace(/{{ianameslug}}/g, iaslug);
             data = data.replace(/{{iakeyword}}/g, answers['keyword']);
             if (answers['script']) {
-                data = data.replace(/{{iascript}}/g, 'script: "' + answers['scriptname'] + '.js",');
+                data = data.replace(/{{iascript}}/g, 'script: "' + answers['scriptname'] + '",');
             } else {
                 data = data.replace(/{{iascript}}/g, '');
             }
@@ -253,7 +253,11 @@ inquirer.prompt(questions).then(function (answers) {
             data = data.replace(/{{iaflag}}/g, answers['flag']);
             data = data.replace(/{{iatimeout}}/g, answers['timeout']);
             data = data.replace(/{{iacache}}/g, answers['cache']);
-            data = data.replace(/{{iaorder}}/g, answers['order']);
+            if (answers['order'] !== '') {
+                data = data.replace(/{{iaorder}}/g, 'order: ' + answers['order']);
+            } else {
+                data = data.replace(/{{iaorder}}/g, '');
+            }
             fs.writeFile(iaMain, data, 'utf8', function(err){
                 if (err) return console.error(err);
                 console.info(iaMain + " created");
@@ -264,9 +268,6 @@ inquirer.prompt(questions).then(function (answers) {
                     var pathToDot = path.join(pathToPublic, iaslug + '.dot');
                     var templateContent = "<!--\n This is your main template file. Please refer to the documentation for more information.\n-->\n";
                     templateContent += "<link rel=\"stylesheet\" href=\"css/" + iaslug + ".css\" type=\"text/css\">\n";
-                    if (answers['script']) {
-                        templateContent += "<script src=\"javascript/" + answers['scriptname'] + ".js\"></script>\n";
-                    }
                     fs.writeFile(pathToDot, templateContent, function (err) {
                         if (err) return console.error(err);
                         console.info(pathToDot + " created");
