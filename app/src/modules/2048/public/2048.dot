@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="css/2048.css" type="text/css">
+<script src="javascript/2048.js"></script>
+<div class="board-game">
+	<div class="tile"></div>
+	<div class="tile"></div>
+	<div class="tile"></div>
+	<div class="tile"></div>
+	<div class="tile"></div>
+	<div class="tile"></div>
+	<div class="tile"></div>
+	<div class="tile"></div>
+	<div class="tile"></div>
+	<div class="tile"></div>
+	<div class="tile"></div>
+	<div class="tile"></div>
+	<div class="tile"></div>
+	<div class="tile"></div>
+	<div class="tile"></div>
+	<div class="tile"></div>
+</div>

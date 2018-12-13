@@ -1,0 +1,87 @@
+.board-game {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    margin: 10px;
+}
+
+.tile {
+    display: inline-block;
+    margin-bottom: 10px;
+    background-color: #EEE;
+    height: 75px;
+    width: 75px;
+    border-radius: 4px;
+    box-shadow: 0 3px 0 0 #EEE;
+    line-height: 75px;
+    vertical-align: top;
+    text-align: center;
+    font-weight: bold;
+    font-size :24px;
+    color: #FFF;
+    opacity: 1;
+
+    &:not(:last-of-type) {
+        margin-right: 10px;
+    }
+}
+
+.newTile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: left 150ms, top 150ms, background-color 150ms, opacity 150ms;
+}
+
+.number-2 {
+    background-color: #7CB5E2;
+    box-shadow: 0 3px 0 0 #5FA5D9;
+}
+.number-4 {
+    background-color: #4495D4;
+    box-shadow: 0 3px 0 0 #397FB3;
+}
+.number-8 {
+    background-color: #2F6895;
+    box-shadow: 0 3px 0 0 #255174;
+}
+.number-16 {
+    background-color: #F5BD70;
+    box-shadow: 0 3px 0 0 #F3AE4F;
+}
+.number-32 {
+    background-color: #F2A032;
+    box-shadow: 0 3px 0 0 #CD8829;
+}
+.number-64 {
+    background-color: #CD8829;
+    box-shadow: 0 3px 0 0 #A87023;
+}
+.number-128 {
+    background-color: #E37051;
+    box-shadow: 0 3px 0 0 #DE5833;
+}
+.number-256 {
+    background-color: #DE5833;
+    box-shadow: 0 3px 0 0 #BD4A2B;
+}
+.number-512 {
+    background-color: #BD4A2B;
+    box-shadow: 0 3px 0 0 #9B3D24;
+}
+
+.number-1024 {
+    background-color: #5454DA;
+    box-shadow: 0 3px 0 0 #4747B9;
+}
+
+.number-2048 {
+    background-color: #3B3C99;
+    box-shadow: 0 3px 0 0 #2E2E78;
+}
+
+.number-4096, .number-8192 {
+    background-color: #FFD700;
+    box-shadow: 0 3px 0 0 #E2BF00;
+    color: #FFF;
+}
