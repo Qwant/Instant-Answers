@@ -1,5 +1,13 @@
-var math = require('mathjs');
+/**
+ * This is your main app file. Please refer to the documentation for more information.
+ */
+
+/**
+ * If you need to import extra node_modules, use "npm install xxx --save" and place them there.
+ */
+
 var Promise = require("bluebird");
+var _ = require('@qwant/front-i18n')._;
 
 module.exports = {
 
@@ -22,51 +30,52 @@ module.exports = {
     getData: function (values, proxyURL, language, i18n) {
         const _ = i18n._;
         return new Promise(function (resolve, reject) {
-            if(!isNaN(values[0])) {
-                reject("Don't allow function identity", {module : "calculator"});
-            } else {
-                values[0] = values[0].toLowerCase();
-                values[0] = values[0].replace("×","*");
-                values[0] = values[0].replace("÷","/");
-                values[0] = values[0].replace("¹", "^1");
-                values[0] = values[0].replace("²", "^2");
-                values[0] = values[0].replace("³", "^3");
-                try {
-                    var response = math.eval(values[0]);
-                    response = math.format(response, {precision: 14});
-                    if(response === 'function') {
-                        reject("The query is poorly formulated", {module : "calculator"});
-                    }
-                    if (response['signatures']) {
-                        resolve(0);
-                    } else {
-                        if (response === Infinity) {
-                            throw 500;
-                        } else {
-                            resolve(response.toString());
-                        }
-                    }
-                } catch (e) {
-                    reject("Your formula isn't valid", {module : "calculator"});
-                }
-            }
+            resolve('toto')
         });
     },
 
     /**
+     * (OPTIONAL/NEEDED)
+     * If your name needs to be translated, use this function getName().
      * @returns the tab name translated
      */
 
     getName: function (i18n) {
         const _ = i18n._;
-        return _("calculator", "calculator");
+        return _("2048", "2048");
     },
 
     /**
+     * (OPTIONAL/NEEDED)
+     * Otherwise, if your name doesn't need to be translated, use this attribute.
+     */
+
+    name: "2048",
+
+    /**
+     * (OPTIONAL/NEEDED)
+     * If your keyword needs to be translated, use this function getKeyword().
+     * @returns keyword translated
+     */
+    getKeyword: function (i18n) {
+        const _ = i18n._;
+        return _("2048|play 2048", "2048");
+    },
+
+    /**
+     * (OPTIONAL/NEEDED)
+     * Otherwise, if your keyword doesn't need to be translated, use this attribute.
      * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
      */
 
-    keyword: "(\\+|\\-|\\*|\\/|×|÷|¹|²|³|[0-9]|\\(|\\)|\\.|\\s|E|PI|PHI|cos|sin|sqrt|log|tan|exp|\\^)*",
+    keyword: "2048|play 2048",
+
+    /**
+     * (OPTIONAL)
+     * script : If your IA includes a script, place it under public/javascript/xxx.js and replace "hello" by "xxx".
+     */
+
+    script: "2048",
 
     /**
      * (NEEDED)
@@ -88,21 +97,21 @@ module.exports = {
      * 			- i : insensitive
      */
 
-    flag: "i",
+    flag: "gmi",
 
     /**
      * (NEEDED)
      * timeout : Time before your response is considered as canceled (in milliseconds)
      */
 
-    timeout: 30,
+    timeout: 3600,
 
     /**
      * (NEEDED)
      * cache : Duration of the data cached (in seconds)
      */
 
-    cache: 200,
+    cache: 10800,
 
     /**
      * (OPTIONAL)
@@ -110,5 +119,5 @@ module.exports = {
      * no order = added at the end, alphabetically
      */
 
-    order: 10
+    order: 0
 };
