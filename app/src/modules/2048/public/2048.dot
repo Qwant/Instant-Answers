@@ -1,20 +1,26 @@
 <link rel="stylesheet" href="css/2048.css" type="text/css">
 <script src="javascript/2048.js"></script>
 <div class="board-game">
-	<div class="tile"></div>
-	<div class="tile"></div>
-	<div class="tile"></div>
-	<div class="tile"></div>
-	<div class="tile"></div>
-	<div class="tile"></div>
-	<div class="tile"></div>
-	<div class="tile"></div>
-	<div class="tile"></div>
-	<div class="tile"></div>
-	<div class="tile"></div>
-	<div class="tile"></div>
-	<div class="tile"></div>
-	<div class="tile"></div>
-	<div class="tile"></div>
-	<div class="tile"></div>
+	<span class="tile"></span>
+	<span class="tile"></span>
+	<span class="tile"></span>
+	<span class="tile"></span>
+	<span class="tile"></span>
+	<span class="tile"></span>
+	<span class="tile"></span>
+	<span class="tile"></span>
+	<span class="tile"></span>
+	<span class="tile"></span>
+	<span class="tile"></span>
+	<span class="tile"></span>
+	<span class="tile"></span>
+	<span class="tile"></span>
+	<span class="tile"></span>
+	<span class="tile"></span>
+	<div id="win" class="wining-screen">
+
+	</div>
+	<div id="lost" class="losing-screen">
+		<img src="{{= it.images_path }}/2048/test.jpg"
+	</div>
 </div>
