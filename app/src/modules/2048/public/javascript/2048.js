@@ -79,7 +79,61 @@ var IARuntime = function() {
             }
 
             return false;
-        })
+        });
+
+        var board = document.getElementById('board-game');
+
+        var swipe = {
+            initX: 0,
+            initY: 0,
+            movingX: 0,
+            movingY: 0
+        };
+
+        var direction = '';
+        var moving = false;
+
+        board.addEventListener('touchstart', function(e){
+            e.preventDefault();
+
+            var t = e.touches[0];
+            swipe.initX = t.screenX;
+            swipe.initY = t.screenY;
+        },false);
+
+        board.addEventListener('touchmove', function(e){
+            e.preventDefault();
+
+            var t = e.touches[0];
+            swipe.movingX = t.screenX;
+            swipe.movingY = t.screenY;
+
+            if ((Math.abs(swipe.initX - swipe.movingX) > 30 || Math.abs(swipe.initY - swipe.movingY) > 30) && !moving) {
+                var incline = (swipe.movingY - swipe.initY)/(swipe.movingX - swipe.initX);
+
+                if (incline > -1 && incline < 1) {
+                    direction = swipe.movingX > swipe.initX ? 'right' : 'left';
+                } else {
+                    direction = swipe.movingY > swipe.initY ? 'down' : 'up';
+                }
+
+                moving = true;
+                it.move(direction);
+
+                swipe = {
+                    initX: 0,
+                    initY: 0,
+                    movingX: 0,
+                    movingY: 0
+                };
+            }
+        },false);
+
+        board.addEventListener('touchend',function(e){
+            e.preventDefault();
+
+            moving = false;
+        });
     }
 
     game.prototype.move = function(direction) {
@@ -208,11 +262,11 @@ var IARuntime = function() {
             }
         }
 
-        this.checkEndConditions();
-
         if (hasMoved) {
             this.createNewTile();
         }
+
+        this.checkEndConditions();
     };
 
     game.prototype.checkEndConditions = function() {
