@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="css/2048.css" type="text/css">
 <script src="javascript/2048.js"></script>
-<div class="board-game">
+<div id="board-game" class="board-game">
 	<span class="tile"></span>
 	<span class="tile"></span>
 	<span class="tile"></span>
