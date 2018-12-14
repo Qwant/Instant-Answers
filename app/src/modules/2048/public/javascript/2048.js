@@ -2,25 +2,78 @@ var IARuntime = function() {
     function game (iaData) {
         var it = this;
 
+        document.getElementById('continue-button').addEventListener('click', function() {
+            var win = document.getElementById('win');
+            win.style.opacity = 0;
+
+            setTimeout(function() {
+                win.style.display = "none";
+            }, 500);
+
+            it.win = false;
+            it.continue = true;
+        });
+
+        document.getElementById('reset-button').addEventListener('click', function() {
+            it.matrix.forEach(function(a) {
+                a.forEach(function (b) {
+                    if (b !== 0) {
+                        var tile = document.getElementById(b);
+
+                        tile.parentNode.removeChild(tile);
+                    }
+                });
+            });
+
+            if (it.gameover) {
+                var lost = document.getElementById('lost');
+                lost.style.opacity = 0;
+
+                setTimeout(function() {
+                    lost.style.display = "none";
+                }, 500);
+            }
+
+            if (it.win) {
+                var win = document.getElementById('win');
+                win.style.opacity = 0;
+
+                setTimeout(function() {
+                    win.style.display = "none";
+                }, 500);
+            }
+
+            it.matrix = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
+            it.id = 0;
+            it.numberOfTiles = 0;
+            it.win = false;
+            it.gameover = false;
+            it.continue = false;
+            it.score = 0;
+            it.updateScore(0);
+
+            it.createNewTile();
+        });
+
         window.addEventListener('keydown', function(e) {
-            if (it.gameover || it.win) {
+            if (!it.continue && (it.gameover || it.win)) {
                 return false;
             }
 
-            // w or up arrow
-            if (e.keyCode === 87 || e.keyCode === 38) {
+            // up arrow
+            if (e.keyCode === 38) {
                 e.preventDefault();
                 it.move('up');
-            // a or left arrow
-            } else if (e.keyCode === 65 || e.keyCode === 37) {
+            // left arrow
+            } else if (e.keyCode === 37) {
                 e.preventDefault();
                 it.move('left');
-            // s or down arrow
-            } else if (e.keyCode === 83 || e.keyCode === 40) {
+            // down arrow
+            } else if (e.keyCode === 40) {
                 e.preventDefault();
                 it.move('down');
-            // d or right arrow
-            } else if (e.keyCode === 68 || e.keyCode === 39) {
+            // right arrow
+            } else if (e.keyCode === 39) {
                 e.preventDefault();
                 it.move('right');
             }
@@ -197,12 +250,14 @@ var IARuntime = function() {
                     }
                 }
 
-                if (currentTileValue && ((bottomTileValue && bottomTileValue === currentTileValue) || (rightTileValue && rightTileValue === currentTileValue))) {
-                    it.gameover = false;
-                }
+                if (currentTileValue) {
+                    if ((bottomTileValue && bottomTileValue === currentTileValue) || (rightTileValue && rightTileValue === currentTileValue)) {
+                        it.gameover = false;
+                    }
 
-                if (currentTileValue >= 2048) {
-                    it.win = true;
+                    if (currentTileValue >= 2048) {
+                        it.win = true;
+                    }
                 }
             });
         });
@@ -213,11 +268,16 @@ var IARuntime = function() {
 
             setTimeout(function() {
                 lost.style.opacity = 1;
-            }, 500)
+            }, 500);
         }
 
-        if (this.win) {
-            alert('YOU WIN');
+        if (this.win && !it.continue) {
+            var win = document.getElementById('win');
+            win.style.display = "block";
+
+            setTimeout(function() {
+                win.style.opacity = 1;
+            }, 500);
         }
     };
 
@@ -231,8 +291,23 @@ var IARuntime = function() {
 
         this.numberOfTiles --;
 
+        this.updateScore(newValue);
+
         setTimeout(function(){
             toDelete.parentNode.removeChild(toDelete);
+        }, 150);
+    };
+
+    game.prototype.updateScore = function(value) {
+        var score = document.getElementById('score');
+
+        this.score += value;
+
+        score.className = 'board-score board-score--updating';
+        score.innerHTML = this.score;
+
+        setTimeout(function(){
+            score.className = 'board-score';
         }, 150);
     };
 
@@ -272,8 +347,9 @@ var IARuntime = function() {
     };
 
     game.prototype.moveTo = function(div, i, j) {
-        div.style.top = i * (75 + 10) + 'px';
-        div.style.left = j * (75 + 10) + 'px';
+        var length = window.innerWidth > 640 ? 75 : 50;
+        div.style.top = i * (length + 10) + 'px';
+        div.style.left = j * (length + 10) + 'px';
     };
 
     game.prototype.randomInitValue = function() {
@@ -294,11 +370,130 @@ var IARuntime = function() {
         this.id = 0;
         this.numberOfTiles = 0;
         this.win = false;
+        this.gameover = false;
+        this.continue = false;
+        this.score = 0;
 
         this.createNewTile();
 
         //this.testDoubleMerge();
         //this.oneMoveWin();
+        //this.allColor();
+    };
+
+    game.prototype.allColor = function() {
+        this.matrix[0][0] = 1;
+        this.matrix[0][1] = 2;
+        this.matrix[0][2] = 3;
+        this.matrix[0][3] = 4;
+        this.matrix[1][0] = 5;
+        this.matrix[1][1] = 6;
+        this.matrix[1][2] = 7;
+        this.matrix[1][3] = 8;
+        this.matrix[2][0] = 9;
+        this.matrix[2][1] = 10;
+        this.matrix[2][2] = 11;
+        this.matrix[2][3] = 12;
+
+        this.id = 12;
+
+        var board = $('.board-game')[0];
+
+        var div = document.createElement('div');
+        div.id = 1;
+        div.className = 'tile newTile number-' + 2;
+        div.innerHTML = 2;
+        board.appendChild(div);
+        div.style.opacity = 1;
+        this.moveTo(div, 0, 0);
+
+        div = document.createElement('div');
+        div.id = 2;
+        div.className = 'tile newTile number-' + 4;
+        div.innerHTML = 4;
+        board.appendChild(div);
+        div.style.opacity = 1;
+        this.moveTo(div, 0, 1);
+
+        div = document.createElement('div');
+        div.id = 3;
+        div.className = 'tile newTile number-' + 8;
+        div.innerHTML = 8;
+        board.appendChild(div);
+        div.style.opacity = 1;
+        this.moveTo(div, 0, 2);
+
+        div = document.createElement('div');
+        div.id = 4;
+        div.className = 'tile newTile number-' + 16;
+        div.innerHTML = 16;
+        board.appendChild(div);
+        div.style.opacity = 1;
+        this.moveTo(div, 0, 3);
+
+        div = document.createElement('div');
+        div.id = 5;
+        div.className = 'tile newTile number-' + 32;
+        div.innerHTML = 32;
+        board.appendChild(div);
+        div.style.opacity = 1;
+        this.moveTo(div, 1, 0);
+
+        div = document.createElement('div');
+        div.id = 6;
+        div.className = 'tile newTile number-' + 64;
+        div.innerHTML = 64;
+        board.appendChild(div);
+        div.style.opacity = 1;
+        this.moveTo(div, 1, 1);
+
+        div = document.createElement('div');
+        div.id = 7;
+        div.className = 'tile newTile number-' + 128;
+        div.innerHTML = 128;
+        board.appendChild(div);
+        div.style.opacity = 1;
+        this.moveTo(div, 1, 2);
+
+        div = document.createElement('div');
+        div.id = 8;
+        div.className = 'tile newTile number-' + 256;
+        div.innerHTML = 256;
+        board.appendChild(div);
+        div.style.opacity = 1;
+        this.moveTo(div, 1, 3);
+
+        div = document.createElement('div');
+        div.id = 9;
+        div.className = 'tile newTile number-' + 512;
+        div.innerHTML = 512;
+        board.appendChild(div);
+        div.style.opacity = 1;
+        this.moveTo(div, 2, 0);
+
+        div = document.createElement('div');
+        div.id = 10;
+        div.className = 'tile newTile number-' + 1024;
+        div.innerHTML = 1024;
+        board.appendChild(div);
+        div.style.opacity = 1;
+        this.moveTo(div, 2, 1);
+
+        div = document.createElement('div');
+        div.id = 11;
+        div.className = 'tile newTile number-' + 2048;
+        div.innerHTML = 2048;
+        board.appendChild(div);
+        div.style.opacity = 1;
+        this.moveTo(div, 2, 2);
+
+        div = document.createElement('div');
+        div.id = 12;
+        div.className = 'tile newTile number-' + 4096;
+        div.innerHTML = 4096;
+        board.appendChild(div);
+        div.style.opacity = 1;
+        this.moveTo(div, 2, 3);
     };
 
     game.prototype.oneMoveWin = function() {
