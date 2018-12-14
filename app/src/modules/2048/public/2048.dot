@@ -18,9 +18,19 @@
 	<span class="tile"></span>
 	<span class="tile"></span>
 	<div id="win" class="wining-screen">
-
+		<img src="{{= it.images_path }}/2048/win.gif"/>
+		<span class="wining-text">You win !</span>
+	<div id="continue-button" class="continue-button">Continue?</div>
 	</div>
 	<div id="lost" class="losing-screen">
-		<img src="{{= it.images_path }}/2048/test.jpg"
+		<img src="{{= it.images_path }}/2048/jack.gif"/>
 	</div>
+</div>
+<div class="board-menu">
+	<span class="board-title">Score</span>
+	<div id="score" class="board-score">0</div>
+	<div class="board-instructions">
+		Use the arrow keys to move the tiles. When two tiles with the same number touch, they merge into an upgraded one!
+	</div>
+	<div id="reset-button" class="reset-button">New game</div>
 </div>
