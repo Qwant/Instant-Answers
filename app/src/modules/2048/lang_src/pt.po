@@ -1,3 +1,23 @@
-#
-# This is your pt_pt language file. Please refer to the documentation for more information.
-#
+msgctxt "2048"
+msgid "((game|play|online)\\s*)?2048(\\s*(game|play|online))?"
+msgstr "((game|play|online)\\s*)?2048(\\s*(game|play|online))?"
+
+msgctxt "2048"
+msgid "You win!"
+msgstr "You win!"
+
+msgctxt "2048"
+msgid "Score"
+msgstr "Score"
+
+msgctxt "2048"
+msgid "Continue?"
+msgstr "Continue?"
+
+msgctxt "2048"
+msgid "New game"
+msgstr "New game"
+
+msgctxt "2048"
+msgid "Use the arrow keys to move the tiles. When two tiles with the same number touch, they merge into an upgraded one!"
+msgstr "Use the arrow keys to move the tiles. When two tiles with the same number touch, they merge into an upgraded one!"

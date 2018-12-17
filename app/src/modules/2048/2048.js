@@ -30,7 +30,9 @@ module.exports = {
     getData: function (values, proxyURL, language, i18n) {
         const _ = i18n._;
         return new Promise(function (resolve, reject) {
-            resolve('toto')
+            resolve({
+                language: language
+            });
         });
     },
 
@@ -59,16 +61,8 @@ module.exports = {
      */
     getKeyword: function (i18n) {
         const _ = i18n._;
-        return _("2048|play 2048", "2048");
+        return _("((game|play|online)\\s*)?2048(\\s*(game|play|online))?", "2048");
     },
-
-    /**
-     * (OPTIONAL/NEEDED)
-     * Otherwise, if your keyword doesn't need to be translated, use this attribute.
-     * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
-     */
-
-    keyword: "2048|play 2048",
 
     /**
      * (OPTIONAL)
