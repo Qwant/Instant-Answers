@@ -162,6 +162,12 @@
         box-shadow: 0 2px 6px 0 rgba(53,60,82,0.4);
         background-image: linear-gradient(to bottom, #202639, #353c52);
     }
+
+    svg {
+        height: 16px;
+        margin-right: 5px;
+        vertical-align: middle;
+    }
 }
 
 .number-2 {
