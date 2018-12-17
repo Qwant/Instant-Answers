@@ -221,7 +221,7 @@ module.exports = (grunt, options) ->
         }
       },
       images: {
-        files: ['src/modules/**/public/img/**/*.{png,jpg}'],
+        files: ['src/modules/**/public/img/**/*.{png,jpg,svg,gif}'],
         tasks: ['build:images'],
         options: {
           livereload: true
@@ -251,7 +251,7 @@ module.exports = (grunt, options) ->
     gruntCopyFiles.images = {
       expand: true,
       cwd: 'src/modules',
-      src: '**/public/img/**/*.{png,jpg}',
+      src: '**/public/img/**/*.{png,jpg,svg,gif}',
       dest: "dist/img",
       filter: "isFile",
       rename: (dest, src) ->
