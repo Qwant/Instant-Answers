@@ -1,0 +1,23 @@
+msgctxt "2048"
+msgid "((game|play|online)\\s*)?2048(\\s*(game|play|online))?"
+msgstr "((jeu|jouer(\s*au)?|en ligne)\\s*)?2048(\\s*(jeu|jouer|en ligne))?"
+
+msgctxt "2048"
+msgid "You win!"
+msgstr "Tu as gagné !"
+
+msgctxt "2048"
+msgid "Score"
+msgstr "Score"
+
+msgctxt "2048"
+msgid "Continue?"
+msgstr "Continuer ?"
+
+msgctxt "2048"
+msgid "New game"
+msgstr "Nouvelle partie"
+
+msgctxt "2048"
+msgid "Use the arrow keys to move the tiles. When two tiles with the same number touch, they merge into an upgraded one!"
+msgstr "Utilise les flèches pour bouger les tuiles. Quand deux tuiles avec le même nombre se touchent, elles fusionnent en une seule tuile améliorée !"
