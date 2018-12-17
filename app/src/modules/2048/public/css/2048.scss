@@ -1,4 +1,4 @@
-.board-game {
+.ia__2048__board-game {
     display: inline-block;
     position: relative;
     width: 340px;
@@ -6,7 +6,7 @@
     margin: 10px;
 }
 
-.losing-screen, .wining-screen {
+.ia__2048__losing-screen, .ia__2048__wining-screen {
     display: none;
     position: absolute;
     top: 0;
@@ -16,7 +16,8 @@
     opacity: 0;
     z-index: 1;
     overflow: hidden;
-    transition: opacity 500ms;
+    transition: opacity 500ms, background 500ms;
+    background: rgba(255,255,255,0.8);
 
     img {
         position: absolute;
@@ -27,23 +28,28 @@
     }
 }
 
-.wining-screen img {
+.ia__2048__wining-screen img {
     left: -130px;
 }
 
-.wining-text {
+.ia__2048__wining-text, .ia__2048__losing-text {
     position: absolute;
-    bottom: 70px;
+    bottom: 80px;
     left: 0;
     width: 100%;
     text-align: center;
     text-shadow: 1px 1px 1px black;
     font-weight: bold;
-    font-size: 70px;
+    font-size: 50px;
     color: white;
 }
 
-.continue-button {
+.ia__2048__losing-text {
+    bottom: 150px;
+    color: black;
+}
+
+.ia__2048__continue-button {
     position: absolute;
     left: 100px;
     bottom: 30px;
@@ -70,7 +76,7 @@
     }
 }
 
-.tile {
+.ia__2048__tile {
     display: inline-block;
     margin-bottom: 10px;
     background-color: #e0e1e6;
@@ -92,7 +98,7 @@
     }
 }
 
-.newTile {
+.ia__2048__newTile {
     position: absolute;
     top: 0;
     left: 0;
@@ -100,7 +106,7 @@
     transition: left 150ms, top 150ms, background-color 150ms, opacity 150ms;
 }
 
-.board-menu {
+.ia__2048__board-menu {
     display: inline-block;
     max-width: 200px;
     vertical-align: top;
@@ -108,7 +114,7 @@
     margin-left: 20px;
 }
 
-.board-title {
+.ia__2048__board-title {
     margin: 0;
     line-height: 19px;
     text-transform: uppercase;
@@ -119,7 +125,7 @@
     color: #353c52;
 }
 
-.board-score {
+.ia__2048__board-score {
     margin-top: 10px;
     transition: transform 150ms;
     transform-origin: center;
@@ -128,11 +134,11 @@
     color: rgb(53, 60, 82);
 }
 
-.board-score--updating {
+.ia__2048__board-score--updating {
     transform: scale(1.1);
 }
 
-.board-instructions {
+.ia__2048__board-instructions {
     margin-top: 30px;
     font-family: "Asap",sans-serif;
     font-size: 14px;
@@ -141,11 +147,11 @@
     color: #353c52;
 }
 
-.reset-button {
+.ia__2048__reset-button {
     display: block;
-    width: 140px;
+    width: 160px;
     height: 35px;
-    margin: 30px 30px;
+    margin: 30px 20px;
     transition: color .17s ease-out, background-color .17s ease-out;
     background-color: #353c52;
     border-radius: 60px;
@@ -170,111 +176,111 @@
     }
 }
 
-.number-2 {
+.ia__2048__number-2 {
     background-color: #65cee7;
     box-shadow: 0 3px 0 0 #219ebc;
 }
-.number-4 {
+.ia__2048__number-4 {
     background-color: #4ba2ea;
     box-shadow: 0 3px 0 0 #1d76c0;
 }
-.number-8 {
+.ia__2048__number-8 {
     background-color: #4fba4f;
     box-shadow: 0 3px 0 0 #259425;
 }
-.number-16 {
+.ia__2048__number-16 {
     background-color: #87c966;
     box-shadow: 0 3px 0 0 #4d9927;
 }
-.number-32 {
+.ia__2048__number-32 {
     background-color: #f3b100;
     box-shadow: 0 3px 0 0 #aa7c00;
 }
-.number-64 {
+.ia__2048__number-64 {
     background-color: #f9c506;
     box-shadow: 0 3px 0 0 #c29800;
 }
-.number-128 {
+.ia__2048__number-128 {
     background-color: #ff3b4a;
     box-shadow: 0 3px 0 0 #d00919;
 }
-.number-256 {
+.ia__2048__number-256 {
     background-color: #f38300;
     box-shadow: 0 3px 0 0 #ab5c00;
 }
-.number-512 {
+.ia__2048__number-512 {
     background-color: #af27cc;
     box-shadow: 0 3px 0 0 #7a0593;
 }
 
-.number-1024 {
+.ia__2048__number-1024 {
     background-color: #123295;
     box-shadow: 0 3px 0 0 #031d6c;
 }
 
-.number-2048 {
+.ia__2048__number-2048 {
     background-color: #308251;
     box-shadow: 0 3px 0 0 #146133;
 }
 
-.number-4096, .number-8192 {
+.ia__2048__number-4096, .ia__2048__number-8192 {
     background-color: #343b52;
     box-shadow: 0 3px 0 0 #1b2134;
 }
 
 @media (max-width: 1450px) {
-    .board-game {
+    .ia__2048__board-game {
         display: block;
         margin: 30px auto;
     }
 
-    .board-menu {
+    .ia__2048__board-menu {
         display: block;
         margin: 20px auto;
         text-align: center;
     }
 
-    .board-instructions {
+    .ia__2048__board-instructions {
         margin-top: 20px;
         text-align: left;
     }
 }
 
 .device--mobile {
-    .board-game {
+    .ia__2048__board-game {
         width: 230px;
         height: 235px;
         margin: 20px auto;
     }
 
-    .tile {
+    .ia__2048__tile {
         width: 50px;
         height: 50px;
         line-height: 50px;
         font-size: 18px;
     }
 
-    .board-score {
+    .ia__2048__board-score {
         font-size: 40px;
     }
 
-    .board-instructions {
+    .ia__2048__board-instructions {
         font-size: 13px;
     }
 
-    .losing-screen img {
+    .ia__2048__losing-screen img {
         left: -150px;
     }
 
-    .wining-screen img {
+    .ia__2048__wining-screen img {
         left: -80px;
     }
 
-    .wining-text {
+    .ia__2048__wining-text {
         font-size: 40px;
     }
 
-    .continue-button {
+    .ia__2048__continue-button {
         left: 45px;
         bottom: 22px;
     }

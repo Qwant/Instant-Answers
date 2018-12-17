@@ -338,7 +338,7 @@ var IARuntime = function() {
     game.prototype.mergeTiles = function(value, mergedTile, toDelete, mergedTileIPos, mergedTileJPos) {
         var newValue = value + value;
         mergedTile.innerHTML = newValue;
-        mergedTile.className = 'tile newTile number-' + newValue;
+        mergedTile.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + newValue;
         this.moveTo(toDelete, mergedTileIPos, mergedTileJPos);
 
         toDelete.style.opacity = 0;
@@ -357,11 +357,11 @@ var IARuntime = function() {
 
         this.score += value;
 
-        score.className = 'board-score board-score--updating';
+        score.className = 'ia__2048__board-score ia__2048__board-score--updating';
         score.innerHTML = this.score;
 
         setTimeout(function(){
-            score.className = 'board-score';
+            score.className = 'ia__2048__board-score';
         }, 150);
     };
 
@@ -382,10 +382,10 @@ var IARuntime = function() {
                     it.id ++;
                     it.numberOfTiles ++;
                     it.matrix[i][j] = it.id;
-                    var board = $('.board-game')[0];
+                    var board = $('.ia__2048__board-game')[0];
                     var div = document.createElement('div');
                     div.id = it.id;
-                    div.className = 'tile newTile number-' + initValue;
+                    div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + initValue;
                     div.innerHTML = initValue;
                     board.appendChild(div);
                     it.moveTo(div, i, j);
@@ -451,11 +451,11 @@ var IARuntime = function() {
 
         this.id = 12;
 
-        var board = $('.board-game')[0];
+        var board = $('.ia__2048__board-game')[0];
 
         var div = document.createElement('div');
         div.id = 1;
-        div.className = 'tile newTile number-' + 2;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 2;
         div.innerHTML = 2;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -463,7 +463,7 @@ var IARuntime = function() {
 
         div = document.createElement('div');
         div.id = 2;
-        div.className = 'tile newTile number-' + 4;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 4;
         div.innerHTML = 4;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -471,7 +471,7 @@ var IARuntime = function() {
 
         div = document.createElement('div');
         div.id = 3;
-        div.className = 'tile newTile number-' + 8;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 8;
         div.innerHTML = 8;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -479,7 +479,7 @@ var IARuntime = function() {
 
         div = document.createElement('div');
         div.id = 4;
-        div.className = 'tile newTile number-' + 16;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 16;
         div.innerHTML = 16;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -487,7 +487,7 @@ var IARuntime = function() {
 
         div = document.createElement('div');
         div.id = 5;
-        div.className = 'tile newTile number-' + 32;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 32;
         div.innerHTML = 32;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -495,7 +495,7 @@ var IARuntime = function() {
 
         div = document.createElement('div');
         div.id = 6;
-        div.className = 'tile newTile number-' + 64;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 64;
         div.innerHTML = 64;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -503,7 +503,7 @@ var IARuntime = function() {
 
         div = document.createElement('div');
         div.id = 7;
-        div.className = 'tile newTile number-' + 128;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 128;
         div.innerHTML = 128;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -511,7 +511,7 @@ var IARuntime = function() {
 
         div = document.createElement('div');
         div.id = 8;
-        div.className = 'tile newTile number-' + 256;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 256;
         div.innerHTML = 256;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -519,7 +519,7 @@ var IARuntime = function() {
 
         div = document.createElement('div');
         div.id = 9;
-        div.className = 'tile newTile number-' + 512;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 512;
         div.innerHTML = 512;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -527,7 +527,7 @@ var IARuntime = function() {
 
         div = document.createElement('div');
         div.id = 10;
-        div.className = 'tile newTile number-' + 1024;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 1024;
         div.innerHTML = 1024;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -535,7 +535,7 @@ var IARuntime = function() {
 
         div = document.createElement('div');
         div.id = 11;
-        div.className = 'tile newTile number-' + 2048;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 2048;
         div.innerHTML = 2048;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -543,7 +543,7 @@ var IARuntime = function() {
 
         div = document.createElement('div');
         div.id = 12;
-        div.className = 'tile newTile number-' + 4096;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 4096;
         div.innerHTML = 4096;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -556,11 +556,11 @@ var IARuntime = function() {
 
         this.id = 2;
 
-        var board = $('.board-game')[0];
+        var board = $('.ia__2048__board-game')[0];
 
         var div = document.createElement('div');
         div.id = 1;
-        div.className = 'tile newTile number-' + 1024;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 1024;
         div.innerHTML = 1024;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -568,7 +568,7 @@ var IARuntime = function() {
 
         div = document.createElement('div');
         div.id = 2;
-        div.className = 'tile newTile number-' + 1024;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 1024;
         div.innerHTML = 1024;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -583,11 +583,11 @@ var IARuntime = function() {
 
         this.id = 4;
 
-        var board = $('.board-game')[0];
+        var board = $('.ia__2048__board-game')[0];
 
         var div = document.createElement('div');
         div.id = 1;
-        div.className = 'tile newTile number-' + 8;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 8;
         div.innerHTML = 8;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -595,7 +595,7 @@ var IARuntime = function() {
 
         div = document.createElement('div');
         div.id = 2;
-        div.className = 'tile newTile number-' + 4;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 4;
         div.innerHTML = 4;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -603,7 +603,7 @@ var IARuntime = function() {
 
         div = document.createElement('div');
         div.id = 3;
-        div.className = 'tile newTile number-' + 2;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 2;
         div.innerHTML = 2;
         board.appendChild(div);
         div.style.opacity = 1;
@@ -611,7 +611,7 @@ var IARuntime = function() {
 
         div = document.createElement('div');
         div.id = 4;
-        div.className = 'tile newTile number-' + 2;
+        div.className = 'ia__2048__tile ia__2048__newTile ia__2048__number-' + 2;
         div.innerHTML = 2;
         board.appendChild(div);
         div.style.opacity = 1;
