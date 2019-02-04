@@ -27,6 +27,7 @@ module.exports = {
             } else {
                 values[0] = values[0].toLowerCase();
                 values[0] = values[0].replace("×","*");
+                values[0] = values[0].replace("x","*");
                 values[0] = values[0].replace("÷","/");
                 values[0] = values[0].replace("¹", "^1");
                 values[0] = values[0].replace("²", "^2");
@@ -66,7 +67,7 @@ module.exports = {
      * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
      */
 
-    keyword: "(\\+|\\-|\\*|\\/|×|÷|¹|²|³|[0-9]|\\(|\\)|\\.|\\s|E|PI|PHI|cos|sin|sqrt|log|tan|exp|\\^)*",
+    keyword: "(\\+|\\-|\\*|\\/|×|x|÷|¹|²|³|[0-9]|\\(|\\)|\\.|\\s|E|PI|PHI|cos|sin|sqrt|log|tan|exp|\\^)*",
 
     /**
      * (NEEDED)
