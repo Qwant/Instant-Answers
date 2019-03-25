@@ -1,0 +1,190 @@
+/**
+* This is your main SCSS file. Please refer to the documentation for more information.
+*/
+.ia__IoTevents {
+  width: 631px;
+  border-radius: 3px;
+  border: solid 1px #e0e1e6;
+}
+.ia__IoTevents .ia__IoTevents__header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  padding: 25px;
+}
+.ia__IoTevents .ia__IoTevents__header .ia__IoTevents__title {
+  font-family: "Asap", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.25;
+  color: #353c52;
+}
+.ia__IoTevents .ia__IoTevents__header .ia__IoTevents__dateTitle {
+  font-family: "Asap", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.29;
+  color: #5c6f84;
+}
+.ia__IoTevents .ia__IoTevents__header .ia__IoTevents__provider {
+  font-family: "Asap", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 16px;
+  color: #5c6f84;
+}
+.ia__IoTevents .ia__IoTevents__header .ia__IoTevents__provider:hover {
+  color: #353c52;
+}
+.ia__IoTevents .ia__IoTevents__list {
+  margin: 0 25px 25px 25px;
+  max-height: 370px;
+  overflow: hidden;
+}
+.ia__IoTevents .ia__IoTevents__list.all {
+  height: auto;
+}
+.ia__IoTevents .ia__IoTevents__list .ia__IoTevents__singleEvent {
+  display: inline-flex;
+  height: 110px;
+  margin-top: 20px;
+}
+.ia__IoTevents .ia__IoTevents__list .ia__IoTevents__singleEvent:first-child {
+  margin-top: 0;
+}
+.ia__IoTevents .ia__IoTevents__list .ia__IoTevents__singleEvent .ia__IoTevents__date {
+  background-color: #f4f6fa;
+  margin-right: 25px;
+  margin-top: 3px;
+  min-height: 104px;
+  max-height: 104px;
+  min-width: 72px;
+  max-width: 72px;
+  text-align: center;
+}
+.ia__IoTevents .ia__IoTevents__list .ia__IoTevents__singleEvent .ia__IoTevents__date .ia__IoTevents__date--day {
+  font-family: "Asap", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  color: #353c52;
+  text-align: center;
+  font-stretch: condensed;
+  padding-top: 15px;
+}
+.ia__IoTevents .ia__IoTevents__list .ia__IoTevents__singleEvent .ia__IoTevents__date .ia__IoTevents__date--month {
+  font-family: "Asap", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 20px;
+  color: #5c6f84;
+  font-stretch: condensed;
+  text-transform: uppercase;
+}
+.ia__IoTevents .ia__IoTevents__list .ia__IoTevents__singleEvent .ia__IoTevents__date .ia__IoTevents__date--year {
+  font-family: "Asap", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 20px;
+  color: #5c6f84;
+  font-stretch: condensed;
+}
+.ia__IoTevents .ia__IoTevents__list .ia__IoTevents__singleEvent .ia__IoTevents__info {
+  margin-right: 68px;
+  min-width: 203px;
+  max-width: 203px;
+}
+.ia__IoTevents .ia__IoTevents__list .ia__IoTevents__singleEvent .ia__IoTevents__info .ia__IoTevents__info--title {
+  font-family: "Asap", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 20px;
+  color: #353c52;
+  margin-bottom: 8px;
+  min-height: 40px;
+  max-height: 40px;
+  overflow: hidden;
+}
+.ia__IoTevents .ia__IoTevents__list .ia__IoTevents__singleEvent .ia__IoTevents__info .ia__IoTevents__info--city {
+  font-family: "Asap", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 19px;
+  color: #5c6f84;
+  min-height: 16px;
+  max-height: 16px;
+  margin-bottom: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ia__IoTevents .ia__IoTevents__list .ia__IoTevents__singleEvent .ia__IoTevents__info .ia__IoTevents__info--pricingInfo {
+  font-family: "Asap", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 19px;
+  color: #5c6f84;
+  margin-bottom: 10px;
+  min-height: 16px;
+  max-height: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ia__IoTevents .ia__IoTevents__list .ia__IoTevents__singleEvent .ia__IoTevents__info .ia__IoTevents__info--linkEvent {
+  font-family: "Asap", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 16px;
+  color: #5c6f84;
+  display: block;
+  min-height: 16px;
+  max-height: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ia__IoTevents .ia__IoTevents__list .ia__IoTevents__singleEvent .ia__IoTevents__image {
+  background-color: #f4f6fa;
+  background-size: cover;
+  border-radius: 3px;
+  height: 110px;
+  width: 215px;
+}
+.ia__IoTevents .ia__IoTevents__more {
+  background-color: #5c6f84;
+  border-radius: 2px;
+  padding: 21px 0;
+}
+.ia__IoTevents .ia__IoTevents__more:hover {
+  background-image: linear-gradient(to bottom, #353c52, #495063);
+  cursor: pointer;
+}
+.ia__IoTevents .ia__IoTevents__more .ia__IoTevents__more--caption {
+  font-family: "Asap", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: normal;
+  color: #ffffff;
+  text-transform: uppercase;
+  display: block;
+  margin: auto;
+  text-align: center;
+  text-transform: uppercase;
+  width: 200px;
+}
+
+/*# sourceMappingURL=iot_events.css.map */

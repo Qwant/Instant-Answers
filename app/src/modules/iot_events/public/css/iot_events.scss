@@ -1,0 +1,161 @@
+/**
+* This is your main SCSS file. Please refer to the documentation for more information.
+*/
+@import '../../../../common/mixins.scss';
+@import '../../../../common/variables.scss';
+
+.ia__IoTevents {
+    width: 631px;
+    border-radius: 3px;
+    border: solid 1px #e0e1e6;
+
+	.ia__IoTevents__header {
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+		align-items: center;
+		padding: 25px;
+		
+	    .ia__IoTevents__title {
+	        @include font(20px, 1.25, 500);
+	        color: $color-dark-blue;
+	    }
+	
+	    .ia__IoTevents__dateTitle {
+	        @include font(14px, 1.29, 400);
+	        color: $color-blue-grey;
+	    }
+
+	    .ia__IoTevents__provider {
+	    	@include zeta($color-blue-grey);
+	    	
+	    	&:hover {
+	    		color: $color-dark-blue;
+    		}
+		}
+    }
+   
+   	.ia__IoTevents__list {
+   		margin: 0 25px 25px 25px;
+   		max-height: 370px;
+   		overflow: hidden;
+   		
+   		&.all {
+			height: auto;
+		}
+   		
+	    .ia__IoTevents__singleEvent {
+	        display: inline-flex;
+	        height: 110px;
+	        margin-top: 20px;
+	
+			&:first-child {
+				margin-top: 0;
+			}
+	
+	        .ia__IoTevents__date {
+	            background-color: $color-cloud;
+				margin-right: 25px;
+				margin-top: 3px;
+				min-height: 104px;
+				max-height: 104px;
+				min-width: 72px;
+				max-width: 72px;
+				text-align: center;
+	            
+	            .ia__IoTevents__date--day {
+	                @include font(32px, normal, 600);
+	                color: $color-dark-blue;
+	                text-align: center;
+					font-stretch: condensed;
+					padding-top: 15px;
+	            }
+	           
+	            .ia__IoTevents__date--month {
+	                @include delta($color-blue-grey);
+					font-stretch: condensed;
+					text-transform: uppercase;
+	            }
+	           
+	            .ia__IoTevents__date--year {
+	                @include delta($color-blue-grey);
+    				font-stretch: condensed;
+	            }
+	
+	        }
+	       
+	        .ia__IoTevents__info {
+	            margin-right: 68px;
+				min-width: 203px;
+				max-width: 203px;
+	            
+	            .ia__IoTevents__info--title {
+	                @include delta($color-dark-blue, 500);
+					margin-bottom: 8px;
+					min-height: 40px;
+					max-height: 40px;
+	                overflow: hidden;
+	            }
+	           
+	            .ia__IoTevents__info--city {
+	                @include epsilon($color-blue-grey);
+				    min-height: 16px;
+				    max-height: 16px;
+				    margin-bottom: 2px;
+	                overflow: hidden;
+	                text-overflow: ellipsis;
+	                white-space: nowrap;
+	            }
+	           
+	            .ia__IoTevents__info--pricingInfo {
+	                @include epsilon($color-blue-grey);
+					margin-bottom: 10px;
+					min-height: 16px;
+					max-height: 16px;
+	                overflow: hidden;
+	                text-overflow: ellipsis;
+	                white-space: nowrap;
+	            }
+	           
+	            .ia__IoTevents__info--linkEvent {
+	                @include zeta($color-blue-grey);
+	                display: block;
+					min-height: 16px;
+					max-height: 16px;
+					text-decoration: none;
+	                overflow: hidden;
+	                text-overflow: ellipsis;
+	                white-space: nowrap;
+	            }
+	        }
+	
+	        .ia__IoTevents__image {
+	        	background-color: $color-cloud;
+				background-size: cover;
+				border-radius: 3px;
+				height: 110px;
+				width: 215px;
+	        }
+	    }
+    }
+   	
+    .ia__IoTevents__more {
+    	background-color: $color-blue-grey;
+		border-radius: 2px;
+		padding: 21px 0;
+		
+		&:hover {
+			background-image: linear-gradient(to bottom, $color-dark-blue, #495063);
+			cursor: pointer;
+		}
+		
+	    .ia__IoTevents__more--caption {
+	    	@include caption($color-white);
+			display: block;
+			margin: auto;
+			text-align: center;
+			text-transform: uppercase;
+			width: 200px;
+	    }
+    }
+};

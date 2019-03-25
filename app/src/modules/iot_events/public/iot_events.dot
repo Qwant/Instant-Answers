@@ -1,0 +1,59 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/iot_events.css" type="text/css">
+
+<div class="ia__IoTevents">
+	<div class="ia__IoTevents__header">
+		<div>
+		    <div class="ia__IoTevents__title">
+		        Evénements de {{= it.data[0].content.city }}
+		    </div>
+		    <div class="ia__IoTevents__dateTitle">
+		        {{ var [d, m, y] = it.data[0].content.date_start.split(" "); }}
+		        Mois de {{= m}} {{= y}}
+		    </div>
+	    </div>
+	    <a class="ia__IoTevents__provider" href="http://openagenda.com" target="_blanlk" rel="noopener noreferrer">via openagenda.com</a>
+    </div>
+    <div class="ia__IoTevents__list">
+    {{ var i = 0; }}
+    {{~ it.data:event:index }}
+    	{{ i++; }}
+        {{ var [day, mounth, year] = event.content.date_start.split(" "); }}
+        <div class="ia__IoTevents__singleEvent" key={{=event.content.uid}}>
+            <div class="ia__IoTevents__date">
+                <div class="ia__IoTevents__date--day">
+                    {{= day}}
+                </div>
+                <div class="ia__IoTevents__date--month">
+                    {{= mounth}}
+                </div>
+                <div class="ia__IoTevents__date--year">
+                    {{= year}}
+                </div>
+            </div>
+            <div class="ia__IoTevents__info">
+                <div class="ia__IoTevents__info--title">
+                    {{= event.content.title}}
+                </div>
+                <div class="ia__IoTevents__info--city">
+                    {{= event.content.address}}
+                </div>
+                <div class="ia__IoTevents__info--pricingInfo">
+                    Prix: {{= event.content.pricing_info}}
+                </div>
+                <a class="ia__IoTevents__info--linkEvent" href={{= event.content.link}} target="_blank" rel="noopener noreferrer">
+                    {{= event.content.link}}
+                </a>
+            </div>
+            <img class="ia__IoTevents__image" src="{{= event.content.image}}" alt="circus" />
+        </div>
+    {{~}}
+   	</div>
+   	{{? it.data.length > i }}
+	    <div class="ia__IoTevents__more">
+	        <span class="ia__IoTevents__more--caption">Voir tous les évènements</span>
+	    </div>
+	{{	?}}
+</div>
