@@ -178,6 +178,19 @@ function $(a,b) {
     return "#" == a[0] && -1 === a.indexOf(" ") ? document.getElementById(a.slice(1)) : (b||document).querySelectorAll(a);
 }
 
+function getScript (url, o) {
+  o = o || {};
+  return  new Promise((resolve, reject) => {
+    var d = document.createElement("script");
+    d.src = url
+
+    d.onload = function() {
+      resolve(null, o)
+    }
+    document.head.appendChild(d)
+  })
+}
+
 window.addEventListener("resize", function() {
     // mobile -> innerHTML mobile
 });

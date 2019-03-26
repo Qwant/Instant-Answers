@@ -1,0 +1,141 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/iot_economics.css" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+
+<div class="ia__IoTeconomics">
+    <div class="ia__IoTeconomics__ChartWrapper">
+        <div class="ia__IoTeconomics__Header">
+            {{
+              const monthName = {
+                "01": "January",
+                "02": "February",
+                "03": "March",
+                "04": "April",
+                "05": "May",
+                "06": "June",
+                "07": "July",
+                "08": "August",
+                "09": "September",
+                "10": "October",
+                "11": "November",
+                "12": "December"
+              };
+
+              var test = it.data.result[0];
+              var chartData = {
+                  datasets: [],
+               };
+               var date = test.values[test.values.length - 1][0];
+               var dateSplited = date.split('-');
+               var dateName = "";
+               if(dateSplited.length === 1)
+                   dateName = "Year: " +date;
+               if (dateSplited.length === 2)
+                   dateName = monthName[dateSplited[1]] + dateSplited[0];
+
+               var value = test.values[test.values.length - 1][1];
+               var info = test.id.split("-");
+               var country = test.id.split("-")[0].toLowerCase().trim();
+
+               it.data.result.forEach(function(economic) {
+                   var color = "#" + Math.random().toString(16).substr(-6);
+                   chartData.datasets.push({
+                       borderColor: color,
+                       borderWidth: 2,
+                       pointBackgroundColor: color,
+                       pointBorderWidth: 0,
+                       pointRadius: 0,
+                       pointHitRadius: 5,
+                       label: economic.id.split("-")[0],
+                       fill: false,
+                       data: economic.values,
+                       unit: '%'
+                   });
+                 });
+
+                 var legends = [];
+                 chartData.datasets.forEach(function(dataset, i) {
+                   if (i === 0) {
+                       legends.push('<div style="background-color: #f2f4f8; padding: 10px 15px; height: 80px; width: 180px; border-bottom: solid 1px #e0e1e6;">');
+                   } else {
+                       legends.push('<div style="padding: 10px 15px; height: 80px; width: 180px; border-bottom: solid 1px #e0e1e6;">');
+                   }
+                   legends.push('<div style="padding-bottom: 12px">');
+                   legends.push(`<span style="color: ${  dataset.borderColor  }; vertical-align: top; margin-left: 13.6px; font-size: 12px; text-transform: uppercase;">${  dataset.label  }</span>`);
+                   legends.push('<span></span>');
+                   legends.push('</div>');
+                   legends.push('<div>');
+                   if (i === 0) {
+                       legends.push(`<div style="display: inline-block; margin-left: 45.5px; background-color: ${  dataset.borderColor  }; width:20px; height: 3px;"></div>`);
+                   } else {
+                       legends.push(`<div style="display: inline-block; margin-left: 45.5px; background-color: ${  dataset.borderColor  }; width:20px; height: 3px;"></div>`);
+                   }
+                   legends.push(`<div style="display: inline; font-size: 16px; vertical-align: bottom; text-align: center; margin-left: 6px;">${  dataset.data[dataset.data.length - 1]  } ${dataset.unit}</div>`);
+                   legends.push('</div>');
+                   legends.push('</div>');
+
+                 });
+                 legends.join("");
+                 var options = {
+                     responsive: true,
+                     maintainAspectRatio: false,
+                     legend: {
+                         display: false,
+                     },
+                     legendCallback: legends,
+                     scales: {
+                         xAxes: [{
+                             gridLines: {
+                                 display: true,
+                             },
+                         }],
+                         yAxes: [{
+                             gridLines: {
+                                 color: "#e0e1e6",
+                             },
+                         }]
+                     },
+                 };
+
+
+            }}
+            <div style="max-height: 28px;" >
+                <span class="ia__IoTeconomics__Header--Title">
+                  {{= info[1] }}
+                </span>
+                <span class="ia__IoTeconomics__Header--Date">
+                    {{= dateName }}
+                </span>
+            </div>
+            <div style="max-height: 42px;" >
+                <img src="{{= it.images_path }}/iot_economics/{{= country}}.svg" style="vertical-align: middle;" alt="" />
+                <span class="ia__IoTeconomics__Header--Country">
+                    {{= info[0]}}
+                </span>
+                <span class="ia__IoTeconomics__Header--Data">
+                    {{= value }}
+                    {{= "%"}}
+                </span>
+            </div>
+        </div>
+        <div className="ia__IoTeconomics__Chart">
+            <canvas id="myChart" height="230" />
+        </div>
+        <a class="ia__IoTeconomics__Provider" href="https://db.nomics.world/" target="_blank" rel="noopener noreferrer">via db.nomics.world</a>
+    </div>
+    <div id="legend" class="ia__IoTeconomics__Legend">
+    {{~ chartData.datasets:dataset:index }}
+      <div class="ia__IoTeconomics__Item">
+          <div class="ia__IoTeconomics__Infos">
+              <span class="ia__IoTeconomics__Infos--Label">{{= dataset.label}}</span>
+              <span class="ia__IoTeconomics__Infos--Data">
+                  {{= dataset.data[dataset.data.length - 1]}}
+                  {{= " "}}
+              </span>
+          </div>
+      </div>
+    {{~}}
+    </div>
+</div>

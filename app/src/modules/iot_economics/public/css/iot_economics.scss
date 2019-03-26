@@ -1,0 +1,92 @@
+/**
+* This is your main SCSS file. Please refer to the documentation for more information.
+*/
+@import '../../../../common/mixins.scss';
+@import '../../../../common/variables.scss';
+
+.ia__IoTeconomics {
+    border: 1px solid var(--light-grey);
+    border-radius: 3px;
+    height: 400px;
+    width: 631px;
+    display: flex;
+    flex-direction: row;
+
+    .ia__IoTeconomics__ChartWrapper {
+        width: calc(100% - 180px);
+
+        .ia__IoTeconomics__Header {
+            justify-content: space-between;
+            padding-left: 25px;
+            padding-top: 21px;
+            width: 450px;
+            height: 96px;
+
+            .ia__IoTeconomics__Header--Title {
+                @include font(22px, 1.36, 600);
+                color: var(--dark-blue);
+            }
+            .ia__IoTeconomics__Header--Date {
+                @include font(14px, 1.36, normal);
+                margin-left: 9px;
+                color: var(--blue-grey);
+            }
+            .ia__IoTeconomics__Header--Country {
+                @include font(12px, 0.92, normal);
+                color: var(--blue-grey);
+                vertical-align: middle;
+                margin-left: 13.6px;
+            }
+            .ia__IoTeconomics__Header--Data {
+                @include font(36px, normal);
+                color: var(--dark-blue);
+                vertical-align: middle;
+                margin-left: 15px;
+            }
+        }
+
+        .ia__IoTeconomics__Chart {
+            padding: 0 25px 25px 25px;
+            height: calc(100% - 132px);
+        }
+        .ia__IoTeconomics__Provider {
+            @include font(13px, normal);
+            color: var(--blue-grey);
+            display: block;
+            padding: 0 25px 15px;
+            text-align: right;
+
+            &:hover {
+                color: var(--dark-blue);
+            }
+        }
+
+    }
+
+    .ia__IoTeconomics__Legend {
+        border-left: 1px solid var(--cloud);
+        width: 180px;
+
+        .ia__IoTeconomics__Item {
+            border-top: 1px solid var(--cloud);
+            border-radius: 0.5px;
+
+            &:first-child {
+                border-top: none;
+            }
+
+            .ia__IoTeconomics__Infos {
+                .ia__IoTeconomics__Infos--Label {
+                  @include font(12px, 0.92);
+                  color: var(--blue-grey);
+                }
+
+                .ia__IoTeconomics__Infos--Data {
+                  @include font(16px, 1.25, 500);
+                  color: var(--dark-blue);
+                }
+            }
+        }
+    }
+
+}
