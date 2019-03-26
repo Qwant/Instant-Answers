@@ -1,0 +1,105 @@
+/**
+* This is your main SCSS file. Please refer to the documentation for more information.
+*/
+@import '../../../../common/mixins.scss';
+@import '../../../../common/variables.scss';
+
+.ia__IoTairQuality {
+	margin: 20px;
+
+	.ia__IoTairQuality__header {
+		.ia__IoTairQuality__title {
+			@include font(24px, 32px, 600);
+			color: $color-dark-blue;
+			height: 30px;
+		}
+
+		.ia__IoTairQuality__date {
+			@include epsilon($color-blue-grey);
+			margin-top: 1px;
+			height: 19px;
+			line-height: 1.36;
+		}
+	}
+
+	.ia__IoTairQuality__content {
+		display: flex;
+		flex-direction: row;
+		margin-top: 14px;
+
+		.ia__IoTairQuality__pollutante {
+			width: 18%;
+			min-height: 73px;
+			box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.14);
+			border-radius: 3px;
+			margin-right: 2.5%;
+
+			&:last-child {
+      			margin-right: 0;
+  	  		}
+
+			.ia__IoTairQuality__pollutante--pollutanteName {
+				@include font(11px);
+			    color: $color-blue-grey;
+			    min-height: 28px;
+			    text-align: center;
+			    margin-top: 10px;
+			    text-transform: uppercase;
+			}
+
+			.ia__IoTairQuality__pollutante--liner {
+				border: 1px solid $color-cloud;
+				width: 90px;
+				margin: 6px auto 0;
+			}
+
+			.ia__IoTairQuality__pollutante--pollutanteUnit {
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				align-items: center;
+				margin: 6px;
+
+				.ia__IoTairQuality__pollutante--pollutanteStatus {
+					display: inline-block;
+	                width: 10px;
+	                height: 10px;
+	                border-radius: 50%;
+
+									&.green-dot {
+                    	background-color: #7ed321;
+	                }
+
+	                &.orange-dot {
+	                    background-color: #f5a623;
+	                }
+
+	                &.red-dot {
+	                    background-color: #d0021b;
+	                }
+				}
+
+				.ia__IoTairQuality__pollutante--pollutanteValue {
+					@include caption($color-dark-blue, 400);
+					margin-left: 5px;
+					text-transform: lowercase;
+				}
+			}
+		}
+	}
+
+	.ia__CantinaIoT__source {
+		display: flex;
+		justify-content: flex-end;
+	    margin-top: 12px;
+
+	    .ia__IoTairQuality__sourceLink, .ia__IoTairQuality__sourceStyle {
+			@include caption($color-dark-blue, 400);
+			text-transform: inherit;
+		}
+
+		.ia__IoTairQuality__sourceStyle {
+	  		margin-left: 15px;
+  		}
+	}
+}

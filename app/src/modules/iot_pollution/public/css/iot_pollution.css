@@ -1,0 +1,111 @@
+/**
+* This is your main SCSS file. Please refer to the documentation for more information.
+*/
+.ia__IoTairQuality {
+  margin: 20px;
+}
+.ia__IoTairQuality .ia__IoTairQuality__header .ia__IoTairQuality__title {
+  font-family: "Asap", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 32px;
+  color: #353c52;
+  height: 30px;
+}
+.ia__IoTairQuality .ia__IoTairQuality__header .ia__IoTairQuality__date {
+  font-family: "Asap", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 19px;
+  color: #5c6f84;
+  margin-top: 1px;
+  height: 19px;
+  line-height: 1.36;
+}
+.ia__IoTairQuality .ia__IoTairQuality__content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 14px;
+}
+.ia__IoTairQuality .ia__IoTairQuality__content .ia__IoTairQuality__pollutante {
+  width: 18%;
+  min-height: 73px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.14);
+  border-radius: 3px;
+  margin-right: 2.5%;
+}
+.ia__IoTairQuality .ia__IoTairQuality__content .ia__IoTairQuality__pollutante:last-child {
+  margin-right: 0;
+}
+.ia__IoTairQuality .ia__IoTairQuality__content .ia__IoTairQuality__pollutante .ia__IoTairQuality__pollutante--pollutanteName {
+  font-family: "Asap", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.25;
+  color: #5c6f84;
+  min-height: 28px;
+  text-align: center;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+.ia__IoTairQuality .ia__IoTairQuality__content .ia__IoTairQuality__pollutante .ia__IoTairQuality__pollutante--liner {
+  border: 1px solid #f4f6fa;
+  width: 90px;
+  margin: 6px auto 0;
+}
+.ia__IoTairQuality .ia__IoTairQuality__content .ia__IoTairQuality__pollutante .ia__IoTairQuality__pollutante--pollutanteUnit {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 6px;
+}
+.ia__IoTairQuality .ia__IoTairQuality__content .ia__IoTairQuality__pollutante .ia__IoTairQuality__pollutante--pollutanteUnit .ia__IoTairQuality__pollutante--pollutanteStatus {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.ia__IoTairQuality .ia__IoTairQuality__content .ia__IoTairQuality__pollutante .ia__IoTairQuality__pollutante--pollutanteUnit .ia__IoTairQuality__pollutante--pollutanteStatus.green-dot {
+  background-color: #7ed321;
+}
+.ia__IoTairQuality .ia__IoTairQuality__content .ia__IoTairQuality__pollutante .ia__IoTairQuality__pollutante--pollutanteUnit .ia__IoTairQuality__pollutante--pollutanteStatus.orange-dot {
+  background-color: #f5a623;
+}
+.ia__IoTairQuality .ia__IoTairQuality__content .ia__IoTairQuality__pollutante .ia__IoTairQuality__pollutante--pollutanteUnit .ia__IoTairQuality__pollutante--pollutanteStatus.red-dot {
+  background-color: #d0021b;
+}
+.ia__IoTairQuality .ia__IoTairQuality__content .ia__IoTairQuality__pollutante .ia__IoTairQuality__pollutante--pollutanteUnit .ia__IoTairQuality__pollutante--pollutanteValue {
+  font-family: "Asap", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  color: #353c52;
+  text-transform: uppercase;
+  margin-left: 5px;
+  text-transform: lowercase;
+}
+.ia__IoTairQuality .ia__CantinaIoT__source {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+.ia__IoTairQuality .ia__CantinaIoT__source .ia__IoTairQuality__sourceLink, .ia__IoTairQuality .ia__CantinaIoT__source .ia__IoTairQuality__sourceStyle {
+  font-family: "Asap", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  color: #353c52;
+  text-transform: uppercase;
+  text-transform: inherit;
+}
+.ia__IoTairQuality .ia__CantinaIoT__source .ia__IoTairQuality__sourceStyle {
+  margin-left: 15px;
+}
+
+/*# sourceMappingURL=iot_pollution.css.map */

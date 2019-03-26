@@ -1,0 +1,70 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/iot_pollution.css" type="text/css">
+
+{{const LIMIT_POLLUTION = {
+    O3: [120, 180],
+    SO2: [200, 350],
+    NO2: [100, 200],
+    PM10: [60, 90],
+    "PM2.5": [30, 40],
+    CO: [10, 25],
+};
+
+const POLLUTANTES_NAME = {
+    O3: 'Ozone',
+    SO2: 'Dioxyde de souffre',
+    NO2: 'Dioxyde d\'azote',
+    PM10: 'Particules en suspension',
+    "PM2.5": 'Particules fines',
+    CO: 'Monoxyde de carbone',
+};}}
+
+<div class="ia__IoTairQuality">
+    <div class="ia__IoTairQuality__header">
+      <div class="ia__IoTairQuality__title">
+          {{= it.data.result[0].content.Location}}
+      </div>
+      <div class="ia__IoTairQuality__date">
+          {{= it.data.result[0].content.date}}, Qualité de l'air
+      </div>
+    </div>
+    <div class="ia__IoTairQuality__content">
+	    {{ var poll = [ "O3", "NO2", "SO2", "PM2.5", "PM10"]; }}
+	    {{~ poll:pollutante:index }}
+	    	{{
+	    		var pollutionValue = it.data.aggregations[pollutante].value;
+	    		var limitPollution = LIMIT_POLLUTION[pollutante];
+	    		var status = 'red-dot';
+	    		if (limitPollution) {
+		    	   	if (pollutionValue < limitPollution[0]) {
+	        	    	status = 'green-dot';
+	    		   	} else if (pollutionValue > limitPollution[0] && pollutionValue < limitPollution[1]) {
+	        			status = 'orange-dot';
+	    			}
+    			}
+	    	}}
+	        <div class="ia__IoTairQuality__pollutante">
+	              <div class="ia__IoTairQuality__pollutante--pollutanteName">
+	                  {{= POLLUTANTES_NAME[pollutante] }}
+	              </div>
+	              <div class="ia__IoTairQuality__pollutante--liner"></div>
+	              <div class="ia__IoTairQuality__pollutante--pollutanteUnit">
+	              	  {{? it.data.aggregations[pollutante].value != null}}
+			              <div class="ia__IoTairQuality__pollutante--pollutanteStatus {{= status}}"></div>
+			              <div class="ia__IoTairQuality__pollutante--pollutanteValue">
+		                  	{{= it.data.aggregations[pollutante].value }} µg/m3
+	              		  </div>
+	                  {{??}}
+			              <div class="ia__IoTairQuality__pollutante--pollutanteValue">non renseigné</div>
+	                  {{?}}
+	              </div>
+	        </div>
+	    {{~}}
+    </div>
+    <div class="ia__CantinaIoT__source">
+        <a class="ia__IoTairQuality__sourceLink" href="http://airindex.eea.europa.eu/" target="_blank" ref="noopener noreferrer">via airindex.eea.europa.eu</a>
+        <a class="ia__IoTairQuality__sourceStyle" href="http://airindex.eea.europa.eu/" target="_blank" ref="noopener noreferrer">>></a>
+    </div>
+</div>
