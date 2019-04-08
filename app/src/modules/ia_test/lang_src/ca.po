@@ -1,3 +1,0 @@
-#
-# This is your ca_es language file. Please refer to the documentation for more information.
-#
