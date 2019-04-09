@@ -47,7 +47,6 @@ module.exports = {
           const CACHE_EXPIRE = 7200;
           const redisTools = require('../../redis_tools');
           redisTools.initRedis();
-          console.log(requestUser);
           // Checking the cache to avoid requesting the API
 
           redisTools.getFromCache(CACHE_KEY).then((cached) => {
@@ -64,7 +63,7 @@ module.exports = {
               var apiCaller = require('../../api_caller');
               // Your request
               var api_request = apiAddress+requestUser;
-              console.log(api_request)
+       
               // Defines the structure of the answer
               var structure = {
                 "result": [
@@ -77,7 +76,6 @@ module.exports = {
                       "@_Country": "String",
                       "@_CountryCode": "String",
                       "@_Location": "String",
-                      "@_Name": "String",
                       "@_NO2": "number",
                       "@_Name": "String",
                       "@_O3": "number",
@@ -125,7 +123,6 @@ module.exports = {
               };
               // Call the API and get back data
               apiCaller.call(api_request, structure, proxyURL, this.timeout, redisTools).then((apiRes) => {
-              console.log(apiRes);
               Object.keys(apiRes.aggregations).map(aggregation => {
             		return apiRes.aggregations[aggregation].value = apiRes.aggregations[aggregation].value ? Number.parseFloat(apiRes.aggregations[aggregation].value).toFixed(2) : null;
             	});
