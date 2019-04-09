@@ -209,7 +209,7 @@ module.exports = {
      * 			- i : insensitive
      */
 
-    flag: "",
+    flag: "i",
 
     /**
      * (NEEDED)
