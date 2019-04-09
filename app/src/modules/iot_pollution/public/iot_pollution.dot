@@ -64,7 +64,7 @@ const POLLUTANTES_NAME = {
 	    {{~}}
     </div>
     <div class="ia__IoTairQuality__source">
-        <a class="ia__IoTairQuality__sourceLink" href="http://airindex.eea.europa.eu/" target="_blank" ref="noopener noreferrer">via airindex.eea.europa.eu</a>
-        <a class="ia__IoTairQuality__sourceStyle" href="http://airindex.eea.europa.eu/" target="_blank" ref="noopener noreferrer">>></a>
+        <a class="ia__IoTairQuality__sourceLink" href="http://airindex.eea.europa.eu/" target="_blank" ref={{= SecurityHelper.targetBlank() }}>via airindex.eea.europa.eu</a>
+        <a class="ia__IoTairQuality__sourceStyle" href="http://airindex.eea.europa.eu/" target="_blank" ref={{= SecurityHelper.targetBlank() }}>>></a>
     </div>
 </div>
