@@ -116,22 +116,18 @@ module.exports = {
         }).catch((error) => {
           reject(error);
         });
-    } else {
-        reject("Couldn't process query.")
-    }
-});
-},
+        } else {
+            reject("Couldn't process query.")
+        }
+    });
+  },
 
   /**
    * (OPTIONAL/NEEDED)
-   * If your name needs to be translated, use this function getName().
-   * @returns the tab name translated
+   * Otherwise, if your name doesn't need to be translated, use this attribute.
    */
 
-  getName: function (i18n) {
-    const _ = i18n._;
-    return _("iot_cantina", "iot_cantina");
-  },
+  name: "iot_cantina",
 
   /**
    * (OPTIONAL/NEEDED)
@@ -142,13 +138,6 @@ module.exports = {
     const _ = i18n._;
     return _("datacantina", "iot_cantina");
   },
-
-  /**
-   * (OPTIONAL)
-   * script : If your IA includes a script, place it under public/javascript/xxx.js and replace "hello" by "xxx".
-   */
-
-  script: "index",
 
   /**
    * (NEEDED)
@@ -192,5 +181,5 @@ module.exports = {
    * no order = added at the end, alphabetically
    */
 
-  order: 0
+  order: 11
 };
