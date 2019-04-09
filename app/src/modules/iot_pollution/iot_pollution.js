@@ -165,13 +165,6 @@ module.exports = {
     },
 
     /**
-     * (OPTIONAL)
-     * script : If your IA includes a script, place it under public/javascript/xxx.js and replace "hello" by "xxx".
-     */
-
-    script: "index",
-
-    /**
      * (NEEDED)
      * triggers : Depending on the trigger, the keyword needs to be placed at a specific point in the query.
      * It has 4 different values :
