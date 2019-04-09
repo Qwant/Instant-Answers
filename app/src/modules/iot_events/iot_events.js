@@ -38,8 +38,7 @@ module.exports = {
       const _ = i18n._;
       const request = values[2]
       const apiAddress = config_get('iot_events.api').iotAPI
-      console.log(request);
-      console.log(apiAddress);
+
       return new Promise(function (resolve, reject) {
               if (values && values[0]) {
                   // when generating our IA, we chose a "strict" trigger with "bikes" as the keyword.
@@ -47,105 +46,73 @@ module.exports = {
                   // So when using a "strict" trigger, you don't need to check values[2] as it doesn't exist.
                   const requestUser = values[2]
                   // Declare redisTools
-                  const CACHE_KEY = 'iot-events-cache';
-                  const CACHE_EXPIRE = 7200;
-                  const redisTools = require('../../redis_tools');
-                  redisTools.initRedis();
 
-                  // Checking the cache to avoid requesting the API
-
-                  redisTools.getFromCache(CACHE_KEY).then((cached) => {
-                      if (cached) { // we already have a recent answer
-                          cached = JSON.parse(cached);
-                          if (cached) {
-                              cached.fromCache = true;
-                              resolve(cached);
-                          } else {
-                              reject("Error: something went wrong while fetching cached response");
+                  // Declares the API Caller
+                  var apiCaller = require('../../api_caller');
+                  // Your request
+                  var api_request = apiAddress+requestUser;
+                  // Defines the structure of the answer
+                  var structure = {
+                      "result": [
+                          {
+                            "collection": "String",
+                            "id": "String",
+                            "content":{
+                              "@_date_start": "String",
+                              "@_date_end": "String",
+                              "@_pricing_info": "String",
+                              "@_city": "String",
+                              "@_description": "String",
+                              "@_free_text": "String",
+                              "@_title": "String",
+                              "@_address": "String",
+                              "@_department": "String",
+                              "@_geo_loc": {
+                                "lat": "number",
+                                "lon": "number"
+                              },
+                              "@_image": "String",
+                              "@_image_thumb": "String",
+                              "@_lang": "String",
+                              "@_link": "String",
+                              "@_placename": "String",
+                              "@_region": "String",
+                              "@_space_time_info": "String",
+                              "@_timetable": "String",
+                              "@_uid": "String",
+                              "@_updated_at": "String",
+                              "@_tags": "String",
+                            },
+                            "@_headers": "object",
+                            "meta": {
+                              "active": "boolean",
+                              "author": "String",
+                              "updater": "String",
+                              "updatedAt": "String",
+                              "deletedAt": "String",
+                              "createdAt": "number"
+                            }
                           }
-                      } else { // no cache
-                          // Declares the API Caller
-                          var apiCaller = require('../../api_caller');
-                          // Your request
-                          var api_request = apiAddress+requestUser;
-                          console.log(api_request);
-                          // Defines the structure of the answer
-                          var structure = {
-                              "result": [
-                                  {
-                                    "collection": "String",
-                                    "id": "String",
-                                    "content":{
-                                      "@_date_start": "String",
-                                      "@_date_end": "String",
-                                      "@_pricing_info": "String",
-                                      "@_city": "String",
-                                      "@_description": "String",
-                                      "@_free_text": "String",
-                                      "@_title": "String",
-                                      "@_address": "String",
-                                      "@_department": "String",
-                                      "@_geo_loc": {
-                                        "lat": "number",
-                                        "lon": "number"
-                                      },
-                                      "@_image": "String",
-                                      "@_image_thumb": "String",
-                                      "@_lang": "String",
-                                      "@_link": "String",
-                                      "@_placename": "String",
-                                      "@_region": "String",
-                                      "@_space_time_info": "String",
-                                      "@_timetable": "String",
-                                      "@_uid": "String",
-                                      "@_updated_at": "String",
-                                      "@_tags": "String",
-                                    },
-                                    "@_headers": "object",
-                                    "meta": {
-                                      "active": "boolean",
-                                      "author": "String",
-                                      "updater": "String",
-                                      "updatedAt": "String",
-                                      "deletedAt": "String",
-                                      "createdAt": "number"
-                                    }
-                                  }
-                              ],
-                              "@_aggregations": {}
-                          };
-                          // Call the API and get back data
-                          apiCaller.call(api_request, structure, proxyURL, this.timeout, redisTools).then((apiRes) => {
-                            // format date
-                              console.log(apiRes);
-                              apiRes.result.forEach(function(data) {
-                                data.content.date_start = moment(data.content.date_start).locale(language).format('DD MMM YYYY');
-                                data.content.date_end = moment(data.content.date_end).locale(language).format('DD MMM YYYY');
-                              });
-                              redisTools.saveToCache(CACHE_KEY, apiRes.result, CACHE_EXPIRE);
-                              apiRes.fromCache = false;
-                              console.log(apiRes);
-                              resolve(apiRes.result);
-                          }).catch((error) => {
-                              reject(error);
-                          });
-                      }
+                      ],
+                      "@_aggregations": {}
+                  };
+                  // Call the API and get back data
+                  apiCaller.call(api_request, structure, proxyURL, this.timeout, redisTools).then((apiRes) => {
+                    // format date
+                      apiRes.result.forEach(function(data) {
+                        data.content.date_start = moment(data.content.date_start).locale(language).format('DD MMM YYYY');
+                        data.content.date_end = moment(data.content.date_end).locale(language).format('DD MMM YYYY');
+                      });
+                      redisTools.saveToCache(CACHE_KEY, apiRes.result, CACHE_EXPIRE);
+                      apiRes.fromCache = false;
+                      resolve(apiRes.result);
+                  }).catch((error) => {
+                      reject(error);
                   });
               } else {
                   reject("Couldn't process query.")
               }
           });
-    },
-
-    /**
-     * (OPTIONAL/NEEDED)
-     * If your name needs to be translated, use this function getName().
-     * @returns the tab name translated
-     */
-
-    getName: function (i18n) {
-        const _ = i18n._;
-        return _("iot_events", "iot_events");
     },
 
     /**
@@ -164,21 +131,6 @@ module.exports = {
         const _ = i18n._;
         return _("dataevents", "iot_events");
     },
-
-    /**
-     * (OPTIONAL/NEEDED)
-     * Otherwise, if your keyword doesn't need to be translated, use this attribute.
-     * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
-     */
-
-    keyword: "dataevents",
-
-    /**
-     * (OPTIONAL)
-     * script : If your IA includes a script, place it under public/javascript/xxx.js and replace "hello" by "xxx".
-     */
-
-    script: "iot_events",
 
     /**
      * (NEEDED)
@@ -222,5 +174,5 @@ module.exports = {
      * no order = added at the end, alphabetically
      */
 
-    order: 0
+    order: 11
 };
