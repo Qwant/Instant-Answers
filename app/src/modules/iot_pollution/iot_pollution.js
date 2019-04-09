@@ -165,14 +165,6 @@ module.exports = {
     },
 
     /**
-     * (OPTIONAL/NEEDED)
-     * Otherwise, if your keyword doesn't need to be translated, use this attribute.
-     * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
-     */
-
-    keyword: "datapollution",
-
-    /**
      * (OPTIONAL)
      * script : If your IA includes a script, place it under public/javascript/xxx.js and replace "hello" by "xxx".
      */
