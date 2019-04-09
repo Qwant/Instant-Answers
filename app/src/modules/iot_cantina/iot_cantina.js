@@ -45,96 +45,77 @@ module.exports = {
         // So when using a "strict" trigger, you don't need to check values[2] as it doesn't exist.
         const requestUser = values[2]
         const apiAddress = config_get('iot_cantina.api').iotAPI
-        // Declare redisTools
-        const CACHE_KEY = 'iot-cantina-cache';
-        const CACHE_EXPIRE = 7200;
-        const redisTools = require('../../redis_tools');
-        redisTools.initRedis();
+        
+        // Declares the API Caller
+        var apiCaller = require('../../api_caller');
+        // Your request
+        var api_request = apiAddress+requestUser;
 
-        // Checking the cache to avoid requesting the API
-
-        redisTools.getFromCache(CACHE_KEY).then((cached) => {
-          if (cached) { // we already have a recent answer
-            cached = JSON.parse(cached);
-            if (cached) {
-              cached.fromCache = true;
-              resolve(cached);
-            } else {
-              reject("Error: something went wrong while fetching cached response");
+        // Defines the structure of the answer
+        var structure = {
+          "result": [
+            {
+              "collection": "String",
+              "id": "String",
+              "content":{
+                "@_bread_code": "String",
+                "@_bread_info": "String",
+                "@_bread_label": "String",
+                "@_dessert_code": "String",
+                "@_dessert_info": "String",
+                "@_dessert_label": "String",
+                "@_dish_order": "String",
+                "@_garnish_code": "String",
+                "@_garnish_info": "String",
+                "@_garnish_label": "String",
+                "@_main_dish_code": "String",
+                "@_main_dish_alternative": "String",
+                "@_main_dish_info": "String",
+                "@_main_dish_label": "String",
+                "@_others_info": "String",
+                "@_others_label": "String",
+                "@_starter_alternative": "String",
+                "@_starter_label": "String",
+                "@_starter_info": "String",
+                "@_starter_code": "String",
+                "@_dairy_code": "String",
+                "@_dairy_info": "String",
+                "@_dairy_label": "String",
+                "@_snack_code": "String",
+                "@_snack_info": "String",
+                "@_snack_label": "String",
+                "@_type": "String",
+                "@_sector": "String",
+                "@_date_opening": "String",
+                "@_date_meal": "String",
+                "@_date_day": "String",
+              },
+              "@_headers": "object",
+              "meta": {
+                "active": "boolean",
+                "author": "String",
+                "updater": "String",
+                "updatedAt": "String",
+                "deletedAt": "String",
+                "createdAt": "number"
+              }
             }
-          } else { // no cache
-            // Declares the API Caller
-            var apiCaller = require('../../api_caller');
-            // Your request
-            var api_request = apiAddress+requestUser;
+          ],
+          "@_aggregations": {}
+        };
+        // Call the API and get back data
+        apiCaller.call(api_request, structure, proxyURL, this.timeout, redisTools).then((apiRes) => {
+          // format date
+          apiRes.result.forEach(function(data) {
+            data.content.date_meal = moment(data.content.date_meal).locale(language).format('dddd Do MMM YYYY');
+          });
 
-            // Defines the structure of the answer
-            var structure = {
-              "result": [
-                {
-                  "collection": "String",
-                  "id": "String",
-                  "content":{
-                    "@_bread_code": "String",
-                    "@_bread_info": "String",
-                    "@_bread_label": "String",
-                    "@_dessert_code": "String",
-                    "@_dessert_info": "String",
-                    "@_dessert_label": "String",
-                    "@_dish_order": "String",
-                    "@_garnish_code": "String",
-                    "@_garnish_info": "String",
-                    "@_garnish_label": "String",
-                    "@_main_dish_code": "String",
-                    "@_main_dish_alternative": "String",
-                    "@_main_dish_info": "String",
-                    "@_main_dish_label": "String",
-                    "@_others_info": "String",
-                    "@_others_label": "String",
-                    "@_starter_alternative": "String",
-                    "@_starter_label": "String",
-                    "@_starter_info": "String",
-                    "@_starter_code": "String",
-                    "@_dairy_code": "String",
-                    "@_dairy_info": "String",
-                    "@_dairy_label": "String",
-                    "@_snack_code": "String",
-                    "@_snack_info": "String",
-                    "@_snack_label": "String",
-                    "@_type": "String",
-                    "@_sector": "String",
-                    "@_date_opening": "String",
-                    "@_date_meal": "String",
-                    "@_date_day": "String",
-                  },
-                  "@_headers": "object",
-                  "meta": {
-                    "active": "boolean",
-                    "author": "String",
-                    "updater": "String",
-                    "updatedAt": "String",
-                    "deletedAt": "String",
-                    "createdAt": "number"
-                  }
-                }
-              ],
-              "@_aggregations": {}
-            };
-            // Call the API and get back data
-            apiCaller.call(api_request, structure, proxyURL, this.timeout, redisTools).then((apiRes) => {
-              // format date
-              apiRes.result.forEach(function(data) {
-                data.content.date_meal = moment(data.content.date_meal).locale(language).format('dddd Do MMM YYYY');
-              });
-
-              redisTools.saveToCache(CACHE_KEY, apiRes.result, CACHE_EXPIRE);
-              apiRes.fromCache = false;
-              resolve(apiRes.result);
-            }).catch((error) => {
-              reject(error);
-            });
-          }
-      });
+          redisTools.saveToCache(CACHE_KEY, apiRes.result, CACHE_EXPIRE);
+          apiRes.fromCache = false;
+          resolve(apiRes.result);
+        }).catch((error) => {
+          reject(error);
+        });
     } else {
         reject("Couldn't process query.")
     }
