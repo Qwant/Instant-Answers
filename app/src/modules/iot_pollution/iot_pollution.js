@@ -143,14 +143,10 @@ module.exports = {
 
     /**
      * (OPTIONAL/NEEDED)
-     * If your name needs to be translated, use this function getName().
-     * @returns the tab name translated
+     * Otherwise, if your name doesn't need to be translated, use this attribute.
      */
 
-    getName: function (i18n) {
-        const _ = i18n._;
-        return _("iot_pollution", "iot_pollution");
-    },
+    name: "iot_pollution",
 
     /**
      * (OPTIONAL/NEEDED)
