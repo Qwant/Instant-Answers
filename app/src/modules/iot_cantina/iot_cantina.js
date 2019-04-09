@@ -37,7 +37,7 @@ module.exports = {
   getData: function (values, proxyURL, language, i18n) {
     const _ = i18n._;
     const request = values[2]
-    console.log(request);
+
     return new Promise(function (resolve, reject) {
       if (values && values[0]) {
         // when generating our IA, we chose a "strict" trigger with "bikes" as the keyword.
@@ -67,7 +67,7 @@ module.exports = {
             var apiCaller = require('../../api_caller');
             // Your request
             var api_request = apiAddress+requestUser;
-            console.log(api_request)
+
             // Defines the structure of the answer
             var structure = {
               "result": [
@@ -126,7 +126,7 @@ module.exports = {
               apiRes.result.forEach(function(data) {
                 data.content.date_meal = moment(data.content.date_meal).locale(language).format('dddd Do MMM YYYY');
               });
-              console.log(apiRes);
+
               redisTools.saveToCache(CACHE_KEY, apiRes.result, CACHE_EXPIRE);
               apiRes.fromCache = false;
               resolve(apiRes.result);
@@ -154,13 +154,6 @@ module.exports = {
 
   /**
    * (OPTIONAL/NEEDED)
-   * Otherwise, if your name doesn't need to be translated, use this attribute.
-   */
-
-  name: "iot_cantina",
-
-  /**
-   * (OPTIONAL/NEEDED)
    * If your keyword needs to be translated, use this function getKeyword().
    * @returns keyword translated
    */
@@ -168,14 +161,6 @@ module.exports = {
     const _ = i18n._;
     return _("datacantina", "iot_cantina");
   },
-
-  /**
-   * (OPTIONAL/NEEDED)
-   * Otherwise, if your keyword doesn't need to be translated, use this attribute.
-   * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
-   */
-
-  keyword: "datacantina",
 
   /**
    * (OPTIONAL)
