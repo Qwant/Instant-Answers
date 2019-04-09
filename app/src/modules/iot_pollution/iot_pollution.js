@@ -156,13 +156,6 @@ module.exports = {
 
     /**
      * (OPTIONAL/NEEDED)
-     * Otherwise, if your name doesn't need to be translated, use this attribute.
-     */
-
-    name: "iot_pollution",
-
-    /**
-     * (OPTIONAL/NEEDED)
      * If your keyword needs to be translated, use this function getKeyword().
      * @returns keyword translated
      */
