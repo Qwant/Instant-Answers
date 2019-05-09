@@ -9,24 +9,6 @@
 var Promise = require("bluebird");
 var _ = require('@qwant/front-i18n')._;
 
-accentsTidy = function(s){
-    var r=s.toLowerCase();
-    r = r.replace(new RegExp(/\s/g),"");
-    r = r.replace(new RegExp(/[àáâãäå]/g),"a");
-    r = r.replace(new RegExp(/æ/g),"ae");
-    r = r.replace(new RegExp(/ç/g),"c");
-    r = r.replace(new RegExp(/[èéêë]/g),"e");
-    r = r.replace(new RegExp(/[ìíîï]/g),"i");
-    r = r.replace(new RegExp(/ñ/g),"n");                
-    r = r.replace(new RegExp(/[òóôõö]/g),"o");
-    r = r.replace(new RegExp(/œ/g),"oe");
-    r = r.replace(new RegExp(/[ùúûü]/g),"u");
-    r = r.replace(new RegExp(/[ýÿ]/g),"y");
-    r = r.replace(new RegExp(/\W/g),"");
-
-    return r;
-};
-
 module.exports = {
 
     /**
@@ -98,17 +80,6 @@ module.exports = {
 
     /**
      * (OPTIONAL/NEEDED)
-     * If your name needs to be translated, use this function getName().
-     * @returns the tab name translated
-     */
-
-    getName: function (i18n) {
-        const _ = i18n._;
-        return _("TagEuro", "tageuro");
-    },
-
-    /**
-     * (OPTIONAL/NEEDED)
      * Otherwise, if your name doesn't need to be translated, use this attribute.
      */
 
@@ -116,34 +87,11 @@ module.exports = {
 
     /**
      * (OPTIONAL/NEEDED)
-     * If your keyword needs to be translated, use this function getKeyword().
-     * @returns keyword translated
-     */
-    getKeyword: function (i18n) {
-        const _ = i18n._;
-        var finalKeywords = ""
-        keywords.forEach(function(element) {
-            finalKeywords += element + "|"
-        });
-
-        finalKeywords = finalKeywords.substr(0, oldStr.length-1);
-        return _("Nicolas Dupont(\-| )Aignan", "tageuro");//finalKeywords;
-    },
-
-    /**
-     * (OPTIONAL/NEEDED)
      * Otherwise, if your keyword doesn't need to be translated, use this attribute.
      * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
      */
-
-    keyword: "(N|n)icolas (D|d)upont(\-| )(A|a)ignan|(F|f)lorian (P|p)hilippot|(R|r)apha(\ë|e)l (G|g)lucksmann|(J|j)ean (C|c)hristophe (L|l)agarde|(F|f)ran(\ç|c)ois (A|a)sselineau|(I|i)an (B|b)rossat|(J|j)ean (L|l)assalle|(Y|y)annick (J|j)adot|(F|f)ran(\ç|c)ois (X|x)avier (B|b)ellamy|(N|n)athalie (L|l)oiseau|(J|j)ordan (B|b)ardella|(M|m)anon (A|a)ubry|(N|n)athalie (A|a)rthaud",
-    //keyword: "Nicolas Dupont(\-| )Aignan",
-    /**
-     * (OPTIONAL)
-     * script : If your IA includes a script, place it under public/javascript/xxx.js and replace "hello" by "xxx".
-     */
-
-    //script: "js",
+    
+    keyword: "nicolas\\s+dupont(\-|\\s+)aignan|florian\\s+philippot|rapha(\ë|e)l\\s+glucksmann|jean\\s+christophe\\s+lagarde|fran(\ç|c)ois\\s+asselineau|ian\\s+brossat|jean\\s+lassalle|yannick\\s+jadot|fran(\ç|c)ois\\s+xavier\\s+bellamy|nathalie\\s+loiseau|jordan\\s+bardella|manon\\s+aubry|nathalie\\s+arthaud",
 
     /**
      * (NEEDED)
@@ -172,7 +120,7 @@ module.exports = {
      * timeout : Time before your response is considered as canceled (in milliseconds)
      */
 
-    timeout: 5000,
+    timeout: 3000,
 
     /**
      * (NEEDED)
@@ -186,6 +134,7 @@ module.exports = {
      * order : Order in the IA hierarchy (0 = first)
      * no order = added at the end, alphabetically
      */
-
+    
+    order: 0
     
 };

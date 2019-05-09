@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA;;EAEE",
+"mappings": "AAAA,yBAA0B;EAClB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,QAAQ,EAAE,UACL;EACG,oBAAW,EAAE,CAAC;EACd,kBAAS,EAAE,IAAI;EACf,mBAAU,EAAE,IAAI;;;AAGhC,qCAAsC;EAC9B,UAAU,EAAE,KAAK",
 "sources": ["tageuro.scss"],
 "names": [],
 "file": "tageuro.css"

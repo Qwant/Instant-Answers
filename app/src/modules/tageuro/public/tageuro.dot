@@ -2,12 +2,10 @@
  This is your main template file. Please refer to the documentation for more information.
 -->
 <link rel="stylesheet" href="css/tageuro.css" type="text/css">
-<div class="ia__europeenne__tag">
-    <span class="ia__europeenne__tag__result">
-    <div class="container"> 
-        <a href="https://europeennes2019.sentimantic.net" target="_blank"><img id='base64image'                 
+<div class="ia__europeenne_container"> 
+    <a href="https://europeennes2019.sentimantic.net" target="_blank"><img id='base64image'                 
        src='data:image/png;base64, {{= it.data.image }}' /></a>
-       </div>
-    <p class="signatureSentimantic">by Sentimantic </p>
-    </span>
 </div>
+ <div class="ia__europeenne_signature_sentimantic"> 
+    <p>by Sentimantic  </p>
+</div>   
