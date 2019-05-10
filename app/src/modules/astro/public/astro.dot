@@ -1,0 +1,49 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+ {{= it.data.sign_description}}
+ {{= it.data.sign_name}}
+-->
+
+
+
+<link rel="stylesheet" href="css/astro.css" type="text/css">
+
+
+
+<div class="ia__astro__container">
+
+	<div class="ia__astro__left">
+		<span class="ia__astro__title"> {{= _(it.data.sign_name, 'astro_name') }}</span>
+
+		<div class="ia__astro__mobile">
+		<svg class="ia__astro__svg__mobile" viewBox="0 0 8268 11692" x="25%" y="25%">
+			<g transform="matrix({{= it.data.sign_svg['matrix']}})" id="test" >
+   				<path d="{{= it.data.sign_svg['d']}}" id="ia__astro__mobilepath" />
+   			</g>
+   		</svg>
+   		</div>
+
+		<span class="ia__astro__subtitle"> {{= _('From', 'astro_misc')}} {{= it.data.sign_start}} {{= _('To', 'astro_misc')}} {{= it.data.sign_end}}</span>
+		<span class="ia__astro__keywords"> <b>{{= _('keywords', 'astro_misc')}}</b> : {{= _(it.data.sign_keywords, 'astro_keywords') }}</span>
+		<span class="ia__astro__description">{{= _(it.data.sign_description, 'astro_description') }}</span>
+		<span class="ia__astro__footer">{{= _("-- Dictionary of symbols (Ed. Robert Laffont, Bouquins collection, 1982) André Barbault and/or Alexandre Volguine", 'astro_misc') }}</span>
+
+	</div>
+
+	<div class="ia__astro__right">
+
+		<div class="ia__astro__icon ia__astro__icon--{{= it.data.sign_element }}">
+			
+		 	<svg class="ia__astro__svg" viewBox="0 0 8268 11692" x="25%" y="25%">
+							
+   				<g transform="matrix({{= it.data.sign_svg['matrix']}})"  >
+   					<path d="{{= it.data.sign_svg['d']}}" id="ia__astro__path" />
+   				</g>
+   			</svg>
+
+   		</div>
+		
+	</div>
+
+	
+</div>

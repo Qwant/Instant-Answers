@@ -1,0 +1,221 @@
+#
+# This is your en_gb language file. Please refer to the documentation for more information.
+#
+
+#misc
+msgctxt "astro_misc"
+msgid "From"
+msgstr "From"
+
+msgctxt "astro_misc"
+msgid "To"
+msgstr "To"
+
+msgctxt "astro_misc"
+msgid "keywords"
+msgstr "Keywords"
+
+msgctxt "astro_misc"
+msgid "- Dictionary of symbols (Ed. Robert Laffont, Bouquins collection, 1982) André Barbault and/or Alexandre Volguine"
+msgstr "- Dictionary of symbols (Ed. Robert Laffont, Bouquins collection, 1982) André Barbault and/or Alexandre Volguine"
+
+
+
+
+#SIGN NAMES
+
+msgctxt "astro_name"
+msgid "aries"
+msgstr "Aries"
+
+msgctxt "astro_name"
+msgid "taurus"
+msgstr "Taurus"
+
+msgctxt "astro_name"
+msgid "gemini"
+msgstr "Gemini"
+
+msgctxt "astro_name"
+msgid "cancer"
+msgstr "Cancer"
+
+msgctxt "astro_name"
+msgid "leo"
+msgstr "Leo"
+
+msgctxt "astro_name"
+msgid "virgo"
+msgstr "Virgo"
+
+msgctxt "astro_name"
+msgid "libra"
+msgstr "Libra"
+
+msgctxt "astro_name"
+msgid "scorpio"
+msgstr "Scorpio"
+
+msgctxt "astro_name"
+msgid "sagittarius"
+msgstr "Sagittarius"
+
+msgctxt "astro_name"
+msgid "capricorn"
+msgstr "Capricorn"
+
+msgctxt "astro_name"
+msgid "aquarius"
+msgstr "Aquarius"
+
+msgctxt "astro_name"
+msgid "pisces"
+msgstr "Pisces"
+
+
+#SIGN KEYWORDS
+
+msgctxt "astro_keywords"
+msgid "beginning, action, violence"
+msgstr "Beginning, Action, Violence"
+
+msgctxt "astro_keywords"
+msgid "construction, rooting"
+msgstr "Construction, Rooting"
+
+msgctxt "astro_keywords"
+msgid "dispersion, versatility"
+msgstr "Dispersion, Versatility"
+
+msgctxt "astro_keywords"
+msgid "home, childbirth"
+msgstr "Home, Childbirth"
+
+msgctxt "astro_keywords"
+msgid "work of only one, stardom"
+msgstr "Work of only one, Stardom"
+
+msgctxt "astro_keywords"
+msgid "infinitely small, critical thinking, work environment"
+msgstr "Infinitely small, Critical thinking, Work environment"
+
+msgctxt "astro_keywords"
+msgid "judgment, conciliation, non-violence"
+msgstr "Judgment, Conciliation, Non-violence"
+
+msgctxt "astro_keywords"
+msgid "demolition, revolt"
+msgstr "Demolition, Revolt"
+
+msgctxt "astro_keywords"
+msgid "expansion, principe"
+msgstr "expansion, principe"
+
+msgctxt "astro_keywords"
+msgid "social ambition, austerity"
+msgstr "Social ambition, Austerity"
+
+msgctxt "astro_keywords"
+msgid "work for all, fraternity"
+msgstr "Work for all, Fraternity"
+
+msgctxt "astro_keywords"
+msgid "infinitely great, receptivity, passivity"
+msgstr "Infinitely great, Receptivity, Passivity"
+
+
+#SIGN DESCRIPTIONS
+
+
+msgctxt "astro_description"
+msgid "Nature awakens here after the onset of winter, and this sign symbolizes above all the thrust of spring, therefore the impulse, virility (it is the main sign of Mars), energy, independence and courage."
+
+msgstr "Nature awakens here after the onset of winter, and this sign symbolizes above all the thrust of spring, therefore the impulse, virility (it is the main sign of Mars), energy, independence and courage."
+
+
+
+
+msgctxt "astro_description"
+msgid "Balance (...) this central point, at equal distance from which the two plateaus of the engine and the brake are equalized, of momentum and restraint, of spontaneity and reflection, of abandonment and fear, of call and retreat before life."
+
+msgstr "Balance (...) this central point, at equal distance from which the two plateaus of the engine and the brake are equalized, of momentum and restraint, of spontaneity and reflection, of abandonment and fear, of call and retreat before life."
+
+
+
+
+msgctxt "astro_description"
+msgid "Symbol of a great power of work, of all instincts and mainly of conservation, sensuality and an exaggerated propensity for pleasure. (...) the statics of a life-bearing mass (...)"
+
+msgstr "Symbol of a great power of work, of all instincts and mainly of conservation, sensuality and an exaggerated propensity for pleasure. (...) the statics of a life-bearing mass (...)"
+
+
+
+
+msgctxt "astro_description"
+msgid "Symbol of resistance, fermentation and death, dynamism, hardness and struggles (...)"
+
+msgstr "Symbol of resistance, fermentation and death, dynamism, hardness and struggles (...)"
+
+
+
+
+msgctxt "astro_description"
+msgid "Mercury's main sign is above all the dual symbol of human contact, transport and communication (...) the taste for play, the pleasure of exercising ideas and trading the mind, the flight of intelligence."
+
+msgstr "Mercury's main sign is above all the dual symbol of human contact, transport and communication (...) the taste for play, the pleasure of exercising ideas and trading the mind, the flight of intelligence."
+
+
+
+
+
+msgctxt "astro_description"
+msgid "(...) it is located before the winter solstice when, after the work on the fields is finished, men devote more time to hunting. Symbol of movement, nomadic instincts, independence and lively reflexes."
+
+msgstr "(...) it is located before the winter solstice when, after the work on the fields is finished, men devote more time to hunting. Symbol of movement, nomadic instincts, independence and lively reflexes."
+
+
+
+
+msgctxt "astro_description"
+msgid "A lunar sign, it means withdrawal from oneself, sensitivity, timidity and tenacity."
+
+msgstr "A lunar sign, it means withdrawal from oneself, sensitivity, timidity and tenacity."
+
+
+
+
+msgctxt "astro_description"
+msgid "It expresses patience, perseverance, prudence, industry, achievement, a sense of duty."
+
+msgstr "It expresses patience, perseverance, prudence, industry, achievement, a sense of duty."
+
+
+
+
+msgctxt "astro_description"
+msgid "The heart of the zodiac, it expresses the joy of living, ambition, pride and elevation (...) force controlled and available (...)."
+
+msgstr "The heart of the zodiac, it expresses the joy of living, ambition, pride and elevation (...) force controlled and available (...)."
+
+
+
+msgctxt "astro_description"
+msgid "It symbolizes collective solidarity, cooperation, fraternity and detachment from material things. (...) to be released into the fire of Promethean power, in order to surpass oneself. (...) altruism. There is also a Uranian Aquarius, Promethean, which is the being of the vanguard, of progress, of emancipation, of adventure."
+
+msgstr "It symbolizes collective solidarity, cooperation, fraternity and detachment from material things. (...) to be released into the fire of Promethean power, in order to surpass oneself. (...) altruism. There is also a Uranian Aquarius, Promethean, which is the being of the vanguard, of progress, of emancipation, of adventure."
+
+
+
+msgctxt "astro_description"
+msgid "Symbol of harvest, work, manual dexterity, meticulousness (...) a world that differentiates itself, distinguishes itself, selects itself, identifies itself, reduces itself, strikes itself, assigns itself precise limits. (...) serious, conscientious, scrupulous, reserved, sceptical, methodical, (...) committed to principles (...), hardworking (...)"
+
+msgstr "Symbol of harvest, work, manual dexterity, meticulousness (...) a world that differentiates itself, distinguishes itself, selects itself, identifies itself, reduces itself, strikes itself, assigns itself precise limits. (...) serious, conscientious, scrupulous, reserved, sceptical, methodical, (...) committed to principles (...), hardworking (...)"
+
+
+
+
+msgctxt "astro_description"
+msgid "They symbolize the psyche, by which one communicates with the god or the devil; which is reflected in horoscopy by a nature lacking consistency, very receptive and impressionable. (...) merging the parts into a totality (...) erasing the particularities, in favour of the unlimited, to go from zero to infinity"
+
+msgstr "They symbolize the psyche, by which one communicates with the god or the devil; which is reflected in horoscopy by a nature lacking consistency, very receptive and impressionable. (...) merging the parts into a totality (...) erasing the particularities, in favour of the unlimited, to go from zero to infinity"
+

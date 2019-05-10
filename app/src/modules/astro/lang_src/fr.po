@@ -1,0 +1,217 @@
+#
+# This is your fr_fr language file. Please refer to the documentation for more information.
+#
+
+#MISC
+msgctxt "astro_misc"
+msgid "From"
+msgstr "Du"
+
+msgctxt "astro_misc"
+msgid "To"
+msgstr "Au"
+
+msgctxt "astro_misc"
+msgid "keywords"
+msgstr "Mots-clés"
+
+msgctxt "astro_misc"
+msgid "- Dictionary of symbols (Ed. Robert Laffont, Bouquins collection, 1982) André Barbault and/or Alexandre Volguine"
+msgstr "- Dictionnaire des symboles (Ed. Robert Laffont, collection Bouquins, 1982) André Barbault et/ou Alexandre Volguine"
+
+
+#SIGN NAMES
+
+msgctxt "astro_name"
+msgid "aries"
+msgstr "Bélier"
+
+msgctxt "astro_name"
+msgid "taurus"
+msgstr "Taureau"
+
+msgctxt "astro_name"
+msgid "gemini"
+msgstr "Gémeaux"
+
+msgctxt "astro_name"
+msgid "cancer"
+msgstr "Cancer"
+
+msgctxt "astro_name"
+msgid "leo"
+msgstr "Lion"
+
+msgctxt "astro_name"
+msgid "virgo"
+msgstr "Vierge"
+
+msgctxt "astro_name"
+msgid "libra"
+msgstr "Balance"
+
+msgctxt "astro_name"
+msgid "scorpio"
+msgstr "Scorpion"
+
+msgctxt "astro_name"
+msgid "sagittarius"
+msgstr "Sagittaire"
+
+msgctxt "astro_name"
+msgid "capricorn"
+msgstr "Capricorn"
+
+msgctxt "astro_name"
+msgid "aquarius"
+msgstr "Verseau"
+
+msgctxt "astro_name"
+msgid "pisces"
+msgstr "Poisson"
+
+#SIGN KEYWORDS
+
+msgctxt "astro_keywords"
+msgid "beginning, action, violence"
+msgstr "commencement, action, violence"
+
+msgctxt "astro_keywords"
+msgid "construction, rooting"
+msgstr "construction, enracinement"
+
+msgctxt "astro_keywords"
+msgid "dispersion, versatility"
+msgstr "dispersion, versatilité"
+
+msgctxt "astro_keywords"
+msgid "home, childbirth"
+msgstr "foyer, enfantement"
+
+msgctxt "astro_keywords"
+msgid "work of only one, stardom"
+msgstr "oeuvre d'un seul, vedettariat"
+
+msgctxt "astro_keywords"
+msgid "infinitely small, critical thinking, work environment"
+msgstr "infiniment petit, sens critique, univers du travail"
+
+msgctxt "astro_keywords"
+msgid "judgment, conciliation, non-violence"
+msgstr "jugement, conciliation, non-violence"
+
+msgctxt "astro_keywords"
+msgid "demolition, revolt"
+msgstr "démolition, révolte"
+
+msgctxt "astro_keywords"
+msgid "expansion, principe"
+msgstr "expansion, principe"
+
+msgctxt "astro_keywords"
+msgid "social ambition, austerity"
+msgstr "ambition sociale, austérité"
+
+msgctxt "astro_keywords"
+msgid "work for all, fraternity"
+msgstr "oeuvre pour tous, fraternité"
+
+msgctxt "astro_keywords"
+msgid "infinitely great, receptivity, passivity"
+msgstr "infiniment grand, réceptivité, passivité"
+
+
+#SIGN DESCRIPTIONS
+
+
+msgctxt "astro_description"
+msgid "Nature awakens here after the onset of winter, and this sign symbolizes above all the thrust of spring, therefore the impulse, virility (it is the main sign of Mars), energy, independence and courage."
+
+msgstr "La nature s’éveille ici après l’engoudissement de l’hiver, et ce signe symbolise avant tout la poussée du printemps, donc l’impulsion, la virilité (c’est le principal signe de Mars), l’énergie, l’indépendance et le courage."
+
+
+
+
+msgctxt "astro_description"
+msgid "Balance (...) this central point, at equal distance from which the two plateaus of the engine and the brake are equalized, of momentum and restraint, of spontaneity and reflection, of abandonment and fear, of call and retreat before life."
+
+msgstr "l’équilibre (…) ce point central, à égale distance duquel s’égalisent les deux plateaux du moteur et du frein, de l’élan et de la retenue, de la spontanéité et de la réflexion, de l’abandon et de la crainte, de l’appel et du recul devant la vie."
+
+
+
+
+msgctxt "astro_description"
+msgid "Symbol of a great power of work, of all instincts and mainly of conservation, sensuality and an exaggerated propensity for pleasure. (...) the statics of a life-bearing mass (...)"
+
+msgstr "Symbole d’une grande puissance de travail, de tous les instincts et principalement de celui de conservation, de sensualité et d’une propension exagérée pour les plaisirs. (…) la statique d’une masse porteuse de vie (…)"
+
+
+
+
+msgctxt "astro_description"
+msgid "Symbol of resistance, fermentation and death, dynamism, hardness and struggles (...)"
+
+msgstr "Symbole à la fois de résistance, de fermentation et de mort, de dynamisme, de dureté et de luttes (…)"
+
+
+
+
+msgctxt "astro_description"
+msgid "Mercury's main sign is above all the dual symbol of human contact, transport and communication (...) the taste for play, the pleasure of exercising ideas and trading the mind, the flight of intelligence."
+
+msgstr "Signe principal de Mercure, c’est avant tout le symbole double des contacts humains, des transports, des communications (…) le goût du jeu, l’agrément de l’exercice des idées et du commerce de l’esprit, l’envol de l’intelligence."
+
+
+
+
+
+msgctxt "astro_description"
+msgid "(...) it is located before the winter solstice when, after the work on the fields is finished, men devote more time to hunting. Symbol of movement, nomadic instincts, independence and lively reflexes."
+
+msgstr "(…) il se situe avant le solstice d’hiver quand, les travaux des champs terminés, les hommes se consacrent davantage à la chasse. Symbole du mouvement, des instincts nomades, de l’indépendance et des réflexes vifs."
+
+
+
+
+msgctxt "astro_description"
+msgid "A lunar sign, it means withdrawal from oneself, sensitivity, timidity and tenacity."
+
+msgstr "Signe lunaire, il signifie le retrait sur soi, la sensibilité, la timidité et la ténacité."
+
+
+
+
+msgctxt "astro_description"
+msgid "It expresses patience, perseverance, prudence, industry, achievement, a sense of duty."
+
+msgstr "Il exprime la patience, la persévérance, la prudence, l’industrie, la réalisation, le sens du devoir."
+
+
+
+
+msgctxt "astro_description"
+msgid "The heart of the zodiac, it expresses the joy of living, ambition, pride and elevation (...) force controlled and available (...)."
+
+msgstr "Coeur du zodiaque, il exprime la joie de vivre, l’ambition, l’orgueil et l’élévation (…) force maîtrisée et disponible (…)."
+
+
+
+msgctxt "astro_description"
+msgid "It symbolizes collective solidarity, cooperation, fraternity and detachment from material things. (...) to be released into the fire of Promethean power, in order to surpass oneself. (...) altruism. There is also a Uranian Aquarius, Promethean, which is the being of the vanguard, of progress, of emancipation, of adventure."
+
+msgstr "Il symbolise la solidarité collective, la coopération, la fraternité et le détachement des choses matérielles. (…) l’être libéré dans le feu de la puissance prométhéenne, en vue de se dépasser. (…) l’altruisme. Il existe aussi un Verseau uranien, prométhéen, qui est l’être de l’avant-garde, du progrès, de l’émancipation, de l’aventure."
+
+
+
+msgctxt "astro_description"
+msgid "Symbol of harvest, work, manual dexterity, meticulousness (...) a world that differentiates itself, distinguishes itself, selects itself, identifies itself, reduces itself, strikes itself, assigns itself precise limits. (...) serious, conscientious, scrupulous, reserved, sceptical, methodical, (...) committed to principles (...), hardworking (...)"
+
+msgstr "Symbole de moisson, de travail, de dextérité manuelle, de minutie (…) un monde qui se différencie, se particularise, se sélectionne, se cerne, se réduit, se dépouille, s’assigne des limites précises. (…) sérieux, consciencieux, scrupuleux, réservé, sceptique, méthodique, (…)attaché aux principes (...), travailleur (…)"
+
+
+
+
+msgctxt "astro_description"
+msgid "They symbolize the psyche, by which one communicates with the god or the devil; which is reflected in horoscopy by a nature lacking consistency, very receptive and impressionable. (...) merging the parts into a totality (...) erasing the particularities, in favour of the unlimited, to go from zero to infinity"
+
+msgstr "Ils symbolisent le psychisme, par lequel on communique avec le dieu ou le diable ; ce qui se traduit dans l’horoscopie par une nature manquant de consistance, très réceptive et impressionnable. (…) fusion des parties dans une totalité (…) effacement des particularismes, au profit de l’illimité, pour aller du zéro à l’infini"

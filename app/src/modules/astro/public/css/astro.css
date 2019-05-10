@@ -1,0 +1,168 @@
+/**
+* This is your main SCSS file. Please refer to the documentation for more information.
+*/
+/** On "All" view **/
+.ia__astro__container {
+  font-family: Asap, 'Segoe UI', 'Helvetica', 'Droid Sans', sans-serif;
+  font-size: 14px;
+  border: 1px groove lightgrey;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-gap: 10px;
+  padding: 24px;
+}
+
+.ia__astro__left {
+  float: left;
+  color: #353c52;
+}
+
+.ia__astro__title {
+  font-size: 28px;
+  display: inline;
+  color: #353c52;
+  font-weight: bold;
+}
+
+.ia__astro__subtitle {
+  color: #5c6f84;
+  padding-top: 12px;
+  display: block;
+}
+
+.ia__astro__keywords {
+  padding-top: 10px;
+  display: block;
+}
+
+.ia__astro__description {
+  padding-top: 10px;
+  display: block;
+}
+
+.ia__astro__right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 25px;
+}
+
+.ia__astro__svg {
+  margin: 0 auto;
+  height: 80px;
+  width: 80px;
+  fill: white;
+  overflow: visible;
+}
+
+.ia__astro__mobile {
+  display: none;
+}
+
+.ia__astro__footer {
+  display: block;
+  padding-top: 10px;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.ia__astro__icon {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #353c52;
+}
+
+.ia__astro__icon--fire {
+  background-color: #ff3b4a;
+}
+
+.ia__astro__icon--water {
+  background-color: #4ba2ea;
+}
+
+.ia__astro__icon--air {
+  background-color: #af27cc;
+}
+
+.ia__astro__icon--earth {
+  background-color: #87c966;
+}
+
+/* Tablet*/
+@media (max-width: 1450px) {
+  .ia__astro__subtitle {
+    color: #5c6f84;
+    padding-top: 12px;
+  }
+
+  #ia__astro__mobilepath {
+    width: 10px;
+    height: 10px;
+  }
+
+  .ia__astro__container {
+    display: grid;
+    grid-template-columns: 100% 0%;
+    grid-gap: 10px;
+    padding: 24px;
+  }
+
+  .ia__astro__mobile {
+    margin: 0 0 12px 12px;
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #353c52;
+    float: right;
+    display: inline-block;
+    padding: 25px;
+  }
+
+  .ia__astro__svg__mobile {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    float: right;
+    fill: white;
+    overflow: visible;
+  }
+
+  .ia__astro__left {
+    float: left;
+    width: 100%;
+    color: #353c52;
+  }
+
+  .ia__astro__right {
+    display: none;
+  }
+
+  .ia__astro__subtitle {
+    display: block;
+  }
+
+  .ia__astro__description {
+    padding-top: 15px;
+  }
+
+  .ia__astro__subtitle {
+    padding-left: 0px;
+    display: block;
+  }
+}
+/* MOBILE */
+@media (max-width: 640px) {
+  .ia__astro__description {
+    padding-top: 10px;
+  }
+}
+/*# sourceMappingURL=astro.css.map */
+
+/*# sourceMappingURL=astro.css.map */
