@@ -15,11 +15,10 @@ tmp/
 node_modules/
 dist/
 lang/
-src/modules/**/*.css
+src/modules/**/public/css/*.css
 .sass-cache/
 yarn.lock
 yarn-error.log
-
 #config
 config/*.json
 
