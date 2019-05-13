@@ -15,7 +15,7 @@
 	<div class="ia__astro__left">
 		<span class="ia__astro__title"> {{= _(it.data.sign_name, 'astro_name') }}</span>
 
-		<div class="ia__astro__mobile">
+		<div class="ia__astro__mobile ia__astro__icon--{{= it.data.sign_element }}">
 		<svg class="ia__astro__svg__mobile" viewBox="0 0 8268 11692" x="25%" y="25%">
 			<g transform="matrix({{= it.data.sign_svg['matrix']}})" id="test" >
    				<path d="{{= it.data.sign_svg['d']}}" id="ia__astro__mobilepath" />
