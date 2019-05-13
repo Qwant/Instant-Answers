@@ -38,7 +38,7 @@ function getElement(){
 function getSign(bday, langue){
     
     var formatlocale = langue.split('_').join('-');
-    var theDate = bday.split('/').join(',').split('-').join(',').split('.').join(',').split(',');
+    var theDate = bday.split(" ").join(',').split('/').join(',').split('-').join(',').split('.').join(',').split(',');
     var month = 13;
     var day = 0;
     var year = 0;
