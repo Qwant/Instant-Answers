@@ -134,7 +134,7 @@ module.exports = {
         })
     },
 
-    removeFromBlacklist: function (host) {
+    removeFromBlacklist: function (hostToRemove) {
         this.client.smembers("hashkeys", (err, res) => {
             if (res.length) {
                 res.forEach((host) => {
