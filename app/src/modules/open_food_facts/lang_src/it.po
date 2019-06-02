@@ -1,0 +1,67 @@
+msgctxt "open_food_facts"
+msgid "keyword"
+msgstr "calorie(s|)"
+
+msgctxt "open_food_facts"
+msgid "decimal_point"
+msgstr ","
+
+msgctxt "open_food_facts"
+msgid "thousands_separator"
+msgstr "."
+
+msgctxt "open_food_facts"
+msgid "kilojoules_number"
+msgstr "{value} kJ"
+
+msgctxt "open_food_facts"
+msgid "kilocalories_number"
+msgstr "{value} kcal"
+
+msgctxt "open_food_facts"
+msgid "grams_number"
+msgstr "{value} g"
+
+msgctxt "open_food_facts"
+msgid "Barcode: "
+msgstr "Codice: "
+
+msgctxt "open_food_facts"
+msgid "Ingredients"
+msgstr "Ingredienti"
+
+msgctxt "open_food_facts"
+msgid "Nutrition facts*"
+msgstr "Informazioni nutrizionali*"
+
+msgctxt "open_food_facts"
+msgid "* for 100g / 100ml"
+msgstr "* per 100 g / 100 ml"
+
+msgctxt "open_food_facts"
+msgid "Energy"
+msgstr "Energia"
+
+msgctxt "open_food_facts"
+msgid "Fat"
+msgstr "Grassi"
+
+msgctxt "open_food_facts"
+msgid "Satured fat"
+msgstr "Acidi Grassi saturi"
+
+msgctxt "open_food_facts"
+msgid "Carbohydrates"
+msgstr "Carboidrati"
+
+msgctxt "open_food_facts"
+msgid "Sugars"
+msgstr "Zuccheri"
+
+msgctxt "open_food_facts"
+msgid "Proteins"
+msgstr "Proteine"
+
+msgctxt "open_food_facts"
+msgid "Salt"
+msgstr "Sale"

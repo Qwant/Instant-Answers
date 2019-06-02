@@ -1,0 +1,7 @@
+msgctxt "open_food_facts"
+msgid "decimal_point"
+msgstr ","
+
+msgctxt "open_food_facts"
+msgid "thousands_separator"
+msgstr "."

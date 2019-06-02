@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="css/open_food_facts.css" type="text/css">
+
+<div class="ia__open_food_facts">
+    {{? it.data.image }}
+        <div class="ia__ofc__image">
+            <img src="{{= it.data.image }}" alt="{{= it.data.name }}">
+        </div>
+    {{?}}
+    <div class="ia__ofc__details">
+        <h1 title="{{= it.data.name }}">{{= it.data.name }}</h1>
+        {{? it.data.code }}
+            <h5 class="ia__ofc__code">{{= _("Barcode: ", "open_food_facts") }}{{= it.data.code }}</h5>
+        {{?}}
+        {{? it.data.ingredients }}
+            <h5 class="ia__ofc__ingredients">{{= _("Ingredients", "open_food_facts") }}</h5>
+            <p class="ia__ofc__ingredients">{{= it.data.ingredients }}</p>
+        {{?}}
+        <h5 class="ia__ofc__nutriments">{{= _("Nutrition facts*", "open_food_facts") }}</h5>
+        <dl class="ia__ofc__nutriments">
+            <dt class="ia__ofc__nutriments__neo">{{= _("Energy", "open_food_facts") }}</dt>
+            <dd class="ia__ofc__nutriments__neo">{{= it.data.nutriments.energyJoules }} / {{= it.data.nutriments.energyCalories }}</dd>
+            <dt>{{= _("Fat", "open_food_facts") }}</dt>
+            <dd>{{= it.data.nutriments.fat }}</dd>
+            <dt class="ia__ofc__nutriments__neo ia__ofc__nutriments__detail">{{= _("Satured fat", "open_food_facts") }}</dt>
+            <dd class="ia__ofc__nutriments__neo">{{= it.data.nutriments.saturatedFat }}</dd>
+            <dt>{{= _("Carbohydrates", "open_food_facts") }}</dt>
+            <dd>{{= it.data.nutriments.carbohydrates }}</dd>
+            <dt class="ia__ofc__nutriments__neo ia__ofc__nutriments__detail">{{= _("Sugars", "open_food_facts") }}</dt>
+            <dd class="ia__ofc__nutriments__neo">{{= it.data.nutriments.carbohydratesSugars }}</dd>
+            <dt>{{= _("Proteins", "open_food_facts") }}</dt>
+            <dd>{{= it.data.nutriments.proteins }}</dd>
+            <dt class="ia__ofc__nutriments__neo">{{= _("Salt", "open_food_facts") }}</dt>
+            <dd class="ia__ofc__nutriments__neo">{{= it.data.nutriments.salt }}</dd>
+        </dl>
+        <div class="ia__ofc__notice"><i>{{= _("* for 100g / 100ml", "open_food_facts") }}</i></div>
+        <div class="ia__ofc__footer">
+            <a href="{{= it.data.url }}" rel="noopener" target="_blank">via Open Food Facts</a>
+        </div>
+    </div>
+</div>

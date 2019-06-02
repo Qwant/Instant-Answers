@@ -33,6 +33,7 @@
     "load-grunt-configs": "^1.0.0",
     "load-grunt-tasks": "^4.0.0",
     "luxon": "^1.4.3",
+    "markdown": "^0.5.0",
     "mathjs": "^5.2.0",
     "md5": "^2.2.1",
     "minimatch": "^3.0.4",

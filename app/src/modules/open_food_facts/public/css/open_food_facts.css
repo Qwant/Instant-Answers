@@ -1,0 +1,85 @@
+.ia__open_food_facts {
+  padding: 10px 25px;
+}
+.ia__open_food_facts .ia__ofc__image {
+  float: right;
+  width: 150px;
+  text-align: center;
+  margin: 5px 0 5px 10px;
+}
+.ia__open_food_facts .ia__ofc__details > h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #353c52;
+}
+.ia__open_food_facts .ia__ofc__details > h5 {
+  color: #5c6f84;
+}
+.ia__open_food_facts .ia__ofc__details > h5.ia__ofc__code {
+  font-size: 14px;
+  margin: 5px 0 10px 0;
+}
+.ia__open_food_facts .ia__ofc__details > h5.ia__ofc__ingredients, .ia__open_food_facts .ia__ofc__details > h5.ia__ofc__nutriments {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 10px 0 5px 0;
+}
+.ia__open_food_facts .ia__ofc__details > h5.ia__ofc__nutriments {
+  clear: right;
+}
+.ia__open_food_facts .ia__ofc__details > p.ia__ofc__ingredients {
+  font-size: 14px;
+  color: #585A60;
+}
+.ia__open_food_facts .ia__ofc__details > dl.ia__ofc__nutriments {
+  line-height: 24px;
+}
+.ia__open_food_facts .ia__ofc__details > dl.ia__ofc__nutriments > dt, .ia__open_food_facts .ia__ofc__details > dl.ia__ofc__nutriments > dd {
+  float: left;
+  color: #585A60;
+}
+.ia__open_food_facts .ia__ofc__details > dl.ia__ofc__nutriments > dt.ia__ofc__nutriments__neo, .ia__open_food_facts .ia__ofc__details > dl.ia__ofc__nutriments > dd.ia__ofc__nutriments__neo {
+  background: #f4f6fa;
+}
+.ia__open_food_facts .ia__ofc__details > dl.ia__ofc__nutriments > dt {
+  width: 60%;
+  font-weight: 500;
+  clear: left;
+  padding-left: 10px;
+}
+.ia__open_food_facts .ia__ofc__details > dl.ia__ofc__nutriments > dt.ia__ofc__nutriments__detail {
+  padding-left: 30px;
+}
+.ia__open_food_facts .ia__ofc__details > dl.ia__ofc__nutriments > dd {
+  width: 40%;
+  text-align: center;
+}
+.ia__open_food_facts .ia__ofc__details > div.ia__ofc__notice {
+  clear: left;
+  text-align: left;
+  padding-top: 4px;
+  font-size: 13px;
+  color: #5c6f84;
+}
+.ia__open_food_facts .ia__ofc__details > div.ia__ofc__footer {
+  text-align: right;
+  padding-top: 10px;
+  font-size: 12px;
+}
+.ia__open_food_facts .ia__ofc__details > div.ia__ofc__footer > a {
+  color: #5c6f84;
+}
+.ia__open_food_facts .ia__ofc__details > div.ia__ofc__footer > a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .ia__open_food_facts {
+    padding: 16px;
+  }
+  .ia__open_food_facts .ia__ofc__image {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=open_food_facts.css.map */
