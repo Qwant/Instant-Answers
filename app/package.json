@@ -36,6 +36,7 @@
     "mathjs": "^5.2.0",
     "md5": "^2.2.1",
     "minimatch": "^3.0.4",
+    "mmmagic": "^0.5.3",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.21",
     "npm": "^6.4.1",

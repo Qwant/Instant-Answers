@@ -1,0 +1,25 @@
+.ia__base64 {
+    padding: 10px 25px;
+
+    > h1 {
+        font-size: 28px;
+        font-weight: bold;
+        color: #353c52;
+        margin: 0 0 5px 0;
+    }
+
+    > xmp {
+        border: solid 1px #eaeaea;
+        padding: 5px 10px;
+    }
+
+    > div.ia__base64_img {
+        text-align: center;
+        padding: 5px 25px;
+
+        > img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+}

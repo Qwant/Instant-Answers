@@ -1,0 +1,23 @@
+.ia__base64 {
+  padding: 10px 25px;
+}
+.ia__base64 > h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #353c52;
+  margin: 0 0 5px 0;
+}
+.ia__base64 > xmp {
+  border: solid 1px #eaeaea;
+  padding: 5px 10px;
+}
+.ia__base64 > div.ia__base64_img {
+  text-align: center;
+  padding: 5px 25px;
+}
+.ia__base64 > div.ia__base64_img > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/*# sourceMappingURL=base64.css.map */

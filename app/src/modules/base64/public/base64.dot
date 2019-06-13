@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="css/base64.css" type="text/css">
+
+<div class="ia__base64">
+    {{? it.data.action === 'encode' }}
+        <h1 title="Base64 encode">Base64 encode</h1>
+    {{?}}
+    {{? it.data.action === 'decode' }}
+        <h1 title="Base64 decode">Base64 decode</h1>
+    {{?}}
+    {{? it.data.type === 'text' }}
+        <xmp>{{= it.data.result }}</xmp>
+    {{?}}
+    {{? it.data.type === 'png' }}
+        <div class="ia__base64_img">
+            <img src="data:image/png;base64,{{= it.data.data }}">
+        </div>
+    {{?}}
+    {{? it.data.type === 'jpeg' }}
+        <div class="ia__base64_img">
+            <img src="data:image/jpeg;base64,{{= it.data.data }}">
+        </div>
+    {{?}}
+</div>
