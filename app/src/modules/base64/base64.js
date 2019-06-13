@@ -26,7 +26,6 @@ module.exports = {
      */
     getData: function (values, proxyURL, language, i18n) {
         const _ = i18n._;
-        // console.log(values);
 
         return new Promise((resolve, reject) => {
             const data = values[values.length - 1].trim();
