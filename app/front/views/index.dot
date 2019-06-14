@@ -10,7 +10,7 @@
         <script src="/js/doT.js"></script>
         <script>
             var data = [[? model.ia !== '' ]][[= JSON.stringify(model.ia.data) ]][[??]]''[[?]];
-            var query = "[[= model.query ]]";
+            var query = "[[= model.query.replace(/"/g, '\\"') ]]";
             var lang = "[[= model.lang ]]";
             var externalFiles = [[? model.ia !== '' ]][[= JSON.stringify(model.ia.files.filter((file) => {return file.type === 'script' })) ]][[??]]''[[?]];
             var i18n = [[= JSON.stringify(model.i18n) ]];

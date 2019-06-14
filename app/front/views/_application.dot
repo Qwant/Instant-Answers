@@ -48,7 +48,7 @@
                                         </svg>
                                     </div>
                                     <form action="." id="qwant_search">
-                                        <input name="q" id="search_input" class="search_bar__form__input" type="search" autocomplete="off" spellcheck="false" placeholder="Que recherchez-vous ?" value="[[= model.query ]]" aria-label="search_bar" />
+                                        <input name="q" id="search_input" class="search_bar__form__input" type="search" autocomplete="off" spellcheck="false" placeholder="Que recherchez-vous ?" value="[[= model.query.replace(/"/g, '&nbsp;') ]]" aria-label="search_bar" />
                                         <input name="locale" value="fr_fr" type="hidden" />
                                         <input name="lang" value="fr_fr" type="hidden" />
                                     </form>
