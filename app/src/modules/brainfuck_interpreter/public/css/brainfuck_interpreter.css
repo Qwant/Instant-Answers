@@ -1,0 +1,15 @@
+.ia__brainfuck {
+  padding: 10px 25px;
+}
+.ia__brainfuck > h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #353c52;
+  margin: 0 0 5px 0;
+}
+.ia__brainfuck > xmp {
+  border: solid 1px #eaeaea;
+  padding: 5px 10px;
+}
+
+/*# sourceMappingURL=brainfuck_interpreter.css.map */

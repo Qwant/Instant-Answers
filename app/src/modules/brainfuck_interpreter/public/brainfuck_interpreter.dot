@@ -1,0 +1,6 @@
+<link rel="stylesheet" href="css/brainfuck_interpreter.css" type="text/css">
+
+<div class="ia__brainfuck">
+    <h1 title="Brainfuck">Brainfuck</h1>
+    <pre>{{= it.data.result }}</pre>
+</div>
