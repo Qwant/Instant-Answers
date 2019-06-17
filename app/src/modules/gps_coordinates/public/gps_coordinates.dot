@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="css/gps_coordinates.css" type="text/css">
+
+<div class="ia__gps_coordinates">
+    <h1 title="{{= _('GPS Coordinates', 'gps_coordinates') }}">{{= _('GPS Coordinates', 'gps_coordinates') }}</h1>
+    <h5>{{= it.data.degrees }}</h5>
+    <div>
+        <div>
+            <label>{{= _('Latitude', 'gps_coordinates') }}</label>
+            <span>{{= it.data.latitude }}</span>
+        </div>
+        <div>
+            <label>{{= _('Longitude', 'gps_coordinates') }}</label>
+            <span>{{= it.data.longitude }}</span>
+        </div>
+    </div>
+    <p>
+        <a target="_blank" href="{{= it.data.url }}">Qwant Maps</a>
+    </p>
+</div>

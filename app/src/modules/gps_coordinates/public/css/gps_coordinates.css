@@ -1,0 +1,55 @@
+.ia__gps_coordinates {
+  padding: 10px 25px;
+}
+.ia__gps_coordinates > h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #353c52;
+  margin: 0 0 5px 0;
+}
+.ia__gps_coordinates > h5 {
+  color: #5c6f84;
+  font-size: 14px;
+  margin: 5px 0 10px 0;
+}
+.ia__gps_coordinates > div > div {
+  display: block;
+  float: left;
+  width: 40%;
+  color: #5c6f84;
+}
+.ia__gps_coordinates > div > div > label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.ia__gps_coordinates > div > div > span {
+  display: block;
+  padding: 2px 10px;
+}
+.ia__gps_coordinates > p {
+  clear: left;
+  text-align: right;
+  padding-top: 10px;
+  font-size: 12px;
+}
+.ia__gps_coordinates > p > a {
+  color: #5c6f84;
+}
+.ia__gps_coordinates > p > a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .ia__gps_coordinates {
+    padding: 16px;
+  }
+  .ia__gps_coordinates > div > div {
+    float: none;
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+/*# sourceMappingURL=gps_coordinates.css.map */

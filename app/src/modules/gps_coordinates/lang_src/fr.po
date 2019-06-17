@@ -1,0 +1,27 @@
+msgctxt "gps_coordinates"
+msgid "GPS Coordinates"
+msgstr "Coordonnées GPS"
+
+msgctxt "gps_coordinates"
+msgid "Latitude"
+msgstr "Latitude"
+
+msgctxt "gps_coordinates"
+msgid "Longitude"
+msgstr "Longitude"
+
+msgctxt "gps_coordinates"
+msgid "N"
+msgstr "N"
+
+msgctxt "gps_coordinates"
+msgid "S"
+msgstr "S"
+
+msgctxt "gps_coordinates"
+msgid "E"
+msgstr "E"
+
+msgctxt "gps_coordinates"
+msgid "W"
+msgstr "O"
