@@ -1,23 +1,23 @@
 msgctxt "2048"
 msgid "((game|play|online)\\s*)?2048(\\s*(game|play|online))?"
-msgstr "((game|play|online)\\s*)?2048(\\s*(game|play|online))?"
+msgstr "((gioco|gioca|online)\\s*)?2048(\\s*(gioco|gioca|online))?"
 
 msgctxt "2048"
 msgid "You win!"
-msgstr "You win!"
+msgstr "Hai vinto!"
 
 msgctxt "2048"
 msgid "Score"
-msgstr "Score"
+msgstr "Punteggio"
 
 msgctxt "2048"
 msgid "Continue?"
-msgstr "Continue?"
+msgstr "Continuare?"
 
 msgctxt "2048"
 msgid "New game"
-msgstr "New game"
+msgstr "Nuova partita"
 
 msgctxt "2048"
 msgid "Use the arrow keys to move the tiles. When two tiles with the same number touch, they merge into an upgraded one!"
-msgstr "Use the arrow keys to move the tiles. When two tiles with the same number touch, they merge into an upgraded one!"
+msgstr "Usa le frecce per muovere i quadrati. Quando due quadrati con lo stesso numero si toccano, essi si sommano!"
