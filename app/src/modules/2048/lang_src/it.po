@@ -20,4 +20,4 @@ msgstr "Nuova partita"
 
 msgctxt "2048"
 msgid "Use the arrow keys to move the tiles. When two tiles with the same number touch, they merge into an upgraded one!"
-msgstr "Usa le frecce per muovere i quadrati. Quando due quadrati con lo stesso numero si toccano, essi si sommano!"
+msgstr "Usa le frecce per muovere i quadrati. Quando due quadrati con lo stesso numero si sovrappongono, essi si sommano!"
