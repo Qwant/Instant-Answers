@@ -1,0 +1,91 @@
+$main-color: #353C52;
+$second-color: #5C6F84;
+
+.ia__color_picker{
+    font-family:  "Asap", sans-serif;
+    .ia__color_picker__title{
+        color: $main-color;
+        font-size: 25px;
+        margin-bottom: 10px;
+        padding: 15px 0 0 20px;
+    }
+    .ia__color_picker__container{
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 10px;
+        .ia__color_picker__canvas{
+            #color-display{
+                border-radius: 5px;
+                margin-right: 10px;
+                &:hover{
+                    cursor: crosshair;
+                }
+            }
+            #color-slider{
+                border-radius: 5px;
+                &:hover{
+                    cursor: crosshair;
+                }
+            }
+        }
+        .ia__color_picker__io{
+            margin-left: 10px;
+            float: left;
+            .ia__color_picker_output{
+                text-align: center;
+                margin-bottom: 10px;
+                height: 100px;
+                border-radius: 4px;
+                border: 1px solid $second-color;
+                
+            }
+            .ia__color_picker_input{
+                height: 128px;
+                .ia__color_picker__color{
+                    float: left;
+                    width: 60px;
+                    .ia__color_picker_item{
+                        float: left;
+                        margin-bottom: 5px;
+                        label{
+                            padding-right: 2px;
+                            display: inline-block;
+                            width: 15px;
+                        }
+                        input{
+                            border: 1px solid #bbb;
+                            border-radius: 4px;
+                            padding-left: 5px;
+                            height: 20px;
+                            width: 32px;
+                            background-color: rgba(150,150,150,.2);
+                        }
+                    }
+                }
+                .ia__color_picker__hex{
+                    clear: left;
+                    margin: 0 8px;
+                    padding-top: 6px;
+                    .ia__color_picker_item{
+                        margin-bottom: 5px;
+                        label{
+                            padding-right: 2px;
+                            display: inline-block;
+                            width: 15px;
+                        }
+                        input{
+                            width: 64px;
+                            border: 1px solid #bbb;
+                            border-radius: 4px;
+                            padding-left: 5px;
+                            height: 20px;
+                            background-color: rgba(150,150,150,.2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

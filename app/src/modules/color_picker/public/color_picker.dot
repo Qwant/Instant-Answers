@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="css/color_picker.css" type="text/css">
+<!-- Beginning of IA -->
+<div class="ia__color_picker">
+    <!-- A friendly reminder to know what you asked for -->
+    <div class="ia__color_picker__title">Color picker</div>
+    <!-- Main container fo the color picker -->
+    <div class="ia__color_picker__container">
+        <!-- The canvas -->
+        <div class="ia__color_picker__canvas">
+            <canvas id="color-display" height="256px" width="256px"></canvas>
+            <canvas id="color-slider" height="256px" width="30px"></canvas>
+        </div>
+        <!-- Inputs/output -->
+        <div class="ia__color_picker__io">
+            <!-- Output-->
+            <div id="ia_color_picker_output" class="ia__color_picker_output"></div>
+            <!-- Inputs -->
+            <div class="ia__color_picker_input">
+                <!-- We get the data passed through the query -->
+                <input type="hidden" id="ia_default_color" value="{{= it.data}}">
+                <!-- Color inputs -->
+                <div class="ia__color_picker__color">
+                    <div class=" ia__color_picker_item"><label for="input_red">R:</label><input id="input_red" type="text"></div>
+                    <div class=" ia__color_picker_item"><label for="input_green">G:</label><input id="input_green" type="text"></div>
+                    <div class=" ia__color_picker_item"><label for="input_blue">B:</label><input id="input_blue" type="text"></div>
+                </div>
+                <div class="ia__color_picker__color">
+                    <div class=" ia__color_picker_item"><label for="input_h_hsl">H:</label><input id="input_h_hsl" type="text"></div>
+                    <div class=" ia__color_picker_item"><label for="input_s_hsl">S:</label><input id="input_s_hsl" type="text"></div>
+                    <div class=" ia__color_picker_item"><label for="input_l_hsl">L:</label><input id="input_l_hsl" type="text"></div>
+                </div>
+                <div class="ia__color_picker__color">
+                    <div class=" ia__color_picker_item"><label for="input_h_hsv">H:</label><input id="input_h_hsv" type="text"></div>
+                    <div class=" ia__color_picker_item"><label for="input_s_hsv">S:</label><input id="input_s_hsv" type="text"></div>
+                    <div class=" ia__color_picker_item"><label for="input_v_hsv">V:</label><input id="input_v_hsv" type="text"></div>
+                </div>
+                <div class="ia__color_picker__hex">
+                    <div class=" ia__color_picker_item"><label for="input_hex">#</label><input id="input_hex" type="text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
