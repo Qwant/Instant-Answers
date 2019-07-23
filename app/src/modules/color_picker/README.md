@@ -1,6 +1,6 @@
 Qwant Instant Answer : Color Picker
 
-Called by the following query : string + color picker + string 
+Called by the following query : string + color picker + string OR
                                 string + picker color + string
 
 In the query, string can be replaced by a color in english or rgb values for example.
