@@ -153,7 +153,7 @@ var IARuntime = function() {
     }
 
     /**
-     * Function to fill the display canvas with the new values
+     * Function to fill the display canva with the new values
      */
     ColorPicker.prototype.fillGradient = function() {
         _this.contextDisplay.fillStyle = _this.rgbaColor;
@@ -173,7 +173,7 @@ var IARuntime = function() {
     }
 
     /**
-     * Function to handle update the outputs on a click on the slider
+     * Function to update the outputs on a click on the slider
      * @param e
      */
     ColorPicker.prototype.click = function(e) {
@@ -188,7 +188,7 @@ var IARuntime = function() {
     }
 
     /**
-     * Function to update the outputs when click is up
+     * Function to update the outputs when click is up on display canva
      * @param e
      */
     ColorPicker.prototype.mousedown = function(e) {
@@ -199,7 +199,7 @@ var IARuntime = function() {
     }
 
     /**
-     * Function to update the outputs till the mouse is up
+     * Function to update the outputs till the mouse is up on display canva
      * @param e
      */
     ColorPicker.prototype.mousemove = function(e) {
@@ -218,7 +218,7 @@ var IARuntime = function() {
     }
 
     /**
-     * The function set the hsv values of the color in param into the inputs in front
+     * The function sets the hsv values of the color in param into the inputs in front
      * @param color
      */
     ColorPicker.prototype.setHsv = function(color) {
@@ -230,7 +230,7 @@ var IARuntime = function() {
     }
 
     /**
-     * The function set the hsl values of the color in param into the inputs in front
+     * The function sets the hsl values of the color in param into the inputs in front
      * @param color
      */
     ColorPicker.prototype.setHsl = function(color) {
@@ -242,7 +242,7 @@ var IARuntime = function() {
     }
 
     /**
-     * The function set the rgb values of the color in param into the inputs in front
+     * The function sets the rgb values of the color in param into the inputs in front
      * @param color
      */
     ColorPicker.prototype.setRGB = function(color) {
@@ -254,7 +254,7 @@ var IARuntime = function() {
     }
 
     /**
-     * The function set the hex value of the color in param into the input in front
+     * The function sets the hex value of the color in param into the input in front
      * @param color
      */
     ColorPicker.prototype.setHex = function(color) {
@@ -278,7 +278,7 @@ var IARuntime = function() {
         return null;
     }
     /**
-     * The function get a new tinycolor with the values contained in the rgb inputs
+     * The function gets a new tinycolor with the values contained in the rgb inputs
      * @param e
      * @returns color || null
      */
@@ -294,7 +294,7 @@ var IARuntime = function() {
     }
 
     /**
-     * The function get a new tinycolor with the values contained in the hsl inputs
+     * The function gets a new tinycolor with the values contained in the hsl inputs
      * @returns color || null
      */
     ColorPicker.prototype.getColorHsl = function() {
@@ -306,7 +306,7 @@ var IARuntime = function() {
     }
 
     /**
-     * The function get a new tinycolor with the values contained in the rgb inputs
+     * The function gets a new tinycolor with the values contained in the rgb inputs
      * @returns color || null
      */
     ColorPicker.prototype.getColorRgb = function() {
@@ -326,7 +326,7 @@ var IARuntime = function() {
     }
     
     /**
-     * The function get a new tinycolor with the value contained in the hex input
+     * The function gets a new tinycolor with the value contained in the hex input
      * @returns color || null
      */
     ColorPicker.prototype.getColorHex = function() {
@@ -338,7 +338,7 @@ var IARuntime = function() {
     }
 
     /**
-     * The function get a new tinycolor with the values contained in the hsv inputs
+     * The function gets a new tinycolor with the values contained in the hsv inputs
      * @returns color || null
      */
     ColorPicker.prototype.getColorHsv = function() {
@@ -398,7 +398,7 @@ var IARuntime = function() {
     }
 
     /**
-     * set the calculated values for rgb, hex, hsv, hsl in the front inputs 
+     * sets the calculated values for rgb, hex, hsv, hsl in the front inputs 
      * @param color
      */
     ColorPicker.prototype.updateColors = function(color) {
