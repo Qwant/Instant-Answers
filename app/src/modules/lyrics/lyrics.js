@@ -14,6 +14,7 @@ const redisTools = require('../../redis_tools');
 const apiCaller = require('../../api_caller');
 
 // Config
+require('../../binder')();
 const config = require('@qwant/config');
 /**
  * Because the config file is overwritten on each startup we need to parse the config file on each call, hence this
