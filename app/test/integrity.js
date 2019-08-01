@@ -9,7 +9,7 @@ const GET_DATA_TIMEOUT = 1000; /* break with 1s */
 
 require('../src/binder')(); // require binder for easy access to config properties
 var config = require('@qwant/config');
-config.import('weather');
+// config.import('weather');
 config.import('app');
 
 Object.keys(config).forEach(function(elem) {
