@@ -6,22 +6,30 @@
  * If you need to import extra node_modules, use "npm install xxx --save" and place them there.
  */
 
-var Promise = require("bluebird");
-var _ = require('@qwant/front-i18n')._;
+const Promise = require("bluebird");
+const _ = require('@qwant/front-i18n')._;
 
 const sha1 = require('sha1');
 const redisTools = require('../../redis_tools');
 const apiCaller = require('../../api_caller');
 
+// Config
+const config = require('@qwant/config');
+/**
+ * Because the config file is overwritten on each startup we need to parse the config file on each call, hence this
+ * method.
+ */
+const parseConfig = () => {
+    config.import('lyrics');
+    Object.keys(config).forEach(function(elem) {
+        config_set(elem, config[elem]);
+    });
+};
+
 // Init Redis once
 redisTools.initRedis();
 
 module.exports = {
-
-    /**
-     * MusixMatch API Key
-     */
-    API_KEY: 'YOUR_API_KEY',
 
     /**
      * Try to retrieve and parse lyrics from Redis.
@@ -45,13 +53,16 @@ module.exports = {
      */
     searchForTrack: (lyricsRequest, proxyURL) => {
 
+        parseConfig(); // TODO remove this line once the config mechanism has been fixed
+        const API_KEY = config_get('lyrics.api_key');
+
         // Request only one track result with available lyrics and search in artist, title and lyrics.
         const request = 'https://api.musixmatch.com/ws/1.1/track.search' +
             '?page=1' +
             '&page_size=1' +
             '&f_has_lyrics=1' +
             '&s_track_rating=desc' +
-            `&apikey=${this.API_KEY}` +
+            `&apikey=${API_KEY}` +
             `&q=${encodeURIComponent(lyricsRequest)}`;
 
         // Structure of the response
@@ -137,8 +148,11 @@ module.exports = {
      */
     retrieveLyrics: (searchResult, proxyURL) => {
 
+        parseConfig(); // TODO remove this line once the config mechanism has been fixed
+        const API_KEY = config_get('lyrics.api_key');
+
         const request =
-            `https://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=${this.API_KEY}&track_id=${searchResult.track_id}`;
+            `https://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=${API_KEY}&track_id=${searchResult.track_id}`;
 
         // Define the structure of the answer
         const structure = {
@@ -202,7 +216,7 @@ module.exports = {
      * Save the lyrics object to Redis DB
      * @param lyricsObj The lyrics object to save
      * @param cacheKey The Redis key to use
-     * @returns Promise<Object>
+     * @returns Promise<Object> A promise of the saved lyrics object
      */
     saveLyricsToCache: (lyricsObj, cacheKey) => {
         return new Promise(resolve => {
