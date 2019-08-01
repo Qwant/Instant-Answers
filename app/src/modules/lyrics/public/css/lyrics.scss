@@ -1,0 +1,45 @@
+/**
+* This is your main SCSS file. Please refer to the documentation for more information.
+*/
+
+.ia__lyrics h3 {
+  font-family: "Asap",sans-serif;
+  color: #353c52;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 19px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 1rem 0 5px 1rem;
+  border: none;
+  padding: 0;
+}
+
+.ia__lyrics h4 {
+  font-family: "Asap",sans-serif;
+  color: #353c52;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 19px;
+  font-weight: 400;
+  margin: 0 1rem;
+  border-bottom: 1px solid rgb(224, 225, 230);
+  padding-bottom: 10px;
+}
+
+.ia__lyrics_body {
+  color: #353c52;
+  white-space: pre;
+  padding: 1rem;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: -0.1px;
+}
+
+.ia__lyrics_copyright {
+  color: #353c52;
+  font-size: 13px;
+  padding: 1rem;
+}

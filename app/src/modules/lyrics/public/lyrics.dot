@@ -1,0 +1,10 @@
+<!--
+ This is your main template file. Please refer to the documentation for more information.
+-->
+<link rel="stylesheet" href="css/lyrics.css" type="text/css">
+<div class="ia__lyrics">
+    <h3>{{= it.data.artist_name }}</h3>
+    <h4>{{= it.data.track_name }}</h4>
+    <p class="ia__lyrics_body">{{= it.data.lyrics }}</p>
+    <p class="ia__lyrics_copyright">{{= it.data.copyright }}</p>
+</div>
