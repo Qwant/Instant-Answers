@@ -65,8 +65,7 @@ module.exports = {
             `&apikey=${API_KEY}` +
             `&q=${encodeURIComponent(lyricsRequest)}`;
 
-        // Structure of the response
-        // TODO refine structure with optional keys
+        // Structure of the response (cf https://playground.musixmatch.com)
         const structure = {
             "message": {
                 "header": {
@@ -75,9 +74,9 @@ module.exports = {
                     "available": "number"
                 },
                 "body": {
-                    "track_list": [
+                    "@_track_list": [
                         {
-                            "track": {
+                            "@_track": {
                                 "track_id": "number",
                                 "track_name": "String",
                                 "track_name_translation_list": ["String"],
@@ -126,11 +125,19 @@ module.exports = {
                 const trackList = response.message.body.track_list;
                 if (trackList.length > 0) {
                     // Return the first matched track object
-                    return {
+                    const result = {
                         track_id: trackList[0].track.track_id,
                         track_name: trackList[0].track.track_name,
                         artist_name: trackList[0].track.artist_name,
                     };
+
+                    // Check result relevance
+                    if (lyricsRequest.toLowerCase().includes(result.track_name.toLowerCase()) ||
+                        lyricsRequest.toLowerCase().includes(result.artist_name.toLowerCase())) {
+                        return result;
+                    } else {
+                        throw new Error('No relevant track found.')
+                    }
                 } else {
                     throw new Error('No track found.');
                 }
@@ -154,7 +161,7 @@ module.exports = {
         const request =
             `https://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=${API_KEY}&track_id=${searchResult.track_id}`;
 
-        // Define the structure of the answer
+        // Structure of the response (cf https://playground.musixmatch.com)
         const structure = {
             "message": {
                 "header": {
