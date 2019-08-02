@@ -1,3 +1,15 @@
 #
 # This is your en_gb language file. Please refer to the documentation for more information.
 #
+
+msgctxt "lyrics"
+msgid "lyrics"
+msgstr ""
+
+msgctxt "lyrics"
+msgid "Show more"
+msgstr ""
+
+msgctxt "lyrics"
+msgid "Show less"
+msgstr ""

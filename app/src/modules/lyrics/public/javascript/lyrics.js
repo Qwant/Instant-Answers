@@ -9,30 +9,30 @@ var IARuntime = function() {
         var lyricsHeight = lyrics.scrollHeight;
 
         if (lyricsHeight > (defaultHeight + 38)) {
-            lyrics.style.height = defaultHeight.toString() + 'px';
-            lyrics.style.overflow = 'hidden';
+            lyrics.style.height = defaultHeight.toString() + "px";
+            lyrics.style.overflow = "hidden";
 
             var moreLink = $(".ia__lyrics_show_more")[0];
-            moreLink.style.display = 'inline-block';
-            moreLink.text = 'Show more';
+            moreLink.style.display = "inline-block";
+            moreLink.text = _("Show more", "lyrics");
             moreLink.addEventListener("click", function() {
                 var newHeight = 0;
                 if (hasClass(lyrics, "active")) {
                     newHeight = defaultHeight;
                     removeClass(lyrics, "active");
-                    moreLink.text = 'Show more';
+                    moreLink.text = _("Show more", "lyrics");
                 } else {
                     newHeight = lyricsHeight;
                     addClass(lyrics, "active");
-                    moreLink.text = 'Show less';
+                    moreLink.text = _("Show less", "lyrics");
                 }
-                lyrics.style.height = newHeight.toString() + 'px';
+                lyrics.style.height = newHeight.toString() + "px";
             });
         }
     };
 
     Lyrics.prototype.stop = function() {
-        // function that's gonna run upon exit
+        // function that"s gonna run upon exit
     };
 
     return Lyrics;

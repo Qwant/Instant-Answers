@@ -131,11 +131,11 @@ module.exports = {
                         artist_name: trackList[0].track.artist_name,
                     };
 
-                    // Check result relevance
-                    if (lyricsRequest.toLowerCase().includes(result.track_name.toLowerCase()) ||
-                        lyricsRequest.toLowerCase().includes(result.artist_name.toLowerCase())) {
+                    // Check result relevance. TODO improve on this check
+                    if (lyricsRequest.toLowerCase().includes(result.track_name.toLowerCase())) {
                         return result;
                     } else {
+                        // console.log(result);
                         throw new Error('No relevant track found.')
                     }
                 } else {
@@ -249,8 +249,6 @@ module.exports = {
      */
 
     getData: function (values, proxyURL, language, i18n) {
-        const _ = i18n._;
-
         // Make sure we have a match
         if (!values || !values[0]) {
             return Promise.rejected("Couldn't process query.");
@@ -312,14 +310,14 @@ module.exports = {
      * The keyword can be a regex. If you need help for your regex, use this https://regex101.com/#javascript
      */
 
-    keyword: "lyrics",
+    // keyword: "lyrics",
 
     /**
      * (OPTIONAL)
      * script : If your IA includes a script, place it under public/javascript/xxx.js and replace "hello" by "xxx".
      */
 
-    
+    script: "lyrics",
 
     /**
      * (NEEDED)
