@@ -6,5 +6,6 @@
     <h3>{{= it.data.artist_name }}</h3>
     <h4>{{= it.data.track_name }}</h4>
     <p class="ia__lyrics_body">{{= it.data.lyrics }}</p>
+    <a class="ia__lyrics_show_more"></a>
     <p class="ia__lyrics_copyright">{{= it.data.copyright }}</p>
 </div>
