@@ -13,7 +13,7 @@ You can help improve Qwant's Instant Answers through different actions:
 * Developing your own original Instant Answer and request its addition to Qwant.com
 
 ### Resources
-[List of Instant Answers ideas](https://github.com/Qwant/Instant-Answers/wiki/%5BAnnex%5D-IA-Developer-Guidelines-and-Dev-Cycle)
+[List of Instant Answers ideas](https://github.com/Qwant/Instant-Answers/wiki/%5BAnnex%5D-IA-Developer-Guidelines-and-Development-Cycle#no-idea-heres-some)
 
 There are several tutorials available in this documentation to help you contribute to Instant Answers, whether you are a beginner or an experienced programmer.
 
