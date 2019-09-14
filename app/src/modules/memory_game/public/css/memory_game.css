@@ -1,0 +1,136 @@
+.ia__memory_game {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 12px;
+  padding-bottom: 0px;
+}
+
+.ia__memory_game__board {
+  min-width: 365px;
+  width: 365px;
+}
+
+.ia__memory_game__instructions {
+  width: 235px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.ia__memory_game__flip-card {
+  background-color: transparent;
+  display: inline-block;
+  margin-bottom: 10px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  height: 75px;
+  width: 75px;
+  border-radius: 4px;
+  text-align: center;
+  opacity: 1;
+}
+
+.ia__memory_game__flip-card, .ia__memory_game__flip-card-inner,
+.ia__memory_game__flip-card-front, .ia__memory_game__flip-card-back {
+  height: 75px;
+  width: 75px;
+}
+
+.ia__memory_game__flip-card-inner {
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s;
+  transform-style: preserve-3d;
+  box-shadow: 2px 2px 2px #66666661;
+}
+
+.ia__memory_game__flip-card.selected .ia__memory_game__flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.ia__memory_game__flip-card-front, .ia__memory_game__flip-card-back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.ia__memory_game__flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.ia__memory_game__flip-card img {
+  max-width: 65%;
+  position: relative;
+  top: 10px;
+}
+
+img.ia__memory_game__flip-card-back {
+  top: 0;
+  max-width: 85%;
+}
+
+.ia__memory_game__flip-card:not(:nth-of-type(4n)) {
+  margin-right: 10px;
+}
+
+.ia__memory_game__flip-card:hover {
+  cursor: pointer;
+}
+
+.ia__memory_game__reset-button {
+  display: block;
+  width: 160px;
+  height: 35px;
+  margin: 30px 20px;
+  transition: color .17s ease-out, background-color .17s ease-out;
+  background-color: #353c52;
+  border-radius: 60px;
+  line-height: 35px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Asap", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #fff;
+  cursor: pointer;
+}
+
+.ia__memory_game__reset-button svg {
+  height: 16px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.ia__memory_game__reset-button:hover {
+  box-shadow: 0 2px 6px 0 rgba(53, 60, 82, 0.4);
+  background-image: linear-gradient(to bottom, #202639, #353c52);
+}
+
+@media (max-width: 1450px) {
+  .ia__memory_game__board, .ia__memory_game__instructions {
+    margin: auto;
+  }
+
+  .ia__memory_game__instructions {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 400px) {
+  .ia__memory_game__board {
+    min-width: 270px;
+    width: 270px;
+  }
+
+  .ia__memory_game__instructions {
+    margin-top: 30px;
+  }
+
+  .ia__memory_game__flip-card, .ia__memory_game__flip-card-inner,
+  .ia__memory_game__flip-card-front, .ia__memory_game__flip-card-back {
+    height: 55px;
+    width: 55px;
+  }
+}
+
+/*# sourceMappingURL=memory_game.css.map */

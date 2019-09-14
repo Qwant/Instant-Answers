@@ -1,0 +1,7 @@
+msgctxt "memory-game"
+msgid "New game"
+msgstr "Nouvelle partie"
+
+msgctxt "memory-game"
+msgid "Click 2 similar cards, be smart !"
+msgstr "Cliquez deux cartes similaires, soyez malin !"
