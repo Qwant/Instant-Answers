@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "grunt": "1.0.1",
-    "js-yaml": "3.8.1"
+    "js-yaml": "3.13.1"
   },
   "devDependencies": {
     "load-grunt-tasks": "^3.5.2"
